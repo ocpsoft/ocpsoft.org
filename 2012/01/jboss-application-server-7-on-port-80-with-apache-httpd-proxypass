@@ -1,0 +1,58 @@
+.categories ['JBoss', 'OpenSource']
+.dateCreated 20120109T21:15:03
+.link http://ocpsoft.org/opensource/jboss-application-server-7-on-port-80-with-apache-httpd-proxypass/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.mt_text_more 
+
+<h3>The 9 steps to proxy success!</h3>
+
+<ol>
+	<li>Install <a href="http://httpd.apache.org/" target="_blank">Apache2</a>.</li>
+	<li><code>sudo a2enmod proxy</code></li>
+	<li><code>sudo a2enmod proxy_http</code></li>
+	<li><code>sudo a2enmod vhost_alias</code></li>
+	<li><code>sudo a2dissite default</code> (only if you are not using this site, or haven't made changes to it)</li>
+
+	<li>Create a file called jboss-as in /etc/apache2/sites-available:<br/><br/>
+<pre lang="xml"><VirtualHost *:80>
+        ServerAdmin admin@site.com
+        ServerName site.com
+        ProxyRequests Off
+        <Proxy *>
+                Order deny,allow
+                Allow from all
+        </Proxy>
+        ProxyPreserveHost on
+        ProxyPass / http://localhost:8080/
+</VirtualHost></pre></li>
+	<li><code>sudo a2ensite jboss-as</code></li>
+	<li>Make sure your <a href="http://jboss.org/jbossas" target="_blank">JBoss AS 7</a> instance is running on port 8080, and is accepting connections from localhost.</li>
+	<li><code>sudo /etc/init.d/apache2 restart</code> -or- <code>service apache2 restart</code></li>
+</ol>
+
+<h3>In summary</h3>
+That's it! Your JBoss AS 7 instance should now be available on Port 80. You can, of course, make further customizations to this configuration; it is merely a bare minimal example in order to get up and running.
+
+As always, I hope this has been helpful. Please let me know how it works for you!
+
+
+
+
+.permaLink http://ocpsoft.org/opensource/jboss-application-server-7-on-port-80-with-apache-httpd-proxypass/
+.post_status publish
+.postid 2956
+.title JBoss Application Server 7 on Port 80 with Apache HTTPd ProxyPass
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug jboss-application-server-7-on-port-80-with-apache-httpd-proxypass
+It's quite simple really. All you need to do is install Apache HTTPd, then set make sure you have a few modules installed and set up:
+
+Instructions below are for Ubuntu, Fedora, RHEL, or other Linux distributions. The results of this configuration can be seen at <a href="http://scrumshark.com" target="_blank">scrumshark.com</a>, our latest open-source project management software initiative. We're looking for contributors! (that means you.) So please come <a href="http://ocpsoft.com/socialpm/">get involved</a>! We are looking for help with the front-end graphical design and widgets like charts, graphs, and visualizations (or anything you are interested in.)
+
+So what are you waiting for? Let's get our JBoss / Apache love on.

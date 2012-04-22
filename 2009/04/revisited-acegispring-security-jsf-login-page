@@ -1,0 +1,76 @@
+.categories ['JSF', 'Spring']
+.dateCreated 20090427T15:00:07
+.link http://ocpsoft.org/java/jsf-java/revisited-acegispring-security-jsf-login-page/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords JSF, Security, Spring
+.mt_text_more 
+
+Because the example had initially used the @PostConstruct annotation to trigger a method to handle the error message, the handleError() method was being called before the actual authentication event had taken place, thus, the handleError() method was triggering before any BadCredentialsExceptions were stored in the Session.
+
+Instead of creating an error handling method in the LoginBean itself, instead attach a PhaseListener which will intercept failed logins, and add the new FacesMessage before the RENDER_RESPONSE phase.
+
+<h3>LoginErrorPhaseListener</h3>
+<pre lang="java">import javax.faces.context.FacesContext;
+import javax.faces.event.PhaseEvent;
+import javax.faces.event.PhaseId;
+import javax.faces.event.PhaseListener;
+
+import org.springframework.security.BadCredentialsException;
+import org.springframework.security.ui.AbstractProcessingFilter;
+
+impot util.FacesUtils;
+
+public class LoginErrorPhaseListener implements PhaseListener
+{
+    private static final long serialVersionUID = -1216620620302322995L;
+
+    @Override
+    public void beforePhase(final PhaseEvent arg0)
+    {
+        Exception e = (Exception) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get(
+                AbstractProcessingFilter.SPRING_SECURITY_LAST_EXCEPTION_KEY);
+
+        if (e instanceof BadCredentialsException)
+        {
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put(
+                    AbstractProcessingFilter.SPRING_SECURITY_LAST_EXCEPTION_KEY, null);
+            FacesUtils.addErrorMessage("Username or password not valid.");
+        }
+    }
+
+    @Override
+    public void afterPhase(final PhaseEvent arg0)
+    {}
+
+    @Override
+    public PhaseId getPhaseId()
+    {
+        return PhaseId.RENDER_RESPONSE;
+    }
+
+}</pre>
+
+<h3>faces-config.xml</h3>
+<pre lang="xml"><?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+	<lifecycle>
+		<phase-listener>login.LoginErrorPhaseListener</phase-listener>
+	</lifecycle>
+</faces-config>
+</pre>
+
+<h3>Happy developing!</h3>
+.permaLink http://ocpsoft.org/java/jsf-java/revisited-acegispring-security-jsf-login-page/
+.post_status publish
+.postid 55
+.title Revisited - Acegi/Spring Security & JSF Login Page
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug revisited-acegispring-security-jsf-login-page
+A correction has been made to the post: <a href="http://ocpsoft.com/java/acegi-spring-security-jsf-login-page/" target="_self">http://ocpsoft.com/java/acegi-spring-security-jsf-login-page/</a>, fixing an issue where FacesMessages were not being displayed on failed authentications.

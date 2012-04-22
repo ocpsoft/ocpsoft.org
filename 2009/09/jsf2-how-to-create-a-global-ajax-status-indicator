@@ -1,0 +1,47 @@
+.categories ['JSF']
+.dateCreated 20090910T04:28:01
+.link http://ocpsoft.org/java/jsf-java/jsf2-how-to-create-a-global-ajax-status-indicator/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords Ajax, JSF2
+.mt_text_more 
+This blog is based on Jim Driscoll's blog, "<a href="http://weblogs.java.net/blog/driscoll/archive/2009/09/02/busy-status-indicator-jsf-2" target="_blank">Busy status indicator with JSF 2.</a>" -- for attaching a status to an individual event.
+<h3>In your XHTML page, make sure that you output the JSF2 ajax libraries:</h3>
+<pre lang="xml"></pre>
+<h3>Now, in Javascript:</h3>
+Make sure this javascript is only executed once per page, or you might get conflicting updates.
+<pre lang="javascript">/**
+ * ***************************************
+ * Busy Status
+ */
+if (!window["busystatus"]) {
+	var busystatus = {};
+}
+
+busystatus.onStatusChange = function onStatusChange(data) {
+	var status = data.status;
+
+	alert("ajax event triggered")
+	if (status === "begin") { // turn on busy indicator
+		document.body.style.cursor = 'wait';
+	} else { // turn off busy indicator, on either "complete" or "success"
+		document.body.style.cursor = 'auto';
+	}
+};
+
+jsf.ajax.addOnEvent(busystatus.onStatusChange);</pre>
+And that's all there is to it! Your mouse cursor will now change to the hourglass when a user triggers any JSF2 ajax event.
+.permaLink http://ocpsoft.org/java/jsf-java/jsf2-how-to-create-a-global-ajax-status-indicator/
+.post_status publish
+.postid 81
+.title JSF2: How to Create a Global Ajax Status Indicator
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug jsf2-how-to-create-a-global-ajax-status-indicator
+So, one of the best ways I know of to tell a user that they should be waiting for something to finish, is by setting the cursor to 'wait'. It's how desktop applications do it. It's how the operating system does it... it's how ajax should probably do it (if you want to solve the user wait interaction globally.)
+
+With JSF2, it's easy to accomplish!

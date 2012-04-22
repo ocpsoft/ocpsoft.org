@@ -1,0 +1,45 @@
+.categories ['PrettyFaces', 'Releases']
+.dateCreated 20100904T14:47:14
+.link http://ocpsoft.org/prettyfaces/prettyfaces-3-1-0-released-url-rewriting-for-servlet-jsf/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.mt_text_more 
+.permaLink http://ocpsoft.org/prettyfaces/prettyfaces-3-1-0-released-url-rewriting-for-servlet-jsf/
+.post_status publish
+.postid 1555
+.title PrettyFaces 3.1.0 released: URL-rewriting for Servlet & JSF
+.userid 1
+.wp_author_display_name Team
+.wp_author_id 1
+.wp_password 
+.wp_post_format standard
+.wp_slug prettyfaces-3-1-0-released-url-rewriting-for-servlet-jsf
+<center>
+<div class="featured">» <a href="http://ocpsoft.com/prettyfaces/">Get PrettyFaces!</a></div>
+</center>
+<h2>Features &amp; Enhancements:</h2>
+<ul>
+	<li><strong>Introducing URL mapping configuration with annotations</strong> (<a href="http://ocpsoft.com/prettyfaces/annotations-support-is-coming-to-prettyfaces-url-rewriting/">tutorial</a> + <a href="http://ocpsoft.com/docs/prettyfaces/snapshot/en-US/html/Configuration.html#config.annotations">docs</a>)</li>
+	<li>Added path and query-parameter validation wth managed bean methods (#50 + r353)</li>
+	<li>Added support for JSF2 redirects using ExternalContext (r305)</li>
+	<li>Added support for arrays as query parameters (r278)</li>
+</ul>
+
+<div class="featured">Special thanks to <a target="_blank" href="http://chkal.blogspot.com/">Christian Kaltepoth</a> for his incredible annotations configuration system, and for fixing more bugs than any other project member over the past 3 months! </div>
+
+<h2>Regression impact:</h2>
+<ul>
+	<li>The URL query string is now included in rewrite-rules; this allows for finer control of the rewriting engine (Any prior rewrite rules should be revised and re-tested)</li>
+	<li>PrettyContext.getCurrentURL() has been replaced with PrettyContext.getRequestURL() and PrettyContext.getRequestQueryString()</li>
+</ul>
+
+<h2>Bugfixes:</h2>
+<ul>
+	<li>Resolved Mojarra warning "Request path '/faces/url.xhtml' begins with one or more occurrences of the FacesServlet prefix path mapping '/faces'." when using path mapping (<a href="http://code.google.com/p/prettyfaces/issues/detail?id=43">#43</a> + r379)</li>
+	<li>Resolved Deployment warning on Geronimo (<a href="http://code.google.com/p/prettyfaces/issues/detail?id=58">#58</a> + r364)</li>
+	<li>URL Path Expressions now match correctly when more than one expression is used between path segments (r362)</li>
+	<li>Resolved ClassNotFoundException with JSF 1.2 on JBoss6 (<a href="http://code.google.com/p/prettyfaces/issues/detail?id=54">#54</a> + r360)</li>
+	<li>Resolved failed deployment due to ClassNotFoundException on Geronimo (<a href="http://code.google.com/p/prettyfaces/issues/detail?id=59">#59</a> + r369)</li>
+</ul>

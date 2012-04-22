@@ -1,0 +1,75 @@
+.categories ['Technology']
+.dateCreated 20091115T22:55:06
+.link http://ocpsoft.org/technology/android-its-about-time/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.mt_text_more 
+<div class="featured"><div class="inside" style="overflow: hidden;"><center><a href="http://xkcd.com"><img src="http://imgs.xkcd.com/comics/iphone_or_droid.png" title="It may be a fundamentally empty experience, but holy crap the Droid's 265 ppi screen is amazing." alt="iPhone or Droid"></a></center></div></div>
+<center><p>XKCD's Randall Munroe, you understand me better than most...</p></center>
+<div class="featured"><table cellspacing="10px">
+<tr valign="top">
+<td><img src="http://ocpsoft.com/wp-content/uploads/2009/11/Socialize.png" alt="Socialize" title="Socialize" width="369" height="527" class="aligncenter size-full wp-image-431" /></td>
+<td><h3>Socialize:</h3><p>This is my first app - a glorified "echo." Send, refresh, and it will display what you've entered. But the cool thing is that this entire program took about 15 lines of code, and 10 lines of XML. It took me about 3 hours to install the tools, learn the API, deploy to my phone, and walk downstairs to show my roommate... not bad.</p>
+
+<p>But now the hunt is on. What am I going to create? I have a few ideas, nothing much of consequence: <a href="http://scrumshark.com" target="_blank" title="Opensource Agile Project Management">ScrumShark</a> will need an Android app, and oh, I suppose iPhone, too. But what of value can really be created? I find myself at a mental standstill. So much power at my fingertips, but no strong vision of what it could mean. A big part of me feels that technology, as it becomes increasingly accessible, raises greater walls and prevents us from experiencing the true human interaction that we so desperately need.</o>
+
+<p> Perhaps an app to bring people together, physically, to meet and enjoy spending time together. Google Latitude is close, but not quite there...</p>
+<p>We'll see what comes to mind... Randall, any good ideas?</p></td></tr>
+</table></div>
+
+<h3>A few tips for the Linux users:</h3>
+If you are developing with an AVD (Android Virtual Device) and you happen to plug your phone in, when you click "Run as, or Debug as Android Application," Eclipse is going to try to deploy the app to your phone. Two things may happen:
+<ol>
+	<li><p>Your application will be deployed to the phone. Just so you know in case it's not what you want to do. Be careful.</p></li>
+	<li><p>If you <i>are</i> trying to deploy to your phone, but haven't yet set up USB permissions, you will get a NullPointerException: "Failed to deploy..." - This means your USB permissions are wrong. More on that...</p></li>
+</ol>
+
+<h3>Fixing the null-pointer:</h3>
+<pre lang="text">
+An internal error occurred during: "Socialize". java.lang.NullPointerException
+at com.android.ide.eclipse.adt.internal.launch.AndroidLaunchController.launch(Unknown Source)
+at com.android.ide.eclipse.adt.internal.launch.LaunchConfigDelegate.doLaunch(Unknown Source)
+at com.android.ide.eclipse.adt.internal.launch.LaunchConfigDelegate.launch(Unknown Source)
+</pre>
+<p>Chances are you need set up USB permissions by taking the following steps:</p>
+<h4>Plug in your phone and run "lsusb"</h4>
+<pre lang="text">
+lincoln@quadshark ~ $ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 008: ID 22b8:41db Motorola PCS 
+Bus 004 Device 003: ID 046d:c505 Logitech, Inc. Cordless Mouse+Keyboard Receiver
+Bus 004 Device 002: ID 046d:c041 Logitech, Inc. G5 Laser Mouse
+Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+lincoln@quadshark ~ $ 
+</pre>
+<p>This line: "Bus 002 Device 008: ID <b>22b8:41db</b> Motorola PCS" is what you are looking for. "22b8" is my "idProduct", and "41db" is my idVendor. Your phone may be different, so keep that in mind when you are following the next steps. 
+
+
+<h4>As root, Edit or Create: /etc/udev/rules.d/51-android.rules</h4>
+<pre lang="sh">SUBSYSTEM=="usb", ATTRS{idProduct}=="22b8", ATTRS{idVendor}=="41db",
+MODE="0666", OWNER="lb3" 
+</pre>
+
+<h4>As root, Run: chmod a+r /etc/udev/rules.d/51-android.rules</h4>
+<pre lang="text">lb3@quadshark ~ $ ls -la /etc/udev/rules.d/51-android.rules
+-rw-r--r-- 1 root root 95 2009-11-15 17:19 /etc/udev/rules.d/51-android.rules
+</pre>
+If your permissions look like the file above, and your IDs are set up correctly, then you should now be able to properly deploy and debug applications on your actual Android Phone! Enjoy :)
+
+<h3>But where to go from here?</h3>
+<p>So many ideas already out there, but an infinity of un-thought-of ideas remain. Where do I go from here? How many other people out in this world have the desire to create, but a severe case of writer's block!? Help me, Randall....... <br/><br/></br></p>
+<h3><center>PERL!</center></h3><br/>
+
+.permaLink http://ocpsoft.org/technology/android-its-about-time/
+.post_status publish
+.postid 430
+.title Android: It's about time!
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug android-its-about-time
+<p>I don't know why I waited so long. Maybe I just thought the G1 was ugly, maybe it's my futile fight against the mob of conformity. I bought the Droid. Now my already over-active sense of entrepreneurship, restless production has new food. Goodbye night-time reading for a little while.</p>

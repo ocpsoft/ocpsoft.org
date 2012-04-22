@@ -1,0 +1,41 @@
+.categories ['PrettyFaces']
+.dateCreated 20090331T18:21:25
+.link http://ocpsoft.org/prettyfaces/prettyfaces-v123_rc2-released/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords Java, JSF, OpenSource, PrettyFaces, Releases
+.mt_text_more 
+.permaLink http://ocpsoft.org/prettyfaces/prettyfaces-v123_rc2-released/
+.post_status publish
+.postid 49
+.title PrettyFaces v1.2.3_RC2 Released
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug prettyfaces-v123_rc2-released
+<h3><a href="http://ocpsoft.com/prettyfaces">PrettyFaces</a>:</h3>
+
+<strong>Version 1.2.3_RC2</strong>: <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-1.2.3_RC2.jar">binary</a>, <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-1.2.3_RC2-sources.jar">source</a>, <a href="http://ocpsoft.com/prettyfaces/v123">documentation</a> (stable)
+Minor Release: 20090331
+<ol>
+	<li>Servlet forwards are working</li>
+</ol>
+
+<div style="align:center; background:#555; padding:10px">
+	<form action="http://groups.google.com/group/prettyfaces-users/boxsubscribe">
+		<table border="0" cellspacing="0" cellpadding="0" width="100%">
+		<tbody>
+			<tr>
+				<td colspan='2' align="center"><strong>Subscribe to <a href="http://groups.google.com/group/prettyfaces-users">prettyfaces-users</a></strong></td>
+			</tr>
+			<tr>
+				<td align="right" width="30%"><label for="subeml2" style="color:#eee">Email:&nbsp;</label></td><td  align="left"><input id="subeml2" name="email" size="18" type="text" /> <input name="sub" type="submit" value="Subscribe" /></td>
+			</tr>
+		</tbody>
+		</table>
+	</form>
+</div>
+<br/>

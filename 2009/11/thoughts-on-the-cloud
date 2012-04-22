@@ -1,0 +1,36 @@
+.categories ['Technology']
+.dateCreated 20091113T18:40:02
+.link http://ocpsoft.org/technology/thoughts-on-the-cloud/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.mt_text_more 
+<p>If you could combine and utilize all of that wasted space, running applications on PCs that have available power / bandwidth, you could, in theory, increase utilization all the way to about 80-90% without negative performance impact. From a cost perspective, that means you need fewer physical computers. You spend less money on power, less money on cooling, less money on everything, and you get more available processing time.</p>
+
+<h3>Q. Is there money that we could make in that operation?</h3>
+<p>Depends what you mean. Big security-sensitive corporations? Only if they outsourced to someone else's cloud. That would save them money. OcpSoft? - Probably only in the same way. We'd have to come up with some idea that takes advantage of the scalability and flexibility of the cloud. Otherwise there's no real benefit, and we should just run our own services.</p>
+
+<p>With <a href="http://scrumshark.com" target="_blank" title="Opensource Agile Project Management">ScrumShark</a>, for example... if we hosted on the Amazon EC2 cloud: Amazon lets you charge an additional fee on top of their cloud utilization fee. So if you provide custom hosted applications to individual clients, you can simplify billing, membership, usage, and support charges into just one charge - usage. The more they use the product, the more it costs them. The less they you use it, the less it costs them -- that could be an attractive marketing strategy for some clients. do you think it is the future of computers and data management?</p>
+
+<p>The only thing that hinders, and will continue to hinder cloud computing is security and risk. You don't have physical control of your data or files. Do you trust your cloud provider? Are they adequately securing your system? What happens if they lose your data? Do they have a backup and disaster recovery plan that is adequate for your needs? With good reason, that's a risk that Corporations, and many other financial and highly-confidential based companies, are not willing to take. People's personal and financial data and security are too important to risk.</p>
+
+<h3>Q. Sounds like a big drawback, who would choose that?</h3>
+<p>For many smaller companies with a lower risk-profile, it makes a lot of sense: their data can be backed up to a private server; they pay for the computing power they need; they don't have to service their own hardware. It just depends on your needs.</p>
+
+<h3>How would you use the cloud?</h3><br/>
+
+.permaLink http://ocpsoft.org/technology/thoughts-on-the-cloud/
+.post_status publish
+.postid 417
+.title Thoughts on the Cloud
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug thoughts-on-the-cloud
+<p>A business partner of mine asked some basic questions about <a target="_blank" href="http://en.wikipedia.org/wiki/Cloud_computing">cloud computing</a>. We had a small exchange that I felt worth sharing.</p>
+
+<h3>Q. Do you think it's a good idea?</h3>
+<p>Absolutely. Press CTRL-ALT-DEL -> T, sometime. Click performance -- I guarantee your CPU is running at about 1-5% utilization, somewhere around 97-99% of the time. From another perspective: that's 95-99% waste of power, 97-99% of the time. And that's just while you are physically using your computer... then you have to consider all of the wasted disk space. We have huge disk drives in our PCs (Most corporate employers only give us access to a small portion,) but that's huge waste as well.</p>

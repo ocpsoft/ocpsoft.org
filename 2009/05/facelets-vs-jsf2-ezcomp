@@ -1,0 +1,39 @@
+.categories ['JSF']
+.dateCreated 20090519T14:18:00
+.link http://ocpsoft.org/java/jsf-java/facelets-vs-jsf2-ezcomp/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords Java, JSF
+.mt_text_more 
+<ul>
+	<li> You can pass a value-binding into a component.</li>
+	<li> You can assign a listener to a specific input field/button inside a custom component.</li>
+	<li> You can pass facets into components and use them conditionally.</li>
+	<li> You can attach validators to specific input fields/buttons of components.</li>
+	<li> You can pass nested children into components and use them conditionally.</li>
+	<li> In EzComp, namespaces are created automatically by convention -- no more taglibs</li>
+	<li> You can include CSS or JS files from packaged jars -- a big issue when using shared libraries of components.</li>
+	<li> Standard support for Ajax -- no javascript required (&lt;f:ajax /&gt;).</li>
+</ul>
+Without all of this, with JSP or Facelets 1.2, you eventually need to write components in Java, which means a lot of time-consuming work. Having gone down that road, and then experienced EzComp, I've seen a time-saving of about 10x, with a lot more power to create really interactive and rich components through Ajax. Instead of 3-4 files required to make a component, you now have 1 -- the component.
+
+Moral of the Story: If you are considering an upgrade from JSP, go right to JSF2 -- it's stable enough to begin development.
+
+Also, be sure to check out the developer <em>blags</em> for more updates on JSF2:
+<ul>
+	<li><a href="http://weblogs.java.net/blog/edburns/" target="_blank">Ed Burns</a></li>
+	<li><a href="http://blogs.sun.com/rlubke" target="_blank">Ryan Lubke</a></li>
+	<li><a href="http://weblogs.java.net/blog/driscoll/" target="_blank">Jim Driscoll</a></li>
+</ul>
+.permaLink http://ocpsoft.org/java/jsf-java/facelets-vs-jsf2-ezcomp/
+.post_status publish
+.postid 56
+.title Facelets vs. JSF2 & EzComp
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug facelets-vs-jsf2-ezcomp
+Several things that make life painful with Facelets are fixed with <a href="https://javaserverfaces.dev.java.net/" target="_blank">JSF2 &amp; EzComp</a>. Take a look at some of the nicer things to come:

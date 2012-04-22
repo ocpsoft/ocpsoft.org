@@ -1,0 +1,44 @@
+.categories ['PrettyFaces']
+.dateCreated 20090930T16:20:55
+.link http://ocpsoft.org/prettyfaces/prettyfaces-hear-about-it-at-jsfsummit/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.mt_text_more 
+<div class="featured">
+<div class="inside">
+<table cellspacing="15">
+<tr>
+<td><img src="http://ocpsoft.com/wp-content/uploads/2009/09/32333_Baxter_III_medium.jpg" alt="Lincoln Baxter, III" title="Lincoln Baxter, III" width="126" height="170" class="alignleft size-full wp-image-373" /></td>
+<td><h2>PrettyFaces - Harness SEO, Improve User Experience, Ease Development</h2><p>J2EE is already the perfect solution for complex business/enterprise systems, and JSF2.x is the perfect chance to reach out to the consumer and small business market. JSF is easier to use than it's ever been before, but small businesses have different needs than larger companies and corporations. PrettyFaces, however, is not just for small businesses; this session will present how it makes JSF accessible for anyone developing client-facing applications, addressing SEO optimization, and creating clean, consistent, intuitive client interactions on the web.</p></td>
+</tr>
+</table
+</div>
+<div class="inside" style="margin-top: 15px;">
+<h3>How PrettyFaces works:</h3>
+The talk introduces you to URL rewriting, storing contextual information, and managing page configuration data with address and query parameters (resource identification, table pagination, data filters.) PrettyFaces' centralized approach uses URLs to retain the state of pages, meaning less information must be stored in session and application scoped beans.
+<h3>Rethinking navigation:</h3>
+Navigation from the eye of the client. JSF supports page flows well, but managing simple transitions from one page to another can be complex.  Demonstrations of PrettyFaces integrated navigation, hyper-linking via Bijection and Components will show how developers gain increased control over all aspects of navigation out of the box, and how this is accomplished without extra configuration.
+<h3>SEO:</h3>
+You will be presented with concepts of how to improve client experience, confidence, and conversions through creating a consistent look and feel - the importance the browser URL plays an in establishing and trust through all client interactions.
+<h3>Security &amp; Usability:</h3>
+The talk will discuss issues of security and usability. Security means restricting access and functionality; the client should be confident in their safety, yet never feel as if they are overly constrained. Examples show how PrettyFaces dynamic view identifiers allow extreme flexibility, increased security in abstracting resource locations, and will demonstrate how to create the appropriate experience in scenarios where users attempt to access restricted or unavailable resources.</div>
+<div class="inside" style="margin-top: 15px;">
+<h3>About Lincoln:</h3>
+<a href="http://twitter.com/lincolnthree">Lincoln Baxter, III</a> is a co-founder of <a href="http://twitter.com/ocpsoft">OcpSoft</a>, the author of <a href="http://ocpsoft.com/prettyfaces">PrettyFaces: SEO, Dynamic Parameters, Bookmarks, and Navigation for JSF / JSF2</a>, and an individual member of the JSF2 Expert Group. When he is not swimming, running, or playing Ultimate Frisbee, Lincoln is focused on developing streamlined applications for the Agile and Scrum development methodologies.</div>
+</div>
+<p style="text-align: center;"><a href="http://www.nofluffjuststuff.com"> <img class="aligncenter" src="http://www.nofluffjuststuff.com/images/nfjs_logo200.gif" alt="No Fluff Just Stuff" /> </a></p>
+.permaLink http://ocpsoft.org/prettyfaces/prettyfaces-hear-about-it-at-jsfsummit/
+.post_status publish
+.postid 203
+.title PrettyFaces: Hear about it at JSFSummit!
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug prettyfaces-hear-about-it-at-jsfsummit
+<h3>OcpSoft co-founder <a href="http://www.jsfsummit.com/conference/speaker/lincoln_baxter_iii" target="_blank">Lincoln Baxter</a> will be speaking about <a href="http://ocpsoft.com/prettyfaces" target="_self" title="SEO, Dynamic Parameters, Bookmarks, and Navigation for JSF/JSF2">PrettyFaces</a> at <a href="http://jsfsummit.com" target="_blank">JSFSummit</a>, in Orlando FL - Dec 1st-4th, 2009.</h3>
+The Presentation covers PrettyFaces basics, Search Engine Optimization, Rethinking Navigation, and Dynamic ViewIds:
+

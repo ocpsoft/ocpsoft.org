@@ -1,0 +1,87 @@
+.categories ['Design']
+.dateCreated 20110628T14:22:35
+.link http://ocpsoft.org/design/why-should-i-care-about-your-website-the-court-marry-approach/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.mt_text_more 
+
+
+<h1>Nobody wants it</h1>
+
+Unless you have a whole lot of clever visuals and a very well type-set theme, you've successfully overloaded your new guests from group number two. Simply because visitors don't know they want, doesn't mean they'll be able to figure out what they want if you show them a picture of everything you can sell them. So let's think about a restaurant for a moment: It's the first time you've ever eaten here, and the table staff hands you a menu. You open the menu and are presented with 9-point font and about 100 different items, all looking strikingly similar, yet different enough that you're having a hard time actually deciding whether or not you want the green curry or the yellow curry. You don't want to pay for both, but waiter, what's the difference again anyway?
+
+Now, if the menu had five items on it, you would probably have quickly decided to go with the green curry, because you weren't in the mood for pasta or soup.
+
+<h3>Wow.</h3>
+
+That was fast, and easy. Maybe you were extra hungry, and even asked for an extra side of noodles. It's not on the menu, but you know they can make it for a reasonable price, and you weren't too distracted by other choices; you had plenty of time to make up your mind, instead of wasting brainpower reading the rest of the menu. And guess what! Our website is no different; we have hungry customers, but they have no idea what they want. We want our website to be a short menu, presenting only the most valuable options, because once we have made the first sale, people will <strong>always</strong> ask for little extras.
+
+Getting back to our second group of uncertain visitors, this group needs to be held by the hand and guided in from a much simpler starting  point. The second, less certain, group is typically much larger than the first, and sometimes more valuable from a growth standpoint (depending on our business model,) since the first already knows what they are looking for. Why not show these new visitors a very simple explanation of the kind of problems we solve, give them a short, concise set of steps to learn more, or even try the product for the first time for free? In short, convince them they need us.
+
+But wait, that's no good either since we've now abandoned our previous, more educated and familiar visitors! How can we show our current clients exactly what they want to see, but also show our new guests a brief pitch on why and how to get started?
+
+
+<h1>The "Court -&gt; Marry" approach</h1>
+
+The answer, as it turns out, is quite simple, and has benefits beyond avoiding this painful problem: Either provide a <strong>very</strong> short pitch, followed by links into various product sites, or change the  landing page based on whether or not your visitors are logged in!
+
+If a visitor is not logged in, or we have not seen them before, we can assume that they want to know why they should log on, why they should create an account, and why they should do business with us. This is the <strong>courting</strong> phase of the relationship: we are just starting to get to know each other, and we need to convince them that we are the right solution for them. Be a good date, shall we?
+
+If a visitor is logged in, we can consider ourselves now to be <strong>married</strong>, and can assume that they are  in group one (our more self-aware visitors.) Because they already have a foot in the  door enough to create an account, we can safely assume they are probably already  using something, or have begun to start learning something, if not many  things that we have to offer. This is the point when we start showing more  individual products and architecture suggestions, and less of a "come  here and get started" message. This is the "<strong>court -&gt; marry</strong>" approach for making first impressions with a website.
+
+Put simply, we show new visitors the sales pitch, while showing old visitors their personal, more detailed content. The problem now becomes how to get visitors to sign up, but we would have had that problem anyway if we want to have their business! As part of creating the relationship with a new customer, have them create an account on your website. Since we are likely driving most of our business and support through the website already (if we aren't, we should consider it,) we utilize the on-line communication tools for this dual purpose: Continue to bring return traffic to our website, providing continuing marketing opportunities, while also courting the new visitors.
+
+
+<h1>A real-life example</h1>
+Consider <a title="github.com" href="http://github.com">GitHub</a>, a website that follows these simple practical web user experience practices that have been proven over and over again. Our company is no different from any  other company  that is trying to promote its business. GitHub is particularly well known for taking these approaches to heart, and pushing the limits of web-browsers in order to facilitate positive user/visitor interactions.
+
+<h1>Phase 1: "Courting," - signed out.</h1>
+<h3 style="margin-top: 5px; margin-bottom: 10px;">"Show me <strong>what</strong> I get. <strong>Why</strong> should I <strong>believe</strong> you?"</h3>
+
+Simply put, this phase is essential because if visitors don't know what they want, showing them everything you have is not useful to them. Show them how to quickly get something close to what they think they need. They will continue to investigate if the initial courting experience is a success. Notice how most of the space on this page is spent in defining the value that you will get if you use github, and also the value that others are already getting by using github. In addition, testimonials don't need to be cheesy, and they also have great impact when visitors are not yet sure if they can trust you. Your old users get a nice pretty login link if they are not logged in, and they will use it because they know it brings them to their personalized content.
+
+<p style="text-align: center;"><img class="alignnone size-medium wp-image-2010" title="signed-out" src="http://ocpsoft.com/wp-content/uploads/2011/06/signed-out.png" alt="" width="664" height="451" /></p>
+
+
+<h1>Phase 2: "Married," - signed in.</h1>
+<h3 style="margin-top: 5px; margin-bottom: 10px;">"Show <strong>me</strong> what I care about. Take care of <strong>my</strong> specific <strong>needs</strong>."</h3>
+
+This can be as complex or as simple as we want. There's no need to present too much custom information on as long as the experience more tailored to what a current client might want to see. Links more appropriate for people who are already in a relationship with us. The point is, we have to show what people want to see, and once we are married, they don't want to see us flirting any more; they want our full attention, what's inside, and we have to offer now that we care.
+
+<p style="text-align: center;"><img class="alignnone size-medium wp-image-2011" title="signed-in" src="http://ocpsoft.com/wp-content/uploads/2011/06/signed-in.png" alt="" width="635" height="451" /></p>
+
+<h1>Conclusion</h1>
+That wasn't so bad was it? A few developer hours, a few more designer hours, and your website can benefit from these practices in almost no time. It also turns out that the same model also functions well when trying to grow communities around initiatives or causes. Thanks for reading, and I hope you enjoyed this light reading!
+
+<h1>References:</h1>
+<a href="http://articles.latimes.com/2009/mar/16/health/he-choices16">http://articles.latimes.com/2009/mar/16/health/he-choices16</a>
+<a href="http://money.msn.com/saving-money-tips/post.aspx?post=fc73429d-a531-4675-8078-00b8c2ff68b3">http://money.msn.com/saving-money-tips/post.aspx?post=fc73429d-a531-4675-8078-00b8c2ff68b3</a>
+<a href="http://www.nytimes.com/2010/02/27/your-money/27shortcuts.html">http://www.nytimes.com/2010/02/27/your-money/27shortcuts.html</a>
+.permaLink http://ocpsoft.org/design/why-should-i-care-about-your-website-the-court-marry-approach/
+.post_status publish
+.postid 2000
+.title Why should I care about your website? The "Court -> Marry" approach.
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug why-should-i-care-about-your-website-the-court-marry-approach
+[toc/]
+
+<img src="http://ocpsoft.com/wp-content/uploads/2011/06/rings1-300x300.png" alt="" title="rings" width="250" height="250" class="alignnone size-medium wp-image-2046" style="float: right; margin-left: 10px; margin-bottom: 10px; margin-right: -25px; margin-top: -25px;"/>
+
+<span class="toc">Who are your visitors?</span> Consider the example where you and I work for a technology company attempting to sell solutions to customers on the web. Our  homepage is currently cluttered, and we're not seeing the conversion  numbers that we would like. One of our colleagues has suggested that in  order to improve adoption of your products, an architecture diagram with  links to various solutions be placed on the splash, or landing page of  the company website. It shows a great many products, and how they are  all related, but there is not a great deal of immediate information on  how to get started with any given topic. This will be the first thing  new visitors see when they come looking for... what was I looking for  again?
+
+There are categorically two kinds of people who visit a website, we will refer to these as group one, and group two:
+<ol>
+	<li>People who <strong>know</strong> what they are looking for.</li>
+	<li>People who have <strong>no idea</strong> what they are looking for.</li>
+</ol>
+
+<h3>Let's consider the impacts of this impression.</h3>
+Which of our two groups of people would benefit from an architecture chart (such as the one your colleague suggested?) That's right, you guessed it; those people are in group number one. They already know what their architecture is going to look like roughly, or know enough to realize they need to do  some architecture research and are looking for a specific solution. They may already even be a customer and are simply coming back to the website to find more information about a product they are already using - looking for a user-guide or perhaps the service-desk phone number.
+
+Congratulations! You have successfully provided little no value to these users, because you force them to look at a page of marginally information before they can get to what they really want, after digging through a series of links or buttons; we really should have just shown them the information they wanted in the first place, without the little overview of... everything. So what about our second group? Surely everyone else who falls in to group number two  must surely benefit from seeing a pretty diagram of all our products laid out in front of them? If we show them everything, they'll surely be interested in at least one of our goodies, right? Wrong...

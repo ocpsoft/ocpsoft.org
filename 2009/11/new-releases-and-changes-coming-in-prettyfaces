@@ -1,0 +1,57 @@
+.categories ['PrettyFaces']
+.dateCreated 20091103T11:09:35
+.link http://ocpsoft.org/prettyfaces/new-releases-and-changes-coming-in-prettyfaces/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.mt_text_more 
+
+<p>You can now become <a href="http://ocpsoft.com/prettyfaces/powered" target="_blank">powered-by-prettyfaces</a>, or have your prettyfaces-powered site listed to build additional SEO page-rank. We want to know who is using our tool!</p>
+
+<div class="featured"><div class="inside">
+<p><span style="color: red">Note:</span> There is one additional change in both 2.0.3 and 1.2.6 that people should be aware of. PrettyFaces will be making a shift in underlying architecture to take advantage of more advanced features in JSF2. Going forward, Pretty &lt;action&gt; methods will no longer be called <strong>BEFORE</strong> RESTORE_VIEW phase, but will be called <strong>AFTER</strong> RESTORE_VIEW phase by default. Dynamic View-ID functionality should be considered deprecated, but don't worry, there will be an equivalent provided.</p>
+</div></div>
+
+<p>While it could potentially impact some applications functional behavior, the change is necessary in order to make progress and enable cool new features now and in the future! So, apologies for any trouble, but we're sure that you'll like what's coming!</p>
+
+<h2><a name="validation"></a>Big new feature in 2.0.3_RC1:</h2>
+<p><a href="http://ocpsoft.com/prettyfaces/docs/#validation">Integrated URL validation </a> - Everyone should be afraid of user input, and parsing values from the URL is no different. But be not afraid! It is now possible to attach JSF validators to URL and Query parameters. This functionality parallels the new &lt;f:pageParam&gt; tag provided in JSF2, but also provides additional hooks into Validation error handling.</p>
+
+<pre lang="xml">
+<url-mapping id="validate">
+	<pattern value="/validate/#{validationBean.pathInput}">
+		<validate param="0" validatorIds="validator1 validator2" 
+			onError="#{validationBean.handle}" />
+	</pattern>
+	<query-param name="param1" validatorIds="validator2" onError="pretty:demo">
+		#{validationBean.queryInput}
+	</query-param>
+	<view-id>/faces/validation/test.jsf</view-id>
+</url-mapping>
+</pre>
+
+<p>As you can see, path parameters may now be validated with the &lt;validate&gt; element, and query parameters have a new "validatorIds" attribute. Any number of validatorIds may be attached to a given parameter. If validation fails, the system will send a 404 - Page Not Found response to the client.</p>
+
+<p>If the default validation error handling is not enough, each validation may be provided with an optional "onError" attribute, which can be a "pretty:mappingId" (which issues a redirect to the page specified), or a #{jsfBean.handlerMethod} to allow complete control of the validation error. If the handler method returns null, or empty, the error is ignored and the lifecycle will continue. If the handler method returns a pretty:mappingId, PrettyFaces navigation will be invoked.</p>
+
+<div class="featured"><div class="inside">
+Validation processing follows a defined lifecycle:<br/>
+[caption id="attachment_332" align="alignleft" width="693" caption="PrettyFaces Validation Flow"]<img src="http://ocpsoft.com/wp-content/uploads/2009/11/prettyfaces-validation.png" alt="PrettyFaces Validation Flow" title="prettyfaces-validation" width="693" height="390" class="size-full wp-image-332" />[/caption]
+</div></div>
+
+<p>May the <a href="http://ocpsoft.com/prettyfaces/powered" target="_blank">power of pretty</a> be with you.</p>
+
+<br/><br/>
+.permaLink http://ocpsoft.org/prettyfaces/new-releases-and-changes-coming-in-prettyfaces/
+.post_status publish
+.postid 351
+.title New releases, and changes coming in PrettyFaces
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug new-releases-and-changes-coming-in-prettyfaces
+<p><a href="http://ocpsoft.com/prettyfaces">PrettyFaces - SEO, Dynamic Parameters, Bookmarks, and Navigation for JSF / JSF2</a> version 2.0.3 offers a BIG new feature for <a href="#validation">URL validation</a>, while 1.2.6 is a maintenance release, primarily adding the &lt;p:link anchor="..."&gt; attribute - it does not include the new validation features.</p>
+<p>Coinciding with the JSF2.0 release, OcpSoft will be updating PF1.2.x for maintenance only, however, community participation is still welcome on all versions of the project.</p>

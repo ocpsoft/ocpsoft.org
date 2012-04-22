@@ -1,0 +1,493 @@
+.categories ['OpenSource']
+.dateCreated 20120304T12:52:46
+.link http://ocpsoft.org/opensource/creating-a-facebook-app-the-webservice-and-the-game/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.mt_text_more 
+
+
+<h1>Create the REST web service</h1> 
+
+REST web services are excellent for servicing clients of all shapes and sizes. If you just need to "Get the Data," then REST is probably a good solution to consider for your applications. While it can be over-used, REST has found a good niche in Mobile, HTML5, Social, and Distributed application development.
+
+[info]For a good reference to learning more about RESTful web services, you can go to the <a title="https://docs.jboss.org/author/display/AS7/Java+API+for+RESTful+Web+Services+%28JAX-RS%29" href="https://docs.jboss.org/author/display/AS7/Java+API+for+RESTful+Web+Services+%28JAX-RS%29">JBoss JAX-RS Documentation page</a>.[/info]
+
+<h2 class="toc">Update @Entity classes</h2>
+
+We're going to create a REST web service, but first things first, we need to update our JPA @Entity objects to allow marshalling to/from XML (or JSON in this case,) as our REST server will need to know which parts of our objects should be transferred or not.
+
+Open <code>User.java</code> in and update so it looks like <a href="https://github.com/CavemanCraig/FBTutorialDemo/blob/85b6696eef9ed3f48dd9d7403bf8e4bef865d57b/src/main/java/com/example/domain/User.java" class="snippit" target="_blank">this file</a>; copy and paste over the existing file. Note that we now have two constructors: the default constructor which is required by JPA, and a custom constructor that will allow us to create new User instances more easily
+
+[snippit filename="User.java" label="View complete file" href="https://github.com/CavemanCraig/FBTutorialDemo/blob/85b6696eef9ed3f48dd9d7403bf8e4bef865d57b/src/main/java/com/example/domain/User.java"]
+...
+public User() {
+}
+
+public User(long facebookID, String name, String imageURL) {
+   this.facebookID = facebookID;
+   this.name = name;
+   this.imageURL = imageURL;
+}
+...
+[/snippit]
+
+<br/>You will also need to update the <code>Player.java</code> file to look like <a href="https://github.com/CavemanCraig/FBTutorialDemo/blob/85b6696eef9ed3f48dd9d7403bf8e4bef865d57b/src/main/java/com/example/domain/Player.java" class="snippit" target="_blank">this code</a>; copy and paste over the existing file.
+
+[snippit filename="Player.java" label="View complete file" href="https://github.com/CavemanCraig/FBTutorialDemo/blob/85b6696eef9ed3f48dd9d7403bf8e4bef865d57b/src/main/java/com/example/domain/Player.java"]
+...
+@OneToOne
+@JoinColumn(name="userId")
+private User playerInfo;
+...
+[/snippit]
+
+Here, note the <code>@OneToOne</code> and <code>@JoinColumn(name="userId")</code>.  This is to tell JPA that the <code>playerInfo</code> attribute has a relation to the <code>User</code> object, and to use the <code>userId</code> attribute in the User object to do joins and lookups between the two tables, instead of using the default JPA identity column.
+
+<h3>Get caught up</h3>
+
+If you had any trouble following along, simply grab the code to this point from github tag: <a href="https://github.com/CavemanCraig/FBTutorialDemo/tags" target="_blank">v0.4.zip — Update Entity Classes</a>.
+
+
+<h2 class="toc">Add functionality to the endpoint</h2>
+
+Now Users and Players have an appropriate relationship, we're ready to finally add all the logic for the implementation of the REST endpoint. Open <code>MyWebService.java</code>, and replace the stubbed code we put in there earlier with the code from this <a href="https://github.com/CavemanCraig/FBTutorialDemo/blob/0f7cb627812dc7e88ef44cd119446fd01fed0548/src/main/java/com/example/domain/MyWebService.java" class="snippit" target="_blank">MyWebService.java file</a>.
+
+There's a lot of code in this class, and that's because <em>ALL</em> of our logic is contained here.  Much of the code should be relatively self explanatory and/or understandable through the comments, so I'm not going to go line by line explaining everything here, but I will go over some of the key concepts that some of you may not be familiar with.
+<br />
+<br />
+[snippit filename="@Path, @GET, and @POST attributes" href="https://github.com/CavemanCraig/FBTutorialDemo/blob/0f7cb627812dc7e88ef44cd119446fd01fed0548/src/main/java/com/example/domain/MyWebService.java" label="View complete file"]
+@Path("/webService")
+@Stateful
+@RequestScoped
+@Consumes({ "application/json" })
+@Produces({ "application/json" })
+public class MyWebService {
+...
+    @GET
+    @Path("/Player/{facebookID}")
+...
+    @POST
+    @Path("/UserRequest/{facebookID}/{name}")
+[/snippit]
+
+The <code>@Path</code> corresponds to the URL Path of the inbound Servlet request, meaning the pattern used in the <code>@Path</code> annotation is relative (appended to) the <code>&lt;url-pattern&gt;</code> defined in our <code>web.xml</code> file in <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/" title="Creating a Facebook App with Java – Part 2 – Application, Hosting, and Basic Functionality">part two</a>.
+
+At the top of the class, notice the annotation <code>@Path("/my_endpoint_path")</code> which is required, and applies to the entire class. In order to invoke an endpoint in our web service, each inbound request must have this prefix in the URL, in addition (appended to) to the prefix that we defined earlier in our <code>web.xml</code>. Without this, the REST server will not know that it should use our web service class to handle the request. 
+
+This means in order to call any of our REST endpoint methods in this class, we need to use a URL similar to the following: http://appName-domain.rhcloud.com/<strong>rest/webService/</strong>Hello.  Alternatively, we could break down our 1 HUGE webService class into different classes, seperating GET/POST calls, divide by Users and Players, etc.  In that case each of the smaller webService classes would need their own <code>@Path</code> annotations defined, which would similarly be appended after <code>/rest/</code> in the URL (from the <code>web.xml &lt;servlet-mapping&gt;</code>).
+
+[info]You could pass URL parameters in the <code>@Path</code> as well via <em>*anything*/<code>{varName}</code></em> with the varName in curly braces. Combined with <code>@GET</code> and <code>@POST</code>, these annotations (when applied to the inbound URL) route the JAX-RS system to the proper REST endpoint method to invoke on each request.[/info]
+
+The <code>@Consumes</code> and <code>@Produces</code> annotations tell the application webpages that our REST endpoint will accept JSON data as input, and will produce JSON data as output respectively.
+
+<br />
+[snippit filename="Using an extended PersistenceContext"]
+@PersistenceContext(type = PersistenceContextType.EXTENDED)
+private EntityManager em;
+[/snippit]
+
+This part might seem a bit strange considering the fact that REST endpoints are supposed to be stateless, and since extended <code>@PersistenceContext</code> can only be used in <code>@Stateful</code> applications. What this does, however, is allow us to pass JPA objects directly to the JAX JSON marshaller (outside the scope of our transaction,) allowing the marshaller to access any required fields or collections that may have been lazily loaded by the JPA sub-system. If we did not use an extended persistence context here, we could potentially get the infamous <a href="https://www.google.com/search?q=lazyinitializationexception" target="_blank">LazyInitializationException</a> from JPA. 
+
+Be aware that <code>@Stateful</code>  does not mean that our REST endpoint is stateful - quite the opposite. All service calls are still isolated from each other; this just means that our web-service class will be recycled and managed by the EJB container to give us proper transactions and <code>EntityManager</code> handling. The <code>EntityManager</code> is basically our JPA database access object, which I'll explain a little in the following lines.
+
+<br />
+[snippit filename="Using TypedQuery to access the database"]
+User u = getUser();
+TypedQuery query = em.createQuery(
+        "from Player p where p.playerInfo.facebookID = ?",
+        Player.class);
+query.setParameter(1, u.facebookID);
+List<?> result = query.getResultList();
+[/snippit]
+
+When it comes to actually accessing and updating data, typed queries are one of the most convenient ways to access our Hibernate Database through the <code>EntityManager</code>.  This is done similarly to a direct SQL statement with JPA's own syntax, like putting a <code>?</code> in the <code>em.createQuery</code> which is treated as a variable that we set with <code>query.setParameter(</code># of the ? in the string <code>,</code> value for that variable<code>);</code>.  Finally, we can get the result of the SQL-like statement through the <code>getResultList()</code> or <code>getSingleResult()</code> methods.
+
+
+<h2>Save point - don't lose your work!</h2>
+
+Now take a moment to upload all this new code to OpenShift, where we can test that our webService is set up correctly by going here (replacing with your app name): <a title="http://YOURAPP-YOURDOMAIN.rhcloud.com/rest/webService/Hello" href="http://FBTutorialDemo-schwarzwaldomain.rhcloud.com/rest/webService/Hello" target="_blank">http://FBTutorialDemo-schwarzwaldomain.rhcloud.com/rest/webService/Hello</a> - the tutorial example is hosted <a title="http://FBTutorialDemo-schwarzwaldomain.rhcloud.com/rest/webService/Hello" href="http://FBTutorialDemo-schwarzwaldomain.rhcloud.com/rest/webService/Hello" target="_blank">here</a>
+
+You receive a JSON object called Hello.JSON. This is coming from our first GET method in the webService, called <code>message</code>, which simply echoes the string contents of the URL after the <code>/webService/</code> as a JSON file. 
+
+<h3>Get caught up</h3>
+If you had any trouble following along, simply grab the code to this point from github tag: <a href="https://github.com/CavemanCraig/FBTutorialDemo/tags" target="_blank">v0.5.zip — Write the WebService</a>.
+
+
+<h1>Tie the WebService to the UI</h1>
+
+Now that we have our FB calls, and our Web Service set up, as well as our User and Player POJOs, lets connect everything. Our first step will be to POST a Player (and his <code>User</code> "PlayerInfo" attribute) to our web service where JPA will insert them into our database tables. So it's time to go back to our <code>index.html</code> file and update it to use the webService we just created.  
+
+Update your <code>index.html</code> file to look like <a href="https://github.com/CavemanCraig/FBTutorialDemo/blob/48765ab1f5a1e234ffef6970b2453850a283db53/src/main/webapp/index.html" class="snippit" target="_blank">this file</a>. 
+
+[warn]Reminder one more  time; when updating code from any of my <code>html</code> files, make sure you replace the <code>appId</code> with the one for <em>your</em> Facebook application.[/warn]
+
+[info]I have set up a variable called <code>isLocal</code> to determine if you are on localhost or Facebook by the URL you're currently using. We need this because you will not be able to call <code>getMyInfo()</code> or <code>getFriendsInfo()</code> when running locally.  In order to be able to test our webservice on localhost, I've provided a large <code>if(isLocal){...}</code> block so we can run on our local server using fake data to test with, or through the login events with actual FB data if we're within the <code>facebook.com</code> domain.  If you are not within the Facebook domain, you will never "login" and thus never hit the call to <code>getMyInfo()</code> or <code>getFriendsInfo()</code> to use the live Facebook data.[/info]
+
+Like with the code for the web service, there's a lot here to go over line by line.  I will again attempt to go over the highlights, and the rest you should be able to figure out easily enough on your own. The file doesn't really change until we get down to here:
+
+[snippit filename="Preparing a web service call"]
+function getFriendsInfo(myID, myName) {
+     FB.api("/me/friends", function(response) {
+          var allFriends = response.data;
+          for (var i = 0; i < allFriends.length; i++)
+          {
+              friendIDList.push(allFriends[i].id);
+              friendNameList.push(allFriends[i].name);
+          }
+          var POSTPlayerURL = "rest/webService/PlayerRequest/" + myID + "/" + myName;
+
+          var JSONInput = array2dToJson(friendIDList, friendNameList, "newArray");
+          doPOSTPlayer(POSTPlayerURL, JSONInput);
+          doGETPlayer(myID);
+     });
+}
+[/snippit]
+
+In this method, we gather the friends, of whoever is logged in, so we can pass them as arrays to our web service, which will use those inputs to clear out and then re-build the Player's friends list; thus, we ensure a real-time accurate list of the Player's friends in our system.  Since an <code>XMLHttpRequest.send()</code> method can only take 1 object to send as input data to our web service method, and we have 2 lists we want to send, we create a method <code>array2dToJson</code> to convert the 2 arrays into a single JSON object, which (if you remember) is what our web service <code>@Consumes</code>.
+
+Once our data is set up, we perform a POST to PlayerRequest, which will add the new player (if they've never been to our app before,) and update their current friendList.  If they are new to our app, we will also add 100 points to their score, as a perk for signing up. Once that's done, we perform a GET to PlayerRequest on that same Player object so we know how many points the player has in our system and can display it on our <code>index.html</code> landing page.
+
+[snippit filename="Generate a proper xmlhttp object"]
+var xmlhttp = null;
+if (window.XMLHttpRequest) {
+     xmlhttp = new XMLHttpRequest();
+     if ( typeof xmlhttp.overrideMimeType != 'undefined') {
+          xmlhttp.overrideMimeType('text/json');
+     }
+} else if (window.ActiveXObject) {
+     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+} else {
+     alert('Your browser does not support xmlhttprequests. Sorry.');
+}
+[/snippit]
+
+The code to get and setup the proper <code>XMLHttpRequest</code> object is pretty standard logic you can find it almost anywhere on the web. Note, however, that IE uses a different type of xmlhttp object than all other browsers, hence extra steps taken to check <code>else if (window.ActiveXObject)</code>.  It's also worth noting that better coding practices would dictate creating a method for setting up this object, rather than copying and pasting the same code over and over in all the GET and POST methods.  This code was done to help others learn the basics of using the Javascript Facebook API, and should <strong>NOT be used as a model for best coding standards!!</strong>
+
+[warn]If you ever find yourself copying an entire line of code (or more), please stop immediately and ask yourself "why am I doing this?"  Then consider refactoring it out to a method or class you can call in every place you need it going forward.[/warn]
+
+[snippit filename="GET and POST - a big difference"]
+//Here is a GET Request:
+xmlhttp.open('GET', GETurl, true);
+xmlhttp.setRequestHeader('Content-Type', 'application/json');
+xmlhttp.send(null);
+  
+//Here is a POST Request:
+xmlhttp.open('POST', POSTPlayerURL, false);
+xmlhttp.setRequestHeader('Content-Type', 'application/json');
+//Option1: POST with sending data
+xmlhttp.send(JSONInput);
+//Option2: POST without sending data
+xmlhttp.send(null);
+[/snippit]
+
+The <code>xmlhttp.open()</code> method takes 3 parameters.  The first is the HTTP method name which is almost always GET or POST (PUT and DELETE may sometimes be used here, but in general should not be needed for our tutorial.) 
+
+The second parameter is the URL which will link back to our web service.  If you remember from our setup, this will be something like http://YOURAPP-YOURDOMAIN.rhcloud.com/rest/webService/<code>{@Path("...")}</code>.  
+
+The last parameter is an asynchronous flag.  When set to true, the page will continue to load and run code while the XML request is executed; however, when set to false, the page will stop and wait for a response before continuing.
+
+Notice how on the GET we run asynchronously, so we will continue to try to perform other page loads or code in general, but when POSTing we want to ensure that the POST is successful before continuing.  If we didn't do this, the last 2 lines in our <code>getFriendsInfo(myID, myName)</code> method could potentially attempt to POST the player and then try to GET the Player object before the player had been created.  That could give us some very unexpected behavior, so while you might want to run everything asynchronously for faster load times, just be careful, as there may be times you specifically want the webpage to ensure all our data has been loaded and saved before continuing.
+
+[snippit filename="Reacting when a REST call has completed"]
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4) {
+       if(xmlhttp.status == 200) {
+          myObj = eval ( '(' + xmlhttp.responseText + ')' );
+          if(isDEBUG) {
+             alert("GET Success");
+             alert("name=" + myObj.name + ", id=" + myObj.id + ", version=" +
+             myObj.version + ", FBID=" + myObj.facebookID +
+             ", imageURL=" + myObj.imageURL);
+          }
+          return myObj;
+      }
+   }
+}
+[/snippit]
+
+<code>readyState=4</code> is the "Done" state for the HTTP Request, and <code>status=200</code> is the "Successful" status.  Typically we wont care about requests in any other state, and if it's "Done" and not in a status of 200, we'll want to throw an error of some kind alerting the user that something went wrong.  Each request may require custom error checks to decide how to gracefully let the user know there was an issue.  The <code>eval()</code> method is used to evaluate JSON objects into standard JavaScript objects so we can use that data in our <code>html</code> pages natively again.
+
+[snippit filename="Fake data vs Live data"]
+if(isLocal)
+{
+    var localFBID = 36985;
+    var POSTPlayerURL = "webService/PlayerRequest/" 
+                       + localFBID + "/Craig Schwarzwald";
+    friendIDList = [5,6,7];
+    friendNameList = ["bob", "joe", "mary"];
+    var array2D = [friendIDList,
+                   friendNameList];
+    var JSONInput = array2dToJson(array2D, '', "newArray");
+    if(isDEBUG) 
+    {
+        alert("JSON Input: " + JSONInput);
+    }
+    doPOSTPlayer(POSTPlayerURL, JSONInput);
+    doGETPlayer(localFBID);
+}
+[/snippit]
+
+As mentioned before, this block is used to pass "fake data" to our web service just so we can test it out if we are running on our local IDE/Server.  Since you don't have access to the Facebook button if you're not running the code on <code>facebook.com</code>, you can't actually log-in; thus, you will never fire the log-in event to make the API calls.  The above "fake data" will set up your Player named "Craig Schwarzwald" (feel free to change it) with friends whose full names are "bob", "joe", and "mary", with FBIDs of 5, 6, and 7 respectively.  Note that normally names and IDs are much longer than that, but this will at least allow us to test our web service logic.
+
+
+<h2>Save point - don't lose your work!</h2>
+
+Test out your code by verifying You see "Current point total is: 100" at the bottom of your index.html page.  You should also use a tool like <a title="Install Firebug" href="http://getfirebug.com/">Firebug</a> when debugging WebService calls.  Firebug is extremely nice, since it can tell you details like the status and result of each individual request, as well as let you put breakpoints in your JavaScript code, stepping through it line by line in a debug mode.
+
+<h3>Get caught up</h3>
+If you had any trouble following along, simply grab the code to this point from GitHub tag: <a href="https://github.com/CavemanCraig/FBTutorialDemo/tags" target="_blank">v0.6.zip — Tie the WebService to the UI</a>.
+
+Once you've run a few tests, and confirmed that your web service is up and running smoothly, posting and getting player info back from our server, it's time to create your game.
+
+
+<h1>Create the game itself</h1>
+
+Before we can get to the <code>html</code> of the actual game, we have some more infrastructure we need to implement on the Java end to give us what we'll need.  We start by creating a new Java class (right along side our User and Player classes) called <code>Link.java</code>.  You can use the code from this <a href="https://github.com/CavemanCraig/FBTutorialDemo/blob/844a77a61b87ed121d262c236232e04e780558c3/src/main/java/com/example/domain/Link.java" class="snippit" target="_blank">Link.java file</a> which sets up a simple object with 2 main attributes; <code>onClickMethod</code>, and <code>href</code>.
+
+Now add a reference to a <code>Link</code> within <code>Player</code>. This will serve as the reference to the active game settings we can use when we do the PlayerRequest GET from our index.html page.
+
+Also note that I'm adding <code>@Column(length=100000)</code> to the <code>friendList</code> attribute; This is because JPA by default treats each column as a <code>VARCHAR(255)</code>.  This means as long as our list of friendIDs never exceeded 255 characters (like our fake data for local testing, ie: "[5,6,7]") we were fine; however, now that we are going to start testing on the Facebook site with live data once we finish this step, there's a good chance your actual list of Facebook friend IDs wont fit in that default 255 characters.  Facebook IDs are usually around 8-10 characters each (plus a comma for the list), so as long as you have less than 1,000 friends, <code>length=100000</code> should be fine (or you can change it even higher as needed).  
+
+Open the <code>Player.java</code> file and update it to look like <a href="https://github.com/CavemanCraig/FBTutorialDemo/blob/844a77a61b87ed121d262c236232e04e780558c3/src/main/java/com/example/domain/Player.java" class="snippit" target="_blank">this Player.java file</a>.
+
+[warn]DISCLAIMER: For the second time, I'd like to explicitly point out that this (and other areas) are NOT always coded in the best design.  If this were a serious application, you should probably create a new class for FacebookIDs, and add a @OneToOne reference to it in Users and a @ManyToMany reference in Player instead of this "hack" of adding more space to an ArrayList column.  Since this tutorial is designed to simply help users learn how to start a Facebook app, certain design and coding shortcuts have been taken throughout the code that should probably be refactored once you start building more functionality in your own app.[/warn]
+
+Lastly, before we get to the <code>html</code> of the game, we need to make the updates to the <code>MyWebService.java</code> file.  Remember we want to keep all our logic in the Java web service to keep our logic and display separate.  Here we will implement how to generate the game link, and then store it on the player.  This way, on the html side, we simply use what we get passed from the web service without having to do any calculations or randomizing!  You can update your <code>MyWebService.java</code> to <a href="https://github.com/CavemanCraig/FBTutorialDemo/blob/844a77a61b87ed121d262c236232e04e780558c3/src/main/java/com/example/domain/MyWebService.java" class="snippit" target="_blank">this MyWebService.java file</a>, or copy the below methods manually to where I specify for each one.
+
+Add the following 2 Methods at the end of the class, in the "Helper Functions" section:
+[snippit filename="Create the game link"] private Link generateRandomizedGameLink(EntityManager em, Player player){
+    Link outputLink = new Link("", "");
+   ArrayList friendIDs = player.getFriendList();
+       
+   //You need at least 5 friends to play and generate a valid link
+   if(friendIDs.size() &lt;= 4) {
+       outputLink.setHref("index.html");
+       outputLink.setOnClickMethod("(function () {
+                 alert('You do not have enough friends to play the game.');
+                 return false;});");
+       em.persist(outputLink);
+       return outputLink;
+   }
+       
+   Random randomGenerator = new Random();
+   ArrayList randomFriendIDs = new ArrayList();
+   ArrayList friendUsers = new ArrayList();
+       
+   //Get 5 friendIDs from the list at random
+   for (int index = 0; index &lt;= 4; ++index) {
+           
+       //Grab a random integer from 0 to [friendIDs.size() - 1]
+       int randomInt = randomGenerator.nextInt(friendIDs.size());
+           
+       //Use randomInt as the index in the friendIDs list as next friend to use
+       //Make sure that friend hasn't been used in the link already though.
+       if(randomFriendIDs.contains(friendIDs.get(randomInt))){
+           index--; //Repick this gameLink index, the friend's been used already
+       } else {
+           randomFriendIDs.add(friendIDs.get(randomInt));
+           friendUsers.add(getUserByFacebookID(em, friendIDs.get(randomInt)));
+       }
+   }
+       
+   //Now that we have the 5 friends to use, we'll display images of the first 3
+   ArrayList friendImageIDs = new ArrayList();
+   friendImageIDs.add(randomFriendIDs.get(0));
+   friendImageIDs.add(randomFriendIDs.get(1));
+   friendImageIDs.add(randomFriendIDs.get(2));
+       
+   //And re-randomize all 5 names to display at the top to make this a game
+   Collections.shuffle(friendUsers);
+   ArrayList friendUserNames = new ArrayList();
+   friendUserNames.add(friendUsers.get(0).getName());
+   friendUserNames.add(friendUsers.get(1).getName());
+   friendUserNames.add(friendUsers.get(2).getName());
+   friendUserNames.add(friendUsers.get(3).getName());
+   friendUserNames.add(friendUsers.get(4).getName());
+       
+   outputLink.setHref("playGame.html?playerID=" 
+           + player.getPlayerInfo().getFacebookID() +
+           "&playerName=" + player.getPlayerInfo().getName() +
+           "&playerPoints=" + player.getPoints() +
+           "&friendIDList=" + printList(friendImageIDs) +
+           "&friendNameList=" + printList(friendUserNames));
+   em.persist(outputLink);
+   em.flush();
+   return outputLink;
+}
+   
+private String printList(ArrayList list){
+   String output = "";
+   for (Object object : list) {
+       output += object + ",";
+   }
+   //Remove the last comma from the output
+   return output.substring(0, output.length() - 1); 
+}
+[/snippit]
+
+The <code>generateRandomizedGameLink()</code> method will generate a <code>Link</code> object with either an <code>onClickMethod</code> alerting the user they don't have enough friends to play (if they have less than 5 friends), or an <code>href</code> containing queryString parameters of playerID, playerName, playerPoints, friendIDList (containing the IDs of the 3 random people to display images for), and friendNameList (containing the 5 random friend names [3 of them correlating to the friendIDList] to display). The <code>printList()</code> method simply turns the <code>List</code> into a comma separated <code>String</code>.
+
+Now we need to call this new method to generate the game link whenever someone tries to GET a Player.  Adjust the <code>getPlayer()</code> method in <code>MyWebService.java</code> to the following:
+
+[snippit filename="Create a game when accessing a player"]
+public Player getPlayer(@PathParam("facebookID") long facebookID) {
+   System.out.println("GET on specific Player for Facebook User ID: ["
+           + facebookID + "]");
+
+   Player foundPlayer = getPlayerByFacebookID(em, facebookID);
+      
+   //Whenever we get a player, we also want to re-generate their game link
+   if (null!=foundPlayer){
+       Link gameLink = generateRandomizedGameLink(em, foundPlayer);
+       foundPlayer.setGameLink(gameLink);
+       em.persist(foundPlayer);
+       System.out.println("Updating Game Link for Player to: " + gameLink);
+   }
+       
+   System.out.println("Returning Player: " + foundPlayer);
+   return foundPlayer;
+}
+[/snippit]
+
+With all our infrastructure set up, and our knowledge of Facebook API calls using GET and POST, we are now ready to create the game file itself.
+
+Add a new file next to index.html called <code>playGame.html</code>.  Copy and paste the code from <a href="https://github.com/CavemanCraig/FBTutorialDemo/blob/844a77a61b87ed121d262c236232e04e780558c3/src/main/webapp/playGame.html" class="snippit" target="_blank"> this playGame.html file</a>. Highlighting just on a couple of things from that <code>html</code> code, we will focus on the important bits.  
+
+[warn]One last time, remember to update your own Facebook <code>appId</code> in this and all example code.[/warn]
+
+[snippit filename="Sending a player's answers to the web-service"]
+function doPostAnswers( playerID, ID1, ID2, ID3, name1, name2, name3) 
+{
+   var POSTAnswersURL = "webService/GameAnswers/" + playerID + "/" +
+       ID1 + "/" + ID2 + "/" + ID3 
+       + "/" + name1 + "/" + name2 + "/" + name3;
+   ...
+   xmlhttp.open('POST', POSTAnswersURL, false);
+   xmlhttp.setRequestHeader('Content-Type', 'application/json');
+   xmlhttp.send();
+}
+[/snippit]
+
+This method will pass the PlayerID, along with the 3 correct friend IDs, and the 3 name guesses back to our web service, where we will create a method to handle this POST and calculate winning/losing points.
+
+[snippit filename="Parse URL query-parameters"]
+function getURLParam( varname ) {
+   varname = varname.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+   var regexS = "[\\?&]"+varname+"=([^&#]*)";
+   var regex = new RegExp( regexS );
+   var results = regex.exec( window.location.href );
+   if( results == null ) 
+       return ""; 
+   else 
+       return results[1].split("%20").join(" ");
+}
+[/snippit]
+This is a standard method for getting the value of a queryString parameter in JavaScript, which you can find on many other forums.  If you're a little confused about the regular expressions (strange text patterns) being used, you can learn more about regular expressions <a href="http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/" target="_blank">here</a>.
+
+[info]Regular Expressions are used all over in development, but in my opinion not quite often enough. In my opinion, knowledge and proficiency in regular expressions can be one of the things that makes a good developer into a great one.[/info]
+
+Now add the logic to our WebService to calculate if the answers that are being posted by the user are correct or not; this will also award/deduct points from the Player's total accordingly.  If you didn't copy/paste the <code>MyWebService.java</code> file from GitHub at the beginning of this step, add the following code for the POSTForAnswers (it's probably most appropriate just above the /***** HELPER FUNCTIONS ******/ comment):
+
+[snippit filename="Process the submitted answers"]
+// Performs validation on answers submitted, and adjust points.
+@POST
+@Path("/GameAnswers/{playerID}/{id1}/{id2}/{id3}/{name1}/{name2}/{name3}")
+@Consumes("application/json")
+public String postForAnswers(
+       @PathParam("playerID") long playerID,
+       @PathParam("id1") long id1,
+       @PathParam("id2") long id2,
+       @PathParam("id3") long id3,
+       @PathParam("name1") String name1,
+       @PathParam("name2") String name2,
+       @PathParam("name3") String name3){
+       
+    Player player = getPlayerByFacebookID(em, playerID);
+    User user1 = getUserByFacebookID(em, id1);
+    User user2 = getUserByFacebookID(em, id2);
+    User user3 = getUserByFacebookID(em, id3);
+    if( null==player || null==user1 || 
+        null==user2 || null==user3) 
+    {
+        // This should never happen, but lets exit 
+        // gracefully if it somehow does.
+        return "Sorry, there was an error trying to "       
+          + "validate your answers.  Please try again.";
+    }
+       
+    boolean correctName1 = user1.getName().equals(name1);
+    boolean correctName2 = user2.getName().equals(name2);
+    boolean correctName3 = user3.getName().equals(name3);
+       
+    String returnString = "";
+    long pointChange = 0;
+    if(correctName1){
+        returnString += "First entry was correct \n";
+        pointChange += 10;
+    }
+    else{
+        returnString += "First entry was INCORRECT \n";
+        pointChange -= 10;
+    }
+    if(correctName2){
+        returnString += "Second entry was correct \n";
+        pointChange += 10;
+    }
+    else{
+        returnString += "Second entry was INCORRECT \n";
+        pointChange -= 10;
+    }
+    if(correctName3){
+        returnString += "Thrid entry was correct \n";
+        pointChange += 10;
+    }
+    else{
+        returnString += "Third entry was INCORRECT \n";
+        pointChange -= 10;
+    }
+       
+    returnString += "You will have a total of [" 
+                 + Math.abs(pointChange) + "] points ";
+    if(pointChange > 0){
+        returnString += "added!";
+    }
+    else{
+        returnString += "deducted.";
+    }
+       
+    player.setPoints(player.getPoints() + pointChange);
+    em.persist(player);
+       
+    return returnString;
+}// postForAnswers
+[/snippit]
+
+The code will get 3 <code>Users</code> by their ID that we pass in through the <code>@Path params</code> and then compare the guess names (also from the <code>@Path params</code>) with the names we have for those <code>Users</code> in our system.
+
+Last, but certainly not least, we need to update our <code>index.html</code> one last time, adding a link to the game so that users can access it from our home-page.  You can check how I did this by looking at the differences in the <code>index.html</code> versions between the two <a href="https://github.com/CavemanCraig/FBTutorialDemo/commit/844a77a61b87ed121d262c236232e04e780558c3#diff-3" target="_blank">github versions</a>, or you can simply overlay your entire <code>index.html</code> file with <a href="https://github.com/CavemanCraig/FBTutorialDemo/blob/844a77a61b87ed121d262c236232e04e780558c3/src/main/webapp/index.html" class="snippit" target="_blank">this one</a>.
+
+Now upload your changes, and you are done! Play away, and show off this game to your friends so that everyone can see your cool new Facebook game!  
+
+<h1>Conclusion</h1>
+
+Congratulations! You have just completed the Facebook App Demo Tutorial!  You've completed setting up your very own Facebook application from start to finish including persistence, a web service, and set it all up with FREE cloud hosting and open-source tools! 
+
+<h1>What's next?</h1>
+The <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-4-integration-testing-with-arquillian/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">next article</a> in this series is all about <a href="http://arquillian.org">Arquillian</a> (The Integration Test Framework) and MySQL DB setup.  No application should ever be considered "Complete" without testing, so while you might think your done, we need to make sure our app doesn't have any holes or issues.  In actuality, the testing should really be done first and as you go, <strong>NOT</strong> as an afterthought, but again, the purpose of this blog is to allow users to learn how to create a FB app, not perform correct testing... perhaps an idea for a new blog series some other time ;)  For now, lets proceed to our <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-4-integration-testing-with-arquillian/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">final article</a>.
+.permaLink http://ocpsoft.org/opensource/creating-a-facebook-app-the-webservice-and-the-game/
+.post_status publish
+.postid 3321
+.title Creating a Facebook App with Java - Part 3 - The Web Service and the Game
+.userid 602
+.wp_author_display_name Craig Schwarzwald
+.wp_author_id 602
+.wp_password 
+.wp_post_format standard
+.wp_slug creating-a-facebook-app-the-webservice-and-the-game
+[toc][/toc]
+
+This is the third article in the series of Creating a Facebook App with Java. In the <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool-installation/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">first</a> and <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">second</a> articles we set up a number of tools, and used the Facebook JavaScript API to retrieve our personal account information, as well as some information about our friends.
+
+In this article we will set up the Web Service (in Java) that will house all of our game logic. Remember we want to maintain separation of concerns, so if you ever find yourself putting if statements, or other logic in your html pages, you may be doing something that will be expensive or time-consuming to change later. After our Web Service is set up, we'll start to tie our webpages to it, and then build out our actual game!

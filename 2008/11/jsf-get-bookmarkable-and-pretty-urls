@@ -1,0 +1,78 @@
+.categories ['JSF', 'OpenSource', 'Uncategorized']
+.dateCreated 20081112T23:28:01
+.link http://ocpsoft.org/uncategorized/jsf-get-bookmarkable-and-pretty-urls/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords JSF, Pretty URL, PrettyFaces
+.mt_text_more 
+<h3>The difference between a web-application / web-site</h3>
+<h4>When I think of a web-site, I think of a group of pages having:</h4>
+<ul>
+	<li>Multiple points of entry</li>
+	<li>Navigation via &lt;a href&gt; or &lt;form&gt; HTML elements.</li>
+	<li>Mostly stateless; the application may care who you are, but usually does not care where you came from, or where you have been.</li>
+</ul>
+<h4>When I think of a web-application, I think of a group of pages having:</h4>
+<ul>
+	<li>One or only a few points of entry (login page, etc. No direct links.)</li>
+	<li>Navigation via page-flows.</li>
+	<li>Mostly stateful; the application cares who you are and where you have been.</li>
+</ul>
+So when I say that JSF was designed for applications, I mean that without extension, normal, mostly-stateless web-behavior can be more difficult to implement than stateful web-behavior. The problem here, however, is that if a web-site is "stateless," JSF forces you to behave in a stateful way. Here's why.
+<h3>&lt;h:form&gt; - the root of the problem</h3>
+Forms in JSF are rendered by the &lt;h:form&gt; component, and each form must post back to the viewId from which it was rendered (aptly named a postback.) Once the form has been submitted back to the requested URL, JSF will determine which page the user should see next, and either render that view, or redirect the client's browser to a new URL.
+<ul>
+	<li>An example view Id: <em>.../mysite/faces/articles/viewArchives.jsf</em></li>
+</ul>
+There are a few existing frameworks to get our bookmarkable URLs, but all suffer from a troubling set of problems:
+<ol>
+	<li><a href="https://restfaces.dev.java.net/">Restfaces</a> - solely intended to manage Pretty/Bookmarkable JSF navigation</li>
+	<li><a href="https://javaserverfaces.dev.java.net/sandbox/components/prettyUrl.html" target="_blank">PrettyUrlPhaseListener</a> - a small utility provided in the sandbox for Mojarra Scales</li>
+	<li><a href="http://tuckey.org/urlrewrite/">UrlRewriteFilter</a>Cannot process unordered query-parameters reliably: '?foo=1&bar=2' vs. '?bar=2&foo=1'</li>
+</ol>
+And most serious solutions have heavyweight configurations with a steep learning-curve.
+<h4>Problems:</h4>
+<ul>
+	<li>When you submit a form, the JSF view ID is shown in the URL bar instead of the Pretty URL. This occurs for validation and also standard navigation without server-side redirects.</li>
+	<li>When form validation occurs, the view ID is again shown in the URL bar. This causes contextual information contained in the URL to be lost. The information must instead be rendered as hidden form input fields, and re-submitted with the form. The developer must now manually process these values and reload them in <em>every</em> action method. The other option is to make your managed beans "session" scoped, which causes other problems.</li>
+	<li>Mulitple requests to preserve the URL mean wasted bandwidth, longer client wait times, and higher CPU utilization.</li>
+</ul>
+<h2>A proposed solution</h2>
+It's simple, really... Modify JSF to submit the form to the pretty URL<em> (/mapped/page)</em> instead of the view Id <em>(/faces/page.jsf)</em>
+<ul>
+	<li>An example PrettyFaces URL: <em>.../mysite/archives/2008/11/11/</em></li>
+</ul>
+(Read through the presentation to see why PrettyFaces, a new OpenSource library by OcpSoft, may be a good alternative)
+<p style="text-align: center;">----</p>
+
+<h3>How to make JSF bookmarkable like a web-<em>site</em>, not behave like an <em>application</em>.</h3>
+<div id="__ss_739738" style="width: 425px; text-align: left;"><a style="font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;" title="Bookmarkable JSF: Pretty4JSF" href="http://www.slideshare.net/lincolnthree/bookmarkable-jsf-pretty4jsf-presentation?type=powerpoint">Bookmarkable JSF: Pretty4JSF</a><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="425" height="355" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="src" value="http://static.slideshare.net/swf/ssplayer2.swf?doc=prettybookmarkablejsf-1226356164820988-8&amp;rel=0&amp;stripped_title=bookmarkable-jsf-pretty4jsf-presentation" /><embed type="application/x-shockwave-flash" width="425" height="355" src="http://static.slideshare.net/swf/ssplayer2.swf?doc=prettybookmarkablejsf-1226356164820988-8&amp;rel=0&amp;stripped_title=bookmarkable-jsf-pretty4jsf-presentation" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View SlideShare <a style="text-decoration:underline;" title="View Bookmarkable JSF: Pretty4JSF on SlideShare" href="http://www.slideshare.net/lincolnthree/bookmarkable-jsf-pretty4jsf-presentation?type=powerpoint">presentation</a> or <a style="text-decoration:underline;" href="http://www.slideshare.net/upload?type=powerpoint">Upload</a> your own. (tags: <a style="text-decoration:underline;" href="http://slideshare.net/tag/jsf">jsf</a> <a style="text-decoration:underline;" href="http://slideshare.net/tag/url">url</a>)</div>
+</div>
+<p style="text-align: center;">----</p>
+
+<h2>Conclusion:</h2>
+When the form is submitted to the pretty URL instead of the JSF view ID, you gain performance, save resources, and make life for the developer easier; parameter values are not lost, and do not need to be coded into the form or session scoped beans.
+
+Try <a href="http://ocpsoft.com/prettyfaces/">PrettyFaces</a>, an opensource solution by OcpSoft. (Check the project homepage, <a href="http://ocpsoft.com/prettyfaces/">here</a>).
+
+.permaLink http://ocpsoft.org/uncategorized/jsf-get-bookmarkable-and-pretty-urls/
+.post_status publish
+.postid 24
+.title Make JSF intuitive, with bookmarkable and pretty URLs
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug jsf-get-bookmarkable-and-pretty-urls
+<h2>What makes Pretty URLs in JSF so hard, and so slow?</h2>
+Speed up development, reduce bandwidth, enhance user experience. This article gives a brief overview of JSF navigation, some of the problems, and potentially how to solve them by enabling bookmarkable, pretty URLs. Put simply... in my view, out of the box, JSF is a web framework designed for web-<em>applications</em>, not designed for web-<em>sites. <a href="http://ocpsoft.com/prettyfaces/">PrettyFaces</a> addresses most of these issues.
+</em>
+<h3>Target audience for this article:</h3>
+<ol>
+	<li>The reader is familiar with JSF navigation.</li>
+	<li>The reader is attempting to create a JSF app with bookmarkable "pretty" URLs. E.g.: .../mysite/archives/2008/11/11/</li>
+	<li>The reader is familiar with HTTP request/response at a basic level.</li>
+</ol>

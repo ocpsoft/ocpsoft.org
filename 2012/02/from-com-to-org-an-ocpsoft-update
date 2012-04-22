@@ -1,0 +1,28 @@
+.categories ['Announcement']
+.dateCreated 20120223T23:59:08
+.link http://ocpsoft.org/announcement/from-com-to-org-an-ocpsoft-update/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.mt_text_more 
+.permaLink http://ocpsoft.org/announcement/from-com-to-org-an-ocpsoft-update/
+.post_status publish
+.postid 3331
+.title From .com to .org - an OCPsoft Update
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug from-com-to-org-an-ocpsoft-update
+Hello open-source fanatics! You may have noticed our recent move from ocpsoft.com to <a href="http://ocpsoft.org/">ocpsoft.org</a>, and we would like to take a brief moment to explain this change. We have always been an open-source website, a group of technologists dedicated to the open-source programming model, but our domain name did not reflect this initiative. OCPsoft is an organization for shared open ideas, and in order to promote that reality, we have decided to take the risk at damaging our search rank in order to stay true to our ideals.
+
+If you would like to help us through this transition, you can do so by blogging about or linking to our new domain: <a href="http://ocpsoft.org/">ocpsoft.org</a>, using the following HTML.
+
+<pre lang="html">
+<a href="http://ocpsoft.org/" title="Open-source | Best Practices | Java EE | URL Rewrite Filter | Agile Project Management Tools | JSF | Java">ocpsoft.org</a>
+</pre>
+
+Thank you for supporting open-source software!
+~Lincoln, and The OCPsoft Team

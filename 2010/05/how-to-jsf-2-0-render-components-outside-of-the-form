@@ -1,0 +1,68 @@
+.categories ['JSF2', 'Seam']
+.dateCreated 20100510T00:48:00
+.link http://ocpsoft.org/java/jsf2-java/how-to-jsf-2-0-render-components-outside-of-the-form/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.mt_text_more 
+<p>
+Your component ID would look something like, <code>:namingContainer:myComponent</code>. Where the first ":" tells JSF that you want to start looking for the component at the UIViewRoot instance, or the very top level of the component tree.
+
+<h4>Here's a more full fledged example:</h4><p>
+
+
+<pre lang="xml">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<h:messages id="messages" globalOnly="true" />
+
+<h4>Select a username and password</h4>
+<h:form id="registerForm" prependId="false">
+	<h:inputText id="username" value="#{registerBean.username}" required="true" />
+
+	<h:inputText id="email" value="#{registerBean.email}" required="true" />
+
+	<h:inputSecret id="password" value="#{registerBean.password}" required="true"/>
+	<s:validateForm id="validatePasswords" fields="password1=password password2=passwordConfirm" validatorId="passwordConfirm" />
+
+	<h:inputSecret id="passwordConfirm"
+		value="#{registerBean.passwordConfirm}">
+		<f:ajax execute="validatePasswords password @this" render=":messages" />
+	</h:inputSecret>
+
+	<h:commandButton type="submit" id="submitRegister" action="#{registerBean.doRegister}" value="Create my account" />
+</h:form>
+</html></pre>
+
+
+
+<p>
+Notice how the AJAX tag references the ":messages" component outside of the form - it's as easy as that!
+<p>
+<pre lang="xml">
+<f:ajax execute="validatePasswords password @this" render=":messages" />
+</pre>
+
+<p>
+
+As an extra treat, this form is also using the <a href="http://ocpsoft.com/java/jsf-2-0-cross-field-form-validation-simpl-in-reality/">multiple-component validation</a> feature from <a target="_blank" href="http://seamframework.org/Seam3/FacesModule">Seam</a>, otherwise known as Cross-field validation, or XVal.
+
+That's all for today -- enjoy, and as always. Happy coding!
+.permaLink http://ocpsoft.org/java/jsf2-java/how-to-jsf-2-0-render-components-outside-of-the-form/
+.post_status publish
+.postid 1320
+.title How to JSF 2.0: <f:ajax> - render components outside of the form
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug how-to-jsf-2-0-render-components-outside-of-the-form
+Here's a simple tip for all of you AJAX lovers using JSF 2.0. It <b>is</b> possible to render components that live outside of the form where your AJAX tag lives; actually, it's possible to render any component by using it's fully-qualified component ID.
+
+Just prefix the target ID with the naming-container separator character, usually ":", and provide the full name of the component as it is rendered on the HTML page.
+
+<p>
+<pre lang="xml">
+<f:ajax execute="validatePasswords password @this" render=":messages" />
+</pre>

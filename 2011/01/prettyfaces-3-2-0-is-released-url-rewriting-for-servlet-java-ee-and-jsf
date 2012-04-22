@@ -1,0 +1,70 @@
+.categories ['PrettyFaces']
+.dateCreated 20110117T12:47:04
+.link http://ocpsoft.org/prettyfaces/prettyfaces-3-2-0-is-released-url-rewriting-for-servlet-java-ee-and-jsf/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.mt_text_more 
+
+<center>
+<div class="featured">» <a href="http://ocpsoft.com/prettyfaces/">Get PrettyFaces!</a></div>
+</center>
+
+<h2>Major Changes</h2>
+<ul>
+	<li>PrettyFaces is now licensed under the Apache Software License v2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)</li>
+	<li>Added 'parentId' for Hierarchical Mappings in pretty-config.xml (#72)</li>
+	<li>Can now be run in a pure servlet environment (without JSF and related JARs)</li>
+</ul>
+
+<h2>Features &amp; Enhancements:</h2>
+<ul>	
+	<li>Added 'onPostback' configuration parameter for query parameters (#24)</li>
+	<li>Added code-completion support for Eclipse Helios</li>
+	<li>Added 'pretty:location' client behavior</li>
+	<li>Added 'onPostback' configuration parameter for path parameters (#24)</li>
+	<li>New method PrettyContext.sendError() to send custom HTTP status codes (#66)</li>
+	<li>Added SPI hooks for ConfigurationProvider and ConfigurationPostProcessor</li>
+	<li>New @URLMappings annotation to declare multiple mappings on a single class</li>
+</ul>
+
+<h2>Regression impact:</h2>
+<ul>	
+	<li>Changed some method signatures in PrettyContext</li>
+	<li>PrettyFilter no longer wraps application exceptions in ServletException</li>
+	<li>PrettyException no longer extends javax.faces.FacesException</li>
+	<li>Began deprecation of &lt;view-id&gt;/view.jsp&lt;/view-id&gt; in favor of &lt;view-id value="/view.jsp" /&gt;</li>
+	<li>com.ocpsoft.pretty.faces.el.BeanNameResolver SPI has moved to com.ocpsoft.pretty.faces.spi.ELBeanNameResolver</li>
+	<li>URL-mapping order is now properly respected in pretty-config.xml (and other config sources.)</li>
+	<li>Began deprecation of PrettyURLBuilder methods without the new 'encodeUrl' argument.</li>
+</ul>
+
+<h2>Bugfixes:</h2>
+<ul>
+	<li>Fixed compatibility with Java 1.5</li>
+	<li>Fixed handling of non-ASCII characters in URLs</li>
+	<li>Fixed EL method invocation in JSF 1.1 branch.</li>
+	<li>Removed HttpSession accesses that could potentially create an unwanted user session. (#62)</li>
+	<li>Prevent downloading of web.xml DTDs during configuration</li>
+	<li>Fixed FacesConfigBeanNameResolver regarding space characters in URLs</li>
+	<li>PrettyFacesWrappedResponse no longer depends on FacesContext (#78)</li>
+	<li>PrettyFaces no longer injects values into EL if the response has been marked complete (#79)</li>
+	<li>Added documentation specifying the need to "double-escape" backslashes in custom regexes (#83)</li>
+	<li>Fixed annotation scanning if application is run with jetty-maven-plugin</li>
+</ul>
+
+<center>
+<div class="featured">» <a href="http://ocpsoft.com/prettyfaces/">Get PrettyFaces!</a></div>
+</center>
+.permaLink http://ocpsoft.org/prettyfaces/prettyfaces-3-2-0-is-released-url-rewriting-for-servlet-java-ee-and-jsf/
+.post_status publish
+.postid 1794
+.title PrettyFaces 3.2.0 is Released - URL Rewriting for Servlet, Java EE, and JSF
+.userid 1
+.wp_author_display_name Team
+.wp_author_id 1
+.wp_password 
+.wp_post_format standard
+.wp_slug prettyfaces-3-2-0-is-released-url-rewriting-for-servlet-java-ee-and-jsf
+<p>PrettyFaces is an OpenSource Filter-based Servlets extension with enhanced support for <em>JavaServer Faces</em> - JSF 1.1, 1.2 and 2.0 - enabling creation of bookmark-able, pretty URLs. PrettyFaces solves the "RESTful URL" problem elegantly, including features such as: page-load actions, seamless integration with faces navigation, dynamic view-id assignment, managed parameter parsing, and configuration-free compatibility with other web frameworks.</p>

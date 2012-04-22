@@ -1,0 +1,45 @@
+.categories ['Releases']
+.dateCreated 20090414T21:58:46
+.link http://ocpsoft.org/releases/prettyfaces-123_ga-released/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords Java, JSF, OpenSource, PrettyFaces
+.mt_text_more 
+.permaLink http://ocpsoft.org/releases/prettyfaces-123_ga-released/
+.post_status publish
+.postid 53
+.title PrettyFaces 1.2.3_GA Released
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug prettyfaces-123_ga-released
+<h3><a href="http://ocpsoft.com/prettyfaces">PrettyFaces</a>:</h3>
+
+<strong>Version 1.2.3_GA</strong>: <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-1.2.3_GA.jar">binary</a>, <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-1.2.3_GA-sources.jar">source</a>, <a href="http://ocpsoft.com/prettyfaces/v123">documentation</a> (stable)
+Minor Release: 20090415
+<ol>
+	<li>Added optional &lt;action onPostback="false"&gt; boolean flag to prevent action methods from being called on form postback. Defaults to true;
+	<li>Added optional &lt;query-param decode="false"&gt; to prevent java.net.URLDecode.decode() from being called on a specific managed query-parameter. Defaults to true;
+	<li>Added unit tests for several critical classes.
+	<li>Minor to moderate refactoring of PrettyFilter/PrettyContext
+</ol>
+
+
+<div style="align:center; background:#555; padding:10px">
+	<form action="http://groups.google.com/group/prettyfaces-users/boxsubscribe">
+		<table border="0" cellspacing="0" cellpadding="0" width="100%">
+		<tbody>
+			<tr>
+				<td colspan='2' align="center"><strong>Subscribe to <a href="http://groups.google.com/group/prettyfaces-users">prettyfaces-users</a></strong></td>
+			</tr>
+			<tr>
+				<td align="right" width="30%"><label for="subeml2" style="color:#eee">Email:&nbsp;</label></td><td  align="left"><input id="subeml2" name="email" size="18" type="text" /> <input name="sub" type="submit" value="Subscribe" /></td>
+			</tr>
+		</tbody>
+		</table>
+	</form>
+</div>
+<br/>

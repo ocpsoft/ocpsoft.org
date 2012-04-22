@@ -1,0 +1,57 @@
+.categories ['OpenSource']
+.dateCreated 20120306T19:00:40
+.link http://ocpsoft.org/opensource/prettyfaces-3-3-3-released/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.mt_text_more 
+
+<h2>Features & Enhancements:</h2>
+<ul>
+	<li>Exceptions are no longer wrapped by PrettyFilter</li>
+
+	<li>Added configuration parameter to enable a workaround for ORCHESTRA-60 (#125)</li>
+
+	<li>Major performance improvements - thanks to Piotr Jastrzebski and Frank Caputo</li>
+
+	<li>Enabled <distributable/> mode in web-fragment.xml, for clustering support</li>
+</ul>
+
+
+<h2>Bugfixes:</h2>
+<ul>
+	<li>Fixed potential NullPointerException in annotation scanning code</li>
+
+	<li>Fixed PrettyContext.JSESSIONID_REGEX to support clustered session IDs</li>
+
+	<li>Empty segments are now handled correctly - thanks to Piotr Jastrzebski for the patch (#123)</li>
+
+	<li>Fixed encoding for square brackets and less/greater than characters</li>
+
+	<li>Don't apply rewrite rule to requests forwarded by URL-mappings anymore</li>
+
+	<li>Fixed encoding/decoding of vertical bar (|) character</li>
+
+	<li>Fixed bug that caused mappings to also match viewIds of other mappings (#128)</li>
+
+	<li>Fixed detection of jsessionid for GAE application (#15)</li>
+
+</ul>
+
+
+.permaLink http://ocpsoft.org/opensource/prettyfaces-3-3-3-released/
+.post_status publish
+.postid 3984
+.title PrettyFaces 3.3.3 Released
+.userid 1
+.wp_author_display_name Team
+.wp_author_id 1
+.wp_password 
+.wp_post_format standard
+.wp_slug prettyfaces-3-3-3-released
+PrettyFaces is an OpenSource Filter-based Servlets extension with enhanced support for JavaServer Faces – JSF 1.1, 1.2 and 2.0 – enabling creation of bookmark-able, pretty URLs. PrettyFaces solves the “RESTful URL” problem elegantly, including features such as: page-load actions, seamless integration with faces navigation, dynamic view-id assignment, managed parameter parsing, and configuration-free compatibility with other web frameworks.
+
+[info] Get [[PrettyFaces | version 3.3.3]] of PrettyFaces now! See how simple URL-rewriting can be, with the power of open-source tools at your fingertips.[/info]
+
+Thanks goes out to all of the developers who contributed to this release; a lot of work has been done, particularly in the realms of stability, performance, and inter-operability with other frameworks.

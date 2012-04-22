@@ -1,0 +1,95 @@
+.categories ['JSF2', 'Seam']
+.dateCreated 20101109T01:01:35
+.link http://ocpsoft.org/java/jsf2-java/how-to-use-cdi-with-jsf-2-phaselisteners-explained/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.mt_text_more 
+
+More technically speaking, however, this is because PhaseListeners in JSF 2 are not CDI-aware components. They are not created by the CDI BeanManager, rather by literal calls to <code>PhaseListener listener = new PhaseListenerImpl();</code>, and unfortunately, this is not scheduled to be fixed in JSF 2.1 (coming out in December if on time.) See <a href="https://javaserverfaces-spec-public.dev.java.net/issues/show_bug.cgi?id=763">related issue</a>.
+
+You have a few options, the first of which is pretty easy, but not perhaps the most elegant. I think you'll find the second option much more appealing, but the first approach requires fewer dependencies.
+
+<h2>1. Seam Solder (formerly Weld Extensions):</h2>
+The key to using CDI in places where you would normally not have access to it, is getting a reference to the <code>BeanManager</code>, which, for reasons best explained in a <a href="http://ocpsoft.com/java/spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb/">separate article</a>, is not easy unless you use some "Solder." However, this approach is recommended only for developers who need absolute control of how their beans are created. As background, the JSR-299 EG made the BeanManager intentionally formal because they saw how easily bean creation could be abused. They definitely channeled developers towards the more declarative approach. 
+
+<pre lang="java">
+public class PhaseListenerImpl implements PhaseListener
+{
+    public BeanManager getBeanManager()
+    {
+        return BeanManagerAccessor.getManager();
+    }
+
+    public void afterPhase(PhaseEvent event)
+    {
+        getBeanManager(); // and so on, you'll need to create an instance of a bean.
+    }
+
+    public void beforePhase(PhaseEvent event) {}
+
+    public PhaseId getPhaseId() {
+        return PhaseId.ANY_PHASE;
+    }
+}
+</pre>
+
+
+Click <a href="http://docs.jboss.org/weld/extensions/reference/latest/en-US/html/gettingstarted.html">here</a> to find more information about <a href="http://docs.jboss.org/weld/extensions/reference/latest/en-US/html/gettingstarted.html">Seam Solder</a>. Solution two, however, I find is much simpler. 
+
+<h2>2. Use Seam 3 <a href="http://www.seamframework.org/Seam3/FacesModule">Faces module</a>, or MyFaces <a href="https://cwiki.apache.org/confluence/display/EXTCDI/JSF+Usage#JSFUsage-LifecycleAnnotations">CODI</a></h2>
+
+Developed by the JBoss Seam team, the <a href="http://docs.jboss.org/seam/3/faces/reference/snapshot/en-US/html_single/">Faces module</a> cleans up many of the integration points between CDI and JSF 2, not the least of which is providing direct access to <code>PhaseEvent</code> objects via CDI <code>@Observes</code> methods:
+
+With Seam 3 JSF integration, any method can observe phase events, and react to them without even the need to declare a PhaseListener class at all! Take a look at the example below; simplicity at work.
+
+<pre lang="java">
+public class MyPhaseObserver
+{
+    @Inject
+    private Logger log;
+
+    public void before(@Observes @Before PhaseEvent event)
+    {
+        log.info("Observing before the [" + event.getPhaseId() + "] event.");
+        // This code is executed before every phase.
+    }
+
+    public void after(@Observes @After @RestoreView PhaseEvent event, NavigationHandler navHandler)
+    {
+        log.info("Observing after the RESTORE_VIEW event.");
+        // This code is executed only after the Restore View phase - notice
+        // that the NavigationHandler is also available for @Inject via Seam faces.
+        // All @Observes method parameters other than the event itself are
+        // injected by CDI.
+    }
+}
+</pre>
+
+Just include the Seam 3 Faces dependency in your POM file, and check out the <a href="http://docs.jboss.org/seam/3/faces/reference/snapshot/en-US/html_single/">documentation</a> for even more cool integrations with JSF:
+
+<pre lang="xml">        <dependency>
+            <groupId>org.jboss.seam.faces</groupId>
+            <artifactId>seam-faces</artifactId>
+            <version>${seam-faces-version}</version>
+        </dependency></pre>
+
+Notice how simple this; by observing a standard set of events, we now have full access to the JSF lifecycle events in a CDI environment. We don't even need to configure JSF to register a Phase Listener. So of all the options, I highly recommend this approach for simplicity. <a href="http://www.seamframework.org/Seam3">Seam 3</a> is designed to run anywhere that CDI runs, which means <a href="http://jboss.org/jbossas">JBoss Application Server</a>, GlassFish, and even Servlet Containers such as Tomcat or Jetty.
+
+<h2>Wrap up & Conclusion</h2>
+
+These are just some of the examples of simplicity at work in Java EE 6 that I think will only continue to grown in the next few months and years. Things are looking up, and if you found this article interesting, you might want to check out some of our other articles on: <a href="http://ocpsoft.com/java/spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb/">Migrating from Spring to Java EE 6</a>, or <a href="http://ocpsoft.com/prettyfaces/" title="URL rewriting framework for Servlet, JSF 2, and Java EE">PrettyFaces</a>, a next-generation URL-rewriting framework for Servlet and Java EE. I should also note, that while these are two options for how to solve this problem, they are not the only options. You can also manage a reference to the BeanManager yourself if you really want to, but since the work's already been done for you, why bother? ;)
+.permaLink http://ocpsoft.org/java/jsf2-java/how-to-use-cdi-with-jsf-2-phaselisteners-explained/
+.post_status publish
+.postid 1698
+.title How to: Use CDI with JSF 2 PhaseListeners - Explained
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug how-to-use-cdi-with-jsf-2-phaselisteners-explained
+A recent thread came up on the JSF 2 forums: "<a href="http://www.java.net/forum/topic/glassfish/glassfish/cdi-and-jsf2-phaselisteners-0">Why can't I use @Inject in a PhaseListener? This CDI stuff is so confusing.</a>"
+
+FIrst, before I start explaining: this <strong>is</strong> possible, but there's a little background you should probably know. The answer to the question "why can't I use CDI in JSF PhaseListeners?" is: because JSF 2 was completed just a few short months before JSR-299 and the rest of the Java EE 6 platform specifications were finalized. In my opinion - because of the current <a href="http://ocpsoft.com/opensource/open-letter-to-the-jcp-executive-committee-calling-for-jcp-reform/">state-of-affairs in the JCP -</a> it was just not a safe bet to promise integration with other technologies that might not have been finalized in time. Fortunately, however, JSF goes to extra lengths in providing extension points - solving this with an extension was not too difficult.

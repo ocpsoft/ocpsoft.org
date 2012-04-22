@@ -1,0 +1,46 @@
+.categories ['JSF2']
+.dateCreated 20091214T10:27:53
+.link http://ocpsoft.org/java/jsf2-java/a-classroom-tale-of-jsf2/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.mt_text_more 
+<center>
+<div class="featured" style="text-align: justify; max-width: 600px;">
+<div class="inside">
+<i><p>I just got done with two days of training in Quebec City (you can follow my exploits, if you're interested, at <a target="_blank"  href="http://twitter.com/davidgeary">@davidgeary</a>). The first day was advanced JSF 1.2, and I watched students' eyes glaze over as I covered the complexities of custom components, renderers, converters, and validators. Java code, XML configuration, encoding, decoding, etc. -- you know the drill. One of the developers had used Rails, and he looked downright depressed. But I knew day 2 would be different. Oh yeah.</p>
+
+<p>Because day 2 was all JSF 2, and it was an entirely different story. I started with an overview of the new features in JSF 2, and then dove deeply into Facelets, templates, composite components, and Ajax. Students were blown away. Blown. Away.</p>
+
+<p>What was a fairly sullen group on day one turned into a rambunctious group of excited developers on day two. Could they use JSF with WebLogic 10? they wanted to know. What about RichFaces, when will that support JSF 2?, they asked. Until we upgrade to JSF 2, can we do this templating stuff with the open source version of Facelets?. The Rails guy was all smiles. This is pretty cool, eh? I said (eh, if you don't know, is Canadian for hunh). Oh yeah, they said. Oh yeah.</p>
+
+<p>As I was covering JSF 2, I could feel the excitement building in the room. Lots of smiles, lots of laughter, and excited chatting and whispers in the incredibly beautiful language that is Quebec French, between students. It was really phenomenal.</p>
+
+<p>Early in the morning, the blizzard started. I'm teaching class, and, out the window, snow is coming down like hell, in all different directions because of the fierce winds that accompanied a major snowstorm that dumped nearly a foot of snow on the ground during class. I started out with 11 students, and by the time I finished class at the end of the day, I had ... 10 students! I'm telling you, those guys were mesmerized by JSF 2. Even though the weather gave them good reason to leave class early, only one guy, who had kids that he had to pick up because les ecoles etait fermer, left class early.</p>
+
+<p>I got done with the material, and told them that they were free to go, that they probably should go because of the storm, but that I'd be happy to answer questions, and even with the intense blizzard raging outside, they all stuck around for another 1/2 hour, brainstorming with me about how they could upgrade from 1.2 to 2.0, given their current situation.</p>
+
+<p>For me, this training, unlike any other I've ever done, was almost a religious experience. For us, it's validation that all the hard work we've put into JSF 2 is paying off.</p>
+
+<p>A bientot,<br/>David</p></i></div></div>
+</center>
+
+<p>Now, I - for one - find this exciting! This is another great sign that we've done things right with JSF2. The best part is, we are only going to keep improving. Want to get involved? Tweet your suggestion using #jsf2next - or put issues directly into the JSF2 Issue Tracker (all you need to do is register for, or use your existing java.net account.)</p>
+
+<p>What does the future hold? That's up to you to decide... For more information on JSF 2 features, a getting started guide, how to give feedback, get involved, and why JSF 2 is a leading web-framework, visit <a href="www.javaserverfaces.org">www.javaserverfaces.org</a>.</p>
+<p>You can read this email on David's blog, here: <a target="_blank" href="http://davidgearyblog.wordpress.com/">http://davidgearyblog.wordpress.com/</a></p>
+<br/>
+.permaLink http://ocpsoft.org/java/jsf2-java/a-classroom-tale-of-jsf2/
+.post_status publish
+.postid 628
+.title A winter tale of Java Server Faces
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug a-classroom-tale-of-jsf2
+As a member of the JSF 2 <a  target="_blank" href="http://www.javaserverfaces.org/">expert group</a>, I've stated that my primary goal is to make JSF, and J2EE, more accessible to the community at large, to reach out and make sure that people's voices are heard, and that what we are doing makes sense. I've only been part of the group for a little under a year, but I've met some pretty cool people, and you'd be surprised at how interested they all are to hear your story.
+
+Here's an email from David Geary (a long-time EG member) to the Expert Group, that I think paints a very nice picture of people's reaction to JSF and JSF2, author of Core Java Server Faces (<a  target="_blank" href="http://horstmann.com/corejsf/">Core JSF</a>):

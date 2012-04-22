@@ -1,0 +1,84 @@
+.categories ['JSF', 'OpenSource']
+.dateCreated 20080824T22:31:50
+.link http://ocpsoft.org/opensource/ajax4jsf-a4jform-databroken/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords Ajax4Jsf, Java, JSF, OpenSource
+.mt_text_more 
+The <em>data</em> variable is always undefined, even if the managed bean property is set to a valid value. This is exhibited by the alert box as the value is displayed, "(undefined)".
+<h4>Example:</h4>
+<pre lang="xml">
+
+        
+
+        
+
+</pre>
+<p style="text-align: center;">----</p>
+
+<h3>The workaround:</h3>
+Taking a look at the source code revealed that the &lt;a4j:form&gt; was not in fact including this behavior at all in the <em>broadcast()</em> method, which is where the <em>data</em> element processing occurs in the &lt;a4j:commandButton&gt;.
+<h4>UIAjaxForm.broadcast()</h4>
+<pre lang="java">    /* (non-Javadoc)
+     * @see javax.faces.component.UIComponentBase#broadcast(javax.faces.event.FacesEvent)
+     */
+     public void broadcast(FacesEvent event)
+               throws AbortProcessingException {
+          // perform default
+          super .broadcast(event);
+          if (event instanceof  AjaxEvent) {
+               // complete re-Render fields. AjaxEvent deliver before render response.
+               setupReRender();
+          }
+     }</pre>
+<p style="text-align: center;">----</p>
+In fact, however, if we modify the &lt;a4j:form&gt; <em>broadcast()</em> method to behave like its &lt;a4j:commandButton&gt; relative, we can still achieve this functionality!
+<h4>Updated: UIAjaxForm.broadcast()</h4>
+<pre lang="java">    public void broadcast(final FacesEvent event) throws AbortProcessingException
+    {
+        super.broadcast(event);
+        if (event instanceof AjaxEvent)
+        {
+            this.setupReRender();
+            Object data = this.getData();
+            AjaxContext ajaxContext = AjaxContext.getCurrentInstance(context);
+            if (null != data)
+            {
+                ajaxContext.setResponseData(data);
+            }
+            String focus = this.getFocus();
+            if (null != focus)
+            {
+                UIComponent focusComponent = RendererUtils.getInstance().findComponentFor(this, focus);
+                if (null != focusComponent)
+                {
+                    focus = focusComponent.getClientId(context);
+                }
+                ajaxContext.getResponseDataMap().put(AjaxActionComponent.FOCUS_DATA_ID, focus);
+            }
+            ajaxContext.setOncomplete(this.getOncomplete());
+        }
+    }</pre>
+<p style="text-align: center;">----</p>
+We're set!
+
+I don't particularly like to repeat this code, so I may get around to refactoring everything and submitting it back to the Ajax4JSF project. For now, though, this blog will have to do.
+
+I believe other functionality that was also broken included both the <em>focus="elementId"</em> and the <em>oncomplete="javascriptCode"</em>.
+
+As always, please feel free to improve and comment on this. Enjoy!
+.permaLink http://ocpsoft.org/opensource/ajax4jsf-a4jform-databroken/
+.post_status publish
+.postid 9
+.title Ajax4Jsf &#60;a4j:form data=&#8221;broken!&#8221;&#62;
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug ajax4jsf-a4jform-databroken
+<h2>A4J:Form is missing several specified ajax functions</h2>
+(<em>View this issue on the JBoss tracker <a href="https://jira.jboss.org/jira/browse/AJSF-141" target="_blank">here</a>. Keep reading, there is a fix...<a href="https://jira.jboss.org/jira/secure/attachment/12321714/UIAjaxForm.java"> download fix</a></em>)
+<h3>The issue:</h3>
+When using the a4j:form component, the <em>data="#{managedBean.property}"</em> the properties defined in the <em>data</em> element list are supposed to be available after the a4j event in the <em>data</em> JavaScript variable; however, with &lt;a4j:form&gt; the attribute is not correctly causing the JavaScript <em>data</em> variable to be populated.

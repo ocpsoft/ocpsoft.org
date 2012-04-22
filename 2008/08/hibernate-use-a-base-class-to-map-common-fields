@@ -1,0 +1,248 @@
+.categories ['Hibernate', 'Java']
+.dateCreated 20080817T16:38:47
+.link http://ocpsoft.org/java/hibernate-use-a-base-class-to-map-common-fields/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.mt_text_more 
+<h3>Basic Concepts:</h3>
+You're using Hibernate, or at least getting your feet wet at this point, so let's assume that you've started to notice a pattern. You need  in all of your objects:
+<ul>
+	<li>an <em>id </em>column</li>
+	<li>a <em>version</em> column</li>
+	<li>perhaps a <em>timestamp</em> column</li>
+</ul>
+Lets say that you are also aware of the <a href="http://www.onjava.com/pub/a/onjava/2006/09/13/dont-let-hibernate-steal-your-identity.html" target="_blank"><em>hashcode() </em>and <em>equals() </em>issues</a> that come with using objects in collections, so you want to define some basic functionality to handle that situation as well.
+
+It would be pretty nice if we could do all this in one place, keeping updates quick and painless. Well, using the EJB-3/Hibernate <em><a href="http://www.hibernate.org/hib_docs/ejb3-api/javax/persistence/MappedSuperclass.html" target="_blank">@MappedSuperclass</a> </em>annotation, we can. Mapped superclass tells Hibernate that you want all mappings defined in the base class to apply and be included in all classes which extend from it.
+<h3>Instructions:</h3>
+Let's take a look at an example base-class that will meet our above needs.
+<ul>
+	<li>Copy the following code examples into your HIbernate Annotations enabled project</li>
+</ul>
+<h4>PersistentObject.java</h4>
+<pre lang="java">import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Version;
+
+@MappedSuperclass
+public abstract class PersistentObject implements Serializable
+{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", updatable = false, nullable = false)
+    private Long id = null;
+
+    @Version
+    @Column(name = "version")
+    private int version = 0;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "last_update")
+    private Date lastUpdate;
+
+    protected void copy(final PersistentObject source)
+    {
+        this.id = source.id;
+        this.version = source.version;
+        this.lastUpdate = source.lastUpdate;
+    }
+
+    @Override
+    public boolean equals(final Object obj)
+    {
+        if (this == obj)
+        {
+            return true;
+        }
+        if (obj == null)
+        {
+            return false;
+        }
+        if (!(obj instanceof PersistentObject))
+        {
+            return false;
+        }
+        final PersistentObject other = (PersistentObject) obj;
+        if (this.id != null && other.id != null)
+        {
+            if (this.id != other.id)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    protected static boolean getBooleanValue(final Boolean value)
+    {
+        return Boolean.valueOf(String.valueOf(value));
+    }
+
+    public Long getId()
+    {
+        return this.id;
+    }
+
+    @SuppressWarnings("unused")
+    private void setId(final Long id)
+    {
+        this.id = id;
+    }
+
+    public int getVersion()
+    {
+        return this.version;
+    }
+
+    @SuppressWarnings("unused")
+    private void setVersion(final int version)
+    {
+        this.version = version;
+    }
+
+    public Date getLastUpdate()
+    {
+        return this.lastUpdate;
+    }
+
+    public void setLastUpdate(final Date lastUpdate)
+    {
+        this.lastUpdate = lastUpdate;
+    }
+}</pre>
+<h4 style="text-align: center;">—-</h4>
+<h3>Extending the Base Class:</h3>
+Using the MockObject class from Chapter 1, now extend PersistentObject. We can remove the fields that are now mapped in PersistentObject and add new fields to fit our business needs. Notice that MockObject does not define fields or methods for <em>id</em>, <em>version</em>, <em>equals()</em>, <em>hashcode()</em>, or <em>timestamp</em>; this behavior is now contained within our mapped superclass.
+
+From now on, all you need to do to incorporate this behavior into new classes is to extend PersistentObject.
+<h4>MockObject.java</h4>
+<pre lang="java">import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name = "mock_objects")
+public class MockObject extends PersistentObject
+{
+    @Transient
+    private static final long serialVersionUID = -3621010469526215357L;
+
+    @Column
+    private String textField;
+
+    @Column
+    private long numberField;
+
+    public String getTextField()
+    {
+        return textField;
+    }
+
+    public void setTextField(String textField)
+    {
+        this.textField = textField;
+    }
+
+    public long getNumberField()
+    {
+        return numberField;
+    }
+
+    public void setNumberField(long numberField)
+    {
+        this.numberField = numberField;
+    }
+}</pre>
+<h4 style="text-align: center;">—-</h4>
+To prove it, we'll re-run our demo application from the quick-start guide. Notice that the results are the same. I've added a little logic to show that our new columns work as well.
+<h4>HibernateDemo.java</h4>
+Our driver class does the following things:
+<ul>
+	<li>Get a handle to Hibernate Session</li>
+	<li>Create and persist two new MockObjects</li>
+	<li>Assign values into the textField of each object</li>
+	<li>Print out the generated IDs and set fields</li>
+</ul>
+<em>For referenced HibernateUtil,java, please see <a href="http://ocpsoft.com/java/getting-started-quickly-with-hibernate-annotations/" target="_self">Chapter 1</a>.
+</em>
+<pre lang="java">import org.hibernate.Transaction;
+import org.hibernate.classic.Session;
+
+public class HibernateDemo
+{
+    public static void main(String[] args)
+    {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction transaction = session.beginTransaction();
+
+        MockObject object0 = new MockObject();
+        object0.setTextField("I am object 0");
+
+        MockObject object1 = new MockObject();
+        object1.setTextField("I am object 1");
+
+        session.save(object0);
+        session.save(object1);
+
+        transaction.commit();
+
+        System.out.println("Object 0");
+        System.out.println(object0.getTextField());
+        System.out.println("Generated ID is: " + object0.getId());
+        System.out.println("Generated Version is: " + object0.getVersion());
+
+        System.out.println("Object 1");
+        System.out.println(object1.getTextField());
+        System.out.println("Generated ID is: " + object1.getId());
+        System.out.println("Generated Version is: " + object1.getVersion());
+    }
+}</pre>
+Which results in the following output:
+<pre style="padding-left: 30px;">Object 0
+I am object 0
+Generated ID is: 1
+Generated Version is: 0
+
+Object 1
+I am object 1
+Generated ID is: 2
+Generated Version is: 0</pre>
+<h4 style="text-align: center;">—-</h4>
+<h4>Considering the Forces:</h4>
+It may be worth mentioning that using a base class for all of your objects can be a blessing and a curse. If you begin to reference objects using the more generic PersistentObject type, it is possible that you could find yourself constrained to the behavior of this one class. When this happens, consider defining PersistentObject as an <em>Interface</em> and then implement that interface with any number of <em>@MappedSuperclass</em> objects.
+
+There are benefits to referencing objects by their generic type, as well. One example, which we'll take a look at this when we dive into the <a href="http://www.hibernate.org/328.html" target="_blank"><em>Dao</em></a> pattern, makes it very easy to perform a wide array of operations on your Hibernate objects.
+
+Congratulations. You should now have a mapped superclass to contain your common functionality.
+<h3>References:</h3>
+<ol>
+	<li><a href="http://www.hibernate.org/hib_docs/v3/reference/en/html/tutorial.html" target="_blank">Hibernate's Standard Tutorial</a></li>
+	<li><a href="http://www.hibernate.org/hib_docs/annotations/reference/en/html_single/" target="_blank">Hibernate Annotations Reference</a></li>
+</ol>
+This article is part of a series: <a href="http://ocpsoft.com/java/guide-to-hibernate-annotations/" target="_self">Guide to Hibernate Annotations</a>
+.permaLink http://ocpsoft.org/java/hibernate-use-a-base-class-to-map-common-fields/
+.post_status publish
+.postid 8
+.title Hibernate: Use a Base Class to Map Common Fields
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug hibernate-use-a-base-class-to-map-common-fields
+<h2>Tutorial Chapter 2 - Easier Development and Maintenance</h2>
+Tired of wiring in an <em>id</em>, <em>version</em>, and <em>timestamp</em> field into all of your Hibernate objects? There's an easy way to solve this pain once and for all of your classes. Avoid code-repetition: today's article focuses on using Hibernate Annotations to map common fields into one mapped superclass.
+
+If you have not done so already, and need to get a bare bones hibernate application up and running, <a href="http://ocpsoft.com/java/getting-started-quickly-with-hibernate-annotations/" target="_self">this guide</a> should get you up and running in a few minutes.
+

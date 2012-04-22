@@ -1,0 +1,68 @@
+.categories ['JSF2', 'OpenSource', 'Technology']
+.dateCreated 20100120T01:56:21
+.link http://ocpsoft.org/opensource/jsf-1-2-components-book-review/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords JSF, OpenSource
+.mt_text_more 
+
+<strong>In summary:</strong> I would recommend buying this reference if you are a consumer, designer, UI-developer who is working with existing component libraries, Facelets or JSF 2.0, and not so much focused on creating custom Java-components of your own. I don't, for every-day web-site components, see why you would need much more than what is featured between the covers of this book. Ian Hlavats does a fantastic job of making bringing JSF to the everyday development setting.
+<br/>
+
+<table><tr>
+<td><a target="_blank" href="http://www.packtpub.com/jsf-1-2-components-develop-advanced-ajax-enabled-applications/book?utm_source=ocpsoft.com&utm_medium=bookrev&utm_content=blog&utm_campaign=mdb_002041"><img src="http://ecx.images-amazon.com/images/I/51zwgyza8HL._SL500_AA240_.jpg"></img></a></td>
+
+<td><h4><a target="_blank" href="http://www.packtpub.com/jsf-1-2-components-develop-advanced-ajax-enabled-applications/book?utm_source=ocpsoft.com&utm_medium=bookrev&utm_content=blog&utm_campaign=mdb_002041">JSF 1.2 Components</a></h4>
+By Ian Hlavats
+<br/>
+Download Chapter 2: <a target="_blank" href="http://www.packtpub.com/files/7627-developing-jsf-components-sample-chapter-2-facelets-components.pdf">Facelets Components</a> as a PDF
+</td>
+
+</tr></table>
+<br/>
+
+<h3>In detail: </h3>
+
+Initially hesitant to buy a reference on components, I have to admit that I was surprised to learn so much by reading through this book. As a member of the JavaServer Faces 2.0 expert group, and a full-time software engineer, components are not my strong-suit. If you're at all like me, then you're probably asking yourself the same question I did:
+
+"What can I learn in this book that I can't find on Google? JavaServer Faces has a huge online community, and there's a lot of information available already."
+
+It's a valid question, but you should keep reading because this book offers something important that I rarely find in blog entries or wikis: "features you wouldn't think to look for; features that you wish you'd thought of, or don't know how to make yourself." I wish I had found this book when I started using JSF, because I'd probably have been more comfortable, and much more productive with our component side of the life-cycle, so to speak; I discovered features of the framework, and pre-made UI-tools that I wish I'd known about years ago.
+
+<h5>Things you'll learn about:</h5>
+Modal windows, menus, wizards and workflows, AJAX anything with Ajax4JSF, i18n and localization, gCal-like schedules with Apache Tomahawk, multi-field validation, calendars, charts and graphs, file-uploads, user permissions/security, skinning, styling, and all major component libraries are covered in this book (save PrimeFaces, which gets a mere mention.)
+
+If you think you're looking at "Just another book on JSF component writing," that's not entirely the case. This book provides real solutions, real examples on how to get started writing JSF applications using existing component libraries and plug-ins. There are two types of chapters in this book: tutorials and references. The tutorials will get you up and running with a quick example, while the reference sections go in depth on usage of individual components within each library.
+
+You'll also (as a bonus, in my opinion) get some appetite-whetting information on the JBoss Seam framework, which is a user-friendly and business-oriented extension to the Java EE technologies. I didn't get a very good picture of all of the concepts until I actually looked at the code samples (downloadable here, or just follow the link in the preface,) but that's hardly a strong criticism; though, it may have helped if the code samples were more explicitly, frequently referenced.
+
+<h5>In the end "The title doesn't lie":</h5>
+
+<ul>
+	<li>I haven't seen a more comprehensive book on component libraries and component writing made available to date.</li>
+	<li>JSF2 component writing has been simplified, but if you want to supplement your app with everyday things like in-place editing, accordions, and more, you're going to want good examples; this book provides examples in abundance (even examples of JSF2 EzComp, which is a dream to use. UI like it was meant to be)</li>
+	<li>Even if components and UI design are not your strong-point, that is exactly why you should read this book; it makes component-based design easy to understand, and easy to implement.</li>
+</ul>
+
+The author covers many of the advancements in component writing and simplified configuration that are provided by JSF 2.0, but I would have liked to hear some information on the component behaviors model, and mention of integration with frameworks like CDI (JSR-299) and Spring; however, this is not entirely relevant to component writing, and plenty of information exists on sites like <a target="_blank" href="http://www.javaserverfaces.org">www.javaserverfaces.org</a> or Google.
+
+My one complaint is that for a book titled "JSF 1.2 Components," it did not explain, or teach me how to create custom Java-based components, which are essential for complex behavior and interaction at some level. JSF 2.0 has done a good job of making Java-based components unnecessary, but this book is titled JSF 1.2 components, thus, I would have liked to see how to write a Java-based component in JSF 1.2.
+
+<div class="featured" style="text-align: center;">
+<a target="_blank" href="http://www.packtpub.com/jsf-1-2-components-develop-advanced-ajax-enabled-applications/book?utm_source=ocpsoft.com&utm_medium=bookrev&utm_content=blog&utm_campaign=mdb_002041">JSF 1.2 Components</a> on Packt Publishing
+Download Chapter 2: <a target="_blank" href="http://www.packtpub.com/files/7627-developing-jsf-components-sample-chapter-2-facelets-components.pdf">Facelets Components</a> as a PDF
+</div>
+
+<h3>End notes:</h3> Make sure you check out <a target="_blank" href="http://www.javaserverfaces.org">www.javaserverfaces.org</a>. It's a great starting point and reference for JSF that you will undoubtably bookmark if doing a lot of work, and doing the work with this book. Also check out <a href="http://ocpsoft.com/prettyfaces/">http://ocpsoft.com/prettyfaces/</a> for more information on Pretty URLs in JSF, and building client-facing JSF web applications.
+.permaLink http://ocpsoft.org/opensource/jsf-1-2-components-book-review/
+.post_status publish
+.postid 983
+.title JSF 1.2 Components (Book Review)
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug jsf-1-2-components-book-review
+As a vocal blogger, I feel responsible for promoting and sharing the good work of others, whether that be technology, creative work, or in this case: a book. I will take no exception to that philosophy when it comes to the <a target="_blank" href="http://www.javaserverfaces.org">JavaServer Faces</a> framework. For a quick read, try the summary. If you are intrigued, read on! I hope you find this review valuable.

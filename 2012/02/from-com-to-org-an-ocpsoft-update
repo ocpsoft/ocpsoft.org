@@ -1,22 +1,9 @@
-.categories ['Announcement']
-.dateCreated 20120223T23:59:08
-.link http://ocpsoft.org/announcement/from-com-to-org-an-ocpsoft-update/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
-.permaLink http://ocpsoft.org/announcement/from-com-to-org-an-ocpsoft-update/
-.post_status publish
-.postid 3331
-.title From .com to .org - an OCPsoft Update
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug from-com-to-org-an-ocpsoft-update
-Hello open-source fanatics! You may have noticed our recent move from ocpsoft.com to <a href="http://ocpsoft.org/">ocpsoft.org</a>, and we would like to take a brief moment to explain this change. We have always been an open-source website, a group of technologists dedicated to the open-source programming model, but our domain name did not reflect this initiative. OCPsoft is an organization for shared open ideas, and in order to promote that reality, we have decided to take the risk at damaging our search rank in order to stay true to our ideals.
+
+<wp_sync_categories>['Announcement']</wp_sync_categories>
+
+<wp_sync_dateCreated>20120223T23:59:08</wp_sync_dateCreated>
+
+<wp_sync_description>Hello open-source fanatics! You may have noticed our recent move from ocpsoft.com to <a href="http://ocpsoft.org/">ocpsoft.org</a>, and we would like to take a brief moment to explain this change. We have always been an open-source website, a group of technologists dedicated to the open-source programming model, but our domain name did not reflect this initiative. OCPsoft is an organization for shared open ideas, and in order to promote that reality, we have decided to take the risk at damaging our search rank in order to stay true to our ideals.
 
 If you would like to help us through this transition, you can do so by blogging about or linking to our new domain: <a href="http://ocpsoft.org/">ocpsoft.org</a>, using the following HTML.
 
@@ -25,4 +12,36 @@ If you would like to help us through this transition, you can do so by blogging 
 </pre>
 
 Thank you for supporting open-source software!
-~Lincoln, and The OCPsoft Team
+~Lincoln, and The OCPsoft Team</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/announcement/from-com-to-org-an-ocpsoft-update/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/announcement/from-com-to-org-an-ocpsoft-update/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>3331</wp_sync_postid>
+
+<wp_sync_title>From .com to .org - an OCPsoft Update</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>from-com-to-org-an-ocpsoft-update</wp_sync_wp_slug>

@@ -1,11 +1,33 @@
-.categories ['PrettyFaces']
-.dateCreated 20100726T19:12:25
-.link http://ocpsoft.org/prettyfaces/logo-contest-prettyfaces-needs-a-face-for-the-future/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['PrettyFaces']</wp_sync_categories>
+
+<wp_sync_dateCreated>20100726T19:12:25</wp_sync_dateCreated>
+
+<wp_sync_description><div class="featured">
+<table>
+<tbody>
+<tr>
+<td>
+<div class="inside"><a href="http://ocpsoft.com/wp-content/uploads/2010/07/question-mark.png"><img class="alignnone size-full wp-image-1463" title="question-mark" src="http://ocpsoft.com/wp-content/uploads/2010/07/question-mark.png" alt="" width="128" height="128" /></a></div></td>
+<td style="padding-left: 15px;"><strong>Welcome graphic artists!</strong> The [[PrettyFaces]] project needs a logo, and to facilitate this, we're hosting a logo contest!
+
+<strong>Prizes:</strong> We know that your time is valuable, but because this is a completely open-source and unfunded project, we can't offer a cash reward; <em>however</em>, will receive a <a href="http://www.cafepress.com/ocpsoft" target="_blank">T-shirt</a> with your logo on it, a blog entry announcing you as the winner, a prominent spot (with link) on our [[Contributors / Get Involved|contributors]] page, a spot (with link) on the home-page as a <a href="http://ocpsoft.com/prettyfaces/#FAQ">FAQ</a> entry, and the satisfaction of knowing that you helped an open-source project!</td>
+</tr>
+</tbody>
+</table>
+</div></wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/prettyfaces/logo-contest-prettyfaces-needs-a-face-for-the-future/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <h2>Rules and encouragement:</h2>
 <ul>
 	<li>High-resolution, transparent-background, SVG or PNG (preferred, at least 1500x1500 px, for T-shirts)</li>
@@ -25,27 +47,24 @@ Send your entries by via email to: <a href="mailto:admin@ocpsoft.com">admin@ocps
 Entries will be screened for any inappropriate graphics or potential trademark problems (we don't want to get sued!) Voting will begin in three weeks (<strong>Monday, August 16th</strong>) unless more time is required (within reason.)
 
 <h2>Fine print</h2>
-By submitting an entry: if you win the contest, you grant us permission to use, redistribute, or modify your image in any way! We have to be able to use it, or what's the point of giving you a T-Shirt? :)
-.permaLink http://ocpsoft.org/prettyfaces/logo-contest-prettyfaces-needs-a-face-for-the-future/
-.post_status publish
-.postid 1462
-.title Logo-Contest: PrettyFaces needs a "face" for the future
-.userid 1
-.wp_author_display_name Team
-.wp_author_id 1
-.wp_password 
-.wp_post_format standard
-.wp_slug logo-contest-prettyfaces-needs-a-face-for-the-future
-<div class="featured">
-<table>
-<tbody>
-<tr>
-<td>
-<div class="inside"><a href="http://ocpsoft.com/wp-content/uploads/2010/07/question-mark.png"><img class="alignnone size-full wp-image-1463" title="question-mark" src="http://ocpsoft.com/wp-content/uploads/2010/07/question-mark.png" alt="" width="128" height="128" /></a></div></td>
-<td style="padding-left: 15px;"><strong>Welcome graphic artists!</strong> The [[PrettyFaces]] project needs a logo, and to facilitate this, we're hosting a logo contest!
+By submitting an entry: if you win the contest, you grant us permission to use, redistribute, or modify your image in any way! We have to be able to use it, or what's the point of giving you a T-Shirt? :)</wp_sync_mt_text_more>
 
-<strong>Prizes:</strong> We know that your time is valuable, but because this is a completely open-source and unfunded project, we can't offer a cash reward; <em>however</em>, will receive a <a href="http://www.cafepress.com/ocpsoft" target="_blank">T-shirt</a> with your logo on it, a blog entry announcing you as the winner, a prominent spot (with link) on our [[Contributors / Get Involved|contributors]] page, a spot (with link) on the home-page as a <a href="http://ocpsoft.com/prettyfaces/#FAQ">FAQ</a> entry, and the satisfaction of knowing that you helped an open-source project!</td>
-</tr>
-</tbody>
-</table>
-</div>
+<wp_sync_permaLink>http://ocpsoft.org/prettyfaces/logo-contest-prettyfaces-needs-a-face-for-the-future/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>1462</wp_sync_postid>
+
+<wp_sync_title>Logo-Contest: PrettyFaces needs a "face" for the future</wp_sync_title>
+
+<wp_sync_userid>1</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Team</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>1</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>logo-contest-prettyfaces-needs-a-face-for-the-future</wp_sync_wp_slug>

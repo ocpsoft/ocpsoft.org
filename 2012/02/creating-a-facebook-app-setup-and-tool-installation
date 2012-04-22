@@ -1,11 +1,27 @@
-.categories ['OpenSource']
-.dateCreated 20120224T20:38:15
-.link http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool-installation/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20120224T20:38:15</wp_sync_dateCreated>
+
+<wp_sync_description>[toc][/toc]
+
+<img style="float: right;margin-left: 35px" src="http://ocpsoft.com/wp-content/uploads/2012/02/1329200630_icontexto-inside-facebook.png" alt="" width="256" height="256" class="alignnone size-full wp-image-3285" />
+
+We’ve all heard of “mobile apps” that are sweeping the internet - stories of developers creating hit apps in their parents basements, or while having coffees at Starbucks. They strike it rich, quit their jobs, and retire wealthy before the age of 25; but first, lets set some reasonable expectations. Those stories do happen, and they make the news because they’re fun to hear about, but you might want to consider playing the lottery for some better odds if you really think you're next. I strongly believe that mobile apps (and/or HTML5 webpage apps) are the future of software development. Beyond that, social media is going to keep playing a greater and greater role in these applications.
+
+This article will take you through setting up a new Facebook app, from beginning to end. It is assumed that you are a developer, and as such are working on some UNIX based platform (all examples in this article will be from Ubuntu 11.10). Those working on Windows (like I may have been just last year) will have to find equivalent commands for certain parts, or decide to join the rest of the "real developer" community. It is worth noting here that <strong>I am not a JBoss employee</strong>, nor am I affiliated with them in any way. However I am friends with several of their lead developers, which probably helped my initial gravitation in that direction. You will see me reference JBoss projects many times throughout this tutorial, and while you are always free to use your own alternatives, you may need to deviate from my instructions to do so. </wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool-installation/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 [info]In <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/" title="Creating a Facebook Application - Hosting | Basic Functionality">part two</a> of this series, we cover creating our project code, hosting it, and setting up basic facebook functionality; <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-3-creating-a-webservice-and-the-game/" title="Creating a Facebook Application - Hosting | Basic Functionality">part three</a> covers turning our application into a game.[/info] 
 
@@ -119,21 +135,24 @@ If you are unfamiliar with how Facebook applications work, this <a href="http://
 <h1>Conclusion</h1>
 Congratulations! You now have a Facebook App, and your screen should look <a href="http://ocpsoft.com/wp-content/uploads/2012/02/FBAppNew.png" rel="lightbox[4]">something like this</a>, and we are almost ready to create our actual application. In the <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/" title="Facebook | Application | Hosting | Basic Functionality">next article</a> we'll utilize <a href="http://jboss.org/forge" target="_blank">JBoss Forge</a> to help give us a jump start to creating our application with just a few commands, then walk you through signing up for an <a href="http://openshift.com" target="_blank">OpenShift</a> account which will host our new application on the cloud for free.
 
-[info]In <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/" title="Creating a Facebook Application - Hosting | Basic Functionality">part two</a> of this series, we cover creating our project code, hosting it, and setting up basic facebook functionality; part three covers turning our application into a game. Also, please follow us on Twitter <a href="http://twitter.com/ocpsoft" title="Follow OCPsoft on Twitter">@ocpsoft</a> to receive notifications of new articles.[/info]
-.permaLink http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool-installation/
-.post_status publish
-.postid 3208
-.title Creating a Facebook App with Java - Part 1 - Setup and Tool Installation
-.userid 602
-.wp_author_display_name Craig Schwarzwald
-.wp_author_id 602
-.wp_password 
-.wp_post_format standard
-.wp_slug creating-a-facebook-app-setup-and-tool-installation
-[toc][/toc]
+[info]In <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/" title="Creating a Facebook Application - Hosting | Basic Functionality">part two</a> of this series, we cover creating our project code, hosting it, and setting up basic facebook functionality; part three covers turning our application into a game. Also, please follow us on Twitter <a href="http://twitter.com/ocpsoft" title="Follow OCPsoft on Twitter">@ocpsoft</a> to receive notifications of new articles.[/info]</wp_sync_mt_text_more>
 
-<img style="float: right;margin-left: 35px" src="http://ocpsoft.com/wp-content/uploads/2012/02/1329200630_icontexto-inside-facebook.png" alt="" width="256" height="256" class="alignnone size-full wp-image-3285" />
+<wp_sync_permaLink>http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool-installation/</wp_sync_permaLink>
 
-We’ve all heard of “mobile apps” that are sweeping the internet - stories of developers creating hit apps in their parents basements, or while having coffees at Starbucks. They strike it rich, quit their jobs, and retire wealthy before the age of 25; but first, lets set some reasonable expectations. Those stories do happen, and they make the news because they’re fun to hear about, but you might want to consider playing the lottery for some better odds if you really think you're next. I strongly believe that mobile apps (and/or HTML5 webpage apps) are the future of software development. Beyond that, social media is going to keep playing a greater and greater role in these applications.
+<wp_sync_post_status>publish</wp_sync_post_status>
 
-This article will take you through setting up a new Facebook app, from beginning to end. It is assumed that you are a developer, and as such are working on some UNIX based platform (all examples in this article will be from Ubuntu 11.10). Those working on Windows (like I may have been just last year) will have to find equivalent commands for certain parts, or decide to join the rest of the "real developer" community. It is worth noting here that <strong>I am not a JBoss employee</strong>, nor am I affiliated with them in any way. However I am friends with several of their lead developers, which probably helped my initial gravitation in that direction. You will see me reference JBoss projects many times throughout this tutorial, and while you are always free to use your own alternatives, you may need to deviate from my instructions to do so. 
+<wp_sync_postid>3208</wp_sync_postid>
+
+<wp_sync_title>Creating a Facebook App with Java - Part 1 - Setup and Tool Installation</wp_sync_title>
+
+<wp_sync_userid>602</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Craig Schwarzwald</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>602</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>creating-a-facebook-app-setup-and-tool-installation</wp_sync_wp_slug>

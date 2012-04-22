@@ -1,24 +1,43 @@
-.categories ['OCPSoft']
-.dateCreated 20120109T01:23:37
-.link http://ocpsoft.org/ocpsoft/all-services-restored/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
-.permaLink http://ocpsoft.org/ocpsoft/all-services-restored/
-.post_status publish
-.postid 2947
-.title All services restored
-.userid 1
-.wp_author_display_name Team
-.wp_author_id 1
-.wp_password 
-.wp_post_format standard
-.wp_slug all-services-restored
-We are sorry for any inconvenience that may have been caused by our brief downtime. We have moved to a new server, and are now fully operational once more. Due to the hack, we were forced to re-evaluate the security of our previous host, and decided that we could not be adequately certain that such attacks would not succeed in the future; we've subsequently moved to a new host, and are very happy with the provisions (and increased level of service.)
+
+<wp_sync_categories>['OCPSoft']</wp_sync_categories>
+
+<wp_sync_dateCreated>20120109T01:23:37</wp_sync_dateCreated>
+
+<wp_sync_description>We are sorry for any inconvenience that may have been caused by our brief downtime. We have moved to a new server, and are now fully operational once more. Due to the hack, we were forced to re-evaluate the security of our previous host, and decided that we could not be adequately certain that such attacks would not succeed in the future; we've subsequently moved to a new host, and are very happy with the provisions (and increased level of service.)
 
 Please enjoy the new, faster, more stable OCPsoft.com.
 
 Sincerely,
-~The OCPsoft Team. 
+~The OCPsoft Team. </wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/ocpsoft/all-services-restored/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/ocpsoft/all-services-restored/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>2947</wp_sync_postid>
+
+<wp_sync_title>All services restored</wp_sync_title>
+
+<wp_sync_userid>1</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Team</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>1</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>all-services-restored</wp_sync_wp_slug>

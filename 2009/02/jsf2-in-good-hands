@@ -1,11 +1,26 @@
-.categories ['Java', 'JSF']
-.dateCreated 20090210T16:44:39
-.link http://ocpsoft.org/java/jsf2-in-good-hands/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords JSF 2.0, OpenSource, PrettyFaces
-.mt_text_more 
+
+<wp_sync_categories>['Java', 'JSF']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090210T16:44:39</wp_sync_dateCreated>
+
+<wp_sync_description><blockquote>
+<h2 style="text-align: center;">"The community was speaking, but until recently, nobody was listening."</h2>
+</blockquote>
+A lot has changed since May 15, 2001, when the first ballot review of the JSF 1.0 framework was just beginning. To this day, Sun's flagship web-application framwork has been an uncompromising box of tricks and gotchas, with little community adoption. This has been mostly due to its relatively developer-unfriendly nature; however, the second phase is coming, and with JSF2.0 peeking out from the edge of its nest, a new life is beginning to show.
+
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/jsf2-in-good-hands/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>JSF 2.0, OpenSource, PrettyFaces</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 From the start, JSF had mixed support from the community, with opposition from major players like IBM, HP, and the Apache Foundation. Apache voiced strong concerns because of "Sun's current position that JSRs may not be independently implemented under an open source license." In addition, they saw, "little value in recreating a technology [Struts] in a closed environment that is already available in an open environment."<a name="sdfootnote1anc" href="#sdfootnote1sym"><sup>1</sup></a>
 
@@ -66,19 +81,24 @@ The lack of bookmarking support is one of the most highly-criticised facets of J
 <p style="text-align: center;">--</p>
 <a name="sdfootnote1sym" href="#sdfootnote1anc">1</a><a href="http://www.jcp.org/en/jsr/results?id=614" target="_blank">http://www.jcp.org/en/jsr/results?id=614</a>
 
-<a name="sdfootnote2sym" href="#sdfootnote2anc">2</a><a href="http://weblogs.java.net/blog/cayhorstmann/archive/2009/01/a_call_to_fix_t.html" target="_blank">http://weblogs.java.net/blog/cayhorstmann/archive/2009/01/a_call_to_fix_t.html</a>
-.permaLink http://ocpsoft.org/java/jsf2-in-good-hands/
-.post_status publish
-.postid 41
-.title Java Server Faces 2.0 is in Good Hands
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug jsf2-in-good-hands
-<blockquote>
-<h2 style="text-align: center;">"The community was speaking, but until recently, nobody was listening."</h2>
-</blockquote>
-A lot has changed since May 15, 2001, when the first ballot review of the JSF 1.0 framework was just beginning. To this day, Sun's flagship web-application framwork has been an uncompromising box of tricks and gotchas, with little community adoption. This has been mostly due to its relatively developer-unfriendly nature; however, the second phase is coming, and with JSF2.0 peeking out from the edge of its nest, a new life is beginning to show.
+<a name="sdfootnote2sym" href="#sdfootnote2anc">2</a><a href="http://weblogs.java.net/blog/cayhorstmann/archive/2009/01/a_call_to_fix_t.html" target="_blank">http://weblogs.java.net/blog/cayhorstmann/archive/2009/01/a_call_to_fix_t.html</a></wp_sync_mt_text_more>
 
+<wp_sync_permaLink>http://ocpsoft.org/java/jsf2-in-good-hands/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>41</wp_sync_postid>
+
+<wp_sync_title>Java Server Faces 2.0 is in Good Hands</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>jsf2-in-good-hands</wp_sync_wp_slug>

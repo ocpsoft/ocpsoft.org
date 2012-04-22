@@ -1,11 +1,26 @@
-.categories ['JSF2', 'OpenSource']
-.dateCreated 20091219T18:21:47
-.link http://ocpsoft.org/opensource/what-a-wild-ride-my-journey-through-opensource-jsf/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['JSF2', 'OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20091219T18:21:47</wp_sync_dateCreated>
+
+<wp_sync_description>It was about one year prior to this article that I wrote “<a href="http://ocpsoft.com/java/jsf2-in-good-hands/" target="_blank">JSF2 is in good hands</a>”, in which I spoke about the upcoming release of <a href="http://www.javaserverfaces.org" target="_blank">JavaServer™ Faces 2</a>, and how the community had changed immensely in the few years I’d been using the tool. There were changes I wanted to make, and started making them by publishing an open source extension called PrettyFaces.
+
+<a href="http://ocpsoft.com/prettyfaces/" title="SEO | Dynamic Parameters | Bookmarks | Navigation | JSF | JSF2 | UrlRewrite" target="_blank">PrettyFaces</a> lets you map Pretty URLs to any resource within a JSF-based web-application (eg: /example -> /faces/examples/page.xhtml). While this is stuff that other web-frameworks have been doing for years, (WordPress, Rails/Grails, etc) it’s stuff that has traditionally been hard using JavaServer Faces – until around November 2008, when the first release was published.
+
+Now, I'm relatively new to this arena - I entered the open source community for the first time about four years ago, working on PHP and Perl modules. I've been using it, and appreciating it, for almost my entire life in the industry, but never giving back. I suppose one question that many people ask is, "Will working on open source software get me anywhere in my career?"
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/what-a-wild-ride-my-journey-through-opensource-jsf/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 <center><h2>Getting involved</h2></center>
 
@@ -82,19 +97,24 @@ Java EE 6 is a revolutionary release of the J2EE platform, and with Bean Validat
 <a href="http://andyschwartz.wordpress.com/2009/12/17/jsf-2-on-the-road/">http://andyschwartz.wordpress.com/2009/12/17/jsf-2-on-the-road/</a>
 <a href="http://in.relation.to/Bloggers/JSFSummitAComponentLibrariesPointOfView">http://in.relation.to/Bloggers/JSFSummitAComponentLibrariesPointOfView</a>
 
-</center>
-.permaLink http://ocpsoft.org/opensource/what-a-wild-ride-my-journey-through-opensource-jsf/
-.post_status publish
-.postid 624
-.title What a wild ride - My journey through OpenSource / JSF 
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug what-a-wild-ride-my-journey-through-opensource-jsf
-It was about one year prior to this article that I wrote “<a href="http://ocpsoft.com/java/jsf2-in-good-hands/" target="_blank">JSF2 is in good hands</a>”, in which I spoke about the upcoming release of <a href="http://www.javaserverfaces.org" target="_blank">JavaServer™ Faces 2</a>, and how the community had changed immensely in the few years I’d been using the tool. There were changes I wanted to make, and started making them by publishing an open source extension called PrettyFaces.
+</center></wp_sync_mt_text_more>
 
-<a href="http://ocpsoft.com/prettyfaces/" title="SEO | Dynamic Parameters | Bookmarks | Navigation | JSF | JSF2 | UrlRewrite" target="_blank">PrettyFaces</a> lets you map Pretty URLs to any resource within a JSF-based web-application (eg: /example -> /faces/examples/page.xhtml). While this is stuff that other web-frameworks have been doing for years, (WordPress, Rails/Grails, etc) it’s stuff that has traditionally been hard using JavaServer Faces – until around November 2008, when the first release was published.
+<wp_sync_permaLink>http://ocpsoft.org/opensource/what-a-wild-ride-my-journey-through-opensource-jsf/</wp_sync_permaLink>
 
-Now, I'm relatively new to this arena - I entered the open source community for the first time about four years ago, working on PHP and Perl modules. I've been using it, and appreciating it, for almost my entire life in the industry, but never giving back. I suppose one question that many people ask is, "Will working on open source software get me anywhere in my career?"
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>624</wp_sync_postid>
+
+<wp_sync_title>What a wild ride - My journey through OpenSource / JSF </wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>what-a-wild-ride-my-journey-through-opensource-jsf</wp_sync_wp_slug>

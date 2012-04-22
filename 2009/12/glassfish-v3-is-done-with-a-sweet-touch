@@ -1,11 +1,22 @@
-.categories ['OpenSource']
-.dateCreated 20091217T14:54:31
-.link http://ocpsoft.org/opensource/glassfish-v3-is-done-with-a-sweet-touch/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20091217T14:54:31</wp_sync_dateCreated>
+
+<wp_sync_description>So, GlassFish v3 is out the door, and I just got a nice little note from the dev-tracker on Java.net. This is only a fraction of the issues I've filed, but the rest are on the JSF-SPEC tracker, so they wouldn't show up here. Still, nice touch!
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/glassfish-v3-is-done-with-a-sweet-touch/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 <div class="featured" style="max-width: 600px;">
 <div class="inside"><i>
@@ -36,15 +47,24 @@ thank you very much,
 Now that's a nice touch - if only the issue numbers were links, which I added for your benefit :) But hey, cost benefit analysis says they did a great job.
 
 Thank <b>you</b>, GlassFish Team!
-<br/>
-.permaLink http://ocpsoft.org/opensource/glassfish-v3-is-done-with-a-sweet-touch/
-.post_status publish
-.postid 641
-.title GlassFish v3 is done - with a sweet touch.
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug glassfish-v3-is-done-with-a-sweet-touch
-So, GlassFish v3 is out the door, and I just got a nice little note from the dev-tracker on Java.net. This is only a fraction of the issues I've filed, but the rest are on the JSF-SPEC tracker, so they wouldn't show up here. Still, nice touch!
+<br/></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/opensource/glassfish-v3-is-done-with-a-sweet-touch/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>641</wp_sync_postid>
+
+<wp_sync_title>GlassFish v3 is done - with a sweet touch.</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>glassfish-v3-is-done-with-a-sweet-touch</wp_sync_wp_slug>

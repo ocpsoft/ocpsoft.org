@@ -1,11 +1,22 @@
-.categories ['PrettyFaces']
-.dateCreated 20090318T21:39:52
-.link http://ocpsoft.org/prettyfaces/v122/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['PrettyFaces']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090318T21:39:52</wp_sync_dateCreated>
+
+<wp_sync_description><h1><a name="configuration"></a>Configuration</h1>
+Setting up PrettyFaces is simple.</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/prettyfaces/v122/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <ol>
 	<li><a href="#filters">Configure PrettyFaces Filters in WEB-INF/web.xml</a><br/><br/></li>
 	<li><a href="#prettyconfig">Create the WEB-INF/pretty-config.xml file</a> <br/>(Steps 1 &amp; 2 are required. Advanced features are optional.)<br/><br/></li>
@@ -274,16 +285,24 @@ You should now have a fully functional PrettyFaces configuration.
 		</tbody>
 		</table>
 	</form>
-</div>
-.permaLink http://ocpsoft.org/prettyfaces/v122/
-.post_status publish
-.postid 46
-.title PrettyFaces v1.2.2 Docs
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug v122
-<h1><a name="configuration"></a>Configuration</h1>
-Setting up PrettyFaces is simple.
+</div></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/prettyfaces/v122/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>46</wp_sync_postid>
+
+<wp_sync_title>PrettyFaces v1.2.2 Docs</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>v122</wp_sync_wp_slug>

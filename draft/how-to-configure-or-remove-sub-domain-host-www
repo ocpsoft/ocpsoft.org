@@ -1,22 +1,9 @@
-.categories ['OpenSource']
-.dateCreated 20120411T16:48:58
-.link http://ocpsoft.org/?p=4219
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
-.permaLink http://ocpsoft.org/?p=4219
-.post_status draft
-.postid 4219
-.title How to configure or remove sub-domain host "www"
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug 
-<style type="text/css">
+
+<wp_sync_categories>['OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20120422T05:24:41</wp_sync_dateCreated>
+
+<wp_sync_description><style type="text/css">
 .reflected {
     position: relative;
 }
@@ -53,4 +40,36 @@
 }
 </style>
 
-<h1 style="font-size: 30px; margin-bottom: 100px;"><span style="font-size: 23px; color: #ddd;">// </span><span class="reflected" >PrettyFaces</span></h1>
+<h1 style="font-size: 30px; margin-bottom: 100px;"><span style="font-size: 23px; color: #ddd;">// </span><span class="reflected" >PrettyFaces</span></h1></wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/?p=4219</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/?p=4219</wp_sync_permaLink>
+
+<wp_sync_post_status>draft</wp_sync_post_status>
+
+<wp_sync_postid>4219</wp_sync_postid>
+
+<wp_sync_title>How to configure or remove sub-domain host "www"</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug></wp_sync_wp_slug>

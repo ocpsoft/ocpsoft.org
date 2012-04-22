@@ -1,11 +1,25 @@
-.categories ['OpenSource']
-.dateCreated 20120306T19:00:40
-.link http://ocpsoft.org/opensource/prettyfaces-3-3-3-released/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20120306T19:00:40</wp_sync_dateCreated>
+
+<wp_sync_description>PrettyFaces is an OpenSource Filter-based Servlets extension with enhanced support for JavaServer Faces – JSF 1.1, 1.2 and 2.0 – enabling creation of bookmark-able, pretty URLs. PrettyFaces solves the “RESTful URL” problem elegantly, including features such as: page-load actions, seamless integration with faces navigation, dynamic view-id assignment, managed parameter parsing, and configuration-free compatibility with other web frameworks.
+
+[info] Get [[PrettyFaces | version 3.3.3]] of PrettyFaces now! See how simple URL-rewriting can be, with the power of open-source tools at your fingertips.[/info]
+
+Thanks goes out to all of the developers who contributed to this release; a lot of work has been done, particularly in the realms of stability, performance, and inter-operability with other frameworks.</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/prettyfaces-3-3-3-released/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 <h2>Features & Enhancements:</h2>
 <ul>
@@ -39,19 +53,24 @@
 
 </ul>
 
+</wp_sync_mt_text_more>
 
-.permaLink http://ocpsoft.org/opensource/prettyfaces-3-3-3-released/
-.post_status publish
-.postid 3984
-.title PrettyFaces 3.3.3 Released
-.userid 1
-.wp_author_display_name Team
-.wp_author_id 1
-.wp_password 
-.wp_post_format standard
-.wp_slug prettyfaces-3-3-3-released
-PrettyFaces is an OpenSource Filter-based Servlets extension with enhanced support for JavaServer Faces – JSF 1.1, 1.2 and 2.0 – enabling creation of bookmark-able, pretty URLs. PrettyFaces solves the “RESTful URL” problem elegantly, including features such as: page-load actions, seamless integration with faces navigation, dynamic view-id assignment, managed parameter parsing, and configuration-free compatibility with other web frameworks.
+<wp_sync_permaLink>http://ocpsoft.org/opensource/prettyfaces-3-3-3-released/</wp_sync_permaLink>
 
-[info] Get [[PrettyFaces | version 3.3.3]] of PrettyFaces now! See how simple URL-rewriting can be, with the power of open-source tools at your fingertips.[/info]
+<wp_sync_post_status>publish</wp_sync_post_status>
 
-Thanks goes out to all of the developers who contributed to this release; a lot of work has been done, particularly in the realms of stability, performance, and inter-operability with other frameworks.
+<wp_sync_postid>3984</wp_sync_postid>
+
+<wp_sync_title>PrettyFaces 3.3.3 Released</wp_sync_title>
+
+<wp_sync_userid>1</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Team</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>1</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>prettyfaces-3-3-3-released</wp_sync_wp_slug>

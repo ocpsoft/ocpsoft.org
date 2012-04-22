@@ -1,11 +1,25 @@
-.categories ['OpenSource']
-.dateCreated 20120226T22:06:47
-.link http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20120226T22:06:47</wp_sync_dateCreated>
+
+<wp_sync_description>[toc][/toc]
+
+The <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool-installation/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">first article</a> in our series took care of setting up and installing an IDE, some tools, and signing up for your new app at Facebook. Now we'll begin creating the Web application with a landing page and some basic Facebook API calls. We'll be creating our web application using Forge - where we left off in the <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool-installation/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">part one</a>. Because Forge allows us to start our new application very easily, and streamlines things like adding persistence (and eventually Arquillian, the testing framework) with a single command.
+
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 <h1>Create a basic web project using JBoss Forge</h1>
 
@@ -30,8 +44,7 @@ In our Forge terminal, type the following command. Please note that if you are u
 Forge will then ask you if you also want to install extended APIs, you can use the default of 'No' (just hit &lt;ENTER&gt;). You should then see confirmation that Forge wrote <code>pom.xml</code> and <code>persistance.xml</code>.
 
 [snippit filename="/src/main/resources/META-INF/persistence.xml" label="View complete file" href="https://github.com/CavemanCraig/FBTutorialDemo/blob/e4ad62d97c4cdd786dc71a12b285f01a819b1c1b/src/main/resources/META-INF/persistence.xml"]
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<persistence ... >
+<persistence>
   <persistence-unit name="forge-default" transaction-type="JTA">
     <description>Forge Persistence Unit</description>
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
@@ -89,8 +102,7 @@ Forge may ask you to update the packaging to a [war] file which is what we want,
 If you are not using Forge, or would like to know what the plugin has done for us, we need to make sure that the following lines are in <code>web.xml</code>. This configuration activates our JAX-RS WebService:
 
 [snippit filename="/src/main/webapp/WEB-INF/web.xml" label="View complete file" href="https://github.com/CavemanCraig/FBTutorialDemo/blob/e4ad62d97c4cdd786dc71a12b285f01a819b1c1b/src/main/webapp/WEB-INF/web.xml"]
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<web-app ... >
+<web-app>
 
   <servlet-mapping>
     <servlet-name>javax.ws.rs.core.Application</servlet-name>
@@ -114,7 +126,7 @@ We've also created a new file called <code>beans.xml</code>, which is repsonsibl
 We may at this point wish to check our POM file (pom.xml) to ensure that we have all of the proper dependencies for our application. Our POM should look something like this:
 
 [snippit filename="/pom.xml" label="View complete file" href="https://github.com/CavemanCraig/FBTutorialDemo/blob/e4ad62d97c4cdd786dc71a12b285f01a819b1c1b/pom.xml"]
-<project ... >
+<project>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.example</groupId>
 	<artifactId>FBTutorialDemo</artifactId>
@@ -572,18 +584,24 @@ If you had any trouble following along, simply grab the code to this point from 
 <h1>Conclusion</h1>
 Now that we have some minimal Facebook functionality on our site, our <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-3-creating-a-webservice-and-the-game/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">next article</a> will dive into some of the slightly more advanced topics such as setting up our game logic, handling players, and saving information to our database. Players will be rewarded points for correct answers, and deducted points for incorrect answers.
 
-[info]Please watch our <a href="http://ocpsoft.com/feed/">RSS feed</a> and follow us on Twitter <a href="http://twitter.com/ocpsoft" title="Follow OCPsoft on Twitter">@ocpsoft</a> to receive notifications of new articles.[/info]
-.permaLink http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/
-.post_status publish
-.postid 3297
-.title Creating a Facebook App with Java - Part 2 - Application, Hosting, and Basic Functionality
-.userid 602
-.wp_author_display_name Craig Schwarzwald
-.wp_author_id 602
-.wp_password 
-.wp_post_format standard
-.wp_slug creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality
-[toc][/toc]
+[info]Please watch our <a href="http://ocpsoft.com/feed/">RSS feed</a> and follow us on Twitter <a href="http://twitter.com/ocpsoft" title="Follow OCPsoft on Twitter">@ocpsoft</a> to receive notifications of new articles.[/info]</wp_sync_mt_text_more>
 
-The <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool-installation/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">first article</a> in our series took care of setting up and installing an IDE, some tools, and signing up for your new app at Facebook. Now we'll begin creating the Web application with a landing page and some basic Facebook API calls. We'll be creating our web application using Forge - where we left off in the <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool-installation/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">part one</a>. Because Forge allows us to start our new application very easily, and streamlines things like adding persistence (and eventually Arquillian, the testing framework) with a single command.
+<wp_sync_permaLink>http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/</wp_sync_permaLink>
 
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>3297</wp_sync_postid>
+
+<wp_sync_title>Creating a Facebook App with Java - Part 2 - Application, Hosting, and Basic Functionality</wp_sync_title>
+
+<wp_sync_userid>602</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Craig Schwarzwald</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>602</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality</wp_sync_wp_slug>

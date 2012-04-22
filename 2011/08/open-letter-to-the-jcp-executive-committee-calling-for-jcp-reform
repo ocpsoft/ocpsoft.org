@@ -1,11 +1,22 @@
-.categories ['OpenSource']
-.dateCreated 20110802T03:00:08
-.link http://ocpsoft.org/opensource/open-letter-to-the-jcp-executive-committee-calling-for-jcp-reform/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20110802T03:00:08</wp_sync_dateCreated>
+
+<wp_sync_description>Seizing the opportunity of a <a href="http://jcp.org/en/whatsnew/elections">new Executive Committee (EC)</a> under a <a href="http://java.dzone.com/articles/oracle-and-jcp">new regime</a>, I'd like to issue a call for reform of the <a href="http://jcp.org">Java Community Process (JCP)</a> to allow it to produce more iterative and timely technology and live up to it's name as a "community process", rather than acting as the "corporate process" many believe it is today <a href="#ref1">[1]</a>.
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/open-letter-to-the-jcp-executive-committee-calling-for-jcp-reform/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <div class="featured"><strong><span style="color: red;">Disclaimer: </span></strong>This call to action represents my views and not necessarily the views of my employer or any other entity; as such, please try to keep that in mind when referencing this document externally.</div>
 <h2>Goals and current problems</h2>
 The goal and of this call to action parallels a statement made by Mark Little, CTO of JBoss and member of the EC, in response to questions for the 2010 EC candidates <a href="#ref2">[2]</a>.
@@ -90,15 +101,24 @@ Lincoln Baxter, III
 	<li id="ref7"><a href="http://www.sdn.sap.com/irj/scn/weblogs?blog=/pub/wlg/16648">http://www.sdn.sap.com/irj/scn/weblogs?blog=/pub/wlg/16648</a></li>
 	<li id="ref8"><a href="http://www.eweek.com/c/a/Application-Development/15-Ways-Oracle-Can-Make-Java-Better-and-Improve-Its-Stance-with-Developers-271933/">http://www.eweek.com/c/a/Application-Development/15-Ways-Oracle-Can-Make-Java-Better-and-Improve-Its-Stance-with-Developers-271933/</a></li>
 	<li id="ref9"><a href="http://gee.cs.oswego.edu/dl/html/jcp22oct10.html">http://gee.cs.oswego.edu/dl/html/jcp22oct10.html</a></li>
-</ol>
-.permaLink http://ocpsoft.org/opensource/open-letter-to-the-jcp-executive-committee-calling-for-jcp-reform/
-.post_status publish
-.postid 1667
-.title Open Letter to the JCP Executive Committee calling for JCP reform
-.userid 389
-.wp_author_display_name Dan Allen
-.wp_author_id 389
-.wp_password 
-.wp_post_format standard
-.wp_slug open-letter-to-the-jcp-executive-committee-calling-for-jcp-reform
-Seizing the opportunity of a <a href="http://jcp.org/en/whatsnew/elections">new Executive Committee (EC)</a> under a <a href="http://java.dzone.com/articles/oracle-and-jcp">new regime</a>, I'd like to issue a call for reform of the <a href="http://jcp.org">Java Community Process (JCP)</a> to allow it to produce more iterative and timely technology and live up to it's name as a "community process", rather than acting as the "corporate process" many believe it is today <a href="#ref1">[1]</a>.
+</ol></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/opensource/open-letter-to-the-jcp-executive-committee-calling-for-jcp-reform/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>1667</wp_sync_postid>
+
+<wp_sync_title>Open Letter to the JCP Executive Committee calling for JCP reform</wp_sync_title>
+
+<wp_sync_userid>389</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Dan Allen</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>389</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>open-letter-to-the-jcp-executive-committee-calling-for-jcp-reform</wp_sync_wp_slug>

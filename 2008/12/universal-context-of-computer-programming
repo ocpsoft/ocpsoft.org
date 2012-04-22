@@ -1,11 +1,23 @@
-.categories ['Best Practices', 'Releases']
-.dateCreated 20081216T16:13:09
-.link http://ocpsoft.org/best-practices/universal-context-of-computer-programming/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more </p>
+
+<wp_sync_categories>['Best Practices', 'Releases']</wp_sync_categories>
+
+<wp_sync_dateCreated>20081216T16:13:09</wp_sync_dateCreated>
+
+<wp_sync_description><p style="margin-bottom: 0in;">The only thing that stays the same, in our field of Computer Science, is change itself. Do not try to predict what will happen in the future; instead know that the future will bring change, and that you will need to adapt to it.</p>
+<p style="margin-bottom: 0in;">Design systems which are capable of change, and you will be much more ready for the future.</p>
+<p style="margin-bottom: 0in;"></wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/best-practices/universal-context-of-computer-programming/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more></p>
 
 <h3><em>Always:</em></h3>
 <ul>
@@ -40,17 +52,24 @@ Think about how you test a design, when you create it. When choosing between two
 	<li>Representational - 	One type 	coupled to the interface of another.</li>
 	<li>Inheritance - 		Coupling to a 	superclass. Changes propagate downward.</li>
 	<li>Subclass - 		Knowledge that an 	object is part of a polymorphic set... "knowing the implementation 	of another."</li>
-</ol>
-.permaLink http://ocpsoft.org/best-practices/universal-context-of-computer-programming/
-.post_status publish
-.postid 33
-.title Universal Context of Computer Programming
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug universal-context-of-computer-programming
-<p style="margin-bottom: 0in;">The only thing that stays the same, in our field of Computer Science, is change itself. Do not try to predict what will happen in the future; instead know that the future will bring change, and that you will need to adapt to it.</p>
-<p style="margin-bottom: 0in;">Design systems which are capable of change, and you will be much more ready for the future.</p>
-<p style="margin-bottom: 0in;">
+</ol></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/best-practices/universal-context-of-computer-programming/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>33</wp_sync_postid>
+
+<wp_sync_title>Universal Context of Computer Programming</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>universal-context-of-computer-programming</wp_sync_wp_slug>

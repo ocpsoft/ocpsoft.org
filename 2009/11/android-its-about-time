@@ -1,11 +1,22 @@
-.categories ['Technology']
-.dateCreated 20091115T22:55:06
-.link http://ocpsoft.org/technology/android-its-about-time/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['Technology']</wp_sync_categories>
+
+<wp_sync_dateCreated>20091115T22:55:06</wp_sync_dateCreated>
+
+<wp_sync_description><p>I don't know why I waited so long. Maybe I just thought the G1 was ugly, maybe it's my futile fight against the mob of conformity. I bought the Droid. Now my already over-active sense of entrepreneurship, restless production has new food. Goodbye night-time reading for a little while.</p>
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/technology/android-its-about-time/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <div class="featured"><div class="inside" style="overflow: hidden;"><center><a href="http://xkcd.com"><img src="http://imgs.xkcd.com/comics/iphone_or_droid.png" title="It may be a fundamentally empty experience, but holy crap the Droid's 265 ppi screen is amazing." alt="iPhone or Droid"></a></center></div></div>
 <center><p>XKCD's Randall Munroe, you understand me better than most...</p></center>
 <div class="featured"><table cellspacing="10px">
@@ -61,15 +72,24 @@ If your permissions look like the file above, and your IDs are set up correctly,
 <h3>But where to go from here?</h3>
 <p>So many ideas already out there, but an infinity of un-thought-of ideas remain. Where do I go from here? How many other people out in this world have the desire to create, but a severe case of writer's block!? Help me, Randall....... <br/><br/></br></p>
 <h3><center>PERL!</center></h3><br/>
+</wp_sync_mt_text_more>
 
-.permaLink http://ocpsoft.org/technology/android-its-about-time/
-.post_status publish
-.postid 430
-.title Android: It's about time!
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug android-its-about-time
-<p>I don't know why I waited so long. Maybe I just thought the G1 was ugly, maybe it's my futile fight against the mob of conformity. I bought the Droid. Now my already over-active sense of entrepreneurship, restless production has new food. Goodbye night-time reading for a little while.</p>
+<wp_sync_permaLink>http://ocpsoft.org/technology/android-its-about-time/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>430</wp_sync_postid>
+
+<wp_sync_title>Android: It's about time!</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>android-its-about-time</wp_sync_wp_slug>

@@ -1,11 +1,24 @@
-.categories ['Java', 'OpenSource', 'Seam']
-.dateCreated 20100505T10:55:50
-.link http://ocpsoft.org/java/jsf-2-0-cross-field-form-validation-simpl-in-reality/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['Java', 'OpenSource', 'Seam']</wp_sync_categories>
+
+<wp_sync_dateCreated>20100505T10:55:50</wp_sync_dateCreated>
+
+<wp_sync_description>I'd like to start by saying that using JSF by itself can sometimes feel trying to pull your own teeth out with a pair of tweezers, but there's hope. JSF was designed to be a platform of extensions - a foundation for building web-frameworks, and that it's done very well. JSF 2.0 addresses most of the concerns about usability (so there's less tooth pulling,) and provides even more extensibility. That's where <a target="_blank" href="http://seamframework.org/Seam3/FacesModule">Seam Faces</a> comes in, that's where <a href="http://ocpsoft.com/prettyfaces/">PrettyFaces</a> comes in.
+
+On many occasions you might find yourself  needing to compare the values of multiple input fields on a given page submit: confirming a password; re-enter password;  address lookups; and so on. Performing cross-field form validation is simple - just place Seam's  &lt;s:validateForm&gt; component in the form you wish to validate, then attach your custom Validator.
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/jsf-2-0-cross-field-form-validation-simpl-in-reality/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 I'd like to introduce you to Seam's intuitive answer, taken directly out of the <a target="_blank" href="http://docs.jboss.org/seam/3/faces/reference/snapshot/en-US/html_single/#validateForm">reference manual</a>. If you want to try it out, you can <a target="_blank" href="http://seamframework.org/Seam3/FacesModule">check out</a> the source or use a snapshot:
 
 <pre lang="xml">
@@ -81,17 +94,24 @@ private String sectorTwo;</pre>
 <h2>A few last thoughts</h2>
 First, as of the current version, cross-field validation does not work unless you are using the &lt;s:validateForm&gt; component. As soon as a new version of <a target="_blank" href="http://seamframework.org/Weld/PortableExtensionsPackage">weld-extensions</a> is released, however, this functionality will work even without the &lt;s:validateForm&gt; component, and you'll be able to reference cross-fields in any JSF validator!
 
-For right now, however, you'll have to deal with using the component - but - it's really not that complicated if you think about it ;) Happy coding!
-.permaLink http://ocpsoft.org/java/jsf-2-0-cross-field-form-validation-simpl-in-reality/
-.post_status publish
-.postid 1254
-.title JSF 2.0 Cross-field Form Validation - Simple in Reality
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug jsf-2-0-cross-field-form-validation-simpl-in-reality
-I'd like to start by saying that using JSF by itself can sometimes feel trying to pull your own teeth out with a pair of tweezers, but there's hope. JSF was designed to be a platform of extensions - a foundation for building web-frameworks, and that it's done very well. JSF 2.0 addresses most of the concerns about usability (so there's less tooth pulling,) and provides even more extensibility. That's where <a target="_blank" href="http://seamframework.org/Seam3/FacesModule">Seam Faces</a> comes in, that's where <a href="http://ocpsoft.com/prettyfaces/">PrettyFaces</a> comes in.
+For right now, however, you'll have to deal with using the component - but - it's really not that complicated if you think about it ;) Happy coding!</wp_sync_mt_text_more>
 
-On many occasions you might find yourself  needing to compare the values of multiple input fields on a given page submit: confirming a password; re-enter password;  address lookups; and so on. Performing cross-field form validation is simple - just place Seam's  &lt;s:validateForm&gt; component in the form you wish to validate, then attach your custom Validator.
+<wp_sync_permaLink>http://ocpsoft.org/java/jsf-2-0-cross-field-form-validation-simpl-in-reality/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>1254</wp_sync_postid>
+
+<wp_sync_title>JSF 2.0 Cross-field Form Validation - Simple in Reality</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>jsf-2-0-cross-field-form-validation-simpl-in-reality</wp_sync_wp_slug>

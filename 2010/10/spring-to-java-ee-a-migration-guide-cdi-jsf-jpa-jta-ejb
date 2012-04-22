@@ -1,11 +1,23 @@
-.categories ['Java', 'JSF2', 'OpenSource', 'Seam', 'Spring', 'Technology']
-.dateCreated 20101001T13:40:21
-.link http://ocpsoft.org/java/spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['Java', 'JSF2', 'OpenSource', 'Seam', 'Spring', 'Technology']</wp_sync_categories>
+
+<wp_sync_dateCreated>20101001T13:40:21</wp_sync_dateCreated>
+
+<wp_sync_description>[toc][/toc]
+
+So Java EE 6 is out, and you've decided to give it a go. You're trying to port an existing application over to the new stack (or are trying to create a new one for the first time,) but exceptions are bursting through the seams and you just can't seem to get things to work. If you're familiar with Spring and Hibernate (with all the joy that is <a href="http://www.google.com/search?q=OpenSessionInView">OpenSessionInView</a> or <code>OpenSessionInConversation</code>,) more than likely the problems you're having are related to the Java Persistence API (<code>JPA</code>), combined with Enterprise Java Beans (<code>EJB</code>). Contexts and Dependency Injection (<code>CDI</code>) should be a familiar face if coming from Spring, but things are subtly different in the world of Java EE.</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 [error]<font color="red">Disclaimer:</font> I work for JBoss and participate in creating some of the technologies I describe.</center>[/error]
 
 <div class="featured" width="100%"><div style="overflow: hidden;"><a href="http://ocpsoft.com/wp-content/uploads/2010/10/migration.jpg"><img src="http://ocpsoft.com/wp-content/uploads/2010/10/migration.jpg" alt="" width="100%" title="migration" class="alignnone size-full wp-image-1629" /></a></div></div>
@@ -621,17 +633,24 @@ Then I recommend some books written by my colleagues and peers. (Note, you will 
 <h3>Shameless plugs for some other projects that I think you'll find useful:</h3>
 
 OcpSoft PrettyFaces – our own open-source tool for controlling the URL of your application, making pretty, bookmarkable URLs. The easiest (if I don't mind saying, and I don't) way of controlling URL parameters, query-parameters, and validating input that comes into your application through the URL.
-JBoss <a href="http://jboss.org/arquillian">Arquillian</a> – the single most inclusive and best Unit/Integration testing experience you will find in any application framework. Not only that, but it actually runs your code IN the container, so it's being tested like it'll actually be run in production.
-.permaLink http://ocpsoft.org/java/spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb/
-.post_status publish
-.postid 1589
-.title Spring to Java EE - A Migration Experience
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb
-[toc][/toc]
+JBoss <a href="http://jboss.org/arquillian">Arquillian</a> – the single most inclusive and best Unit/Integration testing experience you will find in any application framework. Not only that, but it actually runs your code IN the container, so it's being tested like it'll actually be run in production.</wp_sync_mt_text_more>
 
-So Java EE 6 is out, and you've decided to give it a go. You're trying to port an existing application over to the new stack (or are trying to create a new one for the first time,) but exceptions are bursting through the seams and you just can't seem to get things to work. If you're familiar with Spring and Hibernate (with all the joy that is <a href="http://www.google.com/search?q=OpenSessionInView">OpenSessionInView</a> or <code>OpenSessionInConversation</code>,) more than likely the problems you're having are related to the Java Persistence API (<code>JPA</code>), combined with Enterprise Java Beans (<code>EJB</code>). Contexts and Dependency Injection (<code>CDI</code>) should be a familiar face if coming from Spring, but things are subtly different in the world of Java EE.
+<wp_sync_permaLink>http://ocpsoft.org/java/spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>1589</wp_sync_postid>
+
+<wp_sync_title>Spring to Java EE - A Migration Experience</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb</wp_sync_wp_slug>

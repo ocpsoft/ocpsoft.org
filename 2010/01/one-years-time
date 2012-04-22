@@ -1,11 +1,22 @@
-.categories ['JSF', 'JSF2', 'OCPSoft', 'OpenSource', 'PrettyFaces']
-.dateCreated 20100128T12:53:39
-.link http://ocpsoft.org/opensource/one-years-time/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['JSF', 'JSF2', 'OCPSoft', 'OpenSource', 'PrettyFaces']</wp_sync_categories>
+
+<wp_sync_dateCreated>20100128T12:53:39</wp_sync_dateCreated>
+
+<wp_sync_description>It is amazing what can be done in exactly one year's time.  January 17th will have been the 2nd anniversary since Lincoln Baxter and I started OcpSoft.  It's been one seriously fun, and wild, ride with <a href="http://www.javaserverfaces.org">JavaServer Faces</a> and the open-source community.  I want to take a moment to talk about my partner's success story and what he has accomplished in just <em>one</em> short year.
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/one-years-time/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <h3>The Beginning</h3>
 When we started OcpSoft, we were working on what is now <a title="ScrumShark" href="http://ocpsoft.com/scrumshark/" target="_blank">ScrumShark</a> - using JSF 1.2 , Hibernate, and many other technologies.  At first it was very overwhelming, challenging to figure out which technologies to use; though, even after we had chosen our technology stack, we fought with poor documentation, lack of support, and integration as we explored new features of the stack. 
 
@@ -17,15 +28,24 @@ Thanks to <a href="http://ocpsoft.com/prettyfaces/">PrettyFaces</a>, Lincoln dug
 During that same time Lincoln convinced us - at OcpSoft - to start using JSF 2 Beta to build ScrumShark.  JSF 2 was undergoing continuous changes at that time, and the specification wasn't even public, so we were seeing different results in our application every week.  Lincoln started posting the issues on the JSF 2 mailing list, and quickly became known as the JSF 2 tester, bug-finder.  Without <a title="ScrumShark" href="http://ocpsoft.com/scrumshark/" target="_blank">ScrumShark</a>, and Lincoln willing to take a chance on a bleeding edge technology, I don't think the JSF 2 team would have found and fixed all the bugs as fast as they did.  Not too long after this, he joined the JSF Expert Group and was presenting <a href="http://ocpsoft.com/prettyfaces/jsfsummit-2009-prettyfaces-makes-an-appearance/" target="_blank">PrettyFaces at JSFSummit</a>.
 
 <h3>Congratulations Lincoln!</h3>
-He just got a job with <a target="_blank" href="http://jboss.org">JBoss</a> at <a target="_blank" href="http://www.redhat.com">Red Hat</a>, as a Senior Software Engineer. I am <em>proud </em>of of what my partner and best friend Lincoln has accomplished.
-.permaLink http://ocpsoft.org/opensource/one-years-time/
-.post_status publish
-.postid 788
-.title One year's time
-.userid 5
-.wp_author_display_name Derek Hollis
-.wp_author_id 5
-.wp_password 
-.wp_post_format standard
-.wp_slug one-years-time
-It is amazing what can be done in exactly one year's time.  January 17th will have been the 2nd anniversary since Lincoln Baxter and I started OcpSoft.  It's been one seriously fun, and wild, ride with <a href="http://www.javaserverfaces.org">JavaServer Faces</a> and the open-source community.  I want to take a moment to talk about my partner's success story and what he has accomplished in just <em>one</em> short year.
+He just got a job with <a target="_blank" href="http://jboss.org">JBoss</a> at <a target="_blank" href="http://www.redhat.com">Red Hat</a>, as a Senior Software Engineer. I am <em>proud </em>of of what my partner and best friend Lincoln has accomplished.</wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/opensource/one-years-time/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>788</wp_sync_postid>
+
+<wp_sync_title>One year's time</wp_sync_title>
+
+<wp_sync_userid>5</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Derek Hollis</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>5</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>one-years-time</wp_sync_wp_slug>

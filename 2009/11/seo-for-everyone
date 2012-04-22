@@ -1,11 +1,22 @@
-.categories ['PrettyFaces']
-.dateCreated 20091106T14:51:24
-.link http://ocpsoft.org/prettyfaces/seo-for-everyone/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['PrettyFaces']</wp_sync_categories>
+
+<wp_sync_dateCreated>20091106T14:51:24</wp_sync_dateCreated>
+
+<wp_sync_description><p>I'm no SEO expert, but in growing my own brand, I've come to learn some crucial concepts, perhaps not entirely technical, but more social and practical in nature. I can't and won't try to tell you that google ranks your pages better if you use certain words and put them in a specific order. But by using common sense, there are a few things we can all do to make our lives easier, and more visible.</p>
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/prettyfaces/seo-for-everyone/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <h2>Three Fundamentals of Search Optimization:</h2>
 <ol>
 	<li>
@@ -119,15 +130,24 @@ Check out <a id="xybz" title="ScrumShark, an Online Agile Project Management Too
 </ol>
 And you might want to protect yourself from a technology change. That's just the worst way to go out of a well optimized site, into the pits of search listings nobody will see - of course, it means your next technology also needs to support pretty URLs ;)
 
+</wp_sync_mt_text_more>
 
-.permaLink http://ocpsoft.org/prettyfaces/seo-for-everyone/
-.post_status publish
-.postid 369
-.title SEO for Business Marketers, Bloggers, and Everyone
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug seo-for-everyone
-<p>I'm no SEO expert, but in growing my own brand, I've come to learn some crucial concepts, perhaps not entirely technical, but more social and practical in nature. I can't and won't try to tell you that google ranks your pages better if you use certain words and put them in a specific order. But by using common sense, there are a few things we can all do to make our lives easier, and more visible.</p>
+<wp_sync_permaLink>http://ocpsoft.org/prettyfaces/seo-for-everyone/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>369</wp_sync_postid>
+
+<wp_sync_title>SEO for Business Marketers, Bloggers, and Everyone</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>seo-for-everyone</wp_sync_wp_slug>

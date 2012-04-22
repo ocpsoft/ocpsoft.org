@@ -1,11 +1,23 @@
-.categories ['OpenSource']
-.dateCreated 20100810T16:24:47
-.link http://ocpsoft.org/opensource/the-problem-is-not-the-system-the-problem-is-education/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20100810T16:24:47</wp_sync_dateCreated>
+
+<wp_sync_description><p>"The problem is not the system, its the way someone can get in. To be honest, most tutorials, how-tos, and documentation sucks, because they ALL are written like the reader already knows the trick. No doc about [Technology] is written for newbies."
+</p>
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/the-problem-is-not-the-system-the-problem-is-education/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <div class="featured">
 
 <h3>Technology == "EJB"</h3>
@@ -26,16 +38,24 @@
 <p>Education is always 95% of the solution. We already have the technology, but if nobody can <em>figure out</em> how to use it, then nobody <em>is going to</em> use it; and let me tell you, it's not that hard once you know "the trick."</p></div>
 
 <center><h2>Who's going to step up and claim a few hundred thousand page-views per month?</h2>
-<h2>Technology == "Java EE"</h2></center>
-.permaLink http://ocpsoft.org/opensource/the-problem-is-not-the-system-the-problem-is-education/
-.post_status publish
-.postid 1528
-.title The problem is not the system; the problem is education.
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug the-problem-is-not-the-system-the-problem-is-education
-<p>"The problem is not the system, its the way someone can get in. To be honest, most tutorials, how-tos, and documentation sucks, because they ALL are written like the reader already knows the trick. No doc about [Technology] is written for newbies."
-</p>
+<h2>Technology == "Java EE"</h2></center></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/opensource/the-problem-is-not-the-system-the-problem-is-education/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>1528</wp_sync_postid>
+
+<wp_sync_title>The problem is not the system; the problem is education.</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>the-problem-is-not-the-system-the-problem-is-education</wp_sync_wp_slug>

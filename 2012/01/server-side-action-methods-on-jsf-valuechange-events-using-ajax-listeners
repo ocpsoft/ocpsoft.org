@@ -1,11 +1,21 @@
-.categories ['JSF2']
-.dateCreated 20120128T14:32:46
-.link http://ocpsoft.org/java/jsf2-java/server-side-action-methods-on-jsf-valuechange-events-using-ajax-listeners/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['JSF2']</wp_sync_categories>
+
+<wp_sync_dateCreated>20120128T14:32:46</wp_sync_dateCreated>
+
+<wp_sync_description>I'm about to show you a pattern that will make your heart sing. I have to thank <a href="https://twitter.com/#!/brianleathem" target="_blank">Brian Leathem</a> for his original idea to use CDI events in the ValueChangeListener, but when combined with a little <code>&lt;f:ajax&gt;</code> magic, there's almost no limit to what you can do without writing a single line of JavaScript. ValueChangeListeners are also the perfect opportunity to build an Event driven model into your application.</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/jsf2-java/server-side-action-methods-on-jsf-valuechange-events-using-ajax-listeners/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 The following example code was taken from our latest Project: [[SocialPM]], a budding Agile Project Management tool. The first problem that CDI events will help us with is the fact that in this loop, you may come to find find that you have no way of accessing the loop variable (in this case, 's') in your ValueChangeListener. CDI can help.
 
@@ -165,15 +175,24 @@ It is easier to have a second <code>@Observes</code> method (below) that creates
 </pre>
 
 Cheers! If you want to check out more of this type of code in action, grab the <a href="https://github.com/ocpsoft/socialpm/" target="_blank">SocialPM Source Code</a> on GitHub, and give us a shout. We'd love to have some more hands in this project!
-</pre>
-.permaLink http://ocpsoft.org/java/jsf2-java/server-side-action-methods-on-jsf-valuechange-events-using-ajax-listeners/
-.post_status publish
-.postid 3140
-.title Server side action methods on JSF ValueChange events using AJAX listeners
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug server-side-action-methods-on-jsf-valuechange-events-using-ajax-listeners
-I'm about to show you a pattern that will make your heart sing. I have to thank <a href="https://twitter.com/#!/brianleathem" target="_blank">Brian Leathem</a> for his original idea to use CDI events in the ValueChangeListener, but when combined with a little <code>&lt;f:ajax&gt;</code> magic, there's almost no limit to what you can do without writing a single line of JavaScript. ValueChangeListeners are also the perfect opportunity to build an Event driven model into your application.
+</pre></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/java/jsf2-java/server-side-action-methods-on-jsf-valuechange-events-using-ajax-listeners/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>3140</wp_sync_postid>
+
+<wp_sync_title>Server side action methods on JSF ValueChange events using AJAX listeners</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>server-side-action-methods-on-jsf-valuechange-events-using-ajax-listeners</wp_sync_wp_slug>

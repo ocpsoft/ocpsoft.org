@@ -1,23 +1,42 @@
-.categories ['Uncategorized']
-.dateCreated 20090127T14:54:16
-.link http://ocpsoft.org/uncategorized/prettyfaces-122-released/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
-.permaLink http://ocpsoft.org/uncategorized/prettyfaces-122-released/
-.post_status publish
-.postid 39
-.title PrettyFaces 1.2.2 Released
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug prettyfaces-122-released
-A new minor release of the <a href="http://ocpsoft.com/prettyfaces">PrettyFaces</a> JSF extension for Bookmarkable/Pretty URLs is now available for download.
+
+<wp_sync_categories>['Uncategorized']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090127T14:54:16</wp_sync_dateCreated>
+
+<wp_sync_description>A new minor release of the <a href="http://ocpsoft.com/prettyfaces">PrettyFaces</a> JSF extension for Bookmarkable/Pretty URLs is now available for download.
 
 PrettyFaces is now backwards compatible with Java 5.
 
-<strong>Version 1.2.2</strong>: <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-1.2.2.jar">binary</a>, <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-1.2.2-sources.jar">source</a>
+<strong>Version 1.2.2</strong>: <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-1.2.2.jar">binary</a>, <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-1.2.2-sources.jar">source</a></wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/uncategorized/prettyfaces-122-released/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/uncategorized/prettyfaces-122-released/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>39</wp_sync_postid>
+
+<wp_sync_title>PrettyFaces 1.2.2 Released</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>prettyfaces-122-released</wp_sync_wp_slug>

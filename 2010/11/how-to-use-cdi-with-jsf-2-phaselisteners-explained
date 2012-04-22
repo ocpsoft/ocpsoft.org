@@ -1,11 +1,24 @@
-.categories ['JSF2', 'Seam']
-.dateCreated 20101109T01:01:35
-.link http://ocpsoft.org/java/jsf2-java/how-to-use-cdi-with-jsf-2-phaselisteners-explained/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['JSF2', 'Seam']</wp_sync_categories>
+
+<wp_sync_dateCreated>20101109T01:01:35</wp_sync_dateCreated>
+
+<wp_sync_description>A recent thread came up on the JSF 2 forums: "<a href="http://www.java.net/forum/topic/glassfish/glassfish/cdi-and-jsf2-phaselisteners-0">Why can't I use @Inject in a PhaseListener? This CDI stuff is so confusing.</a>"
+
+FIrst, before I start explaining: this <strong>is</strong> possible, but there's a little background you should probably know. The answer to the question "why can't I use CDI in JSF PhaseListeners?" is: because JSF 2 was completed just a few short months before JSR-299 and the rest of the Java EE 6 platform specifications were finalized. In my opinion - because of the current <a href="http://ocpsoft.com/opensource/open-letter-to-the-jcp-executive-committee-calling-for-jcp-reform/">state-of-affairs in the JCP -</a> it was just not a safe bet to promise integration with other technologies that might not have been finalized in time. Fortunately, however, JSF goes to extra lengths in providing extension points - solving this with an extension was not too difficult.
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/jsf2-java/how-to-use-cdi-with-jsf-2-phaselisteners-explained/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 More technically speaking, however, this is because PhaseListeners in JSF 2 are not CDI-aware components. They are not created by the CDI BeanManager, rather by literal calls to <code>PhaseListener listener = new PhaseListenerImpl();</code>, and unfortunately, this is not scheduled to be fixed in JSF 2.1 (coming out in December if on time.) See <a href="https://javaserverfaces-spec-public.dev.java.net/issues/show_bug.cgi?id=763">related issue</a>.
 
@@ -79,17 +92,24 @@ Notice how simple this; by observing a standard set of events, we now have full 
 
 <h2>Wrap up & Conclusion</h2>
 
-These are just some of the examples of simplicity at work in Java EE 6 that I think will only continue to grown in the next few months and years. Things are looking up, and if you found this article interesting, you might want to check out some of our other articles on: <a href="http://ocpsoft.com/java/spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb/">Migrating from Spring to Java EE 6</a>, or <a href="http://ocpsoft.com/prettyfaces/" title="URL rewriting framework for Servlet, JSF 2, and Java EE">PrettyFaces</a>, a next-generation URL-rewriting framework for Servlet and Java EE. I should also note, that while these are two options for how to solve this problem, they are not the only options. You can also manage a reference to the BeanManager yourself if you really want to, but since the work's already been done for you, why bother? ;)
-.permaLink http://ocpsoft.org/java/jsf2-java/how-to-use-cdi-with-jsf-2-phaselisteners-explained/
-.post_status publish
-.postid 1698
-.title How to: Use CDI with JSF 2 PhaseListeners - Explained
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug how-to-use-cdi-with-jsf-2-phaselisteners-explained
-A recent thread came up on the JSF 2 forums: "<a href="http://www.java.net/forum/topic/glassfish/glassfish/cdi-and-jsf2-phaselisteners-0">Why can't I use @Inject in a PhaseListener? This CDI stuff is so confusing.</a>"
+These are just some of the examples of simplicity at work in Java EE 6 that I think will only continue to grown in the next few months and years. Things are looking up, and if you found this article interesting, you might want to check out some of our other articles on: <a href="http://ocpsoft.com/java/spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb/">Migrating from Spring to Java EE 6</a>, or <a href="http://ocpsoft.com/prettyfaces/" title="URL rewriting framework for Servlet, JSF 2, and Java EE">PrettyFaces</a>, a next-generation URL-rewriting framework for Servlet and Java EE. I should also note, that while these are two options for how to solve this problem, they are not the only options. You can also manage a reference to the BeanManager yourself if you really want to, but since the work's already been done for you, why bother? ;)</wp_sync_mt_text_more>
 
-FIrst, before I start explaining: this <strong>is</strong> possible, but there's a little background you should probably know. The answer to the question "why can't I use CDI in JSF PhaseListeners?" is: because JSF 2 was completed just a few short months before JSR-299 and the rest of the Java EE 6 platform specifications were finalized. In my opinion - because of the current <a href="http://ocpsoft.com/opensource/open-letter-to-the-jcp-executive-committee-calling-for-jcp-reform/">state-of-affairs in the JCP -</a> it was just not a safe bet to promise integration with other technologies that might not have been finalized in time. Fortunately, however, JSF goes to extra lengths in providing extension points - solving this with an extension was not too difficult.
+<wp_sync_permaLink>http://ocpsoft.org/java/jsf2-java/how-to-use-cdi-with-jsf-2-phaselisteners-explained/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>1698</wp_sync_postid>
+
+<wp_sync_title>How to: Use CDI with JSF 2 PhaseListeners - Explained</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>how-to-use-cdi-with-jsf-2-phaselisteners-explained</wp_sync_wp_slug>

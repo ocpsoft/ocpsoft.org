@@ -1,11 +1,24 @@
-.categories ['PrettyFaces', 'Releases']
-.dateCreated 20090824T15:27:01
-.link http://ocpsoft.org/prettyfaces/prettyfaces-jsf11-urlrewriting-support-released/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords Java, JSF, PrettyFaces
-.mt_text_more 
+
+<wp_sync_categories>['PrettyFaces', 'Releases']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090824T15:27:01</wp_sync_dateCreated>
+
+<wp_sync_description><h3><a href="http://ocpsoft.com/prettyfaces">PrettyFaces</a>:</h3>
+
+A new version of PrettyFaces for JSF1.1 (historical support) is now available for download. This version is feature-complete, but we are looking for feedback on compatibility and functionality that may be broken with various implementations, so please post comments!
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/prettyfaces/prettyfaces-jsf11-urlrewriting-support-released/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>Java, JSF, PrettyFaces</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 It should be noted that JSF is now on version 2.0, and PrettyFaces 2.0.x should be used. E.g: PrettyFaces 1.2.x should be used with JSF 1.2.
 
@@ -25,17 +38,24 @@ It should be noted that JSF is now on version 2.0, and PrettyFaces 2.0.x should 
 		</table>
 	</form>
 </div>
-<br/>
-.permaLink http://ocpsoft.org/prettyfaces/prettyfaces-jsf11-urlrewriting-support-released/
-.post_status publish
-.postid 68
-.title PrettyFaces JSF1.1 UrlRewriting Support - Released
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug prettyfaces-jsf11-urlrewriting-support-released
-<h3><a href="http://ocpsoft.com/prettyfaces">PrettyFaces</a>:</h3>
+<br/></wp_sync_mt_text_more>
 
-A new version of PrettyFaces for JSF1.1 (historical support) is now available for download. This version is feature-complete, but we are looking for feedback on compatibility and functionality that may be broken with various implementations, so please post comments!
+<wp_sync_permaLink>http://ocpsoft.org/prettyfaces/prettyfaces-jsf11-urlrewriting-support-released/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>68</wp_sync_postid>
+
+<wp_sync_title>PrettyFaces JSF1.1 UrlRewriting Support - Released</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>prettyfaces-jsf11-urlrewriting-support-released</wp_sync_wp_slug>

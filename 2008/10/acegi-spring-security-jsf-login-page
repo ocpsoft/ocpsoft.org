@@ -1,11 +1,29 @@
-.categories ['Java', 'JSF']
-.dateCreated 20081009T17:35:33
-.link http://ocpsoft.org/java/acegi-spring-security-jsf-login-page/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords Java, JSF, Security, Spring
-.mt_text_more 
+
+<wp_sync_categories>['Java', 'JSF']</wp_sync_categories>
+
+<wp_sync_dateCreated>20081009T17:35:33</wp_sync_dateCreated>
+
+<wp_sync_description><h2>Tutorials - What a nightmare</h2>
+Everyone seems to be going through hell to get a fully functional JSF login page working with Spring Security (formerly Acegi,) and yes, I did too, but there's an <strong>EASY</strong> way to make this happen. And get this:
+<ul>
+	<li>It takes just five clear and well written lines of Java code.</li>
+</ul>
+First, the solution. Afterwards, the dirty details. (Spring 2.5.2 was used for this example, but this documentation is still relevant for Spring 3.x)
+You can find a downloadable working example <a href="http://ocpsoft.com/java/acegi-spring-security-jsf-integration-project-continued/">here</a>. There is also a followup article on post-authentication redirecting, <a href="http://ocpsoft.com/java/jsf-java/spring-security-what-happens-after-you-log-in/">here</a>.
+
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/acegi-spring-security-jsf-login-page/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>Java, JSF, Security, Spring</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <h3>The Solution:</h3>
 <pre lang="java">public class LoginBean
 {
@@ -255,22 +273,24 @@ Try one of these highly-recommended books, written by Spring Developers and Spri
 
 [slideout handle="Need more info?" header="Try one of these highly-recommended books:"]
    [amazon codes="1935182358,1430224991" bgcolor="dddddd"]
-[/slideout]
-.permaLink http://ocpsoft.org/java/acegi-spring-security-jsf-login-page/
-.post_status publish
-.postid 16
-.title Acegi/Spring Security Integration - JSF Login Page
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug acegi-spring-security-jsf-login-page
-<h2>Tutorials - What a nightmare</h2>
-Everyone seems to be going through hell to get a fully functional JSF login page working with Spring Security (formerly Acegi,) and yes, I did too, but there's an <strong>EASY</strong> way to make this happen. And get this:
-<ul>
-	<li>It takes just five clear and well written lines of Java code.</li>
-</ul>
-First, the solution. Afterwards, the dirty details. (Spring 2.5.2 was used for this example, but this documentation is still relevant for Spring 3.x)
-You can find a downloadable working example <a href="http://ocpsoft.com/java/acegi-spring-security-jsf-integration-project-continued/">here</a>. There is also a followup article on post-authentication redirecting, <a href="http://ocpsoft.com/java/jsf-java/spring-security-what-happens-after-you-log-in/">here</a>.
+[/slideout]</wp_sync_mt_text_more>
 
+<wp_sync_permaLink>http://ocpsoft.org/java/acegi-spring-security-jsf-login-page/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>16</wp_sync_postid>
+
+<wp_sync_title>Acegi/Spring Security Integration - JSF Login Page</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>acegi-spring-security-jsf-login-page</wp_sync_wp_slug>

@@ -1,11 +1,22 @@
-.categories ['JSF']
-.dateCreated 20090519T14:18:00
-.link http://ocpsoft.org/java/jsf-java/facelets-vs-jsf2-ezcomp/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords Java, JSF
-.mt_text_more 
+
+<wp_sync_categories>['JSF']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090519T14:18:00</wp_sync_dateCreated>
+
+<wp_sync_description>Several things that make life painful with Facelets are fixed with <a href="https://javaserverfaces.dev.java.net/" target="_blank">JSF2 &amp; EzComp</a>. Take a look at some of the nicer things to come:
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/jsf-java/facelets-vs-jsf2-ezcomp/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>Java, JSF</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <ul>
 	<li> You can pass a value-binding into a component.</li>
 	<li> You can assign a listener to a specific input field/button inside a custom component.</li>
@@ -25,15 +36,24 @@ Also, be sure to check out the developer <em>blags</em> for more updates on JSF2
 	<li><a href="http://weblogs.java.net/blog/edburns/" target="_blank">Ed Burns</a></li>
 	<li><a href="http://blogs.sun.com/rlubke" target="_blank">Ryan Lubke</a></li>
 	<li><a href="http://weblogs.java.net/blog/driscoll/" target="_blank">Jim Driscoll</a></li>
-</ul>
-.permaLink http://ocpsoft.org/java/jsf-java/facelets-vs-jsf2-ezcomp/
-.post_status publish
-.postid 56
-.title Facelets vs. JSF2 & EzComp
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug facelets-vs-jsf2-ezcomp
-Several things that make life painful with Facelets are fixed with <a href="https://javaserverfaces.dev.java.net/" target="_blank">JSF2 &amp; EzComp</a>. Take a look at some of the nicer things to come:
+</ul></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/java/jsf-java/facelets-vs-jsf2-ezcomp/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>56</wp_sync_postid>
+
+<wp_sync_title>Facelets vs. JSF2 & EzComp</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>facelets-vs-jsf2-ezcomp</wp_sync_wp_slug>

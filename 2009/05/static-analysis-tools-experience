@@ -1,11 +1,25 @@
-.categories ['Best Practices']
-.dateCreated 20090512T05:12:03
-.link http://ocpsoft.org/best-practices/static-analysis-tools-experience/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords Dreyfus model, JTest, PMD, Static Analysis
-.mt_text_more 
+
+<wp_sync_categories>['Best Practices']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090512T05:12:03</wp_sync_dateCreated>
+
+<wp_sync_description>When developers choose to enforce Static Analysis tools (i.e. JTest or PMD) they might have the best intentions at heart, but are actually making the code worse in the long run.  The value of the programmer's experience and expertise on the code is not considered.
+
+Static analysis tools are automated programs that run a set of rules against source code to produce metrics, and give advice on best practices.
+
+So why does using these tools lead to bad code?  </wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/best-practices/static-analysis-tools-experience/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>Dreyfus model, JTest, PMD, Static Analysis</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <h3>The Heartache</h3>
 You're trying to finish up some down-to-the-wire coding to get it over to your Testers, and your deadline is approaching.  You have this one last class to change and it is a legacy class.  This class was written before the static analysis tools were forced to be run on the code base.  You go in to make a simple change like adding a null pointer check.  You now execute the static analysis tool on the code and you have 30 violations -- from incorrect naming of fields to Cyclomatic Complexity greater than the threshold.  You have 2 options here: A) You take the time to fix all the violations, and leave the code better than you got it or B) You take the lazy / easier solution and try and beat the rules -- take the easy way out and work around them.  What do you choose?
 <h3>Reaction to the pain</h3>
@@ -31,19 +45,24 @@ Please let us know how have you dealt with these tools or situations in the past
 
 <em>References:</em>
 
-Dreyfus model:  <a href="http://www.infoq.com/presentations/Developing-Expertise-Dave-Thomas">Developing Expertise: Herding Racehorses, Racing Sheep</a> by Dave Thomas
-.permaLink http://ocpsoft.org/best-practices/static-analysis-tools-experience/
-.post_status publish
-.postid 51
-.title Static Analysis tools > Experience
-.userid 5
-.wp_author_display_name Derek Hollis
-.wp_author_id 5
-.wp_password 
-.wp_post_format standard
-.wp_slug static-analysis-tools-experience
-When developers choose to enforce Static Analysis tools (i.e. JTest or PMD) they might have the best intentions at heart, but are actually making the code worse in the long run.  The value of the programmer's experience and expertise on the code is not considered.
+Dreyfus model:  <a href="http://www.infoq.com/presentations/Developing-Expertise-Dave-Thomas">Developing Expertise: Herding Racehorses, Racing Sheep</a> by Dave Thomas</wp_sync_mt_text_more>
 
-Static analysis tools are automated programs that run a set of rules against source code to produce metrics, and give advice on best practices.
+<wp_sync_permaLink>http://ocpsoft.org/best-practices/static-analysis-tools-experience/</wp_sync_permaLink>
 
-So why does using these tools lead to bad code?  
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>51</wp_sync_postid>
+
+<wp_sync_title>Static Analysis tools > Experience</wp_sync_title>
+
+<wp_sync_userid>5</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Derek Hollis</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>5</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>static-analysis-tools-experience</wp_sync_wp_slug>

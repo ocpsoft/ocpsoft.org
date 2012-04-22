@@ -1,11 +1,22 @@
-.categories ['JSF2']
-.dateCreated 20090914T19:54:29
-.link http://ocpsoft.org/java/jsf2-java/jsf2-how-to-add-the-magic-of-el-el2-to-jsf/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['JSF2']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090914T19:54:29</wp_sync_dateCreated>
+
+<wp_sync_description><p>Ever wonder why you can't pass parameters to EL method-expressions? Well, now you can, and it's easy to incorporate!</p>
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/jsf2-java/jsf2-how-to-add-the-magic-of-el-el2-to-jsf/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <p>This quick guide assumes you are using <a href="http://maven.apache.org/">Maven</a>. And is a followup to the post: <a href="http://ocpsoft.com/java/jsf-java/jsfs-hdatatable-vs-uirepeat-how-to-get-the-selected-row/">h:dataTable vs ui:repeat - how to get the selected row</a>.</p>
 
 <h2>Get the EL dependencies through maven</h2>
@@ -53,15 +64,24 @@
 	</h:commandLink>
 </pre>
 <br/>
+</wp_sync_mt_text_more>
 
-.permaLink http://ocpsoft.org/java/jsf2-java/jsf2-how-to-add-the-magic-of-el-el2-to-jsf/
-.post_status publish
-.postid 164
-.title JSF2: How to add the magic of EL (EL2) to JSF
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug jsf2-how-to-add-the-magic-of-el-el2-to-jsf
-<p>Ever wonder why you can't pass parameters to EL method-expressions? Well, now you can, and it's easy to incorporate!</p>
+<wp_sync_permaLink>http://ocpsoft.org/java/jsf2-java/jsf2-how-to-add-the-magic-of-el-el2-to-jsf/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>164</wp_sync_postid>
+
+<wp_sync_title>JSF2: How to add the magic of EL (EL2) to JSF</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>jsf2-how-to-add-the-magic-of-el-el2-to-jsf</wp_sync_wp_slug>

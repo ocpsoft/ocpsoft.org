@@ -1,11 +1,23 @@
-.categories ['PrettyFaces']
-.dateCreated 20090318T21:40:03
-.link http://ocpsoft.org/prettyfaces/v123/
-.mt_allow_comments 0
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords Java, JSF, PrettyFaces
-.mt_text_more 
+
+<wp_sync_categories>['PrettyFaces']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090318T21:40:03</wp_sync_dateCreated>
+
+<wp_sync_description><h1><a name="configuration"></a>Configuration</h1>
+Setting up PrettyFaces is simple.
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/prettyfaces/v123/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>0</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>Java, JSF, PrettyFaces</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <div class="inset"> 
 <div style="margin-left: 10px;">
 <ol>
@@ -429,16 +441,24 @@ You should now have a fully functional PrettyFaces configuration.
 </table>
 </form>
 </div>
-<br/><br/>
-.permaLink http://ocpsoft.org/prettyfaces/v123/
-.post_status publish
-.postid 43
-.title PrettyFaces v1.1.x, v1.2.x, v2.0.x Docs (legacy)
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug v123
-<h1><a name="configuration"></a>Configuration</h1>
-Setting up PrettyFaces is simple.
+<br/><br/></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/prettyfaces/v123/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>43</wp_sync_postid>
+
+<wp_sync_title>PrettyFaces v1.1.x, v1.2.x, v2.0.x Docs (legacy)</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>v123</wp_sync_wp_slug>

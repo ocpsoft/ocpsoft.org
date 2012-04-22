@@ -1,11 +1,30 @@
-.categories ['Java', 'Seam']
-.dateCreated 20100423T16:16:27
-.link http://ocpsoft.org/java/seam-faces-3-0-0-alpha2-jsf-2-0-just-got-even-easier/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more (Currently only available through <a href="http://maven.apache.org" target="_blank">Maven</a>)
+
+<wp_sync_categories>['Java', 'Seam']</wp_sync_categories>
+
+<wp_sync_dateCreated>20100423T16:16:27</wp_sync_dateCreated>
+
+<wp_sync_description>Ever wondered why JSF doesn't support bean @Inject-ion in Converters or Validators? Ever wondered how to listen to a single PhaseEvent or ComponentSystemEvent, or filter on events by componentId, or view? Ever wondered why you can't just @Inject FacesContext, or NavigationHandler?
+
+<h4>Well... now you can, with the brand-new, just-out release of <a href="http://seamframework.org/Seam3/FacesModule" target="_blank">Seam Faces</a> -- 3.0.0.Alpha3</h4>
+<p><pre lang="xml"><dependency>
+ <groupId>org.jboss.seam.faces</groupId>
+ <artifactId>seam-faces</artifactId>
+ <version>3.0.0.Alpha3</version>
+</dependency>
+</pre></p>
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/seam-faces-3-0-0-alpha2-jsf-2-0-just-got-even-easier/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>(Currently only available through <a href="http://maven.apache.org" target="_blank">Maven</a>)
 
 <div class="featured"><font color="green"><b>Note:</b></font> For Jetty Users: 
 
@@ -104,23 +123,24 @@ JSF 2.0 introduced the concept of <code>@javax.faces.bean.ViewScoped </code> and
 
 Seam Faces goes the extra mile, and provides the @FlashScoped annotation, which means that a bean in this scope will be stored in the JSF Flash. @ViewScoped means that the object will be stored in the UIViewRoot, unique for each JSF View/Page.
 <h2>That's all for now.</h2>
-There are more features, and more that are coming, but for now -- that should get you started ;) Try it out; <a href="http://seamframework.org/Seam3/FacesModule" target="_blank">get involved</a> with the project; tell us what you think!
-.permaLink http://ocpsoft.org/java/seam-faces-3-0-0-alpha2-jsf-2-0-just-got-even-easier/
-.post_status publish
-.postid 1211
-.title Seam Faces 3.0.0.Alpha3 - JSF 2.0 just got even easier!
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug seam-faces-3-0-0-alpha2-jsf-2-0-just-got-even-easier
-Ever wondered why JSF doesn't support bean @Inject-ion in Converters or Validators? Ever wondered how to listen to a single PhaseEvent or ComponentSystemEvent, or filter on events by componentId, or view? Ever wondered why you can't just @Inject FacesContext, or NavigationHandler?
+There are more features, and more that are coming, but for now -- that should get you started ;) Try it out; <a href="http://seamframework.org/Seam3/FacesModule" target="_blank">get involved</a> with the project; tell us what you think!</wp_sync_mt_text_more>
 
-<h4>Well... now you can, with the brand-new, just-out release of <a href="http://seamframework.org/Seam3/FacesModule" target="_blank">Seam Faces</a> -- 3.0.0.Alpha3</h4>
-<p><pre lang="xml"><dependency>
- <groupId>org.jboss.seam.faces</groupId>
- <artifactId>seam-faces</artifactId>
- <version>3.0.0.Alpha3</version>
-</dependency>
-</pre></p>
+<wp_sync_permaLink>http://ocpsoft.org/java/seam-faces-3-0-0-alpha2-jsf-2-0-just-got-even-easier/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>1211</wp_sync_postid>
+
+<wp_sync_title>Seam Faces 3.0.0.Alpha3 - JSF 2.0 just got even easier!</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>seam-faces-3-0-0-alpha2-jsf-2-0-just-got-even-easier</wp_sync_wp_slug>

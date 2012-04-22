@@ -1,11 +1,22 @@
-.categories ['PrettyFaces']
-.dateCreated 20100706T11:18:56
-.link http://ocpsoft.org/prettyfaces/annotations-support-is-coming-to-prettyfaces-url-rewriting/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['PrettyFaces']</wp_sync_categories>
+
+<wp_sync_dateCreated>20100706T11:18:56</wp_sync_dateCreated>
+
+<wp_sync_description>The PrettyFaces team is currently working on an alternative way to configure URL mappings. PrettyFaces will soon allow to use annotations instead of the classic XML configuration file to declare mappings. We encourage everyone interested in PrettyFaces to take a look at this new way of configuration and share his or her opinion with us.
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/prettyfaces/annotations-support-is-coming-to-prettyfaces-url-rewriting/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <h2>Examples</h2>
 
 This section shows some simple examples for the annotation support of PrettyFaces. For details refer to the <a href="http://ocpsoft.com/docs/prettyfaces/snapshot/en-US/html_single/#config.annotations">Annotation-based configuration chapter</a> in the current snapshot of the <a href="http://ocpsoft.com/docs/prettyfaces/snapshot/en-US/html_single/">PrettyFaces Reference Documentation</a> (note, this documentation will be merged into the primary PrettyFaces reference guide once released.)
@@ -105,15 +116,24 @@ PrettyFaces will support annotations out of the box, nevertheless, it is strongl
   <param-value>com.example.myapp</param-value>
 </context-param></pre>
 
-That's it! :-) If you have any feedback or questions, please ask on the <a href="http://ocpsoft.com/support/">OcpSoft Support Forums</a>, or the <a href="http://groups.google.com/group/prettyfaces-users">OcpSoft Users Group Mailing List</a>. For more information, visit the <a href="http://ocpsoft.com/prettyfaces/">PrettyFaces home page</a>. Thanks!
-.permaLink http://ocpsoft.org/prettyfaces/annotations-support-is-coming-to-prettyfaces-url-rewriting/
-.post_status publish
-.postid 1350
-.title Annotations support is coming to PrettyFaces: URL-rewriting
-.userid 13
-.wp_author_display_name Christian Kaltepoth
-.wp_author_id 13
-.wp_password 
-.wp_post_format standard
-.wp_slug annotations-support-is-coming-to-prettyfaces-url-rewriting
-The PrettyFaces team is currently working on an alternative way to configure URL mappings. PrettyFaces will soon allow to use annotations instead of the classic XML configuration file to declare mappings. We encourage everyone interested in PrettyFaces to take a look at this new way of configuration and share his or her opinion with us.
+That's it! :-) If you have any feedback or questions, please ask on the <a href="http://ocpsoft.com/support/">OcpSoft Support Forums</a>, or the <a href="http://groups.google.com/group/prettyfaces-users">OcpSoft Users Group Mailing List</a>. For more information, visit the <a href="http://ocpsoft.com/prettyfaces/">PrettyFaces home page</a>. Thanks!</wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/prettyfaces/annotations-support-is-coming-to-prettyfaces-url-rewriting/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>1350</wp_sync_postid>
+
+<wp_sync_title>Annotations support is coming to PrettyFaces: URL-rewriting</wp_sync_title>
+
+<wp_sync_userid>13</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Christian Kaltepoth</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>13</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>annotations-support-is-coming-to-prettyfaces-url-rewriting</wp_sync_wp_slug>

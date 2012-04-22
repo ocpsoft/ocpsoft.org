@@ -1,22 +1,9 @@
-.categories ['PrettyFaces']
-.dateCreated 20090830T09:41:17
-.link http://ocpsoft.org/prettyfaces/calling-all-prettyfaces-users/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords Java, JSF, PrettyFaces
-.mt_text_more 
-.permaLink http://ocpsoft.org/prettyfaces/calling-all-prettyfaces-users/
-.post_status publish
-.postid 70
-.title Calling All PrettyFaces Users!
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug calling-all-prettyfaces-users
-<h3>Are you using PrettyFaces on a project you can share about?</h3>
+
+<wp_sync_categories>['PrettyFaces']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090830T09:41:17</wp_sync_dateCreated>
+
+<wp_sync_description><h3>Are you using PrettyFaces on a project you can share about?</h3>
 Looking for real-world experiences:
 <ul>
 	<li>How has PrettyFaces helped you or your team?</li>
@@ -27,4 +14,36 @@ Email to: lincoln@ocpsoft.com
 
 Thank you!
 
-PS - In addition: If you'd like to be added to our new "People using PrettyFaces" page, also send a logo and a short description of your product or company!
+PS - In addition: If you'd like to be added to our new "People using PrettyFaces" page, also send a logo and a short description of your product or company!</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/prettyfaces/calling-all-prettyfaces-users/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>Java, JSF, PrettyFaces</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/prettyfaces/calling-all-prettyfaces-users/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>70</wp_sync_postid>
+
+<wp_sync_title>Calling All PrettyFaces Users!</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>calling-all-prettyfaces-users</wp_sync_wp_slug>

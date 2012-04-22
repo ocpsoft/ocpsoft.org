@@ -1,11 +1,24 @@
-.categories ['Seam']
-.dateCreated 20100426T15:13:19
-.link http://ocpsoft.org/seam/cdi-powered-unit-testing-using-arquillian/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['Seam']</wp_sync_categories>
+
+<wp_sync_dateCreated>20100426T15:13:19</wp_sync_dateCreated>
+
+<wp_sync_description>When developing any system or software, it is important to test as much of that system as possible. Web frameworks are no exception; comprehensive, well-designed unit tests are critical for long-term success and maintenance.
+
+With the introduction of Contexts and Dependency Injection into the Java Enterprise framework (otherwise known as CDI - <a target="_blank" href="http://docs.jboss.org/weld/reference/1.0.1-Final/en-US/html_single/">Weld</a>, or Apache OpenWebBeans,) unit testing is as important as ever, but it would be nice to harness the power of CDI for use in unit tests, as well as in the production system!
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/seam/cdi-powered-unit-testing-using-arquillian/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 <h2>Assumptions:</h2>
 For the purpose of this article, we assume that the audience is already familiar with <a target="_blank" href="http://maven.apache.org">Maven</a>, JUnit already has a CDI-based project set up, and is proficient enough to add new dependencies to their project POM file. (Click <a target="_blank" href="http://seamframework.org/Documentation/WeldQuickstartForMavenUsers">here</a> for a quick tutorial on getting started with CDI/Weld.)
@@ -231,17 +244,24 @@ Pretty simple! No more creating chains of mocks -- just make sure all the right 
 <h2>Final Thoughts</h2>
 That's introducing <a target="_blank" href="http://community.jboss.org/en/arquillian">Arquillian</a> -- the next-generation in-container unit and integration testing suite! 
 
-The first major user of the Arquillian project is Seam 3 - an ecosystem of plug-ins for CDI, Servlet, and the Java EE framework. <a target="_blank" href="http://seamframework.org/Seam3/FacesModule">Take a look</a> at the <a target="_blank" href="http://anonsvn.jboss.org/repos/seam/modules/faces/">source</a> of the Seam 3 modules for more detailed examples on how to use Arquillian.
-.permaLink http://ocpsoft.org/seam/cdi-powered-unit-testing-using-arquillian/
-.post_status publish
-.postid 1237
-.title CDI-powered Unit Testing using Arquillian
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug cdi-powered-unit-testing-using-arquillian
-When developing any system or software, it is important to test as much of that system as possible. Web frameworks are no exception; comprehensive, well-designed unit tests are critical for long-term success and maintenance.
+The first major user of the Arquillian project is Seam 3 - an ecosystem of plug-ins for CDI, Servlet, and the Java EE framework. <a target="_blank" href="http://seamframework.org/Seam3/FacesModule">Take a look</a> at the <a target="_blank" href="http://anonsvn.jboss.org/repos/seam/modules/faces/">source</a> of the Seam 3 modules for more detailed examples on how to use Arquillian.</wp_sync_mt_text_more>
 
-With the introduction of Contexts and Dependency Injection into the Java Enterprise framework (otherwise known as CDI - <a target="_blank" href="http://docs.jboss.org/weld/reference/1.0.1-Final/en-US/html_single/">Weld</a>, or Apache OpenWebBeans,) unit testing is as important as ever, but it would be nice to harness the power of CDI for use in unit tests, as well as in the production system!
+<wp_sync_permaLink>http://ocpsoft.org/seam/cdi-powered-unit-testing-using-arquillian/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>1237</wp_sync_postid>
+
+<wp_sync_title>CDI-powered Unit Testing using Arquillian</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>cdi-powered-unit-testing-using-arquillian</wp_sync_wp_slug>

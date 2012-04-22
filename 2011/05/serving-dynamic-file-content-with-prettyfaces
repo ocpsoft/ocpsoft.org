@@ -1,11 +1,23 @@
-.categories ['PrettyFaces']
-.dateCreated 20110515T12:15:27
-.link http://ocpsoft.org/prettyfaces/serving-dynamic-file-content-with-prettyfaces/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['PrettyFaces']</wp_sync_categories>
+
+<wp_sync_dateCreated>20110515T12:15:27</wp_sync_dateCreated>
+
+<wp_sync_description><a href="http://ocpsoft.com/prettyfaces/">PrettyFaces</a> offers a very simple and flexible way to create bookmark-able RESTful URLs in JSF applications. This short article will show you how easy it is to use PrettyFaces for serving other dynamic content like images or PDF files.
+
+Many applications are required to generate some kind of "dynamic" content for the user. A typical example are product images in a web shop. These are mostly not deployed with the application archive but rather stored in an external directory or a database. Another example are PDF reports that are generated on demand when a user requests them. </wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/prettyfaces/serving-dynamic-file-content-with-prettyfaces/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 Some component suite offer custom components for these kinds of requirements, for example <a href="http://primefaces.org/">PrimeFaces</a> with <a href="http://www.primefaces.org/showcase/ui/dynamicImage.jsf">&lt;p:graphicImage&gt;</a> or <a href="http://jboss.org/richfaces">RichFaces</a> with <a href="http://docs.jboss.org/richfaces/latest_3_3_X/en/devguide/html/rich_paint2D.html">&lt;rich:paint2d&gt;</a>. But these components are often only able to render images and don't offer full control over the HTTP response headers. Another option is to write a custom servlet, but this would require to manually parse the request URL and doesn't integrate well with the rest of the JSF application.
 
@@ -101,17 +113,24 @@ As you can see serving other resources than HTML files is very easy using Pretty
 <li>On-Demand rendering of PDF files</li>
 </ul>
 
-The possibilities are limitless, and if you are able to share, we would love for you to post below and let us know how you've used this feature, or used PrettyFaces in general!
-.permaLink http://ocpsoft.org/prettyfaces/serving-dynamic-file-content-with-prettyfaces/
-.post_status publish
-.postid 1723
-.title Serving dynamic file content with PrettyFaces
-.userid 13
-.wp_author_display_name Christian Kaltepoth
-.wp_author_id 13
-.wp_password 
-.wp_post_format standard
-.wp_slug serving-dynamic-file-content-with-prettyfaces
-<a href="http://ocpsoft.com/prettyfaces/">PrettyFaces</a> offers a very simple and flexible way to create bookmark-able RESTful URLs in JSF applications. This short article will show you how easy it is to use PrettyFaces for serving other dynamic content like images or PDF files.
+The possibilities are limitless, and if you are able to share, we would love for you to post below and let us know how you've used this feature, or used PrettyFaces in general!</wp_sync_mt_text_more>
 
-Many applications are required to generate some kind of "dynamic" content for the user. A typical example are product images in a web shop. These are mostly not deployed with the application archive but rather stored in an external directory or a database. Another example are PDF reports that are generated on demand when a user requests them. 
+<wp_sync_permaLink>http://ocpsoft.org/prettyfaces/serving-dynamic-file-content-with-prettyfaces/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>1723</wp_sync_postid>
+
+<wp_sync_title>Serving dynamic file content with PrettyFaces</wp_sync_title>
+
+<wp_sync_userid>13</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Christian Kaltepoth</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>13</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>serving-dynamic-file-content-with-prettyfaces</wp_sync_wp_slug>

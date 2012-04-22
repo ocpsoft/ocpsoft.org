@@ -1,11 +1,21 @@
-.categories ['OpenSource']
-.dateCreated 20120213T20:12:26
-.link http://ocpsoft.org/?p=3158
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20120213T20:12:26</wp_sync_dateCreated>
+
+<wp_sync_description>One of the most frequently overlooked problems when developing a web application is database migration. You need to add some features? Well, you're going to need to update that database. "Good luck!" - but the good news is that you're not on your own. There are several tricks we can use in a Java EE environment that will help us achieve our goals of database versioning, and incremental database migration.</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/?p=3158</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 This
 
@@ -483,15 +493,24 @@ sebersole: this is good news
 11:35
 lincolnthree
 sebersole: so I'm looking at the docs and articles around ConnectionProvider, it appears that the setting you gave me does what i want, however, im not exactly sure how to use this. I assume that getConnection is where the magic happens, and i would somehow need to look up the JNDI data-source of my choosing?
-sebersole: is there a way to delegate to the default connection provider in the case where you don't want to use this? (and it is still configured)
-.permaLink http://ocpsoft.org/?p=3158
-.post_status draft
-.postid 3158
-.title Database schema migration and external datasource configuration with JPA 2
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug 
-One of the most frequently overlooked problems when developing a web application is database migration. You need to add some features? Well, you're going to need to update that database. "Good luck!" - but the good news is that you're not on your own. There are several tricks we can use in a Java EE environment that will help us achieve our goals of database versioning, and incremental database migration.
+sebersole: is there a way to delegate to the default connection provider in the case where you don't want to use this? (and it is still configured)</wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/?p=3158</wp_sync_permaLink>
+
+<wp_sync_post_status>draft</wp_sync_post_status>
+
+<wp_sync_postid>3158</wp_sync_postid>
+
+<wp_sync_title>Database schema migration and external datasource configuration with JPA 2</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug></wp_sync_wp_slug>

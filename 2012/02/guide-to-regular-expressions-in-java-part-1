@@ -1,11 +1,24 @@
-.categories ['OpenSource']
-.dateCreated 20120222T20:12:23
-.link http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20120222T20:12:23</wp_sync_dateCreated>
+
+<wp_sync_description>[toc][/toc]
+
+Often unknown, or heralded as confusing, regular expressions have defined the standard for powerful text manipulation and search. Without them, many of the applications we know today would not function. This two-part series explores the basics of regular expressions in Java, and provides tutorial examples in the hopes of spreading love for our pattern-matching friends. (Read <a href="http://ocpsoft.com/opensource/guide-to-regular-expressions-in-java-part-2/">part two</a>.)
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 
 <h2 class="toc">Part 1: What are Regular Expressions?</h2>
@@ -280,17 +293,24 @@ clientId=	match the text ‘clientId=’
 Wrapping up, regular expressions are not difficult to master - in fact, they are quite easy. My strategy, whenever building a new regular expression, is to start with the simplest, most general match possible. From there, I continuously add more and more complexity until I have matched, substituted, or inserted exactly what I need.
 
 
-<p class="tip alert"><span>Don't be afraid to "express" yourself! When you've got the hang of these techniques, or need something a little fancier, read <a href="http://ocpsoft.com/opensource/guide-to-regular-expressions-in-java-part-2/">part two</a> for more information on lookaheads, lookbehinds, and configuring the matching engine.</span></p> 
-.permaLink http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/
-.post_status publish
-.postid 822
-.title Guide to Regular Expressions in Java (Part 1)
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug guide-to-regular-expressions-in-java-part-1
-[toc][/toc]
+<p class="tip alert"><span>Don't be afraid to "express" yourself! When you've got the hang of these techniques, or need something a little fancier, read <a href="http://ocpsoft.com/opensource/guide-to-regular-expressions-in-java-part-2/">part two</a> for more information on lookaheads, lookbehinds, and configuring the matching engine.</span></p> </wp_sync_mt_text_more>
 
-Often unknown, or heralded as confusing, regular expressions have defined the standard for powerful text manipulation and search. Without them, many of the applications we know today would not function. This two-part series explores the basics of regular expressions in Java, and provides tutorial examples in the hopes of spreading love for our pattern-matching friends. (Read <a href="http://ocpsoft.com/opensource/guide-to-regular-expressions-in-java-part-2/">part two</a>.)
+<wp_sync_permaLink>http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>822</wp_sync_postid>
+
+<wp_sync_title>Guide to Regular Expressions in Java (Part 1)</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>guide-to-regular-expressions-in-java-part-1</wp_sync_wp_slug>

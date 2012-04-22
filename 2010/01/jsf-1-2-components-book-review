@@ -1,11 +1,22 @@
-.categories ['JSF2', 'OpenSource', 'Technology']
-.dateCreated 20100120T01:56:21
-.link http://ocpsoft.org/opensource/jsf-1-2-components-book-review/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords JSF, OpenSource
-.mt_text_more 
+
+<wp_sync_categories>['JSF2', 'OpenSource', 'Technology']</wp_sync_categories>
+
+<wp_sync_dateCreated>20100120T01:56:21</wp_sync_dateCreated>
+
+<wp_sync_description>As a vocal blogger, I feel responsible for promoting and sharing the good work of others, whether that be technology, creative work, or in this case: a book. I will take no exception to that philosophy when it comes to the <a target="_blank" href="http://www.javaserverfaces.org">JavaServer Faces</a> framework. For a quick read, try the summary. If you are intrigued, read on! I hope you find this review valuable.
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/jsf-1-2-components-book-review/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>JSF, OpenSource</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 <strong>In summary:</strong> I would recommend buying this reference if you are a consumer, designer, UI-developer who is working with existing component libraries, Facelets or JSF 2.0, and not so much focused on creating custom Java-components of your own. I don't, for every-day web-site components, see why you would need much more than what is featured between the covers of this book. Ian Hlavats does a fantastic job of making bringing JSF to the everyday development setting.
 <br/>
@@ -54,15 +65,24 @@ My one complaint is that for a book titled "JSF 1.2 Components," it did not expl
 Download Chapter 2: <a target="_blank" href="http://www.packtpub.com/files/7627-developing-jsf-components-sample-chapter-2-facelets-components.pdf">Facelets Components</a> as a PDF
 </div>
 
-<h3>End notes:</h3> Make sure you check out <a target="_blank" href="http://www.javaserverfaces.org">www.javaserverfaces.org</a>. It's a great starting point and reference for JSF that you will undoubtably bookmark if doing a lot of work, and doing the work with this book. Also check out <a href="http://ocpsoft.com/prettyfaces/">http://ocpsoft.com/prettyfaces/</a> for more information on Pretty URLs in JSF, and building client-facing JSF web applications.
-.permaLink http://ocpsoft.org/opensource/jsf-1-2-components-book-review/
-.post_status publish
-.postid 983
-.title JSF 1.2 Components (Book Review)
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug jsf-1-2-components-book-review
-As a vocal blogger, I feel responsible for promoting and sharing the good work of others, whether that be technology, creative work, or in this case: a book. I will take no exception to that philosophy when it comes to the <a target="_blank" href="http://www.javaserverfaces.org">JavaServer Faces</a> framework. For a quick read, try the summary. If you are intrigued, read on! I hope you find this review valuable.
+<h3>End notes:</h3> Make sure you check out <a target="_blank" href="http://www.javaserverfaces.org">www.javaserverfaces.org</a>. It's a great starting point and reference for JSF that you will undoubtably bookmark if doing a lot of work, and doing the work with this book. Also check out <a href="http://ocpsoft.com/prettyfaces/">http://ocpsoft.com/prettyfaces/</a> for more information on Pretty URLs in JSF, and building client-facing JSF web applications.</wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/opensource/jsf-1-2-components-book-review/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>983</wp_sync_postid>
+
+<wp_sync_title>JSF 1.2 Components (Book Review)</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>jsf-1-2-components-book-review</wp_sync_wp_slug>

@@ -1,11 +1,21 @@
-.categories ['JSF', 'Spring']
-.dateCreated 20090723T19:23:59
-.link http://ocpsoft.org/java/jsf-java/spring-security-what-happens-after-you-log-in/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords JSF, Security, Spring
-.mt_text_more 
+
+<wp_sync_categories>['JSF', 'Spring']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090723T19:23:59</wp_sync_dateCreated>
+
+<wp_sync_description>So you've got Spring Security up and running. Great! Now you've got a login page, and you just added a form on the global page menu to allow users to Login from any public page. There's just one problem. When they log-in from a public page, they’re redirected to the default-login-url! Your users will have to re-navigate to the page they were already viewing when they logged in, or maybe they'll just use the much dreaded "Back" button. That's not a good interaction, but we have a solution. </wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/jsf-java/spring-security-what-happens-after-you-log-in/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>JSF, Security, Spring</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 <strong>UPDATE:</strong> There is a simpler, but less complete solution built in. (<a href="http://forum.springsource.org/showthread.php?t=65123">See here</a>.) This means appending "?spring-security-redirect=/your/target/url" to your redirect to the Spring Security Filter chain.
 
@@ -195,15 +205,24 @@ Try one of these highly-recommended books, written by Spring Developers and Spri
 
 [slideout handle="Need more info?" header="Try one of these highly-recommended books:"]
    [amazon codes="1935182358,1430224991" bgcolor="dddddd"]
-[/slideout]
-.permaLink http://ocpsoft.org/java/jsf-java/spring-security-what-happens-after-you-log-in/
-.post_status publish
-.postid 64
-.title Spring Security - What happens after /you/ log in?
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug spring-security-what-happens-after-you-log-in
-So you've got Spring Security up and running. Great! Now you've got a login page, and you just added a form on the global page menu to allow users to Login from any public page. There's just one problem. When they log-in from a public page, they’re redirected to the default-login-url! Your users will have to re-navigate to the page they were already viewing when they logged in, or maybe they'll just use the much dreaded "Back" button. That's not a good interaction, but we have a solution. 
+[/slideout]</wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/java/jsf-java/spring-security-what-happens-after-you-log-in/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>64</wp_sync_postid>
+
+<wp_sync_title>Spring Security - What happens after /you/ log in?</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>spring-security-what-happens-after-you-log-in</wp_sync_wp_slug>

@@ -1,11 +1,21 @@
-.categories ['JSF']
-.dateCreated 20090724T14:28:54
-.link http://ocpsoft.org/java/jsf-java/please-tell-your-developers-to-call-facescontextrelease/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords Best Practices, JSF
-.mt_text_more 
+
+<wp_sync_categories>['JSF']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090724T14:28:54</wp_sync_dateCreated>
+
+<wp_sync_description>If you are manipulating any FacesContext when doing any kind of Sevlet Forwards - such as <a href="http://ocpsoft.com/java/jsf-java/jsf-20-extension-development-accessing-facescontext-in-a-filter/" target="_blank">from a filter</a> - you MUST release() any FacesContext you’ve created. The consequences of forgetting this are potentially dire.</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/jsf-java/please-tell-your-developers-to-call-facescontextrelease/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>Best Practices, JSF</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 You may even want to go so far as to completely UN-set the FacesContext from the current thread. We would do this by calling FacesContextBuilder.removeFacesContext()
 <h2>Call FacesContext.release() when you are done!</h2>
@@ -68,15 +78,24 @@ Or sometimes request attributes will be missing entirely, even if the request is
  
 In order to safely navigate FacesContext in a ServletFilter, make absolutely sure that you release() and remove the context when you are done with it. Then you get happy applications working together with other frameworks!
  
-Cheers, happy developing! :)
-.permaLink http://ocpsoft.org/java/jsf-java/please-tell-your-developers-to-call-facescontextrelease/
-.post_status publish
-.postid 66
-.title Please! Tell your developers to call facesContext.release() 
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug please-tell-your-developers-to-call-facescontextrelease
-If you are manipulating any FacesContext when doing any kind of Sevlet Forwards - such as <a href="http://ocpsoft.com/java/jsf-java/jsf-20-extension-development-accessing-facescontext-in-a-filter/" target="_blank">from a filter</a> - you MUST release() any FacesContext you’ve created. The consequences of forgetting this are potentially dire.
+Cheers, happy developing! :)</wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/java/jsf-java/please-tell-your-developers-to-call-facescontextrelease/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>66</wp_sync_postid>
+
+<wp_sync_title>Please! Tell your developers to call facesContext.release() </wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>please-tell-your-developers-to-call-facescontextrelease</wp_sync_wp_slug>

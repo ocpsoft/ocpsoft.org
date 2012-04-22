@@ -1,11 +1,22 @@
-.categories ['Java']
-.dateCreated 20100317T12:53:27
-.link http://ocpsoft.org/java/why-doesnt-jpa-jma-jta-ejb-jsf-cdi-work-jee-is-too-complicated/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more Stop using Tomcat and wondering why JEE "doesn't work."</h2>
+
+<wp_sync_categories>['Java']</wp_sync_categories>
+
+<wp_sync_dateCreated>20100317T12:53:27</wp_sync_dateCreated>
+
+<wp_sync_description>First, before reading this - you're going to be upset with me. You're going to disagree. I know -- it's OK. You may not even believe me, but you might keep reading because anger inspires action.
+<h2></wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/why-doesnt-jpa-jma-jta-ejb-jsf-cdi-work-jee-is-too-complicated/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>Stop using Tomcat and wondering why JEE "doesn't work."</h2>
 You're doing yourself a big disservice.
 
 Start thinking about <a href="http://www.jboss.org/jbossas/downloads.html" target="_blank">JBoss AS 6</a>, or <a href="https://glassfish.dev.java.net/" target="_blank">GlassFish v3</a> -- Yes, I know, it's a "Full JEE Container," -- it's "Heavy," but with JEE6, that's not a bad thing: It all "Just works" and it works really well. Trust me, the reason people have thought Java EE sucks, is because they try to do this stuff on Tomcat, and say "Why doesn't (JPA, JMS, JTA, EJB, JSF, CDI) work?" Well... that's because Tomcat only gives you Servlet - the Request/Response lifecycle. So people install all these things manually, or try to, and then say, "Wow, Java EE is really hard to use, shit, I'm gonna use Spring or Grails instead."
@@ -58,16 +69,24 @@ I call for the JCP - "Java <strong>Community</strong> Process" to become an inde
 
 In the words of the human torch...
 <h1 style="text-align: center;">"FLAME ON!"</h1>
+</wp_sync_mt_text_more>
 
-.permaLink http://ocpsoft.org/java/why-doesnt-jpa-jma-jta-ejb-jsf-cdi-work-jee-is-too-complicated/
-.post_status publish
-.postid 1147
-.title Why doesn't (JPA, JMS, JTA, EJB, JSF, CDI) work? JEE is "Too Complicated"
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug why-doesnt-jpa-jma-jta-ejb-jsf-cdi-work-jee-is-too-complicated
-First, before reading this - you're going to be upset with me. You're going to disagree. I know -- it's OK. You may not even believe me, but you might keep reading because anger inspires action.
-<h2>
+<wp_sync_permaLink>http://ocpsoft.org/java/why-doesnt-jpa-jma-jta-ejb-jsf-cdi-work-jee-is-too-complicated/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>1147</wp_sync_postid>
+
+<wp_sync_title>Why doesn't (JPA, JMS, JTA, EJB, JSF, CDI) work? JEE is "Too Complicated"</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>why-doesnt-jpa-jma-jta-ejb-jsf-cdi-work-jee-is-too-complicated</wp_sync_wp_slug>

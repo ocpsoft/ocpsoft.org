@@ -1,11 +1,38 @@
-.categories ['Best Practices', 'Java']
-.dateCreated 20080801T17:49:26
-.link http://ocpsoft.org/java/replacing-commented-code-with-delegated-code/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords Java
-.mt_text_more It’s my philosophy that if you find yourself writing a comment that describes what a method does, either the method does too much, or you should use that comment AS the name of the method. Try something like this:
+
+<wp_sync_categories>['Best Practices', 'Java']</wp_sync_categories>
+
+<wp_sync_dateCreated>20080801T17:49:26</wp_sync_dateCreated>
+
+<wp_sync_description>Today's subject is a well commented square root approximation method. Imagine that this method is buried deep in a very messy Java class. How can we make sure that this code is reusable and that our comments don't become out of date as our code changes?
+<pre lang="java">/**
+ * Approximate the square root of n, to within the specified tolerance,
+ * using the Newton-Raphson method. This method takes two arguments:
+ * @param Double n The number to be square-rooted
+ * @param Double tolerance the error tolerance
+ * @return Double result of square root operation
+ */
+public Double approximateSquareRoot(Double n, Double tolerance)
+{
+    Double root = n / 2;
+    while (Math.abs(root - (n / root)) > tolerance)
+    {
+        root = 0.5 * (root + (n / root));
+    }
+    return root;
+}</pre>
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/replacing-commented-code-with-delegated-code/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>Java</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>It’s my philosophy that if you find yourself writing a comment that describes what a method does, either the method does too much, or you should use that comment AS the name of the method. Try something like this:
 <pre lang="java">public Double newtonRaphsonSqRoot( Double number, Double tolerance )</pre>
 <h3>Method Delegation:</h3>
 If you need to conform to a standard interface, then delegate! <a href="http://http://en.wikipedia.org/wiki/Delegation_%28programming%29" target="_blank">Delegation</a> is your best friend.
@@ -56,31 +83,24 @@ If you are using the newtonRaphsonSquareRoot() method in one place in your entir
 
 The next phase, the Factory, would come when you start using different types of SquareRoot approximations. Factories help hide the details of creation and implementation from the client. Hiding implementation is almost always good.
 
-My article is a response to: <a href="http://blog.uncommons.org/2008/07/25/no-your-code-is-not-so-great-that-it-doesnt-need-comments/" target="_blank">this blog</a>. Comment away, so to speak.
-.permaLink http://ocpsoft.org/java/replacing-commented-code-with-delegated-code/
-.post_status publish
-.postid 6
-.title Replacing Commented Code with Delegated Code
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug replacing-commented-code-with-delegated-code
-Today's subject is a well commented square root approximation method. Imagine that this method is buried deep in a very messy Java class. How can we make sure that this code is reusable and that our comments don't become out of date as our code changes?
-<pre lang="java">/**
- * Approximate the square root of n, to within the specified tolerance,
- * using the Newton-Raphson method. This method takes two arguments:
- * @param Double n The number to be square-rooted
- * @param Double tolerance the error tolerance
- * @return Double result of square root operation
- */
-public Double approximateSquareRoot(Double n, Double tolerance)
-{
-    Double root = n / 2;
-    while (Math.abs(root - (n / root)) > tolerance)
-    {
-        root = 0.5 * (root + (n / root));
-    }
-    return root;
-}</pre>
+My article is a response to: <a href="http://blog.uncommons.org/2008/07/25/no-your-code-is-not-so-great-that-it-doesnt-need-comments/" target="_blank">this blog</a>. Comment away, so to speak.</wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/java/replacing-commented-code-with-delegated-code/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>6</wp_sync_postid>
+
+<wp_sync_title>Replacing Commented Code with Delegated Code</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>replacing-commented-code-with-delegated-code</wp_sync_wp_slug>

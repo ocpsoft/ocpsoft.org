@@ -1,11 +1,24 @@
-.categories ['OpenSource']
-.dateCreated 20120223T20:11:31
-.link http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-2/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20120223T20:11:31</wp_sync_dateCreated>
+
+<wp_sync_description>[toc][/toc]
+
+Often unknown, or heralded as confusing, regular expressions have defined the standard for powerful text manipulation and search. Without them, many of the applications we know today would not function. This two-part series explores the basics of regular expressions in Java, and provides tutorial examples in the hopes of spreading love for our pattern-matching friends. (Read <a href="http://ocpsoft.com/opensource/guide-to-regular-expressions-in-java-part-1/">part one</a>.)
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-2/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 <h1>Part 2: Look-ahead &amp; Configuration flags</h1>
 Have you ever wanted to find something in a string, but you only wanted to find it when it came before another pattern in that string? Or maybe you wanted to find a piece of text that was not followed by another piece of text? Normally, with standard string searching, you would have to write a somewhat complex function to perform the exact operation you wanted. This can, however, all be done on one line using regular expressions. This chapter will also cover the configuration flags available to modify some of the behaviors of the regular expression patterns language.
@@ -204,17 +217,24 @@ The look-ahead in this example is very similar to the pattern itself, and in thi
 
 Regular expressions provide an extremely flexible and powerful text processing system. Try to imagine doing this work using <strong>String.substring(...)</strong> or <strong>String.indexOf(...)</strong>, with loops, nested loops, and dozens of <code>if</code> statements. I don't even want to try... so play around! Think about using regular expressions next time you find yourself doing text or pattern manipulation with looping and other painful methods. Let us know how you do.
 
-<p class="tip alert"><span>This article is part two in the series: "Guide to Regular Expressions in Java." Read <a href="http://ocpsoft.com/opensource/guide-to-regular-expressions-in-java-part-1/">part one</a> for more information on basic matching, grouping, extracting, and substitution.</span></p>
-.permaLink http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-2/
-.post_status publish
-.postid 915
-.title Guide to Regular Expressions in Java (Part 2)
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug guide-to-regular-expressions-in-java-part-2
-[toc][/toc]
+<p class="tip alert"><span>This article is part two in the series: "Guide to Regular Expressions in Java." Read <a href="http://ocpsoft.com/opensource/guide-to-regular-expressions-in-java-part-1/">part one</a> for more information on basic matching, grouping, extracting, and substitution.</span></p></wp_sync_mt_text_more>
 
-Often unknown, or heralded as confusing, regular expressions have defined the standard for powerful text manipulation and search. Without them, many of the applications we know today would not function. This two-part series explores the basics of regular expressions in Java, and provides tutorial examples in the hopes of spreading love for our pattern-matching friends. (Read <a href="http://ocpsoft.com/opensource/guide-to-regular-expressions-in-java-part-1/">part one</a>.)
+<wp_sync_permaLink>http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-2/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>915</wp_sync_postid>
+
+<wp_sync_title>Guide to Regular Expressions in Java (Part 2)</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>guide-to-regular-expressions-in-java-part-2</wp_sync_wp_slug>

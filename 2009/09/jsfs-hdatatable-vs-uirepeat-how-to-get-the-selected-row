@@ -1,11 +1,24 @@
-.categories ['JSF']
-.dateCreated 20090914T04:30:42
-.link http://ocpsoft.org/java/jsf-java/jsfs-hdatatable-vs-uirepeat-how-to-get-the-selected-row/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt <ui:repeat> allows iteration over a List of Array[] of items, but it does not provide a method of discovering the "selected" or "actioned" row; there's no way to discover the row the user is interacting with. Or is there?
-.mt_keywords Facelets, Java, JSF
-.mt_text_more 
+
+<wp_sync_categories>['JSF']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090914T04:30:42</wp_sync_dateCreated>
+
+<wp_sync_description>So, a little while ago I was attempting to use JSF's Facelets &lt;ui:repeat&gt; tag, as a replacement for &lt;h:dataTable&gt;, but difficulty came when I needed to process actions on individual records of each row.
+
+&lt;ui:repeat&gt; allows iteration over a List of Array[] of items, but it does not provide a method of discovering the "selected" or "actioned" row; there's no way to discover the row the user is interacting with. Or is there?
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/jsf-java/jsfs-hdatatable-vs-uirepeat-how-to-get-the-selected-row/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt><ui:repeat> allows iteration over a List of Array[] of items, but it does not provide a method of discovering the "selected" or "actioned" row; there's no way to discover the row the user is interacting with. Or is there?</wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>Facelets, Java, JSF</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 I've since learned of two ways to deal with this situation:
 <h2>1. Use ListDataModel</h2>
 I asked another JSF Expert, <a href="http://mojavelinux.com"  target="_blank">Dan Allen</a> (author of Seam in Action) and here's what he told me:
@@ -89,17 +102,24 @@ public class ItemController
 <p>For more information on JSF SEO and Bookmarking, take a look at <a href="http://ocpsoft.com/prettyfaces">PrettyFaces: URL rewriting extension for JSF</a>.</p>
 
 <p>If you are at all confused by these examples, feel free to leave a comment, and I'll do my best to help.</p>
+</wp_sync_mt_text_more>
 
-.permaLink http://ocpsoft.org/java/jsf-java/jsfs-hdatatable-vs-uirepeat-how-to-get-the-selected-row/
-.post_status publish
-.postid 67
-.title JSF's &lt;h:dataTable&gt; vs &lt;ui:repeat&gt; - How to get the selected row.
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug jsfs-hdatatable-vs-uirepeat-how-to-get-the-selected-row
-So, a little while ago I was attempting to use JSF's Facelets &lt;ui:repeat&gt; tag, as a replacement for &lt;h:dataTable&gt;, but difficulty came when I needed to process actions on individual records of each row.
+<wp_sync_permaLink>http://ocpsoft.org/java/jsf-java/jsfs-hdatatable-vs-uirepeat-how-to-get-the-selected-row/</wp_sync_permaLink>
 
-&lt;ui:repeat&gt; allows iteration over a List of Array[] of items, but it does not provide a method of discovering the "selected" or "actioned" row; there's no way to discover the row the user is interacting with. Or is there?
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>67</wp_sync_postid>
+
+<wp_sync_title>JSF's &lt;h:dataTable&gt; vs &lt;ui:repeat&gt; - How to get the selected row.</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>jsfs-hdatatable-vs-uirepeat-how-to-get-the-selected-row</wp_sync_wp_slug>

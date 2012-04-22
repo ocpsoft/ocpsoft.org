@@ -1,11 +1,25 @@
-.categories ['Java', 'JSF', 'Spring']
-.dateCreated 20081016T19:17:19
-.link http://ocpsoft.org/java/acegi-spring-security-jsf-integration-project-continued/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords Java, JSF, Spring
-.mt_text_more 
+
+<wp_sync_categories>['Java', 'JSF', 'Spring']</wp_sync_categories>
+
+<wp_sync_dateCreated>20081016T19:17:19</wp_sync_dateCreated>
+
+<wp_sync_description>We've gotten a good number of comments from <a href="mailto:lincoln@ocpsoft.com">Lincoln's</a> latest post on <a href="http://ocpsoft.com/java/acegi-spring-security-jsf-login-page/">Spring Security and JSF</a>.  A few comments have asked for further code samples on how to get this example working.
+
+We created a runnable project for this example, and it can be downloaded <a href="http://code.google.com/p/springsecurity/">here</a>.
+
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/acegi-spring-security-jsf-integration-project-continued/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>Java, JSF, Spring</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 All you need to do is extract the project to your workspace (We use <a href="http://www.eclipse.org/downloads/">Eclipse</a>), and import the project.  Add the project to your server and start it up.  Next open your browser and navigate to:
 
@@ -18,18 +32,24 @@ Assuming all the steps above worked successfully you should see a page like the 
 <p style="text-align: left;">Now click on the Secret link.  This should force you to the login page.  The Secret page requires authentication to view.  Go ahead and type in the <strong>User</strong>: rod  <strong>Password</strong>: koala</p>
 <p style="text-align: left;">You should now be redirected to the Secret page (shown below).</p>
 <p style="text-align: center;"><a href="http://ocpsoft.com/wp-content/uploads/2008/10/secret1.gif"><img class="alignnone size-medium wp-image-23" title="secret1" src="http://ocpsoft.com/wp-content/uploads/2008/10/secret1-300x214.gif" alt="" width="300" height="214" /></a></p>
-<p style="text-align: left;">Go back to the Home page and try Logout, and Login with bad credentials and see what you get.  I hope this project helps to tie up any loose ends, and helps answer any outstanding questions.</p>
-.permaLink http://ocpsoft.org/java/acegi-spring-security-jsf-integration-project-continued/
-.post_status publish
-.postid 19
-.title Acegi/Spring Security JSF Integration Project continued
-.userid 5
-.wp_author_display_name Derek Hollis
-.wp_author_id 5
-.wp_password 
-.wp_post_format standard
-.wp_slug acegi-spring-security-jsf-integration-project-continued
-We've gotten a good number of comments from <a href="mailto:lincoln@ocpsoft.com">Lincoln's</a> latest post on <a href="http://ocpsoft.com/java/acegi-spring-security-jsf-login-page/">Spring Security and JSF</a>.  A few comments have asked for further code samples on how to get this example working.
+<p style="text-align: left;">Go back to the Home page and try Logout, and Login with bad credentials and see what you get.  I hope this project helps to tie up any loose ends, and helps answer any outstanding questions.</p></wp_sync_mt_text_more>
 
-We created a runnable project for this example, and it can be downloaded <a href="http://code.google.com/p/springsecurity/">here</a>.
+<wp_sync_permaLink>http://ocpsoft.org/java/acegi-spring-security-jsf-integration-project-continued/</wp_sync_permaLink>
 
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>19</wp_sync_postid>
+
+<wp_sync_title>Acegi/Spring Security JSF Integration Project continued</wp_sync_title>
+
+<wp_sync_userid>5</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Derek Hollis</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>5</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>acegi-spring-security-jsf-integration-project-continued</wp_sync_wp_slug>

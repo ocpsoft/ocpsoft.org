@@ -1,11 +1,24 @@
-.categories ['OpenSource', 'PrettyFaces']
-.dateCreated 20100219T17:31:15
-.link http://ocpsoft.org/opensource/announcing-prettyfaces-2-0-4-url-rewriting-for-javaserver-faces-jsf2/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['OpenSource', 'PrettyFaces']</wp_sync_categories>
+
+<wp_sync_dateCreated>20100219T17:31:15</wp_sync_dateCreated>
+
+<wp_sync_description><div class="featured">
+<center>We are <strong>proud</strong> to introduce version the 2.0.4 series of <a href="http://ocpsoft.com/prettyfaces/" title="SEO | Dynamic Parameters | Bookmarks | Navigation | JSF | JSF2 | UrlRewrite">PrettyFaces</a>:</center>
+</div>
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/announcing-prettyfaces-2-0-4-url-rewriting-for-javaserver-faces-jsf2/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <h3>Add PrettyFaces to an existing JSF2 application less than 5 minutes:</h3>
 
 <ul>
@@ -41,17 +54,24 @@
 </pre>
 
 <center class="featured"><object width="640" height="505"><param name="movie" value="http://www.youtube.com/v/1kicjmLsN3w&hl=en_US&fs=1&color1=0x006699&color2=0x54abd6"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/1kicjmLsN3w&hl=en_US&fs=1&color1=0x006699&color2=0x54abd6" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="505"></embed></object><h3>Why not try <a href="http://ocpsoft.com/prettyfaces/" title="SEO | Dynamic Parameters | Bookmarks | Navigation | JSF | JSF2 | UrlRewrite">PrettyFaces</a> now?.</h3></center>
+</wp_sync_mt_text_more>
 
-.permaLink http://ocpsoft.org/opensource/announcing-prettyfaces-2-0-4-url-rewriting-for-javaserver-faces-jsf2/
-.post_status publish
-.postid 1041
-.title Announcing - PrettyFaces 2.0.4: URL Rewriting for JSF 2.0
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug announcing-prettyfaces-2-0-4-url-rewriting-for-javaserver-faces-jsf2
-<div class="featured">
-<center>We are <strong>proud</strong> to introduce version the 2.0.4 series of <a href="http://ocpsoft.com/prettyfaces/" title="SEO | Dynamic Parameters | Bookmarks | Navigation | JSF | JSF2 | UrlRewrite">PrettyFaces</a>:</center>
-</div>
+<wp_sync_permaLink>http://ocpsoft.org/opensource/announcing-prettyfaces-2-0-4-url-rewriting-for-javaserver-faces-jsf2/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>1041</wp_sync_postid>
+
+<wp_sync_title>Announcing - PrettyFaces 2.0.4: URL Rewriting for JSF 2.0</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>announcing-prettyfaces-2-0-4-url-rewriting-for-javaserver-faces-jsf2</wp_sync_wp_slug>

@@ -1,11 +1,33 @@
-.categories ['OpenSource']
-.dateCreated 20100204T23:35:29
-.link http://ocpsoft.org/opensource/how-to-safely-add-modify-servlet-request-parameter-values/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20100204T23:35:29</wp_sync_dateCreated>
+
+<wp_sync_description><h1 style="display:none;"><a href="http://ocpsoft.com/prettyfaces/"  title="SEO | Dynamic Parameters | Bookmarks | and Navigation for JSF | JSF2">PrettyFaces</a></h1>
+<h2>Sometimes things are worth writing about.</h2>
+While working on the <a href="http://ocpsoft.com/prettyfaces/"  title="SEO | Dynamic Parameters | Bookmarks | and Navigation for JSF | JSF2">PrettyFaces</a>: bookmarking, and SEO extensions for JSF / JSF2, I came across a need to modify the current request parameters in order to "trick" the system into thinking that additional query parameters had been supplied.
+
+<h3>Naively, I tried:</h3>
+<pre lang="java">
+    request.getParameterMap().put("name", new String[]{"value1", "value2"});
+</pre>
+But that doesn't work, because you aren't allowed to modify request parameter values once the request has begun processing:
+<pre lang="text">
+    java.lang.IllegalStateException: Cannot find message associated with key parameterMap.locked
+	at org.apache.catalina.util.ParameterMap.put(ParameterMap.java:213)
+</pre></wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/how-to-safely-add-modify-servlet-request-parameter-values/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 This means we need to wrap the current request with our own special <code>HttpServletRequestWrapper</code> that will provide the ability to merge in some extra parameters up front. 
 <h3>The magic is quite simple:</h3>
@@ -24,19 +46,6 @@ You could simply provide a modifiable map implementation, but that would break t
 
 So using a bit of lazy processing, here's how we avoid reading the parameters until they are actually requested, while still maintaining the immutable nature of the Map.
 <pre lang="java">
-/*
- * PrettyFaces is an OpenSource JSF library to create bookmarkable URLs.
- * Copyright (C) 2010 - Lincoln Baxter, III <lincoln@ocpsoft.com> This program
- * is free software: you can redistribute it and/or modify it under the terms of
- * the GNU Lesser General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version. This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
- * for more details. You should have received a copy of the GNU Lesser General
- * Public License along with this program. If not, see the file COPYING.LESSER
- * or visit the GNU website at <http://www.gnu.org/licenses/>.
- */
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.Map;
@@ -112,27 +121,24 @@ Once you have your handy request wrapper, you can get working! Keep in mind that
     request.getRequestDispatcher("url").forward(wrappedRequest, response)
 </pre>
 
-Happy hacking! ;) As a final note, I'd like to say that <a href="http://java.sun.com/developer/technicalArticles/JavaEE/JavaEE6Overview.html">JEE 6</a> has really turned out to be a great experience. Very pleasant to program on. Well done, SUN!
-.permaLink http://ocpsoft.org/opensource/how-to-safely-add-modify-servlet-request-parameter-values/
-.post_status publish
-.postid 1049
-.title Safely add / modify Servlet request parameter values
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug how-to-safely-add-modify-servlet-request-parameter-values
-<h1 style="display:none;"><a href="http://ocpsoft.com/prettyfaces/"  title="SEO | Dynamic Parameters | Bookmarks | and Navigation for JSF | JSF2">PrettyFaces</a></h1>
-<h2>Sometimes things are worth writing about.</h2>
-While working on the <a href="http://ocpsoft.com/prettyfaces/"  title="SEO | Dynamic Parameters | Bookmarks | and Navigation for JSF | JSF2">PrettyFaces</a>: bookmarking, and SEO extensions for JSF / JSF2, I came across a need to modify the current request parameters in order to "trick" the system into thinking that additional query parameters had been supplied.
+Happy hacking! ;) As a final note, I'd like to say that <a href="http://java.sun.com/developer/technicalArticles/JavaEE/JavaEE6Overview.html">JEE 6</a> has really turned out to be a great experience. Very pleasant to program on. Well done, SUN!</wp_sync_mt_text_more>
 
-<h3>Naively, I tried:</h3>
-<pre lang="java">
-    request.getParameterMap().put("name", new String[]{"value1", "value2"});
-</pre>
-But that doesn't work, because you aren't allowed to modify request parameter values once the request has begun processing:
-<pre lang="text">
-    java.lang.IllegalStateException: Cannot find message associated with key parameterMap.locked
-	at org.apache.catalina.util.ParameterMap.put(ParameterMap.java:213)
-</pre>
+<wp_sync_permaLink>http://ocpsoft.org/opensource/how-to-safely-add-modify-servlet-request-parameter-values/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>1049</wp_sync_postid>
+
+<wp_sync_title>Safely add / modify Servlet request parameter values</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>how-to-safely-add-modify-servlet-request-parameter-values</wp_sync_wp_slug>

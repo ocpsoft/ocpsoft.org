@@ -1,11 +1,31 @@
-.categories ['Java']
-.dateCreated 20120314T21:04:32
-.link http://ocpsoft.org/java/migrating-from-prettyfaces-to-rewrite-simplicity-meets-power/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['Java']</wp_sync_categories>
+
+<wp_sync_dateCreated>20120314T21:04:32</wp_sync_dateCreated>
+
+<wp_sync_description>[toc/]
+
+Hi Java web-developers. I hope you are already familiar with [[PrettyFaces]]. If not, I will give you a very short introduction taken from the project documentation:
+
+
+<div class="featured">
+<h3>PrettyFaces is:</h3>
+<em>"The open-source <strong>/url/#{rewriting}</strong> solution for Servlet, JSF, and Java EE, including features such as: page-load actions, seamless integration with faces navigation, dynamic view-id assignment, managed parameter parsing, and configuration-free compatibility with other web frameworks."</em></div>
+
+
+[[Rewrite]], on the other hand, is a URL-rewriting framework built for extendability, for use with any web-framework or pure Servlet itself, and will be used for the core of PrettyFaces 4.0 - once released, bringing the best of both worlds... so that sounds very cool thus far, but what do we want to achive with it? Why would we use either of these frameworks?</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/migrating-from-prettyfaces-to-rewrite-simplicity-meets-power/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 
 <h3>Just compare these two URLs:</h3>
@@ -230,25 +250,24 @@ We are now able to call our application under http://localhost:8080/prettyMigrat
 
 You can grab this project <a href="https://github.com/w0mbat/PrettyMigration" title="Github" target="_blank">from Github</a>. The project was build and tested on <a href="http://www.jboss.org/jbossas" title="JBoss AS 7.1" target="_blank">JBoss 7.1</a>, in my opinion the fastest and most advanced application server on the market.
 
-[info]I hope you liked my first post on this blog and if you have any comments/questions/improvements, please just post a comment here or contact me![/info]
-.permaLink http://ocpsoft.org/java/migrating-from-prettyfaces-to-rewrite-simplicity-meets-power/
-.post_status publish
-.postid 3966
-.title Migrating from PrettyFaces to Rewrite - Simplicity meets power
-.userid 727
-.wp_author_display_name Daniel Sachse
-.wp_author_id 727
-.wp_password 
-.wp_post_format standard
-.wp_slug migrating-from-prettyfaces-to-rewrite-simplicity-meets-power
-[toc/]
+[info]I hope you liked my first post on this blog and if you have any comments/questions/improvements, please just post a comment here or contact me![/info]</wp_sync_mt_text_more>
 
-Hi Java web-developers. I hope you are already familiar with [[PrettyFaces]]. If not, I will give you a very short introduction taken from the project documentation:
+<wp_sync_permaLink>http://ocpsoft.org/java/migrating-from-prettyfaces-to-rewrite-simplicity-meets-power/</wp_sync_permaLink>
 
+<wp_sync_post_status>publish</wp_sync_post_status>
 
-<div class="featured">
-<h3>PrettyFaces is:</h3>
-<em>"The open-source <strong>/url/#{rewriting}</strong> solution for Servlet, JSF, and Java EE, including features such as: page-load actions, seamless integration with faces navigation, dynamic view-id assignment, managed parameter parsing, and configuration-free compatibility with other web frameworks."</em></div>
+<wp_sync_postid>3966</wp_sync_postid>
 
+<wp_sync_title>Migrating from PrettyFaces to Rewrite - Simplicity meets power</wp_sync_title>
 
-[[Rewrite]], on the other hand, is a URL-rewriting framework built for extendability, for use with any web-framework or pure Servlet itself, and will be used for the core of PrettyFaces 4.0 - once released, bringing the best of both worlds... so that sounds very cool thus far, but what do we want to achive with it? Why would we use either of these frameworks?
+<wp_sync_userid>727</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Daniel Sachse</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>727</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>migrating-from-prettyfaces-to-rewrite-simplicity-meets-power</wp_sync_wp_slug>

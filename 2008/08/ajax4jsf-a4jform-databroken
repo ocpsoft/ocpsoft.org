@@ -1,11 +1,25 @@
-.categories ['JSF', 'OpenSource']
-.dateCreated 20080824T22:31:50
-.link http://ocpsoft.org/opensource/ajax4jsf-a4jform-databroken/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords Ajax4Jsf, Java, JSF, OpenSource
-.mt_text_more 
+
+<wp_sync_categories>['JSF', 'OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20080824T22:31:50</wp_sync_dateCreated>
+
+<wp_sync_description><h2>A4J:Form is missing several specified ajax functions</h2>
+(<em>View this issue on the JBoss tracker <a href="https://jira.jboss.org/jira/browse/AJSF-141" target="_blank">here</a>. Keep reading, there is a fix...<a href="https://jira.jboss.org/jira/secure/attachment/12321714/UIAjaxForm.java"> download fix</a></em>)
+<h3>The issue:</h3>
+When using the a4j:form component, the <em>data="#{managedBean.property}"</em> the properties defined in the <em>data</em> element list are supposed to be available after the a4j event in the <em>data</em> JavaScript variable; however, with &lt;a4j:form&gt; the attribute is not correctly causing the JavaScript <em>data</em> variable to be populated.
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/ajax4jsf-a4jform-databroken/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>Ajax4Jsf, Java, JSF, OpenSource</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 The <em>data</em> variable is always undefined, even if the managed bean property is set to a valid value. This is exhibited by the alert box as the value is displayed, "(undefined)".
 <h4>Example:</h4>
 <pre lang="xml">
@@ -67,18 +81,24 @@ I don't particularly like to repeat this code, so I may get around to refactorin
 
 I believe other functionality that was also broken included both the <em>focus="elementId"</em> and the <em>oncomplete="javascriptCode"</em>.
 
-As always, please feel free to improve and comment on this. Enjoy!
-.permaLink http://ocpsoft.org/opensource/ajax4jsf-a4jform-databroken/
-.post_status publish
-.postid 9
-.title Ajax4Jsf &#60;a4j:form data=&#8221;broken!&#8221;&#62;
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug ajax4jsf-a4jform-databroken
-<h2>A4J:Form is missing several specified ajax functions</h2>
-(<em>View this issue on the JBoss tracker <a href="https://jira.jboss.org/jira/browse/AJSF-141" target="_blank">here</a>. Keep reading, there is a fix...<a href="https://jira.jboss.org/jira/secure/attachment/12321714/UIAjaxForm.java"> download fix</a></em>)
-<h3>The issue:</h3>
-When using the a4j:form component, the <em>data="#{managedBean.property}"</em> the properties defined in the <em>data</em> element list are supposed to be available after the a4j event in the <em>data</em> JavaScript variable; however, with &lt;a4j:form&gt; the attribute is not correctly causing the JavaScript <em>data</em> variable to be populated.
+As always, please feel free to improve and comment on this. Enjoy!</wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/opensource/ajax4jsf-a4jform-databroken/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>9</wp_sync_postid>
+
+<wp_sync_title>Ajax4Jsf &#60;a4j:form data=&#8221;broken!&#8221;&#62;</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>ajax4jsf-a4jform-databroken</wp_sync_wp_slug>

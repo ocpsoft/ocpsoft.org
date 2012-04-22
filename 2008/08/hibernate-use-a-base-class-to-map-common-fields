@@ -1,11 +1,26 @@
-.categories ['Hibernate', 'Java']
-.dateCreated 20080817T16:38:47
-.link http://ocpsoft.org/java/hibernate-use-a-base-class-to-map-common-fields/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['Hibernate', 'Java']</wp_sync_categories>
+
+<wp_sync_dateCreated>20080817T16:38:47</wp_sync_dateCreated>
+
+<wp_sync_description><h2>Tutorial Chapter 2 - Easier Development and Maintenance</h2>
+Tired of wiring in an <em>id</em>, <em>version</em>, and <em>timestamp</em> field into all of your Hibernate objects? There's an easy way to solve this pain once and for all of your classes. Avoid code-repetition: today's article focuses on using Hibernate Annotations to map common fields into one mapped superclass.
+
+If you have not done so already, and need to get a bare bones hibernate application up and running, <a href="http://ocpsoft.com/java/getting-started-quickly-with-hibernate-annotations/" target="_self">this guide</a> should get you up and running in a few minutes.
+
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/hibernate-use-a-base-class-to-map-common-fields/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <h3>Basic Concepts:</h3>
 You're using Hibernate, or at least getting your feet wet at this point, so let's assume that you've started to notice a pattern. You need  in all of your objects:
 <ul>
@@ -230,19 +245,24 @@ Congratulations. You should now have a mapped superclass to contain your common 
 	<li><a href="http://www.hibernate.org/hib_docs/v3/reference/en/html/tutorial.html" target="_blank">Hibernate's Standard Tutorial</a></li>
 	<li><a href="http://www.hibernate.org/hib_docs/annotations/reference/en/html_single/" target="_blank">Hibernate Annotations Reference</a></li>
 </ol>
-This article is part of a series: <a href="http://ocpsoft.com/java/guide-to-hibernate-annotations/" target="_self">Guide to Hibernate Annotations</a>
-.permaLink http://ocpsoft.org/java/hibernate-use-a-base-class-to-map-common-fields/
-.post_status publish
-.postid 8
-.title Hibernate: Use a Base Class to Map Common Fields
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug hibernate-use-a-base-class-to-map-common-fields
-<h2>Tutorial Chapter 2 - Easier Development and Maintenance</h2>
-Tired of wiring in an <em>id</em>, <em>version</em>, and <em>timestamp</em> field into all of your Hibernate objects? There's an easy way to solve this pain once and for all of your classes. Avoid code-repetition: today's article focuses on using Hibernate Annotations to map common fields into one mapped superclass.
+This article is part of a series: <a href="http://ocpsoft.com/java/guide-to-hibernate-annotations/" target="_self">Guide to Hibernate Annotations</a></wp_sync_mt_text_more>
 
-If you have not done so already, and need to get a bare bones hibernate application up and running, <a href="http://ocpsoft.com/java/getting-started-quickly-with-hibernate-annotations/" target="_self">this guide</a> should get you up and running in a few minutes.
+<wp_sync_permaLink>http://ocpsoft.org/java/hibernate-use-a-base-class-to-map-common-fields/</wp_sync_permaLink>
 
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>8</wp_sync_postid>
+
+<wp_sync_title>Hibernate: Use a Base Class to Map Common Fields</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>hibernate-use-a-base-class-to-map-common-fields</wp_sync_wp_slug>

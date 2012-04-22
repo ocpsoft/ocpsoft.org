@@ -1,11 +1,24 @@
-.categories ['Java', 'JSF']
-.dateCreated 20090215T20:44:43
-.link http://ocpsoft.org/java/undocumented-jsf/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords JSF
-.mt_text_more 
+
+<wp_sync_categories>['Java', 'JSF']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090215T20:44:43</wp_sync_dateCreated>
+
+<wp_sync_description><h2>Add a comment with your experience or "gotcha!"</h2>
+
+Java Server Faces is currently full of relatively undocumented features and behavior. As part of the JSF2 release, OcpSoft is working with a few folks at Seam/Redhat to try to address these issues and provide better documentation.
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/undocumented-jsf/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>JSF</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <h2>If you have used, or currently use JSF, we need your help.</h2>
 
 What did you find that was backwards from what you expected? What did you find that you couldn't find anything about?
@@ -31,17 +44,24 @@ JSF2 will be addressing this issue at a configuration level, so adding timezones
 
 <h3>If you need to use XML markup in your comment, please <a href="http://www.string-functions.com/htmlencode.aspx">encode it first</a>!</h3>
 Otherwise it will disappear completely :(
-<br/>
-.permaLink http://ocpsoft.org/java/undocumented-jsf/
-.post_status publish
-.postid 42
-.title Un-Documented JSF: Reference
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug undocumented-jsf
-<h2>Add a comment with your experience or "gotcha!"</h2>
+<br/></wp_sync_mt_text_more>
 
-Java Server Faces is currently full of relatively undocumented features and behavior. As part of the JSF2 release, OcpSoft is working with a few folks at Seam/Redhat to try to address these issues and provide better documentation.
+<wp_sync_permaLink>http://ocpsoft.org/java/undocumented-jsf/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>42</wp_sync_postid>
+
+<wp_sync_title>Un-Documented JSF: Reference</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>undocumented-jsf</wp_sync_wp_slug>

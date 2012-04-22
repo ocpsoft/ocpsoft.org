@@ -1,11 +1,36 @@
-.categories ['Design']
-.dateCreated 20110628T14:22:35
-.link http://ocpsoft.org/design/why-should-i-care-about-your-website-the-court-marry-approach/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['Design']</wp_sync_categories>
+
+<wp_sync_dateCreated>20110628T14:22:35</wp_sync_dateCreated>
+
+<wp_sync_description>[toc/]
+
+<img src="http://ocpsoft.com/wp-content/uploads/2011/06/rings1-300x300.png" alt="" title="rings" width="250" height="250" class="alignnone size-medium wp-image-2046" style="float: right; margin-left: 10px; margin-bottom: 10px; margin-right: -25px; margin-top: -25px;"/>
+
+<span class="toc">Who are your visitors?</span> Consider the example where you and I work for a technology company attempting to sell solutions to customers on the web. Our  homepage is currently cluttered, and we're not seeing the conversion  numbers that we would like. One of our colleagues has suggested that in  order to improve adoption of your products, an architecture diagram with  links to various solutions be placed on the splash, or landing page of  the company website. It shows a great many products, and how they are  all related, but there is not a great deal of immediate information on  how to get started with any given topic. This will be the first thing  new visitors see when they come looking for... what was I looking for  again?
+
+There are categorically two kinds of people who visit a website, we will refer to these as group one, and group two:
+<ol>
+	<li>People who <strong>know</strong> what they are looking for.</li>
+	<li>People who have <strong>no idea</strong> what they are looking for.</li>
+</ol>
+
+<h3>Let's consider the impacts of this impression.</h3>
+Which of our two groups of people would benefit from an architecture chart (such as the one your colleague suggested?) That's right, you guessed it; those people are in group number one. They already know what their architecture is going to look like roughly, or know enough to realize they need to do  some architecture research and are looking for a specific solution. They may already even be a customer and are simply coming back to the website to find more information about a product they are already using - looking for a user-guide or perhaps the service-desk phone number.
+
+Congratulations! You have successfully provided little no value to these users, because you force them to look at a page of marginally information before they can get to what they really want, after digging through a series of links or buttons; we really should have just shown them the information they wanted in the first place, without the little overview of... everything. So what about our second group? Surely everyone else who falls in to group number two  must surely benefit from seeing a pretty diagram of all our products laid out in front of them? If we show them everything, they'll surely be interested in at least one of our goodies, right? Wrong...</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/design/why-should-i-care-about-your-website-the-court-marry-approach/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 
 <h1>Nobody wants it</h1>
@@ -58,30 +83,24 @@ That wasn't so bad was it? A few developer hours, a few more designer hours, and
 <h1>References:</h1>
 <a href="http://articles.latimes.com/2009/mar/16/health/he-choices16">http://articles.latimes.com/2009/mar/16/health/he-choices16</a>
 <a href="http://money.msn.com/saving-money-tips/post.aspx?post=fc73429d-a531-4675-8078-00b8c2ff68b3">http://money.msn.com/saving-money-tips/post.aspx?post=fc73429d-a531-4675-8078-00b8c2ff68b3</a>
-<a href="http://www.nytimes.com/2010/02/27/your-money/27shortcuts.html">http://www.nytimes.com/2010/02/27/your-money/27shortcuts.html</a>
-.permaLink http://ocpsoft.org/design/why-should-i-care-about-your-website-the-court-marry-approach/
-.post_status publish
-.postid 2000
-.title Why should I care about your website? The "Court -> Marry" approach.
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug why-should-i-care-about-your-website-the-court-marry-approach
-[toc/]
+<a href="http://www.nytimes.com/2010/02/27/your-money/27shortcuts.html">http://www.nytimes.com/2010/02/27/your-money/27shortcuts.html</a></wp_sync_mt_text_more>
 
-<img src="http://ocpsoft.com/wp-content/uploads/2011/06/rings1-300x300.png" alt="" title="rings" width="250" height="250" class="alignnone size-medium wp-image-2046" style="float: right; margin-left: 10px; margin-bottom: 10px; margin-right: -25px; margin-top: -25px;"/>
+<wp_sync_permaLink>http://ocpsoft.org/design/why-should-i-care-about-your-website-the-court-marry-approach/</wp_sync_permaLink>
 
-<span class="toc">Who are your visitors?</span> Consider the example where you and I work for a technology company attempting to sell solutions to customers on the web. Our  homepage is currently cluttered, and we're not seeing the conversion  numbers that we would like. One of our colleagues has suggested that in  order to improve adoption of your products, an architecture diagram with  links to various solutions be placed on the splash, or landing page of  the company website. It shows a great many products, and how they are  all related, but there is not a great deal of immediate information on  how to get started with any given topic. This will be the first thing  new visitors see when they come looking for... what was I looking for  again?
+<wp_sync_post_status>publish</wp_sync_post_status>
 
-There are categorically two kinds of people who visit a website, we will refer to these as group one, and group two:
-<ol>
-	<li>People who <strong>know</strong> what they are looking for.</li>
-	<li>People who have <strong>no idea</strong> what they are looking for.</li>
-</ol>
+<wp_sync_postid>2000</wp_sync_postid>
 
-<h3>Let's consider the impacts of this impression.</h3>
-Which of our two groups of people would benefit from an architecture chart (such as the one your colleague suggested?) That's right, you guessed it; those people are in group number one. They already know what their architecture is going to look like roughly, or know enough to realize they need to do  some architecture research and are looking for a specific solution. They may already even be a customer and are simply coming back to the website to find more information about a product they are already using - looking for a user-guide or perhaps the service-desk phone number.
+<wp_sync_title>Why should I care about your website? The "Court -> Marry" approach.</wp_sync_title>
 
-Congratulations! You have successfully provided little no value to these users, because you force them to look at a page of marginally information before they can get to what they really want, after digging through a series of links or buttons; we really should have just shown them the information they wanted in the first place, without the little overview of... everything. So what about our second group? Surely everyone else who falls in to group number two  must surely benefit from seeing a pretty diagram of all our products laid out in front of them? If we show them everything, they'll surely be interested in at least one of our goodies, right? Wrong...
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>why-should-i-care-about-your-website-the-court-marry-approach</wp_sync_wp_slug>

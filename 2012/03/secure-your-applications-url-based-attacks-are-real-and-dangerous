@@ -1,11 +1,27 @@
-.categories ['OpenSource', 'Rewrite']
-.dateCreated 20120329T00:44:55
-.link http://ocpsoft.org/opensource/secure-your-applications-url-based-attacks-are-real-and-dangerous/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['OpenSource', 'Rewrite']</wp_sync_categories>
+
+<wp_sync_dateCreated>20120329T00:44:55</wp_sync_dateCreated>
+
+<wp_sync_description>[toc]
+
+According to a recent research paper by the Aspect Security Group, entitled <u>The Unfortunate Reality of Insecure Libraries</u>, "Eighty percent of the code in today’s applications comes from libraries and frameworks, but the risk of vulnerabilities in these components is widely ignored and under appreciated. A vulnerable library can allow an attacker to exploit the full privilege of the application, including accessing any data, executing transactions, stealing files, and communicating with the Internet. Organizations literally trust their business to the libraries they use."
+
+When validating user input from forms and exposed services, we often ignore the URL or think to ourselves, "<em>that</em> information is validated later, it'll be <em>fine</em>," but when hacks like the following start turning up - in common web-frameworks - it's time to start thinking seriously about URL validation. Fortunately, it's easy to accomplish using a number of methods, but first, let's look at how these attacks work.
+
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/secure-your-applications-url-based-attacks-are-real-and-dangerous/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 [info]You can <a href="https://www.aspectsecurity.com/blog/the-unfortunate-reality-of-insecure-libraries/" rel="nofollow">request a copy of the security research paper</a> from Aspect Security's website.[/info]
 
@@ -200,19 +216,24 @@ Keep in mind that you <b>should</b> implement security at all levels of your app
 
 If you would like to learn more about the OCPsoft Rewrite framework, you can visit the <a href="http://ocpsoft.org/rewrite/" title="URLRewriteFilter | Java | OpenSource">project homepage</a>, or check out the sources on <a href="https://github.com/ocpsoft/rewrite">GitHub</a>. There are [[Calendar|Regular development meetings]] held every Monday at 2pm EST (GMT+5) on Google Hangout.
 
-<center><a href="http://ocpsoft.org/rewrite/" title="URLRewriteFilter | Java | Open-source"><img style="padding: 35px;" src="http://ocpsoft.org/wp-content/uploads/2011/08/rewrite-reflect-url3-signal-50.png" width="400" height="100" class="alignnone size-full wp-image-4070" /></a></center>
-.permaLink http://ocpsoft.org/opensource/secure-your-applications-url-based-attacks-are-real-and-dangerous/
-.post_status publish
-.postid 4083
-.title Is your web application secure? HTTP attacks are real, and dangerous
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug secure-your-applications-url-based-attacks-are-real-and-dangerous
-[toc]
+<center><a href="http://ocpsoft.org/rewrite/" title="URLRewriteFilter | Java | Open-source"><img style="padding: 35px;" src="http://ocpsoft.org/wp-content/uploads/2011/08/rewrite-reflect-url3-signal-50.png" width="400" height="100" class="alignnone size-full wp-image-4070" /></a></center></wp_sync_mt_text_more>
 
-According to a recent research paper by the Aspect Security Group, entitled <u>The Unfortunate Reality of Insecure Libraries</u>, "Eighty percent of the code in today’s applications comes from libraries and frameworks, but the risk of vulnerabilities in these components is widely ignored and under appreciated. A vulnerable library can allow an attacker to exploit the full privilege of the application, including accessing any data, executing transactions, stealing files, and communicating with the Internet. Organizations literally trust their business to the libraries they use."
+<wp_sync_permaLink>http://ocpsoft.org/opensource/secure-your-applications-url-based-attacks-are-real-and-dangerous/</wp_sync_permaLink>
 
-When validating user input from forms and exposed services, we often ignore the URL or think to ourselves, "<em>that</em> information is validated later, it'll be <em>fine</em>," but when hacks like the following start turning up, in common web-frameworks, it's time to start thinking seriously about URL validation. Fortunately, it's easy to accomplish using a number of methods, but first, let's look at how these attacks work.
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>4083</wp_sync_postid>
+
+<wp_sync_title>Is your web application secure? HTTP attacks are real, and dangerous</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>secure-your-applications-url-based-attacks-are-real-and-dangerous</wp_sync_wp_slug>

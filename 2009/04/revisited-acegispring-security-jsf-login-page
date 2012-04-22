@@ -1,11 +1,22 @@
-.categories ['JSF', 'Spring']
-.dateCreated 20090427T15:00:07
-.link http://ocpsoft.org/java/jsf-java/revisited-acegispring-security-jsf-login-page/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords JSF, Security, Spring
-.mt_text_more 
+
+<wp_sync_categories>['JSF', 'Spring']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090427T15:00:07</wp_sync_dateCreated>
+
+<wp_sync_description>A correction has been made to the post: <a href="http://ocpsoft.com/java/acegi-spring-security-jsf-login-page/" target="_self">http://ocpsoft.com/java/acegi-spring-security-jsf-login-page/</a>, fixing an issue where FacesMessages were not being displayed on failed authentications.
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/jsf-java/revisited-acegispring-security-jsf-login-page/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>JSF, Security, Spring</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 Because the example had initially used the @PostConstruct annotation to trigger a method to handle the error message, the handleError() method was being called before the actual authentication event had taken place, thus, the handleError() method was triggering before any BadCredentialsExceptions were stored in the Session.
 
@@ -62,15 +73,24 @@ public class LoginErrorPhaseListener implements PhaseListener
 </faces-config>
 </pre>
 
-<h3>Happy developing!</h3>
-.permaLink http://ocpsoft.org/java/jsf-java/revisited-acegispring-security-jsf-login-page/
-.post_status publish
-.postid 55
-.title Revisited - Acegi/Spring Security & JSF Login Page
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug revisited-acegispring-security-jsf-login-page
-A correction has been made to the post: <a href="http://ocpsoft.com/java/acegi-spring-security-jsf-login-page/" target="_self">http://ocpsoft.com/java/acegi-spring-security-jsf-login-page/</a>, fixing an issue where FacesMessages were not being displayed on failed authentications.
+<h3>Happy developing!</h3></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/java/jsf-java/revisited-acegispring-security-jsf-login-page/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>55</wp_sync_postid>
+
+<wp_sync_title>Revisited - Acegi/Spring Security & JSF Login Page</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>revisited-acegispring-security-jsf-login-page</wp_sync_wp_slug>

@@ -1,11 +1,38 @@
-.categories ['JSF', 'OpenSource']
-.dateCreated 20080909T20:03:43
-.link http://ocpsoft.org/opensource/create-common-facelets-jar/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt If you've learned to use JSF Facelets to create on-the-fly, simple components using XHTML, then you probably have a whole slew of custom components that need to be copied between various projects, and can be somewhat painful to keep up to date. You may have tried to move them into a jar file, but Facelets can't find them there (without some help from us.)
-.mt_keywords JSF Facelets Java
-.mt_text_more 
+
+<wp_sync_categories>['JSF', 'OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20080909T20:03:43</wp_sync_dateCreated>
+
+<wp_sync_description><h2>Tutorial - Step By Step</h2>
+If you've learned to use JSF Facelets to create on-the-fly, simple components using XHTML, then you probably have a whole slew of custom components that need to be copied between various projects, and can be somewhat painful to keep up to date. You may have tried to move them into a jar file, but Facelets can't find them there (without some help from us.)
+
+<div class="featured">
+<div class="inside">
+
+<font color="green">UPDATE  - 09/15/2010:</font> In JSF2, this process is no longer required. Simply use JSF2 relocatable resources: Any file placed under the /WebApp/resources directory, and any files placed in the jar:/META-INF/resources directories can be served directly using the JSF2 notation:
+<p/>
+<pre lang="perl">#{resource['ocpsoft-jsf2-templates/liquid-blue-2col:images/bodybg.jpg']}</pre>
+
+Which targets the following resource:
+
+<pre lang="xml">[META-INF or WebContent]/resources/ocpsoft-jsf2-templates/liquid-blue-2col/images/bodybg.jpg</pre>
+
+</div>
+</div>
+
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/create-common-facelets-jar/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt>If you've learned to use JSF Facelets to create on-the-fly, simple components using XHTML, then you probably have a whole slew of custom components that need to be copied between various projects, and can be somewhat painful to keep up to date. You may have tried to move them into a jar file, but Facelets can't find them there (without some help from us.)</wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>JSF Facelets Java</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <h2>Goals</h2>
 The intent of this tutorial is to explain how to create a packaged jar file, which can be referenced from multiple projects. and which contains all of your tag components and classes for easier maintenance.
 
@@ -228,31 +255,24 @@ That should be everything. You should now be able to store your common facelets 
 <h3>References</h3>
 <ul>
 	<li><a href="http://www.google.com/url?sa=t&amp;source=web&amp;ct=res&amp;cd=1&amp;url=https%3A%2F%2Ffacelets.dev.java.net%2F&amp;ei=QTLHSO28F4zqvAW58P3BAQ&amp;usg=AFQjCNH9xh-uwQ2iBV3ilrhBxoSEKVfeMQ&amp;sig2=bC8W5yiQ71MoydcbLSziOQ" target="_blank">Facelets Project</a></li>
-</ul>
-.permaLink http://ocpsoft.org/opensource/create-common-facelets-jar/
-.post_status publish
-.postid 13
-.title Create a Common Facelets Tag Library: Share it across projects
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug create-common-facelets-jar
-<h2>Tutorial - Step By Step</h2>
-If you've learned to use JSF Facelets to create on-the-fly, simple components using XHTML, then you probably have a whole slew of custom components that need to be copied between various projects, and can be somewhat painful to keep up to date. You may have tried to move them into a jar file, but Facelets can't find them there (without some help from us.)
+</ul></wp_sync_mt_text_more>
 
-<div class="featured">
-<div class="inside">
+<wp_sync_permaLink>http://ocpsoft.org/opensource/create-common-facelets-jar/</wp_sync_permaLink>
 
-<font color="green">UPDATE  - 09/15/2010:</font> In JSF2, this process is no longer required. Simply use JSF2 relocatable resources: Any file placed under the /WebApp/resources directory, and any files placed in the jar:/META-INF/resources directories can be served directly using the JSF2 notation:
-<p/>
-<pre lang="perl">#{resource['ocpsoft-jsf2-templates/liquid-blue-2col:images/bodybg.jpg']}</pre>
+<wp_sync_post_status>publish</wp_sync_post_status>
 
-Which targets the following resource:
+<wp_sync_postid>13</wp_sync_postid>
 
-<pre lang="xml">[META-INF or WebContent]/resources/ocpsoft-jsf2-templates/liquid-blue-2col/images/bodybg.jpg</pre>
+<wp_sync_title>Create a Common Facelets Tag Library: Share it across projects</wp_sync_title>
 
-</div>
-</div>
+<wp_sync_userid>3</wp_sync_userid>
 
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>create-common-facelets-jar</wp_sync_wp_slug>

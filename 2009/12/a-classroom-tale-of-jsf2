@@ -1,11 +1,24 @@
-.categories ['JSF2']
-.dateCreated 20091214T10:27:53
-.link http://ocpsoft.org/java/jsf2-java/a-classroom-tale-of-jsf2/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['JSF2']</wp_sync_categories>
+
+<wp_sync_dateCreated>20091214T10:27:53</wp_sync_dateCreated>
+
+<wp_sync_description>As a member of the JSF 2 <a  target="_blank" href="http://www.javaserverfaces.org/">expert group</a>, I've stated that my primary goal is to make JSF, and J2EE, more accessible to the community at large, to reach out and make sure that people's voices are heard, and that what we are doing makes sense. I've only been part of the group for a little under a year, but I've met some pretty cool people, and you'd be surprised at how interested they all are to hear your story.
+
+Here's an email from David Geary (a long-time EG member) to the Expert Group, that I think paints a very nice picture of people's reaction to JSF and JSF2, author of Core Java Server Faces (<a  target="_blank" href="http://horstmann.com/corejsf/">Core JSF</a>):
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/jsf2-java/a-classroom-tale-of-jsf2/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <center>
 <div class="featured" style="text-align: justify; max-width: 600px;">
 <div class="inside">
@@ -30,17 +43,24 @@
 
 <p>What does the future hold? That's up to you to decide... For more information on JSF 2 features, a getting started guide, how to give feedback, get involved, and why JSF 2 is a leading web-framework, visit <a href="www.javaserverfaces.org">www.javaserverfaces.org</a>.</p>
 <p>You can read this email on David's blog, here: <a target="_blank" href="http://davidgearyblog.wordpress.com/">http://davidgearyblog.wordpress.com/</a></p>
-<br/>
-.permaLink http://ocpsoft.org/java/jsf2-java/a-classroom-tale-of-jsf2/
-.post_status publish
-.postid 628
-.title A winter tale of Java Server Faces
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug a-classroom-tale-of-jsf2
-As a member of the JSF 2 <a  target="_blank" href="http://www.javaserverfaces.org/">expert group</a>, I've stated that my primary goal is to make JSF, and J2EE, more accessible to the community at large, to reach out and make sure that people's voices are heard, and that what we are doing makes sense. I've only been part of the group for a little under a year, but I've met some pretty cool people, and you'd be surprised at how interested they all are to hear your story.
+<br/></wp_sync_mt_text_more>
 
-Here's an email from David Geary (a long-time EG member) to the Expert Group, that I think paints a very nice picture of people's reaction to JSF and JSF2, author of Core Java Server Faces (<a  target="_blank" href="http://horstmann.com/corejsf/">Core JSF</a>):
+<wp_sync_permaLink>http://ocpsoft.org/java/jsf2-java/a-classroom-tale-of-jsf2/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>628</wp_sync_postid>
+
+<wp_sync_title>A winter tale of Java Server Faces</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>a-classroom-tale-of-jsf2</wp_sync_wp_slug>

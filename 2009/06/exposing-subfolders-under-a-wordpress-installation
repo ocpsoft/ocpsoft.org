@@ -1,11 +1,21 @@
-.categories ['OpenSource']
-.dateCreated 20090629T20:29:54
-.link http://ocpsoft.org/opensource/exposing-subfolders-under-a-wordpress-installation/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt Exposing subfolders beneath a WordPress installation can be a pain, but no longer!
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090629T20:29:54</wp_sync_dateCreated>
+
+<wp_sync_description>So, this is going to be a short-relatively non-technical post, but having just run into the problem of exposing a subdirectory when WordPress is installed into the root directory of a typical DreamHost or GoDaddy style account, I found the need, so here's the answer if anyone else needs it.</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/exposing-subfolders-under-a-wordpress-installation/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt>Exposing subfolders beneath a WordPress installation can be a pain, but no longer!</wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 I ran into this issue because we needed somewhere to put the OcpSoft <a href="http://ocpsoft.com/api/ocpsoft-pretty-faces/2.0.1_GA/">PrettyFaces</a>/<a href="http://ocpsoft.com/api/ocpsoft-pretty-time/1.0.2/">PrettyTime </a>APIs, which of course needed to be on the OcpSoft website. Yet, WordPress is installed in the root directory, which meant that all requests were going to be sent to the wordpress index.php file (thanks to apache .htaccess)
 <h3>The solution is simple (as we like it...)</h3>
@@ -20,15 +30,24 @@ And that's it! The folder contents will be exposed for browsing:
 <a href="http://ocpsoft.com/repository/">http://ocpsoft.com/repository/</a>
 
 <a href="http://ocpsoft.com/xml/">http://ocpsoft.com/xml/</a>
-<h3>Happy blogging :)</h3>
-.permaLink http://ocpsoft.org/opensource/exposing-subfolders-under-a-wordpress-installation/
-.post_status publish
-.postid 62
-.title Exposing subfolders under a WordPress installation
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug exposing-subfolders-under-a-wordpress-installation
-So, this is going to be a short-relatively non-technical post, but having just run into the problem of exposing a subdirectory when WordPress is installed into the root directory of a typical DreamHost or GoDaddy style account, I found the need, so here's the answer if anyone else needs it.
+<h3>Happy blogging :)</h3></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/opensource/exposing-subfolders-under-a-wordpress-installation/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>62</wp_sync_postid>
+
+<wp_sync_title>Exposing subfolders under a WordPress installation</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>exposing-subfolders-under-a-wordpress-installation</wp_sync_wp_slug>

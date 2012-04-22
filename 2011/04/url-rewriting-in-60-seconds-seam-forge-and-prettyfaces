@@ -1,11 +1,29 @@
-.categories ['Java', 'JBoss', 'OpenSource', 'PrettyFaces', 'Seam']
-.dateCreated 20110407T12:12:38
-.link http://ocpsoft.org/java/url-rewriting-in-60-seconds-seam-forge-and-prettyfaces/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['Java', 'JBoss', 'OpenSource', 'PrettyFaces', 'Seam']</wp_sync_categories>
+
+<wp_sync_dateCreated>20110407T12:12:38</wp_sync_dateCreated>
+
+<wp_sync_description>Do you have an existing Maven-based Java EE application that you'd like to clean up a bit in the browser? Do your URLs look too much like this: 
+
+<code>http://example.com/app/sillyServletName/someStuff?sillyParam=22&sillyOtherParam=profile</code> 
+
+And not enough like this?  
+
+<code>http://example.com/app/profile/22</code>
+
+Are you building a new application, and don't want to sacrifice anything when it comes to usability or SEO capabilities? Well, URL-rewriting is your answer, and it's easy to get started, even easier using JBoss Forge.</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/url-rewriting-in-60-seconds-seam-forge-and-prettyfaces/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 <a href="http://ocpsoft.com/prettyfaces/">PrettyFaces</a> is a URL-rewriting solution for Servlet, JavaEE, and JSF applications, is <a href="http://ocpsoft.com/docs/prettyfaces/snapshot/en-US/html_single/#Extensions">highly extendable</a>, and <a href="http://ocpsoft.com/docs/prettyfaces/snapshot/en-US/html_single/#GettingStarted">easy to install</a>; however, we weren't satisfied with the experience of forcing people to create their own configuration file, trying to find which version to install, and having problems when they try to mix information from different sources. <a href="http://jboss.org/forge/">JBoss Forge</a> looked like the perfect opportunity to make your job even easier, and it's through JBoss Forge that we think we've accomplished our goals; we'd like to know if you agree:
 
@@ -163,23 +181,24 @@ Notice that we have support for &lt;TAB&gt; completion of URL-mapping IDs, so yo
 
 
 <h2>Conclusion</h2>
-Please note that you can also use all of the tools described here on an <b>existing Maven-based web application</b>, and you do not need to create a new project just to try this. We hope that this simple plugin makes your life a little bit easier, and more productive. We also welcome your feedback. Tell us how we can improve! For those who are curious, the source code for the PrettyFaces Forge Plugin is located here, on GitHub.
-.permaLink http://ocpsoft.org/java/url-rewriting-in-60-seconds-seam-forge-and-prettyfaces/
-.post_status publish
-.postid 1832
-.title URL-rewriting in 60 seconds: JBoss Forge and PrettyFaces
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug url-rewriting-in-60-seconds-seam-forge-and-prettyfaces
-Do you have an existing Maven-based Java EE application that you'd like to clean up a bit in the browser? Do your URLs look too much like this: 
+Please note that you can also use all of the tools described here on an <b>existing Maven-based web application</b>, and you do not need to create a new project just to try this. We hope that this simple plugin makes your life a little bit easier, and more productive. We also welcome your feedback. Tell us how we can improve! For those who are curious, the source code for the PrettyFaces Forge Plugin is located here, on GitHub.</wp_sync_mt_text_more>
 
-<code>http://example.com/app/sillyServletName/someStuff?sillyParam=22&sillyOtherParam=profile</code> 
+<wp_sync_permaLink>http://ocpsoft.org/java/url-rewriting-in-60-seconds-seam-forge-and-prettyfaces/</wp_sync_permaLink>
 
-And not enough like this?  
+<wp_sync_post_status>publish</wp_sync_post_status>
 
-<code>http://example.com/app/profile/22</code>
+<wp_sync_postid>1832</wp_sync_postid>
 
-Are you building a new application, and don't want to sacrifice anything when it comes to usability or SEO capabilities? Well, URL-rewriting is your answer, and it's easy to get started, even easier using JBoss Forge.
+<wp_sync_title>URL-rewriting in 60 seconds: JBoss Forge and PrettyFaces</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>url-rewriting-in-60-seconds-seam-forge-and-prettyfaces</wp_sync_wp_slug>

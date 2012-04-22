@@ -1,11 +1,21 @@
-.categories ['Java']
-.dateCreated 20100420T12:03:45
-.link http://ocpsoft.org/java/prettytime-1-0-6-released-new-languages-thread-safety/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['Java']</wp_sync_categories>
+
+<wp_sync_dateCreated>20100420T12:03:45</wp_sync_dateCreated>
+
+<wp_sync_description>OcpSoft PrettyTime is an open-source time-formatting library for creating human-readable timestamps like, "in 3 minutes," or "moments ago." -- intuitive, easy, extendable. Visit the home page to download and learn more about using <a title="PrettyTime - Elapsed Timestamp Formatting and Conversion for Java (Social, JSF2)" href="http://ocpsoft.com/prettytime/">PrettyTime</a>. New features in this release: Thread Safety, Java 1.5 compatibility, extra languages.</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/prettytime-1-0-6-released-new-languages-thread-safety/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 <pre lang="xml"><dependency>
 	<groupId>com.ocpsoft</groupId>
@@ -37,15 +47,24 @@ A quick intro to PrettyTime using JUnit:
     assertEquals("12 minutes from now", p.format(new Date(1000 * 60 * 12)));
  }
 }
-</pre>
-.permaLink http://ocpsoft.org/java/prettytime-1-0-6-released-new-languages-thread-safety/
-.post_status publish
-.postid 1188
-.title PrettyTime 1.0.6 Released - New Languages, Thread-Safety
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug prettytime-1-0-6-released-new-languages-thread-safety
-OcpSoft PrettyTime is an open-source time-formatting library for creating human-readable timestamps like, "in 3 minutes," or "moments ago." -- intuitive, easy, extendable. Visit the home page to download and learn more about using <a title="PrettyTime - Elapsed Timestamp Formatting and Conversion for Java (Social, JSF2)" href="http://ocpsoft.com/prettytime/">PrettyTime</a>. New features in this release: Thread Safety, Java 1.5 compatibility, extra languages.
+</pre></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/java/prettytime-1-0-6-released-new-languages-thread-safety/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>1188</wp_sync_postid>
+
+<wp_sync_title>PrettyTime 1.0.6 Released - New Languages, Thread-Safety</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>prettytime-1-0-6-released-new-languages-thread-safety</wp_sync_wp_slug>

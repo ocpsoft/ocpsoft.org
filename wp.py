@@ -13,6 +13,7 @@ import sys
 import os
 import os.path
 import getopt
+from BeautifulSoup import BeautifulSoup, SoupStrainer
 import re
 import xmlrpclib
 try:
@@ -61,33 +62,21 @@ class Post:
         buffer = []
         lst = self.post.keys()
         lst.sort()
-        lst.remove('description')
         for key in lst:
             if key not in Post.ignore_fields:
-                buffer.append ( ".%s %s" % (key, self.post[key] ))
-        buffer.append(self.post['description']) 
+                buffer.append ( "\n<wp_sync_%s>%s</wp_sync_%s>" % (key, self.post[key], key))
         return '\n'.join(map(lambda x: x, buffer))
 
     def parse(self, contents):
         self.post = {}
 
-        dots = True
-        description = []
-        for line in contents.split('\n'):
-            if dots and line and line[0] == '.':
-                pos = line.find(' ')
-                if pos != -1:
-                    key = line[1:pos]
-                    if key not in Post.ignore_fields:
-                        self.post[key] = line[pos+1:]
-                else:
-                    if key not in Post.ignore_fields:
-                        self.post[line[1:]] = ''
-            else:
-                description.append(line)
-                dots = False
+	keys=re.compile('<wp_sync_(\w+)>(.*?)</wp_sync_\w+>', re.S | re.M)
+	matches = keys.findall(contents)
 
-        self.post['description'] = '\n'.join(description)
+        for key in matches:
+	    if key[0] not in Post.ignore_fields:
+	        self.post[key[0]] = key[1]
+
         return self
 
     def as_dict(self):

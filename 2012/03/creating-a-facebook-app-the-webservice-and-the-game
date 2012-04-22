@@ -1,11 +1,25 @@
-.categories ['OpenSource']
-.dateCreated 20120304T12:52:46
-.link http://ocpsoft.org/opensource/creating-a-facebook-app-the-webservice-and-the-game/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20120304T12:52:46</wp_sync_dateCreated>
+
+<wp_sync_description>[toc][/toc]
+
+This is the third article in the series of Creating a Facebook App with Java. In the <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool-installation/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">first</a> and <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">second</a> articles we set up a number of tools, and used the Facebook JavaScript API to retrieve our personal account information, as well as some information about our friends.
+
+In this article we will set up the Web Service (in Java) that will house all of our game logic. Remember we want to maintain separation of concerns, so if you ever find yourself putting if statements, or other logic in your html pages, you may be doing something that will be expensive or time-consuming to change later. After our Web Service is set up, we'll start to tie our webpages to it, and then build out our actual game!</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/creating-a-facebook-app-the-webservice-and-the-game/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 
 <h1>Create the REST web service</h1> 
@@ -475,19 +489,24 @@ Now upload your changes, and you are done! Play away, and show off this game to 
 Congratulations! You have just completed the Facebook App Demo Tutorial!  You've completed setting up your very own Facebook application from start to finish including persistence, a web service, and set it all up with FREE cloud hosting and open-source tools! 
 
 <h1>What's next?</h1>
-The <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-4-integration-testing-with-arquillian/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">next article</a> in this series is all about <a href="http://arquillian.org">Arquillian</a> (The Integration Test Framework) and MySQL DB setup.  No application should ever be considered "Complete" without testing, so while you might think your done, we need to make sure our app doesn't have any holes or issues.  In actuality, the testing should really be done first and as you go, <strong>NOT</strong> as an afterthought, but again, the purpose of this blog is to allow users to learn how to create a FB app, not perform correct testing... perhaps an idea for a new blog series some other time ;)  For now, lets proceed to our <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-4-integration-testing-with-arquillian/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">final article</a>.
-.permaLink http://ocpsoft.org/opensource/creating-a-facebook-app-the-webservice-and-the-game/
-.post_status publish
-.postid 3321
-.title Creating a Facebook App with Java - Part 3 - The Web Service and the Game
-.userid 602
-.wp_author_display_name Craig Schwarzwald
-.wp_author_id 602
-.wp_password 
-.wp_post_format standard
-.wp_slug creating-a-facebook-app-the-webservice-and-the-game
-[toc][/toc]
+The <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-4-integration-testing-with-arquillian/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">next article</a> in this series is all about <a href="http://arquillian.org">Arquillian</a> (The Integration Test Framework) and MySQL DB setup.  No application should ever be considered "Complete" without testing, so while you might think your done, we need to make sure our app doesn't have any holes or issues.  In actuality, the testing should really be done first and as you go, <strong>NOT</strong> as an afterthought, but again, the purpose of this blog is to allow users to learn how to create a FB app, not perform correct testing... perhaps an idea for a new blog series some other time ;)  For now, lets proceed to our <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-4-integration-testing-with-arquillian/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">final article</a>.</wp_sync_mt_text_more>
 
-This is the third article in the series of Creating a Facebook App with Java. In the <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool-installation/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">first</a> and <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">second</a> articles we set up a number of tools, and used the Facebook JavaScript API to retrieve our personal account information, as well as some information about our friends.
+<wp_sync_permaLink>http://ocpsoft.org/opensource/creating-a-facebook-app-the-webservice-and-the-game/</wp_sync_permaLink>
 
-In this article we will set up the Web Service (in Java) that will house all of our game logic. Remember we want to maintain separation of concerns, so if you ever find yourself putting if statements, or other logic in your html pages, you may be doing something that will be expensive or time-consuming to change later. After our Web Service is set up, we'll start to tie our webpages to it, and then build out our actual game!
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>3321</wp_sync_postid>
+
+<wp_sync_title>Creating a Facebook App with Java - Part 3 - The Web Service and the Game</wp_sync_title>
+
+<wp_sync_userid>602</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Craig Schwarzwald</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>602</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>creating-a-facebook-app-the-webservice-and-the-game</wp_sync_wp_slug>

@@ -1,11 +1,22 @@
-.categories ['Best Practices']
-.dateCreated 20081209T15:23:59
-.link http://ocpsoft.org/best-practices/my-father-speaks-on-logging/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords Logging
-.mt_text_more 
+
+<wp_sync_categories>['Best Practices']</wp_sync_categories>
+
+<wp_sync_dateCreated>20081209T15:23:59</wp_sync_dateCreated>
+
+<wp_sync_description>After reading a recent article on logging, and when you should and shouldn't do it, I asked my father for his views. He has about 25 years of experience in both small companies and large corporations, and got me thinking about some things that I hadn't before.
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/best-practices/my-father-speaks-on-logging/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>Logging</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <h3>Here is his message:</h3>
 <p style="text-align: center;">----</p>
 <p style="text-align: justify; padding-left: 30px; padding-right: 30px;"><em>"This is a subject about which there are (obviously) religious wars.  If you don't have it when you need it, you regret it, because you end up spending days or months adding it, to find some problem.</em></p>
@@ -18,15 +29,24 @@
 <h3>It runs in the family:</h3>
 My father(and mother) has always challenged me to evaluate all sides of a situation, and in the end, I believe his most important message is that every system has different requirements, and every system will require different levels/degrees of logging. You need to analyze what is right for <em>you</em>, because if you mimic someone else's system blindly, you will surely be missing some chances to get a logging system in place that provides what you need without becoming needlessly cumbersome.
 
-I've tried to take this to heart when working on all of my projects with OcpSoft, and my own pet project of <a href="http://ocpsoft.com/prettyfaces" target="_self">PrettyFaces</a> for JSF; needless to say, it's hard what we do. There's a lot to think about, and in order to be at our best, we have to continuously analyze as many angles as possible. Logging is no exception.
-.permaLink http://ocpsoft.org/best-practices/my-father-speaks-on-logging/
-.post_status publish
-.postid 32
-.title My father speaks on logging
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug my-father-speaks-on-logging
-After reading a recent article on logging, and when you should and shouldn't do it, I asked my father for his views. He has about 25 years of experience in both small companies and large corporations, and got me thinking about some things that I hadn't before.
+I've tried to take this to heart when working on all of my projects with OcpSoft, and my own pet project of <a href="http://ocpsoft.com/prettyfaces" target="_self">PrettyFaces</a> for JSF; needless to say, it's hard what we do. There's a lot to think about, and in order to be at our best, we have to continuously analyze as many angles as possible. Logging is no exception.</wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/best-practices/my-father-speaks-on-logging/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>32</wp_sync_postid>
+
+<wp_sync_title>My father speaks on logging</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>my-father-speaks-on-logging</wp_sync_wp_slug>

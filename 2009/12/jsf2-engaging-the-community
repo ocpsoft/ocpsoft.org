@@ -1,11 +1,22 @@
-.categories ['JSF', 'JSF2']
-.dateCreated 20091202T15:43:57
-.link http://ocpsoft.org/java/jsf-java/jsf2-engaging-the-community/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['JSF', 'JSF2']</wp_sync_categories>
+
+<wp_sync_dateCreated>20091202T15:43:57</wp_sync_dateCreated>
+
+<wp_sync_description><p>JSF2 is an <b>amazing</b> web-framework, and as part of our initiative to engage the community, Dan Allen, Andy Schwartz, Kito Mann, the rest of the Expert Group, and I have been putting together a "JSF Root Node" (as Ed Burns put it.) A website to be the first place people go to when they think of JSF.</p>
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/jsf-java/jsf2-engaging-the-community/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 <div class="featured">
 <center>
@@ -42,15 +53,24 @@
 <h1>How to get started in 5 minutes:</h1>
 <p>This is so simple, just check it out: <a href="http://www.javaserverfaces.org/get-started" target="_blank">http://www.javaserverfaces.org/get-started</a></p>
 <br/>
+</wp_sync_mt_text_more>
 
-.permaLink http://ocpsoft.org/java/jsf-java/jsf2-engaging-the-community/
-.post_status publish
-.postid 474
-.title JSF2 - Engaging the Community
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug jsf2-engaging-the-community
-<p>JSF2 is an <b>amazing</b> web-framework, and as part of our initiative to engage the community, Dan Allen, Andy Schwartz, Kito Mann, the rest of the Expert Group, and I have been putting together a "JSF Root Node" (as Ed Burns put it.) A website to be the first place people go to when they think of JSF.</p>
+<wp_sync_permaLink>http://ocpsoft.org/java/jsf-java/jsf2-engaging-the-community/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>474</wp_sync_postid>
+
+<wp_sync_title>JSF2 - Engaging the Community</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>jsf2-engaging-the-community</wp_sync_wp_slug>

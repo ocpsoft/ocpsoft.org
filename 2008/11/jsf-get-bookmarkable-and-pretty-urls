@@ -1,11 +1,30 @@
-.categories ['JSF', 'OpenSource', 'Uncategorized']
-.dateCreated 20081112T23:28:01
-.link http://ocpsoft.org/uncategorized/jsf-get-bookmarkable-and-pretty-urls/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords JSF, Pretty URL, PrettyFaces
-.mt_text_more 
+
+<wp_sync_categories>['JSF', 'OpenSource', 'Uncategorized']</wp_sync_categories>
+
+<wp_sync_dateCreated>20081112T23:28:01</wp_sync_dateCreated>
+
+<wp_sync_description><h2>What makes Pretty URLs in JSF so hard, and so slow?</h2>
+Speed up development, reduce bandwidth, enhance user experience. This article gives a brief overview of JSF navigation, some of the problems, and potentially how to solve them by enabling bookmarkable, pretty URLs. Put simply... in my view, out of the box, JSF is a web framework designed for web-<em>applications</em>, not designed for web-<em>sites. <a href="http://ocpsoft.com/prettyfaces/">PrettyFaces</a> addresses most of these issues.
+</em>
+<h3>Target audience for this article:</h3>
+<ol>
+	<li>The reader is familiar with JSF navigation.</li>
+	<li>The reader is attempting to create a JSF app with bookmarkable "pretty" URLs. E.g.: .../mysite/archives/2008/11/11/</li>
+	<li>The reader is familiar with HTTP request/response at a basic level.</li>
+</ol>
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/uncategorized/jsf-get-bookmarkable-and-pretty-urls/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>JSF, Pretty URL, PrettyFaces</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <h3>The difference between a web-application / web-site</h3>
 <h4>When I think of a web-site, I think of a group of pages having:</h4>
 <ul>
@@ -56,23 +75,24 @@ It's simple, really... Modify JSF to submit the form to the pretty URL<em> (/map
 When the form is submitted to the pretty URL instead of the JSF view ID, you gain performance, save resources, and make life for the developer easier; parameter values are not lost, and do not need to be coded into the form or session scoped beans.
 
 Try <a href="http://ocpsoft.com/prettyfaces/">PrettyFaces</a>, an opensource solution by OcpSoft. (Check the project homepage, <a href="http://ocpsoft.com/prettyfaces/">here</a>).
+</wp_sync_mt_text_more>
 
-.permaLink http://ocpsoft.org/uncategorized/jsf-get-bookmarkable-and-pretty-urls/
-.post_status publish
-.postid 24
-.title Make JSF intuitive, with bookmarkable and pretty URLs
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug jsf-get-bookmarkable-and-pretty-urls
-<h2>What makes Pretty URLs in JSF so hard, and so slow?</h2>
-Speed up development, reduce bandwidth, enhance user experience. This article gives a brief overview of JSF navigation, some of the problems, and potentially how to solve them by enabling bookmarkable, pretty URLs. Put simply... in my view, out of the box, JSF is a web framework designed for web-<em>applications</em>, not designed for web-<em>sites. <a href="http://ocpsoft.com/prettyfaces/">PrettyFaces</a> addresses most of these issues.
-</em>
-<h3>Target audience for this article:</h3>
-<ol>
-	<li>The reader is familiar with JSF navigation.</li>
-	<li>The reader is attempting to create a JSF app with bookmarkable "pretty" URLs. E.g.: .../mysite/archives/2008/11/11/</li>
-	<li>The reader is familiar with HTTP request/response at a basic level.</li>
-</ol>
+<wp_sync_permaLink>http://ocpsoft.org/uncategorized/jsf-get-bookmarkable-and-pretty-urls/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>24</wp_sync_postid>
+
+<wp_sync_title>Make JSF intuitive, with bookmarkable and pretty URLs</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>jsf-get-bookmarkable-and-pretty-urls</wp_sync_wp_slug>

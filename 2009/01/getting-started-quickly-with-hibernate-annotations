@@ -1,11 +1,32 @@
-.categories ['Hibernate', 'Java']
-.dateCreated 20090126T09:08:04
-.link http://ocpsoft.org/java/getting-started-quickly-with-hibernate-annotations/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords Annotations, Hibernate, Java, ORM
-.mt_text_more 
+
+<wp_sync_categories>['Hibernate', 'Java']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090126T09:08:04</wp_sync_dateCreated>
+
+<wp_sync_description><h2>Tutorial Chapter 1 - Step By Step</h2>
+Getting started with Hibernate can be tricky, but here's a step-by-step tutorial that explains exactly what needs to be done to enable your application for hibernate. This chapter covers very basic mapping and persistence.
+<h3>Download the following archives: (use <a href="#comment-259">this Maven POM</a>)</h3>
+Or follow the official Hibernate <a href="http://docs.jboss.org/hibernate/stable/annotations/reference/en/html/ch01.html#setup-requirements">getting started guide</a> in order to configure your project JAR files.
+
+This tutorial used the following JARs, but <a href="http://www.hibernate.org/downloads.html">newer versions</a> may be used as well.
+<ul>
+	<li>Hibernate Core <a href="http://sourceforge.net/project/showfiles.php?group_id=40712&amp;package_id=127784&amp;release_id=595668" target="_blank">(3.3.0_CR1)</a></li>
+	<li>Hibernate Annotations <a href="http://sourceforge.net/project/showfiles.php?group_id=40712&amp;package_id=139933" target="_blank">(3.4.0_CR1)</a></li>
+	<li>HSQLDB (<a href="http://sourceforge.net/project/showfiles.php?group_id=23316&amp;package_id=16653&amp;release_id=339171" target="_blank">1.8.0.10</a>), a lightweight in-memory RDBMS (or use the database of your choice)</li>
+</ul>
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/getting-started-quickly-with-hibernate-annotations/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>Annotations, Hibernate, Java, ORM</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 <h3><a name="instructions"></a>Instructions:</h3>
 <ul>
 	<li>Extract the archives and copy necessary JAR files into your project (or if you are using Maven, this is already taken care for you -> <a href="#comment-259">example POM</a>):
@@ -222,25 +243,24 @@ Then I recommend some books written by my colleagues and peers. (Note, you will 
 	<li><a href="http://www.hibernate.org/hib_docs/v3/reference/en/html/tutorial.html" target="_blank">Hibernate's Standard Tutorial</a></li>
 	<li><a href="http://www.hibernate.org/hib_docs/annotations/reference/en/html_single/" target="_blank">Hibernate Annotations Reference</a></li>
 </ol>
-This article is part of a series: <a href="http://ocpsoft.com/java/guide-to-hibernate-annotations/" target="_self">Guide to Hibernate Annotations</a>
-.permaLink http://ocpsoft.org/java/getting-started-quickly-with-hibernate-annotations/
-.post_status publish
-.postid 5
-.title Getting Started Quickly with Hibernate Annotations
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug getting-started-quickly-with-hibernate-annotations
-<h2>Tutorial Chapter 1 - Step By Step</h2>
-Getting started with Hibernate can be tricky, but here's a step-by-step tutorial that explains exactly what needs to be done to enable your application for hibernate. This chapter covers very basic mapping and persistence.
-<h3>Download the following archives: (use <a href="#comment-259">this Maven POM</a>)</h3>
-Or follow the official Hibernate <a href="http://docs.jboss.org/hibernate/stable/annotations/reference/en/html/ch01.html#setup-requirements">getting started guide</a> in order to configure your project JAR files.
+This article is part of a series: <a href="http://ocpsoft.com/java/guide-to-hibernate-annotations/" target="_self">Guide to Hibernate Annotations</a></wp_sync_mt_text_more>
 
-This tutorial used the following JARs, but <a href="http://www.hibernate.org/downloads.html">newer versions</a> may be used as well.
-<ul>
-	<li>Hibernate Core <a href="http://sourceforge.net/project/showfiles.php?group_id=40712&amp;package_id=127784&amp;release_id=595668" target="_blank">(3.3.0_CR1)</a></li>
-	<li>Hibernate Annotations <a href="http://sourceforge.net/project/showfiles.php?group_id=40712&amp;package_id=139933" target="_blank">(3.4.0_CR1)</a></li>
-	<li>HSQLDB (<a href="http://sourceforge.net/project/showfiles.php?group_id=23316&amp;package_id=16653&amp;release_id=339171" target="_blank">1.8.0.10</a>), a lightweight in-memory RDBMS (or use the database of your choice)</li>
-</ul>
+<wp_sync_permaLink>http://ocpsoft.org/java/getting-started-quickly-with-hibernate-annotations/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>5</wp_sync_postid>
+
+<wp_sync_title>Getting Started Quickly with Hibernate Annotations</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>getting-started-quickly-with-hibernate-annotations</wp_sync_wp_slug>

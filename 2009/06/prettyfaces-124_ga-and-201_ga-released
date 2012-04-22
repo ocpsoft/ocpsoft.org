@@ -1,11 +1,24 @@
-.categories ['PrettyFaces', 'Releases']
-.dateCreated 20090613T10:12:03
-.link http://ocpsoft.org/prettyfaces/prettyfaces-124_ga-and-201_ga-released/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords JSF, PrettyFaces
-.mt_text_more 
+
+<wp_sync_categories>['PrettyFaces', 'Releases']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090613T10:12:03</wp_sync_dateCreated>
+
+<wp_sync_description><h3><a href="http://ocpsoft.com/prettyfaces">PrettyFaces</a>:</h3>
+
+New versions of PrettyFaces for JSF1.2 and JSF2.0 are now available for download:
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/prettyfaces/prettyfaces-124_ga-and-201_ga-released/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>JSF, PrettyFaces</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 <p style="padding-left: 30px;"><strong>1.2.4_GA:</strong> <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-1.2.4_GA.jar">jar</a>, <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-1.2.4_GA-sources.jar">src</a></p>
 <p style="padding-left: 30px;"><strong>2.0.1_GA:</strong> <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-2.0.1_GA.jar">jar</a>, <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-2.0.1_GA-sources.jar">src</a></p>
@@ -31,17 +44,24 @@ Minor Release: 20090613
 		</table>
 	</form>
 </div>
-<br/>
-.permaLink http://ocpsoft.org/prettyfaces/prettyfaces-124_ga-and-201_ga-released/
-.post_status publish
-.postid 59
-.title PrettyFaces 1.2.4_GA and 2.0.1_GA Released
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug prettyfaces-124_ga-and-201_ga-released
-<h3><a href="http://ocpsoft.com/prettyfaces">PrettyFaces</a>:</h3>
+<br/></wp_sync_mt_text_more>
 
-New versions of PrettyFaces for JSF1.2 and JSF2.0 are now available for download:
+<wp_sync_permaLink>http://ocpsoft.org/prettyfaces/prettyfaces-124_ga-and-201_ga-released/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>59</wp_sync_postid>
+
+<wp_sync_title>PrettyFaces 1.2.4_GA and 2.0.1_GA Released</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>prettyfaces-124_ga-and-201_ga-released</wp_sync_wp_slug>

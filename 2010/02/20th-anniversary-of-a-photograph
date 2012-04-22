@@ -1,11 +1,21 @@
-.categories ['Uncategorized']
-.dateCreated 20100212T11:29:29
-.link http://ocpsoft.org/uncategorized/20th-anniversary-of-a-photograph/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['Uncategorized']</wp_sync_categories>
+
+<wp_sync_dateCreated>20100212T11:29:29</wp_sync_dateCreated>
+
+<wp_sync_description>Take a break from your software to read this: Today (February 12, 2010) marks the 20th anniversary of a remarkably simple, unimportant, yet incredibly special and sentimental event. A perspective that few consider in their daily lives.</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/uncategorized/20th-anniversary-of-a-photograph/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 I sometimes get caught in the daily grind, worry about things that ... maybe aren't so important. There are bigger ideas out there, and I find a small sense of peace when I think about our lives in the context of something so vast and unknown. 
 
@@ -19,15 +29,24 @@ Take a few minutes to read the entire <a target="_blank" href="http://www.npr.or
 </tr>
 </table></div>
 
-Thank you, Carl Sagan, for such a clear and unburdened view of our world.
-.permaLink http://ocpsoft.org/uncategorized/20th-anniversary-of-a-photograph/
-.post_status publish
-.postid 1074
-.title 20th Anniversary of a Photograph
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug 20th-anniversary-of-a-photograph
-Take a break from your software to read this: Today (February 12, 2010) marks the 20th anniversary of a remarkably simple, unimportant, yet incredibly special and sentimental event. A perspective that few consider in their daily lives.
+Thank you, Carl Sagan, for such a clear and unburdened view of our world.</wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/uncategorized/20th-anniversary-of-a-photograph/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>1074</wp_sync_postid>
+
+<wp_sync_title>20th Anniversary of a Photograph</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>20th-anniversary-of-a-photograph</wp_sync_wp_slug>

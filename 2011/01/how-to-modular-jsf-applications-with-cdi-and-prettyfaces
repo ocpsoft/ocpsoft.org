@@ -1,11 +1,24 @@
-.categories ['JSF', 'JSF2', 'PrettyFaces']
-.dateCreated 20110119T10:27:51
-.link http://ocpsoft.org/java/jsf-java/how-to-modular-jsf-applications-with-cdi-and-prettyfaces/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['JSF', 'JSF2', 'PrettyFaces']</wp_sync_categories>
+
+<wp_sync_dateCreated>20110119T10:27:51</wp_sync_dateCreated>
+
+<wp_sync_description>I was recently asked the question, "Is it possible to create a modular JSF application, where JAR-files act as plug-ins and allow xhtml views, images, css, navigation rules, and managed beans to be added as modules to the application?"
+
+The answer to this question is, "<strong>of course</strong>," but there is no pre-set way of accomplishing such a task, so you'll have to be a little creative. I've come up with a conceptual architecture that "would work," if properly implemented, but keep in mind that this is just something I threw together in a few minutes of thinking about the problem.
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/java/jsf-java/how-to-modular-jsf-applications-with-cdi-and-prettyfaces/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 <h2>What we need to accomplish our goal</h2>
 <span style="margin-left: 10px;">0. <a href="#gen">Generate a barebones Java EE web-application.</a></span><br/>
@@ -98,17 +111,24 @@ For this topic, all I can really say is that <a href="http://www.jboss.org/arqui
 For an example of a working Arquillian Web-application test, you can inspect the PrettyFaces <a href="https://github.com/ocpsoft/prettyfaces/tree/master/tests-jsf2">JSF2-testing project</a>, which uses all of the concepts you would need to apply (Take a look at the <a href="https://github.com/ocpsoft/prettyfaces/blob/master/tests-jsf2/src/test/java/com/ocpsoft/pretty/faces/test/PrettyContextTest.java">PrettyContextTest</a>, in which case you would do something similar, but replace PrettyFaces with your JAR module in the <literal>MavenArtifactResolver</literal>.)
 
 <h2>Conclusion</h2>
-I hope this is enough to stimulate some thought. I have not been able to actually put this together myself, but in concept at least, there is nothing to stop one from creating a system like the one I have described. I'm sure there would be a few kinks, but this is what the power of Java EE has enabled us to do. A fully modular web-application with very little actual configuration. Just put files in the right place, and you're good to go. I'd be very interested to hear how people do, if anyone decides to give this a try. Please post your experiences below!
-.permaLink http://ocpsoft.org/java/jsf-java/how-to-modular-jsf-applications-with-cdi-and-prettyfaces/
-.post_status publish
-.postid 1768
-.title How-to: Modular Java EE Applications with CDI and PrettyFaces
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug how-to-modular-jsf-applications-with-cdi-and-prettyfaces
-I was recently asked the question, "Is it possible to create a modular JSF application, where JAR-files act as plug-ins and allow xhtml views, images, css, navigation rules, and managed beans to be added as modules to the application?"
+I hope this is enough to stimulate some thought. I have not been able to actually put this together myself, but in concept at least, there is nothing to stop one from creating a system like the one I have described. I'm sure there would be a few kinks, but this is what the power of Java EE has enabled us to do. A fully modular web-application with very little actual configuration. Just put files in the right place, and you're good to go. I'd be very interested to hear how people do, if anyone decides to give this a try. Please post your experiences below!</wp_sync_mt_text_more>
 
-The answer to this question is, "<strong>of course</strong>," but there is no pre-set way of accomplishing such a task, so you'll have to be a little creative. I've come up with a conceptual architecture that "would work," if properly implemented, but keep in mind that this is just something I threw together in a few minutes of thinking about the problem.
+<wp_sync_permaLink>http://ocpsoft.org/java/jsf-java/how-to-modular-jsf-applications-with-cdi-and-prettyfaces/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>1768</wp_sync_postid>
+
+<wp_sync_title>How-to: Modular Java EE Applications with CDI and PrettyFaces</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>how-to-modular-jsf-applications-with-cdi-and-prettyfaces</wp_sync_wp_slug>

@@ -1,11 +1,28 @@
-.categories ['OpenSource']
-.dateCreated 20120418T22:59:56
-.link http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-4-integration-testing-with-arquillian/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords 
-.mt_text_more 
+
+<wp_sync_categories>['OpenSource']</wp_sync_categories>
+
+<wp_sync_dateCreated>20120418T22:59:56</wp_sync_dateCreated>
+
+<wp_sync_description>[toc][/toc]
+
+Close your eyes, take a deep breath, then repeat after me: "Trying to test any Enterprise application by manually executing a test suite is just preposterous, and an application with any complexity at all quickly becomes too burdensome to test without automation." 
+
+Now repeat it a hundred times - still think you can live without automation?
+
+In <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool-installation/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">part one</a> we set up our tools, <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">part two</a> we did project configuration, and in <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-the-webservice-and-the-game/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">part three</a> we ended with a fully functional application; however, now that you've become familiar with the Red Hat tools and Facebook API, it's time we get to a topic we ideally should have started with in the first place: <strong>TESTING</strong>!  
+</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-4-integration-testing-with-arquillian/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords></wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more>
 
 [info]If you're starting from this article and want a quick way to catch up, you can download the project we created through the first 3 articles of this series with <a target="_blank" href="https://github.com/CavemanCraig/FBTutorialDemo/tags">v1.0.zip — Create the Game</a>.[/info]
 
@@ -1055,21 +1072,24 @@ I hope you enjoyed this article series and found the information provided to be 
 
 [info]A very <strong>HUGE</strong> thank you goes out to <a href="http://twitter.com/lincolnthree">Lincoln Baxter, III</a> who continually helped me with all the various errors I would run into when trying to create this demo project.  He also spent many painstaking hours helping to format these blog entries and add features on this website, to make them as pretty, and as astectically pleasing as possible for all of you.  I'd also like to thank the rest of the JBoss employees that were always nice enough to answer any questions I had.  Seriously, use the JBoss and other open source forums, the speed and accuracy of the information you get back is truly amazing![/info]
 
-Please follow me on twitter <a href="http://twitter.com/cavemancraig" title="Craig Schwarzwald on Twitter" target="_blank">@CavemanCraig</a> for more alerts as I publish future articles or have other OCPsoft updates. Thanks for reading this article series, and good luck on creating the next Farmville!
-.permaLink http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-4-integration-testing-with-arquillian/
-.post_status publish
-.postid 4176
-.title Creating a Facebook App with Java - Part 4 - Integration Testing With Arquillian
-.userid 602
-.wp_author_display_name Craig Schwarzwald
-.wp_author_id 602
-.wp_password 
-.wp_post_format standard
-.wp_slug creating-a-facebook-app-with-java-part-4-integration-testing-with-arquillian
-[toc][/toc]
+Please follow me on twitter <a href="http://twitter.com/cavemancraig" title="Craig Schwarzwald on Twitter" target="_blank">@CavemanCraig</a> for more alerts as I publish future articles or have other OCPsoft updates. Thanks for reading this article series, and good luck on creating the next Farmville!</wp_sync_mt_text_more>
 
-Close your eyes, take a deep breath, then repeat after me: "Trying to test any Enterprise application by manually executing a test suite is just preposterous, and an application with any complexity at all quickly becomes too burdensome to test without automation." 
+<wp_sync_permaLink>http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-4-integration-testing-with-arquillian/</wp_sync_permaLink>
 
-Now repeat it a hundred times - still think you can live without automation?
+<wp_sync_post_status>publish</wp_sync_post_status>
 
-In <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool-installation/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">part one</a> we set up our tools, <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">part two</a> we did project configuration, and in <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-the-webservice-and-the-game/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">part three</a> we ended with a fully functional application; however, now that you've become familiar with the Red Hat tools and Facebook API, it's time we get to a topic we ideally should have started with in the first place: <strong>TESTING</strong>!  
+<wp_sync_postid>4176</wp_sync_postid>
+
+<wp_sync_title>Creating a Facebook App with Java - Part 4 - Integration Testing With Arquillian</wp_sync_title>
+
+<wp_sync_userid>602</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Craig Schwarzwald</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>602</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>creating-a-facebook-app-with-java-part-4-integration-testing-with-arquillian</wp_sync_wp_slug>

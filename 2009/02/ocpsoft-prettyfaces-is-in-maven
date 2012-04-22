@@ -1,22 +1,9 @@
-.categories ['PrettyFaces']
-.dateCreated 20090204T21:39:47
-.link http://ocpsoft.org/prettyfaces/ocpsoft-prettyfaces-is-in-maven/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.mt_excerpt 
-.mt_keywords Maven, Releases
-.mt_text_more 
-.permaLink http://ocpsoft.org/prettyfaces/ocpsoft-prettyfaces-is-in-maven/
-.post_status publish
-.postid 40
-.title Ocpsoft PrettyFaces is in Maven!
-.userid 3
-.wp_author_display_name Lincoln Baxter III
-.wp_author_id 3
-.wp_password 
-.wp_post_format standard
-.wp_slug ocpsoft-prettyfaces-is-in-maven
-Maven JSF users can be relieved, PrettyFaces is now in the <a href="http://repo1.maven.org/maven2/com/ocpsoft/" target="_blank">Maven central repository</a>:
+
+<wp_sync_categories>['PrettyFaces']</wp_sync_categories>
+
+<wp_sync_dateCreated>20090204T21:39:47</wp_sync_dateCreated>
+
+<wp_sync_description>Maven JSF users can be relieved, PrettyFaces is now in the <a href="http://repo1.maven.org/maven2/com/ocpsoft/" target="_blank">Maven central repository</a>:
 
 To include PrettyFaces in a Maven project, add the following dependency to your POM.
 
@@ -25,4 +12,36 @@ To include PrettyFaces in a Maven project, add the following dependency to your 
 &lt;artifactId&gt;ocpsoft-pretty-faces&lt;/artifactId&gt;
 &lt;version&gt;{<a href="http://ocpsoft.com/prettyfaces/">version</a>}&lt;/version&gt;
 &lt;/dependency&gt;</span></p>
-Special thanks to Ryan DeLaplante at <a href="http://www.ryandelaplante.com" target="_blank">http://www.ryandelaplante.com</a> for helping me get this set up! He wrote the initial POM and helped me to get started learning Maven... now I'm hooked.
+Special thanks to Ryan DeLaplante at <a href="http://www.ryandelaplante.com" target="_blank">http://www.ryandelaplante.com</a> for helping me get this set up! He wrote the initial POM and helped me to get started learning Maven... now I'm hooked.</wp_sync_description>
+
+<wp_sync_link>http://ocpsoft.org/prettyfaces/ocpsoft-prettyfaces-is-in-maven/</wp_sync_link>
+
+<wp_sync_mt_allow_comments>1</wp_sync_mt_allow_comments>
+
+<wp_sync_mt_allow_pings>1</wp_sync_mt_allow_pings>
+
+<wp_sync_mt_excerpt></wp_sync_mt_excerpt>
+
+<wp_sync_mt_keywords>Maven, Releases</wp_sync_mt_keywords>
+
+<wp_sync_mt_text_more></wp_sync_mt_text_more>
+
+<wp_sync_permaLink>http://ocpsoft.org/prettyfaces/ocpsoft-prettyfaces-is-in-maven/</wp_sync_permaLink>
+
+<wp_sync_post_status>publish</wp_sync_post_status>
+
+<wp_sync_postid>40</wp_sync_postid>
+
+<wp_sync_title>Ocpsoft PrettyFaces is in Maven!</wp_sync_title>
+
+<wp_sync_userid>3</wp_sync_userid>
+
+<wp_sync_wp_author_display_name>Lincoln Baxter III</wp_sync_wp_author_display_name>
+
+<wp_sync_wp_author_id>3</wp_sync_wp_author_id>
+
+<wp_sync_wp_password></wp_sync_wp_password>
+
+<wp_sync_wp_post_format>standard</wp_sync_wp_post_format>
+
+<wp_sync_wp_slug>ocpsoft-prettyfaces-is-in-maven</wp_sync_wp_slug>

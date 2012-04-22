@@ -13,7 +13,6 @@ import sys
 import os
 import os.path
 import getopt
-from BeautifulSoup import BeautifulSoup, SoupStrainer
 import re
 import xmlrpclib
 try:

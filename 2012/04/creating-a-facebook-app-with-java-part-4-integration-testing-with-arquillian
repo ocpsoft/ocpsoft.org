@@ -24,7 +24,7 @@ In <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool
 
 <wp_sync_mt_text_more>
 
-[info]If you're starting from this article and want a quick way to catch up, you can download the project we created through the first 3 articles of this series with <a target="_blank" href="https://github.com/CavemanCraig/FBTutorialDemo/tags">v1.0.zip — Create the Game</a>.[/info]
+[info]If you're just joining us now, and want a quick way to catch up, you can download the starter project we created through in the first 3 articles of this series: <a target="_blank" href="https://github.com/CavemanCraig/FBTutorialDemo/tags">v1.0.zip — Create the Game</a>.[/info]
 
 <h3>Attributes of ideal tests</h3>
 

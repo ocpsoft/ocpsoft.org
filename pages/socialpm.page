@@ -1,0 +1,91 @@
+.categories []
+.dateCreated 20111031T20:09:12
+.excerpt 
+.link http://ocpsoft.org/socialpm/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 2770
+.page_status publish
+.permaLink http://ocpsoft.org/socialpm/
+.text_more 
+.title SocialPM
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 0
+.wp_page_parent_title 
+.wp_page_template page-notitle.php
+.wp_password 
+.wp_slug socialpm
+<center><img src="http://ocpsoft.com/wp-content/uploads/2011/10/socialpm.png" alt="" title="socialpm" height="125" class="aligncenter size-full wp-image-2815" />
+<span style="position: relative; top: -60px; right: -100px; font-size: 1.5em;">(beta)</span>
+
+<h2 style="margin-bottom: 35px;">Advancing <b>open-source</b> agile management - one <span style="color: green;">/project</span> at a time.<br/> <font color="#ccc">(First release - coming soon!)</font></h2>
+</center>
+
+<div class="featured">
+<p style="margin-top: 10px; margin-bottom: 35px;"><strong>SocialPM</strong> is a Socially-focused OpenSource Agile Project Management Platform - providing enhanced productivity for distributed or co-located Agile project teams. SocialPM respects the simplicity of the Agile methodology, without restricting your processes or patterns, and includes features such as: stories, tasks, burndown charts, the product backlog, iterations and releases, team assignments, <a href="#features">and more</a>. We welcome all developers to <a href="https://github.com/ocpsoft/socialpm">get involved in the project &raquo;</a></p>
+</div>
+
+<center>
+<p style="margin: 20px;">Come join us on in <code>#SocialPM</code> - <a href="http://webchat.freenode.net/?channels=%23socialpm" title="SocialPM channel on Freenode IRC" target="_blank">our channel on irc.freenode.net.</a> Additionally, you are welcome to attend the dev meeting, every other [[Calendar|Tuesday at 5pm EST]]. Also, please join the discussion on our <a href="mailto:socialpm-dev@googlegroups.com">dev email list</a>.</p>
+</center>
+
+<a name="features"></a>
+<h2>Features</h2>
+<table width="100%">
+<tr><td width="50%"><ul>
+	<li>Backlogs *</li>
+	<li>Burn-down Chart *</li>
+	<li>Collaboration via eMail *</li>
+	<li>Front and Back Burners</li>
+	<li>Impediment Tracking</li>
+	<li>Instant Status Notifications *</li>
+	<li>Intuitive Presentation</li>
+	<li>Iteration Planning and History *</li>
+</ul>
+</td><td>
+<ul>
+	<li>OpenID Support (Log in with Google)</li>
+	<li>Organizations and Teams *</li>
+	<li>Release Planning *</li>
+	<li>Runs on the JBoss AS7 Application Server</li>
+	<li>Streamlined HTML5 Interface</li>
+	<li>Story Planning</li>
+	<li>Tasks, Assignments, and Validation Criteria</li>
+	<li>Create embedded dashboards</li>
+</ul></td></tr>
+
+</table>
+
+<center>* - pending feature completion<br/>
+<h2><a href="#getinvolved">Want to contribute a feature? We are looking for YOU!</a></h2></center>
+<br/>
+
+<a name="technical-requirements"></a>
+<h2>Technical Requirements</h2>
+<ul>
+	<li>Java EE 6 compliant Application Server: <a href="www.jboss.org/jbossas/downloads/" title="Download AS7" target="_blank">JBoss AS7</a></li>
+</ul>
+
+
+
+<center><img src="http://ocpsoft.com/wp-content/uploads/2011/10/socialpm-screen.png"  style="border: solid 1px #ddd;" title="SocialPM" width="600" class="aligncenter size-full wp-image-2823" /></center>
+
+<br/>
+
+
+
+<a name="getinvolved"></a>
+<div class="featured">
+<p style="margin-top: 10px; margin-bottom: 0px;">
+<h2 style="margin-top: 0px;">Get involved:</h2>
+<strong>Source</strong>: <a href="https://github.com/ocpsoft/socialpm">https://github.com/ocpsoft/socialpm</a>
+<strong>Forums</strong>: <a href="http://ocpsoft.com/support/forum/socialpm">http://ocpsoft.com/support/forum/socialpm</a>
+<strong>Newsletter</strong>: <a href="http://ocpsoft.com/subscribe/">http://ocpsoft.com/subscribe/</a>
+</p>
+<p>
+Having trouble? Have an idea? <a href="https://github.com/ocpsoft/socialpm/issues" title="Report an issue">Report an issue.</a> </p>
+</div>

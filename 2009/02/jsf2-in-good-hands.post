@@ -1,0 +1,82 @@
+.categories ['Java', 'JSF']
+.dateCreated 20090210T16:44:39
+.link http://ocpsoft.org/java/jsf2-in-good-hands/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords JSF 2.0, OpenSource, PrettyFaces
+.permaLink http://ocpsoft.org/java/jsf2-in-good-hands/
+.post_status publish
+.postid 41
+.title Java Server Faces 2.0 is in Good Hands
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug jsf2-in-good-hands
+<blockquote>
+<h2 style="text-align: center;">"The community was speaking, but until recently, nobody was listening."</h2>
+</blockquote>
+A lot has changed since May 15, 2001, when the first ballot review of the JSF 1.0 framework was just beginning. To this day, Sun's flagship web-application framwork has been an uncompromising box of tricks and gotchas, with little community adoption. This has been mostly due to its relatively developer-unfriendly nature; however, the second phase is coming, and with JSF2.0 peeking out from the edge of its nest, a new life is beginning to show.
+<!--more-->
+From the start, JSF had mixed support from the community, with opposition from major players like IBM, HP, and the Apache Foundation. Apache voiced strong concerns because of "Sun's current position that JSRs may not be independently implemented under an open source license." In addition, they saw, "little value in recreating a technology [Struts] in a closed environment that is already available in an open environment."<a name="sdfootnote1anc" href="#sdfootnote1sym"><sup>1</sup></a>
+
+Apache's concerns drew several other players to vote against JSF, but the final vote still passed with a 10-5 margin (Accenture abstained from voting.) With the voting complete a short two weeks later, the first JSF expert group was formed.
+
+Three months after the formation of the expert group, the first JCP community review was complete, and Sun's new star web-framework was on its way to reality. On the side of the box was a label, which read, "Final release, May 2004: Warranty Void if Removed" It was done, and their hands were off.
+<blockquote>
+<h2 style="text-align: center;">But <em>some things that should not have been forgotten, were lost.</em></h2>
+</blockquote>
+Since JSF was engineered by companies like IBM and Oracle, major contractors in the industry, most of the emphasis was placed on creating a modular architecture that could be 'easily extended' and broken down into components. While technically sound, and well designed for large companies where developers are part of an assembly line, the community at large found JSF hard to use.
+
+JSF lacked life-cycle extension; there are six defined phases, and if you need to add another one, you're out of luck. Also lacking was easy component creation -- Creating a component in JSF today requires modification of no fewer than four separate files, even more if you use a separate renderer class. You were on your own if you wanted to validate multiple form fields against each other.
+
+Navigation rules were ungainly, and difficult to follow logically without a visual editor. Community documentation was almost a joke. Sun's mailing list and <a href="http://forums.sun.com/forum.jspa?forumID=427&amp;start=0">forum</a> are still the best places to find help. There are some very knowledgeable people, but nowhere to be found is what most developers find most useful: a central, persistent resource for documentation. I like <a href="http://www.php.net/manual/en/control-structures.foreach.php">PHP's model</a> - official documentation with community feedback in comments below.
+
+The lack of bookmarking support is one of the most highly-criticised facets of JSF, which is where I got involved, leading me to create the <a href="../../../../../prettyfaces">PrettyFaces</a> URL rewriting extension. If you need to be convinced of the collective dysfunction on this topic, look at the results of a google search for "jsf bookmark". Yet, at the root of all this was something JSF lacked until very recently - something very important.
+<blockquote>
+<h2 style="text-align: center;"><em>A set of ears.</em></h2>
+</blockquote>
+<p align="left">The community was speaking, but until recently, nobody was listening. Blame JCP? Cay Horstmann thinks that <a href="http://weblogs.java.net/blog/cayhorstmann/archive/2009/01/a_call_to_fix_t.html">the JCP needs to be more open</a> to the community.<a name="sdfootnote2anc" href="#sdfootnote2sym"><sup>2</sup></a></p>
+<p align="left">Personally, I'm surprised that JSF wasn't abandoned completely, which says in my mind, "they got something right." The framework does a lot for you, but "I can't figure out how to use it", "it doesn't do what I need," and "everything takes forever.". This is where we see the light, and JSF2 enters from stage left; a new star performer?</p>
+<p align="left">From the very start, JSF2 is different, more open. Ed Burns, Ryan Lubke, Jim Driskoll and other <a href="http://weblogs.java.net/">blogging developers</a> can be thanked for engaging the community in a way that Sun has not done before.</p>
+<p align="left">Convention over configuration has taught us a lot. We might thank Ruby on Rails, or possibly a collective laziness, but the <a href="http://jcp.org/en/jsr/detail?id=314">JSR314</a> Expert Group has taken it to heart. "EzComp" is JSF's new component writing system, and yes, it's "Ez".</p>
+<p align="left">Jim Driscoll <a href="http://weblogs.java.net/blog/driscoll/archive/2008/11/another_jsf_20_1.html">explains</a> how to create a "click to edit" AJAX input field, like those so popularly seen on Flickr, or Facebook. (About 30 lines of XHTML, plus JavaScript.) Tag libraries no longer need to be defined manually; they will <a href="http://weblogs.java.net/blog/driscoll/archive/2008/11/writing_a_simpl_1.html">spring to life</a> as needed, based on the names and interfaces of your components.</p>
+<p align="left">JSF2 is showing stunning promise and vision. This is just a small set of changes that will drastically improve the usefulness and adoption of JSF. When a rookie Java web-developer can pick up JSF2.0, in their IDE of choice, and write a small, useful application in a day, that's when we'll know they've gotten it right. Man, life is good... but.</p>
+
+<blockquote>
+<h2 style="text-align: center;"><em>Where are my bookmarks?</em></h2>
+</blockquote>
+<p align="left">Ahh yes.</p>
+<p align="left">After learning about JSF2 in mid-October, I've been following very closely the changes and discussions around its new architecture, and how it can be 'fixed.' At the top of <a href="http://www.jsfcentral.com/editorial/jsf2_wishlist_1.html">the wish list</a>, among other contenders like "Fixing Navigation Rules," and even above "Simplified component development," is one very near to my heart: "Enhanced support for GET requests."</p>
+<p align="left">I began work on <a href="../../../../../prettyfaces">PrettyFaces</a> before learning that JSF2 was in progress, but not before I had evaluated the other options available from the community. Jboss Seam had a UrlRewriting feature, but I found it cumbersome, requiring too much configuration, and the added burden of learning the entire Seam framework was too much for me. RestFaces was an alternative that I tried for a while, but several design choices made it difficult to incorporate in a non-invasive way, and I was left writing lines and lines of code in order to compensate for its (albeit few) shortcomings.</p>
+<p align="left">Shocked, disappointment struck when I was contacted by a PrettyFaces user, disheartened, who urged me to contact the JSF2 expert group because they were <a href="http://forums.sun.com/thread.jspa?messageID=10541909#10541909">close to abandoning</a> bookmarking support for the next release, a full five years after the last specification update. How could they be considering omitting such a critical feature? It would surely finish off whatever damage had been done by the first 8 years of JSF's mis-managed life, and it would be dead forever. "Long live Struts," Apache would tout.</p>
+
+<blockquote>
+<h2 style="text-align: center;"><em>New life.</em></h2>
+</blockquote>
+<p align="left">But fate struck, and before I could even begin to write emails, begging for reconsideration, I got another pop-up from my inbox.</p>
+<p align="left">From: Dan J. Allen - Jan 10, 2:50pm</p>
+<p style="padding-left: 30px; text-align: justify;"><tt>Lincoln,</tt></p>
+<p style="padding-left: 30px; text-align: justify;"><tt>Hey there. I have recently joined the JSF EG by way of my employment with Red Hat. My first action was to submit a couple of proposals to make JSF more "website friendly". After all, that is what got me interested in Seam in the first place.</tt></p>
+<p style="padding-left: 30px; text-align: justify;"><tt>In the most recent proposal, I cited the statements you made in a recent blog post. I have attached that proposal to this e-mail as well as a related proposal. We are listening (at least those of us at Red Hat) and we are trying our best to improve JSF within the boundaries that we have to work (i.e., the JCP). The JSF EG was definitely dysfunctional in the past, but Ed Burns, Red Hat, and a handful of other members have really started to turn things around. Adding pretty URLs is definitely too big of a change at this point given the time constraints, but you may find these two proposals to satisfy many of your other concerns. Feel free to provide feedback to the JSF EG regarding the design changes.</tt></p>
+<p style="padding-left: 30px; text-align: justify;"><tt>-Dan</tt></p>
+<p align="left">Dan is the author of <a href="http://www.manning.com/dallen/">Seam in Action</a>, and from my interactions with him, a brilliant individual. If he isn't rich already, in heart or on paper, he will be someday.</p>
+<p align="left">Struck by two emails on this subject in the same day, I "hurriedly" (from 11pm-2am) typed a response. Someone at RedHat was asking <em>me</em> for <em>my feedback?</em> Talk about an ego trip. My friends at work won't let me hear the end of it.</p>
+<p align="left">The proposal was stunning. While still omitting Pretty URL rewriting, it contained in depth solutions for using query-string parameters (http://url?key=value) to bookmark pages within JSF. It lacked page-load actions, but that would follow, as we talked through the issues, in the next few days.</p>
+<p align="left">During the process of reviewing Dan's proposals, providing feedback where I could, and wishing I weren't just a part-time contributor, we worked through issues regarding usability, convention over configuration, and strategies for implementing the new functionality that would be required. Two weeks and 91 emails later, we had a draft of the spec, and off it went (via Pete Muir at RedHat) to the Expert Group for review.</p>
+<p align="left">The proposal was accepted; Dan's job got even better. Within a week, he would have to implement his proposed specification, create a sample application, make any necessary changes to the spec, submit it back to the EG, and believe me, it was good.</p>
+
+<blockquote>
+<h2 style="text-align: center;"><em>Things yet to come.</em></h2>
+</blockquote>
+<p align="left">JSF2 is still under review, and all of these changes may yet be changed, but I'm confident that the people in charge have heads on their shoulders, and that they are pointing in the right direction.</p>
+<p align="left">I'm impressed. Impressed by Dan Allen, Jim Driscoll, Ryan Lubke, and by Sun for starting to recognize that its developer community is its best chance at survival. JSF2 won't have everything that we've asked for, but it will have the most critical features that the community has asked for. I'm impressed that it's turning out so well: Component writing is truly easy; pages will be bookmark-able; templating is built in; and annotations are on the way to deprecating faces-config.xml for trivial tasks.</p>
+<p align="left">So what can Sun do next? Well. For starters, keep listening. Don't limit ideas to people on its payroll. JSF2 will be a success if Sun gives users a voice.</p>
+<p align="left">The developer blogs are great, but we need a centralized place for core documentation. The site needs to be fast, and you should be able to easily register and contribute. Yes, it will take management and oversight, but we aren't out to hurt anyone. Dear sun: "We like what you're doing, and the direction in which we think you might be turning. We're here to further the cause of software development, and guess what... If you listen to us... we'll do it for free."</p>
+<p align="left">Whether or not this happens, the future of JSF is in our hands.</p>
+<p style="text-align: center;">--</p>
+<a name="sdfootnote1sym" href="#sdfootnote1anc">1</a><a href="http://www.jcp.org/en/jsr/results?id=614" target="_blank">http://www.jcp.org/en/jsr/results?id=614</a>
+
+<a name="sdfootnote2sym" href="#sdfootnote2anc">2</a><a href="http://weblogs.java.net/blog/cayhorstmann/archive/2009/01/a_call_to_fix_t.html" target="_blank">http://weblogs.java.net/blog/cayhorstmann/archive/2009/01/a_call_to_fix_t.html</a>

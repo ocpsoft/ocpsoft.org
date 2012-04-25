@@ -1,0 +1,42 @@
+.categories ['Releases']
+.dateCreated 20090319T05:20:00
+.link http://ocpsoft.org/releases/prettyfaces-v123_rc1-released/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords Java, JSF, OpenSource, PrettyFaces, Releases
+.permaLink http://ocpsoft.org/releases/prettyfaces-v123_rc1-released/
+.post_status publish
+.postid 47
+.title PrettyFaces v1.2.3_RC1 Released
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug prettyfaces-v123_rc1-released
+<h3><a href="http://ocpsoft.com/prettyfaces">PrettyFaces</a>:</h3>
+
+<strong>Version 1.2.3_RC1</strong>: <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-1.2.3_RC1.jar">binary</a>, <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-1.2.3_RC1-sources.jar">source</a>, <a href="http://ocpsoft.com/prettyfaces/v123">documentation</a> (stable)
+Minor Release: 20090319
+<ol>
+	<li>Managed query-params now accept multiple parameters of the same name: E.g.: String[] names --- would accept a list of parameters (with the same name) from the request</li>
+	<li>Enhanced configuration loading --- PrettyFaces now looks for /META-INF/pretty-config.xml by default, in addition to accepting a comma-separated list of user config-files in the web.xml init param: com.ocpsoft.pretty.CONFIG_FILES --- submitted by Aleksei Valikov</li>
+<li>JSP support for standard attributes on the pretty:link tag has been fixed. The pretty link will now accept style='mystyle' and other attributes --- from <a href="http://ocpsoft.com/about">Derek Hollis at OcpSoft</a></li>
+</ol>
+
+<div style="align:center; background:#555; padding:10px">
+	<form action="http://groups.google.com/group/prettyfaces-users/boxsubscribe">
+		<table border="0" cellspacing="0" cellpadding="0" width="100%">
+		<tbody>
+			<tr>
+				<td colspan='2' align="center"><strong>Subscribe to <a href="http://groups.google.com/group/prettyfaces-users">prettyfaces-users</a></strong></td>
+			</tr>
+			<tr>
+				<td align="right" width="30%"><label for="subeml2" style="color:#eee">Email:&nbsp;</label></td><td  align="left"><input id="subeml2" name="email" size="18" type="text" /> <input name="sub" type="submit" value="Subscribe" /></td>
+			</tr>
+		</tbody>
+		</table>
+	</form>
+</div>
+<br/>

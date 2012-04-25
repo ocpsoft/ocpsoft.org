@@ -1,0 +1,25 @@
+.categories []
+.dateCreated 20120202T16:22:15
+.excerpt 
+.link http://ocpsoft.org/services/calendar/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 3164
+.page_status publish
+.permaLink http://ocpsoft.org/services/calendar/
+.text_more 
+.title Calendar
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 27
+.wp_page_parent_title Services
+.wp_page_template page-notitle.php
+.wp_password 
+.wp_slug calendar
+<h1>Events and Open-source Meetings</h1>
+Please feel free to bring friends! We welcome everyone to come join our opensource project meetings, and to participate however they see fit! Bring a friend, bring a happy emoticon, but most importantly, bring yourself! [ <a href="https://www.google.com/calendar/ical/nuvea27n8m4qqsp4thg92aqa2g%40group.calendar.google.com/public/basic.ics">iCal</a> - <a href="https://www.google.com/calendar/feeds/nuvea27n8m4qqsp4thg92aqa2g%40group.calendar.google.com/public/basic">xml</a> ]
+
+<iframe src="https://www.google.com/calendar/b/0/embed?showTitle=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=nuvea27n8m4qqsp4thg92aqa2g%40group.calendar.google.com&amp;color=%23182C57&amp;ctz=America%2FNew_York" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no"></iframe>

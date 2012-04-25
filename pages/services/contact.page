@@ -1,0 +1,28 @@
+.categories ['Uncategorized']
+.dateCreated 20080908T20:09:19
+.excerpt 
+.link http://ocpsoft.org/services/contact/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 12
+.page_status private
+.permaLink http://ocpsoft.org/services/contact/
+.text_more 
+.title Contact Us
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 10
+.wp_page_parent_id 27
+.wp_page_parent_title Services
+.wp_page_template default
+.wp_password 
+.wp_slug contact
+<h2>By email:</h2>
+Lincoln: <a href="mailto:lincoln@ocpsoft.com">lincoln@ocpsoft.com</a>
+Jeff: <a href="mailto:jeff@ocpsoft.com">jeff@ocpsoft.com</a>
+Derek: <a href="mailto:derek@ocpsoft.com">derek@ocpsoft.com</a>
+Eric: <a href="mailto:eric@ocpsoft.com">eric@ocpsoft.com</a>
+
+Everyone: <a href="mailto:admin@ocpsoft.com">admin@ocpsoft.com</a>

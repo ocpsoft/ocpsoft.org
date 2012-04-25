@@ -1,0 +1,47 @@
+.categories ['Uncategorized']
+.dateCreated 20080530T21:02:55
+.excerpt 
+.link http://ocpsoft.org/?page_id=2
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 2
+.page_status draft
+.permaLink http://ocpsoft.org/?page_id=2
+.text_more 
+.title About
+.userid 1
+.wp_author Team
+.wp_author_display_name Team
+.wp_author_id 1
+.wp_page_order 9
+.wp_page_parent_id 27
+.wp_page_parent_title Services
+.wp_page_template default
+.wp_password 
+.wp_slug about
+<div class="featured">
+<h3><center>The pursuit of creativity, communication, and happiness in software.</center></h3>
+</div>
+
+<p style="padding-left: 30px; text-align: justify;">Born out of a confused, brittle mess of code, systems, technologies and ideas, we have learned to seek the simplest, most elegant design to solve a problem. In short, we like software development, and we like to share our experiences. We're geeks, enthusiasts, and most importantly: human.</p>
+
+<h3>What does OcpSoft mean?</h3>
+<p style="padding-left: 30px; text-align: justify;">Well, since most people like to talk about themselves a lot, we might as well do the same thing. OcpSoft stands for the "<a href="http://en.wikipedia.org/wiki/Open/closed_principle" target="_blank">Open Closed Principle</a>" (see Wikipedia,) and also for "Software", because that is what we create.</p>
+
+<div class="featured"><div class="inside">
+<h3 style="margin-top: 0px;">Guiding Principles of OcpSoft:</h3>
+<ul>
+	<li>Design to Interfaces</li>
+	<li>Favor delegation/aggregation over inheritance</li>
+	<li>Favor configuration over code</li>
+	<li>Encapsulate the variation!</li>
+	<li>Write code that explains itself <span style="color: #008000;">//comments are lies</span></li>
+	<li>Redundancy is <em>DEBT,</em> you will pay for it later.
+It's like global warming, <em>you have to do the right thing NOW</em>.</li>
+	<li><span style="color: #008000;"><span style="color: #000000;">Use or create tools to eliminate roadblocks and redundancy</span></span></li>
+	<li>And of course, <strong>keep it simple!</strong></li>
+</ul>
+</div></div>
+
+<h2>Copyrights:</h2>
+<strong>© </strong>All rights reserved.

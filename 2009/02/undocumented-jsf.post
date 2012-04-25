@@ -1,0 +1,47 @@
+.categories ['Java', 'JSF']
+.dateCreated 20090215T20:44:43
+.link http://ocpsoft.org/java/undocumented-jsf/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords JSF
+.permaLink http://ocpsoft.org/java/undocumented-jsf/
+.post_status publish
+.postid 42
+.title Un-Documented JSF: Reference
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug undocumented-jsf
+<h2>Add a comment with your experience or "gotcha!"</h2>
+
+Java Server Faces is currently full of relatively undocumented features and behavior. As part of the JSF2 release, OcpSoft is working with a few folks at Seam/Redhat to try to address these issues and provide better documentation.
+<!--more-->
+<h2>If you have used, or currently use JSF, we need your help.</h2>
+
+What did you find that was backwards from what you expected? What did you find that you couldn't find anything about?
+
+As we progress, we'll compile the QA and make sure it gets preserved here, and on the official documentation site when it arrives, so that others don't get lost on the same issues. It might even make it into the JSF2 specification if it needs to be fixed!
+
+<h3>We'll start it out:</h3>
+
+"I used the JSF DateTimeConverter to format an input field into a Date, but the dates were sometimes one day behind. Why?"
+
+<h3>You need to specify the timezone in <em>each</em> converter:</h3>
+JSF1.x uses UTC by default. It does not use the server timezone!
+
+<pre lang="xml">
+<f:convertDateTime timeZone="America/New_York"  ... />
+
+--or using a bean to specify the timezone based on the current user--
+
+<f:convertDateTime timeZone="#{settingsBean.userTimezone}"  ... />
+</pre>
+
+JSF2 will be addressing this issue at a configuration level, so adding timezones to each converter will no longer be necessary, but until then, you may want to think about <a href="http://www.javabeat.net/tips/147-custom-datetimeconverter-in-jsf.html">writing a custom converter</a> yourself.
+
+<h3>If you need to use XML markup in your comment, please <a href="http://www.string-functions.com/htmlencode.aspx">encode it first</a>!</h3>
+Otherwise it will disappear completely :(
+<br/>

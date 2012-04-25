@@ -1,0 +1,23 @@
+.categories ['OpenSource']
+.dateCreated 20110604T15:00:10
+.link http://ocpsoft.org/?p=1953
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/?p=1953
+.post_status draft
+.postid 1953
+.title Hatchling: A simple new Twitter research tool
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug 
+<h3>Uncaught TypeError: Object #<a Document> has no method 'write'</h3>
+<pre lang="xml">
+<f:view contentType="text/html">
+    <!-- Page content with charts here -->
+</f:view>
+</pre>

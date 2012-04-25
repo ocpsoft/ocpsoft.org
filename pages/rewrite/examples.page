@@ -1,0 +1,206 @@
+.categories []
+.dateCreated 20120425T01:07:28
+.excerpt 
+.link http://ocpsoft.org/rewrite/examples/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 4651
+.page_status publish
+.permaLink http://ocpsoft.org/rewrite/examples/
+.text_more 
+.title Examples
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 2646
+.wp_page_parent_title Rewrite
+.wp_page_template default
+.wp_password 
+.wp_slug examples
+[toc/]
+
+Frequently the best way to learn how to use a technology is to see examples of how it has been used in similar situations. Here are some examples of how to use [[Rewrite]]'s core Servlet functionality in common scenarios. For the purpose of brevity, extraneous code has been omitted.
+
+<h2 class="toc">Extending the configuration</h2>
+When using the Rewrite Servlet module, most important configuration classes can be found in the <a href="https://github.com/ocpsoft/rewrite/tree/master/impl-servlet/src/main/java/org/ocpsoft/rewrite/servlet/config">org.ocpsoft.rewrite.servlet.config</a> package. We continue to add new Conditions, Operations, and Rules, but you may always simply implement your own if something you are looking for does not exist. If you do, please help out the rest of the community and consider <a href="https://github.com/ocpsoft/rewrite">contributing your objects</a> back to the project.
+
+<h1>Join an inbound URL to a server-side resource:</h1>
+Typically the most basic task - masking the URL of an internal resource with another URL of your choice.
+[snippit]
+public class ExampleConfigurationProvider extends HttpConfigurationProvider
+{
+
+   @Override
+   public Configuration getConfiguration(final ServletContext context)
+   {
+      return ConfigurationBuilder.begin()
+
+          // A basic join
+          .addRule(Join.path("/").to("/pages/home.xhtml"))
+
+          // Using parameterization (the value of 'p' is converted to a request parameter)
+          .addRule(Join.path("/project/{p}").to("/pages/project/create.xhtml"))
+
+          // Redirect requests to the server-side resource to the correct location
+          .addRule(Join.path("/signup").to("/pages/signup.xhtml").withInboundCorrection())
+
+          // Perform additional operations on rule execution
+          .addRule(Join.path("/404").to("/pages/404.xhtml").perform(Response.setCode(404)));
+
+   }
+
+}
+[/snippit]
+
+<h1>Create a dynamic logout URL without the need for a Servlet or page</h1>
+Why write a full logout page, just to do what can be done with a single method call?
+[snippit]
+public class ExampleConfigurationProvider extends HttpConfigurationProvider
+{
+   @Override
+   public Configuration getConfiguration(final ServletContext context)
+   {
+      return ConfigurationBuilder.begin()
+
+          // Create a dynamic logout URL via EL
+          .defineRule()
+          .when(Direction.isInbound().and(Path.matches("/logout")))
+          .perform(Invoke.binding(El.retrievalMethod("#{session.invalidate}"))
+                   .and(Redirect.temporary(context.getContextPath() + "/")))
+
+          // Create a dynamic logout URL via direct service call
+          .defineRule()
+          .when(Direction.isInbound().and(Path.matches("/logout")))
+          .perform(new HttpOperation() {
+             @Override
+             public void performHttp(HttpServletRewrite event, EvaluationContext context)
+             {
+                event.getRequest().getSession().invalidate();
+             }
+          })
+          .and(Redirect.temporary(context.getContextPath() + "/"));
+
+   }
+}
+[/snippit]
+
+
+<h1>Show different resources when a user is logged in/logged out</h1>
+Showing different content to users in different roles is a paramount task in any web application.
+[snippit]
+public class AuthenticationStatusInterceptor extends HttpConfigurationProvider
+{
+   @Inject
+   @LoggedIn
+   private Profile profile;
+
+   @Override
+   public Configuration getConfiguration(final ServletContext context)
+   {
+         Operation loggedIn = new Operation() {
+                 @Override
+                 public void perform(Rewrite event, EvaluationContext context) {
+                    return profile.isLoggedIn();
+                 }
+              };
+
+         /*
+          * If the user is not logged in, show them the guest home page instead of the dashboard.
+          */
+         return ConfigurationBuilder.begin()
+              .addRule(Join.path("/")
+                           .to("/pages/loggedOffHome.xhtml")
+                           .when(loggedIn))
+
+              .defineRule()
+              .when(Direction.isInbound()
+                      .and(Path.matches("/(signup|login)")
+                      .andNot(loggedIn)))
+              .perform(Redirect.temporary(context.getContextPath() + "/"));
+
+   }
+}
+[/snippit]
+
+
+
+<h1>Inject beans and services into configuration using CDI</h1>
+This example depends on the <a href="https://github.com/ocpsoft/rewrite/tree/master/integration-cdi" target="_blank">rewrite-integration-cdi</a> module; you will need to include it as a dependency/JAR in your application.
+
+[snippit]
+public class ExampleConfigurationProvider extends HttpConfigurationProvider
+{
+   @Inject
+   private RuleDatabase source;
+
+   @Override
+   public Configuration getConfiguration(final ServletContext context)
+   {
+      return ConfigurationBuilder.begin()
+          .defineRule()
+          .when(new HttpCondition() {
+             public boolean evaluate(HttpServletRewrite event, EvaluationContext context)
+             {
+                return source.includes(event.getRequest().getRequestURL());
+             }
+          })
+          .perform(new HttpOperation() {
+             @Override
+             public void performHttp(HttpServletRewrite event, EvaluationContext context)
+             {
+                source.takeAction();
+             }
+          });
+   }
+}
+[/snippit]
+
+
+<h1>Relocate resources using a Content Distribution Network (CDN)</h1>
+The goal of a CDN is to serve content to end users with high availability and high performance, increasing the performance of websites that use them. Besides better performance and availability, CDNs also offload the traffic from your servers onto a server designed to quickly serve static files.
+[snippit]public class ExampleConfigurationProvider extends HttpConfigurationProvider
+{
+
+   @Override
+   public Configuration getConfiguration(final ServletContext context)
+   {
+      return ConfigurationBuilder.begin()
+
+          // Relocate jQuery to CDN
+          .addRule(CDN.relocate("{p}jquery{s}.js")
+                   .where("p").matches(".*")
+                   .where("s").matches(".*")
+                   .to("http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"))
+
+          // Relocate custom CSS (or other outbound link) to a custom URL
+          .addRule(CDN.relocate("{p}foo-{version}.css")
+                   .where("p").matches(".*")
+                   .where("version").matches(".*")
+                   .to("http://mycdn.com/foo-{version}.css"));
+   }
+}
+[/snippit]
+
+<h1>Secure resources using JAAS roles constraints</h1>
+
+[snippit]
+public class JaasRolesTestProvider extends HttpConfigurationProvider
+{
+   @Override
+   public Configuration getConfiguration(final ServletContext context)
+   {
+      Configuration config = ConfigurationBuilder
+               .begin()
+
+               .defineRule()
+               .when(JAASRoles.required("admin", "privacy-monitor")
+                        .and(Direction.isInbound())
+                        .and(Path.matches("/admin/{tail}").where("tail").matches(".*")))
+               .perform(Forward.to("/internal/resource.jsp"));
+
+      return config;
+   }
+}
+[/snippit]

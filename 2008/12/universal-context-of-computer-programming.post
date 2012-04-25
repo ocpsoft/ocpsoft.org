@@ -1,0 +1,57 @@
+.categories ['Best Practices', 'Releases']
+.dateCreated 20081216T16:13:09
+.link http://ocpsoft.org/best-practices/universal-context-of-computer-programming/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/best-practices/universal-context-of-computer-programming/
+.post_status publish
+.postid 33
+.title Universal Context of Computer Programming
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug universal-context-of-computer-programming
+<p style="margin-bottom: 0in;">The only thing that stays the same, in our field of Computer Science, is change itself. Do not try to predict what will happen in the future; instead know that the future will bring change, and that you will need to adapt to it.</p>
+<p style="margin-bottom: 0in;">Design systems which are capable of change, and you will be much more ready for the future.</p>
+<p style="margin-bottom: 0in;">
+<!--more-->
+</p>
+
+<h3><em>Always:</em></h3>
+<ul>
+	<li>Program by Intention – 		“begin 	by focusing on motivation or desire”</li>
+	<li>Analyze the the varying objects and forces in your system, encapsulate them</li>
+	<li>Favor aggregation/delegation over inheritance</li>
+	<li>Seek the Open-Closed principle - 		“open to extension, closed to modification.”</li>
+	<li>Design to interfaces - 		“couple 	to interfaces, not implementation”</li>
+	<li>Encapsulate the constructor - 		use Object.getInstance()</li>
+	<li>Encapsulate variation - "what is hidden from you, can be changed”</li>
+	<li>Think about how you test a design, 	when you create it.</li>
+	<li>When choosing between two designs 	with similar cost/risk, consider how easy/difficult it would be to 	refactor from each to the other, should the need arise.</li>
+</ul>
+<h3><em>Think:</em></h3>
+Think about the forces of the problem (Do we want to use this pattern / design?)
+<ol>
+	<li>Contextual forces – How will the environment around you and your product affect your system/design?</li>
+	<li>Implementation forces – Will this design work? Is it worth it? Is there a better way?</li>
+	<li>Consequences – What will the results of our actions be? What are the trade-offs?</li>
+</ol>
+Think about how you test a design, when you create it. When choosing between two designs with similar cost/risk, consider how easy/difficult it would be to refactor from each to the other, should the need arise.
+<p align="center">"Good coupling is <em>Intentional</em>, bad coupling is unnecessary or <em>Accidental</em>"</p>
+
+<h3><em>Never:</em></h3>
+<ul>
+	<li>Never allow Redundancy -  		"Redundancy is <em>DEBT</em>; you always pay for it later"</li>
+	<li>Never use ‘new Object()' 	notation - 	Use <a href="http://www.springframework.org">dependency injection</a> / factories / encapsulation.</li>
+</ul>
+<h3>Coupling Forces:</h3>
+<ol>
+	<li>Identity - 		One type coupled to 	the fact that another type exists.</li>
+	<li>Representational - 	One type 	coupled to the interface of another.</li>
+	<li>Inheritance - 		Coupling to a 	superclass. Changes propagate downward.</li>
+	<li>Subclass - 		Knowledge that an 	object is part of a polymorphic set... "knowing the implementation 	of another."</li>
+</ol>

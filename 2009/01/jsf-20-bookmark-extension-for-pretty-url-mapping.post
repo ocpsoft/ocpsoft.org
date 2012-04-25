@@ -1,0 +1,28 @@
+.categories ['JSF', 'PrettyFaces', 'Releases']
+.dateCreated 20090103T23:00:54
+.link http://ocpsoft.org/java/jsf-java/jsf-20-bookmark-extension-for-pretty-url-mapping/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords JSF 2.0, PrettyFaces
+.permaLink http://ocpsoft.org/java/jsf-java/jsf-20-bookmark-extension-for-pretty-url-mapping/
+.post_status publish
+.postid 38
+.title JSF 2.0 - Bookmark Extension for Pretty URL Mapping
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug jsf-20-bookmark-extension-for-pretty-url-mapping
+<h3>It didn't make it...</h3>
+Well folks, for those of you who were hoping JSF 2.0 would contain the URL rewriting tools that many had asked for, unfortunately it looks like it's not going to make it into the official spec. Bookmarking a page, or pages in JSF has been a heavily requested feature, but according to <a href="http://forums.sun.com/thread.jspa?messageID=10541909#10541909" target="_blank">this discussion</a>, is currently out of scope.
+<h3>But that's ok...</h3>
+The <a href="http://ocpsoft.com/prettyfaces" title="SEO, Dynamic Parameters, Bookmarks, and Navigation for JSF / JSF2">PrettyFaces</a> JSF Bookmark extension has been updated for JSF 2.0, and is ready for public preview (download below).
+<!--more-->
+Only minor updates were required, and should be stable, but due to the un-finalized nature of JSF 2.0 itself, the extension may change as well.
+
+<div class="featured"><div class="inside">
+<p>Download <a href="http://ocpsoft.com/prettyfaces" title=" SEO, Dynamic Parameters, Bookmarks, and Navigation for JSF / JSF2">PrettyFaces</a> now!</p>
+</div></div>
+<h3>Please note:</h3> Parsed parameters are now assigned to Managed Beans <em>after</em> the RESTORE_VIEW phase. Previously this had taken place before the RESTORE_VIEW phase.

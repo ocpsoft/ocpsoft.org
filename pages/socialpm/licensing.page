@@ -1,0 +1,45 @@
+.categories ['Uncategorized']
+.dateCreated 20091208T19:37:15
+.excerpt 
+.link http://ocpsoft.org/socialpm/licensing/
+.mt_allow_comments 0
+.mt_allow_pings 1
+.page_id 587
+.page_status publish
+.permaLink http://ocpsoft.org/socialpm/licensing/
+.text_more 
+.title Licensing
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 2770
+.wp_page_parent_title SocialPM
+.wp_page_template default
+.wp_password 
+.wp_slug licensing
+It's an ugly part of business today, but everyone needs a License. These are the rules you will have to follow when you use SocialPM. <a href="#support">Commercial support</a> and integration is available.
+<br/>
+<div class="featured">
+<h2>Licensing</h2>
+<div class="inside">
+
+<h3>Using SocialPM Internally, or as OpenSource</h4>
+<p>If you are developing and distributing open source applications under the GPL Licence, or wish simply to use SocialPM internally to your company or for personal use, then you are free to use SocialPM under the GPL License.</p>
+
+<h3>For OEMs, ISVs, VARs and Other Distributors</h3>
+<p>OCPsoft provides flexible OEM commercial Licences. <a href="http://ocpsoft.com/services/contact">Contact us</a> to purchase a license.</p>
+
+</div>
+</div>
+
+
+<div class="featured">
+<h2><a name="support"></a>Support & Integration</h2>
+<div class="inside">
+
+<p>Both commercial support and custom integration are available. Please <a href="http://ocpsoft.com/services/contact">contact us</a> for details. Or visit the [[Forums]] for community support.</p>
+
+</div>
+</div>

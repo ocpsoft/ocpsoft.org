@@ -1,0 +1,22 @@
+.categories ['Uncategorized']
+.dateCreated 20090127T14:54:16
+.link http://ocpsoft.org/uncategorized/prettyfaces-122-released/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/uncategorized/prettyfaces-122-released/
+.post_status publish
+.postid 39
+.title PrettyFaces 1.2.2 Released
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug prettyfaces-122-released
+A new minor release of the <a href="http://ocpsoft.com/prettyfaces">PrettyFaces</a> JSF extension for Bookmarkable/Pretty URLs is now available for download.
+
+PrettyFaces is now backwards compatible with Java 5.
+
+<strong>Version 1.2.2</strong>: <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-1.2.2.jar">binary</a>, <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-1.2.2-sources.jar">source</a>

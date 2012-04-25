@@ -1,0 +1,496 @@
+.categories ['OpenSource']
+.dateCreated 20120213T20:12:26
+.link http://ocpsoft.org/?p=3158
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/?p=3158
+.post_status draft
+.postid 3158
+.title Database schema migration and external datasource configuration with JPA 2
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug 
+One of the most frequently overlooked problems when developing a web application is database migration. You need to add some features? Well, you're going to need to update that database. "Good luck!" - but the good news is that you're not on your own. There are several tricks we can use in a Java EE environment that will help us achieve our goals of database versioning, and incremental database migration.
+<!--more-->
+This
+
+10:49
+lincolnthree
+Hey sebersole, you around?
+
+10:49
+sebersole
+yep
+
+10:49
+lincolnthree
+hey! long time
+sorry to bug you, i have a hopefully simple question
+when creating an app that is intended to be downloaded and distributed as a WAR
+
+10:50
+sebersole
+and a roomful of folks to help!
+
+10:50
+lincolnthree
+i picked on you
+
+10:50
+sebersole
+j/k
+
+10:50
+lincolnthree
+the app needs to be able to both create a database schema for the given datasource, and also update the schema as new versions of the WAR are installed
+do we have a strategy for doing that?
+
+10:51
+sebersole
+nope, not really
+we look at schema tools as not production deals
+
+10:51
+lincolnthree
+sebersole: what ever happened to hibernate.hbm2ddl.auto=create-update
+i could swear that worked at one point
+
+10:52
+sebersole
+well lets step back...
+
+10:52
+lincolnthree
+gladly
+
+10:52
+sebersole
+there is a difference between something being there, and it being supported
+
+10:52
+lincolnthree
+right
+
+10:52
+sebersole
+hbm2ddl is somethign thats there
+10:52
+PeterPan- [~Peterpan-@p5DC54F82.dip.t-dialin.net] entered the room.
+
+10:53
+sebersole
+but not really supported
+
+10:53
+lincolnthree
+right, that makes sense
+
+10:53
+sebersole
+its really only intended for test situations
+ok, all that said
+
+10:53
+lincolnthree
+i wouldn't want to support it myself, it's pretty risky in general to let a tool automatically update your DB
+
+10:54
+sebersole
+well its not just that
+
+10:54
+lincolnthree
+it also doesn't create indexes, etc
+
+10:54
+sebersole
+databases have all kinds of non-standardized tweaks to this stuff
+for a reason
+
+10:54
+lincolnthree
+right
+but lets assume you're building some COTS
+
+10:55
+sebersole
+because for real apps stuff like physical disk layout, etc is important
+
+10:55
+lincolnthree
+not something that's purely meant for in house
+10:55
+PeterPan- is now known as sennahoj
+
+10:55
+lincolnthree
+how would you go about these steps:
+
+10:55
+sebersole
+what is COTS?
+
+10:55
+lincolnthree
+Commercial Off The Shelf Software
+Like microsoft office
+or OpenOffice
+in this case, web based
+just for an example
+
+10:56
+sebersole
+well funny you pick those
+
+10:56
+lincolnthree
+they use hibernate?
+
+10:56
+sebersole
+no, but dont they each delivery an embedded db for just this reason?
+
+10:56
+lincolnthree
+i believe so
+
+10:56
+sebersole
+anyway
+
+10:57
+lincolnthree
+ok, so think of something more like wordpress in that case
+
+10:57
+TomTom
+liquibase ftw....
+
+10:57
+lincolnthree
+so.. liquibase generates migration scripts, yes?
+
+10:57
+sebersole
+there used to be a tool that aimed to do "schema evolution" in conjunction with hibernate
+
+10:58
+lincolnthree
+Ok well let me finish my steps
+
+10:58
+sebersole
+liquibase uses a separate vocab for describing the schema though iiuc
+
+10:58
+lincolnthree
+1. Initial schema creation
+10:59
+TomTom
+lincolnthree: liquibase lets control YOU the process of upgrade/migration
+
+10:59
+lincolnthree
+TomTom: right
+
+10:59
+sebersole
+what you really want is versioned snapshots of the schema
+
+10:59
+lincolnthree
+2. Once the schema is in place, new versions need to be able to apply migrations
+sebersole: right
+so if you are on version 2, upgrading to version 4
+it applies version 3, then version 4
+
+10:59
+sebersole
+because a user might go directly to version 3
+
+10:59
+TomTom
+also you can support incremental upgrade paths, this is done by "schema diffs" in liquibase
+
+10:59
+sebersole
+skipping 1 and 2
+
+11:00
+lincolnthree
+sebersole: yes that's what I'm getting at
+
+11:00
+wild_oscar
+oh, look, an interesting debate
+
+11:00
+lincolnthree
+my question is, how can we do that as part of an application that uses JPA (backed by hibernate)
+
+11:00
+wild_oscar
+we actually use hibernate.hbm2ddl.auto
+
+11:00
+sebersole
+well of course you know that jpa provides no schema management capability
+
+11:01
+wild_oscar
+but it's in "none" for the production environment
+
+11:01
+lincolnthree
+sebersole: yes, my point is it also inhibits it in this case IMO
+11:01
+sebersole
+lincolnthree: how so?
+11:01
+TomTom
+lincolnthree: have a look into liquibase... you can call liquibase during the creation of the sessionfactory etc... go for their docs
+
+11:01
+lincolnthree
+Any app that controls the database connection itself can set up an automatic update script as part of the application itself
+
+11:01
+sebersole
+wild_oscar: sure, lots of people use it
+
+11:01
+lincolnthree
+TomTom: exactly my point, that assumes you have control of creating the sessionfactory
+
+11:02
+wild_oscar
+we haven't had many db schema updates in our production servers, but we've updated them by hand
+11:02
+sebersole
+lincolnthree: nah, or can hook into it
+
+11:02
+lincolnthree
+sebersole: that too. do we have a startup hook for the hibernate sessionfactory through JPA?
+
+11:02
+sebersole
+i dont know liquibase, nor how it might in work with hibernate metadata
+yep
+use a SessionFactoryObserver
+11:03
+TomTom
+lincolnthree: when creating the connection pool, in spring for example, you can call liquibase before creating the pool. this is quite convinient
+
+11:03
+lincolnthree
+TomTom: got an example?
+sebersole: ok, so SessionFactoryObserver
+sebersole: Next question, can we override the persistence.xml configuration there as well?
+Say, to allow custom configuration of the JPA data-source?
+
+11:04
+sebersole
+override?
+how?
+11:04
+dannyg left the room (quit: Quit: Leaving.).
+
+11:04
+wild_oscar
+TomTom: that liquibase thing looks interesting
+
+11:04
+lincolnthree
+sebersole: persistence.xml contains some default stuff for in memory DB, but I want to read an external configuration that specifies the name of the DS and the SchemaDialect
+11:05
+sebersole
+lincolnthree: is this 3.x or 4.x ?
+11:05
+TomTom
+lincolnthree: search for "SpringLiquibase" this is the bean which can do all the stuff for you
+
+11:05
+lincolnthree
+sebersole: 4.x on AS
+7
+11:06
+sebersole
+lincolnthree: well either way i guess, i would suggest using a custom ConnectionProvider
+
+11:07
+sebersole
+for that particular part
+the problem there with SessionFactoryObserver is that its too late in the game
+
+11:08
+lincolnthree
+sebersole: ok, so how do i enable a sessionfactory observer, and a connectionprovider?
+is this in the docs?
+11:08
+AndroidLoverInSF left the room (quit: Ping timeout: 240 seconds).
+
+11:08
+lincolnthree
+(just realised it probably is)
+TomTom: found it, might be able to utilize this, do you have any recommendations or best practices?
+11:10
+sebersole
+lincolnthree: SessionFactoryObserver can only be set programatically atm
+
+11:10
+sebersole
+but it sounds like you might have another way there
+
+11:10
+TomTom
+no, just follow their steps to create "snapshots" of the schemas and then modify/diff them to create the database changelog
+
+11:10
+lincolnthree
+sebersole: other way there?
+sebersole: i need to register this on AS7
+
+11:11
+sebersole
+as for ConnectionProvider, you would use hibernate.connection.provider_class
+11:11
+sebersole
+lincolnthree: well you asked about 2 things
+
+11:11
+sebersole
+1) how to manage schema evolution
+2) how to provide custom Connection config
+
+11:12
+lincolnthree
+right
+for the first you're suggesting i use SessionFactoryObserver
+11:12
+sebersole
+lincolnthree: well you cant from jpa though
+
+11:12
+sebersole
+jpa has to be all text-based config
+11:13
+sebersole
+[10:10] lincolnthree: SessionFactoryObserver can only be set programatically atm
+
+11:13
+lincolnthree
+sebersole: ok, so that's not good
+
+11:13
+sebersole
+new Configuration()...setSessionFactoryObserver( ... ).buildSessionFactory()
+
+11:13
+lincolnthree
+right
+sebersole: that means theres still no way to do automatic schema migration in JPA
+if i understand you right
+
+11:14
+sebersole
+its easy enough to add the capability to specify one by config
+11:14
+sebersole
+lincolnthree: sure there is, just not *through* JPA
+
+11:14
+sebersole
+its a web app
+add a context listener
+
+11:15
+lincolnthree
+sebersole: right, except...
+as far as I know, hibernate will fail deployment if the schema does not match the model
+maybe I'm wrong?
+
+11:15
+sebersole
+thats not true
+
+11:15
+lincolnthree
+ahhhhh interesting
+
+11:15
+sebersole
+unless you ask it to validate the schema
+it will fail obviously later if they dont match
+
+11:16
+lincolnthree
+you know what I bet I did
+11:16
+rhamnett left the room (quit: Quit: This computer has gone to sleep).
+
+11:16
+lincolnthree
+I think i was thinking of my update does not create schema error
+it does fail if the schema does not exist, right?
+11:16
+andrigtmiller [~andrigtmi@c-76-25-255-220.hsd1.co.comcast.net] entered the room.
+
+11:16
+lincolnthree
+so in that case, you could set hbm2ddl.auto=create
+then manually update the app in your context listener, as you suggest
+as long as that listener happens very first
+11:17
+sebersole
+lincolnthree: well i'd go a different route
+
+11:17
+sebersole
+i'd disable hbm2ddl.auto completely
+
+11:17
+lincolnthree
+use import.sql?
+11:17
+tjadc left the room (quit: Ping timeout: 240 seconds).
+
+11:18
+sebersole
+and handle the create/alter from the context listener
+using liquibase or whatever
+
+11:18
+lincolnthree
+let me try something quickly, 1 sec
+trying to start the DB without a schema
+11:22
+myarboro2 left the room (quit: Ping timeout: 252 seconds).
+
+11:27
+wild_oscar
+sebersole: would you use the same approach for the case of different environments? I see you're not very keen on the hbm2dll.auto; I currently use it so that I have different behaviours in different environments: in TEST it create-drop (so the tests are always run on a clean database); in DEV/PROTOTYPE/PROD it's none
+11:28
+TomTom left the room (quit: Quit: home).
+
+11:29
+lincolnthree
+sebersole: as usual, you are correct. after disabling all startup listeners, the app deploys just fine
+
+11:29
+wild_oscar
+(I use the hbm2dll in conjunction with the other property that lets you define the .sql files to run, so I can also have a pre-populated db in the environments (maybe the PROTOTYPE has some example data, the TEST might have fixed data like country names, etc)
+
+11:29
+lincolnthree
+sebersole: this is good news
+
+11:35
+lincolnthree
+sebersole: so I'm looking at the docs and articles around ConnectionProvider, it appears that the setting you gave me does what i want, however, im not exactly sure how to use this. I assume that getConnection is where the magic happens, and i would somehow need to look up the JNDI data-source of my choosing?
+sebersole: is there a way to delegate to the default connection provider in the case where you don't want to use this? (and it is still configured)

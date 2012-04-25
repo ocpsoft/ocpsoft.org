@@ -1,0 +1,27 @@
+.categories ['PrettyTime']
+.dateCreated 20090920T11:00:39
+.link http://ocpsoft.org/prettytime/prettytime-1-0-4-released/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/prettytime/prettytime-1-0-4-released/
+.post_status publish
+.postid 183
+.title PrettyTime 1.0.4 Released
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug prettytime-1-0-4-released
+<a href="http://ocpsoft.com/prettytime">PrettyTime 1.0.4 - Elapsed Timestamp Formatting for Java</a> now supports additional Locales:
+<h4>Supported locales:</h4>
+<ul>
+	<li>English - DEFAULT</li>
+	<li>French - FR</li>
+	<li>German - DE</li>
+	<li>Chinese - ZH_CN</li>
+	<li>Portugese - PT</li>
+</ul>
+If you have a resource bundle for another locale, or would like to create one, please email it to: <a title="Submit a resource bundle" href="mailto:admin@ocpsoft.com">admin@ocpsoft.com</a>

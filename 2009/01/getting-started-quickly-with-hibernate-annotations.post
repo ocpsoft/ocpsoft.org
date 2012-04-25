@@ -1,0 +1,246 @@
+.categories ['Hibernate', 'Java']
+.dateCreated 20090126T09:08:04
+.link http://ocpsoft.org/java/getting-started-quickly-with-hibernate-annotations/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords Annotations, Hibernate, Java, ORM
+.permaLink http://ocpsoft.org/java/getting-started-quickly-with-hibernate-annotations/
+.post_status publish
+.postid 5
+.title Getting Started Quickly with Hibernate Annotations
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug getting-started-quickly-with-hibernate-annotations
+<h2>Tutorial Chapter 1 - Step By Step</h2>
+Getting started with Hibernate can be tricky, but here's a step-by-step tutorial that explains exactly what needs to be done to enable your application for hibernate. This chapter covers very basic mapping and persistence.
+<h3>Download the following archives: (use <a href="#comment-259">this Maven POM</a>)</h3>
+Or follow the official Hibernate <a href="http://docs.jboss.org/hibernate/stable/annotations/reference/en/html/ch01.html#setup-requirements">getting started guide</a> in order to configure your project JAR files.
+
+This tutorial used the following JARs, but <a href="http://www.hibernate.org/downloads.html">newer versions</a> may be used as well.
+<ul>
+	<li>Hibernate Core <a href="http://sourceforge.net/project/showfiles.php?group_id=40712&amp;package_id=127784&amp;release_id=595668" target="_blank">(3.3.0_CR1)</a></li>
+	<li>Hibernate Annotations <a href="http://sourceforge.net/project/showfiles.php?group_id=40712&amp;package_id=139933" target="_blank">(3.4.0_CR1)</a></li>
+	<li>HSQLDB (<a href="http://sourceforge.net/project/showfiles.php?group_id=23316&amp;package_id=16653&amp;release_id=339171" target="_blank">1.8.0.10</a>), a lightweight in-memory RDBMS (or use the database of your choice)</li>
+</ul>
+<!--more-->
+<h3><a name="instructions"></a>Instructions:</h3>
+<ul>
+	<li>Extract the archives and copy necessary JAR files into your project (or if you are using Maven, this is already taken care for you -> <a href="#comment-259">example POM</a>):
+<em>It may seem like quite a few jars, it might not, but this is the minimal set to have a working Hibernate Annotations 3.4.0 application. All of the following files should be contained in your downloads.
+</em></li>
+</ul>
+<div style="padding-left: 90px;"><h4>Hibernate Annotations</h4>
+<code>hibernate-annotations.jar
+hibernate-commons-annotations.jar
+jta.jar (<a href="http://en.wikipedia.org/wiki/Java_Transaction_API" target="_blank">JTA, javax.transaction</a>)</code>
+
+<h4>Hibernate Core</h4>
+<code>hibernate-core.jar (or hibernate3.jar)
+ejb3-persistence.jar (<a href="http://java.sun.com/developer/technicalArticles/J2EE/jpa/" target="_blank">javax.persistence</a>)
+antlr.jar (<a href="http://antlr.org/" target="_blank">2.7.6</a>)
+commons-collections.jar (<a href="http://commons.apache.org/collections/" target="_blank">3.1</a>)
+dom4j.jar (<a href="http://www.dom4j.org/" target="_blank">1.6.1</a>)
+slf4j-api.jar (<a href="http://www.slf4j.org/" target="_blank">1.4.2</a>)
+cglib.jar (<a href="http://cglib.sourceforge.net/" target="_blank">v2</a>)
+asm.jar (<a href="http://asm.objectweb.org/" target="_blank">v3</a>)</code>
+
+<h4>HSQLDB</h4>
+<code>hsqldb.jar</code>
+</div>
+
+<ul>
+	<li>Add the JARs to your project's classpath.</li>
+	<li>Copy and paste the following source files into your project. We're going to use some canned configurations in order to get all of this working.</li>
+</ul>
+
+<div class="featured"><center>Need some <strong>/pretty /urls</strong> in your Servlet, Java EE, or JSF web-app? Try <a href="http://ocpsoft.com/prettyfaces/" title="SEO | Dynamic Parameters | Bookmarks | Navigation | JSF | JSF2 | URLRewrite Filter | Open Source">PrettyFaces</a>: URL-rewriting for Java EE and JSF. (Free and <strong>open-source</strong>!)</center></div>
+
+<h4>log4j.properties</h4>
+(Optional) Put this file on your classpath, or in your source folder. Hibernate uses log4j to print output, so if we want to see detailed results, you should set this up.
+<pre lang="config">log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target=System.out
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d{ABSOLUTE} %5p %c{1}:%L - %m%n
+
+log4j.rootLogger=warn, stdout
+log4j.logger.org.hibernate=info
+log4j.logger.org.hibernate.type=info
+log4j.logger.org.hibernate.tool.hbm2ddl=debug
+log4j.logger.org.hibernate.transaction=debug</pre>
+<h4 style="text-align: center;">----</h4>
+<h4>MockObject.java</h4>
+It's time to create our first object. Notice that this is a simple POJO with two fields: id and version. The <em>id</em> field is a required field, but before you complain, there is a philosophy of database design that dictates every entity table should have its own <em>id</em> column; some disagree with this, but I've found it a very convenient practice. Try it out before you pass judgment.
+
+In order to map an object, a few things always need to be done:
+<ul>
+	<li>The class must be annotated with <em>@javax.persistence.Entity</em></li>
+	<li>The class must have a <em>@javax.persistence.Id </em>column</li>
+	<li>The class must have a default (or undefined) constructor method. This means it must have a constructor that has no arguments.</li>
+	<li>The <em>@Version</em> column is how Hibernate performs <a href="http://en.wikipedia.org/wiki/Optimistic_concurrency_control" target="_blank">optimistic locking</a>. If a record has been modified by another transaction, your transaction's version will be out of date, and an exception will be thrown.</li>
+	<li>By default, all fields in your class will be persisted to the database if possible. If there is a field that should not be recorded in the database, mark that field with the <em>@Transient</em> annotation.</li>
+	<li>To add new columns in the database, simply add new fields in your object.</li>
+</ul>
+<pre lang="java">import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Version;
+
+@Entity
+@Table(name = "mock_objects")
+public class MockObject implements Serializable
+{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", updatable = false, nullable = false)
+    private Long id = null;
+
+    @Version
+    @Column(name = "version")
+    private int version = 0;
+
+    public Long getId()
+    {
+        return id;
+    }
+
+    public int getVersion()
+    {
+        return version;
+    }
+}</pre>
+<h4 style="text-align: center;">----</h4>
+<h4>HibernateUtil.java</h4>
+HibernateUtil is a convenience class that automates configuration, and provides your application access to the active Session. This is where you tell Hibernate about your <em>MockObject</em> class, and where you get a handle to an object that will save, update, delete and etc. your objects.
+<pre lang="java">import org.hibernate.SessionFactory;
+import org.hibernate.cfg.AnnotationConfiguration;
+
+public class HibernateUtil
+{
+    private static final SessionFactory sessionFactory;
+
+    static
+    {
+        try
+        {
+            AnnotationConfiguration config = new AnnotationConfiguration();
+            config.setProperty("hibernate.dialect", "org.hibernate.dialect.HSQLDialect");
+            config.setProperty("hibernate.connection.driver_class", "org.hsqldb.jdbcDriver");
+            config.setProperty("hibernate.connection.url", "jdbc:hsqldb:mem:demodb");
+            config.setProperty("hibernate.connection.username", "sa");
+            config.setProperty("hibernate.connection.password", "");
+            config.setProperty("hibernate.connection.pool_size", "1");
+            config.setProperty("hibernate.connection.autocommit", "true");
+            config.setProperty("hibernate.cache.provider_class", "org.hibernate.cache.NoCacheProvider");
+            config.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+            config.setProperty("hibernate.show_sql", "true");
+            config.setProperty("hibernate.transaction.factory_class", "org.hibernate.transaction.JDBCTransactionFactory");
+            config.setProperty("hibernate.current_session_context_class", "thread");
+
+            // Add your mapped classes here:
+            config.addAnnotatedClass(MockObject.class);
+
+            sessionFactory = config.buildSessionFactory();
+        }
+        catch (Throwable ex)
+        {
+            System.err.println("Initial SessionFactory creation failed." + ex);
+            throw new ExceptionInInitializerError(ex);
+        }
+    }
+
+    public static SessionFactory getSessionFactory()
+    {
+        return sessionFactory;
+    }
+}</pre>
+<h4 style="text-align: center;">----</h4>
+<h4>HibernateDemo.java</h4>
+Our driver class is very simple; it does the following things:
+<ul>
+	<li>Get a handle to Hibernate Session</li>
+	<li>Create and persist two new <em>MockObjects</em></li>
+	<li>Print out the generated IDs<em>
+</em></li>
+</ul>
+<pre lang="java">import org.hibernate.Transaction;
+import org.hibernate.classic.Session;
+
+public class HibernateDemo
+{
+    public static void main(String[] args)
+    {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction transaction = session.beginTransaction();
+
+        MockObject object0 = new MockObject();
+        MockObject object1 = new MockObject();
+        session.save(object0);
+        session.save(object1);
+
+        transaction.commit();
+
+        System.out.println("Object 0");
+        System.out.println("Generated ID is: " + object0.getId());
+        System.out.println("Generated Version is: " + object0.getVersion());
+
+        System.out.println("Object 1");
+        System.out.println("Generated ID is: " + object1.getId());
+        System.out.println("Generated Version is: " + object1.getVersion());
+    }
+}</pre>
+And here we are. When you run HibernateDemo, you should have a fully functional Hibernate enabled HSQL database with one table. Play around with adding new fields to your object.
+
+Your output should look something like this:
+<pre style="padding-left: 60px;">Object 0
+Generated ID is: 1
+Generated Version is: 0
+Object 1
+Generated ID is: 2
+Generated Version is: 0</pre>
+<h4 style="text-align: center;">----</h4>
+<h4>Considering the <a href="http://en.wikipedia.org/wiki/Pattern_language#Balancing_of_forces" target="_blank">Forces</a>:</h4>
+I'd like to note, here, that we're doing a lot of configuration in the code itself. This is OK if you are relatively sure that you won't need to be making changes to your data model or back-end configuration very frequently. However, if you know that this is going to happen, I strongly suggest using <a href="http://www.hibernate.org/hib_docs/v3/reference/en/html/tutorial.html#tutorial-firstapp-configuration" target="_blank">XML configuration files</a> instead, and you should also consider using traditional Hibernate with XML object-relational mappings. If you build all configuration into your code, every time you change the configuration, you'll have to recompile / rebuild parts of your system. It's much easier just to edit a file. However, unless you're sure, just cross that bridge when you come to it.
+<h4>A few more things to remember:</h4>
+Take your time. Don't give up. Ask questions. <em>READ the forums and documentation.</em>
+
+Hibernate is BIG. It's a very powerful, very complex tool. It took me a long time to get even a simple object relationship working the way I wanted to. The learning curve is not small, and you will probably be frustrated for a while. I have, however, come to the point where I see so much benefit, that I feel it was completely worth my time to learn.
+
+Configuration is <strong>everything</strong>. Hibernate can do anything you want: You can use it to tie in to existing database schema; you can use it to run plain SQL queries or stored procedures.
+
+Good luck.
+<h2>If you want more information about Hibernate, Hibernate Annotations, or Hibernate Search</h2>
+Then I recommend some books written by my colleagues and peers. (Note, you will need to disable any ad-block programs in order to see these links.)
+
+<center>
+<table>
+<tr>
+<td>
+<iframe src="http://rcm.amazon.com/e/cm?lt1=_blank&bc1=FFFFFF&IS2=1&npa=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=o042-20&o=1&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=193239415X" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+</td>
+
+<td>
+<iframe src="http://rcm.amazon.com/e/cm?lt1=_blank&bc1=FFFFFF&IS2=1&npa=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=o042-20&o=1&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1933988649" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+</td>
+
+<td>
+<iframe src="http://rcm.amazon.com/e/cm?lt1=_blank&bc1=FFFFFF&IS2=1&npa=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=o042-20&o=1&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0596158025" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+</td>
+</tr>
+</table>
+</center>
+
+<h3>References:</h3>
+<ol>
+	<li><a href="http://www.hibernate.org/hib_docs/v3/reference/en/html/tutorial.html" target="_blank">Hibernate's Standard Tutorial</a></li>
+	<li><a href="http://www.hibernate.org/hib_docs/annotations/reference/en/html_single/" target="_blank">Hibernate Annotations Reference</a></li>
+</ol>
+This article is part of a series: <a href="http://ocpsoft.com/java/guide-to-hibernate-annotations/" target="_self">Guide to Hibernate Annotations</a>

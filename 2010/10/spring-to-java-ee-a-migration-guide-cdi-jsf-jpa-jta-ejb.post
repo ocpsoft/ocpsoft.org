@@ -1,0 +1,637 @@
+.categories ['Java', 'JSF2', 'OpenSource', 'Seam', 'Spring', 'Technology']
+.dateCreated 20101001T13:40:21
+.link http://ocpsoft.org/java/spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/java/spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb/
+.post_status publish
+.postid 1589
+.title Spring to Java EE - A Migration Experience
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb
+[toc][/toc]
+
+So Java EE 6 is out, and you've decided to give it a go. You're trying to port an existing application over to the new stack (or are trying to create a new one for the first time,) but exceptions are bursting through the seams and you just can't seem to get things to work. If you're familiar with Spring and Hibernate (with all the joy that is <a href="http://www.google.com/search?q=OpenSessionInView">OpenSessionInView</a> or <code>OpenSessionInConversation</code>,) more than likely the problems you're having are related to the Java Persistence API (<code>JPA</code>), combined with Enterprise Java Beans (<code>EJB</code>). Contexts and Dependency Injection (<code>CDI</code>) should be a familiar face if coming from Spring, but things are subtly different in the world of Java EE.
+<!--more-->
+[error]<font color="red">Disclaimer:</font> I work for JBoss and participate in creating some of the technologies I describe.</center>[/error]
+
+<div class="featured" width="100%"><div style="overflow: hidden;"><a href="http://ocpsoft.com/wp-content/uploads/2010/10/migration.jpg"><img src="http://ocpsoft.com/wp-content/uploads/2010/10/migration.jpg" alt="" width="100%" title="migration" class="alignnone size-full wp-image-1629" /></a></div></div>
+
+The trouble you're having, however, is most likely due to the fact that you're actually trying to solve problems that don't need to be solved. When I first made the switch to Java EE 6 from Spring - for <a href="http://scrumshark.com/">my own personal project</a> - Spring's dozens of extensions, and using Hibernate Object Relational Mapping (<code>ORM</code>) directly, managing transactions myself, I was trying to do things “the Spring way,” in other words – configuring everything up the wazoo, but let me try to explain some things for you that should help clear the fuzz of attempting to migrate to Java EE; they are things I ran in to, and would likely happen to others as well.
+
+[info]Before you start, go ahead and download your application server of choice, which at this point should probably be one of either: <a href="http://www.jboss.org/jbossas/downloads/">JBoss AS 7</a>, or GlassFish 3.x. (I recommend AS7 not because I have to, but because I believe it is currently the top of the line app-server.)[/info]
+
+<h2><span class="toc">The biggest difference</span> you'll find is, “Java EE already does that for you.”</h2>
+
+Nearly every application requires the same set of basic features: persistence, transactionality, (dependency injection is typically assumed at this point,) and a web-tier view-layer or web-services. The first thing I have to say is: “Don't freak out when I say Enterprise Java Beans (EJB)” – they've truly become a system worthy of attention, and if you're going to take advantage of the Java EE stack, you're going to want them around; EJB 3.1 today is miles apart from what it once was, can be used standalone in WARs, and requires just one annotation to configure - soon, with JBoss AS 7, Enterprise Java Beans may simply be an extension built on CDI, like everything else.
+
+To start, I'll review some of the problems I encountered and solved during my first transition between the Spring and Java EE 6 technologies; most – if not all – of these were due to my lack of technical understanding, the mindsets are truly very different; the results are striking.
+
+<h3><span class="toc">Configuring the System</span> - “It's all just XML in the end.”</h3>
+
+This one is simple. Where Spring has <code>/WEB-INF/applicationContext.xml</code> files of various types, Java EE has various distinct configuration files for each API in the framework WAR.  Some of these files are required to activate the API, but some are not. The following chart overviews the most common of these configuration files – there is more to Java EE, but chances are these are all you'll need to get started. Be careful! If these files are in the wrong place, you will <em>not</em> have a working system!
+
+<table class="format" border="1" width="100%">
+<thead><tr>
+<th width="33%"><a name="config"></a>Java EE API</th>
+<th width="33%">Config File Location</th>
+<th width="33%">Required to Enable</th>
+</tr></thead>
+
+<tbody>
+<tr valign="TOP">
+<td width="33%">Java Persistence API</td>
+<td width="33%"><code>/META-INF/persistence.xml</code></td>
+<td width="33%">Yes</td>
+</tr>
+<tr valign="TOP">
+<td width="33%">Enterprise Java Beans WAR</td>
+<td width="33%"><code>/WEB-INF/ejb-jar.xml</code></td>
+<td width="33%">No</td>
+</tr>
+<tr valign="TOP">
+<td width="33%">Java Server Faces</td>
+<td width="33%"><code>/WEB-INF/faces-config.xml</code></td>
+<td width="33%">No</td>
+</tr>
+<tr valign="TOP">
+<td width="33%">Contexts &amp; Dependency Injection</td>
+<td width="33%"><code>/WEB-INF/beans.xml</code></td>
+<td width="33%">Yes</td>
+</tr>
+<tr valign="TOP">
+<td width="33%">Web Configuration</td>
+<td width="33%"><code>/WEB-INF/web.xml</code></td>
+<td width="33%">No</td>
+</tr>
+<tr valign="TOP">
+<td width="33%">JAX-RS (REST Web Services)</td>
+<td width="33%"><code>/WEB-INF/web.xml</code></td>
+<td width="33%">No</td>
+</tr>
+</tbody>
+</table>
+
+You should also know that most of these files require some sort of schema, or “XML header” that tells the Application Server (JBoss Application Server, GlassFish, Etc...) which version of the technology to use, since most APIs attempt some level of backwards compatibility. This is similar to including new schemas in Spring's <code>applicationContext.xml</code>.
+
+EJBs can be defined via annotations alone, and require no configuration file in order to enable them. JAX-RS is similar, since no configuration file is required when using a Java EE 6 certified Application Server such as JBoss Application Server, everything can be specified through annotations once it is enabled.
+
+<h4>Configuration of modules in JAR files:</h4>
+
+One of the greatest features of Java EE APIs is the ability to break application code into separate reusable JAR files – where each individual JAR contributes configuration and code to the system they are included in; for instance, you might run multiple applications for your business, but each one must have the same data access providers. You'd create a shared domain-model JAR file and include it in each application. All the configuration would be contained in that JAR, and would be done using the same set of configuration files, placed in the JAR's <code>META-INF</code> directory:
+
+<table class="format" border="1"  width="100%">
+<thead><tr>
+<th width="33%"><a name="config.modular"></a>Java EE API</th>
+<th width="33%">Config File Location</th>
+<th width="33%">Required to Enable</th>
+</tr></thead>
+<tbody>
+<tr valign="TOP">
+<td width="33%">Java Persistence API</td>
+<td width="33%"><code>/META-INF/persistence.xml</code></td>
+<td width="33%">Main app must include own config file.</td>
+</tr>
+<tr valign="TOP">
+<td width="33%">Enterprise Java Beans WAR</td>
+<td width="33%"><code>/META-INF/ejb-jar.xml</code></td>
+<td width="33%">No</td>
+</tr>
+<tr valign="TOP">
+<td width="33%">Java Server Faces</td>
+<td width="33%"><code>/META-INF/faces-config.xml</code></td>
+<td width="33%">No</td>
+</tr>
+<tr valign="TOP">
+<td width="33%">Contexts &amp; Dependency Injection</td>
+<td width="33%"><code>/META-INF/beans.xml</code></td>
+<td width="33%">Yes</td>
+</tr>
+<tr valign="TOP">
+<td width="33%">Web Configuration</td>
+<td width="33%"><code>/META-INF/web-fragment.xml</code></td>
+<td width="33%">No</td>
+</tr>
+<tr valign="TOP">
+<td width="33%">JAX-RS (REST Web Services)</td>
+<td width="33%"><code>/META-INF/web-fragment.xml</code></td>
+<td width="33%">No</td>
+</tr>
+</tbody>
+</table>
+
+Note that some of the file names are different from those that are used in the main application itself.
+
+<h4>The Application Server Configuration</h4>
+
+In addition to the application configuration, one of the most notable differences between Spring and Java EE is that you actually need to know how to use the application <em>server </em>itself. Spring replaces application server configuration with application configuration (sometimes more convenient, sometimes less convenient, but the same result in the end.) In order to use JPA and transactions (covered later,) you will want to know how to use the transactional data-source feature of the Java Enterprise Application Server, since it makes setting up transactions as simple as writing a plain Java class with an annotation.
+
+Keep in mind that each of these configuration files may have a different syntax and format, since they are produced by different companies. These files should be used to configure settings that must exist in order for the application to run, and should be considered a natural extension to the Java EE module configuration files.
+
+[info]JBoss Application Server Documentation can be found <a href="https://docs.jboss.org/author/display/AS7/Documentation">here, online</a>.[/info]
+
+<table class="format" border="1" width="100%">
+<thead><tr>
+<th width="50%">Container</th>
+<th width="50%">Configuration File</th>
+</tr></thead>
+<tbody>
+<tr valign="TOP">
+<td width="50%">JBoss AS 6 - General Config</td>
+<td width="50%"><code>/WEB-INF/jboss-web.xml</code></td>
+</tr>
+<tr valign="TOP">
+<td width="50%">JBoss AS 6 - Data Source Config</td>
+<td width="50%"><code>${JBOSS_HOME}/server/default/deploy/*-ds.xml</code> (must be placed in the actual JBoss server deploy directory, more info can be found <a href="http://docs.jboss.org/jbossas/docs/Installation_And_Getting_Started_Guide/5/html/Using_other_Databases.html#Using_other_Databases-DataSource_Configuration_Files">here</a>.)</td>
+</tr>
+<tr valign="TOP">
+<td width="50%">Sun GlassFish v3 AS - General Config</td>
+<td width="50%"><code>/WEB-INF/sun-web.xml</code></td>
+</tr>
+<tr valign="TOP">
+<td width="50%">Sun GlassFish v3 AS - Data Source Config</td>
+<td width="50%">You must use the <code>asadmin</code> command to process a sun-resources.xml,  use <code>asadmin</code> to explicitly define a data source, or create a data source in the web-admin console.</td>
+</tr>
+</tbody>
+</table>
+
+If your application depends on a transactional data source, this is the place to define it – preventing manual configuration of the application server, which can be a very repetitive, monotonous task. This configuration usually only needs to happen once per-server, and allows you to keep database passwords secret, data sources controlled and separate, and JMS queues centralized; though, if you want a standalone application/data-source configuration, then you should think about using these custom configuration files.
+
+<h2 class="toc">Contexts &amp; Dependency Injection for Java – aka Beans</h2>
+
+Where spring has <code>@Autowired</code>, Java EE (CDI to be more specific) has <code>@Inject</code>. The parallel is really quite straight-forward, since every class in a WAR or JAR file (that has a beans.xml file!) is automatically a bean in CDI, any class can be provided or scoped using dependency injection, just like a bean that would be defined in <code>applicationContext.xml</code> in a Spring application.
+
+<em>Before we get started, though – remember that you need to create an empty <code>/WEB-INF/beans.xml</code> file, or your system will not start the CDI container.</em> Technically, you can only inject beans that are themselves in a bean archive (not just any class). However, you can use a producer method to pull in a class from a non-bean archive and make it a bean (or you can use <a href="http://docs.jboss.org/seam/3/xml-config/latest/reference/en-US/html_single/">Seam XML</a> to add beans that aren't in an archive that has a <code>beans.xml</code> file.)
+
+
+
+[snippit filename="A simple CDI bean"]public class UserCredentialsBean
+{
+}
+[/snippit]
+
+Wait, that's it? Well, you have a few more options when it comes to managing these beans and deciding how long they will “live,” or how long each bean instance will remain active.
+
+Every bean can be assigned to a “scope,” which is really defining the context in which the bean is relevant. For example, it doesn't make sense for a logged-in user's authentication credentials (username/password) to be retained longer than that user's session, so you would place the bean containing that information in the Session Scope (which is just a nice, clean way of saying that we are storing that information in the <code>HttpSession</code> object, and when the <code>HttpSession</code> object dies, so does everything in Session Scope for that user.) This is done using the <code>@SessionScoped</code> annotation.
+
+[snippit filename="A session scoped bean"]
+@SessionScoped
+public class UserCredentialsBean
+{
+}
+[/snippit]
+
+In reality we would probably leave the details of authenticating users up to a framework like <a href="http://seamframework.org/Seam3">Seam Security</a>, but just consider this as an example.
+
+There are also several more built-in scopes:
+
+<table class="format" border="1" width="100%">
+<thead><tr>
+<th width="25%">Annotation</th>
+<th width="55%">Lifespan</th>
+<th width="20%">Contextual Object</th>
+</tr></thead>
+<tbody>
+<tr valign="TOP">
+<td width="25%"><code>@RequestScoped</code></td>
+<td width="55%">From the beginning to the end of each individual HTTP request.</td>
+<td width="20%"><code>HttpServletRequest</code></td>
+</tr>
+<tr valign="TOP">
+<td width="25%"><code>@ConversationScoped</code></td>
+<td width="55%">Begins when the request begins and ends when the request ends and the conversation is not in a long-running state. Calling <code>conversation.begin()</code> states intent for the scope to perpetuate to additional requests. Calling <code>conversation.end()</code> marks the conversation to end on the when the current request ends – but note that if the session is terminated, all active conversations will also be terminated.</td>
+<td width="20%"><code>HttpSession</code></td>
+</tr>
+<tr valign="TOP">
+<td width="25%"><code>@SessionScoped</code></td>
+<td width="55%">From the first request starting when <code>httpServletRequest.getSession()</code> method is called, to the last request when <code>httpSession.invalidate()</code> is called.</td>
+<td width="20%"><code>HttpSession</code></td>
+</tr>
+<tr valign="TOP">
+<td width="25%"><code>@ApplicationScoped</code></td>
+<td width="55%">For the entire duration of the running application; from post-server startup, to pre-shutdown.</td>
+<td width="20%"><code>ServletContext</code></td>
+</tr>
+<tr valign="TOP">
+<td width="25%"><code>@Dependent</code> (default)</td>
+<td width="55%">Controlled by the object in which it was @Injected. If <code>@Injected</code> into a <code>@SessionScoped</code> bean, for example, the <code>@Dependent</code> bean will also be <code>@SessionScoped</code>. This means that there can be multiple separate instances of the same <code>@Dependent</code> bean that are <code>@RequestScoped</code>, or any other scope for that matter. This is similar to, but not quite the same as Spring's <code>@Prototype</code> scope.</td>
+<td width="20%">*** The bean into which this bean was injected.</td>
+</tr>
+</tbody>
+</table>
+
+Other custom scopes can be created as needed, and some frameworks such as the <a href="http://docs.jboss.org/seam/3/faces/reference/snapshot/en-US/html_single/">Seam Faces Module</a> even provide additional scopes for you. But let's look at how we inject an instance of our <code>UserCredentialsBean</code> into another bean.
+
+[snippit filename="Injecting one bean into another"]
+public class AuthorizationBean
+{
+    @Inject
+    private UserCredentialsBean credentials;
+}
+[/snippit]
+
+These are the basics; no configuration required. We can also scope the <code>AuthorizationBean</code> in order to control how long that lives as well, but we have a very subtle issue going on here.
+
+[snippit filename="Scoping a bean to control lifecycle"]
+@ApplicationScoped
+public class AuthorizationBean
+{
+    @Inject
+    private UserCredentialsBean credentials;
+}
+[/snippit]
+
+We are injecting a <code>@SessionScoped</code> bean into an <code>@ApplicationScoped</code> bean, which in Spring, might cause two problems. We'll see, though, that these problems have already been solved in Java EE:
+<ol>
+	<li>In Spring, when the the <code>AuthorizationBean</code> is created, there may not be any active user sessions, and the container may not be able to create the <code>UserCredentialsBean</code> dependency – resulting in a nasty exception.
+
+In CDI, however, the container knows that it will not be able to get a <code>@SessionScoped</code> object at that point in 	the life-cycle, so it waits until the credentials are accessed until it attempts to get an instance of <code>UserCredentialsBean</code>. If you access that object outside of the active scope, you'll still get an exception, but that's a different problem, one that can easily be solved with good application design. (In other words, “you 	shouldn't be doing that.”)</li>
+	<li>In Spring, when the <code>@ApplicationScoped AuthorizationBean</code> is created, assuming that it can get a hold of our <code>@SessionScoped UserCredentialsBean</code>, the instance that is injected will be the instance that remains for the life of the bean into which it assigned. This means that the same <code>UserCredentialsBean</code> will be used for <em>all </em>invocations and processing in our single instance of the <code>AuthorizationBean</code>, and that's most likely not what we want, there would be some pretty nasty bugs (users sharing permissions, etc.) The problem can be solved by turning the bean into a “dynamic-proxy,” in the Spring configuration.
+
+In CDI, however, this is again taken care of us already, since the container knows that <code>@SessionScoped</code> beans may not live as long as an <code>@ApplicationScoped</code> bean, and that there may be more than one active Session. CDI will actually find the correct <code>@SessionScoped UserCredentialsBean</code>, and use that when performing operations on the parent bean, automatically making sure that the right objects are used. Sweet!</li>
+</ol>
+
+<h2 class="toc">Interacting with Beans through Java APIs</h2>
+
+If you are trying to get a handle to a bean while working in a part of the system that does not support dependency injection for some reason (<code>@Inject</code> in CDI,<code> @Autowired</code> in Spring),  it's sometimes required to ask the framework for a bean instance manually.
+
+In Spring you can ask for an instance of a bean (an object that you can actually use to do some work,) using Java APIs – this assumes you've set up the appropriate listeners in your <code>web.xml</code> configuration.
+
+[snippit filename="Bean lookup - Spring"]
+MyBean bean = ApplicationContext.getBean(“myBean”);
+[/snippit]
+
+At first glance, you might think this is not possible using CDI, but really it would be more correct to say that it is not yet as convenient. There are technical reasons for this lack of convenience, but while I disagree with that aspect, I do understand the reason for doing things the way they were done.
+
+In CDI, there is a concept of a <code>@Dependent</code> scoped bean, which adopts the scope of the bean into which it was injected. This means that when we use Java APIs to create a direct instance of a <code>@Dependent</code> scoped bean, that it will not be stored into a context object (the Request, Session, Application, or other common scope.) In other words, <code>@PostConstruct</code> methods will be called when the bean is created, but since there is no way for CDI to tell when the bean will be destroyed (because it is not stored in a context - which would normally take care of letting CDI know when to do its cleanup,) <code>@PreDestroy</code> annotated methods cannot be called automatically. You have to do this yourself, and for that reason the bean-creation process is slightly more complicated – though not that much more complicated – than in Spring; e.g: “With great power comes great responsibility.”
+
+Before you read the following code, I quote from a CDI developer who agrees that things need to be simplified a little bit for convenience - so expect that in an upcoming release of CDI: "<em>I can see that people are going to look at the instance creation code and say that CDI is too complicated. We've agreed that it's lame that a utility method is not provided by CDI for those cases when the developer just has to use it.</em>"
+
+CDI's equivalent to the <code>ApplicationContext</code> is called the <code>BeanManager</code>, and can be accessed through JNDI or several other methods (the easiest method is to use the "JBoss Solder" or "DeltaSpike" projects which provide a <code>BeanManagerAccessor.getBeanManager()</code> static method very similar (but more generic) to Spring's <code>WebApplicationContext</code> utility class:
+
+<h4>Get <code>BeanManager</code> from Solder/DeltaSpike:</h4>
+
+[snippit filename="Get BeanManager from Solder/DeltaSpike"]
+public BeanManager getBeanManager()
+{
+    return BeanManagerAccessor.getManager();
+}
+[/snippit]
+
+Note: the “<code>getBeanManager()</code>” function is provided by the base class <code>BeanManagerAware</code>. Don't worry about how this works for now, unless you want to get into JNDI and server specific stuff. <strong><font color="red">NOTE: </font>This is the recommended way of accessing the <code>BeanManager</code> if you cannot use <code>@Inject BeanManager</code> directly.</strong> The below options are purely for example, and should be avoided if possible.
+
+<h4>Get <code>BeanManager</code> from <code>ServletContext</code> (in a JSF request):<font color="red">non-standard</font></h4>
+Right now this is non-standard, but works in most CDI implementations and is proposed for version 1.1.
+
+[snippit filename="Get BeanManager in a JSF environment"]
+public BeanManager getBeanManager()
+{
+    return (BeanManager) ((ServletContext) facesContext.getExternalContext().getContext())
+        .getAttribute("javax.enterprise.inject.spi.BeanManager");
+}
+[/snippit]
+
+<h4>Get <code>BeanManager</code> from <code>ServletContext</code> (in any Web Servlet Request): <font color="red">non-standard</font></h4>
+Right now this is non-standard, but works in most CDI implementations and is proposed for version 1.1.
+
+[snippit filename="Get BeanManager in a Servlet environment"]
+public BeanManager getBeanManager(HttpServletRequest request)
+{
+    return (BeanManager) request.getSession().getServletContext()
+        .getAttribute("javax.enterprise.inject.spi.BeanManager");
+}
+[/snippit]
+
+<h4>Get <code>BeanManager</code> from JNDI (does not require a Web Request): <font color="green">standard</font></h4>
+
+[snippit filename="Get BeanManager from JNDI"]
+public BeanManager getBeanManager()
+{
+    try {
+        InitialContext initialContext = <strong>new</strong> InitialContext();
+        return (BeanManager) initialContext.lookup("java:comp/BeanManager");
+    catch (NamingException e) {
+        log.error("Couldn't get BeanManager through JNDI");
+        return null;
+    }
+}
+[/snippit]
+
+Once we have a <code>BeanManager</code>, we can ask the container to give us an instance of a bean. This is the slightly more complicated part, but that complication is necessary;  again, “with great power comes great responsibility.”
+
+<h4>Instantiating a Bean using the BeanManager:</h4>
+
+Don't get scared, you only need to write this once and put it in a utility class (or use WeldX which provides this functionality already.)
+
+[snippit filename="Get a bean instance"]
+@SuppressWarnings("unchecked")
+public static <T> T getContextualInstance(final BeanManager manager, final Class<T> type)
+{
+    T result = null;
+    Bean<T> bean = (Bean<T>) manager.resolve(manager.getBeans(type));
+    if (bean != <strong>null</strong>)
+    {
+        CreationalContext<T> context = manager.createCreationalContext(bean);
+        if (context != null)
+        {
+            result = (T) manager.getReference(bean, type, context);
+        }
+    }
+    return result;
+}
+[/snippit]
+
+Take warning, though, that the <code>CreationalContext</code> object this method creates before we can get a reference to the bean is the object that must be used when “cleaning up” or “destroying” the bean, thus invoking any <code>@PreDestroy</code> methods. (Note, because the method above is actually losing the handle to the <code>CreationalContext</code> object, it will not be possible to call <code>@PreDestroy</code> methods on <code>@Dependent</code> scoped objects, and there-in lies the reason why creating beans in CDI is slightly more involved, and why this convenience was omitted – in order to force people to decide for themselves how to handle behavior that might be very important architecturally.) This is the same issue that I mentioned above, when discussing cleaning up bean scopes.
+
+<h2 class="toc">Interacting with Beans through Custom Scopes</h2>
+
+The best way to manage instances of objects is to access them via injection, not through the Java API; in fact, any time you find yourself needing access to a bean through a Java API, you should ask yourself why you are not operating within the realm of dependency management via <code>@Inject</code>. Frequently, you can fix the problem at the root – just like <a href="http://seamframework.org/Seam3/FacesModule">Seam Faces Module</a> does for Java Server Faces (JSF) – by adding injection support in other user-objects such as validators, converters, and more, so that you can use injection with ubiquity. Or the Seam Wicket, Seam Servlet, Seam JMS, and other <a href="http://seamframework.org/Seam3">Seam modules</a>.
+
+Sometimes adding injection support this means registering a custom scope, which can sound complex, but is frequently as simple as attaching a bean scope to an existing contextual object such as the <code>HttpSession</code> for <code>@SessionScoped</code>, or the JSF <code>UIViewRoot</code>, for <code>@ViewScoped</code> in Seam Faces.
+
+<h2 class="toc">The “Java Persistence API” vs. “the Spring way”</h2>
+
+Spring: First you set up a data-source in <code>applicationContext.xml</code>, then you set up a connection pool, then you configure Hibernate to use that connection pool as a data source, then you tell Hibernate where to get its transaction manager, then you need to set up a byte-code assist library (AoP) in order to enable cross-bean transactionality and security via annotations.
+
+Not only is that a good bit confusing to work through (unless you've already done it a  few times,) but when I started using the actual Spring setup, I got <code>LazyInitializationExceptions</code> all over the place because I didn't first understand what a Hibernate session was, which took another few days to understand and get working – I'll get back to that in a bit when I talk about Extended Persistence Contexts in Java EE – something you <em>should be using</em> if you can. In my opinion Spring did a tremendous disservice by trying to hide the persistence context as though it were just an adapter. The persistence context is crucial to how the ORM model works; you need both the entities and the persistence context in your toolbox in order to be successful.
+
+Put the Spring configuration aside for a moment; now let's talk about Java EE – all you need is <code>/META-INF/persistence.xml</code>, of which I've provided a quick working example below.
+
+For the purposes of these examples, I'm going to assume that you are using <a href="http://www.jboss.org/jbossas/downloads/">JBoss AS 6</a>, or have already <a href="http://blogs.sun.com/GlassFishPersistence/entry/use_hibernate_as_a_persistence">installed Hibernate on GlassFish</a> (which is very easy to do, and I recommend since trying to get my application to run on the default EclipseLink has given me a lot of problems when attempting to migrate from Hibernate; Hibernate is still the industry leader in terms of stability and functionality, in my opinion.)
+
+[snippit filename="/META-INF/persistence.xml"]
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+	http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	
+	<persistence-unit name="example">
+	    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+	    <jta-data-source> java:/DefaultDS </jta-data-source> 
+      <!-- Data source for GlassFish if you aren't using JBoss AS 6.0...
+		<jta-data-source> jdbc/__default </jta-data-source> 
+       -->
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<properties>
+			<!-- Properties for Hibernate (default provider for JBoss AS, must be installed on GlassFish) -->
+			<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="false"/>
+		</properties>
+	</persistence-unit>
+</persistence>
+[/snippit]
+
+But where's the configuration for transactions? Where do you set up database connections and connection pools? Well, transactions just work automatically if you are using a JTA data-source (more on that in a bit,) you can set up data-sources (and should set them up) in your application server configuration (meaning that since your data source configuration is not stored in the application itself, when your application is deployed it will use the data-source that is available on that server automatically,) and yes: “it's that simple.” The mentality is a little different, but the end product is a much smaller, “weightless” application. You can set up data sources yourself, but for that you'll need to read the <a href="http://docs.jboss.org/jbossas/docs/Installation_And_Getting_Started_Guide/5/html/Using_other_Databases.html#Using_other_Databases-DataSource_Configuration_Files">documentation</a> about your web application server. These files are typically kept separate in order to keep passwords out of your application source code or version control repository.
+
+So great, we have persistence set up; but what about those Hibernate <code>LazyInitializationExceptions</code> that we all love to hate? We'll talk about that in the next section, but this is where EJB's come in, and again, don't get scared. It's really very simple to make an EJB, and once you learn what they actually do for you, I'd be surprised if you want to go back.
+
+Here I'd like to mention that with the addition of a tool such as <a href="http://seamframework.org/Seam3">Seam 3</a>'s Persistence Module, you can use JPA and the <code>PersistenceContext</code> in standard CDI beans  without EJB – Seam 3 also provides the same consolidated support for managed transactions, security, remoting, and messaging that is provided when you use EJB. Seam 3's mission is to provide a unified programming model (standardized on CDI) to the Java Enterprise Framework.
+
+As we continue, I'm going to assume a little familiarity with Object Relational Mapping in general, that you know you need to configure your data entities with annotations(or XML) so that the system knows how to map your data to the database. If you are familiar with <a href="http://docs.jboss.org/hibernate/stable/entitymanager/reference/en/html/index.html">Hibernate</a>, then JPA should be no stretch by any means of imagination because Hibernate is a JPA implementation. In fact, you can use most of the <a href="http://docs.jboss.org/hibernate/stable/annotations/reference/en/html/index.html">same annotations</a>!
+
+[snippit filename="A simple EJB"]
+@Stateful
+public class Service
+{
+}
+[/snippit]
+
+[snippit filename="This is an EJB with Persistence (that doesn't do anything)"]
+@Stateful
+public class Service
+{
+    @PersistenceContext(type = PersistenceContextType.EXTENDED)
+    private EntityManager em;
+}
+[/snippit]
+
+[snippit filename="This is an EJB that can save JPA entities to a database (a DAO)"]
+@Stateful
+public class Service
+{
+    @PersistenceContext(type = PersistenceContextType.EXTENDED)
+    private EntityManager em;
+
+    public <T> void create(final T entity)
+    {
+        em.persist(entity);
+    }
+
+    public <T> void delete(final T entity)
+    {
+        em.remove(entity);
+    }
+
+    public <T> T findById(final Class<T> type, final Long id)
+    {
+        Class<?> clazz = getObjectClass(type);
+        return result = (T) em.find(clazz, id);
+    }
+
+    public <T> void save(final T entity)
+    {
+        em.merge(entity);
+    }
+}
+[/snippit]
+
+That's all it takes to create a service class that knows how to interact with the database, so assuming that you have a few <code>@Entity</code> classes defined, you'll be good to go. If you want more information on getting started with Hibernate and JPA, you can <a href="http://docs.jboss.org/hibernate/stable/entitymanager/reference/en/html/configuration.html">start here</a>. But wasn't that simple? About 10 real lines of code and you've got a fully functional database access object. You do need to create actual <code>@Entity</code> objects to save to the database, but that's for a separate tutorial.
+
+[info]Thanks to <a href="http://community.jboss.org/people/dan.j.allen">Dan Allen</a>, I've attached a <a href="http://maven.apache.org/">Maven</a> project that includes an <a href="http://jboss.org/arquillian">Arquillian</a>-based test suite that you can study to get a greater handle on exactly what occurs when using a persistence context, both one that is transaction-scoped and one that is extended. This is exactly where Arquillian fills in nicely as a teaching tool. You can quickly make changes to the code and see how it affects the result...all in-container. You might want to take a look at this before continuing. You can download the lab <a href="http://ocpsoft.com/wp-content/uploads/2010/10/jpalab.zip">here</a>, unzip, open a terminal, and type: <strong>mvn test</strong>. 
+
+
+You can also import the project into your IDE and debug to get a visual sense of what's going on, otherwise, the tests should be pretty revealing![/info]
+
+
+<h2>What about <code class="toc">LazyInitializationException</code>? (Persistence, Transactions, and the Conversation Scope)</h2>
+
+The first thing you need to know about <code>LazyInitializationException</code> is that they occur when Hibernate (or another JPA-style ORM) attempts to load a collection or related data from an <code>@Entity</code> object that is no longer “managed.” What is a “managed” object?
+
+To understand this term, we need to look back at how Hibernate and JPA work under the covers. Each time you ask for an object from the database, the system has some form of <code>Session</code> (Hibernate) or <code>PersistenceContext</code> (JPA) that is used to open connections, manage results, and decide whether or not the objects have been modified (which allows for clean/dirty state to determine when or when not to save objects back to the database.)
+
+<h4>Introducing a failure situation:</h4>
+
+Consider the scenario when an object is loaded from the database. This object has an ID, and holds a list of addresses that are associated with it.
+
+[snippit filename="Loading our person"]
+Person person = service.getPerson(1);
+[/snippit]
+
+Person is loaded from the database using a select statement like this:
+
+[snippit filename="The executed SQL"]
+select from persons p where p.id = ?
+[/snippit]
+
+But as you can see by the SQL query, we have not let loaded the addresses since associations and collections are typically be selected only when something attempts to access them, otherwise known as “Lazy” initialization:
+
+[snippit filename="Loading addresses"]
+List<Address> addresses = person.getAddresses();
+[/snippit]
+
+Here is when you have the chance for a <code>LazyInitializationException</code>, because this method call actually makes a secondary query to the database, requiring an open connection:
+
+[snippit filename="The executed SQL"]
+select from addresses a where address.person_id = ?
+[/snippit]
+
+That sounds fine, but let's say for instance that a user does something on your website that triggers a <code>Person</code> object to be loaded from the database. Nothing special happens with this object, the application just loads it, reads some fields out of it, and goes on to the next page. When that next page is requested, we grab that same <code>Person</code> object that we loaded on the last page, try to pull more information out of it – for instance, the list of addresses that was not previously loaded, and oops! We got a <code>LazyInitializationException - “Entity is not associated with a known PersistenceContext”</code> What happened?
+
+My object was just loaded, can't the <code>Session</code> or <code>PersistenceContext</code> object just open a new connection to the database and get the information that I need? – The answer is “yes” it can, but not if that Session or <code>PersistenceContext</code> has already been destroyed, and the object is no longer associated with it! You are probably not using an “extended” persistence context. We need to dig deeper...
+
+<h2>Understanding <code>LazyInitializationException</code> and the <span class="toc">Extended <code>PersistenceContext</code></span></h2>
+
+First, we need to know a few things about “extended” Persistence Contexts:
+
+<ul>
+	<li>They live as long as the bean they are scoped to.</li>
+	<li>Objects with dirty changes queued up in the context until a the transaction with which a persistence context is associated is committed. If a context is destroyed outside of the transaction, the changes are never propagated to the database. It's the transaction that triggers the session flushing. Flushing can also happen in the middle of a transaction if Hibernate/JPA needs to run a query against the database based on the state of a managed entity (e.g., a where clause)</li>
+	<li>Changes made to objects associated 	with the context are deferred from flushing if an un-handled exception is encountered. The changes will be flushed the next time a flush is attempted.</li>
+	<li>While the extended <code>PersistenceContext</code> is alive, you will <em>never</em> get a <code>LazyInitializationException</code> from objects associated with that context, <em>ever!</em></li>
+</ul>
+PersistenceContexts can be injected into <code>@Stateless</code> or <code>@Stateful</code> EJBs via the following annotation:
+
+[snippit filename="A stateful EJB with normal PersistenceContext"]
+@Stateful
+public class Service
+{
+    @PersistenceContext
+    private EntityManager em;
+}
+[/snippit]
+
+By default, this <code>EntityManager</code> (persistence context) will be scoped to the length of the transaction (which can be controlled by getting a handle to the user transaction and manually calling <code>tx.begin()</code> and <code>tx.end()</code>; however, if we add <code>(type = PersistenceContextType.EXTENDED)</code> to our injection point, we are now using extended persistence contexts, and that is what we probably wanted all along.
+
+[snippit filename="A stateful EJB with extended PersistenceContext"]
+@Stateful
+public class Service
+{
+    @PersistenceContext(type = PersistenceContextType.EXTENDED)
+    private EntityManager em;
+}
+[/snippit]
+
+<h4>Use case: the @ApplicationScoped PersistenceContext <font color="red">(Bad practice)</font></h4>
+
+Lets imagine for a moment that one single <code>PersistenceContext</code> is created for our entire application; the context is started when the server starts up, the context is never destroyed until the server shuts down, and all objects are held within that context. In other words, you'll never get a <code>LazyInitializationException</code>, ever, because the context will always survive, and <code>@Entity</code> objects never lose their reference to it.
+
+But also consider that you are running this as a web-application, multi-threaded, that services multiple users at the same time. Changes made by each user are queued in our extended context until the next transaction boundary, which might be as long as until the application shuts down (destroying the extended context,) at which point all changes made by all users are saved to the database and the transaction is committed. 
+
+That sounds pretty dangerous... and that's what happens if you use an Extended <code>PersitenceContext</code> in an <code>@ApplicationScoped</code> bean. Objects associated with that <code>PersistenceContext</code> will stay around for the life the context itself, so obviously we <em>must</em> (sarcasm) need a <code>PersistenceContext</code> for each user, since we don't want all changes being queued up and saved when the application shuts down – too many things could go wrong with that scenario.
+
+The <code>@ApplicationScoped</code> Persistence Context will start when the application starts up, and it will be destroyed when the application shuts down. There may be multiple transactions (bound to the EJB business methods) that occur within the lifespan of this context.
+
+<h4>Use case: the @SessionScoped PersistenceContext</h4>
+
+Let's now create a <code>PersistenceContext</code> for each user session. Not a horrible concept, and does actually have applicable uses! Each user gets their own <code>PersistenceContext</code> that holds <code>@Entity</code> references to objects from the moment the session is created until the moment the session is destroyed. They can interact with these objects, save, update change and delete objects without fear of stomping on anyone else's changes, and their queued changes are saved when the transaction is committed at the end of the session (or any other time a transaction is committed).
+
+The <code>@SessionScoped</code> persistence context will be created when the user's session begins, and it will be destroyed when the user's session is destroyed. There may be multiple transactions (bound to the EJB business methods) that occur within the lifespan of this context.
+
+But what if you want more fine-grained control over transactions? What if session scope is too long? We don't want our users making changes on the site that won't be saved until they log out or their session expires! Can't we control transaction boundaries ourselves? I want a the context be created when they click “Add to Cart,” continue queuing up more changes, and finally I want a transaction to be committed when they click “Confirm.” We need to look at <code>@ConversationScoped</code> persistence contexts.
+
+But first, in your head, separate the idea of a persistence context and a transaction, since they are orthogonal. They work together, but the transaction is <strong>when</strong> the persistence context performs operations (sometimes automatically, like flushing); the persistence context is just a monitor and cache.
+
+Also, think of an extended persistence context like a @Dependent object (except it is uses a proxy). It is bound to the lifetime of the EJB into which it is injected. A transaction-scoped (default) persistence context, in contrast, lives and dies by the transaction. So you get a new one each time a business method is invoked (basically, every time you use the EJB - stateless in a sense).
+
+<h4>Use case: the @ConversationScoped PersistenceContext</h4>
+
+Conversation scope provides exactly what we're looking for, and the way this works might be bit scary at first, “you'll think, how can the system possibly do all of this for me?” To which I'll answer, the magic of  using a <code>@ConversationScoped</code> extended <code>PersistenceContext</code>, is that your users' data, and your users' saved state as they navigate between pages are living in the same place, and for the same length of time. A match made in heaven!
+
+[snippit filename="Using the conversation scoped PersistenceContext"]
+@Stateful
+@ConversationScoped
+public class Service
+{
+    @PersistenceContext(type = PersistenceContextType.EXTENDED)
+    private EntityManager em;
+}
+[/snippit]
+
+The first thing to know about <code>@ConversationScoped</code> beans is that by default, conversation scope beings when the request begins, and ends when the request ends and the conversation is not in a long-running state. The call to <code>converstation.begin()</code> only states intent for the scope to perpetuate. This means that a <code>PersistenceContext</code> injected into a conversation scoped bean will live by default for one request, but of the conversation is started, it will live until the end of the request when the conversation ends. (The reason it is kept alive until the end of the request is because usually the end of the request is when rendering is completed, and destroying information prematurely could result in errors during that render.) 
+
+The <code>@ConversationScoped</code> persistence context will be created with <code>conversation.begin()</code>, and will be destroyed <em>at the end of the request </em>on which <code>conversation.end()</code> is called. There may be multiple transactions (bound to the EJB business methods) that occur within the lifespan of this context.
+
+<h4>Use case: the @RequestScoped and custom scoped PersistenceContext</h4>
+
+It stands to be mentioned that an extended persistence context can be injected into a bean of any scope, and the same rules will apply. If <code>@RequestScoped</code>, for example, the context is created when the request begins, and is destroyed when the request ends; if custom scoped, the same is true: There may be multiple transactions (bound to the EJB business methods) that occur within the lifespan of any context, and when using an extended persistence context.
+
+<h4>Going beyond EJB/JTA with Seam Persistence Module:</h4>
+
+Seam 3 provides a Persistence module which provides a programming API for short-lived persistence contexts (not extended contexts,) much like what you would find in Spring. You can use declarative <code>@Transactional(BEGIN)</code> and <code>@Transactional(END)</code> methods, and the like, in addition to tying in extra security features, and the power of CDI extensions, interceptors and more. Check back on this blog or on <a href="http://seamframework.org">Seam Framework.ORG</a> for more updates on this module.
+
+<h2>EJB – Why are my thrown <span class="toc">Exceptions wrapped in an <code>EJBException</code></span>?</h2>
+
+Systems using an ORM like hibernate will frequently utilize a Data Access Object (DAO) layer in which standard exceptions are used to reflect the outcome of common operations. Exceptions such as, <code>NoSuchObjectException</code>, or <code>DuplicateObjectException</code>, are common place. If the system relies on catching these exceptions to recover appropriately and continue functioning, developers switching to EJB may be surprised when it comes time to run their application; it quickly becomes apparent that the exceptions being thrown are not the exceptions that are expected – everything is wrapped in <code>EJBException</code>.
+
+At first, you might think, “This is invasive, and tight coupling!” but you have to think about this from the perspective of a transaction-aware system. EJB handles JTA for you, meaning that if you get an exception, EJB needs to know when to roll back the transaction, and when not to; in order to facilitate this decision, EJB has the concept of an <code>@ApplicationException</code>.
+
+<h4>“Application” exceptions versus “System” exceptions:</h4>
+
+<ul>
+	<li>An application exception is one that has meaning to the client/consumer of the services, and may affect error recovery, flow 	of logic, navigation, or any other use within the app.</li>
+	<li>A system exception is one that represents a failure in the underlying services that cannot be recovered from, and should never be handled by the client/consumer (aside from very basic error handling like printing “500 – Something horrible just happened.”)</li>
+</ul>
+
+By default, every unchecked/<code>RuntimeException</code> thrown from an EJB service will be treated as a “System” exception, meaning that the transaction should be rolled back, and a complete failure has occurred; you cannot recover, and you should never catch an <code>EJBException</code> in order to make a decision, other than very basic error recovery – sending a user to a generic error page, for example, or restarting a web-flow / wizard.
+
+So what about the exceptions that we <em>do</em> want to recover from, exceptions that we know should not affect the state of the current transaction? Well, in order for EJB to respect your wishes, you must tell it which exceptions have meaning in your application; therefore, the exception classes must either be annotated with <code>@ApplicationException</code>, or if you cannot chance the Exception source itself, you must list your exceptions in<code> /WEB-INF/ejb-jar.xml</code> (example below.)
+
+Don't worry, this doesn't take too long if you have a good exception hierarchy; only the top-level exception must be configured because exception subclasses automatically inherit the configuration from their parent exception types.
+
+[snippit filename="/WEB-INF/ejb-jar.xml"]
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee" version="3.1"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd">
+   
+   <assembly-descriptor>
+      <application-exception>
+         <exception-class>javax.persistence.PersistenceException</exception-class>
+         <rollback>true</rollback>
+      </application-exception>
+      <application-exception>
+         <exception-class>com.example.exceptions.DataException</exception-class>
+         <rollback>true</rollback>
+      </application-exception>
+   </assembly-descriptor>
+</ejb-jar>
+[/snippit]
+
+Now your exceptions will be treated as transaction boundaries, or ignored depending on how you need your system configured. This prevents things like partial-commits, and combined with the conversation-scope (next section,) also prevents things like partial-commits from wizard interfaces.
+
+<h1>Conclusion</h1>
+Does it all make sense now? Do you know how to solve every problem? Probably not, but when it comes right down to it, using Java EE can be even simpler than using Spring, and take much less time. You just have to find the right guides and the right <a href="http://ocpsoft.com/opensource/the-problem-is-not-the-system-the-problem-is-education/">documentation</a> (which is admittedly a severe <a href="http://ocpsoft.com/opensource/the-problem-is-not-the-system-the-problem-is-education/">sore-spot of Java EE</a>; the documentation is still a work in progress, but is getting much better, save blogs like this one.) You have to turn to a vendor like JBoss, or IBM in order to get the use-case driven documentation you need, and they <em>do </em>have documentation, it's just a matter of finding it.
+
+<a href="http://seamframework.org/Seam3">Seam 3</a> in particular strives to give <a href="http://docs.jboss.org/seam/3/">extensive user-documentation</a>, hopefully making things much simpler to adopt, and easier to extend.
+
+The main purpose of this article was not to bash Spring, although I may have taken that tone on occasion just for contrast and a little bit of fun. Both Spring and Java EE are strongly engineered and have strong foundations in practical use, but if you want a clean programming experience right out of the box – use Java EE 6 on JBoss Application Server 6 – JBoss Tools – and Eclipse. I will say, though, that the feeling I've gotten from the Spring forums vs the Java EE forums, is that there are far many more people willing to help you work through Java EE issues, and more available developers of the frameworks themselves to actually help you than there are on the Spring side. The community for Java EE is much larger, and much more supportive (from my personal experience.)
+
+In the end, I did get <a href="http://ocpsoft.org/socialpm/">my application</a> migrated successfully, and despite these issues (from which I learned a great deal,) I am still happy with Java EE, and would not go back to Spring! But I do look forward to further enhancements from the JBoss Seam project, which continue to make developing for Java EE simpler and more fun.
+
+Don't believe me? Try it out. Find something wrong? Tell me. Want more? Let me know what you want to hear.
+
+<h2>If you want more information about Java EE and the topics I have discussed above</h2>
+Then I recommend some books written by my colleagues and peers. (Note, you will need to disable any ad-block programs in order to see these links.)
+
+<center>
+[amazon codes="1933988401,0557078326,0596158025"]
+</center>
+
+[slideout handle="Need more info?" header="Read one of these highly-recommended books:"]
+   <center>Written by JBoss Software Engineers and Experts.</center>
+   [amazon codes="0557078326,0596158025" bgcolor="DDD"]
+[/slideout]
+
+<h3>Shameless plugs for some other projects that I think you'll find useful:</h3>
+
+OcpSoft PrettyFaces – our own open-source tool for controlling the URL of your application, making pretty, bookmarkable URLs. The easiest (if I don't mind saying, and I don't) way of controlling URL parameters, query-parameters, and validating input that comes into your application through the URL.
+JBoss <a href="http://jboss.org/arquillian">Arquillian</a> – the single most inclusive and best Unit/Integration testing experience you will find in any application framework. Not only that, but it actually runs your code IN the container, so it's being tested like it'll actually be run in production.

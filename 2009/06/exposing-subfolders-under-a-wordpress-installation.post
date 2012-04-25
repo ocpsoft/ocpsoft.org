@@ -1,0 +1,33 @@
+.categories ['OpenSource']
+.dateCreated 20090629T20:29:54
+.link http://ocpsoft.org/opensource/exposing-subfolders-under-a-wordpress-installation/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt Exposing subfolders beneath a WordPress installation can be a pain, but no longer!
+.mt_keywords 
+.permaLink http://ocpsoft.org/opensource/exposing-subfolders-under-a-wordpress-installation/
+.post_status publish
+.postid 62
+.title Exposing subfolders under a WordPress installation
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug exposing-subfolders-under-a-wordpress-installation
+So, this is going to be a short-relatively non-technical post, but having just run into the problem of exposing a subdirectory when WordPress is installed into the root directory of a typical DreamHost or GoDaddy style account, I found the need, so here's the answer if anyone else needs it.
+<!--more-->
+I ran into this issue because we needed somewhere to put the OcpSoft <a href="http://ocpsoft.com/api/ocpsoft-pretty-faces/2.0.1_GA/">PrettyFaces</a>/<a href="http://ocpsoft.com/api/ocpsoft-pretty-time/1.0.2/">PrettyTime </a>APIs, which of course needed to be on the OcpSoft website. Yet, WordPress is installed in the root directory, which meant that all requests were going to be sent to the wordpress index.php file (thanks to apache .htaccess)
+<h3>The solution is simple (as we like it...)</h3>
+In order to expose a folder under the recent wordpress implementations -- add a .htaccess file in each directory you want to expose, and place inside the following line:
+<h4>/folder/.htaccess</h4>
+<pre lang="config">Options +Indexes</pre>
+And that's it! The folder contents will be exposed for browsing:
+
+<strong>Examples</strong> of exposed folders here:
+<a href="http://ocpsoft.com/api/">http://ocpsoft.com/api/</a>
+
+<a href="http://ocpsoft.com/repository/">http://ocpsoft.com/repository/</a>
+
+<a href="http://ocpsoft.com/xml/">http://ocpsoft.com/xml/</a>
+<h3>Happy blogging :)</h3>

@@ -1,0 +1,79 @@
+.categories []
+.dateCreated 20120207T15:50:07
+.excerpt 
+.link http://ocpsoft.org/donate/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 3180
+.page_status publish
+.permaLink http://ocpsoft.org/donate/
+.text_more 
+.title Donate (Keep us Online)
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 0
+.wp_page_parent_title 
+.wp_page_template page-notitle.php
+.wp_password 
+.wp_slug donate
+It costs over <strong>one-hundred dollars each month</strong> ($100) to keep our website running, in addition to the unpaid time spent by several contributors to keep the site free of span and full of high-quality content. With your generous support, we can solve more bugs, keep [[Rewrite|improvements coming]], and make life easier for everyone who wants to do URL-rewriting. Your contributions help us keep this site, and our <a href="http://ci.ocpsoft.com" target="_blank">continuous integration server</a> online.
+
+<br/>
+
+<a name="give"></a>
+<div class="featured">
+<div class="inside" style="font-size: 1.25em; margin-left: 15px;">
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick" />
+<input type="hidden" name="hosted_button_id" value="NDDEKRHDMBTML" />
+
+<center>Help keep our projects alive - make a donation to support us! <b>&raquo;</b> 
+<br/>
+<input type="image"  src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" /></center>
+
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+</form></div>
+</div>
+
+<center>
+
+<table width="100%" cellspacing="10px">
+<tr valign="top">
+
+<td><h1>Community Donors - $1-24</h1>
+<ul>
+	<li><a href="#give" target="_blank">You?</a></li>
+</ul></td>
+
+<td><h1>Premium Donors - $25-49</h1>
+<ul>	<li><a target="_blank" href="http://www.w0mb.at/">Daniel Sachse</a></li>
+	<li><a target="_blank"  href="https://plus.google.com/102516208312961178993" target="_blank">Cody Lerum</a></li>
+	<li><a target="_blank"  href="http://twitter.com/cavemancraig" target="_blank">Craig Schwarzwald</a></li>
+</ul></td>
+
+<td><h1>Champion Donors - $50+</h1>
+<ul>
+	<li><a target="_blank" href="http://www.dna-tr.com">DNA | encoding the future</a></li>
+	<li><a href="#give" target="_blank">You?</a></li>
+</ul></td>
+
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+</center>
+
+Thank you for your generous support. There are many ways to give back to our Projects - with <a href="https://github.com/ocpsoft/prettyfaces" title="PrettyFaces Source Code on GitHub" target="_blank">code</a>, blogs, tweets, financial support - and we are very grateful! This is a list of donors who have contributed their hard earned money to keep our project running. We also keep a list of <a href="http://ocpsoft.org/prettyfaces/contributors/" target="_blank">contributors</a> who have sent patches or been leaders in the OCPsoft community.
+
+</center>

@@ -1,0 +1,140 @@
+.categories []
+.dateCreated 20110823T02:37:44
+.excerpt 
+.link http://ocpsoft.org/rewrite/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 2646
+.page_status publish
+.permaLink http://ocpsoft.org/rewrite/
+.text_more 
+.title Rewrite
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 2
+.wp_page_parent_id 0
+.wp_page_parent_title 
+.wp_page_template page-notitle.php
+.wp_password 
+.wp_slug rewrite
+[toc]
+
+<h2 style="display:none;">URLRewriteFilter</h2>
+
+<center style="margin-left: -50px;"><img src="http://ocpsoft.org/wp-content/uploads/2012/04/rewrite-center-compressed.png" alt="" title="rewrite-center-compressed" width="500" height="158" class="aligncenter size-full wp-image-4462" />
+
+<h2 style="margin-bottom: 35px;">The open-source <font color="green">/url/{rewriting}</font> solution for Servlet, Java Web Frameworks, and Java EE</h2></center>
+
+<div class="featured">
+<p style="margin-top: 10px; margin-bottom: 0px;"><strong>Rewrite</strong> is an OpenSource Filter-based Servlets extension for Java - enabling creation of bookmark-able, pretty URLs. Rewrite solves the "RESTful URL" problem elegantly, including features such as: page-load actions, managed parameter parsing, seamless integration with <em>CDI</em>, <em>Spring</em>, and configuration-free compatibility with other web frameworks. <a href="https://github.com/ocpsoft/rewrite">Get involved in the project &raquo;</a></p>
+</div>
+
+<h2 style="font-size: 1.5em; margin-bottom: 25px;"><span class="toc">Get Started</span>, see how powerful URL-rewriting can be (5 steps) </h2>
+
+[warn]It is recommended but not required to remove other URL-rewriting tools from your application before using Rewrite. If you choose to leave them in place, weird things may happen to you, be warned.[/warn]
+
+<div style="margin-left: 40px;">
+
+<h2 class="toc">1. Include Rewrite in your Project</h2>
+
+[snippit filename="Add Rewrite to your maven pom.xml" href="http://repo1.maven.org/maven2/org/ocpsoft/rewrite/rewrite-distribution/" label="Or download the ZIP"]
+<dependency>
+   <groupId>org.ocpsoft.rewrite</groupId>
+   <artifactId>rewrite-servlet</artifactId>
+   <version>1.0.5.Final</version>
+</dependency>
+
+<!-- To use snapshots, you must also use the Sonatype Snapshots respository -->
+<repository>
+   <name>sonatype</name>
+   <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+</repository>
+[/snippit]
+
+
+<h2 class="toc">2. Implement a ConfigurationProvider</h2>
+
+Add one class, a configuration provider, which implements the primary <code>org.ocpsoft.rewrite.config.ConfigurationProvider</code> interface. In a Servlet environment, you may also extend from the abstract <code>HttpConfigurationProvider</code> class for convenience:
+
+[snippit filename="Implement a ConfigurationProvider"]
+package com.example;
+public class ExampleConfigurationProvider extends HttpConfigurationProvider
+{
+   @Override
+   public int priority()
+   {
+     return 10;
+   }
+
+   @Override
+   public Configuration getConfiguration(final ServletContext context)
+   {
+     return ConfigurationBuilder.begin()
+       .defineRule()
+         .when(Direction.isInbound().and(Path.matches("/some/{page}/")))
+         .perform(Forward.to("/new-{page}/"));
+    }
+}
+[/snippit]
+
+
+<h2 class="toc">3. Register your configuration provider</h2>
+
+Register your configuration provider by creating a file named: <code>/META-INF/services/org.ocpsoft.rewrite.config.ConfigurationProvider</code>. This file must contain the fully qualified name of your ConfigurationProvider implementation:
+
+[snippit filename="/META-INF/services/org.ocpsoft.rewrite.config.ConfigurationProvider"]
+com.example.ExampleConfigurationProvider
+[/snippit]
+
+
+<h2 class="toc">4. Add rules to your configuration</h2>
+Condition objects such as <code>Direction.isInbound()</code> and <code>Path.matches(...)</code> can be found in the common <code>org.ocpsoft.rewrite.config.*</code> and <code>org.ocpsoft.rewrite.servlet.config.*</code> packages. If you can describe what you want to do, you can use fluent rewrite conditions and operations.
+
+[info]Take a look at some <a href="http://ocpsoft.org/rewrite/examples/">example configuration</a>.[/info]
+
+
+<h2 class="toc">5. Use Rewrite extensions for extra power</h2>
+
+<ul>
+ 	<li><a href="https://github.com/ocpsoft/rewrite/tree/master/config-jodatime">JodaTime Integration</a></li>
+    	<li><a href="https://github.com/ocpsoft/rewrite/tree/master/config-tuckey">Tuckey URLRewriteFilter Integration</a></li>
+    	<li><a href="https://github.com/ocpsoft/rewrite/tree/master/integration-cdi">CDI Integration</a></li>
+	<li><a href="https://github.com/ocpsoft/rewrite/tree/master/integration-gwt">GWT History PushState Integration</a></li>
+	<li><a href="https://github.com/ocpsoft/rewrite">And more...</a></li>
+</ul>
+
+Just include the corresponding extension in your pom.xml file in order to add functionality to your application (Or <a href="http://repo1.maven.org/maven2/org/ocpsoft/rewrite/" target="_blank">download</a> and include the JAR files.):
+
+[snippit filename="/pom.xml"]
+<dependency>
+    <groupId>org.ocpsoft.rewrite</groupId>
+    <artifactId>rewrite-integation-gwt</artifactId>
+    <version>${rewrite.version}</version>
+</dependency>
+[/snippit]
+</div>
+
+
+<h2 class="toc">Run your "rewritten" application!</h2>
+
+You should now be ready to go! Rewrite is installed, and your first configuration provider is enabled. If everything has been done correctly, you should see Rewrite log a message confirming registration of your configuration providers (in priority order.)
+
+[command]
+RewriteFilter starting up...
+Loaded [1] org.ocpsoft.rewrite.config.ConfigurationProvider [com.example.ExampleRewriteConfiguration<0>]
+RewriteFilter initialized.
+[/command]
+
+<br/>
+<a name="getinvolved"></a>
+<div class="featured">
+<p style="margin-top: 10px; margin-bottom: 0px;">
+<h2 style="margin-top: 0px;" class="toc">Get involved</h2>
+<strong>Source</strong>: <a href="https://github.com/ocpsoft/rewrite">https://github.com/ocpsoft/rewrite</a>
+<strong>Forums</strong>: <a href="http://ocpsoft.org/support/forum/rewrite">http://ocpsoft.org/support/forum/rewrite</a>
+<strong>Get updates</strong>: <a href="http://ocpsoft.org/subscribe/">http://ocpsoft.org/subscribe/</a>
+</p><p>
+Having trouble? Have an idea? <a href="https://github.com/ocpsoft/rewrite/issues" title="Report an issue">Report an issue.</a> </p>
+</div>

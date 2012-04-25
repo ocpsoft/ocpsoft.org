@@ -1,0 +1,246 @@
+.categories ['Seam']
+.dateCreated 20100426T15:13:19
+.link http://ocpsoft.org/seam/cdi-powered-unit-testing-using-arquillian/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/seam/cdi-powered-unit-testing-using-arquillian/
+.post_status publish
+.postid 1237
+.title CDI-powered Unit Testing using Arquillian
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug cdi-powered-unit-testing-using-arquillian
+When developing any system or software, it is important to test as much of that system as possible. Web frameworks are no exception; comprehensive, well-designed unit tests are critical for long-term success and maintenance.
+
+With the introduction of Contexts and Dependency Injection into the Java Enterprise framework (otherwise known as CDI - <a target="_blank" href="http://docs.jboss.org/weld/reference/1.0.1-Final/en-US/html_single/">Weld</a>, or Apache OpenWebBeans,) unit testing is as important as ever, but it would be nice to harness the power of CDI for use in unit tests, as well as in the production system!
+<!--more-->
+<h2>Assumptions:</h2>
+For the purpose of this article, we assume that the audience is already familiar with <a target="_blank" href="http://maven.apache.org">Maven</a>, JUnit already has a CDI-based project set up, and is proficient enough to add new dependencies to their project POM file. (Click <a target="_blank" href="http://seamframework.org/Documentation/WeldQuickstartForMavenUsers">here</a> for a quick tutorial on getting started with CDI/Weld.)
+
+<h2>Process</h2>
+This article will first provide a quick overview of unit-testing in general, then provide a contrasting example of unit-testing using the advanced capabilities in Arquillian, and a few thoughts on why/when you'd want to use it. With that said -- let's get started!
+
+<h4>In general, when writing comprehensive unit tests:</h4>
+<ul>
+<li> All implementation classes should be accompanied by a unit test</li>
+<li> Classes should not be checked in until tests are provided</li>
+<li> Tests are code, make sure they are clear and make sense. If they do not, chances are that the architecture needs to be re-thought.</li>
+</ul>
+
+<h4>Maven test structure - it's the same for Arquillian:</h4>
+<p>
+Maven follows strict testing practices. All unit tests should be placed in the <q>/src/test/java</q> folder, under the corresponding package to the class under test.
+</p>
+
+<h4>Set up the test suite:</h4>
+Add the following dependencies to your Maven pom.xml:
+
+<pre lang="xml">
+	<properties>
+		<arquillian.version>1.0.0.Alpha1</arquillian.version>
+		<junit.version>4.8.1</junit.version>
+	</properties>
+
+	<dependencies>
+		<!-- Test Dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.arquillian</groupId>
+			<artifactId>arquillian-junit</artifactId>
+			<version>${arquillian.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.arquillian.container</groupId>
+			<artifactId>arquillian-weld-embedded</artifactId>
+			<version>${arquillian.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+         <repositories>
+            <repository>
+               <id>jboss-public-repository-group</id>
+               <name>JBoss Public Maven Repository Group</name>
+               <url>http://repository.jboss.org/nexus/content/groups/public</url>
+            </repository>
+         </repositories>
+
+         <pluginRepositories>
+            <pluginRepository>
+               <id>jboss-public-repository-group</id>
+               <name>JBoss Public Maven Repository Group</name>
+               <url>http://repository.jboss.org/nexus/content/groups/public</url>
+            </pluginRepository>
+         </pluginRepositories>
+</pre>
+
+<h3>JUnit</h3>
+
+JUnit is the Java industry-standard unit-testing framework, and is one of the frameworks used in Seam 3; this should be your default test-framework.
+
+<h2>Write your first plain JUnit test:</h2>
+Tests are run automatically during a Maven build, such as <q>mvn test</q>, <q>mvn package</q>, or <q>mvn install</q>. It is important to note, however, that tests are only run if the name of the test class ends in 'Test' -- e.g: SimpleMathTest.java
+
+Note the simplicity of the unit test. Each test-case should have only one class under test. E.g: The SimpleMathTest should only test behavior of 'MathImpl.java'... Mixing testable classes in a test-case can lead to missed scenarios, bugs.
+
+<h4>Math.java</h4>
+
+<pre lang="java">public interface Math
+{
+   public int add(int a, int b);
+   public int subtract(int a, int b);
+}</pre>
+
+<h4>MathImpl.java</h4>
+<pre lang="java">public class MathImpl implements Math
+{
+   public int add(int a, int b)
+   {
+      return a + b;
+   }
+   public int subtract(int a, int b)
+   {
+      return a - b;
+   }
+}</pre>
+
+<h4>The unit test case:</h4>
+<pre lang="java">public class MathImplTest
+{
+   public void testAdd() throws Exception
+   {
+      Math m = new MathImpl();
+      assertEquals(5, m.add(2, 3));
+   }
+
+   public void testSubtract() throws Exception
+   {
+      Math m = new MathImpl();
+      assertEquals(-1, m.subtract(2, 3));
+   }
+}</pre>
+
+Simple enough, pretty slick, but now...
+
+<h3>Introducing Arquillian</h3>
+<a target="_blank" href="http://community.jboss.org/en/arquillian">Arquillian</a> is the next-generation in-container integration testing framework. Allowing fully dependency-injected unit testing, even EJB and Web Services. Arquillian can be used to test nearly every Java EE component, but for the purpose of this document, we'll just show you the most common case - how to test managed beans.
+
+<h2>Write an Arquillian Unit/Integration Test</h2>
+Arquillian is where unit testing starts to get a little more exciting. This is where we actually test managed beans provided through dependency injection. While still using JUnit as the core testing framework, Arquillian tests a wider scope of the system, typically, than a pure JUnit test would; these are sometimes referred to as integration unit tests, or integration tests.
+
+<h4>Your first Arquillian JUnit test-case:</h4>
+Here we see the same unit test from above, but this time, using Arquillian to provide injection into the test case. This allows us to test components with many levels of dependency injection, or any other feature in CDI/Weld.
+
+<pre lang="java">@RunWith(Arquillian.class)
+public class MathImplTest
+{
+   
+   /**
+    * Since Arquillian actually creates JAR files under the covers, the @Deployment
+    * is your way of controlling what is included in that Archive. Note, each
+    * class utilized in your test case - whether directly or indirectly - must be
+    * added to the deployment archive.
+    */
+   @Deployment
+   public static Archive<?> createTestArchive()
+   {
+      return Archives.create("test.jar", JavaArchive.class).addClass(Math.class).addClass(MathImpl.class)
+            .addManifestResource(new ByteArrayAsset(new byte[0]), ArchivePaths.create("beans.xml"));
+   }
+
+   // Arquillian enables @Inject directly in the test case class itself!
+   @Inject Math m;
+
+   
+   public void testAdd() throws Exception
+   {
+      assertEquals(5, m.add(2, 3));
+   }
+
+   public void testSubtract() throws Exception
+   {
+      assertEquals(-1, m.subtract(2, 3));
+   }
+
+}</pre>
+
+Now <i>that's</i> power and simplicity! Explicit control over which classes are even loaded into the container; however, you might say, <q>Math is so simple, why did we bother to use Arquillian to test it?</q>
+
+<h2>Why/When to use Arquillian?</h2>
+The answer is simple: In the above example, you probably wouldn't have needed to use Arquillian, you could have just stuck with JUnit, but as soon as you have a situation like the one below, you might decide that it's time for some extra power; for example, if you wanted to test a <a href="http://docs.jboss.org/weld/reference/1.0.0/en-US/html_single/#decorators" target="" class="regularLink">decorator</a>. (Decorators extend the functionality of an existing interface without modifying the existing implementation.)
+
+<pre lang="java">public class MathDecorator implements Math
+{
+   @Inject Math delegate;
+   @Inject User user;
+   @Inject Logger log;
+
+   public int add(int a, int b)
+   {
+      log.trace("Add was invoked by: " + user);
+      return delegate.add(a, b);
+   }
+
+   public int subtract(int a, int b)
+   {
+      log.trace("Subtract was invoked by: " + user);
+      return delegate.subtract(a, b);
+   }
+}</pre>
+
+Now in order to test the functionality here using only JUnit, you would need to create, instantiate, and set mocks for User and Logger, instantiate the decorator, then execute the test code. That's a lot of work that you don't really need to worry about if using Arquillian.
+
+For instance, this is what the Arquillian test case would look like:
+
+<pre lang="java">@RunWith(Arquillian.class)
+public class MathDecoratorTest
+{
+   
+   /**
+    * Note in this example, we must add content to "beans.xml" in order to enable 
+    * our decorator in CDI/Weld -- this is done in the deployment using the syntax below:
+    */
+   @Deployment
+   public static Archive<?> createTestArchive()
+   {
+      return Archives.create("test.jar", JavaArchive.class).addClasses(Math.class, MathImpl.class,
+            MathDecorator.class, MockUser.class, MockLogger.class).addManifestResource(
+            new ByteArrayAsset("<decorators><class>com.test.MathDecorator<class>
+                  </decorators>".getBytes()), ArchivePaths.create("beans.xml"));
+   }
+
+   // Arquillian enables @Inject directly in the test case class itself!
+   @Inject Math m;
+   @Inject MockLogger log;
+   @Inject User u;
+   
+   public void testAdd() throws Exception
+   {
+      m.add(2, 3);
+      assertTrue(log.logged("Add was invoked by: " + u);
+   }
+
+   public void testSubtract() throws Exception
+   {
+      m.subtract(2, 3);
+      assertTrue(log.logged("Subtract was invoked by: " + u);
+   }
+
+}</pre>
+
+Pretty simple! No more creating chains of mocks -- just make sure all the right classes are included in the deployment, and you're good to go, test just as you would write code in the system itself. Arquillian will start up CDI and perform all the Dependency injection and container functions for you!
+
+<h2>Final Thoughts</h2>
+That's introducing <a target="_blank" href="http://community.jboss.org/en/arquillian">Arquillian</a> -- the next-generation in-container unit and integration testing suite! 
+
+The first major user of the Arquillian project is Seam 3 - an ecosystem of plug-ins for CDI, Servlet, and the Java EE framework. <a target="_blank" href="http://seamframework.org/Seam3/FacesModule">Take a look</a> at the <a target="_blank" href="http://anonsvn.jboss.org/repos/seam/modules/faces/">source</a> of the Seam 3 modules for more detailed examples on how to use Arquillian.

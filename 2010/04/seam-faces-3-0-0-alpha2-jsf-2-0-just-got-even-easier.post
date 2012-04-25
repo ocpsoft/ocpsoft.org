@@ -1,0 +1,127 @@
+.categories ['Java', 'Seam']
+.dateCreated 20100423T16:16:27
+.link http://ocpsoft.org/java/seam-faces-3-0-0-alpha2-jsf-2-0-just-got-even-easier/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/java/seam-faces-3-0-0-alpha2-jsf-2-0-just-got-even-easier/
+.post_status publish
+.postid 1211
+.title Seam Faces 3.0.0.Alpha3 - JSF 2.0 just got even easier!
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug seam-faces-3-0-0-alpha2-jsf-2-0-just-got-even-easier
+Ever wondered why JSF doesn't support bean @Inject-ion in Converters or Validators? Ever wondered how to listen to a single PhaseEvent or ComponentSystemEvent, or filter on events by componentId, or view? Ever wondered why you can't just @Inject FacesContext, or NavigationHandler?
+
+<h4>Well... now you can, with the brand-new, just-out release of <a href="http://seamframework.org/Seam3/FacesModule" target="_blank">Seam Faces</a> -- 3.0.0.Alpha3</h4>
+<p><pre lang="xml"><dependency>
+ <groupId>org.jboss.seam.faces</groupId>
+ <artifactId>seam-faces</artifactId>
+ <version>3.0.0.Alpha3</version>
+</dependency>
+</pre></p>
+<!--more-->
+(Currently only available through <a href="http://maven.apache.org" target="_blank">Maven</a>)
+
+<div class="featured"><font color="green"><b>Note:</b></font> For Jetty Users: 
+
+I've figured out how to resolve the "Could not wrap External Context" problem. You can find the solution in the first issue (first link)
+
+<a href="https://jira.jboss.org/browse/WELDX-126">https://jira.jboss.org/browse/WELDX-126</a>
+<a href="https://jira.jboss.org/browse/WELD-584">https://jira.jboss.org/browse/WELD-584</a>
+
+You can implement this in your application for now, but it should eventually be included in Weld-Extensions, which is why I've filed issues for it (and for the incorrect weld documentation.)</div>
+
+<h1>Sample some features:</h1>
+Focused on harnessing the power of Weld/CDI for Java, Seam Faces 3.0.0 has a good deal to offer, and more is in the works. Take a look below to see some of the powerful new functionality you'll be able to deliver with your JSF 2.0 application. (View the latest <a target="_blank" href="http://docs.jboss.org/seam/3/faces/reference/snapshot/en-US/html_single/">user's guide</a>.)
+
+<h2>No more statics!</h2>
+With Seam Faces, you've got no more statics! Unit test with ease. Seam Faces breaks the static <code>FacesContext.getCurrentInstance().getExternalContext()</code> anti-pattern by <a href="http://docs.jboss.org/weld/reference/1.0.0/en-US/html_single/#d0e931" target="_blank">producing</a> these artifacts for easy @Inject-ion.
+<pre lang="java">public class ExampleBean {
+	@Inject ExternalContext context;
+	@Inject FacesContext context;
+	@Inject NavigationHandler handler;
+}</pre>
+Now unit tests can draw upon a mock faces context, such as:
+<pre lang="java">@RequestScoped public class MockFacesContext extends FacesContext {
+    // mock stuff here
+}</pre>
+This works perfectly, for example, if you were using JBoss <a href="http://community.jboss.org/en/arquillian" target="_blank">Arquillian</a> (the future of integration testing) to do real in-container testing; your test setup would look something like <a href="http://anonsvn.jboss.org/repos/seam/modules/faces/tags/3.0.0.Alpha3/impl/src/test/java/org/jboss/seam/faces/environment/" target="_blank">this</a>.
+
+
+
+
+<h2>Converter/Validator Injection:</h2>
+By default, JSF treats Converters and Validators like "dumb objects." It creates and throws them away whenever it pleases. With Seam, you can take back control of these artifacts. Take the following example converter, for instance:
+
+As you can see below, this class is SessionScoped, meaning the user will retain the same Converter for the duration of the session. In other words: this converter is stateful. It supports @Inject! Not only that, but you can register <a href="http://docs.jboss.org/weld/reference/1.0.0/en-US/html_single/#interceptors" target="_blank">interceptors</a> and <a href="http://docs.jboss.org/weld/reference/1.0.0/en-US/html_single/#decorators" target="_blank">decorators</a> on JSF Converters/Validators. They are beans just like any other CDI-managed object!
+
+<strong>Note:</strong> If you do not @Scope your converter/validator, it will not be stateful, and the only enhanced support will be @Inject. @PreDestroy and @PostConstruct lifecycle callbacks will not function - the bean is not managed by CDI, only injected.
+<pre lang="java">@SessionScoped
+@FacesConverter("authorConverter")
+public class AuthorConverter implements Converter
+{
+   @Inject
+   FacesContext context;
+
+   @PostConstruct
+   public void setup()
+   {
+      System.out.println("AuthorConverter started up");
+   }
+
+   @PreDestroy
+   public void shutdown()
+   {
+      System.out.println("AuthorConverter shutting down");
+   }
+
+   @Override
+   public Object getAsObject(final FacesContext arg0, final UIComponent arg1, final String name)
+   {
+      System.out.println("getAsObject - Context is: " + context);
+      return new Author(name);
+   }
+
+   @Override
+   public String getAsString(final FacesContext arg0, final UIComponent arg1, final Object author)
+   {
+      System.out.println("getAsString - Context is: " + context);
+      if (author instanceof Author)
+      {
+         return ((Author) author).getName();
+      }
+
+      return "";
+   }
+}</pre>
+
+
+
+
+<h2>PhaseEvent Observers</h2>
+Let's say you want to observe a JSF PhaseEvent. Now, instead of registering an entire PhaseListener class in faces-config.xml, simply create an <a href="http://docs.jboss.org/weld/reference/1.0.0/en-US/html_single/#d0e3795" target="_blank">observer method</a>!
+<pre lang="java">public void observeBefore(@Observes @Before PhaseEvent e)
+{
+	// Listens to all phases, before the phase
+}
+
+public void observeAfter(@Observes @After @RenderResponse PhaseEvent e)
+{
+	// Listens to the RenderResponse phase, after the phase
+} </pre>
+This gives us an incredible amount of control when listening to specific phases. We no longer have to write boiler-plate code to determine which phases your listener cares about, just filter using @Annotations!
+
+
+
+
+<h2>Additional Scope Annotations:</h2>
+JSF 2.0 introduced the concept of <code>@javax.faces.bean.ViewScoped </code> and <code>@javax.faces.bean.FlashScoped</code>, but only provided an annotation for the View Scope!
+
+Seam Faces goes the extra mile, and provides the @FlashScoped annotation, which means that a bean in this scope will be stored in the JSF Flash. @ViewScoped means that the object will be stored in the UIViewRoot, unique for each JSF View/Page.
+<h2>That's all for now.</h2>
+There are more features, and more that are coming, but for now -- that should get you started ;) Try it out; <a href="http://seamframework.org/Seam3/FacesModule" target="_blank">get involved</a> with the project; tell us what you think!

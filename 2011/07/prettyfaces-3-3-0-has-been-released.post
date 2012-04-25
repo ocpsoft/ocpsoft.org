@@ -1,0 +1,62 @@
+.categories ['Java', 'JSF', 'JSF2', 'OCPSoft', 'OpenSource', 'PrettyFaces']
+.dateCreated 20110701T10:52:00
+.link http://ocpsoft.org/java/prettyfaces-3-3-0-has-been-released/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/java/prettyfaces-3-3-0-has-been-released/
+.post_status publish
+.postid 2037
+.title PrettyFaces 3.3.0 has been released
+.userid 13
+.wp_author_display_name Christian Kaltepoth
+.wp_author_id 13
+.wp_password 
+.wp_post_format standard
+.wp_slug prettyfaces-3-3-0-has-been-released
+<center><a href="/prettyfaces/"><img src="http://ocpsoft.com/wp-content/uploads/2008/11/prettyfaces-50.png" alt="" title="GET /prettyfaces/" width="498" height="122" class="alignnone size-full wp-image-2093" /></a></center>
+
+<p>
+The PrettyFaces team is pleased to announce the release of PrettyFaces 3.3.0. PrettyFaces is an OpenSource Servlets extension with enhanced support for JavaServer Faces – JSF 1.1, 1.2 and 2.0 – enabling creation of bookmark-able, pretty URLs. PrettyFaces solves the “RESTful URL” problem elegantly, including features such as: page-load actions, seamless integration with faces navigation, dynamic view-id assignment, managed parameter parsing, and configuration-free compatibility with other web frameworks.
+</p>
+
+<div class="featured" style="text-align:center">» <a href="http://ocpsoft.com/prettyfaces/">GET /prettyfaces/</a></div>
+
+<h2>Features &amp; Enhancements:</h2>
+<ul>
+  <li>Performance improvements when running JSF 2.0 in project stage 'development'</li>
+  <li>Regular expression performance improvements provided by Yann Simon.</li>
+  <li>Ambiguous View IDs are now resolved automatically when using pretty:mappingIds in action method navigation, &lt;h:link&gt; and &lt;h:button&gt; component outcomes</li>
+  <li>Ambiguous View IDs may now be resolved manually for outbound URL rewrites by adding '?com.ocpsoft.mappingId=...' to URLs before calling HttpServletResponse.encodeURL(...)</li>
+  <li>Dynaview URLs* are now resolved during rendering of links and navigation cases, and are now as functional as traditional mappings.</li>
+</ul>
+
+<h2>Bugfixes:</h2>
+<ul>
+  <li>Fixed bug that caused path parameter validators to be ignored (<a href="http://code.google.com/p/prettyfaces/issues/detail?id=102">#102</a>)</li>
+  <li>Handle java.lang.ClassFormatError during initialization of bean name resolvers (<a href="http://code.google.com/p/prettyfaces/issues/detail?id=101">#101</a>)</li>
+  <li>Also check Weld 1.1.x specific servlet context attribute while search for BeanManager</li>
+  <li>Mapping inheritance now working correctly for mappings using the same viewId</li>
+</ul>
+<br/>
+<strong>*</strong> - Previously, DynaView URLs would only function on inbound requests, and once the method was evaluated, the value would be processed and then abandoned. For example, when rendering &lt;h:link /&gt; components, users would actually see the dynaview method definition rendered as their url! That is not a good experience, so in resolving the problem, we simple evaluate the dynaview method a second time (or as many times as necessary) in order to render the desired link target. And we do this using...
+<!--more-->
+<pre lang="java">         UrlMapping mapping = config.getMappingById(outcome);
+         String viewId = mapping.getViewId();
+         if (mapping.isDynaView())
+         {
+            viewId = dynaview.calculateDynaviewId(context, mapping);
+         }
+         viewId = FacesNavigationURLCanonicalizer.normalizeRequestURI(context, viewId);</pre>
+
+We hope you enjoy these enhancements, and as always, keep the feedback coming! We have also started working on PrettyFaces 4, which should provide a great number of improvements :) Never rest! Never sleep! There are URLs to be rewritten!
+
+[slideout handle="GET /prettyfaces/" header="It takes 30 seconds to:"]
+<div class="inside">
+   <h3><a href="http://ocpsoft.com/docs/prettyfaces/3.3.0/en-US/html/GettingStarted.html">Get started.</a></h3>
+   <br/>
+   <h3><a href="http://ocpsoft.com/support/">Get help.</a></h3>
+   <h3><a href="http://ocpsoft.com/prettyfaces/">Get info.</a></h3>
+</div>
+[/slideout]

@@ -1,0 +1,170 @@
+.categories ['Java', 'JSF']
+.dateCreated 20080918T14:47:13
+.link http://ocpsoft.org/java/persist-and-pass-facesmessages-over-page-redirects/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords Java, JSF
+.permaLink http://ocpsoft.org/java/persist-and-pass-facesmessages-over-page-redirects/
+.post_status publish
+.postid 15
+.title Persist and pass FacesMessages over multiple page redirects
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug persist-and-pass-facesmessages-over-page-redirects
+<h2 style="text-align: left;">Very Simple</h2>
+<p style="text-align: left;">In a JSF Reference Implementation, passing global faces messages between pages doesn't work. It's not designed that way "out of the box." Fortunately there is a way to do this, which will even support redirects between pages, forwards through a RequestDispatcher, and also through standard JSF navigation cases.</p>
+<p style="text-align: left;">There is a 5 minute solution to this problem.</p>
+<p style="text-align: left;">
+<!--more-->
+</p>
+
+<h3>Messages should be displayed IF:</h3>
+<ul>
+	<li>...the RENDER_RESPONSE phase has been reached, and JSF completed all phases "naturally." This means that messages should not be displayed if the HttpResponse has been completed BEFORE the RENDER_RESPONSE phase has been reached.</li>
+	<li>...the RENDER_RESPONSE phase is reached, and the HttpResponse is already completed, then FacesMessages could not have been rendered; they need to be saved again for the next RENDER_RESPONSE phase.</li>
+</ul>
+<p style="text-align: left;">I found an <em>almost</em> solution to this problem in a mailing list that I've long since forgotten, but I saved the original accreditation, fixed the bugs (messages would not originally save through a redirect,) and here you go.</p>
+
+<h3 style="text-align: left;">It's a MultiPageMessagesSupport PhaseListener:</h3>
+Copy this file into your project classpath.
+<pre lang="java">package com.yoursite.jsf;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import javax.faces.event.PhaseEvent;
+import javax.faces.event.PhaseId;
+import javax.faces.event.PhaseListener;
+
+/**
+ * Enables messages to be rendered on different pages from which they were set.
+ *
+ * After each phase where messages may be added, this moves the messages
+ * from the page-scoped FacesContext to the session-scoped session map.
+ *
+ * Before messages are rendered, this moves the messages from the
+ * session-scoped session map back to the page-scoped FacesContext.
+ *
+ * Only global messages, not associated with a particular component, are
+ * moved. Component messages cannot be rendered on pages other than the one on
+ * which they were added.
+ *
+ * To enable multi-page messages support, add a <code>lifecycle</code> block to your
+ * faces-config.xml file. That block should contain a single
+ * <code>phase-listener</code> block containing the fully-qualified classname
+ * of this file.
+ *
+ * @author Jesse Wilson jesse[AT]odel.on.ca
+ * @secondaryAuthor Lincoln Baxter III lincoln[AT]ocpsoft.com 
+ */
+public class MultiPageMessagesSupport implements PhaseListener
+{
+
+    private static final long serialVersionUID = 1250469273857785274L;
+    private static final String sessionToken = "MULTI_PAGE_MESSAGES_SUPPORT";
+
+    public PhaseId getPhaseId()
+    {
+        return PhaseId.ANY_PHASE;
+    }
+
+    /*
+     * Check to see if we are "naturally" in the RENDER_RESPONSE phase. If we
+     * have arrived here and the response is already complete, then the page is
+     * not going to show up: don't display messages yet.
+     */
+    // TODO: Blog this (MultiPageMessagesSupport)
+    public void beforePhase(final PhaseEvent event)
+    {
+        FacesContext facesContext = event.getFacesContext();
+        this.saveMessages(facesContext);
+
+        if (PhaseId.RENDER_RESPONSE.equals(event.getPhaseId()))
+        {
+            if (!facesContext.getResponseComplete())
+            {
+                this.restoreMessages(facesContext);
+            }
+        }
+    }
+
+    /*
+     * Save messages into the session after every phase.
+     */
+    public void afterPhase(final PhaseEvent event)
+    {
+        if (!PhaseId.RENDER_RESPONSE.equals(event.getPhaseId()))
+        {
+            FacesContext facesContext = event.getFacesContext();
+            this.saveMessages(facesContext);
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    private int saveMessages(final FacesContext facesContext)
+    {
+        List<FacesMessage> messages = new ArrayList<FacesMessage>();
+        for (Iterator<FacesMessage> iter = facesContext.getMessages(null); iter.hasNext();)
+        {
+            messages.add(iter.next());
+            iter.remove();
+        }
+
+        if (messages.size() == 0)
+        {
+            return 0;
+        }
+
+        Map<String, Object> sessionMap = facesContext.getExternalContext().getSessionMap();
+        List<FacesMessage> existingMessages = (List<FacesMessage>) sessionMap.get(sessionToken);
+        if (existingMessages != null)
+        {
+            existingMessages.addAll(messages);
+        }
+        else
+        {
+            sessionMap.put(sessionToken, messages);
+        }
+        return messages.size();
+    }
+
+    @SuppressWarnings("unchecked")
+    private int restoreMessages(final FacesContext facesContext)
+    {
+        Map<String, Object> sessionMap = facesContext.getExternalContext().getSessionMap();
+        List<FacesMessage> messages = (List<FacesMessage>) sessionMap.remove(sessionToken);
+
+        if (messages == null)
+        {
+            return 0;
+        }
+
+        int restoredCount = messages.size();
+        for (Object element : messages)
+        {
+            facesContext.addMessage(null, (FacesMessage) element);
+        }
+        return restoredCount;
+    }
+}
+</pre>
+<h3 style="text-align: left;">Configuration:</h3>
+This needs to be in your <strong>faces-config.xml</strong>.
+<pre>		&lt;phase-listener&gt;</pre>
+<pre>			com.yoursite.jsf.MultiPageMessagesSupport</pre>
+<pre>		&lt;/phase-listener&gt;</pre>
+
+That's it. You're done.
+
+<h3>References:</h3>
+<ul>
+	<li>JSF-RI: <a href="http://jcp.org/en/jsr/detail?id=252" target="_blank">Specification Document</a></li>
+</ul>

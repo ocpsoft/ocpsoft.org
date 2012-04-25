@@ -1,0 +1,72 @@
+.categories ['Java', 'OpenSource']
+.dateCreated 20100323T14:12:06
+.link http://ocpsoft.org/java/using-embedded-glassfish-with-maven/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/java/using-embedded-glassfish-with-maven/
+.post_status publish
+.postid 1162
+.title Using Embedded Glassfish with Maven
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug using-embedded-glassfish-with-maven
+Three steps to add Embedded GlassFish to any existing project POM.
+
+The <a target="_blank" href="https://embedded-glassfish.dev.java.net/">Embedded Glassfish</a> project is hosted on <a target="_blank" href="https://embedded-glassfish.dev.java.net/">java.net</a>, and as it is described, is very simple: "This project develops APIs and tools around "embedded GlassFish v3". Embedded GFv3 is a delivery vehicle of GFv3 so that applications and tools can use GFv3 just as a library, inside their JVM, instead of having GFv3 as the overload of the entire JVM process. (And no, embedded GFv3 is not meant to be run on JavaME.)"
+<!--more-->
+<h4>1. You'll need to add this plugin repository to your POM:</h4>
+
+<pre lang="xml">
+        <pluginRepositories>
+		<pluginRepository>
+			<id>Glassfish</id>
+			<url>http://download.java.net/maven/glassfish/</url>
+		</pluginRepository>
+	</pluginRepositories></pre>
+
+<h4>2. Then add the following plugin to your POM:</h4>
+
+<pre lang="xml">
+          <build>
+                 <plugins>
+			<plugin>
+				<groupId>org.glassfish</groupId>
+				<artifactId>maven-embedded-glassfish-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<goalPrefix>glassfish</goalPrefix>
+					<app>test.war</app>
+					<port>8080</port>
+					<contextRoot>test</contextRoot>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+                </plugins>
+         </build></pre>
+
+<h4>3. Commands</h4>
+
+<ul>
+	<li><strong>embedded-glasfish:run</strong> - starts the embedded server if it is not already running and deploys the specfied application. The goal keeps the server running, so the user can make changes in the application, reploy and test iteratively.</li>
+	<li><strong>embedded-glassfish:start</strong> - starts the embedded server with the specified parameters</li>
+	<li><strong>embedded-glassfish:deploy</strong> - deploys the specified application</li>
+	<li><strong>embedded-glassfish:undeploy</strong> - undeploys the application identified by the "name" parameter. If no name is specifed all applications are undeployed.</li>
+	<li><strong>embedded-glassfish:stop</strong> - stops the embedded server</li>
+	<li><strong>embedded-glassfish:admin</strong> - executes the specified admin command on the embedded server. For example, you could create a jdbc resource.</li>
+ </ul>
+
+
+<h3>Reference:</h3>
+<a target="_blank" href="http://blogs.sun.com/sirajg/entry/using_maven_plugin_for_v3">http://blogs.sun.com/sirajg/entry/using_maven_plugin_for_v3</a>

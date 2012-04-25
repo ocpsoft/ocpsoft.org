@@ -1,0 +1,104 @@
+.categories ['JSF']
+.dateCreated 20090914T04:30:42
+.link http://ocpsoft.org/java/jsf-java/jsfs-hdatatable-vs-uirepeat-how-to-get-the-selected-row/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt <ui:repeat> allows iteration over a List of Array[] of items, but it does not provide a method of discovering the "selected" or "actioned" row; there's no way to discover the row the user is interacting with. Or is there?
+.mt_keywords Facelets, Java, JSF
+.permaLink http://ocpsoft.org/java/jsf-java/jsfs-hdatatable-vs-uirepeat-how-to-get-the-selected-row/
+.post_status publish
+.postid 67
+.title JSF's &lt;h:dataTable&gt; vs &lt;ui:repeat&gt; - How to get the selected row.
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug jsfs-hdatatable-vs-uirepeat-how-to-get-the-selected-row
+So, a little while ago I was attempting to use JSF's Facelets &lt;ui:repeat&gt; tag, as a replacement for &lt;h:dataTable&gt;, but difficulty came when I needed to process actions on individual records of each row.
+
+&lt;ui:repeat&gt; allows iteration over a List of Array[] of items, but it does not provide a method of discovering the "selected" or "actioned" row; there's no way to discover the row the user is interacting with. Or is there?
+<!--more-->
+I've since learned of two ways to deal with this situation:
+<h2>1. Use ListDataModel</h2>
+I asked another JSF Expert, <a href="http://mojavelinux.com"  target="_blank">Dan Allen</a> (author of Seam in Action) and here's what he told me:
+<div class="featured"><p>Lincoln,
+
+<p>There is an approach which will work in this case, but it doesn't rule out the possibility that refinement is needed. Let me open with the example.
+<p>On the home page, there is a link that will load a feature list and navigate to the list page.
+<p>/home.xhtml
+/list.xhtml
+
+<p>And finally, the controller:
+<pre lang="java">@ManagedBean
+@SessionScoped // chosen for convenience, really it should be view-scoped or conversation-scoped (299)
+public class FeatureList
+{
+	private DataModel features;
+	 
+	public DataModel getFeatures() 
+	{ 
+		return features; 
+	}
+	 
+	public String load() 
+	{
+		List l = new ArrayList();
+		l.add(new Feature("One"));
+		l.add(new Feature("Two"));
+		features = new ListDataModel(l);
+	}
+	 
+	public void action()
+	{
+		System.out.println("You clicked on the button in the row with feature " 
+			+ ((Feature) features.getRowData()).getName());
+	}
+}</pre>
+Note that the getRowData() method is positioned at the row which received the action during the invocation of any listener. Be careful, though, because it points to the first row if no row is selected. First check if getRowIndex() &gt;= 0 to see if a row received an action.
+
+<div class="inside">Lincoln's note -- In JSF2, you can call the isRowSelected() method, instead of this check.</div>
+
+Regardless, this is still a horrible way (IMO) of having to select the row. It is very opaque. This is one area where you really take Seam for granted because you would instead use injection of the selected row:
+
+<pre lang="java">@DataModelSelection Feature selectedFeature;</pre>
+
+There may be some edge cases where this doesn't work. Apply to your use case and report back any gaps.
+
+-Dan</div>
+From Dan's email, I learned that you could place a List of objects in a <strong>ListDataModel</strong> wrapper, effectively binding the state of the list to the UI. With that done, you can manipulate the data in an action-method, being able to retrieve the selected row index, object itself, and continue as you would expect with your programming.
+
+<div class="featured"><center>Need some <strong>/pretty /urls</strong> in your JSF web-app? Try <a href="http://ocpsoft.com/prettyfaces/" title="SEO | Dynamic Parameters | Bookmarks | Navigation | JSF | JSF2 | URLRewrite Filter | Open Source">PrettyFaces</a>: URL-rewriting for Java EE and JSF. (Free and <strong>open-source</strong>!)</center></div>
+
+<h2>2. Upgrade to an advanced EL (EL2) Jar</h2>
+Probably my favorite solution - you can use EL2 method invocation, provided either by Seam, or Sun's reference implementation, and pass the desired objects directly to methods in your JSP/Facelet code. It's coming standard in J2EE 6, but why wait?
+
+This method is simple, intuitive, and enables much more powerful and reusable Beans to handle page code, reducing redundancy in Model classes and business logic.
+
+Note how I pass the current <em>var</em> object directly to the method via EL:
+
+<pre lang="xml">
+<h:commandButton id="add" value="Add Task" 
+    action="#{itemController.addItemNote(currentItemBean.item, addNoteBean.newNote)}">
+</pre>
+
+And here's the Backing Bean code:
+
+<pre lang="java">
+@ManagedBean
+@RequestScoped
+public class ItemController
+{
+    public String addTask(final Item item, final Note note)
+    {
+        ItemService.addNote(item, note);
+        return "pretty:viewItem";
+        // this return statement is a PrettyFaces JSF bookmarking navigation id
+    }
+</pre>
+
+<h3>For instructions on how to: <a href="http://ocpsoft.com/java/jsf2-java/jsf2-how-to-add-the-magic-of-el-el2-to-jsf/">include EL2 in a JSF project</a> go <a href="http://ocpsoft.com/java/jsf2-java/jsf2-how-to-add-the-magic-of-el-el2-to-jsf/">here</a>.</h3>
+
+<p>For more information on JSF SEO and Bookmarking, take a look at <a href="http://ocpsoft.com/prettyfaces">PrettyFaces: URL rewriting extension for JSF</a>.</p>
+
+<p>If you are at all confused by these examples, feel free to leave a comment, and I'll do my best to help.</p>

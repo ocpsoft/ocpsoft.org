@@ -1,0 +1,48 @@
+.categories ['PrettyFaces']
+.dateCreated 20111110T02:10:17
+.link http://ocpsoft.org/prettyfaces/prettyfaces-at-jaxcon-munich/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/prettyfaces/prettyfaces-at-jaxcon-munich/
+.post_status publish
+.postid 2858
+.title PrettyFaces at JAXCon Munich
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug prettyfaces-at-jaxcon-munich
+We are proud to highlight <a href="http://twitter.com/chkal">Christian Kaltepoth</a>, who gave a fabulous presentation on [[PrettyFaces]] at <a href="http://jax.de">WJAX/JAXCon</a> in Munich on Wednesday, November 10th - 2011. Christan presented with <a href="http://twitter.com/andybosch">Andy Bosch</a>, who gave a short intro of URL-rewriting, what it means for applications in general, and why you should do URL-rewriting.
+
+<div class="featured" style="margin-top: 15px;">
+<table cellspacing="10px"><tr><td>
+<img src="http://ocpsoft.com/wp-content/uploads/2011/11/444495465-300x225.jpg" align="left" alt="" title="christian-presenting" width="300" height="225" class="aligncenter size-medium wp-image-2861" style="float: left; margin: 15px;" />
+Key points include:
+<ul>
+	<li>URL-rewriting can be used to create human-readable URLs, which is good for user-experience.</li>
+	<li>REST-ful URLs using keywords benefit search engine optimization (SEO)</li>
+	<li>Hiding non-essential URL information such as page extensions (.jsp, .xhtml, .do) helps protect your applications from vulnerability.</li>	
+	<li>With URL-rewriting, REST-ful URLs can be applied to any new or existing application</li>
+</ul>
+</td></tr>
+</table>
+</div>
+<!--more-->
+Christian then took over after roughly 15 minutes, and began to highlight [[PrettyFaces]], and how it streamlines and simplifies JSF development by introducing page-load actions, simplified navigation, injection of values parsed, converted, and validated directly from the URL, and translation of existing non-RESTful application URLs into well-designed, clean, human-readable URLs.
+
+The demo application, which was both stylish and comprehensive, is <a href="https://github.com/chkal/wjax11-demo">available online</a>. If you are interested in applying [[PrettyFaces]] to an existing or new application, be sure to <a href="https://github.com/chkal/wjax11-demo">check out the examples</a>.
+
+Overall the talk, which was given in native German, was very interesting. Unfortunately we do not have a translation of the presentation into English, but the slides are posted below, and there is a lot of good information. 
+
+Funniest quote from the talk, "Nobody likes a 3-kilometer URL." -- So very true!
+
+So thanks Christian, you and Andy did a fantastic job. We hope to see you up on stage again soon!
+
+<div class="featured"><center>
+
+<div style="width:425px" id="__ss_10092648"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/chkal/pretty-faces" title="PrettyFaces: RESTful URLs für JSF" target="_blank">PrettyFaces: RESTful URLs für JSF</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/10092648" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/chkal" target="_blank">Christian Kaltepoth</a> </div> </div>
+
+</center></div>

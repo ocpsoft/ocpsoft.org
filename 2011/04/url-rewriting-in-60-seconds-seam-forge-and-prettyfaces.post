@@ -1,0 +1,184 @@
+.categories ['Java', 'JBoss', 'OpenSource', 'PrettyFaces', 'Seam']
+.dateCreated 20110407T12:12:38
+.link http://ocpsoft.org/java/url-rewriting-in-60-seconds-seam-forge-and-prettyfaces/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/java/url-rewriting-in-60-seconds-seam-forge-and-prettyfaces/
+.post_status publish
+.postid 1832
+.title URL-rewriting in 60 seconds: JBoss Forge and PrettyFaces
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug url-rewriting-in-60-seconds-seam-forge-and-prettyfaces
+Do you have an existing Maven-based Java EE application that you'd like to clean up a bit in the browser? Do your URLs look too much like this: 
+
+<code>http://example.com/app/sillyServletName/someStuff?sillyParam=22&sillyOtherParam=profile</code> 
+
+And not enough like this?  
+
+<code>http://example.com/app/profile/22</code>
+
+Are you building a new application, and don't want to sacrifice anything when it comes to usability or SEO capabilities? Well, URL-rewriting is your answer, and it's easy to get started, even easier using JBoss Forge.
+<!--more-->
+<a href="http://ocpsoft.com/prettyfaces/">PrettyFaces</a> is a URL-rewriting solution for Servlet, JavaEE, and JSF applications, is <a href="http://ocpsoft.com/docs/prettyfaces/snapshot/en-US/html_single/#Extensions">highly extendable</a>, and <a href="http://ocpsoft.com/docs/prettyfaces/snapshot/en-US/html_single/#GettingStarted">easy to install</a>; however, we weren't satisfied with the experience of forcing people to create their own configuration file, trying to find which version to install, and having problems when they try to mix information from different sources. <a href="http://jboss.org/forge/">JBoss Forge</a> looked like the perfect opportunity to make your job even easier, and it's through JBoss Forge that we think we've accomplished our goals; we'd like to know if you agree:
+
+<div class="featured">For those of you who have already <a href="http://bit.ly/forge100"> downloaded JBoss Forge (Beta3+)</a>, you can install the PrettyFaces plugin using the following command:
+<pre lang="bash">$ forge install-plugin ocpsoft-prettyfaces</pre></div>
+
+<div class="featured">JBoss Forge and PrettyFaces:<br/>
+<center><iframe src="http://player.vimeo.com/video/22463907" width="800" height="500" frameborder="0"></iframe><p><a href="http://vimeo.com/22463907">From Zero to Java EE: JBoss Forge in Action</a> from <a href="http://vimeo.com/lincolnthree">Lincoln Baxter, III</a> on <a href="http://vimeo.com">Vimeo</a>.</p></center></div>
+
+<h3>Install PrettyFaces using JBoss Forge:</h3>
+<pre lang="bash">   _____                    
+  |  ___|__  _ __ __ _  ___ 
+  | |_ / _ \| '__/ _` |/ _ \  \\
+  |  _| (_) | | | (_| |  __/  //
+  |_|  \___/|_|  \__, |\___| 
+                 |___/      
+[no project] Desktop $ 
+[no project] Desktop $ new-project --named prettyfaces-example-app  --topLevelPackage com.ocpsoft.prettyfaces
+Use [~/Desktop/prettyfaces-example-app] as project directory? [Y/n] 
+Wrote ~/Desktop/prettyfaces-example-app/src/main/resources/META-INF/forge.xml
+***SUCCESS*** Created project [prettyfaces-example-app] in new working directory [~/Desktop/prettyfaces-example-app]
+[prettyfaces-example-app] ~ $ 
+[prettyfaces-example-app] ~ $ prettyfaces setup 
+Wrote ~/Desktop/prettyfaces-example-app/src/main/webapp/WEB-INF/web.xml
+Wrote ~/Desktop/prettyfaces-example-app/src/main/webapp/index.html
+***SUCCESS*** Installed [forge.spec.servlet] successfully.
+
+Install PrettyFaces for which technology?
+
+  1 - [JSF 1.1 and Servlet <= 2.3]
+  2 - [JSF 1.2 and Servlet >= 2.4]
+  3 - [JSF 2.0 and Servlet >= 2.5]
+  4 - [Java EE 6 and Servlet >= 3.0]*
+
+Choose an option by typing the number of the selection [*-default]: 4
+Install which version?
+
+  1 - [com.ocpsoft:prettyfaces-jsf2:3.0.0]
+  2 - [com.ocpsoft:prettyfaces-jsf2:3.0.1]
+  3 - [com.ocpsoft:prettyfaces-jsf2:3.0.2-SNAPSHOT]
+  4 - [com.ocpsoft:prettyfaces-jsf2:3.1.0]
+  5 - [com.ocpsoft:prettyfaces-jsf2:3.1.1-SNAPSHOT]
+  6 - [com.ocpsoft:prettyfaces-jsf2:3.2.0]
+  7 - [com.ocpsoft:prettyfaces-jsf2:3.2.1-SNAPSHOT]*
+
+Choose an option by typing the number of the selection [*-default]: 6
+Wrote ~/Desktop/prettyfaces-example-app/src/main/webapp/WEB-INF/pretty-config.xml
+***SUCCESS*** Installed [com.ocpsoft.forge.prettyfaces] successfully.
+***SUCCESS*** PrettyFaces is configured.
+[prettyfaces-example-app] ~ $ </pre>
+And now we create our first URL-mapping.
+<pre lang="bash">[prettyfaces-example-app] ~ $ prettyfaces mapping --pattern / --viewId /index.html -id index
+Wrote ~/Desktop/prettyfaces-example-app/src/main/webapp/WEB-INF/pretty-config.xml
+[prettyfaces-example-app] ~ $ </pre>
+With those <b>three commands</b>, we just created a new Servlet 3.0 web-application, installed PrettyFaces, and added a URL-mapping from '/' to the index page. Now that's powerful! Also, did I mention that this application is now ready to be deployed on a Servlet Container or Application Server like <a href="http://www.jboss.org/jbossas/downloads.html">JBoss AS</a> or <a href="http://tomcat.apache.org/">Tomcat</a>? Life is so hard these days...
+<h3>So what does that mean?  What actually happened?</h3>
+
+First, no more hunting for configuration files or making sure that your XML has the right schema. Second, you no longer have to search for the available versions to install, and third, all of your POM configuration is done for you. 
+
+In short, the prettyfaces-forge-plugin has set up the following configurations for you:
+<pre lang="xml"><?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.ocpsoft.prettyfaces</groupId>
+  <artifactId>prettyfaces-example-app</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+...
+  <dependencies>
+    <dependency>
+      <groupId>com.ocpsoft</groupId>
+      <artifactId>prettyfaces-jsf2</artifactId>
+      <version>3.2.0</version>
+    </dependency>
+  </dependencies>
+...
+</project></pre>
+
+And the PrettyFaces configuration file:
+<pre lang="xml"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pretty-config xmlns="http://ocpsoft.com/prettyfaces/3.2.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://ocpsoft.com/prettyfaces/3.2.0 
+   http://ocpsoft.com/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.2.0.xsd">
+
+  <url-mapping id="index">
+    <pattern value="/"/>
+    <view-id value="/index.html"/>
+  </url-mapping>
+
+
+</pretty-config></pre>
+Sure, we could have created and updated these configurations ourselves, that's pretty easy too, but this is just one more simplification; we want your lives to be as easy as possible. Even better, the PrettyFaces Plugin supports &lt;TAB&gt;-completion of mapping-IDs and view-IDs; when you type a command, you don't have to look at the configuration file because most available options are just a &lt;TAB&gt; away. (When in doubt, press &lt;TAB&gt;)
+
+<h2>What else does the PrettyFaces Forge Plugin give me?</h2>
+<ol>
+	<li>
+Automatic integration with JavaServer Faces (JSF) for page-load actions.
+<pre lang="bash">[prettyfaces-example-app] ~ $ prettyfaces action --mappingId index 
+      --methodExpression '#{auth.doAuth()}'
+***INFO*** This feature requires JavaServer(tm) Faces.
+An action has requested to install the following facets into your project [forge.spec.jsf] continue? [Y/n] 
+Wrote ~/src/main/webapp/WEB-INF/faces-config.xml
+***SUCCESS*** Installed [forge.spec.jsf] successfully.
+Wrote ~/src/main/webapp/WEB-INF/pretty-config.xml
+***SUCCESS*** Added new action [action, phaseId="ANY_PHASE", onPostback="true"] for mapping [index]
+[prettyfaces-example-app] ~ $ </pre>
+Which in turn updated our pretty-config.xml to include an action on the index page. Notice that we had to install JSF in order to continue. The action will only trigger if the page being executed is run through the FacesServlet.
+
+<pre lang="xml">  <url-mapping id="index">
+    <pattern value="/"/>
+    <view-id value="/index.html"/>
+    <action>#{auth.doAuth()}</action>
+  </url-mapping>
+</pre>
+
+</li>
+	<li>Install Multi-page Faces Messaging support (preserve messages over navigation redirects.)
+<pre lang="bash">[prettyfaces-example-app] ~ $ prettyfaces faces-message-propagation INSTALL
+Wrote ~/src/main/webapp/WEB-INF/faces-config.xml
+***SUCCESS*** MultiPageMessagesListener is installed.
+[prettyfaces-example-app] ~ $ </pre> 
+
+This updates our faces-config.xml file to include our provided PhaseListener.
+<pre lang="xml"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+  <lifecycle>
+    <phase-listener>com.ocpsoft.forge.pretty.faces.event.MultiPageMessagesSupport</phase-listener>
+  </lifecycle>
+</faces-config>
+</pre></li>
+	<li>List all configured URL-mappings:
+<pre lang="bash">[prettyfaces-example-app] ~ $ prettyfaces list-mappings {--all}
+/ -> /index.html [id=index, outbound=true]
+/login -> /LoginServlet/doLogin [id=login, outbound=true]
+[prettyfaces-example-app] ~ $ 
+</pre></li>
+	<li>Remove URL-mappings:
+<pre lang="bash">[prettyfaces-example-app] ~ $ prettyfaces remove-mapping --id 
+index    login    
+[prettyfaces-example-app] ~ $ prettyfaces remove-mapping --id login 
+Wrote ~/src/main/webapp/WEB-INF/pretty-config.xml
+***SUCCESS*** Removed UrlMapping [ id=login, pattern=/login, parentId=, viewId=/LoginServlet/doLogin, actions=[], outbound=true, parser=null, pathValidators=[], queryParams=[]]
+[prettyfaces-example-app] ~ $ </pre></li>
+Notice that we have support for &lt;TAB&gt; completion of URL-mapping IDs, so you can just press &lt;TAB&gt; if you need to see available options.
+</ol>
+
+
+<div class="featured"><p style="text-align: center;">Download <a href="http://sourceforge.net/projects/jboss/files/Forge/1.0.0/">Forge 1.0.0.Alpha3</a> - Read the <a href="http://docs.jboss.org/forge/1.0.0.Alpha3/reference/en-US/html_single/">Reference Guide</a> - Learn about Forge at <a href="http://www.labs.redhat.com/summit/sessions/jboss.html#89">JBoss World</a>. </p><p style="text-align: center;">Get involved in JBoss Forge by joining <a href="https://lists.jboss.org/mailman/listinfo/forge-users">Users</a> or <a href="https://lists.jboss.org/mailman/listinfo/forge-dev">Dev</a> mailing lists.</p><p>Install the PrettyFaces plugin:
+<pre lang="bash">$ forge mvn-plugin com.ocpsoft.forge:prettyfaces-plugin</pre></p></div>
+
+
+<h2>Conclusion</h2>
+Please note that you can also use all of the tools described here on an <b>existing Maven-based web application</b>, and you do not need to create a new project just to try this. We hope that this simple plugin makes your life a little bit easier, and more productive. We also welcome your feedback. Tell us how we can improve! For those who are curious, the source code for the PrettyFaces Forge Plugin is located here, on GitHub.

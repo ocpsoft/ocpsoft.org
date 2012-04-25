@@ -1,0 +1,81 @@
+.categories ['JSF']
+.dateCreated 20090724T14:28:54
+.link http://ocpsoft.org/java/jsf-java/please-tell-your-developers-to-call-facescontextrelease/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords Best Practices, JSF
+.permaLink http://ocpsoft.org/java/jsf-java/please-tell-your-developers-to-call-facescontextrelease/
+.post_status publish
+.postid 66
+.title Please! Tell your developers to call facesContext.release() 
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug please-tell-your-developers-to-call-facescontextrelease
+If you are manipulating any FacesContext when doing any kind of Sevlet Forwards - such as <a href="http://ocpsoft.com/java/jsf-java/jsf-20-extension-development-accessing-facescontext-in-a-filter/" target="_blank">from a filter</a> - you MUST release() any FacesContext you’ve created. The consequences of forgetting this are potentially dire.
+<!--more-->
+You may even want to go so far as to completely UN-set the FacesContext from the current thread. We would do this by calling FacesContextBuilder.removeFacesContext()
+<h2>Call FacesContext.release() when you are done!</h2>
+ 
+<h4>FacesContextBuilder.java</h4>
+<pre lang="java">public class FacesContextBuilder
+{
+    public FacesContext getFacesContext(final ServletRequest request, final ServletResponse response)
+    {
+        FacesContext facesContext = FacesContext.getCurrentInstance();
+        if (facesContext != null)
+        {
+            return facesContext;
+        }
+
+        FacesContextFactory contextFactory = (FacesContextFactory) FactoryFinder
+                .getFactory(FactoryFinder.FACES_CONTEXT_FACTORY);
+        LifecycleFactory lifecycleFactory = (LifecycleFactory) FactoryFinder
+                .getFactory(FactoryFinder.LIFECYCLE_FACTORY);
+        Lifecycle lifecycle = lifecycleFactory.getLifecycle(LifecycleFactory.DEFAULT_LIFECYCLE);
+
+        ServletContext servletContext = ((HttpServletRequest) request).getSession().getServletContext();
+        facesContext = contextFactory.getFacesContext(servletContext, request, response, lifecycle);
+        InnerFacesContext.setFacesContextAsCurrentInstance(facesContext);
+
+        return facesContext;
+    }
+
+    public void removeFacesContext()
+    {
+        InnerFacesContext.setFacesContextAsCurrentInstance(null);
+    }
+
+    private abstract static class InnerFacesContext extends FacesContext
+    {
+        protected static void setFacesContextAsCurrentInstance(final FacesContext facesContext)
+        {
+            FacesContext.setCurrentInstance(facesContext);
+        }
+    }
+
+}</pre>
+ 
+FacesContext wraps the HttpServletRequest with its own RequestWrapper, and when attempting to hold on to references to any response through a Servlet Forward (via <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/RequestDispatcher.html" target="_blank">RequestDispatcher</a>), bad things will happen.
+<h4>For example:</h4>
+When using the <a title="PrettyFaces URL Rewriting and Bookmarking" href="http://ocpsoft.com/prettyfaces">PrettyFaces URL bookmarking/rewriting</a> utility (who’s PrettyFilter relies on Servlet forwards) any FacesContext created before this forward occurs will be left open, and sporadic NullPointerExceptions will occur depending on Request thread timing in the Servlet container.
+ 
+<pre lang="java">Caused by: java.lang.NullPointerException
+at org.apache.catalina.connector.Request.setAttribute(Request.java:1424)
+at org.apache.catalina.connector.RequestFacade.setAttribute(RequestFacade.java:503)
+at javax.servlet.ServletRequestWrapper.setAttribute(ServletRequestWrapper.java:284)
+at com.ocpsoft.pretty.PrettyContext.setCurrentInstance(PrettyContext.java:93)
+at com.ocpsoft.pretty.PrettyContext.getCurrentInstance(PrettyContext.java:84)
+at com.ocpsoft.pretty.PrettyFilter.doFilter(PrettyFilter.java:58)
+at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+...</pre>
+ 
+Or sometimes request attributes will be missing entirely, even if the request is accessible.
+ 
+In order to safely navigate FacesContext in a ServletFilter, make absolutely sure that you release() and remove the context when you are done with it. Then you get happy applications working together with other frameworks!
+ 
+Cheers, happy developing! :)

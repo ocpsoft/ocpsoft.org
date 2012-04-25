@@ -1,0 +1,55 @@
+.categories ['Hibernate', 'Java']
+.dateCreated 20080722T21:37:57
+.link http://ocpsoft.org/java/guide-to-hibernate-annotations/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords Hibernate, Java, ORM
+.permaLink http://ocpsoft.org/java/guide-to-hibernate-annotations/
+.post_status publish
+.postid 4
+.title Guide to Hibernate Annotations
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug guide-to-hibernate-annotations
+<h2>Is there light at the end of the tunnel?</h2>
+So I'm sure I'm not alone here, when I say that Hibernate can be frustrating, difficult to learn, and may even feel like to use it means to give up on some design principles that have been proven by many.
+
+When you first begin, it feels like there are holes, inconsistencies, and problems that send you running home to the familiar behavior of plain SQL. But, I don't think it's time to give up on Hibernate yet.
+
+Keep in mind that I am a relatively new Hibernate user, I consider myself somewhat experienced with software development, design patterns, principles, and best practices. If this sounds like you, read on...
+<!--more-->
+<h2>Objective:</h2>
+I'm beginning a series of articles that will:
+<ol>
+	<li>document my journey with Hibernate</li>
+	<li>be a guide for those of you who are still on your journey</li>
+	<li>give me a way to remember why I've made the decisions that I've made; <em>what was I thinking</em>??</li>
+</ol>
+<h2>Topics:</h2>
+Please look forward to the following topics that will start out this series.
+<ul>
+	<li>Getting started quickly. (<a href="http://ocpsoft.com/java/getting-started-quickly-with-hibernate-annotations/" target="_self">read it</a>)</li>
+	<li>Using a base class to map common fields. (<a href="http://ocpsoft.com/java/hibernate-use-a-base-class-to-map-common-fields/" target="_self">read it</a>)</li>
+	<li>Criteria returning duplicate results in OneToMany relationships.</li>
+	<li>The Abstract Dao.</li>
+	<li>Keeping transactional behavior in a lazy world.</li>
+</ul>
+Also, feel free to comment on any of these topics, or request new topics. Remember to check the following resources; a lot of common problems can be solved by reading the hibernate FAQ.
+<h2>Assumptions:</h2>
+For the purpose of these examples, please assume the following versions:
+<ul>
+	<li><a title="Java SDK 6.0" href="https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=java_ee_sdk-5_05-oth-JPR@CDS-CDS_Developer" target="_blank">Java SDK 6.0</a></li>
+	<li><a href="http://www.hibernate.org/6.html" target="_blank">Hibernate Annotations 3.3.1.GA</a></li>
+	<li><a href="http://www.hibernate.org/6.html" target="_blank">Hibernate 3.2.6</a></li>
+	<li><a href="http://dev.mysql.com/downloads/mysql/5.0.html#downloads" target="_blank">MySql 5.0</a></li>
+</ul>
+<h3>Resources:</h3>
+<ol>
+	<li><a title="Hibernate FAQ" href="http://www.hibernate.org/117.html" target="_blank">Hibernate FAQ</a></li>
+	<li><a title="Hibernate Forums" href="http://forum.hibernate.org/" target="_blank">Hibernate Forums</a></li>
+	<li><a title="Java Persistence API" href="http://java.sun.com/javaee/5/docs/api/javax/persistence/package-summary.html" target="_blank">Java Persistence API</a></li>
+</ol>

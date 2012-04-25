@@ -1,0 +1,37 @@
+.categories []
+.dateCreated 20110527T23:01:49
+.excerpt 
+.link http://ocpsoft.org/research/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 1925
+.page_status publish
+.permaLink http://ocpsoft.org/research/
+.text_more 
+.title Research
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 0
+.wp_page_parent_title 
+.wp_page_template page-notitle.php
+.wp_password 
+.wp_slug research
+<center><h1>Sorry, the battle is over</h1>
+We need our CPU time for writing [[Rewrite|cool open-source software]], and for feeding sharks.
+They're not angry, they just get <i>so hungry.</i>
+
+<a href="javascript:alert('Nom nom nom!');"><img style="width: 85%; cursor: url('/wp-content/uploads/2011/05/feeding_cpu.png'), default;" src="http://ocpsoft.com/wp-content/uploads/2011/05/shark.png" title="shark" width="85%" class="aligncenter size-full wp-image-2723" /></a>
+
+</center>
+
+<!--
+This application was built using the <a target="_blank" href="http://www.jboss.org/jbossas/downloads.html">JBoss Application Server 7</a>, <a href="http://seamframework.org/Seam3">Seam 3</a>, <a href="http://jboss.org/richfaces">RichFaces </a>our own [[PrettyFaces]], [[PrettyTime]] and was constructed primarily using <a target="_blank" href="http://bit.ly/seamforge">SeamForge</a>. This is a <b>live</b> demonstration - tweets are streaming directly from the Twitter garden-hose. More keywords and stats will be added as the application scales up; however, in the mean-time please join us in the search, and of course, let the battle begin!
+
+<div id="waiting"><center><img src="http://ocpsoft.com/wp-content/uploads/2011/05/spinner.gif" style="margin-top: 50px;"></img><p>fighters, take your corners...</p></center></div>
+<div id="frame" style="display: none;"></div>
+
+<script type="text/javascript">function displayApp() { jQuery("#waiting").fadeOut('slow', function() { jQuery("#frame").fadeIn('slow'); }); }; jQuery("#frame").html('<iframe src="http://scrumshark.com/hatchling'+window.location.href.slice(window.location.href.indexOf('?'))+'" width="100%" height="1600px" frameborder="0" onload="displayApp();">Your browser does not support iframes.</iframe>'); </script> 
+-->

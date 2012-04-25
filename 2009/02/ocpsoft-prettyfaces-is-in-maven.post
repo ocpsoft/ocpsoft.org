@@ -1,0 +1,27 @@
+.categories ['PrettyFaces']
+.dateCreated 20090204T21:39:47
+.link http://ocpsoft.org/prettyfaces/ocpsoft-prettyfaces-is-in-maven/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords Maven, Releases
+.permaLink http://ocpsoft.org/prettyfaces/ocpsoft-prettyfaces-is-in-maven/
+.post_status publish
+.postid 40
+.title Ocpsoft PrettyFaces is in Maven!
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug ocpsoft-prettyfaces-is-in-maven
+Maven JSF users can be relieved, PrettyFaces is now in the <a href="http://repo1.maven.org/maven2/com/ocpsoft/" target="_blank">Maven central repository</a>:
+
+To include PrettyFaces in a Maven project, add the following dependency to your POM.
+
+<p style="padding-left: 30px;"><span id="xmlSnippetPanel3">&lt;dependency&gt;
+&lt;groupId&gt;com.ocpsoft&lt;/groupId&gt;
+&lt;artifactId&gt;ocpsoft-pretty-faces&lt;/artifactId&gt;
+&lt;version&gt;{<a href="http://ocpsoft.com/prettyfaces/">version</a>}&lt;/version&gt;
+&lt;/dependency&gt;</span></p>
+Special thanks to Ryan DeLaplante at <a href="http://www.ryandelaplante.com" target="_blank">http://www.ryandelaplante.com</a> for helping me get this set up! He wrote the initial POM and helped me to get started learning Maven... now I'm hooked.

@@ -1,0 +1,257 @@
+.categories ['Uncategorized']
+.dateCreated 20081114T19:16:56
+.excerpt 
+.link http://ocpsoft.org/prettyfaces/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 26
+.page_status publish
+.permaLink http://ocpsoft.org/prettyfaces/
+.text_more 
+.title PrettyFaces
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 1
+.wp_page_parent_id 0
+.wp_page_parent_title 
+.wp_page_template page-notitle.php
+.wp_password 
+.wp_slug prettyfaces
+<center style="margin-left: -50px;"><img src="http://ocpsoft.org/wp-content/uploads/2008/11/prettyfaces-50.png" alt="" title="prettyfaces-50" width="498" height="122" class="alignnone size-full wp-image-2090" />
+
+<h2 style="margin-bottom: 25px;">The open-source <font color="green">/url/#{rewriting}</font> solution for Servlet, JSF, and Java EE</h2></center>
+
+<p style="margin-top: 10px; margin-bottom: 0px;">PrettyFaces is an OpenSource Filter-based Servlets extension with enhanced support for <em>JavaServer Faces</em> - JSF 1.1, 1.2 and 2.0 - enabling creation of bookmark-able, pretty URLs. PrettyFaces solves the "RESTful URL" problem elegantly, including features such as: page-load actions, seamless integration with faces navigation, dynamic view-id assignment, managed parameter parsing, and configuration-free compatibility with other web frameworks. <a href="#features">Take a look at the features &raquo;</a></p>
+
+
+<h2>SEO and Consistency:</h2>
+Any business knows how important Search Engine Optimization can be for sales. PrettyFaces allows SEO-friendly URLs, and improved customer experience. Give your site a uniform, well understood feeling, from the address bar to the buy button.
+
+<p style="margin-bottom: 10px;">
+<div class="featured">
+
+<center><div class="inside"><h2><font color="green">NEWS:</font> PrettyFaces 4.0.0 to be based on <a href="http://ocpsoft.org/rewrite/">OCPsoft Rewrite</a>. Integration will allow full Java-based rewriting in addition to standard configuration.</h2></div></center>
+
+<table border="0" width="100%" cellspacing="10px" style="margin:auto; max-width:850px">
+<tbody>
+<tr valign="top">
+<td width="35%">
+<h2 style="font-size: 150%; margin-bottom: 5px;">Downloads: ↓ (APLv2)</h2>
+<p style="padding-left: 20px;">JSF1.1 &gt; <strong>3.3.3:</strong> <a href="http://ocpsoft.org/repository/com/ocpsoft/prettyfaces-jsf11/3.3.3/prettyfaces-jsf11-3.3.3.jar">jar</a>, <a href="http://ocpsoft.org/repository/com/ocpsoft/prettyfaces-jsf11/3.3.3/prettyfaces-jsf11-3.3.3-sources.jar">src</a>, <a target="_blank" href="http://ocpsoft.org/prettyfaces/v123/">doc</a></p>
+<p style="padding-left: 20px;">JSF1.2 &gt; <strong>3.3.3:</strong> <a href="http://ocpsoft.org/repository/com/ocpsoft/prettyfaces-jsf12/3.3.3/prettyfaces-jsf12-3.3.3.jar">jar</a>, <a href="http://ocpsoft.org/repository/com/ocpsoft/prettyfaces-jsf12/3.3.3/prettyfaces-jsf12-3.3.3-sources.jar">src</a>, <a target="_blank" href="http://ocpsoft.org/docs/prettyfaces/3.3.3/en-US/html/">doc</a></p>
+<p style="padding-left: 20px;">JSF2.0 &gt; <strong>3.3.3:</strong> <a href="http://ocpsoft.org/repository/com/ocpsoft/prettyfaces-jsf2/3.3.3/prettyfaces-jsf2-3.3.3.jar">jar</a>, <a href="http://ocpsoft.org/repository/com/ocpsoft/prettyfaces-jsf2/3.3.3/prettyfaces-jsf2-3.3.3-sources.jar">src</a>, <a target="_blank" href="http://ocpsoft.org/docs/prettyfaces/3.3.3/en-US/html/">doc</a></p>
+<p style="padding-left: 20px;"><a href="http://ocpsoft.org/repository/com/ocpsoft/">All Downloads / Maven Repo</a></p>
+<p style="padding-left: 20px;"><a href="https://github.com/ocpsoft/prettyfaces">Version control repository</a></p>
+
+<h4 style="padding-left: 20px; margin-top: 10px; margin-bottom: 5px;">Dependencies:</h4>
+<p style="padding-left: 20px;"><strong>JSF1.1, 1.2 or 2.0</strong></p>
+
+<h4 style="margin-top: 10px;">What's coming?</h4>
+<strong>Integration with <a href="http://ocpsoft.org/rewrite/">OCPsoft Rewrite</a></strong></td>
+
+<td style="text-align: justify;">
+
+<p>Our code is on <a href="http://github.com/ocpsoft/prettyfaces">GitHub</a>. If you have questions, concerns, suggestions, or would like to <a href="/prettyfaces/contributors">contribute/hack</a> - email the <a href="mailto:prettyfaces-users@googlegroups.com">user-group</a>, or <a href="https://github.com/ocpsoft/prettyfaces/issues" target="_blank">open an issue</a>.
+
+<div style="margin:auto; width:350px;">
+<a name="mailinglist"></a>
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+
+<tbody><tr><td>
+<br/>
+
+<h2>Need help?</h2> 
+<strong>Ask a question in the <a href="http://ocpsoft.org/forums/">forums</a>, view the <a href="http://ocpsoft.org/prettyfaces/docs/">documentation</a>, <a href="#FAQ">FAQ</a>, or get the <a href="https://github.com/ocpsoft/prettyfaces" target="_blank">source</a>!
+</td></tr>
+</tbody></table>
+<br/>
+
+</div>
+
+<div class="inside" style="font-size: 1.25em; margin-left: 15px;">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NDDEKRHDMBTML">
+Like this project? Become <a href="http://ocpsoft.org/prettyfaces/powered/">powered by PrettyFaces</a> or make a donation to support us!  <b>&raquo;</b> <input type="image" style="float: right;" src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form></div>
+
+</td></tr>
+
+<tr><td colspan="2">
+
+<table width="100%">
+<tr><td width="50%" style="padding-right: 15px;">
+<h4>Maven Artifacts</h4>
+<small>
+<pre lang="xml">
+<!-- for JSF 2.x -->
+<dependency>
+   <groupId>com.ocpsoft</groupId>
+   <artifactId>prettyfaces-jsf2</artifactId>
+   <version>3.3.3</version>
+</dependency>
+</pre>
+</small>
+
+</td>
+<td style="padding-left: 15px;">
+
+<h4><span style="visibility: hidden;">.</span></h4>
+<small>
+<pre lang="xml">
+<!-- for JSF 1.2.x -->
+<dependency>
+   <groupId>com.ocpsoft</groupId>
+   <artifactId>prettyfaces-jsf12</artifactId>
+   <version>3.3.3</version>
+</dependency>
+</pre>
+</small>
+
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+</tbody></table>
+</div>
+
+
+
+<h4>From <a href="http://twitter.com/ocpsoft">@ocpsoft</a> and <a href="http://twitter.com/lincolnthree">@lincolnthree</a></h4>
+<br/>
+
+<h1><a name="features"></a>Features:</h1>
+<p>
+<ol>
+	<li><strong>URL Rewriting</strong> -- Replace ugly URLs: "/faces/page.jsf" with pretty, SEO-friendly, human URLS: "/optimized/page/"; The client browser never sees your original URLs, even in the source-HTML</li>
+	<li><strong>Dynamic view IDs</strong> -- Now with dynamic view ID mapping for URLs (through El method expressions,) you can show different views based on run-time conditions, effectively de-coupling the URL from the JSF view.</li>
+	<li><strong>Page-load actions</strong> -- Call one or more action-methods, at one or more phases, before rendering a view.</li>
+	<li><strong>Managed parameter parsing</strong> -- HTTP parameters parsed from URLs are stored in managed beans, simply get a reference to your parameter bean for easy access from other Java classes.</li>
+	<li><strong>Navigation by ID</strong> -- Define your page IDs in one place, reference them easily in action-methods and components, using standard JSF navigation techniques.</li>
+	<li><strong>Integrated validation</strong> -- For URL and query-parameters, able to re-use existing JSF validator objects.</li>
+	<li><strong>Easy to configure</strong> -- Requires absolutely minimal configuration; may be enabled using XML or annotations.</li>
+</ol>
+</p>
+
+
+[info]View the <a href="http://ocpsoft.org/prettyfaces/docs" target="_self">documentation</a>.[/info]
+
+
+<h3>What makes PrettyFaces different:</h3>
+View a slideshare presentation on <a href="http://ocpsoft.org/prettyfaces/jsfsummit-2009-prettyfaces-makes-an-appearance/" target="_self">why URL Rewriting is important</a>, or a brief overview of the <a href="http://ocpsoft.org/uncategorized/jsf-get-bookmarkable-and-pretty-urls/">problems PrettyFaces solves</a>.
+
+<a name="in2minutes"></a>
+<center class="featured"><object width="640" height="505"><param name="movie" value="http://www.youtube.com/v/1kicjmLsN3w&hl=en_US&fs=1&color1=0x006699&color2=0x54abd6"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/1kicjmLsN3w&hl=en_US&fs=1&color1=0x006699&color2=0x54abd6" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="505"></embed></object><h3>Why not <a href="http://ocpsoft.org/prettyfaces/docs/">try PrettyFaces</a> now?.</h3></center>
+
+<h1><a name="FAQ"></a>FAQ:</h1>
+<ol>
+	<li><h3>Q. Can I use PrettyFaces to handle UrlRewriting for other resources on my server as well?</h3>
+	<p>
+	A. Yes. PrettyFaces still requires a configured JSF instance to function, but it can be used to map a URL to any resource in the Servlet Container - without invoking FacesServlet. Values will be injected into JSF beans as usual, but PrettyFaces Action methods will not trigger (since no JSF lifecycle executes for non-Faces requests.)
+	<p>
+	For example:
+[snippit filename="pretty-config.xml"]
+<pretty-config xmlns="http://ocpsoft.org/prettyfaces/3.3.3" 
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+               xsi:schemaLocation="http://ocpsoft.org/prettyfaces/3.3.3
+               http://ocpsoft.org/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.3.3.xsd">
+	<url-mapping id="login">
+		<pattern value="/login" />
+		<view-id value="/legacy/user/login.jsp" /> <!-- Non JSF View Id -->
+	</url-mapping>
+	<url-mapping id="register">
+		<pattern value="/register" />
+		<view-id value="/faces/user/register.jsf" /> <!-- JSF View Id -->
+	</url-mapping>
+</pretty-config>
+[/snippit]
+	</li>
+	
+	<li><h3>Q. Why do my Tomahawk / MyFaces components, or other 3rd party addons, break when I use PrettyFaces?</h3>
+	<p>
+	A. Since PrettyFaces intercepts mapped HttpRequests then forwards those requests to JSF, it is necessary to enable any additional filters between PrettyFaces and JSF to listen to Servlet Forwards. This is done in the <b>web.xml</b> deployment descriptor by adding the following dispatcher elements to any needed Filters:
+	<p>
+	For example:
+[snippit filename="web.xml"]
+<filter-mapping>
+	<filter-name>springSecurityFilterChain</filter-name>
+	<url-pattern>/*</url-pattern>
+	<dispatcher>FORWARD</dispatcher>
+	<dispatcher>REQUEST</dispatcher>
+</filter-mapping>
+[/snippit]
+	</li>
+	<li>
+	
+	<h3>Q. Why, when using MyFaces, am I getting a NullPointerException when I try to use normal faces-navigation?</h3>
+	<p>
+	A. Some MyFaces versions do not completely comply with the JSF specification, thus the ViewRoot is null when the request is processed. There is a <a href="http://groups.google.com/group/prettyfaces-users/browse_thread/thread/134228ec728edd24">patch/workaround</a>, which can be added to fix this issue. You must add this ViewHandler to your faces-config.xml.
+	</li>
+	
+	<li>
+	<h3>Q. Can I configure PrettyFaces via Annotations?</h3>
+	<p>
+	A. Yes! Thanks to Christian Kapolteth, PrettyFaces has Annotations support as of version 3.0.2-SNAPSHOT
+	</li>
+	
+	<li>
+	<h3>Q. How do I enable logging, so that I can tell what the heck is really going on?</h3>
+	<p>
+	A. Create or update your log4j.properties file with the following values:
+[snippit filename="log4j.properties"]
+### direct log messages to stdout ###
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target=System.out
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d{ABSOLUTE} %5p %c{1}:%L - %m%n
+
+log4j.rootLogger=warn, stdout
+
+### Log for OCPsoft
+log4j.logger.com.ocpsoft=info
+[/snippit] 
+	</li>
+	
+	<li>
+	<h3>Q. Can I map and process URLs that span a dynamic number of '/' characters?</h3>
+	<p>
+	A. Yes, please read <a href="http://ocpsoft.org/prettyfaces/docs/#customparsing">section 3.4</a> of the docs.
+	</li>
+	
+	<li>
+	<h3>Q. How do I save FacesMessage objects after performing a redirect or pretty:redirect?</h3>
+	<p>
+	A. You need to configure the optional MultiPageMessagesSupport PhaseListener (or something like it)
+
+[snippit filename="faces-config.xml"]
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="1.2">
+	<lifecycle>
+		<phase-listener>
+			com.ocpsoft.pretty.application.MultiPageMessagesSupport
+		</phase-listener>
+	</lifecycle>
+</faces-config>
+[/snippit]
+
+	See <a href="http://ocpsoft.org/java/persist-and-pass-facesmessages-over-page-redirects/">this article</a> for a full explanation of how this works.
+	</li>
+	
+	<li>
+	<h3>Q. Does PrettyFaces work on IBM's WebSphere?</h3>
+	<p>
+	A. Yes, but websphere requires a custom setting in order to behave like a sane server.
+	<a href='http://ocpsoft.org/wp-content/uploads/2009/08/filtercompat.gif'><img src="http://ocpsoft.org/wp-content/uploads/2009/08/filtercompat.gif" alt="WAS 6.1+ Filter Compatability" title="Filter-Compat-WAS61" width="500" height="239" class="aligncenter size-full wp-image-69" /></a>
+	</li>
+</ol>
+<br/><br/>

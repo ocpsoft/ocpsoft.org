@@ -1,0 +1,113 @@
+.categories ['JSF', 'JSF2', 'PrettyFaces']
+.dateCreated 20110119T10:27:51
+.link http://ocpsoft.org/java/jsf-java/how-to-modular-jsf-applications-with-cdi-and-prettyfaces/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/java/jsf-java/how-to-modular-jsf-applications-with-cdi-and-prettyfaces/
+.post_status publish
+.postid 1768
+.title How-to: Modular Java EE Applications with CDI and PrettyFaces
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug how-to-modular-jsf-applications-with-cdi-and-prettyfaces
+I was recently asked the question, "Is it possible to create a modular JSF application, where JAR-files act as plug-ins and allow xhtml views, images, css, navigation rules, and managed beans to be added as modules to the application?"
+
+The answer to this question is, "<strong>of course</strong>," but there is no pre-set way of accomplishing such a task, so you'll have to be a little creative. I've come up with a conceptual architecture that "would work," if properly implemented, but keep in mind that this is just something I threw together in a few minutes of thinking about the problem.
+<!--more-->
+<h2>What we need to accomplish our goal</h2>
+<span style="margin-left: 10px;">0. <a href="#gen">Generate a barebones Java EE web-application.</a></span><br/>
+Each module must have the ability to:
+<ol>
+	<li><a href="#xhtml">Package <code>.xhtml</code> views, CSS, JavaScript, and images</a></li>
+	<li><a href="#beans">Bundle and register Managed Beans</a></li>
+	<li><a href="#navigate">Add navigation rules</a></li>
+	<li><a href="#pretty">(Bonus) Add bookmark-able URLs for each module</a> </li>
+	<li><a href="#test">Include Unit & Integration tests</a></li>
+</ol>
+
+Firstly, most new technologies in the Java EE ecosystem support configuration of resources in JAR-files simply by adding a descriptor in "<code>jar:/META-INF/[web.xml, faces-config.xml, beans.xml]</code>" and so on. This means that all you need to do to bundle artifacts from the various specifications (JPA, JSF, EJB, CDI, and so on) is place a descriptor in the right spot; your artifacts will be discovered and included in the larger application. (<em>For more details on these descriptors, see <a href="http://ocpsoft.com/java/spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb/#config.modular">this post</a></em>.)
+
+To run your application with the least amount of effort, you should use a full Java EE Application Server such as <a href="http://www.jboss.org/jbossas">JBoss Application Server 6.0</a> (<a href="http://www.jboss.org/jbossas/downloads.html">download</a>,) since it comes pre-configured with JSF and all necessary Java EE modules for this architecture.
+
+<h2><a name="gen"></a>Getting started quickly with a Java EE 6 / JSF web-application</h2>
+First, we'll need a project with which to experiment, so to create a simple web-application that we can use as the basis for our concept, we can use <a href="http://community.jboss.org/people/lincolnthree/blog/2010/12/31/forge-100alpha1-kitten-released--rad-java">Seam Forge</a>: a next generation project generation and enhancement tool from <a href="http://www.jboss.org">JBoss</a>. With Forge you can have a web-application built in, literally, two command-line commands.
+
+<ol>
+	<li><a href="http://community.jboss.org/people/lincolnthree/blog/2010/12/31/forge-100alpha1-kitten-released--rad-java">Install and run Forge</a></li>
+	<li><literal>$ new-project --named {projectname} --topLevelPackage {com.yourpackage}</literal></li>
+	<li><literal>$ scaffold setup</literal></li>
+	<li><literal>$ build</literal></li>
+</ol>
+
+<div class="featured"><center><a href="http://seamframework.org/Documentation/SeamForge">Get Forge</a></center></div>
+
+<h2><a name="xhtml"></a>1. Package <code>.xhtml</code> views, CSS, JavaScript, and images</h2>
+Now that we have a simple web-application running with JSF, let's look at the first problem. How do we get JSF <code>.xhtml</code> files bundled in a JAR file? If we are using JSF 1.2, this article about <a href="http://ocpsoft.com/opensource/create-common-facelets-jar/">packaging Facelets in a JAR</a> file will come in handy, but if using JSF 2, then the hard part is already done for us - it's already supported!
+
+All files in <code>jar:/META-INF/resources/*</code> will automatically be made available to JSF as if they were in the /webapp/resources folder.
+
+We can even put Facelets (<literal>.xhtml</literal> files) themselves in the <code>jar:/META-INF/</code> folder, and they will be accessible as if they were in the main web-application itself.
+
+<h2><a name="beans"></a>2. Detect and register Managed Beans</h2>
+
+This part is simple. As mentioned in the same article, simply create an empty <code>jar:/META-INF/beans.xml</code>. This will denote your archive as a "beans archive", causing all beans in your JAR to be accessible to the CDI BeanManager / your application.
+
+<h2><a name="navigate"></a>3. Add navigation rules</h2>
+
+This part is also simple. JSF allows for the <literal>faces-config.xml</literal> file to be split into parts and automatically integrated/merged from multiple JAR files. This means all you need to do is create a <code>jar:/META-INF/faces-config.xml</code> file, which contains your navigation (and other) rules, and you'll see those configurations picked up by the application.
+
+<h2><a name="pretty"></a>4. (Bonus) Add bookmark-able URLs for each module</h2>
+
+This is the coolest part (in my opinion.) Not only can you add new JSF pages to your application, you can also ensure that those pages are accessible via bookmark-able URLs. This is done using [[PrettyFaces]], an open-source URL-rewrite filter tool created by OCPSoft and community.
+
+First, you should know that PrettyFaces was initially designed for JSF, but now functions within a pure servlet or Java EE environmenet - you no longer need JSF JAR files on your classpath.
+
+Second, you should know that like JSF, PrettyFaces allows for modular configuration, so all you need to do to add new URL-mappings to your application for each JAR is to create a <code>jar:/META-INF/pretty-config.xml</code> file which contains your new URL-mappings:
+
+<pre lang="xml">
+<pretty-config xmlns="http://ocpsoft.com/prettyfaces/3.2.0" 
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+               xsi:schemaLocation="http://ocpsoft.com/prettyfaces/3.2.0
+                                   		http://ocpsoft.com/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.2.0.xsd">
+   
+   <!-- Begin UrlMappings 
+      // These are examples of URL mappings, and should be customized for your application.
+
+      <url-mapping id="home"> 
+          <pattern value="/summary/" /> 
+          <view-id>/faces/module/summary.jsf</view-id>
+      </url-mapping> 
+      
+      <url-mapping id="store"> 
+          <pattern value="/detail/" /> 
+          <view-id>/faces/module/detail.jsf</view-id>
+      </url-mapping> 
+   
+   -->
+
+</pretty-config>
+</pre>
+
+Notice that the view-id defined in each URL-mapping is the location of your Facelet file in the <literal>META-INF</literal> folder contained within your module's JAR file. This is about as simple as it gets.
+
+For an extra kick, if you wanted to create a self-updating menu with links to your new modules  (a navigation area,) all you would need to do in your application is call:
+<pre lang="java">
+PrettyContext.getCurrentInstance(request).getConfig().getMappings();
+</pre>
+This will provide you a list of all URL-mappings in the application, at which point you can decide on a naming-standard which would enable you to identify individual modules that should be included in the navigation area, and create links accordingly.
+
+<div class="featured"><center><a href="http://ocpsoft.com/prettyfaces/">Get PrettyFaces</a></center></div>
+
+
+<h2><a name="test"></a>5. Include Unit & Integration tests</h2>
+For this topic, all I can really say is that <a href="http://www.jboss.org/arquillian">Arquillian, by JBoss</a> is your new best friend - this integration-testing framework brings full-scale web and Java EE testing to your fingertips, and it's almost as simple as writing a JUnit test; in fact, your tests will be written in JUnit.
+
+For an example of a working Arquillian Web-application test, you can inspect the PrettyFaces <a href="https://github.com/ocpsoft/prettyfaces/tree/master/tests-jsf2">JSF2-testing project</a>, which uses all of the concepts you would need to apply (Take a look at the <a href="https://github.com/ocpsoft/prettyfaces/blob/master/tests-jsf2/src/test/java/com/ocpsoft/pretty/faces/test/PrettyContextTest.java">PrettyContextTest</a>, in which case you would do something similar, but replace PrettyFaces with your JAR module in the <literal>MavenArtifactResolver</literal>.)
+
+<h2>Conclusion</h2>
+I hope this is enough to stimulate some thought. I have not been able to actually put this together myself, but in concept at least, there is nothing to stop one from creating a system like the one I have described. I'm sure there would be a few kinks, but this is what the power of Java EE has enabled us to do. A fully modular web-application with very little actual configuration. Just put files in the right place, and you're good to go. I'd be very interested to hear how people do, if anyone decides to give this a try. Please post your experiences below!

@@ -1,0 +1,217 @@
+.categories ['OpenSource', 'Rewrite']
+.dateCreated 20120329T00:44:55
+.link http://ocpsoft.org/opensource/secure-your-applications-url-based-attacks-are-real-and-dangerous/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/opensource/secure-your-applications-url-based-attacks-are-real-and-dangerous/
+.post_status publish
+.postid 4083
+.title Is your web application secure? HTTP attacks are real, and dangerous
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug secure-your-applications-url-based-attacks-are-real-and-dangerous
+[toc]
+
+According to a recent research paper by the Aspect Security Group, entitled <u>The Unfortunate Reality of Insecure Libraries</u>, "Eighty percent of the code in today’s applications comes from libraries and frameworks, but the risk of vulnerabilities in these components is widely ignored and under appreciated. A vulnerable library can allow an attacker to exploit the full privilege of the application, including accessing any data, executing transactions, stealing files, and communicating with the Internet. Organizations literally trust their business to the libraries they use."
+
+When validating user input from forms and exposed services, we often ignore the URL or think to ourselves, "<em>that</em> information is validated later, it'll be <em>fine</em>," but when hacks like the following start turning up - in common web-frameworks - it's time to start thinking seriously about URL validation. Fortunately, it's easy to accomplish using a number of methods, but first, let's look at how these attacks work.
+<!--more-->
+[info]You can <a href="https://www.aspectsecurity.com/blog/the-unfortunate-reality-of-insecure-libraries/" rel="nofollow">request a copy of the security research paper</a> from Aspect Security's website.[/info]
+
+If you look at the attacks sited as examples in the Aspect Security report, you'll see that both use the URL as the attack vector, or point of access, and both use the execution of <code>Runtime.getRuntime().exec("system command")</code>, which gives the ability to run any native system command available to the user under which the Java Virtual Machine (JVM) is running; once you are running code on the host system, as the article explains, the potential threat exists of losing control of the server entirely. The first example is Struts 2 - still a popular framework in many places.
+
+I found it rather interesting that two of the top three recent security exploits used web-application URLs as a vector of attack, and this came at a timely moment for me, the day I was to present "Security and Usability: URL-rewriting for the next-generation web-user" at the <a href="http://phillyjug.skookle.com/" target="_blank">Philadelphia Java User's Group</a>, a talk in which I discuss the vulnerabilities of URLs, and the risks of improper (or missing) URL validation. I quickly jumped to incorporate relevant pieces of information in my talk.
+
+<center><a class="noicon" href="http://ocpsoft.org/wp-content/uploads/2012/03/struts_security_risk.png">
+<img src="http://ocpsoft.org/wp-content/uploads/2012/03/struts_security_risk.png" alt="" title="struts_security_risk" width="100%" height="100%" class="alignnone size-full wp-image-4091" style="max-width: 800px"  />
+</a></center>
+
+The next example, surprisingly enough, is applications that use the Spring Expression Language (EL). I wouldn't be too shocked if this problem actually extends to most EL implementations at the time when this exploit was discovered. After doing a bit of digging, JBoss Seam suffered from a <a href="http://www.sans.org/newsletters/risk/display.php?v=10&i=17#11.19.8" target="_blank">similar vulnerability</a>, and has subsequently been updated to close the gap; I'm sure Spring has done the same, but there are still compromised versions of these frameworks running on live servers across the world.
+
+<center><a class="noicon" href="http://ocpsoft.org/wp-content/uploads/2012/03/spring_security_risk.png">
+<img src="http://ocpsoft.org/wp-content/uploads/2012/03/spring_security_risk.png" alt="" title="spring_security_risk" width="100%" height="100%" class="alignnone size-full wp-image-4092" style="max-width: 800px" />
+</a></center>
+
+The last vulnerability was related to <a href="http://cxf.apache.org/" target="_blank">Apache CXF</a>, a framework for creating flexible, you guessed it, mostly URL-based web-services. The advisory did not directly explain the vector for this exploit, but if anyone knows, I would love to hear how it worked. (Please add a comment!) 
+
+
+<h1> How can we protect ourselves? </h1>
+
+This leads to the obvious question: if the frameworks we are using may have inherent insecurities, how can we patch the holes and lock down a potentially vulnerable application? Also, how can we do this without modifying potentially sensitive application code or business logic? The answer is simple - we can apply validation at the URL level, either using Apache (or another Proxy-based solution,) or using a <a href="http://ocpsoft.org/rewrite/" title="URLRewriteFilter | Java | OpenSource | Security">URLRewriteFilter</a> such as [[Rewrite]], an open-source solution from OCPsoft.
+
+The principle is simple. If we scrub as many possible URLs in our application for characters that we are certain should never be used, then we can effectively reduce the risk that someone might be able to inject and execute code in our application. URLs are not the only vectors for attack, so we'll also take a look at how to secure additional forms of user input.
+
+<h1> Secure the URL </h1>
+For the following examples, we will assume that we already have the Rewrite framework installed in our application, but if you need to install it, it's as simple as adding one JAR file to your project: <a href="http://ocpsoft.org/rewrite/" title="URLRewriteFilter | Java | OpenSource">Install Rewrite</a>. Once this is done, we will start to craft our Security rules.
+
+[info]You can also use a URL-rewriting framework of your choice, but you will need to "convert" this configuration to your framework's configuration.[/info]
+
+The first thing we will do is ensure that all traffic to our website is blocked by Rewrite. This is done by adding a very simple rule, which intercepts traffic in the inbound (requested) direction, and asserts that the request must have come from an internal source (via a Servlet Forward,) otherwise the request will be blocked by returning the <code>HTTP 404 "Not found"</code> error code. We also set a low-enough priority so we can be certain that no other providers will execute first.
+
+[snippit filename="SecurityRewriteConfiguration.java"]
+
+public class SecurityRewriteConfiguration extends HttpConfigurationProvider
+{
+   @Override
+   public Configuration getConfiguration(ServletContext context)
+   {
+      return ConfigurationBuilder.begin()
+
+               /*
+                * Block any in-bound request not forwarded 
+                * from within the appication itself.
+                */
+               .defineRule()
+               .when(Direction.isInbound().andNot(DispatchType.isForward()))
+               .perform(SendStatus.error(404));
+   }
+
+   @Override
+   public int priority()
+   {
+      /*
+       * Providers with lower priority are executed first.
+       */
+      return -1000;
+   }
+
+}
+
+[/snippit]
+
+Simple enough. Now that we've blocked all external traffic to our site, we need to start allowing legitimate traffic back in; otherwise, our site will not be of much use to anyone. 
+
+We do this by creating a rule that inspects the inbound URLs and checks to make sure that only pre-approved characters are used - meaning we know what a secure URL should look like, and if it contains characters we've dubbed as "not secure", then we aren't going to accept it.
+
+You'll need to choose acceptable characters to meet your website's requirements, but if you are not doing anything to fancy with your URLs, then we can expect that only a reasonable few special characters will be required. 
+
+[snippit filename="SecurityRewriteConfiguration.java"]
+
+@Override
+public Configuration getConfiguration(ServletContext context)
+{
+   Constraint<String> selectedCharacters = new Constraint<String>() {
+      @Override
+      public boolean isSatisfiedBy(Rewrite event, 
+                            EvaluationContext context, String value)
+      {
+         return value.matches("[a-zA-Z0-9/:&?.-=_+]*");
+      }
+   };
+
+   return ConfigurationBuilder.begin()
+
+            .defineRule()
+            .when(Direction.isInbound()
+                     .andNot(DispatchType.isForward())
+                     .and(Path.captureIn("path"))
+                     .and(URL.captureIn("url")
+                         .where("url").constrainedBy(selectedCharacters)))
+            )
+            .perform(Forward.to("{path}"))
+
+            /*
+             * Block any in-bound request not forwarded by our previous rule.
+             */
+            .defineRule()
+            .when(Direction.isInbound().andNot(DispatchType.isForward()))
+            .perform(SendStatus.error(404));
+}
+
+[/snippit]
+
+Congratulations! We've now secured our URL paths from many types of malicious attacks including those used against Struts, Spring, and Seam. This is a valiant step forward, and it was as easy as 10-15 lines of code. We are, however, still missing an important part of the story.
+
+
+<h1>Secure all HTTP parameters</h1>
+
+The URL of our application may now be much more secure for GET requests and query-parameters, but we haven't done anything about our HTTP POST parameters. Without securing these, any inputs from HTML <code>&lt;form&gt;</code> will be vulnerable (or if people just start sending us random requests,) and it's easy to add this support using another few conditional statements in our configuration.
+
+We need only use the <code>RequestParameter</code> condition to inspect the value of any provided HTTP parameters (including query-string GET and form POST parameters.) Notice that we also use <code>.orNot(RequestParameter.exists("{}"))</code>, which ensures that having no parameters is still an acceptable scenario.
+
+[snippit filename="Add validation of HTTP parameters"]
+.defineRule()
+.when(Direction.isInbound()
+         .andNot(DispatchType.isForward())
+         .and(Path.captureIn("path"))
+         .and(URL.captureIn("url")
+                   .where("url").constrainedBy(selectedCharacters))
+
+         .and(RequestParameter.matchesAll("{name}", "{value}")
+                  .where("name").constrainedBy(selectedCharacters)
+                  .where("value").constrainedBy(selectedCharacters)
+                  .orNot(RequestParameter.exists("{}")))
+)
+.perform(Forward.to("{path}"))
+[/snippit]
+
+So... Coffee's still hot. What next?
+
+
+<h1>Customize the rules</h1>
+
+While this global rule may work for a large number of cases in our application, it's worth noting that you need not open up all URLs using a single rule. We could just as easily have defined custom rules to match certain or specific addresses in our application. For instance, if we want to allow more characters in a password field, we can add an additional rule, which only applies to our Login page, and opens up this functionality.
+
+[info]Notice how we have added the <code>.where("name").matches("(?!password).*")</code> statement in order to apply our constraints to all fields except the password, and we've only exposed this on POST requests, via the <code>.and(Method.isPost())</code> statement.[/info]
+
+[snippit filename="Exposing the login page form submission"]
+.defineRule()
+.when(Direction.isInbound()
+         .and(Method.isPost())
+         .andNot(DispatchType.isForward())
+         .and(Path.matches("/login"))
+
+         .and(RequestParameter.matchesAll("{name}", "{value}")
+                  .where("name").matches("(?!password).*").constrainedBy(selectedCharacters)
+                  .where("value").constrainedBy(selectedCharacters)
+                  .orNot(RequestParameter.exists("{}")))
+)
+.perform(Forward.to("/login"))
+[/snippit]
+
+However, in this scenario, it may actually be simpler just to write our own <code>Condition</code> to perform the restriction we want. Writing custom conditions is easy, and means that you have full control over the Rule matching algorithm.
+
+[snippit filename="Writing a custom Condition"]
+.and(new Condition() {
+   @Override
+   public boolean evaluate(Rewrite event, EvaluationContext context)
+   {
+      // TODO Return true if the condition is satisfied
+      return false;
+   }
+})
+[/snippit]
+
+But there's more...
+
+<h3 class="toc">Secure the HTTP headers</h3>
+If we really want to do our diligence, we also need to secure the HTTP headers as well - this can also be done using a URL-rewriting framework. It will look very similar to the way we secured HTTP request parameters.
+
+[snippit filename="Securing the HTTP headers"]
+.defineRule()
+.when(Direction.isInbound()
+         .and(Method.isPost())
+         .andNot(DispatchType.isForward())
+         .and(Path.captureIn("path"))
+
+         .and(Header.matchesAll("{name}", "{value}")
+                  .where("name").constrainedBy(selectedCharacters)
+                  .where("value").constrainedBy(selectedCharacters)
+                  .orNot(Header.exists("{}")))
+)
+.perform(Forward.to("{path}"))
+[/snippit]
+
+<h1>Conclusion</h1>
+Enough code, more talk. This proof of concept work shows how it is possible to secure, or at least improve upon the existing security of, existing Java web-applications. It also shows how a few simple rules can be used to facilitate securing many pages, or very specific pages, and the important thing to remember is that no matter what web-framework you are using - you can still add additional validation and security on top using URL-rewriting techniques.
+
+Keep in mind that you <b>should</b> implement security at all levels of your application. For securing your business methods, Apache DeltaSpike Security will be very helpful for CDI-based applications, Seam Security and Spring Security also have good solutions. Do not consider this article to be "the answer" for security. It is just one option, and one additional technique you can use to protect your sensitive applications and information.
+
+If you would like to learn more about the OCPsoft Rewrite framework, you can visit the <a href="http://ocpsoft.org/rewrite/" title="URLRewriteFilter | Java | OpenSource">project homepage</a>, or check out the sources on <a href="https://github.com/ocpsoft/rewrite">GitHub</a>. There are [[Calendar|Regular development meetings]] held every Monday at 2pm EST (GMT+5) on Google Hangout.
+
+<center><a href="http://ocpsoft.org/rewrite/" title="URLRewriteFilter | Java | Open-source"><img style="padding: 35px;" src="http://ocpsoft.org/wp-content/uploads/2011/08/rewrite-reflect-url3-signal-50.png" width="400" height="100" class="alignnone size-full wp-image-4070" /></a></center>

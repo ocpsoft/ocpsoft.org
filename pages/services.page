@@ -1,0 +1,92 @@
+.categories ['Uncategorized']
+.dateCreated 20081117T08:36:12
+.excerpt 
+.link http://ocpsoft.org/services/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 27
+.page_status publish
+.permaLink http://ocpsoft.org/services/
+.text_more 
+.title Services
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 5
+.wp_page_parent_id 0
+.wp_page_parent_title 
+.wp_page_template page-notitle.php
+.wp_password 
+.wp_slug services
+<center>
+<h2>Simpler is better.</h2><br/>
+
+<div class="featured">By <strong>streamlining</strong> user interactions, removing unnecessary noise and unwanted features, while still providing fully functional and technically superb products - <a href="http://ocpsoft.org/">OCPsoft</a> is an open-source software company dedicated toward creating software that will meet your technical and business needs.</div>
+
+</center>
+
+<p>Stay current on our open-source projects by subscribing to our [[calendar]] and attending a regularly scheduled development meeting; you may also view all of our <a href="https://github.com/ocpsoft">source code</a> via GitHub, or get more information on our project pages:</p>
+
+<!-- Begin banner -->
+<style type="text/css">
+.well {
+        background-color: #F5F5F5;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 4px 4px 4px 4px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+        min-height: 20px;
+        text-align: center;
+}
+</style>
+<style type="text/css">
+.well:hover {
+        background-color: #E5E5E5;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+}
+</style>
+<style type="text/css">
+.desc {
+        text-align: center;
+        font-size: .9em;
+        line-height: 1.3em;
+}
+</style>
+<style type="text/css">
+.product {
+}
+</style>
+
+<center>
+
+<table width="100%" cellspacing="25px;" style="margin-top: 20px; margin-bottom: 50px; max-width: 1024px;"><tr>
+
+<td class="well"><a href="http://ocpsoft.org/prettyfaces/" title="PrettyFaces URL Rewrite Filter"><img class="product" src="http://ocpsoft.org/wp-content/uploads/2012/01/prettyfaces-50.png" width="100%" /></a></td>
+
+<td class="well"><a href="http://ocpsoft.org/rewrite/" title="Java URL Rewrite Filter"><img class="product" src="http://ocpsoft.org/wp-content/uploads/2012/01/rewrite-50.png" width="100%" /></a></td>
+
+<td class="well"><a href="http://ocpsoft.org/socialpm/" title="Open Source Agile Project Management Software"><img class="product" src="http://ocpsoft.org/wp-content/uploads/2012/01/socialpm-50-center.png" width="100%" /></a></td>
+
+</tr><tr>
+
+<td class="desc">Convenient URL-rewriting for Servlet, Java EE, and Java Server Faces »</td>
+<td class="desc">Advanced URL-rewriting for Servlet, Java EE, and Web Frameworks »</td>
+<td class="desc">Open-source, Intuitive, Agile Project Management Platform »</td>
+
+</tr></table>
+</center>
+<!-- end banner -->
+
+<div class="featured">
+<div class="inside">
+
+<p>Please <a href="mailto:admin@ocpsoft.com">contact us</a> for more information.</p>
+
+
+<h3>Support</h3>
+If you are a [[SocialPM]], [[PrettyFaces]] or [[PrettyTime]] user, we provide support, custom integration, and enhancements. (You may also ask for public support on the [[Forums]].
+
+<h3>Consulting</h3>
+We support clients with needs for SocialPM, Java Server Faces (JSF), Java EE, CDI, Hibernate, PrettyFaces or PrettyTime consulting, but are always willing to help open-source developers as best we can, free of charge; open-source software makes the world go 'round.
+
+</div></div>

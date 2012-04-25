@@ -1,0 +1,44 @@
+.categories ['JSF', 'OpenSource', 'PrettyFaces', 'Releases']
+.dateCreated 20081208T17:00:59
+.link http://ocpsoft.org/opensource/prettyfaces-110-released/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords Java, JSF, OpenSource, PrettyFaces, Releases
+.permaLink http://ocpsoft.org/opensource/prettyfaces-110-released/
+.post_status publish
+.postid 30
+.title PrettyFaces 1.1.0 Released
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug prettyfaces-110-released
+A new release of the <a href="http://ocpsoft.com/prettyfaces" target="_self">PrettyFaces</a> JSF extension for Bookmarkable/Pretty URLs is now availible for download. This release includes several new features.<br/>
+<!--more-->
+<ul>
+	<li>Enhanced internal navigation/redirects. Returning “pretty:” from a JSF action method, or Pretty action method will cause a redirect to the current page. Effectively a refresh.</li>
+	<li>Added the &lt;pretty:link&gt; component.</li>
+	<li>Added attribute to Pretty action method configuration, allowing targeting of action methods to specific JSF phases in the lifecycle.</li>
+</ul>
+View the documentation here, for <a href="http://ocpsoft.com/prettyfaces#configuration" target="_self">PrettyFaces</a>.
+<p style="text-align: center;">----</p>
+PrettyFaces is an OpenSource JSF extension which enables creation of bookmarkable, pretty URLs made easy. Our goal was to solve this problem as simply as possible, while still enabling a useful set of functions such as: page-load actions, integration with faces navigation, dynamic view-id assignment, and managed parameter parsing. All of this without introducing unnecessary coupling.
+<a name="mailinglist"></a>
+<table style="padding: 5px;" border="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="padding-left: 5px"><strong>Subscribe to prettyfaces-users</strong></td>
+</tr>
+<form action="http://groups.google.com/group/prettyfaces-users/boxsubscribe">
+<tr>
+<td style="padding-left: 5px;">Email:
+
+<input name="email" type="text" /> <input name="sub" type="submit" value="Subscribe" /></td>
+</tr>
+</form>
+<tr>
+<td align="right"><a href="http://groups.google.com/group/prettyfaces-users">Visit this group</a></td>
+</tr>
+</tbody></table>

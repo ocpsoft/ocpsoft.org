@@ -1,0 +1,66 @@
+.categories ['Uncategorized']
+.dateCreated 20090912T08:31:58
+.excerpt 
+.link http://ocpsoft.org/prettyfaces/contributors/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 144
+.page_status publish
+.permaLink http://ocpsoft.org/prettyfaces/contributors/
+.text_more 
+.title Contributors / Get Involved
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 26
+.wp_page_parent_title PrettyFaces
+.wp_page_template default
+.wp_password 
+.wp_slug contributors
+<h3>Thank you to all of the people who have contributed to the PrettyFaces project! <a href="https://github.com/ocpsoft/prettyfaces/wiki/DeveloperGuide">Join the team, here!</a></h3>
+<br/>
+
+<div class="featured">
+
+<div class="inside">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NDDEKRHDMBTML">
+Like this project? <a href="https://github.com/ocpsoft/prettyfaces" title="PrettyFaces Source Code on GitHub" target="_blank">Contribute some code</a>, become <a href="http://ocpsoft.com/prettyfaces/powered/">powered by PrettyFaces</a> or make a donation to support us!  <b>&raquo;</b> <input type="image" style="float: right;" src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form></div>
+<p/>
+YourKit is kindly supporting open source projects with its full-featured Java Profiler. YourKit, LLC is the creator of innovative and intelligent tools for profiling Java and .NET applications. Take a look at YourKit's leading software products: <a href="http://www.yourkit.com/java/profiler/index.jsp">YourKit Java Profiler</a> and <a href="http://www.yourkit.com/.net/profiler/index.jsp">YourKit .NET Profiler</a>.
+<div class="inside">
+<ul>
+
+	<li><a target="_blank" href="http://chkal.blogspot.com/">Christian Kaltepoth</a> - @Annotations support for PrettyFaces - Community Leader - API architect - Most bugs fixed - Reference Documentation - Most valuable Forums member - Evangelist, speaker, presenter - Basically runs the project and is an amazing developer.</li>
+	<li>Maxim Manco - Seam beans support in JSF 1.2.x via Seam's @RequestParameter and #{named:bean.location} named path parameters ported from PrettyFaces 2.0.x</li>
+	<li>Aleksei Valikov - MyFaces and Advanced configuration support for splitting configurations across multiple files</li>
+	<li>Bram Van Dam - List[] parameters for pretty:link</li>
+	<li>Scott Carnett - provided a patch for pretty:link attributes writing "null" to the HTML output </li>
+	<li>Derek Hollis - Contributed the first pretty:link component</li>
+	<li><a target="_blank" href="http://dominikdorn.com/">Dominik Dorn</a> - fixed the faces-config.xml name attribute for JSF2</li>
+	<li>Stefan Tomm - Helped resolve the sporadic nullpointer issue</li>
+</ul>
+</div></div>
+
+[info]If you have an idea, and would like to <a href="https://github.com/ocpsoft/prettyfaces/wiki/DeveloperGuide">get involved</a>, please get the <a href="https://github.com/ocpsoft/prettyfaces">source code</a> and email the dev group![/info]<br/>
+
+<div class="featured">
+<form action="http://groups.google.com/group/prettyfaces-dev/boxsubscribe">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan='2' align="center"><strong>Subscribe to <a href="http://groups.google.com/group/prettyfaces-dev">prettyfaces-dev</a></strong></td>
+		</tr>
+		<tr>
+			<td align="right" width="45%"><label for="subeml2" style="color: #eee">Email:&nbsp;</label></td>
+			<td align="left"><input id="subeml2" name="email" size="18" type="text" /> <input name="sub" type="submit" value="Subscribe" /></td>
+		</tr>
+	</tbody>
+</table>
+</form>
+</div>

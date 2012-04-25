@@ -1,0 +1,178 @@
+.categories ['JSF2']
+.dateCreated 20120128T14:32:46
+.link http://ocpsoft.org/java/jsf2-java/server-side-action-methods-on-jsf-valuechange-events-using-ajax-listeners/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/java/jsf2-java/server-side-action-methods-on-jsf-valuechange-events-using-ajax-listeners/
+.post_status publish
+.postid 3140
+.title Server side action methods on JSF ValueChange events using AJAX listeners
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug server-side-action-methods-on-jsf-valuechange-events-using-ajax-listeners
+I'm about to show you a pattern that will make your heart sing. I have to thank <a href="https://twitter.com/#!/brianleathem" target="_blank">Brian Leathem</a> for his original idea to use CDI events in the ValueChangeListener, but when combined with a little <code>&lt;f:ajax&gt;</code> magic, there's almost no limit to what you can do without writing a single line of JavaScript. ValueChangeListeners are also the perfect opportunity to build an Event driven model into your application.
+<!--more-->
+The following example code was taken from our latest Project: [[SocialPM]], a budding Agile Project Management tool. The first problem that CDI events will help us with is the fact that in this loop, you may come to find find that you have no way of accessing the loop variable (in this case, 's') in your ValueChangeListener. CDI can help.
+
+The other issue that comes up as a minor inconvenience is not related to JSF, but is purely programming related. How would you track all of these changes in order to populate something like a status feed? You would have to add logic to each listener - this would increase complexity and make testing more difficult. So let's get started...
+
+<pre lang="xml">
+<ui:repeat value="#{stories.list}" var="s">
+   ...
+   <h:inputText id="priority" value="#{s.priority}" size="2" style="width: 20px;">
+       <f:valueChangeListener binding="#{storyPriorityChanged}"/>
+   </h:inputText>
+   ...
+</ui:repeat>
+</pre>
+
+<pre lang="java">@RequestScoped
+@Named("storyPriorityChanged")
+public class StoryPriorityChanged implements ValueChangeListener
+{
+   @Override
+   public void processValueChange(final ValueChangeEvent event) throws AbortProcessingException
+   {
+      if(...)
+      {
+         // do something with our event, but, we have no reference to '#{s]'
+         // only to the old and new values of '#{s.priority}'. We also need
+         // to integrate extra logic here in order to track our change events.
+      }
+   }
+}</pre>
+
+<h3>A ValueChangeListener will execute before data is populated in the Model</h3>
+And the ValueChange event is not an ActionEvent, so we cannot attach an <code>&lt;f:setPropertyActionListener&gt;</code> to set the value in a backing bean where we would be able to access it from a nested listener. There really should be an <code>&lt;f:setPropertyOnValueChangedListener&gt;</code>, and while we could write one ourselves, that would be somewhat inconvenient.
+
+Fortunately, there's a better way to do both of these things, and it all hinges on our friend CDI... Oh and <code>&lt;f:ajax&gt;</code> can help too. There are better ways to both make sure our loop instance variable is accessible, and also better ways to aggregate change events into a feed.
+
+<h3>A viable, reliable solution</h3>
+Our code looks something like this, and before you start worrying about the fact that you need to write "more" or "more complicated" Java code, I'll explain why this method actually loosens the coupling between your UI and your Model/Controller:
+
+Notice that we are using the same ValueChangeListener, and we are still not passing the value of 's', our Story, into the listener. We are going to add an AJAX <code>listener=""</code>, which will execute after our </code> tag, and it will be responsible for receiving our Story. The listener allows us to invoke any server-side EL method when the Ajax event occurs; Using EL 2.0, we can pass our <code>Story</code> 's' into the method as a parameter.
+
+<pre lang="xml">
+<ui:repeat value="#{stories.list}" var="s">
+   ...
+   <h:inputText id="priority" value="#{stories.current.priority}" class="span1">
+      <f:valueChangeListener binding="#{storyPriorityChanged}"/>
+      <f:ajax execute="@form" render="pr" listener="#{storyCommandListener.save(stories.current)}" />
+   </h:inputText>
+   ...	
+</ui:repeat>
+</pre>
+
+<h3>But we still don't have access to 's' in our ValueChangeListener, so what?</h3>
+This is where we need to pull out a few tricks from our CDI and Java Patterns playbook, so the first thing we need to do is re-think our strategy.
+
+We know that the ValueChangeListener will be executed before our AJAX listener, so we need a way of performing our value change logic without the <code>Story</code> 's'. Wait, how are we going to do that? The answer is our good friend the Command pattern.
+
+The <a href="http://en.wikipedia.org/wiki/Command_pattern" target="_blank">command pattern</a> "is a design pattern in which an object is used to represent and encapsulate all the information needed to call a method at a later time. This information includes the method name, the object that owns the method and values for the method parameters."
+
+We will combine the command pattern with CDI Events in order to pass this event to a listener which will later invoke all queued commands when we trigger it with our AJAX listener method. This also handles the problem of capturing our ValueChangeEvents so we can create our status feed. How? We'll get to that soon.
+
+Our updated ValueChangeListener looks like the code below. Notice how we are not actually performing the operation yet, we are simply storing all information that we will need to perform this operation at a later time, when we do have access to our <code>Story</code> 's'. Once we have prepared the <code>StoryCommand</code> instance, we will fire it as a CDI event, using the the built in injected <code>Event<StoryCommand> changeEvent</code> mechanism.
+
+<pre lang="java">@RequestScoped
+@Named("storyPriorityChanged")
+public class StoryPriorityChanged implements ValueChangeListener
+{
+   @Inject
+   private Event<StoryCommand> changeEvent;
+
+   @Override
+   public void processValueChange(final ValueChangeEvent event) throws AbortProcessingException
+   {
+      StoryCommand command = new StoryCommand() {
+
+         private final Integer oldVal = (Integer) event.getOldValue();
+         private final Integer newVal = (Integer) event.getNewValue();
+
+         @Override
+         public void perform(Story story)
+         {
+            if(...)
+            {
+               // perform some action with the values from our event
+            }
+         }
+      };
+
+      changeEvent.fire(command);
+   }
+}</pre> 
+
+The events fired by our ValueChanceListener are captured by a method which <code>@Observes StoryCommand command</code> events, and stores them in a list until we are ready to use them.
+
+The same class which observes these events is going to perform all queued commands when triggered by our AJAX listener: <code>listener="#{storyCommandListener.save(stories.current)}"</code>. Now that we have access to our <code>Story</code> 's', we can run each command passing in the <code>Story</code> on which it will operate.
+
+<pre lang="java">@Named
+@Stateless
+@RequestScoped
+public class StoryCommandListener
+{
+   @PersistenceContext
+   private EntityManager ss;
+
+   private final List<StoryCommand> commands = new ArrayList<StoryCommand>();
+
+   protected StoryCommandListener()
+   {}
+
+   public void capture(@Observes StoryCommand command)
+   {
+      this.commands.add(command);
+   }
+
+   @TransactionAttribute
+   public void save(Story s)
+   {
+      for (StoryCommand c : commands) {
+         c.perform(s);
+      }
+      em.save(s);
+   }
+}
+</pre>
+
+Just for Reference, this is what our <code>StoryCommand</code> class looks like:
+<pre lang="java">
+public abstract class StoryCommand
+{
+   public abstract void perform(Story story);
+}</pre>
+
+<h3>Problem solved</h3>
+We now have access to our <code>Story</code> object in the logic that needs to be executed, but why is this better than simply updating the database in our AJAX listener method itself? We could just do this, after all:
+
+<pre lang="xml">
+<ui:repeat value="#{stories.list}" var="s">
+   ...
+   <h:inputText id="priority" value="#{stories.current.priority}" class="span1">
+      <f:ajax execute="@form" render="pr" listener="#{storyCommandListener.save(stories.current)}" />
+   </h:inputText>
+   ...
+</ui:repeat>
+</pre>
+
+<h3>Status updates</h3>
+When you want to log change events into a notification feed as we are doing in [[SocialPM]], this is where our new pattern really starts to shine. 
+
+It is easier to have a second <code>@Observes</code> method (below) that creates a status update when users perform operations, as opposed to integrating the notification service with every method call (i.e. adding code to each ValueChangeListener.) In the end, it is a trade-off, but the real benefit is that this approach, using AJAX listeners and CDI events is a quick, reliable, and <i>decoupled</i> way to extend functionality to your JSF user interfaces.
+
+<pre lang="java">
+   public void capture(@Observes StoryCommand command)
+   {
+      // update status feed with the User, and the type of changes he/she made.
+      notifications.updateStatus(user, command.getType());
+   }
+</pre>
+
+Cheers! If you want to check out more of this type of code in action, grab the <a href="https://github.com/ocpsoft/socialpm/" target="_blank">SocialPM Source Code</a> on GitHub, and give us a shout. We'd love to have some more hands in this project!
+</pre>

@@ -1,0 +1,414 @@
+.categories ['Uncategorized']
+.dateCreated 20090616T18:22:18
+.excerpt 
+.link http://ocpsoft.org/prettytime/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 60
+.page_status publish
+.permaLink http://ocpsoft.org/prettytime/
+.text_more 
+<ol>
+	<li><a href="#basic">Basic use in a Java App</a><br /></li>
+	<li><a href="#i18n">i18n support (contributed by Thomas Weitzel)</a><br /></li>
+	<li><a href="#customunit">Creating a custom TimeUnit</a><br /></li>
+	<li><a href="#jsf">Using PrettyTimeConverter in JSF</a><br/></li>
+	<li><a href="#examples">Examples using JUnit</a></li>
+</ol>
+
+
+
+<h2 class="toc">Installation</h2><a href="#configuration"></a>
+Extract necessary JAR files into your <code>/WEB-INF/lib</code> directory. This step is pretty straight-forward, right? Or include a maven dependency in your pom.xml (optional)
+
+[snippit filename="/pom.xml"]
+<dependency>
+  <groupId>org.ocpsoft.prettytime</groupId>
+  <artifactId>prettytime</artifactId>
+  <version>1.0.8.Final</version>
+</dependency>
+[/snippit]
+
+
+
+
+<h2 class="toc">Basic use in a Java Application</h2><a name="basic"></a>
+
+<p>PrettyTime, by default, uses the current time as the point of reference (reference time) for calculating the elapsed, or remaining time to the Date argument.</p>
+
+
+[snippit filename="BasicJavaApp.java"]
+import java.util.Date;
+import org.ocpsoft.pretty.time.PrettyTime;
+
+public class BasicJavaApp
+{
+	public static void main(String[] args) 
+	{
+		PrettyTime p = new PrettyTime();
+		System.out.println(p.format(new Date()));
+		//prints: “right now”
+	}
+}
+[/snippit]
+
+<h4>See below for more <a href="#examples">examples</a> using JUnit.</h4>
+<p/><br/>
+
+
+<h2 class="toc">i18n and multiple-languages support</h2><a name="i18n"></a>
+
+<p>PrettyTime now supports internationalization via resource bundles. Simply place an appropriate Resources_**.properties bundle on the classpath: <b>org.ocpsoft.pretty.time.i18n</b>, then set the desired Locale into your PrettyTime object. <span class="faded">(contributed by Thomas Weitzel)</span></p>
+
+<p class="tip alert"><span>If you create a new Locale resource bundle for PrettyTime, please <a href="https://github.com/ocpsoft/prettytime" title="Fork PrettyTime on GitHub" target="_blank">fork the project</a>, and submit a pull request.</span></p>
+
+<h4>Locales with built-in support:</h4>
+<ul>
+	<li>Bulgarian - BG: <span class="faded">Марио Георгиев</span></li>
+	<li>Chinese - ZH_CN: <span class="faded"">陈正华</span></li>
+	<li>Croatian - Miroslav Rešetar</li>
+	<li>Dutch - NL: <span class="faded">Bram Van Dam</span></li>
+	<li>English - DEFAULT</li>
+	<li>Estonian - Matti Jagula</li>
+	<li>French - FR: <span class="faded">Eric Palpacuer</span></li>
+	<li>German - DE: <span class="faded">Thomas Weitzel</span></li>
+	<li>Hungarian - Balázs Németh</li>
+	<li>Italian - IT: <span class="faded">Mirco Attocchi</span></li>
+	<li>Norwegian - Magnus Byrkjeflot - <a href="http://www.mylog.no">www.mylog.no</a></li>
+	<li>Polish - Upender Gilakathula</li>
+	<li>Portugese - PT: <span class="faded">Gustavo Ehrhardt</span></li>
+	<li>Romanian - Upender Gilakathula</li>
+	<li>Spanish - ES: <span class="faded">Bruno Resano</span></li>
+	<li>Slovenian- SL: <span class="faded">Uros Majeric</span></li>
+	<li>Turkish - Halil</li>
+	<li>Vientamese - Xuân Tính - <a href="http://www.tinhtruong.info/2010/06/vietnamese-resource-bundle-for.html">Blog</a></li>
+</ul>
+
+[snippit filename="Basic_i18n.java"]
+import java.util.Date;
+import java.util.Locale;
+
+import org.ocpsoft.pretty.time.PrettyTime;
+
+public class Basic_i18n
+{
+    public static void main(final String[] args)
+    {
+        PrettyTime p = new PrettyTime(new Locale("de"));
+        System.out.println(p.format(new Date()));
+    }
+}
+[/snippit]
+
+
+
+
+<h2 class="toc">Creating a custom ResourceBundle</h2>
+
+<p class="tip alert"><span>You can find full examples of resource bundles packaged inside pretty-time.jar. Also, if you create a new Locale resource bundle for PrettyTime, please <a href="https://github.com/ocpsoft/prettytime" title="Fork PrettyTime on GitHub" target="_blank">fork the project</a>, and submit a pull request.</span></p>
+
+[snippit filename="org/ocpsoft/pretty/time/i18n/Resources_de.java"]
+package org.ocpsoft.pretty.time.i18n;
+
+import java.util.ListResourceBundle;
+
+public class Resources_de extends ListResourceBundle
+{
+    private static final Object[][] CONTENTS = new Object[][] {
+                                  { "CenturyPattern", "%n %u" },
+                                  { "CenturyFuturePrefix", "In " },
+                                  { "CenturyFutureSuffix", "" },
+                                  { "CenturyPastPrefix", "Vor " },
+                                  { "CenturyPastSuffix", "" },
+                                  { "CenturyName", "Jahrhundert" },
+                                  { "CenturyPluralName", "Jahrhunderten" }
+                                  //...
+                                  };
+    }
+
+    @Override
+    protected Object[][] getContents()
+    {
+        return CONTENTS;
+    }
+}
+[/snippit]
+<p/><br/>
+
+
+
+
+
+<h2 class="toc">Creating a custom TimeUnit:</h2><a name="customunit"></a>
+
+<p><code>TimeUnits</code> are the units of measure in PrettyTime. They can be as long or as short as desired, and can be formatted into any necessary pattern. All that needs to be done is to implement the <code>TimeUnit</code> interface, and provide a default <code>TimeFormat</code></p>
+
+[snippit filename="Month.java"]
+package org.ocpsoft.pretty.time.units;
+
+import org.ocpsoft.pretty.time.BasicTimeFormat;
+import org.ocpsoft.pretty.time.TimeFormat;
+import org.ocpsoft.pretty.time.TimeUnit;
+
+public class Month implements TimeUnit
+{
+    private static final TimeFormat defaultFormat = new BasicTimeFormat().setPattern("%n %u").setPastSuffix(" ago")
+            .setFutureSuffix(" from now");
+
+    private TimeFormat format = defaultFormat;
+    private long maxQuantity = 0;
+    private final long millisPerUnit = 2629743830L;
+    private String name = "month";
+    private String pluralName = "months";
+    
+    /* getters and setters */
+}
+[/snippit]
+
+<p><code>TimeFormat</code> is also simple -- and is the core of the Formatting platform.</p>
+
+[snippit filename="TimeFormat.java"]
+package org.ocpsoft.pretty.time;
+
+public interface TimeFormat
+{
+    /**
+     * Given a populated Duration object. Apply formatting and output the
+     * result.
+     */
+    public abstract String format(final Duration duration);
+}
+[/snippit]
+
+<p>See BasicTimeFormat for an implementation example using regular expressions</p>
+<br/>
+
+
+<h2 class="toc">JavaServer Faces support via PrettyTimeConverter</h2><a name="jsf"></a>
+
+<p>PrettyTime includes a JSF Converter for easy output formatting. No additional configuration is required to use this object, since PrettyTime includes its own <code>META-INF/faces-config.xml</code> -- Just include the PrettyTime jar file or dependency on your classpath.</p>
+
+[snippit filename="example.xhtml"]
+<h:outputText value="#{exampleBean.futureDate}">
+	<f:converter converterId="org.ocpsoft.PrettyTimeConverter"/>
+</h:outputText>
+[/snippit]
+
+<p>In this example, futureDate must be a valid java.util.Date object.</p>
+<br/>
+
+
+<h2 class="toc">Examples using JUnit:</h3><a name="examples"></a>
+
+<p>See below for creating custom time units and formats:</p>
+
+[snippit filename="PrettyTimeTest.java" label="View complete file" href="https://github.com/ocpsoft/prettytime/blob/master/src/test/java/org/ocpsoft/pretty/time/PrettyTimeTest.java"]
+package org.ocpsoft.pretty.time;
+
+import static org.junit.Assert.*;
+
+import java.text.SimpleDateFormat;
+import java.util.*;
+import org.junit.*;
+import org.ocpsoft.pretty.time.*;
+
+public class PrettyTimeTest
+{
+
+   @Test
+   public void testRightNow() throws Exception
+   {
+      PrettyTime t = new PrettyTime();
+      assertEquals("moments from now", t.format(new Date()));
+   }
+
+   @Test
+   public void testMinutesFromNow() throws Exception
+   {
+      PrettyTime t = new PrettyTime(new Date(0));
+      assertEquals("12 minutes from now", t.format(new Date(1000 * 60 * 12)));
+   }
+
+   @Test
+   public void testHoursFromNow() throws Exception
+   {
+      PrettyTime t = new PrettyTime(new Date(0));
+      assertEquals("3 hours from now", t.format(new Date(1000 * 60 * 60 * 3)));
+   }
+
+   @Test
+   public void testDaysFromNow() throws Exception
+   {
+      PrettyTime t = new PrettyTime(new Date(0));
+      assertEquals("3 days from now", t.format(new Date(1000 * 60 * 60 * 24 * 3)));
+   }
+
+   @Test
+   public void testWeeksFromNow() throws Exception
+   {
+      PrettyTime t = new PrettyTime(new Date(0));
+      assertEquals("3 weeks from now", t.format(new Date(1000 * 60 * 60 * 24 * 7 * 3)));
+   }
+
+   @Test
+   public void testMonthsFromNow() throws Exception
+   {
+      PrettyTime t = new PrettyTime(new Date(0));
+      assertEquals("3 months from now", t.format(new Date(2629743830L * 3L)));
+   }
+
+   // ... and so on
+
+   /*
+    * Past
+    */
+   @Test
+   public void testMomentsAgo() throws Exception
+   {
+      PrettyTime t = new PrettyTime(new Date(6000));
+      assertEquals("moments ago", t.format(new Date(0)));
+   }
+
+   @Test
+   public void testMinutesAgo() throws Exception
+   {
+      PrettyTime t = new PrettyTime(new Date(1000 * 60 * 12));
+      assertEquals("12 minutes ago", t.format(new Date(0)));
+   }
+
+   @Test
+   public void testCenturiesAgo() throws Exception
+   {
+      PrettyTime t = new PrettyTime(new Date(3155692597470L * 3L));
+      assertEquals("3 centuries ago", t.format(new Date(0)));
+   }
+
+   // ...
+
+
+   /*
+    * Format duration lists
+    */
+   @Test
+   public void testFormattingDurationListInThePast() throws Exception
+   {
+      PrettyTime t = new PrettyTime(new Date(1000 * 60 * 60 * 24 * 3 + 1000 * 60 * 60 * 15 + 1000 * 60 * 38));
+      List<Duration> durations = t.calculatePreciseDuration(new Date(0));
+      assertEquals("3 days 15 hours 38 minutes ago", t.format(durations));
+   }
+
+   @Test
+   public void testFormattingDurationListInTheFuture() throws Exception
+   {
+      PrettyTime t = new PrettyTime(new Date(0));
+      List<Duration> durations = t.calculatePreciseDuration(new Date(1000 * 60 * 60 * 24 * 3 + 1000 * 60 * 60 * 15
+               + 1000 * 60 * 38));
+      assertEquals("3 days 15 hours 38 minutes from now", t.format(durations));
+   }
+
+   @Test
+   public void testSetLocale() throws Exception
+   {
+      PrettyTime t = new PrettyTime(new Date(315569259747L * 3L));
+      assertEquals("3 decades ago", t.format(new Date(0)));
+      t.setLocale(Locale.GERMAN);
+      assertEquals("vor 3 Jahrzehnten", t.format(new Date(0)));
+   }
+
+   SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+
+   // Stores current locale so that it can be restored
+   private Locale locale;
+
+   // Method setUp() is called automatically before every test method
+   @Before
+   public void setUp() throws Exception
+   {
+      locale = Locale.getDefault();
+      Locale.setDefault(Locale.ROOT);
+   }
+
+   // Method tearDown() is called automatically after every test method
+   @After
+   public void tearDown() throws Exception
+   {
+      Locale.setDefault(locale);
+   }
+
+}
+
+[/snippit]
+<br/>
+.title PrettyTime
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 3
+.wp_page_parent_id 0
+.wp_page_parent_title 
+.wp_page_template page-notitle.php
+.wp_password 
+.wp_slug prettytime
+<center><img src="http://ocpsoft.org/wp-content/uploads/2012/04/prettytime-center-compressed.png" alt="" title="prettytime-center-compressed" width="378" height="92" class="alignnone size-full wp-image-4461" /></center>
+
+<h2 style="margin-top: 15px;">Convert elapsed timestamps, like, "in 3 minutes!"</h2>[toc][/toc]
+
+<p>PrettyTime is an OpenSource time formatting library. Completely customizable, PrettyTime creates human readable, relative timestamps like those seen on Digg, Twitter, and Facebook. It's simple, get started "right now!" and in over <a href="#i18n">18 languages</a>!</p>
+
+<p>See also: <a target="_blank" href="http://grails.org/plugin/pretty-time">PrettyTime Grails Plug-in</a>, <a href="http://www.ke-cai.net/2010/03/formatting-time-with-prettytime-jsp-tag.html" target="_blank">PrettyTime with JSP</a>.</p>
+
+<p style="margin-bottom: 10px; margin-top: 15px;">
+<table class="featured" border="0" width="100%">
+<tbody>
+<tr>
+<td width="50%">
+
+<h3 style="font-size: 140%; margin-bottom: 5px;" class="toc">Downloads: ↓ (APL)</h3>
+
+<p style="padding-left: 30px;"><strong>1.0.8.Final:</strong> <a href="http://ocpsoft.org/repository/org/ocpsoft/prettytime/prettytime/1.0.8.Final/prettytime-1.0.8.Final.jar">jar</a>, <a href="http://ocpsoft.org/repository/org/ocpsoft/prettytime/prettytime/1.0.8.Final/prettytime-1.0.8.Final-sources.jar">src</a></p>
+<p style="padding-left: 30px;"><a href="http://ocpsoft.org/repository/org/ocpsoft/prettytime/prettytime/">All Downloads / Maven Repo</a></p><p style="padding-left: 30px;"><a href="https://github.com/ocpsoft/prettytime">Version control repository</a></p>
+
+<h4 style="padding-left: 30px; margin-top: 10px; margin-bottom: 5px;">Dependencies:</h4>
+
+<p style="padding-left: 30px;">Java 5.0 and up</p>
+
+<h4 style="margin-top: 10px;"><strong>New features:</strong></h4>
+
+Support for 18 <a href="#i18n">built-in languages</a>! <br/>Extendable language bundles.</td>
+<td style="text-align: justify; text-justify: newspaper">Please <a href="https://github.com/ocpsoft/prettytime/issues/new" target="_blank">open an issue</a> if you have any suggestions, or any difficulties.
+
+<h3 style="margin-top: 10px"><a href="#docs">Get started now!</a></h3><br/>
+
+<div class="inside">
+<h2>Need help? Want to get involved?</h2>
+
+Ask a question in the <a href="http://ocpsoft.org/support/forum/prettytime-users">forums</a>, 
+view the <a href="#docs">documentation</a>, get the <a href="https://github.com/ocpsoft/prettytime">source</a>, and fork us on <a href="https://github.com/ocpsoft/prettytime" title="Fork us on GitHub!" target="_blank">GitHub</a>!
+</div>
+
+</td></tr></tbody></table>
+
+<p class="tip alert"><span>Follow <a href="http://twitter.com/ocpsoft">@ocpsoft</a> and <a href="http://twitter.com/lincolnthree">@lincolnthree</a> on Twitter.</span></p>
+
+
+<br/>
+
+
+
+<h1>Features:</h1>
+<ol>
+	<li>Generate human-readable timestamps like, "right now", "2 days ago", or "3 months from now"</li>
+	<li>Simple single interface - easy to learn.</li>
+	<li>Entirely customizable. Provide your own TimeUnit and TimeFormat objects for complete control.</li>
+	<li>Provided integration for the JSF web-application framework</li>
+</ol>
+(<a href="https://github.com/ocpsoft/rewrite">Fork us on GitHub</a> and send pull requests with support for other frameworks!)
+<a name="docs"></a>
+
+
+
+
+<h1>Documentation:</h1>
+
+Using PrettyTime is simple.

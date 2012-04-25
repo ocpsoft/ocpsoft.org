@@ -1,0 +1,70 @@
+.categories ['Uncategorized']
+.dateCreated 20091029T15:53:37
+.excerpt 
+.link http://ocpsoft.org/prettyfaces/powered/
+.mt_allow_comments 1
+.mt_allow_pings 0
+.page_id 226
+.page_status publish
+.permaLink http://ocpsoft.org/prettyfaces/powered/
+.text_more 
+.title Powered By PrettyFaces
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 26
+.wp_page_parent_title PrettyFaces
+.wp_page_template default
+.wp_password 
+.wp_slug powered
+<p>A list of people, companies, and sites currently using PrettyFaces. (<a href="mailto:admin@ocpsoft.org">Email us</a> to have your link & logo added.) - Note, you do not need to "badge" your product in order to be listed.</p>
+
+<ul class="featured" style="padding: 15px;">
+
+<li><table valign="middle" cellspacing="10" cellpadding="10" width="100%"><tr><td><a href="http://scrumshark.com/" target="_blank"><img src="http://ocpsoft.org/wp-content/uploads/2009/10/ss.png" alt="ScrumShark - Online Agile Project Management Tools" title="ScrumShark - Online Agile Project Management Tools" width="200" height="132" class="alignleft size-full wp-image-300" /></a></td><td align="right">ScrumShark - Online Agile Project Management Tools</td></tr></table></li>
+
+
+
+
+<li><table valign="middle" cellspacing="10" cellpadding="10" width="100%"><tr><td><a href="http://www.eatclick.com.br/" target="_blank"><a href="http://www.eatclick.com.br/"><img src="http://ocpsoft.org/wp-content/uploads/2009/10/eatclick_logo.png" alt="" title="eatclick_logo" width="147" height="95" class="alignnone size-full wp-image-1829" /></a></td><td align="right">EatClick - Restaurants and Cuisine</td></tr></table></li>
+
+<li><table valign="middle" cellspacing="10" cellpadding="10" width="100%"><tr><td><a href="http://www.funeraldirectorslife.com/" target="_blank"><img src="http://ocpsoft.org/wp-content/uploads/2009/10/fdlic.png" alt="" title="FDLIC" width="229" height="52" class="alignnone size-full wp-image-779" /></a></td><td align="right">Funeral Directors Life Insurance Company</td></tr></table></li>
+
+<li><table valign="middle" cellspacing="10" cellpadding="10" width="100%"><tr><td><a href="http://credit.com/affiliate" target="_blank"><img src="http://ocpsoft.org/wp-content/uploads/2009/10/credit_dot_com.png" alt="" title="credit_dot_com" width="197" height="76" class="alignnone size-full wp-image-978" /></a></td><td align="right">Credit.com - Affiliate Marketing Program / Widgets / Tools </td></tr></table></li>
+
+<li><table valign="middle" cellspacing="10" cellpadding="10" width="100%"><tr><td><a href="http://parseint.com.br" target="_blank"><img src="http://ocpsoft.org/wp-content/uploads/2009/10/logo_parseint.png" alt="ParseInt :: A web and mobile software development company." title="" class="alignleft size-full wp-image-299" /></a></td><td align="right">A web and mobile software development company.</td></tr></table></li>
+
+<li><table valign="middle" cellspacing="10" cellpadding="10" width="100%"><tr><td><a href="http://oneview.de" target="_blank"><img src="http://ocpsoft.org/wp-content/uploads/2009/10/oneview.png" alt="OneView.com - Human Powered Bookmarking &amp; Search" title="OneView.de - Human Powered Bookmarking &amp; Search" width="200" height="143" class="alignleft size-full wp-image-299" /></a></td><td align="right">OneView.de - Human powered search & social bookmarking. </td></tr></table></li>
+
+<li><table valign="middle" cellspacing="10" cellpadding="10" width="100%"><tr><td><img src="http://ocpsoft.org/wp-content/uploads/2009/10/question.png" alt="Your company here." title="Your company here." width="128" height="128" class="alignleft size-full wp-image-286" /></td><td align="right">Your company here. (<a href="mailto:admin@ocpsoft.org">Email us</a> to have your link & logo added.)</td></tr></table></li>
+
+</ul>
+
+<p>Are you using PrettyFaces? ... Help support our project by placing a "Powered by PrettyFaces" badge on your product:</p>
+
+<div class="featured"><div class="inside">
+<h3>Small:</h3>
+<p><a href="http://ocpsoft.org/prettyfaces/" target="_blank"  title="JSF 2 | Servlet | Java EE | URLRewrite | URL Rewrite Filter | Bookmarks | OcpSoft"><img src="http://ocpsoft.org/wp-content/uploads/2009/10/poweredby-prettyfaces-small.png" height="15" width="94"/></a></p>
+
+<pre lang="text">
+<a href="http://ocpsoft.org/prettyfaces/" target="_blank"  
+title="JSF 2 | Servlet | Java EE | URLRewrite | URL Rewrite Filter | Bookmarks | OcpSoft">
+<img src="http://ocpsoft.org/wp-content/uploads/2009/10/poweredby-prettyfaces-small.png" 
+height="15" width="94"/>
+</a>
+</pre>
+
+
+<h3>Large:</h3>
+<p><a href="http://ocpsoft.org/prettyfaces/" target="_blank" title="JSF 2 | Servlet | Java EE | URLRewrite | URL Rewrite Filter | Bookmarks | OcpSoft"><img src="http://ocpsoft.org/wp-content/uploads/2009/10/poweredby-prettyfaces-large.png" height="45" width="285"/></a></p>
+
+<pre lang="text">
+<a href="http://ocpsoft.org/prettyfaces/" target="_blank" 
+title="JSF 2 | Servlet | Java EE | URLRewrite | URL Rewrite Filter | Bookmarks | OcpSoft"> 
+<img src="http://ocpsoft.org/wp-content/uploads/2009/10/poweredby-prettyfaces-large.png"
+height="45px" width="285px"/> 
+</a>
+</pre>
+</div></div>

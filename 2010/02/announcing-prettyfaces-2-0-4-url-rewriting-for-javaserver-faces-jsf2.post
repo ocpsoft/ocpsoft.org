@@ -1,0 +1,56 @@
+.categories ['OpenSource', 'PrettyFaces']
+.dateCreated 20100219T17:31:15
+.link http://ocpsoft.org/opensource/announcing-prettyfaces-2-0-4-url-rewriting-for-javaserver-faces-jsf2/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/opensource/announcing-prettyfaces-2-0-4-url-rewriting-for-javaserver-faces-jsf2/
+.post_status publish
+.postid 1041
+.title Announcing - PrettyFaces 2.0.4: URL Rewriting for JSF 2.0
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug announcing-prettyfaces-2-0-4-url-rewriting-for-javaserver-faces-jsf2
+<div class="featured">
+<center>We are <strong>proud</strong> to introduce version the 2.0.4 series of <a href="http://ocpsoft.com/prettyfaces/" title="SEO | Dynamic Parameters | Bookmarks | Navigation | JSF | JSF2 | UrlRewrite">PrettyFaces</a>:</center>
+</div>
+<!--more-->
+<h3>Add PrettyFaces to an existing JSF2 application less than 5 minutes:</h3>
+
+<ul>
+	<li><strong>Non-invasive!</strong> - never change your application internals, simply lay PrettyFaces on to an existing application.</li>
+
+	<li><strong>Zero configuration</strong>* in a Servlet 3.0 environment - PrettyFaces core classes are automatically registered with the servlet container and JavaServer Faces. (<em>No need to modify web.xml!</em>)</li>
+
+	<li><strong>Rapid development</strong> via automatic configuration reloading (when java.faces.PROJECT_STAGE = Development)</li>
+</ul>
+
+
+<ul>
+	<li><strong>Custom Inbound/outbound URL rewriting rules</strong> - with built in support for canonicalization such as appending or removing trailing slashes, lowercasing, custom rewrites, and more.</li>
+
+	<li><strong>Enhanced SEO and Rewriting support</strong> - including the ability to choose 301, 302, or internal redirects.</li>
+
+	<li><strong>Outbound URL mapping rewriting</strong> - removes the need for &lt;pretty:link&gt; now &lt;h:link&gt; can be used to generate pretty, SEO-friendly URLs.</li>
+
+	<li><strong>Named pattern / path-parameters</strong> - for integration with JSF2 <f:viewParam> and non-JSF applications - not all applications support EL, but they all understand ServletRequest.getParameter(...)</li>
+
+</ul>
+
+<div class="featured"><center>Read the <a target="_blank" href="http://ocpsoft.com/wp-content/uploads/2010/02/prettyfaces-2.0.4-reference.pdf">reference guide</a>.
+</center></div>
+
+<h3>Maven Dependency</h3>
+<pre lang="xml">
+<dependency>
+	<groupId>com.ocpsoft</groupId>
+	<artifactId>ocpsoft-pretty-faces</artifactId>
+	<version>2.0.4</version>
+</dependency>
+</pre>
+
+<center class="featured"><object width="640" height="505"><param name="movie" value="http://www.youtube.com/v/1kicjmLsN3w&hl=en_US&fs=1&color1=0x006699&color2=0x54abd6"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/1kicjmLsN3w&hl=en_US&fs=1&color1=0x006699&color2=0x54abd6" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="505"></embed></object><h3>Why not try <a href="http://ocpsoft.com/prettyfaces/" title="SEO | Dynamic Parameters | Bookmarks | Navigation | JSF | JSF2 | UrlRewrite">PrettyFaces</a> now?.</h3></center>

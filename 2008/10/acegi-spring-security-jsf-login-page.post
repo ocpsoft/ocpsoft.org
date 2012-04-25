@@ -1,0 +1,275 @@
+.categories ['Java', 'JSF']
+.dateCreated 20081009T17:35:33
+.link http://ocpsoft.org/java/acegi-spring-security-jsf-login-page/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords Java, JSF, Security, Spring
+.permaLink http://ocpsoft.org/java/acegi-spring-security-jsf-login-page/
+.post_status publish
+.postid 16
+.title Acegi/Spring Security Integration - JSF Login Page
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug acegi-spring-security-jsf-login-page
+<h2>Tutorials - What a nightmare</h2>
+Everyone seems to be going through hell to get a fully functional JSF login page working with Spring Security (formerly Acegi,) and yes, I did too, but there's an <strong>EASY</strong> way to make this happen. And get this:
+<ul>
+	<li>It takes just five clear and well written lines of Java code.</li>
+</ul>
+First, the solution. Afterwards, the dirty details. (Spring 2.5.2 was used for this example, but this documentation is still relevant for Spring 3.x)
+You can find a downloadable working example <a href="http://ocpsoft.com/java/acegi-spring-security-jsf-integration-project-continued/">here</a>. There is also a followup article on post-authentication redirecting, <a href="http://ocpsoft.com/java/jsf-java/spring-security-what-happens-after-you-log-in/">here</a>.
+<!--more-->
+<h3>The Solution:</h3>
+<pre lang="java">public class LoginBean
+{
+    //managed properties for the login page, username/password/etc...
+
+    // This is the action method called when the user clicks the "login" button
+    public String doLogin() throws IOException, ServletException
+    {
+        ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
+
+        RequestDispatcher dispatcher = ((ServletRequest) context.getRequest())
+                 .getRequestDispatcher("/j_spring_security_check");
+
+        dispatcher.forward((ServletRequest) context.getRequest(),
+                (ServletResponse) context.getResponse());
+
+        FacesContext.getCurrentInstance().responseComplete();
+        // It's OK to return null here because Faces is just going to exit.
+        return null;
+    }
+}</pre>
+<p style="text-align: center;">----</p>
+For anyone who was struggling because Spring Security requires you to use a Filter to intercept the login postback, thus either preventing you from being able to do JSF style validation, or visa-versa, creating a scenario where JSF can process results, but blocks Acegi from processing the request parameters.
+
+Simply use an HttpRequestDispatcher to allow <em>both</em> JSf and Spring Security to function one after another. JSF goes first, then delegates work to a Spring Security  (thus preserving any request parameters that Spring Security is looking for.) After forwarding, tell JSF you have finished, and not to do any more work, immediately stop processing.
+
+If the login credentials were bad, redirect to the Login page. If the credentials were good, redirect to the requested URL. You can even show a dynamic message for bad credentials. Add the following PhaseListener to your faces-config.xml in order to extract any login errors, and display a message to the user:
+<pre lang="java">import javax.faces.context.FacesContext;
+import javax.faces.event.PhaseEvent;
+import javax.faces.event.PhaseId;
+import javax.faces.event.PhaseListener;
+
+import org.springframework.security.BadCredentialsException;
+import org.springframework.security.ui.AbstractProcessingFilter;
+
+import uk.co.pkit.project.view.util.FacesUtils;
+
+public class LoginErrorPhaseListener implements PhaseListener
+{
+    private static final long serialVersionUID = -1216620620302322995L;
+
+    @Override
+    public void beforePhase(final PhaseEvent arg0)
+    {
+        Exception e = (Exception) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get(
+                AbstractProcessingFilter.SPRING_SECURITY_LAST_EXCEPTION_KEY);
+
+        if (e instanceof BadCredentialsException)
+        {
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put(
+                    AbstractProcessingFilter.SPRING_SECURITY_LAST_EXCEPTION_KEY, null);
+            FacesUtils.addErrorMessage("Username or password not valid.");
+        }
+    }
+
+    @Override
+    public void afterPhase(final PhaseEvent arg0)
+    {}
+
+    @Override
+    public PhaseId getPhaseId()
+    {
+        return PhaseId.RENDER_RESPONSE;
+    }
+
+}</pre>
+<h3>faces-config.xml</h3>
+<pre lang="xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+	<lifecycle>
+		<phase-listener>login.LoginErrorPhaseListener</phase-listener>
+	</lifecycle>
+</faces-config>
+</pre>
+
+<h3>web.xml</h3>
+You must configure your Spring Security Filter Chain to process Servlet FORWARD as well as REQUESTs.
+<pre lang="xml">	
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping></pre>
+<p style="text-align: center;">----</p>
+
+<div class="featured"><center>Need some <strong>/pretty /urls</strong> in your JSF web-app? Try <a href="http://ocpsoft.com/prettyfaces/" title="SEO | Dynamic Parameters | Bookmarks | Navigation | JSF | JSF2 | URLRewrite Filter | Open Source">PrettyFaces</a>: URL-rewriting for Java EE and JSF. (Free and <strong>open-source</strong>!)</center></div>
+
+<h3>applicationContext-security.xml</h3>
+As for the Spring Security configuration, everything can be left pretty standard. The relevant parts of my configuration, for example:
+<pre lang="xml"><?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans
+	xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                         http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                        http://www.springframework.org/schema/security
+                         http://www.springframework.org/schema/security/spring-security-2.0.1.xsd">
+
+	<global-method-security
+		secured-annotations="enabled">
+	</global-method-security>
+
+	<http
+		auto-config="true"
+		access-denied-page="/accessDenied.jsp">
+
+		<intercept-url
+			pattern="/login*"
+			access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url
+			pattern="/**"
+			access="ROLE_USER,ROLE_ADMIN" />
+
+		<form-login
+			login-processing-url="/j_spring_security_check"
+			login-page="/login"
+			default-target-url="/"
+			authentication-failure-url="/login" />
+		<logout logout-url="/logout"
+			logout-success-url="/" />
+	</http>
+
+	<authentication-provider>
+                <!-- Your authentication provider here (example below)-->
+	</authentication-provider>
+</beans:beans></pre>
+<p style="text-align: center;">----</p>
+Notice here that the "login-processing-url" is set to "/j_spring_security_check", which is the location where our HttpRequestDispatcher is going to forward to. You can call this whatever you want, but the two must match exactly.
+<h3>login.xhtml / login.jspx / login.jsp</h3>
+(Whatever you use as your JSF page content type, take your pick.)
+
+So the last part of the puzzle is relatively easy. You need a JSF login page that conforms to Spring Security's parameter naming requirements. When this page submits, its values will be forwarded to the Spring Security Filter Chain.
+
+Notice that you don't even need to tie the input field values to a JSF backing bean! The values only need to be intercepted by Spring Security on forward. However, if you want to do all that cool validation and stuff that JSF lets you do... go for it. I just wanted to save space in the article, and prove a point that it's not needed.
+<pre lang="xml"><?xml version="1.0" encoding="ISO-8859-1" ?>
+<jsp:root
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	version="2.0">
+
+	<f:view>
+		<h:form
+			id="loginForm"
+			prependId="false">
+			<label for="j_username"><h:outputText value="Username:" /><br />
+			</label>
+			<h:inputText
+				id="j_username"
+				required="true">
+			</h:inputText>
+
+			<br />
+			<br />
+			<label for="j_password"><h:outputText value="Password:" /><br />
+			</label>
+			<h:inputSecret
+				id="j_password"
+				required="true">
+			</h:inputSecret>
+
+			<br />
+			<br />
+			<label for="_spring_security_remember_me"> <h:outputText
+				value="Remember me" /> </label>
+			<h:selectBooleanCheckbox
+				id="_spring_security_remember_me" />
+			<br />
+
+			<h:commandButton
+				type="submit"
+				id="login"
+				action="#{loginBean.doLogin}"
+				value="Login" />
+
+		</h:form>
+	</f:view>
+</jsp:root></pre>
+Remember that Spring Security is expecting parameters to be named as they are in this file. j_username, j_password, _spring_security_remember_me. Don't change these ids unless you change your Spring configuration.
+<p style="text-align: center;">----</p>
+
+<h3>If you're having problems</h3>
+Add a LoggerListener to allow Spring Security to print messages to your logging output. This will allow you to view any error messages that may be occurring. (Note: This should be copied verbatim)
+
+<pre lang="xml">
+	<bean id="loggerListener"
+		class="org.springframework.security.event.authentication.LoggerListener" />
+</pre>
+<p style="text-align: center;">----</p>
+
+<h3>Finished</h3>
+And that's all it took. A simple forward to a new servlet. No JSF navigation cases, no extra configuration. Just a little J2EE, and a night of no sleep. I hope this helps a LOT of people who seem to be struggling with the task of integrating these two excellent frameworks.
+
+Considering the forces of this problem, we really required almost no invasiveness in our normal application logic. JSF does its validation and processing without being impacted by Acegi, and Acegi can perform its magic authentication without knowing that JSF was ever the provider of its parameters.
+
+You can see a <strong>working example</strong> of this guide <a href="http://ocpsoft.com/java/acegi-spring-security-jsf-integration-project-continued/">here</a>.
+Enjoy.
+
+<h3>Example Authentication Provider for Testing</h3>
+<pre lang="xml">
+	<!--
+		Usernames/Passwords are rod/koala dianne/emu scott/wombat peter/opal
+	-->
+	<authentication-provider>
+		<password-encoder
+			hash="md5" />
+		<user-service>
+			<user
+				name="rod"
+				password="a564de63c2d0da68cf47586ee05984d7"
+				authorities="ROLE_SUPERVISOR, ROLE_USER, ROLE_TELLER" />
+			<user
+				name="dianne"
+				password="65d15fe9156f9c4bbffd98085992a44e"
+				authorities="ROLE_USER,ROLE_TELLER" />
+			<user
+				name="scott"
+				password="2b58af6dddbd072ed27ffc86725d7d3a"
+				authorities="ROLE_USER" />
+			<user
+				name="peter"
+				password="22b5c9accc6e1ba628cedc63a72d57f8"
+				authorities="ROLE_USER" />
+		</user-service>
+	</authentication-provider>
+</pre>
+
+
+<p/>
+
+<table>
+<tr>
+<td width="300px">[amazon codes="1935182358,1430224991"]</td>
+<td><h3>Need more info?</h3>
+Try one of these highly-recommended books, written by Spring Developers and Spring Experts:<br/></td>
+</tr>
+</table>
+
+[slideout handle="Need more info?" header="Try one of these highly-recommended books:"]
+   [amazon codes="1935182358,1430224991" bgcolor="dddddd"]
+[/slideout]

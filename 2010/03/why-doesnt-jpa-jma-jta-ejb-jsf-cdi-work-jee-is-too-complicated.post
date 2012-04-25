@@ -1,0 +1,73 @@
+.categories ['Java']
+.dateCreated 20100317T12:53:27
+.link http://ocpsoft.org/java/why-doesnt-jpa-jma-jta-ejb-jsf-cdi-work-jee-is-too-complicated/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/java/why-doesnt-jpa-jma-jta-ejb-jsf-cdi-work-jee-is-too-complicated/
+.post_status publish
+.postid 1147
+.title Why doesn't (JPA, JMS, JTA, EJB, JSF, CDI) work? JEE is "Too Complicated"
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug why-doesnt-jpa-jma-jta-ejb-jsf-cdi-work-jee-is-too-complicated
+First, before reading this - you're going to be upset with me. You're going to disagree. I know -- it's OK. You may not even believe me, but you might keep reading because anger inspires action.
+<h2>
+<!--more-->
+Stop using Tomcat and wondering why JEE "doesn't work."</h2>
+You're doing yourself a big disservice.
+
+Start thinking about <a href="http://www.jboss.org/jbossas/downloads.html" target="_blank">JBoss AS 6</a>, or <a href="https://glassfish.dev.java.net/" target="_blank">GlassFish v3</a> -- Yes, I know, it's a "Full JEE Container," -- it's "Heavy," but with JEE6, that's not a bad thing: It all "Just works" and it works really well. Trust me, the reason people have thought Java EE sucks, is because they try to do this stuff on Tomcat, and say "Why doesn't (JPA, JMS, JTA, EJB, JSF, CDI) work?" Well... that's because Tomcat only gives you Servlet - the Request/Response lifecycle. So people install all these things manually, or try to, and then say, "Wow, Java EE is really hard to use, shit, I'm gonna use Spring or Grails instead."
+
+Tomcat, Jetty, and other "Servlet Containers" all have these issues - that's why they are called Servlet Containers. If you really want to build everything from the ground up, piecing in parts of Java EE here and there -- then go for it, but if you want it to work right away, then... well, I've said my part.
+
+Ever tried to use Java Mail on Tomcat? I think we've all been there... you need to steal the JAR from another appserver, or get a 3rd party implementation. Sure, it's easy, you <em>can</em> do it... but why should you have to?
+
+<strong>Please remember when submitting flames:</strong> I do know that there are a lot of legitimate reasons to use Tomcat, it's a great Servlet container. If that's what you choose, good for you, I think you're wasting time if you're trying to get bits of JEE to work, though.
+
+<h2>In my experience.</h2>
+I wrote a <a title="JSF 2 and Java EE are Easy" href="http://www.javaserverfaces.org/get-started#TOC-Creating-a-JSF-2-and-CDI-project" target="_self">fully functional JSF 2 application in 5 minutes</a>. I created a new web project (Maven, <a target="_blank" href="http://www.jboss.org/tools/download.html">Jboss Tools eclipse plugin</a> (For easy JBoss AS 6), Netbeans, <a href="https://glassfishplugins.dev.java.net/eclipse34/index.html" target="_blank">glassfish eclipse plugin</a>, whatever) I created an index.xhtml file, and I was running JSF. Wow, that was easy, right? I even installed <a href="http://ocpsoft.com/prettyfaces/" target="_blank">PrettyFaces</a> and had Pretty URLs and URL Rewriting working in about 2 minutes - i <a href="http://ocpsoft.com/prettyfaces/#in2minutes" target="_blank">recorded a video</a>, only minor edits. 
+
+My WAR file was 5kb -- yes, Kilobytes. 
+
+Now I wanted to use CDI and EJB - I made a Cron-like scheduler - idea taken from <a href="http://adam-bien.com" target="_blank">Adam Bien</a>'s <a href="http://projectkenai.com/projects/javaee-patterns" target="_blank">JEE Patterns</a> example - that sent email notifications to (nobody) "Subscribers:"
+<pre lang="java">@Singleton
+public class SubscriberNotifier {
+
+ private Date started = new Date();
+
+ @Schedule(second="*/30", minute="*/1",hour="*", persistent=false)
+ public void sendNotifications()
+ {
+ System.out.println("Notifying users subscribed to posts. First notification sent: "
+ + new PrettyTime(new Date()).format(started));
+ }
+}
+</pre>
+<p lang="java">I did use <a href="http://ocpsoft.com/prettytime/" target="_blank">PrettyTime</a> to format the date object into something human-readable, but that's not really relevant to JEE. The point is -  I had a background service running, using EJB Scheduling - with full transactional and persistence support (if I chose to use those) up and running in as little time as it took to write a dumb little class and put two annotations on it. The JEE container automatically picked it up, and started it when I started my application.</p>
+<p lang="java">And then I thought, "Wait, when did this get easy?" EJB used to make my heart shrivel inside my chest.</p>
+<p lang="java">It's all going to get even easier, too, when JBoss Seam 3 Framework starts releasing more of our development modules. I'm working on the <a href="http://seamframework.org/Documentation/Seam3Modules#H-FacesLedByLincolnBaxterAndDanAllen" target="_blank">Faces, Servlet, and Internationalization modules</a> personally.</p>
+<p lang="java"></p>
+Now that my elevator speech is over :) If you already use JSF 1.2, now is the time to upgrade -- migrating to JSF 2.0 should be pretty simple.  All you need to do (unless you use some 3rd party component libraries) is change your XML schema in faces-config.xml, version from 1.2 to 2.0.
+<blockquote>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+version="2.0"&gt;
+
+&lt;/faces-config&gt;</blockquote>
+And you will be running with JSF2. Once you do that, you should definitely try out <a href="http://docs.jboss.org/weld/reference/1.0.0/en-US/html/" target="_blank">CDI (Weld)</a> - it's IMPRESSIVE. Trust me... if you've tried, or heard of Spring - you're going to like this. PS. You can also get use the plug-in for JBoss AS 5 for JBoss AS 6; get it the via "Install additional server adapters" link in Eclipse's "New Server" dialogue.
+
+
+<h3>Final thoughts:</h3>
+<strong>Note:</strong> As a followup, I'd also like to add that the <a target="_blank" href="http://jcp.org">JCP</a> - "Java 'Corporate' Process" really needs to be re-evaluated. It needs to be placed in the hands of the community in which it was supposed to stand for so long. Oracle has this chance - and it must not blow it if the good things we all love about Java, JavaEE, the JVM, Tomcat, Grails are going to continue moving forward with healthy competition and innovation. 
+
+I call for the JCP - "Java <strong>Community</strong> Process" to become an independent foundation like Eclipse - public TCKs, free intellectual property, true community participation (open mailing lists, forums, wikis) - WITHOUT the need to print and fax a 7 page JSPA document to Sun in SanFran. I'm calling for a place where Java and JavaEE documentation are provided to, and by, the community - a site like PHP.net. I'm <a target="_blank" href="http://www.google.com/search?q=reform+the+Java+JCP">not the only person</a> asking for this. Oracle - I'm holding you accountable for the future of Java, JavaEE, and the JVM.
+
+In the words of the human torch...
+<h1 style="text-align: center;">"FLAME ON!"</h1>

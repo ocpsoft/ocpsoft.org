@@ -1,0 +1,29 @@
+.categories ['JSF', 'PrettyFaces', 'Releases']
+.dateCreated 20081231T15:16:11
+.link http://ocpsoft.org/java/jsf-java/prettyfaces-120-released/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords JSF, PrettyFaces
+.permaLink http://ocpsoft.org/java/jsf-java/prettyfaces-120-released/
+.post_status publish
+.postid 36
+.title PrettyFaces 1.2.0 Released
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_password 
+.wp_post_format standard
+.wp_slug prettyfaces-120-released
+A new major release of the <a href="http://ocpsoft.com/prettyfaces">PrettyFaces</a> JSF extension for Bookmarkable/Pretty URLs is now available for download.
+<!--more-->
+<strong>Version 1.2.0</strong>: <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-1.2.0.jar">binary</a>, <a href="http://prettyfaces.googlecode.com/files/ocpsoft-pretty-faces-1.2.0-src.jar">source</a>
+
+Major Release: 20081231
+<ol>
+	<li>Added managed query-parameter support for URLs and JSF forms</li>
+	<li>New URL Buffer component makes using dynamic URLs easy</li>
+	<li>URL encoding/decoding now complies with W3C standards</li>
+	<li>Dynamic View Ids now allow returning pretty:navigation strings to display another view without issuing redirect or changing the client browser URL</li>
+	<li>Enhanced exception messages for much of the URL Parsing and Building</li>
+</ol>

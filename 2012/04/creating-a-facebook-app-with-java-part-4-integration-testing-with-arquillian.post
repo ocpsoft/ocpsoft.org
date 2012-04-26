@@ -23,7 +23,7 @@ Now repeat it a hundred times - still think you can live without automation?
 
 In <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool-installation/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">part one</a> we set up our tools, <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">part two</a> we did project configuration, and in <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-the-webservice-and-the-game/" title="Facebook Application Development | Tutorial | Example | Java | Cloud">part three</a> we ended with a fully functional application; however, now that you've become familiar with the Red Hat tools and Facebook API, it's time we get to a topic we ideally should have started with in the first place: <strong>TESTING</strong>!
 <!--more-->
-[info]If you're just joining us now, and want a quick way to catch up, you can download the starter project we created through in the first 3 articles of this series: <a target="_blank" href="https://github.com/CavemanCraig/FBTutorialDemo/tags">v1.0.zip — Create the Game</a>.[/info]
+[info]If you're just joining us now and want a quick way to catch up, you can download the starter project we created through in the first 3 articles of this series: <a target="_blank" href="https://github.com/CavemanCraig/FBTutorialDemo/tags">v1.0.zip — Create the Game</a>.[/info]
 
 <h3>Attributes of ideal tests</h3>
 

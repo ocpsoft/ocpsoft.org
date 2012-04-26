@@ -151,7 +151,7 @@ View a slideshare presentation on <a href="http://ocpsoft.org/prettyfaces/jsfsum
 
 <h1><a name="FAQ"></a>FAQ:</h1>
 <ol>
-	<li><h3>Q. Can I use PrettyFaces to handle UrlRewriting for other resources on my server as well?</h3>
+	<li><h3>Q. Can I use PrettyFaces to handle URL-rewriting for other resources on my server as well?</h3>
 	<p>
 	A. Yes. PrettyFaces still requires a configured JSF instance to function, but it can be used to map a URL to any resource in the Servlet Container - without invoking FacesServlet. Values will be injected into JSF beans as usual, but PrettyFaces Action methods will not trigger (since no JSF lifecycle executes for non-Faces requests.)
 	<p>

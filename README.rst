@@ -13,3 +13,7 @@ You may either fork the entire repository (by clicking the "Fork" button,) or by
 Send pull requests
 ------------------
 Send your pull request and we will moderate and approve it as soon as possible!
+
+License
+-------
+Since we have many contributors at OCPsoft, all articles maintain the original licence and copyright of their original authors (unless granted otherwise.) If you are uncertain, please comment and ask before duplicating content.

@@ -373,7 +373,7 @@ Add a new file next to index.html called <code>playGame.html</code>.  Copy and p
 [snippit filename="Sending a player's answers to the web-service"]
 function doPostAnswers( playerID, ID1, ID2, ID3, name1, name2, name3) 
 {
-   var POSTAnswersURL = "webService/GameAnswers/" + playerID + "/" +
+   var POSTAnswersURL = "rest/webService/GameAnswers/" + playerID + "/" +
        ID1 + "/" + ID2 + "/" + ID3 
        + "/" + name1 + "/" + name2 + "/" + name3;
    ...

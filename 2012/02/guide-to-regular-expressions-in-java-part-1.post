@@ -17,7 +17,7 @@
 .wp_slug guide-to-regular-expressions-in-java-part-1
 [toc][/toc]
 
-Often unknown, or heralded as confusing, regular expressions have defined the standard for powerful text manipulation and search. Without them, many of the applications we know today would not function. This two-part series explores the basics of regular expressions in Java, and provides tutorial examples in the hopes of spreading love for our pattern-matching friends. (Read <a href="http://ocpsoft.com/opensource/guide-to-regular-expressions-in-java-part-2/">part two</a>.)
+Often unknown, or heralded as confusing, regular expressions (regex) have defined the standard for powerful text manipulation and search. Without them, many of the applications we know today would not function. This two-part series explores the basics of regular expressions in Java, and provides tutorial examples in the hopes of spreading love for our pattern-matching friends. (Read <a href="http://ocpsoft.com/opensource/guide-to-regular-expressions-in-java-part-2/">part two</a>.)
 <!--more-->
 <h2 class="toc">Part 1: What are Regular Expressions?</h2>
 Regular expressions are a language of string patterns built in to most modern programming languages, including <a target="_blank" href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html">Java 1.4 onward</a>; they can be used for: searching, extracting, and modifying text. This chapter will cover basic syntax and use.

@@ -23,7 +23,7 @@ We’ve all heard of “mobile apps” that are sweeping the internet - stories 
 
 This article will take you through setting up a new Facebook app, from beginning to end. It is assumed that you are a developer, and as such are working on some UNIX based platform (all examples in this article will be from Ubuntu 11.10). Those working on Windows (like I may have been just last year) will have to find equivalent commands for certain parts, or decide to join the rest of the "real developer" community. It is worth noting here that <strong>I am not a JBoss employee</strong>, nor am I affiliated with them in any way. However I am friends with several of their lead developers, which probably helped my initial gravitation in that direction. You will see me reference JBoss projects many times throughout this tutorial, and while you are always free to use your own alternatives, you may need to deviate from my instructions to do so.
 <!--more-->
-[info]In <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/" title="Creating a Facebook Application - Hosting | Basic Functionality">part two</a> of this series, we cover creating our project code, hosting it, and setting up basic facebook functionality; <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-3-creating-a-webservice-and-the-game/" title="Creating a Facebook Application - Hosting | Basic Functionality">part three</a> covers turning our application into a game.[/info] 
+[info]In <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/" title="Creating a Facebook Application - Hosting | Basic Functionality">part two</a> of this series, we cover creating our project code, hosting it, and setting up basic facebook functionality; <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-3-creating-a-webservice-and-the-game/" title="Creating a Facebook Application - Hosting | Basic Functionality">part three</a> covers turning our application into a game.  Lastly, in <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-4-integration-testing-with-arquillian/" title="Creating a Facebook Application - Hosting | Basic Functionality">part four</a> we set up automated integration test cases and a MySQL database.[/info] 
 
 <h1>Overview</h1>
 
@@ -31,7 +31,7 @@ You may have heard terms like gamification, social networking, or even peer pres
 
 So the next logical question, "why use Facebook?" Google+ is up and coming, there's Twitter, LinkedIn, and the list goes on. "What makes Facebook so special?" The answer is quite simply the fact that... EVERYONE... is on Facebook - that’s where people have the most “friends” and connections. Until this changes (if it ever does), it’s where you want to focus integrating your social connection points on your app. 
 
-Other social media APIs may also be useful to integrate with, in addition, and if all goes well with these first few tutorial posts, I'll provide more in the future showing you how to use Twitter as a great way to add to your social media influence, even send direct SMS messages for free to your users (perhaps other APIs/useful things as well... we shall see). For right now, we will focus on what we need build our first Facebook application.
+Other social media APIs may also be useful to integrate with, in addition, and if all goes well with these first few tutorial posts, I'll provide more in the future showing you how to use Twitter as a great way to add to your social media influence, even send direct SMS messages for free to your users (perhaps other APIs/useful things as well... we shall see). For right now, we will focus on what we need to build our first Facebook application.
 
 [info]Many steps throughout this tutorial may seem basic for more advanced/professional developers. I provide the full project on <a href="https://github.com/CavemanCraig/FBTutorialDemo" target="_blank">GitHub</a>, so you can feel free to look at the complete code at any time - move at your own pace.[/info]
 
@@ -44,8 +44,8 @@ Other social media APIs may also be useful to integrate with, in addition, and i
 	<li>Sign up for free app hosting on Red Hat's <a href="http://openshift.com" target="_blank">OpenShift</a> cloud.</li>
 	<li>Create a REST Web Service to process our application logic.</li>
 	<li>Create a complete Facebook application (Game).</li>
-	<li>Install and set up integration tests using Arquillian. (*planned future article)</li>
-	<li>Setup a MySQL DB on the OpenShift platform to help store your data more permanently. (*planned future article)</li>
+	<li>Install and set up integration tests using Arquillian.</li>
+	<li>Setup a MySQL DB on the OpenShift platform to help store your data more permanently.</li>
 	<li>Use the Twitter API to allow you to send direct SMS messages to users for free. (*possible future article)</li>
 </ul>
 

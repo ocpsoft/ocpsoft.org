@@ -1,5 +1,7 @@
 .categories ['JSF2', 'OpenSource', 'Technology']
 .dateCreated 20100120T01:56:21
+.date_modified 20100120T09:17:07
+.date_modified_gmt 20100120T14:17:07
 .link http://ocpsoft.org/opensource/jsf-1-2-components-book-review/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug jsf-1-2-components-book-review
 As a vocal blogger, I feel responsible for promoting and sharing the good work of others, whether that be technology, creative work, or in this case: a book. I will take no exception to that philosophy when it comes to the <a target="_blank" href="http://www.javaserverfaces.org">JavaServer Faces</a> framework. For a quick read, try the summary. If you are intrigued, read on! I hope you find this review valuable.
 <!--more-->

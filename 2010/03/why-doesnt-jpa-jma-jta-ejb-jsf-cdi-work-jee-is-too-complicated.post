@@ -1,5 +1,7 @@
 .categories ['Java']
 .dateCreated 20100317T12:53:27
+.date_modified 20100324T16:15:31
+.date_modified_gmt 20100324T20:15:31
 .link http://ocpsoft.org/java/why-doesnt-jpa-jma-jta-ejb-jsf-cdi-work-jee-is-too-complicated/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug why-doesnt-jpa-jma-jta-ejb-jsf-cdi-work-jee-is-too-complicated
 First, before reading this - you're going to be upset with me. You're going to disagree. I know -- it's OK. You may not even believe me, but you might keep reading because anger inspires action.
 <h2>

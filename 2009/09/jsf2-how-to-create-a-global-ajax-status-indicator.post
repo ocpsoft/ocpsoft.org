@@ -1,5 +1,7 @@
 .categories ['JSF']
 .dateCreated 20090910T04:28:01
+.date_modified 20091206T14:35:36
+.date_modified_gmt 20091206T19:35:36
 .link http://ocpsoft.org/java/jsf-java/jsf2-how-to-create-a-global-ajax-status-indicator/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug jsf2-how-to-create-a-global-ajax-status-indicator
 So, one of the best ways I know of to tell a user that they should be waiting for something to finish, is by setting the cursor to 'wait'. It's how desktop applications do it. It's how the operating system does it... it's how ajax should probably do it (if you want to solve the user wait interaction globally.)
 

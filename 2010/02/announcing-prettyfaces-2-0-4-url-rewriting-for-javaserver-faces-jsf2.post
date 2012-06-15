@@ -1,5 +1,7 @@
 .categories ['OpenSource', 'PrettyFaces']
 .dateCreated 20100219T17:31:15
+.date_modified 20100219T17:42:21
+.date_modified_gmt 20100219T22:42:21
 .link http://ocpsoft.org/opensource/announcing-prettyfaces-2-0-4-url-rewriting-for-javaserver-faces-jsf2/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug announcing-prettyfaces-2-0-4-url-rewriting-for-javaserver-faces-jsf2
 <div class="featured">
 <center>We are <strong>proud</strong> to introduce version the 2.0.4 series of <a href="http://ocpsoft.com/prettyfaces/" title="SEO | Dynamic Parameters | Bookmarks | Navigation | JSF | JSF2 | UrlRewrite">PrettyFaces</a>:</center>

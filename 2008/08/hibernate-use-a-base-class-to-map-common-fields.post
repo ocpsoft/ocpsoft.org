@@ -1,5 +1,7 @@
 .categories ['Hibernate', 'Java']
 .dateCreated 20080817T16:38:47
+.date_modified 20091206T14:44:49
+.date_modified_gmt 20091206T19:44:49
 .link http://ocpsoft.org/java/hibernate-use-a-base-class-to-map-common-fields/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug hibernate-use-a-base-class-to-map-common-fields
 <h2>Tutorial Chapter 2 - Easier Development and Maintenance</h2>
 Tired of wiring in an <em>id</em>, <em>version</em>, and <em>timestamp</em> field into all of your Hibernate objects? There's an easy way to solve this pain once and for all of your classes. Avoid code-repetition: today's article focuses on using Hibernate Annotations to map common fields into one mapped superclass.

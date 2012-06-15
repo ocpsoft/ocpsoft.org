@@ -1,5 +1,7 @@
 .categories ['Uncategorized']
 .dateCreated 20100212T11:29:29
+.date_modified 20100212T11:29:29
+.date_modified_gmt 20100212T16:29:29
 .link http://ocpsoft.org/uncategorized/20th-anniversary-of-a-photograph/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug 20th-anniversary-of-a-photograph
 Take a break from your software to read this: Today (February 12, 2010) marks the 20th anniversary of a remarkably simple, unimportant, yet incredibly special and sentimental event. A perspective that few consider in their daily lives.
 <!--more-->

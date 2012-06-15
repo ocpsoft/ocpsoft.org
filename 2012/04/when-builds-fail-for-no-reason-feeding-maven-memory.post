@@ -1,5 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20120425T14:25:35
+.date_modified 20120425T14:32:00
+.date_modified_gmt 20120425T18:32:00
 .link http://ocpsoft.org/opensource/when-builds-fail-for-no-reason-feeding-maven-memory/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug when-builds-fail-for-no-reason-feeding-maven-memory
 [toc/]
 

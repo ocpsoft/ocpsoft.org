@@ -1,5 +1,7 @@
 .categories ['Releases']
 .dateCreated 20100507T14:35:55
+.date_modified 20100730T16:21:49
+.date_modified_gmt 20100730T20:21:49
 .link http://ocpsoft.org/releases/introducing-the-official-ocpsoft-support-forums/
 .mt_allow_comments 0
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug introducing-the-official-ocpsoft-support-forums
 We'd like to take a moment to introduce you to the <a href="http://ocpsoft.com/forums/">OcpSoft Support Forums</a>.
 

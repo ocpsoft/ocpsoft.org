@@ -1,5 +1,7 @@
 .categories ['JBoss', 'OpenSource']
 .dateCreated 20120109T21:15:03
+.date_modified 20120422T04:41:40
+.date_modified_gmt 20120422T08:41:40
 .link http://ocpsoft.org/opensource/jboss-application-server-7-on-port-80-with-apache-httpd-proxypass/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug jboss-application-server-7-on-port-80-with-apache-httpd-proxypass
 It's quite simple really. All you need to do is install Apache HTTPd, then set make sure you have a few modules installed and set up:
 

@@ -1,5 +1,7 @@
 .categories ['Java', 'JSF', 'JSF2', 'OCPSoft', 'OpenSource', 'PrettyFaces']
 .dateCreated 20110701T10:52:00
+.date_modified 20120422T04:44:45
+.date_modified_gmt 20120422T08:44:45
 .link http://ocpsoft.org/java/prettyfaces-3-3-0-has-been-released/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 13
 .wp_author_display_name Christian Kaltepoth
 .wp_author_id 13
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug prettyfaces-3-3-0-has-been-released
 <center><a href="/prettyfaces/"><img src="http://ocpsoft.com/wp-content/uploads/2008/11/prettyfaces-50.png" alt="" title="GET /prettyfaces/" width="498" height="122" class="alignnone size-full wp-image-2093" /></a></center>
 

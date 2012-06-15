@@ -1,5 +1,7 @@
 .categories ['PrettyFaces']
 .dateCreated 20090930T16:20:55
+.date_modified 20091105T17:22:07
+.date_modified_gmt 20091105T22:22:07
 .link http://ocpsoft.org/prettyfaces/prettyfaces-hear-about-it-at-jsfsummit/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug prettyfaces-hear-about-it-at-jsfsummit
 <h3>OcpSoft co-founder <a href="http://www.jsfsummit.com/conference/speaker/lincoln_baxter_iii" target="_blank">Lincoln Baxter</a> will be speaking about <a href="http://ocpsoft.com/prettyfaces" target="_self" title="SEO, Dynamic Parameters, Bookmarks, and Navigation for JSF/JSF2">PrettyFaces</a> at <a href="http://jsfsummit.com" target="_blank">JSFSummit</a>, in Orlando FL - Dec 1st-4th, 2009.</h3>
 The Presentation covers PrettyFaces basics, Search Engine Optimization, Rethinking Navigation, and Dynamic ViewIds:

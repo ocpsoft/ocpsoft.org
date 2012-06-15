@@ -1,5 +1,7 @@
 .categories ['Java', 'JSF', 'Spring']
 .dateCreated 20081016T19:17:19
+.date_modified 20081016T19:29:45
+.date_modified_gmt 20081017T02:29:45
 .link http://ocpsoft.org/java/acegi-spring-security-jsf-integration-project-continued/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 5
 .wp_author_display_name Derek Hollis
 .wp_author_id 5
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug acegi-spring-security-jsf-integration-project-continued
 We've gotten a good number of comments from <a href="mailto:lincoln@ocpsoft.com">Lincoln's</a> latest post on <a href="http://ocpsoft.com/java/acegi-spring-security-jsf-login-page/">Spring Security and JSF</a>.  A few comments have asked for further code samples on how to get this example working.
 

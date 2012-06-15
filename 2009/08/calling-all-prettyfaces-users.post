@@ -1,5 +1,7 @@
 .categories ['PrettyFaces']
 .dateCreated 20090830T09:41:17
+.date_modified 20091206T14:36:00
+.date_modified_gmt 20091206T19:36:00
 .link http://ocpsoft.org/prettyfaces/calling-all-prettyfaces-users/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug calling-all-prettyfaces-users
 <h3>Are you using PrettyFaces on a project you can share about?</h3>
 Looking for real-world experiences:

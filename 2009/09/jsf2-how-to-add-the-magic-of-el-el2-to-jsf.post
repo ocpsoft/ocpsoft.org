@@ -1,5 +1,7 @@
 .categories ['JSF2']
 .dateCreated 20090914T19:54:29
+.date_modified 20091213T11:54:14
+.date_modified_gmt 20091213T16:54:14
 .link http://ocpsoft.org/java/jsf2-java/jsf2-how-to-add-the-magic-of-el-el2-to-jsf/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug jsf2-how-to-add-the-magic-of-el-el2-to-jsf
 <p>Ever wonder why you can't pass parameters to EL method-expressions? Well, now you can, and it's easy to incorporate!</p>
 <!--more-->

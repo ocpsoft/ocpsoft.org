@@ -1,5 +1,7 @@
 .categories ['PrettyFaces']
 .dateCreated 20110515T12:15:27
+.date_modified 20110517T15:08:10
+.date_modified_gmt 20110517T19:08:10
 .link http://ocpsoft.org/prettyfaces/serving-dynamic-file-content-with-prettyfaces/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 13
 .wp_author_display_name Christian Kaltepoth
 .wp_author_id 13
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug serving-dynamic-file-content-with-prettyfaces
 <a href="http://ocpsoft.com/prettyfaces/">PrettyFaces</a> offers a very simple and flexible way to create bookmark-able RESTful URLs in JSF applications. This short article will show you how easy it is to use PrettyFaces for serving other dynamic content like images or PDF files.
 

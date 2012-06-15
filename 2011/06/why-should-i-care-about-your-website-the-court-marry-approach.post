@@ -1,5 +1,7 @@
 .categories ['Design']
 .dateCreated 20110628T14:22:35
+.date_modified 20120228T14:34:14
+.date_modified_gmt 20120228T19:34:14
 .link http://ocpsoft.org/design/why-should-i-care-about-your-website-the-court-marry-approach/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug why-should-i-care-about-your-website-the-court-marry-approach
 [toc/]
 

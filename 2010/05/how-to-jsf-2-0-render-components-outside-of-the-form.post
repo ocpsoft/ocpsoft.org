@@ -1,5 +1,7 @@
 .categories ['JSF2', 'Seam']
 .dateCreated 20100510T00:48:00
+.date_modified 20100510T00:48:00
+.date_modified_gmt 20100510T04:48:00
 .link http://ocpsoft.org/java/jsf2-java/how-to-jsf-2-0-render-components-outside-of-the-form/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug how-to-jsf-2-0-render-components-outside-of-the-form
 Here's a simple tip for all of you AJAX lovers using JSF 2.0. It <b>is</b> possible to render components that live outside of the form where your AJAX tag lives; actually, it's possible to render any component by using it's fully-qualified component ID.
 

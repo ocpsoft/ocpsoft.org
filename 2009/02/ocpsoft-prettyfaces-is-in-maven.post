@@ -1,5 +1,7 @@
 .categories ['PrettyFaces']
 .dateCreated 20090204T21:39:47
+.date_modified 20100106T17:02:42
+.date_modified_gmt 20100106T22:02:42
 .link http://ocpsoft.org/prettyfaces/ocpsoft-prettyfaces-is-in-maven/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug ocpsoft-prettyfaces-is-in-maven
 Maven JSF users can be relieved, PrettyFaces is now in the <a href="http://repo1.maven.org/maven2/com/ocpsoft/" target="_blank">Maven central repository</a>:
 

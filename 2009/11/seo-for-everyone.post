@@ -1,5 +1,7 @@
 .categories ['PrettyFaces']
 .dateCreated 20091106T14:51:24
+.date_modified 20091208T01:43:30
+.date_modified_gmt 20091208T06:43:30
 .link http://ocpsoft.org/prettyfaces/seo-for-everyone/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug seo-for-everyone
 <p>I'm no SEO expert, but in growing my own brand, I've come to learn some crucial concepts, perhaps not entirely technical, but more social and practical in nature. I can't and won't try to tell you that google ranks your pages better if you use certain words and put them in a specific order. But by using common sense, there are a few things we can all do to make our lives easier, and more visible.</p>
 <!--more-->

@@ -1,5 +1,7 @@
 .categories ['PrettyTime']
 .dateCreated 20090920T11:00:39
+.date_modified 20090920T11:00:39
+.date_modified_gmt 20090920T18:00:39
 .link http://ocpsoft.org/prettytime/prettytime-1-0-4-released/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug prettytime-1-0-4-released
 <a href="http://ocpsoft.com/prettytime">PrettyTime 1.0.4 - Elapsed Timestamp Formatting for Java</a> now supports additional Locales:
 <h4>Supported locales:</h4>

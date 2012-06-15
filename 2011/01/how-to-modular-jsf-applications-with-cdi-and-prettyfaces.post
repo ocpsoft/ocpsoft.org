@@ -1,5 +1,7 @@
 .categories ['JSF', 'JSF2', 'PrettyFaces']
 .dateCreated 20110119T10:27:51
+.date_modified 20110719T12:38:49
+.date_modified_gmt 20110719T16:38:49
 .link http://ocpsoft.org/java/jsf-java/how-to-modular-jsf-applications-with-cdi-and-prettyfaces/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug how-to-modular-jsf-applications-with-cdi-and-prettyfaces
 I was recently asked the question, "Is it possible to create a modular JSF application, where JAR-files act as plug-ins and allow xhtml views, images, css, navigation rules, and managed beans to be added as modules to the application?"
 

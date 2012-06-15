@@ -1,5 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20100810T16:24:47
+.date_modified 20110908T10:27:57
+.date_modified_gmt 20110908T14:27:57
 .link http://ocpsoft.org/opensource/the-problem-is-not-the-system-the-problem-is-education/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug the-problem-is-not-the-system-the-problem-is-education
 <p>"The problem is not the system, its the way someone can get in. To be honest, most tutorials, how-tos, and documentation sucks, because they ALL are written like the reader already knows the trick. No doc about [Technology] is written for newbies."
 </p>

@@ -1,5 +1,7 @@
 .categories ['PrettyFaces']
 .dateCreated 20090331T18:21:25
+.date_modified 20090331T18:21:25
+.date_modified_gmt 20090401T01:21:25
 .link http://ocpsoft.org/prettyfaces/prettyfaces-v123_rc2-released/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug prettyfaces-v123_rc2-released
 <h3><a href="http://ocpsoft.com/prettyfaces">PrettyFaces</a>:</h3>
 

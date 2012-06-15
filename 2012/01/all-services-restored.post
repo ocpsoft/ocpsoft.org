@@ -1,5 +1,7 @@
 .categories ['OCPSoft']
 .dateCreated 20120109T01:23:37
+.date_modified 20120109T14:36:23
+.date_modified_gmt 20120109T19:36:23
 .link http://ocpsoft.org/ocpsoft/all-services-restored/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 1
 .wp_author_display_name Team
 .wp_author_id 1
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug all-services-restored
 We are sorry for any inconvenience that may have been caused by our brief downtime. We have moved to a new server, and are now fully operational once more. Due to the hack, we were forced to re-evaluate the security of our previous host, and decided that we could not be adequately certain that such attacks would not succeed in the future; we've subsequently moved to a new host, and are very happy with the provisions (and increased level of service.)
 

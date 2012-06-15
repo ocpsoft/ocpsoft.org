@@ -1,5 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20091217T14:54:31
+.date_modified 20091217T21:01:46
+.date_modified_gmt 20091218T02:01:46
 .link http://ocpsoft.org/opensource/glassfish-v3-is-done-with-a-sweet-touch/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug glassfish-v3-is-done-with-a-sweet-touch
 So, GlassFish v3 is out the door, and I just got a nice little note from the dev-tracker on Java.net. This is only a fraction of the issues I've filed, but the rest are on the JSF-SPEC tracker, so they wouldn't show up here. Still, nice touch!
 <!--more-->

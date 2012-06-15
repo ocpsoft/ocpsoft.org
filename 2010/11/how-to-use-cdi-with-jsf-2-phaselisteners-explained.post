@@ -1,5 +1,7 @@
 .categories ['JSF2', 'Seam']
 .dateCreated 20101109T01:01:35
+.date_modified 20101109T12:33:58
+.date_modified_gmt 20101109T17:33:58
 .link http://ocpsoft.org/java/jsf2-java/how-to-use-cdi-with-jsf-2-phaselisteners-explained/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug how-to-use-cdi-with-jsf-2-phaselisteners-explained
 A recent thread came up on the JSF 2 forums: "<a href="http://www.java.net/forum/topic/glassfish/glassfish/cdi-and-jsf2-phaselisteners-0">Why can't I use @Inject in a PhaseListener? This CDI stuff is so confusing.</a>"
 

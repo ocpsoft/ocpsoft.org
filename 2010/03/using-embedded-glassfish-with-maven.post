@@ -1,5 +1,7 @@
 .categories ['Java', 'OpenSource']
 .dateCreated 20100323T14:12:06
+.date_modified 20100730T16:30:15
+.date_modified_gmt 20100730T20:30:15
 .link http://ocpsoft.org/java/using-embedded-glassfish-with-maven/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug using-embedded-glassfish-with-maven
 Three steps to add Embedded GlassFish to any existing project POM.
 

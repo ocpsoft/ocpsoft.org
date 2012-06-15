@@ -1,5 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20110802T03:00:08
+.date_modified 20110802T08:33:18
+.date_modified_gmt 20110802T12:33:18
 .link http://ocpsoft.org/opensource/open-letter-to-the-jcp-executive-committee-calling-for-jcp-reform/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 389
 .wp_author_display_name Dan Allen
 .wp_author_id 389
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug open-letter-to-the-jcp-executive-committee-calling-for-jcp-reform
 Seizing the opportunity of a <a href="http://jcp.org/en/whatsnew/elections">new Executive Committee (EC)</a> under a <a href="http://java.dzone.com/articles/oracle-and-jcp">new regime</a>, I'd like to issue a call for reform of the <a href="http://jcp.org">Java Community Process (JCP)</a> to allow it to produce more iterative and timely technology and live up to it's name as a "community process", rather than acting as the "corporate process" many believe it is today <a href="#ref1">[1]</a>.
 <!--more-->

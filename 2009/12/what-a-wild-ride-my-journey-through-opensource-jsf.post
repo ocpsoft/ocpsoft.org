@@ -1,5 +1,7 @@
 .categories ['JSF2', 'OpenSource']
 .dateCreated 20091219T18:21:47
+.date_modified 20100101T13:06:18
+.date_modified_gmt 20100101T18:06:18
 .link http://ocpsoft.org/opensource/what-a-wild-ride-my-journey-through-opensource-jsf/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug what-a-wild-ride-my-journey-through-opensource-jsf
 It was about one year prior to this article that I wrote “<a href="http://ocpsoft.com/java/jsf2-in-good-hands/" target="_blank">JSF2 is in good hands</a>”, in which I spoke about the upcoming release of <a href="http://www.javaserverfaces.org" target="_blank">JavaServer™ Faces 2</a>, and how the community had changed immensely in the few years I’d been using the tool. There were changes I wanted to make, and started making them by publishing an open source extension called PrettyFaces.
 

@@ -1,5 +1,7 @@
 .categories ['PrettyFaces']
 .dateCreated 20091103T11:09:35
+.date_modified 20091206T14:32:13
+.date_modified_gmt 20091206T19:32:13
 .link http://ocpsoft.org/prettyfaces/new-releases-and-changes-coming-in-prettyfaces/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug new-releases-and-changes-coming-in-prettyfaces
 <p><a href="http://ocpsoft.com/prettyfaces">PrettyFaces - SEO, Dynamic Parameters, Bookmarks, and Navigation for JSF / JSF2</a> version 2.0.3 offers a BIG new feature for <a href="#validation">URL validation</a>, while 1.2.6 is a maintenance release, primarily adding the &lt;p:link anchor="..."&gt; attribute - it does not include the new validation features.</p>
 <p>Coinciding with the JSF2.0 release, OcpSoft will be updating PF1.2.x for maintenance only, however, community participation is still welcome on all versions of the project.</p>

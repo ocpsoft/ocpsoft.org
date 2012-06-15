@@ -1,5 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20100204T23:35:29
+.date_modified 20120422T04:48:45
+.date_modified_gmt 20120422T08:48:45
 .link http://ocpsoft.org/opensource/how-to-safely-add-modify-servlet-request-parameter-values/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug how-to-safely-add-modify-servlet-request-parameter-values
 <h1 style="display:none;"><a href="http://ocpsoft.com/prettyfaces/"  title="SEO | Dynamic Parameters | Bookmarks | and Navigation for JSF | JSF2">PrettyFaces</a></h1>
 <h2>Sometimes things are worth writing about.</h2>

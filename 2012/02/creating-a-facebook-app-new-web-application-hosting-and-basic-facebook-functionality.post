@@ -1,5 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20120226T22:06:47
+.date_modified 20120425T23:59:30
+.date_modified_gmt 20120426T03:59:30
 .link http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 602
 .wp_author_display_name Craig Schwarzwald
 .wp_author_id 602
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality
 [toc][/toc]
 

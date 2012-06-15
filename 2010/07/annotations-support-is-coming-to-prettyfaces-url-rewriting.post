@@ -1,5 +1,7 @@
 .categories ['PrettyFaces']
 .dateCreated 20100706T11:18:56
+.date_modified 20100706T20:34:23
+.date_modified_gmt 20100707T00:34:23
 .link http://ocpsoft.org/prettyfaces/annotations-support-is-coming-to-prettyfaces-url-rewriting/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 13
 .wp_author_display_name Christian Kaltepoth
 .wp_author_id 13
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug annotations-support-is-coming-to-prettyfaces-url-rewriting
 The PrettyFaces team is currently working on an alternative way to configure URL mappings. PrettyFaces will soon allow to use annotations instead of the classic XML configuration file to declare mappings. We encourage everyone interested in PrettyFaces to take a look at this new way of configuration and share his or her opinion with us.
 <!--more-->

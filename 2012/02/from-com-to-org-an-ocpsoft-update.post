@@ -1,5 +1,7 @@
 .categories ['Announcement']
 .dateCreated 20120223T23:59:08
+.date_modified 20120224T06:12:30
+.date_modified_gmt 20120224T11:12:30
 .link http://ocpsoft.org/announcement/from-com-to-org-an-ocpsoft-update/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug from-com-to-org-an-ocpsoft-update
 Hello open-source fanatics! You may have noticed our recent move from ocpsoft.com to <a href="http://ocpsoft.org/">ocpsoft.org</a>, and we would like to take a brief moment to explain this change. We have always been an open-source website, a group of technologists dedicated to the open-source programming model, but our domain name did not reflect this initiative. OCPsoft is an organization for shared open ideas, and in order to promote that reality, we have decided to take the risk at damaging our search rank in order to stay true to our ideals.
 

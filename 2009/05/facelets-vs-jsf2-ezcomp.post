@@ -1,5 +1,7 @@
 .categories ['JSF']
 .dateCreated 20090519T14:18:00
+.date_modified 20091206T14:40:30
+.date_modified_gmt 20091206T19:40:30
 .link http://ocpsoft.org/java/jsf-java/facelets-vs-jsf2-ezcomp/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug facelets-vs-jsf2-ezcomp
 Several things that make life painful with Facelets are fixed with <a href="https://javaserverfaces.dev.java.net/" target="_blank">JSF2 &amp; EzComp</a>. Take a look at some of the nicer things to come:
 <!--more-->

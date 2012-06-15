@@ -1,5 +1,7 @@
 .categories ['Best Practices']
 .dateCreated 20090512T05:12:03
+.date_modified 20090512T05:12:03
+.date_modified_gmt 20090512T12:12:03
 .link http://ocpsoft.org/best-practices/static-analysis-tools-experience/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 5
 .wp_author_display_name Derek Hollis
 .wp_author_id 5
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug static-analysis-tools-experience
 When developers choose to enforce Static Analysis tools (i.e. JTest or PMD) they might have the best intentions at heart, but are actually making the code worse in the long run.  The value of the programmer's experience and expertise on the code is not considered.
 

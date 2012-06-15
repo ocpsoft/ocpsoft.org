@@ -1,5 +1,7 @@
 .categories ['JSF2']
 .dateCreated 20091214T10:27:53
+.date_modified 20091214T13:13:33
+.date_modified_gmt 20091214T18:13:33
 .link http://ocpsoft.org/java/jsf2-java/a-classroom-tale-of-jsf2/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug a-classroom-tale-of-jsf2
 As a member of the JSF 2 <a  target="_blank" href="http://www.javaserverfaces.org/">expert group</a>, I've stated that my primary goal is to make JSF, and J2EE, more accessible to the community at large, to reach out and make sure that people's voices are heard, and that what we are doing makes sense. I've only been part of the group for a little under a year, but I've met some pretty cool people, and you'd be surprised at how interested they all are to hear your story.
 

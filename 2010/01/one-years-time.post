@@ -1,5 +1,7 @@
 .categories ['JSF', 'JSF2', 'OCPSoft', 'OpenSource', 'PrettyFaces']
 .dateCreated 20100128T12:53:39
+.date_modified 20100716T14:00:09
+.date_modified_gmt 20100716T18:00:09
 .link http://ocpsoft.org/opensource/one-years-time/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 5
 .wp_author_display_name Derek Hollis
 .wp_author_id 5
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug one-years-time
 It is amazing what can be done in exactly one year's time.  January 17th will have been the 2nd anniversary since Lincoln Baxter and I started OcpSoft.  It's been one seriously fun, and wild, ride with <a href="http://www.javaserverfaces.org">JavaServer Faces</a> and the open-source community.  I want to take a moment to talk about my partner's success story and what he has accomplished in just <em>one</em> short year.
 <!--more-->

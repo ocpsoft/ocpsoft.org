@@ -1,5 +1,7 @@
 .categories ['JSF', 'OpenSource']
 .dateCreated 20080824T22:31:50
+.date_modified 20091206T14:44:38
+.date_modified_gmt 20091206T19:44:38
 .link http://ocpsoft.org/opensource/ajax4jsf-a4jform-databroken/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug ajax4jsf-a4jform-databroken
 <h2>A4J:Form is missing several specified ajax functions</h2>
 (<em>View this issue on the JBoss tracker <a href="https://jira.jboss.org/jira/browse/AJSF-141" target="_blank">here</a>. Keep reading, there is a fix...<a href="https://jira.jboss.org/jira/secure/attachment/12321714/UIAjaxForm.java"> download fix</a></em>)

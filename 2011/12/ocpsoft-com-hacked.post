@@ -1,5 +1,7 @@
 .categories ['OCPSoft']
 .dateCreated 20111218T22:29:12
+.date_modified 20120109T01:25:10
+.date_modified_gmt 20120109T06:25:10
 .link http://ocpsoft.org/ocpsoft/ocpsoft-com-hacked/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 1
 .wp_author_display_name Team
 .wp_author_id 1
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug ocpsoft-com-hacked
 We regret to inform you that the hosting provider we use for OCPsoft.com, and our website itself has recently come under attack. The hack utilized our caching provider to place inappropriate advertising and unrelated content on our website for the promotion of a product. We have removed the source of the problem, but cached files are still being served from DNS caches and proxies.
 

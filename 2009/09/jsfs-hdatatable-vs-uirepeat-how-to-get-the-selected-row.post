@@ -1,5 +1,7 @@
 .categories ['JSF']
 .dateCreated 20090914T04:30:42
+.date_modified 20100718T14:01:28
+.date_modified_gmt 20100718T18:01:28
 .link http://ocpsoft.org/java/jsf-java/jsfs-hdatatable-vs-uirepeat-how-to-get-the-selected-row/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug jsfs-hdatatable-vs-uirepeat-how-to-get-the-selected-row
 So, a little while ago I was attempting to use JSF's Facelets &lt;ui:repeat&gt; tag, as a replacement for &lt;h:dataTable&gt;, but difficulty came when I needed to process actions on individual records of each row.
 

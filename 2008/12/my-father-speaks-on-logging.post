@@ -1,5 +1,7 @@
 .categories ['Best Practices']
 .dateCreated 20081209T15:23:59
+.date_modified 20091206T14:42:50
+.date_modified_gmt 20091206T19:42:50
 .link http://ocpsoft.org/best-practices/my-father-speaks-on-logging/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug my-father-speaks-on-logging
 After reading a recent article on logging, and when you should and shouldn't do it, I asked my father for his views. He has about 25 years of experience in both small companies and large corporations, and got me thinking about some things that I hadn't before.
 <!--more-->

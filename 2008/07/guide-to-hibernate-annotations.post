@@ -1,5 +1,7 @@
 .categories ['Hibernate', 'Java']
 .dateCreated 20080722T21:37:57
+.date_modified 20091206T14:38:38
+.date_modified_gmt 20091206T19:38:38
 .link http://ocpsoft.org/java/guide-to-hibernate-annotations/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug guide-to-hibernate-annotations
 <h2>Is there light at the end of the tunnel?</h2>
 So I'm sure I'm not alone here, when I say that Hibernate can be frustrating, difficult to learn, and may even feel like to use it means to give up on some design principles that have been proven by many.

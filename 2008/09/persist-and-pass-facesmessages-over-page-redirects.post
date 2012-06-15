@@ -1,5 +1,7 @@
 .categories ['Java', 'JSF']
 .dateCreated 20080918T14:47:13
+.date_modified 20091206T14:44:20
+.date_modified_gmt 20091206T19:44:20
 .link http://ocpsoft.org/java/persist-and-pass-facesmessages-over-page-redirects/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug persist-and-pass-facesmessages-over-page-redirects
 <h2 style="text-align: left;">Very Simple</h2>
 <p style="text-align: left;">In a JSF Reference Implementation, passing global faces messages between pages doesn't work. It's not designed that way "out of the box." Fortunately there is a way to do this, which will even support redirects between pages, forwards through a RequestDispatcher, and also through standard JSF navigation cases.</p>

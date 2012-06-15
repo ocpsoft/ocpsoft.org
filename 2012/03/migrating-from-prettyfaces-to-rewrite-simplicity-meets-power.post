@@ -1,5 +1,7 @@
 .categories ['Java']
 .dateCreated 20120314T21:04:32
+.date_modified 20120326T19:36:22
+.date_modified_gmt 20120326T23:36:22
 .link http://ocpsoft.org/java/migrating-from-prettyfaces-to-rewrite-simplicity-meets-power/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 727
 .wp_author_display_name Daniel Sachse
 .wp_author_id 727
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug migrating-from-prettyfaces-to-rewrite-simplicity-meets-power
 [toc/]
 

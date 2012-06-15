@@ -1,5 +1,7 @@
 .categories ['JSF', 'JSF2']
 .dateCreated 20091202T15:43:57
+.date_modified 20091207T18:00:44
+.date_modified_gmt 20091207T23:00:44
 .link http://ocpsoft.org/java/jsf-java/jsf2-engaging-the-community/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug jsf2-engaging-the-community
 <p>JSF2 is an <b>amazing</b> web-framework, and as part of our initiative to engage the community, Dan Allen, Andy Schwartz, Kito Mann, the rest of the Expert Group, and I have been putting together a "JSF Root Node" (as Ed Burns put it.) A website to be the first place people go to when they think of JSF.</p>
 <!--more-->

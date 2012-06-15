@@ -1,5 +1,7 @@
 .categories ['Best Practices', 'Java']
 .dateCreated 20080801T17:49:26
+.date_modified 20091206T14:44:56
+.date_modified_gmt 20091206T19:44:56
 .link http://ocpsoft.org/java/replacing-commented-code-with-delegated-code/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug replacing-commented-code-with-delegated-code
 Today's subject is a well commented square root approximation method. Imagine that this method is buried deep in a very messy Java class. How can we make sure that this code is reusable and that our comments don't become out of date as our code changes?
 <pre lang="java">/**

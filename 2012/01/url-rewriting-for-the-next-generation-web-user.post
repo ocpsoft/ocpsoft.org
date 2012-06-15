@@ -1,5 +1,7 @@
 .categories ['Java']
 .dateCreated 20120112T15:38:21
+.date_modified 20120112T15:44:02
+.date_modified_gmt 20120112T20:44:02
 .link http://ocpsoft.org/java/url-rewriting-for-the-next-generation-web-user/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug url-rewriting-for-the-next-generation-web-user
 <a href="http://twitter.com/lincolnthree" target="_blank">Lincoln Baxter, III</a> speaks on the well and lesser known uses for URL-rewriting in modern web applications, how it can be used to increase security, enhance usability, and how it can supplement any new or existing application - no matter the language or technology.
 

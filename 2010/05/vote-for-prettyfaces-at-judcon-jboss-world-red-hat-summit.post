@@ -1,5 +1,7 @@
 .categories ['OpenSource', 'PrettyFaces']
 .dateCreated 20100520T16:23:42
+.date_modified 20100730T16:31:51
+.date_modified_gmt 20100730T20:31:51
 .link http://ocpsoft.org/opensource/vote-for-prettyfaces-at-judcon-jboss-world-red-hat-summit/
 .mt_allow_comments 0
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug vote-for-prettyfaces-at-judcon-jboss-world-red-hat-summit
 
 <!--more-->

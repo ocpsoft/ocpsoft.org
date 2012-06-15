@@ -1,5 +1,7 @@
 .categories ['PrettyFaces']
 .dateCreated 20100726T19:12:25
+.date_modified 20100812T10:36:33
+.date_modified_gmt 20100812T14:36:33
 .link http://ocpsoft.org/prettyfaces/logo-contest-prettyfaces-needs-a-face-for-the-future/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 1
 .wp_author_display_name Team
 .wp_author_id 1
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug logo-contest-prettyfaces-needs-a-face-for-the-future
 <div class="featured">
 <table>

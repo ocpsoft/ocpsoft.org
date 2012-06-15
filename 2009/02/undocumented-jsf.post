@@ -1,5 +1,7 @@
 .categories ['Java', 'JSF']
 .dateCreated 20090215T20:44:43
+.date_modified 20091206T14:40:50
+.date_modified_gmt 20091206T19:40:50
 .link http://ocpsoft.org/java/undocumented-jsf/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug undocumented-jsf
 <h2>Add a comment with your experience or "gotcha!"</h2>
 

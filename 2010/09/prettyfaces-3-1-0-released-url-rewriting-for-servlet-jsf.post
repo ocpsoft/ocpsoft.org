@@ -1,5 +1,7 @@
 .categories ['PrettyFaces', 'Releases']
 .dateCreated 20100904T14:47:14
+.date_modified 20100904T15:04:34
+.date_modified_gmt 20100904T19:04:34
 .link http://ocpsoft.org/prettyfaces/prettyfaces-3-1-0-released-url-rewriting-for-servlet-jsf/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 1
 .wp_author_display_name Team
 .wp_author_id 1
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug prettyfaces-3-1-0-released-url-rewriting-for-servlet-jsf
 <center>
 <div class="featured">» <a href="http://ocpsoft.com/prettyfaces/">Get PrettyFaces!</a></div>

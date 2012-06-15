@@ -1,5 +1,7 @@
 .categories ['Best Practices', 'Releases']
 .dateCreated 20081216T16:13:09
+.date_modified 20091206T14:42:40
+.date_modified_gmt 20091206T19:42:40
 .link http://ocpsoft.org/best-practices/universal-context-of-computer-programming/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug universal-context-of-computer-programming
 <p style="margin-bottom: 0in;">The only thing that stays the same, in our field of Computer Science, is change itself. Do not try to predict what will happen in the future; instead know that the future will bring change, and that you will need to adapt to it.</p>
 <p style="margin-bottom: 0in;">Design systems which are capable of change, and you will be much more ready for the future.</p>

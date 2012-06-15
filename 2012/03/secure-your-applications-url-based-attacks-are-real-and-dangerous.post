@@ -1,5 +1,7 @@
 .categories ['OpenSource', 'Rewrite']
 .dateCreated 20120329T00:44:55
+.date_modified 20120422T03:10:29
+.date_modified_gmt 20120422T07:10:29
 .link http://ocpsoft.org/opensource/secure-your-applications-url-based-attacks-are-real-and-dangerous/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug secure-your-applications-url-based-attacks-are-real-and-dangerous
 [toc]
 

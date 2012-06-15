@@ -1,5 +1,7 @@
 .categories ['Uncategorized']
 .dateCreated 20090127T14:54:16
+.date_modified 20090127T14:54:45
+.date_modified_gmt 20090127T21:54:45
 .link http://ocpsoft.org/uncategorized/prettyfaces-122-released/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug prettyfaces-122-released
 A new minor release of the <a href="http://ocpsoft.com/prettyfaces">PrettyFaces</a> JSF extension for Bookmarkable/Pretty URLs is now available for download.
 

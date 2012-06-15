@@ -1,5 +1,7 @@
 .categories ['Seam']
 .dateCreated 20100426T15:13:19
+.date_modified 20110605T17:09:16
+.date_modified_gmt 20110605T21:09:16
 .link http://ocpsoft.org/seam/cdi-powered-unit-testing-using-arquillian/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug cdi-powered-unit-testing-using-arquillian
 When developing any system or software, it is important to test as much of that system as possible. Web frameworks are no exception; comprehensive, well-designed unit tests are critical for long-term success and maintenance.
 

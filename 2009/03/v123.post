@@ -1,5 +1,7 @@
 .categories ['PrettyFaces']
 .dateCreated 20090318T21:40:03
+.date_modified 20111218T11:47:02
+.date_modified_gmt 20111218T16:47:02
 .link http://ocpsoft.org/prettyfaces/v123/
 .mt_allow_comments 0
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug v123
 <h1><a name="configuration"></a>Configuration</h1>
 Setting up PrettyFaces is simple.

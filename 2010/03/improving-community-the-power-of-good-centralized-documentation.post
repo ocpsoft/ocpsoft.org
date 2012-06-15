@@ -1,5 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20100304T14:15:14
+.date_modified 20100304T14:15:14
+.date_modified_gmt 20100304T19:15:14
 .link http://ocpsoft.org/opensource/improving-community-the-power-of-good-centralized-documentation/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug improving-community-the-power-of-good-centralized-documentation
 <div class="featured"><center>Read the original post on <a target="_blank" href="http://in.relation.to/Bloggers/ImprovingCommunityThePowerOfGoodCentralizedDocumentation">in.relation.to</a></center></div>
 

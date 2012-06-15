@@ -1,5 +1,7 @@
 .categories ['Java', 'JSF']
 .dateCreated 20090210T16:44:39
+.date_modified 20100217T10:39:21
+.date_modified_gmt 20100217T15:39:21
 .link http://ocpsoft.org/java/jsf2-in-good-hands/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug jsf2-in-good-hands
 <blockquote>
 <h2 style="text-align: center;">"The community was speaking, but until recently, nobody was listening."</h2>

@@ -1,5 +1,7 @@
 .categories ['Java', 'OpenSource', 'Seam']
 .dateCreated 20100505T10:55:50
+.date_modified 20100506T11:50:00
+.date_modified_gmt 20100506T15:50:00
 .link http://ocpsoft.org/java/jsf-2-0-cross-field-form-validation-simpl-in-reality/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug jsf-2-0-cross-field-form-validation-simpl-in-reality
 I'd like to start by saying that using JSF by itself can sometimes feel trying to pull your own teeth out with a pair of tweezers, but there's hope. JSF was designed to be a platform of extensions - a foundation for building web-frameworks, and that it's done very well. JSF 2.0 addresses most of the concerns about usability (so there's less tooth pulling,) and provides even more extensibility. That's where <a target="_blank" href="http://seamframework.org/Seam3/FacesModule">Seam Faces</a> comes in, that's where <a href="http://ocpsoft.com/prettyfaces/">PrettyFaces</a> comes in.
 

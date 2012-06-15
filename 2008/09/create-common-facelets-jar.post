@@ -1,5 +1,7 @@
 .categories ['JSF', 'OpenSource']
 .dateCreated 20080909T20:03:43
+.date_modified 20100915T09:45:52
+.date_modified_gmt 20100915T13:45:52
 .link http://ocpsoft.org/opensource/create-common-facelets-jar/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug create-common-facelets-jar
 <h2>Tutorial - Step By Step</h2>
 If you've learned to use JSF Facelets to create on-the-fly, simple components using XHTML, then you probably have a whole slew of custom components that need to be copied between various projects, and can be somewhat painful to keep up to date. You may have tried to move them into a jar file, but Facelets can't find them there (without some help from us.)

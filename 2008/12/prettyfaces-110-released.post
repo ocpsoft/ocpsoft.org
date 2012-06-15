@@ -1,5 +1,7 @@
 .categories ['JSF', 'OpenSource', 'PrettyFaces', 'Releases']
 .dateCreated 20081208T17:00:59
+.date_modified 20081209T06:57:50
+.date_modified_gmt 20081209T13:57:50
 .link http://ocpsoft.org/opensource/prettyfaces-110-released/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug prettyfaces-110-released
 A new release of the <a href="http://ocpsoft.com/prettyfaces" target="_self">PrettyFaces</a> JSF extension for Bookmarkable/Pretty URLs is now availible for download. This release includes several new features.<br/>
 <!--more-->

@@ -1,5 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20090629T20:29:54
+.date_modified 20091206T14:40:22
+.date_modified_gmt 20091206T19:40:22
 .link http://ocpsoft.org/opensource/exposing-subfolders-under-a-wordpress-installation/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug exposing-subfolders-under-a-wordpress-installation
 So, this is going to be a short-relatively non-technical post, but having just run into the problem of exposing a subdirectory when WordPress is installed into the root directory of a typical DreamHost or GoDaddy style account, I found the need, so here's the answer if anyone else needs it.
 <!--more-->

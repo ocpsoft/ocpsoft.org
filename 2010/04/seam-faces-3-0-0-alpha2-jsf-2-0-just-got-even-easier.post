@@ -1,5 +1,7 @@
 .categories ['Java', 'Seam']
 .dateCreated 20100423T16:16:27
+.date_modified 20100806T16:10:28
+.date_modified_gmt 20100806T20:10:28
 .link http://ocpsoft.org/java/seam-faces-3-0-0-alpha2-jsf-2-0-just-got-even-easier/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug seam-faces-3-0-0-alpha2-jsf-2-0-just-got-even-easier
 Ever wondered why JSF doesn't support bean @Inject-ion in Converters or Validators? Ever wondered how to listen to a single PhaseEvent or ComponentSystemEvent, or filter on events by componentId, or view? Ever wondered why you can't just @Inject FacesContext, or NavigationHandler?
 

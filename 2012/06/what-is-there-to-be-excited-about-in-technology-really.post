@@ -1,5 +1,7 @@
 .categories ['OpenSource', 'Technology']
 .dateCreated 20120614T13:13:11
+.date_modified 20120615T11:02:15
+.date_modified_gmt 20120615T15:02:15
 .link http://ocpsoft.org/opensource/what-is-there-to-be-excited-about-in-technology-really/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,9 +14,11 @@
 .userid 1
 .wp_author_display_name Team
 .wp_author_id 1
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug what-is-there-to-be-excited-about-in-technology-really
-OCPsoft Founder <a href="http://twitter.com/lincolnthree" title="Lincoln Baxter, III on Twitter" target="_blank">Lincoln Baxter, III</a> wrote an insightful article on the state of technology today, and where future innovation is likely to occur. We have seen many advancements in technology over the last several years, but our lives remain complex, and we face many of the same problems that have plagued the industry for decades. What are these problems? How will they be addressed? What can we get excited about?
+<a href="http://twitter.com/lincolnthree" title="Lincoln Baxter, III on Twitter" target="_blank">Lincoln Baxter, III</a> (OCPsoft Founder) shared his insight on the state of technology today and where future innovation is likely to occur. We have seen many advancements in technology over the last several years, but our lives remain complex and we face many of the same problems that have plagued the industry for decades. What are these problems? How will they be addressed? What can we get excited about?
 
 <a href="http://www.dzone.com/links/what_is_there_to_be_excited_about_in_technology_r.html" title="What is there to be excited about in technology, Really?" target="_blank">Read the full article on JBoss.org &raquo;</a> (Link through DZone.)

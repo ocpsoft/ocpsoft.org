@@ -1,5 +1,7 @@
 .categories ['JSF']
 .dateCreated 20090103T10:43:20
+.date_modified 20091206T14:42:36
+.date_modified_gmt 20091206T19:42:36
 .link http://ocpsoft.org/java/jsf-java/jsf-20-extension-development-accessing-facescontext-in-a-filter/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug jsf-20-extension-development-accessing-facescontext-in-a-filter
 <h3>The Problem:</h3>
 So you need a way to instantiate the 2.0 FacesContext in a Filter, but when you use the same method that you have in the past, you get NullPointerExceptions all over the place when attempting to access any values through El. The ScopedAttributeElResolver bombs when attempting to set values or access methods in backing beans.) It's not too hard to get this working again.

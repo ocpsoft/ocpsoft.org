@@ -1,5 +1,7 @@
 .categories ['PrettyFaces']
 .dateCreated 20091219T12:07:00
+.date_modified 20100109T14:18:17
+.date_modified_gmt 20100109T19:18:17
 .link http://ocpsoft.org/prettyfaces/jsfsummit-2009-prettyfaces-makes-an-appearance/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug jsfsummit-2009-prettyfaces-makes-an-appearance
 <p>PrettyFaces went on the road and presented at <a href="http://www.jsfsummit.com" target="_blank">JSFSummit 2009</a> (Dec 1st - 5th, Orlando, FL,) and for those of you who missed it, here are the slides. The presentation wasn't recorded, but the slides alone are a good read. If you are interested in JavaServer Faces, Url Rewriting, or SEO and best practices, this presentation is for you!</p>
 <!--more-->

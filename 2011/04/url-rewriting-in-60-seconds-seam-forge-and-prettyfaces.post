@@ -1,5 +1,7 @@
 .categories ['Java', 'JBoss', 'OpenSource', 'PrettyFaces', 'Seam']
 .dateCreated 20110407T12:12:38
+.date_modified 20111031T13:03:37
+.date_modified_gmt 20111031T17:03:37
 .link http://ocpsoft.org/java/url-rewriting-in-60-seconds-seam-forge-and-prettyfaces/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug url-rewriting-in-60-seconds-seam-forge-and-prettyfaces
 Do you have an existing Maven-based Java EE application that you'd like to clean up a bit in the browser? Do your URLs look too much like this: 
 

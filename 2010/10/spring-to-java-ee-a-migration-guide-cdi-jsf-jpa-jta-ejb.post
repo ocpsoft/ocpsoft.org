@@ -1,5 +1,7 @@
 .categories ['Java', 'JSF2', 'OpenSource', 'Seam', 'Spring', 'Technology']
 .dateCreated 20101001T13:40:21
+.date_modified 20120306T12:37:03
+.date_modified_gmt 20120306T17:37:03
 .link http://ocpsoft.org/java/spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb
 [toc][/toc]
 

@@ -1,5 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20120222T20:12:23
+.date_modified 20120517T14:45:35
+.date_modified_gmt 20120517T18:45:35
 .link http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug guide-to-regular-expressions-in-java-part-1
 [toc][/toc]
 

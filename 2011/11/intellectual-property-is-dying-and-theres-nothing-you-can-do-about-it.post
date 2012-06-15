@@ -1,5 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20111127T00:16:19
+.date_modified 20120223T12:18:47
+.date_modified_gmt 20120223T17:18:47
 .link http://ocpsoft.org/opensource/intellectual-property-is-dying-and-theres-nothing-you-can-do-about-it/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug intellectual-property-is-dying-and-theres-nothing-you-can-do-about-it
 <img src="http://ocpsoft.com/wp-content/uploads/2011/11/piracyglobalwarming.jpg" alt="Piracy Helps Stop Global Warming" title="Piracy Helps Stop Global Warming" width="450" height="360" align="right" style="margin-left: 35px; margin-bottom: 15px; margin-top: 5px;" class="alignleft size-full wp-image-2904" />
 

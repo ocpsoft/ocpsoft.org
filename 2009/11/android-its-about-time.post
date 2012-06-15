@@ -1,5 +1,7 @@
 .categories ['Technology']
 .dateCreated 20091115T22:55:06
+.date_modified 20091206T14:29:03
+.date_modified_gmt 20091206T19:29:03
 .link http://ocpsoft.org/technology/android-its-about-time/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug android-its-about-time
 <p>I don't know why I waited so long. Maybe I just thought the G1 was ugly, maybe it's my futile fight against the mob of conformity. I bought the Droid. Now my already over-active sense of entrepreneurship, restless production has new food. Goodbye night-time reading for a little while.</p>
 <!--more-->

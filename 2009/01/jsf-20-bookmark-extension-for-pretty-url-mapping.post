@@ -1,5 +1,7 @@
 .categories ['JSF', 'PrettyFaces', 'Releases']
 .dateCreated 20090103T23:00:54
+.date_modified 20091105T01:38:37
+.date_modified_gmt 20091105T06:38:37
 .link http://ocpsoft.org/java/jsf-java/jsf-20-bookmark-extension-for-pretty-url-mapping/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug jsf-20-bookmark-extension-for-pretty-url-mapping
 <h3>It didn't make it...</h3>
 Well folks, for those of you who were hoping JSF 2.0 would contain the URL rewriting tools that many had asked for, unfortunately it looks like it's not going to make it into the official spec. Bookmarking a page, or pages in JSF has been a heavily requested feature, but according to <a href="http://forums.sun.com/thread.jspa?messageID=10541909#10541909" target="_blank">this discussion</a>, is currently out of scope.

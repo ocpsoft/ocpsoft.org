@@ -1,5 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20120422T05:24:41
+.date_modified 20120422T05:24:41
+.date_modified_gmt 20120422T09:24:41
 .link http://ocpsoft.org/?p=4219
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug 
 <style type="text/css">
 .reflected {

@@ -1,5 +1,7 @@
 .categories ['JSF2']
 .dateCreated 20120128T14:32:46
+.date_modified 20120130T13:18:32
+.date_modified_gmt 20120130T18:18:32
 .link http://ocpsoft.org/java/jsf2-java/server-side-action-methods-on-jsf-valuechange-events-using-ajax-listeners/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -12,8 +14,10 @@
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
+.wp_more_text 
 .wp_password 
 .wp_post_format standard
+.wp_post_thumbnail 
 .wp_slug server-side-action-methods-on-jsf-valuechange-events-using-ajax-listeners
 I'm about to show you a pattern that will make your heart sing. I have to thank <a href="https://twitter.com/#!/brianleathem" target="_blank">Brian Leathem</a> for his original idea to use CDI events in the ValueChangeListener, but when combined with a little <code>&lt;f:ajax&gt;</code> magic, there's almost no limit to what you can do without writing a single line of JavaScript. ValueChangeListeners are also the perfect opportunity to build an Event driven model into your application.
 <!--more-->

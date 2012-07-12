@@ -1,7 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20120425T14:25:35
-.date_modified 20120425T14:32:00
-.date_modified_gmt 20120425T18:32:00
+.date_modified 20120712T16:34:25
+.date_modified_gmt 20120712T20:34:25
 .link http://ocpsoft.org/opensource/when-builds-fail-for-no-reason-feeding-maven-memory/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -27,8 +27,6 @@ Ever experience a wonderfully fantastic "green bar!" in Eclipse, NetBeans, or In
 
 That would normally work fine if the error we received is something like: 
 <pre lang="text">java.lang.OutOfMemoryError: PermGen space</pre>
-
-<h2 class="toc">Oops...</h2>
 
 Unfortunately, though, this doesn't solve the problem because Maven actually uses a separate JVM for each JUnit test execution! So while we have successfully enabled Maven to be a hog, our tests are still running in a constrained environment. What we need to do instead is increase the memory capacity of the Maven Surefire launcher:
 <!--more-->

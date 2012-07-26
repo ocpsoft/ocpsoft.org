@@ -1,0 +1,101 @@
+.categories ['OpenSource']
+.dateCreated 20120725T16:46:34
+.date_modified 20120725T16:47:08
+.date_modified_gmt 20120725T20:47:08
+.link http://ocpsoft.org/opensource/rewrite-1-1-0-final-introduces-the-outputbuffer-what-servlet-always-wanted-but-could-never-have/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/opensource/rewrite-1-1-0-final-introduces-the-outputbuffer-what-servlet-always-wanted-but-could-never-have/
+.post_status publish
+.postid 4729
+.title Rewrite 1.1.0.Final introduces the OutputBuffer - What Servlet always wanted but could never have
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug rewrite-1-1-0-final-introduces-the-outputbuffer-what-servlet-always-wanted-but-could-never-have
+Output buffering is a feature often desired but rarely properly implemented - Properly resetting the Response stream, preserving headers correctly, writing to disk so you don't overflow the JVM memory space - in Rewrite, we hope to make this attainable for anyone seeking to do things like:
+<br/>
+<ul>
+	<li>Dynamic minification of HTML, JavaScript, and/or CSS files</li>
+	<li>Modification of output HTML or content before it is sent to the client.</li>
+	<li>Reduction of build and development complexity by transforming LESS or SASS files into CSS on the Server</li>
+	<li>Got more ideas?... <a href="mailto:prettyfaces-dev@googlegroups.com" target="_blank">tell us.</a>?</li>
+</ul>
+
+Now, using the Rewrite's <a href="https://github.com/ocpsoft/rewrite/blob/master/impl-servlet/src/main/java/org/ocpsoft/rewrite/servlet/config/OutputBuffer.java" target="_blank">"OutputBuffer" API</a> introduced in the new version <a href="http://ocpsoft.org/rewrite/" title="Rewrite - URLRewriteFilter | Java | Java EE | Mod_Rewrite | Open source | OCPsoft" target="_blank">1.1.0.Final</a>, you can finally achieve this in just a few lines of code, either by wrapping a stream, or simply modifying the contents directly!
+<!--more-->
+Want to make every first word in your application <strong>bold</strong> or remove all punctuation? You probably won't make too many friends, but you could do it if you wanted to. Maybe we should start by changing all links in the app to this <a href="http://www.youtube.com/watch?v=oHg5SJYRHA0" title="Educational Video" target="_blank">educational video</a>. Or maybe we'll just make everything lowercase:
+ 
+[snippit filename="Create an OutputBuffer"]
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import org.ocpsoft.common.util.Streams;
+
+public class OutputToLowercase implements OutputBuffer
+{
+   @Override
+   public InputStream execute(InputStream input)
+   {
+      String contents = Streams.toString(input);
+      return new ByteArrayInputStream(contents.toLowerCase().getBytes());
+   }
+}
+[/snippit]
+
+[snippit filename="Use it in your ConfigurationProvider" href="https://github.com/ocpsoft/rewrite/blob/master/impl-servlet/src/test/java/org/ocpsoft/rewrite/servlet/wrapper/BufferedResponseConfigurationProvider.java"]
+   public Configuration getConfiguration(final ServletContext context)
+   {
+      return ConfigurationBuilder.begin()
+               .addRule()
+               .when(Path.matches("/index.html"))
+               .perform(Response.withOutputBufferedBy(new OutputToLowercase()));
+   }
+[/snippit]
+
+Combine that with a little bit of Rewrite-style configuration, and you've got a simple recipe for output modification. Some of the features to come in Rewrite 2.0, including a simplified output <a href="https://github.com/ocpsoft/rewrite/blob/master/transform-less/src/test/java/org/ocpsoft/rewrite/transform/less/LessIntegrationTestProvider.java#L49" target="_blank">Transform API</a>, are based on this technology. So if you want to get a head start, you can try a 2.0.0-SNAPSHOT, or just wait a few weeks :) 
+
+[info]Get Rewrite version <a href="http://ocpsoft.org/rewrite/" title="Rewrite - URLRewriteFilter | Java | Java EE | Mod_Rewrite | Open source | OCPsoft" target="_blank">1.1.0.Final</a>, or <a href="#" target="_blank">see everything</a> that's new.[/info]
+
+<a name="notes"></a>
+<h1>VERSION 1.1.0</h1>
+
+<h2><a name="features--enhancements" href="https://github.com/ocpsoft/rewrite/blob/master/CHANGELOG.md#features--enhancements"></a>Features &amp; Enhancements:</h2>
+<ul>
+	<li>Enabled fluent chaining of additional Condition and Operation instances when adding single/custom rules by calling <code>ConfigurationBuilder.addRule(new CustomRule()).when(...).perform(...);</code></li>
+	<li>Added Response output buffering support</li>
+	<li>JAAS support with JAASRoles condition</li>
+	<li>Content Delivery Network support with CDN rule</li>
+	<li>Typesafe method invocation support</li>
+	<li>Issue #30 - Tasks may now be performed in a SubFlow without affecting the Flow of the entire Rewrite event.</li>
+	<li>Preview of Transformer APIs</li>
+	<li>Preview of Annotation Configuration API</li>
+</ul>
+
+<h2><a name="regression-impact" href="https://github.com/ocpsoft/rewrite/blob/master/CHANGELOG.md#regression-impact"></a>Regression Impact:</h2>
+<ul>
+	<li>Configuration strings are now literal. Regular expressions must be configured through a parameter such as: <code>.defineRule().when(Path.matches("/{*}").where("*").matches(".*"))</code></li>
+	<li>Join no longer matches Forwarded requests.</li>
+	<li>EL API is now a separate module and the Java package name has changed to 'org.ocpsoft.rewrite.el'</li>
+</ul>
+
+<h2><a name="bug-fixes" href="https://github.com/ocpsoft/rewrite/blob/master/CHANGELOG.md#bug-fixes"></a>Bug Fixes:</h2>
+<ul>
+	<li>Parameter binding now works on Join rules.</li>
+	<li>Issue #67 - Keep order of fluent rules when building configuration.</li>
+	<li>Fixed NumberFormatException on EncodeQuery operation when hashCode of checksum is modified</li>
+	<li>Fixed ArrayIndexOutOfBounds exception for parsing query-strings with a separator but no content "?"</li>
+	<li>Fixed showcase applications</li>
+	<li>Issue #51 - Join no longer matches its own Forwarded requests.</li>
+	<li>Fixed GWT integration issue where context path was not correctly transmitted when client application is hosted under the root URL "/"</li>
+	<li>TypeBasedExpression no longer requires the expression to be surrounded by "#{...}"</li>
+	<li>Fixed bug where container would swallow certain resource requests, resulting in false 404 errors</li>
+	<li>Issue #32 - PhaseBinding defers validation and conversion until within the JSF lifecycle.</li>
+	<li>Issue #33 - ClassVisitorImpl now supports adding rules to the ConfigurationBuilder if necessary</li>
+	<li>Fixed some bugs with URLEncoding/URLDecoding</li>
+</ul>

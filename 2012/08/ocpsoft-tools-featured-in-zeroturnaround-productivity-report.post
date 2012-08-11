@@ -1,0 +1,25 @@
+.categories ['OpenSource']
+.dateCreated 20120809T01:02:39
+.date_modified 20120809T01:02:39
+.date_modified_gmt 20120809T05:02:39
+.link http://ocpsoft.org/opensource/ocpsoft-tools-featured-in-zeroturnaround-productivity-report/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/opensource/ocpsoft-tools-featured-in-zeroturnaround-productivity-report/
+.post_status publish
+.postid 4800
+.title OCPsoft tools featured in ZeroTurnaround productivity report
+.userid 1
+.wp_author_display_name Team
+.wp_author_id 1
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug ocpsoft-tools-featured-in-zeroturnaround-productivity-report
+<p>OCPsoft Founder <a href="http://twitter.com/lincolnthree" target="_blank">Lincoln Baxter, III</a> was interviewed by <a href="http://zeroturnaround.com" target="_blank">ZeroTurnaround</a>, the makers of JRebel, about his take on developer productivity, and new rapid development tools from JBoss. 
+</p><p>
+Featured technologies in this interview are OCPsoft's SocialPM, and also Errai (from JBoss,) a GWT-based web-development framework for creating highly distributed and responsive web applications. <a href="http://zeroturnaround.com/labs/productivity-spotlight-tools-talks-and-the-building-of-jboss-errai/" target="_blank">Read the interview</a> on the ZeroTurnaround website.
+</p>

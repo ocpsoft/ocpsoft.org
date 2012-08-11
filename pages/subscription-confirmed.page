@@ -16,23 +16,23 @@
 .wp_page_order 0
 .wp_page_parent_id 0
 .wp_page_parent_title 
-.wp_page_template page-notitle.php
+.wp_page_template page-full.php
 .wp_password 
 .wp_slug subscription-confirmed
-<div style="width: 600px; margin: auto; margin-top: 50px;">
+<div style="width: 700px; margin: auto; margin-top: 50px; margin-bottom: 100px;">
 
 <div style="margin-left: 100px;">
 
 <span style="display: block; font-size: 50px; padding-top: 50px;">Updates from <span style="color: #ff7700">OCPsoft</span></span>
 
 <h1>Subscription Confirmed</h1>
-
+<p>
 Thanks for signing up! We're glad you like what we do. Our next newsletter should arrive at your doorstep soon.
 
-&nbsp;
+<p>
 
 Sincerely,
-
+<p>
 OCPsoft.org
 </div>
 </div>

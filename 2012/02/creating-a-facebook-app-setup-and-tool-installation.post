@@ -1,7 +1,7 @@
-.categories ['OpenSource']
+.categories ['Facebook', 'OpenSource']
 .dateCreated 20120224T20:38:15
-.date_modified 20120601T02:29:21
-.date_modified_gmt 20120601T06:29:21
+.date_modified 20120807T23:49:40
+.date_modified_gmt 20120808T03:49:40
 .link http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool-installation/
 .mt_allow_comments 1
 .mt_allow_pings 1

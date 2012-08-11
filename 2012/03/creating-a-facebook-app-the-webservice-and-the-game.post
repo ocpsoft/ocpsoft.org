@@ -1,7 +1,7 @@
-.categories ['OpenSource']
+.categories ['Facebook', 'OpenSource']
 .dateCreated 20120304T12:52:46
-.date_modified 20120430T04:43:55
-.date_modified_gmt 20120430T08:43:55
+.date_modified 20120807T23:49:29
+.date_modified_gmt 20120808T03:49:29
 .link http://ocpsoft.org/opensource/creating-a-facebook-app-the-webservice-and-the-game/
 .mt_allow_comments 1
 .mt_allow_pings 1

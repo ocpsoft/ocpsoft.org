@@ -1,7 +1,7 @@
-.categories ['OpenSource']
+.categories ['Facebook', 'OpenSource']
 .dateCreated 20120226T22:06:47
-.date_modified 20120425T23:59:30
-.date_modified_gmt 20120426T03:59:30
+.date_modified 20120807T23:49:35
+.date_modified_gmt 20120808T03:49:35
 .link http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/
 .mt_allow_comments 1
 .mt_allow_pings 1

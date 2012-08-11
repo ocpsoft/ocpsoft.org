@@ -19,7 +19,7 @@
 .wp_page_template page-full.php
 .wp_password 
 .wp_slug subscribe
-<div style="width: 600px; margin: auto; margin-bottom: 300px;">
+<div style="width: 700px; margin: auto; margin-bottom: 100px;">
 
 <div style="margin-left: 100px;">
 
@@ -28,18 +28,18 @@
 <h1>Subscribe to our newsletter</h1>
 
 
-<form action="http://ocpsoft.us2.list-manage1.com/subscribe/post?u=51cbc60dcc396ac06856c5d19&amp;id=3e970a47bb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-	<label for="mce-EMAIL">All the cool kids are doing it</label>
-	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-	<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+<form action="http://ocpsoft.us2.list-manage1.com/subscribe/post?u=51cbc60dcc396ac06856c5d19&amp;id=3e970a47bb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank">
+<p>
+	<label for="mce-EMAIL">All the cool kids are doing it</label><br/>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required> <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn">
 </form>
 
-&nbsp;
+<p>
 
 We hope you enjoy our software as much as we do.
-
+<p>
 Sincerely,
-
+<p>
 OCPsoft.org
 </div>
 

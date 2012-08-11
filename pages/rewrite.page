@@ -20,7 +20,6 @@
 .wp_password 
 .wp_slug rewrite
 [toc]
-
 <h2 style="display:none;">URLRewriteFilter</h2>
 
 <center style="margin-left: -50px;"><img src="http://ocpsoft.org/wp-content/uploads/2012/04/rewrite-center-compressed.png" alt="" title="rewrite-center-compressed" width="500" height="158" class="aligncenter size-full wp-image-4462" />

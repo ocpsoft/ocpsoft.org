@@ -1,0 +1,39 @@
+.categories []
+.dateCreated 20120810T17:24:23
+.excerpt 
+.link http://ocpsoft.org/thank-you/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 4815
+.page_status publish
+.permaLink http://ocpsoft.org/thank-you/
+.text_more 
+.title Thank you
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 0
+.wp_page_parent_title 
+.wp_page_template page-full.php
+.wp_password 
+.wp_slug thank-you
+<div style="width: 700px; margin: auto; margin-top: 50px; margin-bottom: 100px;">
+
+<div style="margin-left: 100px;">
+
+<span style="display: block; font-size: 50px; padding-top: 50px;">Thanks from <span style="color: #ff7700">OCPsoft</span></span>
+
+<h1>Purchase or donation confirmed.</h1>
+
+<p>
+Thanks for helping us to stay online! A receipt for your purchase will be delivered to your email address soon. We're glad you like what we do, and we'll make sure that your money is used to continue progress on our open-source tools and services.
+
+
+<p>
+Sincerely,
+<p>
+OCPsoft.org
+</div>
+</div>

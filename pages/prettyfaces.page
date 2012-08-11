@@ -21,7 +21,7 @@
 .wp_slug prettyfaces
 <center style="margin-left: -50px;"><img src="http://ocpsoft.org/wp-content/uploads/2008/11/prettyfaces-50.png" alt="" title="prettyfaces-50" width="498" height="122" class="alignnone size-full wp-image-2090" />
 
-<h2 style="margin-bottom: 25px;">The open-source <font color="green">/url/#{rewriting}</font> solution for Servlet, JSF, and Java EE</h2></center>
+<h2 style="margin-bottom: 25px; margin-left: 25px; margin-right: 25px;">The open-source <font color="green">/url/#{rewriting}</font> solution for Servlet, JSF, and Java EE</h2></center>
 
 <p style="margin-top: 10px; margin-bottom: 0px;">PrettyFaces is an OpenSource Filter-based Servlets extension with enhanced support for <em>JavaServer Faces</em> - JSF 1.1, 1.2 and 2.0 - enabling creation of bookmark-able, pretty URLs. PrettyFaces solves the "RESTful URL" problem elegantly, including features such as: page-load actions, seamless integration with faces navigation, dynamic view-id assignment, managed parameter parsing, and configuration-free compatibility with other web frameworks. <a href="#features">Take a look at the features &raquo;</a></p>
 

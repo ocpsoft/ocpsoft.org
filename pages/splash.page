@@ -1,0 +1,89 @@
+.categories []
+.dateCreated 20120807T16:39:28
+.excerpt 
+.link http://ocpsoft.org/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 4746
+.page_status publish
+.permaLink http://ocpsoft.org/
+.text_more 
+.title Splash
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 0
+.wp_page_parent_title 
+.wp_page_template page-splash.php
+.wp_password 
+.wp_slug splash
+<!-- Main hero unit for a primary marketing message or call to action -->
+<div class="hero-unit">
+	<div class="primary">
+		<h1>Simpler is better.</h1>
+		<p>We make open-source software that is easy to install, simple to configure, and intuitive to use. Built by developers, for developers. Why not try it?</p>
+	</div>
+	<div class="secondary ">
+		<div class="anatomy">
+			<img class="base" src="./wp-content/themes/ocpsoft.org/img/desktop_mainimage.png" alt="The anatomy of OCPSoft" /> 
+			<img class="ocpsoft-blinking-cursor" src="./wp-content/themes/ocpsoft.org/img/desktop_cursor.png" /> 
+			<img class="small wireframe" src="./wp-content/themes/ocpsoft.org/img/desktop_iconnorth.png" /> 
+			<img class="small beaker" src="./wp-content/themes/ocpsoft.org/img/desktop_iconeast.png" /> 
+			<img class="small monitor" src="./wp-content/themes/ocpsoft.org/img/desktop_iconsoutheast.png" /> 
+			<img class="small phone" src="./wp-content/themes/ocpsoft.org/img/desktop_iconsouth.png" /> 
+			<img class="small stack" src="./wp-content/themes/ocpsoft.org/img/desktop_iconsouthwest.png" /> 
+			<img class="small whitepaper" src="./wp-content/themes/ocpsoft.org/img/desktop_iconwest.png" />
+		</div>
+	</div>
+	<div style="clear: both;"></div>
+</div>
+
+
+<!-- Example row of columns -->
+<div class="ocpsoft-middlearea">
+	<div class="ocpsoft-middlearea-shadow-top">
+		<div class="ocpsoft-middlearea-shadow-bottom">
+			<div class="products-unit">
+				<div class="ocp-centered">
+
+					<div class="ocpsoft-product-column">
+						<h2 class="ocpsoft-product-header ocpsoft-prettyfaces-header">PrettyFaces</h2>
+						<p>Convenient URL-rewriting for Servlet, Java EE, and Java Server Faces</p>
+						<p><a class="btn" style="color: black;" href="http://ocpsoft.org/prettyfaces/">Learn more &raquo;</a></p>
+					</div>
+
+					<div class="ocpsoft-product-column">
+						<h2 class="ocpsoft-product-header ocpsoft-rewrite-header">Rewrite</h2>
+						<p>Advanced URL-rewriting for Servlet, Java EE, and Web Frameworks</p>
+						<p><a class="btn" style="color: black;" href="http://ocpsoft.org/rewrite/">Learn more &raquo;</a></p>
+					</div>
+
+					<div class="ocpsoft-product-column">
+						<h2 class="ocpsoft-product-header ocpsoft-socialpm-header">PrettyTime</h2>
+						<p>Open-source, intuitive Java date and timestamp formatting, "in about 3 minutes."</p>
+						<p><a class="btn" style="color: black;" href="http://ocpsoft.org/prettytime/">Learn more &raquo;</a></p>
+					</div>
+
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Blinking cursor -->
+<script type="text/javascript">
+	window.setInterval(function() {
+		var c = jQuery(".ocpsoft-blinking-cursor");
+		if (c.data('on') === true) {
+			c.hide();
+			c.data('on', false);
+		} else {
+			c.data('on', true);
+			c.show();
+		}
+	}, 500)
+</script>

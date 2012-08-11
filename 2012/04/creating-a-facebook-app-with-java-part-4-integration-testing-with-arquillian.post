@@ -1,7 +1,7 @@
-.categories ['OpenSource']
+.categories ['Facebook', 'OpenSource']
 .dateCreated 20120418T22:59:56
-.date_modified 20120426T13:09:13
-.date_modified_gmt 20120426T17:09:13
+.date_modified 20120807T23:49:14
+.date_modified_gmt 20120808T03:49:14
 .link http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-4-integration-testing-with-arquillian/
 .mt_allow_comments 1
 .mt_allow_pings 1

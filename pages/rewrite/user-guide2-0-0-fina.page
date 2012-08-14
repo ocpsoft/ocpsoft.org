@@ -1,0 +1,45 @@
+.categories []
+.dateCreated 20120813T16:48:03
+.excerpt 
+.link http://ocpsoft.org/?page_id=4831
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 4831
+.page_status draft
+.permaLink http://ocpsoft.org/?page_id=4831
+.text_more 
+.title User guide
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 2646
+.wp_page_parent_title Rewrite
+.wp_page_template default
+.wp_password 
+.wp_slug user-guide2-0-0-fina
+<p>Rewrite is a rule-based Servlet 3.0+ framework for customizing or tweaking existing, and creating new types of, interactions with Servlet applications. Completely free-form, Rewrite allows you to do as little or as much modification or implementation as is necessary to solve your particular problem. With extension points in nearly every state of the Servlet lifecycle, there is nearly nothing that is impossible with Rewrite.</p>
+
+<p>From access control to URL-rewriting, your own imagination is the limit; however, strategic API design and Strong typing help keep you on the right path each step of the way.</p>
+
+
+<h1>Get started</h1>
+
+<p>Rewrite is a modular framework, meaning you can use the core library with as many or as few of the extensions as you feel appropriate. To install core framework, you should use the following maven dependency.</p>
+
+[snippit filename="Add Rewrite to your Maven pom.xml" href="http://ocpsoft.org/rewrite/" label="Get the current version"]<dependency>
+   <groupId>org.ocpsoft.rewrite</groupId>
+   <artifactId>rewrite-servlet</artifactId>
+   <version>${rewrite.version}</version>
+</dependency>
+[/snippit]
+
+
+<h1>Implement a ConfigurationProvider</h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1>Extensions</h1>
+<p>Rewrite provides extensions and integration modules for additional functionality. (You can also [[Rewrite Extensions|write your own extensions.]])</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

@@ -99,9 +99,9 @@ public class AuthenticationStatusInterceptor extends HttpConfigurationProvider
    @Override
    public Configuration getConfiguration(final ServletContext context)
    {
-         Operation loggedIn = new Operation() {
+         Condition loggedIn = new Condition() {
                  @Override
-                 public void perform(Rewrite event, EvaluationContext context) {
+                 public boolean evaluate(Rewrite event, EvaluationContext context) {
                     return profile.isLoggedIn();
                  }
               };

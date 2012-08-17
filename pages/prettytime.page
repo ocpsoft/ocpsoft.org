@@ -359,7 +359,7 @@ public class PrettyTimeTest
 <p>See also: <a target="_blank" href="http://grails.org/plugin/pretty-time">PrettyTime Grails Plug-in</a>, <a href="http://www.ke-cai.net/2010/03/formatting-time-with-prettytime-jsp-tag.html" target="_blank">PrettyTime with JSP</a>.</p>
 
 <p style="margin-bottom: 10px; margin-top: 15px;">
-<table class="featured" border="0" width="100%">
+<table class="featured" border="0" width="100%" cellpadding="15px">
 <tbody>
 <tr>
 <td width="50%">

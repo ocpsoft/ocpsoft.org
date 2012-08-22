@@ -1,0 +1,324 @@
+.categories ['Hibernate', 'Java', 'JBoss']
+.dateCreated 20120821T09:08:04
+.date_modified 20120821T15:47:16
+.date_modified_gmt 20120821T19:47:16
+.link http://ocpsoft.org/java/getting-started-quickly-with-hibernate-annotations/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords Annotations, Hibernate, Java, ORM
+.permaLink http://ocpsoft.org/java/getting-started-quickly-with-hibernate-annotations/
+.post_status publish
+.postid 5
+.title Get started quickly with Hibernate Annotations and JPA 2
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug getting-started-quickly-with-hibernate-annotations
+[toc/]
+
+<h2 class="toc">Chapter 1 - Step By Step</h2>
+
+<p>Getting started with Hibernate and JPA (Java Persistence API) can be tricky, but this step-by-step tutorial explains exactly what needs to be done to set up your application to use this technology. This chapter covers very basic mapping and persistence.</p>
+
+[info]When we are finished with this tutorial, we will have a standalone Java SE application with database connectivity. This article is part of a series: <a href="http://ocpsoft.org/cat/java/hibernate/">Guide to Hibernate Annotations</a>.[/info]
+<!--more-->
+<h2 class="toc">Add dependencies to your Maven POM</h2>
+
+<p>Or follow the official Hibernate <a href="http://docs.jboss.org/hibernate/stable/annotations/reference/en/html/ch01.html#setup-requirements">getting started guide</a> in order to configure a non-maven project.</p>
+
+[snippit filename="pom.xml" label="Or download the entire demo" href="https://github.com/lincolnthree/hibernate-demo/zipball/master"]
+   <dependencyManagement>
+      <dependencies>
+         <dependency>
+            <groupId>org.jboss.spec</groupId>
+            <artifactId>jboss-javaee-6.0</artifactId>
+            <version>3.0.1.Final</version>
+            <type>pom</type>
+            <scope>import</scope>
+         </dependency>
+         <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>4.1.6.Final</version>
+         </dependency>
+         <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>2.2.8</version>
+         </dependency>
+         <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+         </dependency>
+      </dependencies>
+   </dependencyManagement>
+
+   <dependencies>
+      <dependency>
+         <groupId>org.hibernate.javax.persistence</groupId>
+         <artifactId>hibernate-jpa-2.0-api</artifactId>
+         <scope>provided</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.hibernate</groupId>
+         <artifactId>hibernate-entitymanager</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.hsqldb</groupId>
+         <artifactId>hsqldb</artifactId>
+      </dependency>
+
+      <dependency>
+         <groupId>junit</groupId>
+         <artifactId>junit</artifactId>
+      </dependency>
+   </dependencies>
+[/snippit]
+
+<div class="featured"><center>Need some <strong>/pretty /urls</strong> in your Servlet, Java EE, or JSF web-app? Try [[PrettyFaces]], and [[Rewrite]], open-source URL-rewriting libraries for Java EE, Servlet, and Web Frameorks.</center></div>
+
+<h2 class="toc">Create a database connection</h2>
+
+<p>Before we can start hammering away at the database, there are a few things we need to take care of. First, we'll need to set up a <code>persistence.xml</code> file, then retrieve an instance of an EntityManager, which is a JPA construct we'll describe more later.</p>
+
+<h4 class="toc">Set up persistence.xml</h4>
+
+<p>This is my least-favorite task of using JPA and Hibernate, and the reason is because I can never remember how to actually configure persistence.xml, so for this demo I turned to <a href="http://forge.jboss.org" target="_blank">JBoss Forge</a>'s persistence plugin to help me get things set up. You, however, can just copy this file.</p>
+
+[info]
+You can always do this configuration <a href="http://docs.jboss.org/hibernate/entitymanager/3.5/reference/en/html/configuration.html#setup-configuration-bootstrapping" target="_blank">in Java</a> if you are using pure Hibernate, but the standard approach is to use persitence.xml.
+[/info]
+
+[snippit filename="META-INF/persistence.xml"]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+   <persistence-unit name="hsqldb-ds" transaction-type="RESOURCE_LOCAL">
+
+      <description>HSQLDB Persistence Unit</description>
+      <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+<!-- This is where we tell JPA/Hibernate about our @Entity objects -->      <class>org.ocpsoft.example.hibernate.model.SimpleObject</class>
+
+      <properties>
+         <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver" />
+         <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:demodb" />
+         <property name="javax.persistence.jdbc.user" value="sa" />
+         <property name="javax.persistence.jdbc.password" value="" />
+         <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+         <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+         <property name="hibernate.show_sql" value="true" />
+         <property name="hibernate.format_sql" value="true" />
+         <property name="hibernate.transaction.flush_before_completion" value="true" />
+      </properties>
+   </persistence-unit>
+</persistence>
+[/snippit]
+
+<h4 class="toc">Get an EntityManager</h4>
+
+<p><code>EntityManagerUtil</code> is a convenience class that provides your application access to the active <code>EntityManagerFactory</code>. The <code>EntityManagerFactory</code> controls connections to the database, and also gives you access to <code>EntityManager</code> instances.</p>
+
+<p><code>EntityManager</code> is the API you'll be using to actually interact with the database via SQL or JQL (JPA Query Language.) </p>
+
+<p>You should note that we are also using the <code>javax.persistence.Persistence</code> class to obtain an <code>EntityManagerFactory</code>
+
+
+[snippit filename="EntityManagerUtil.java"]
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class EntityManagerUtil
+{
+   public static EntityManagerFactory getEntityManagerFactory()
+   {
+      EntityManagerFactory emf = Persistence.createEntityManagerFactory("hsqldb-ds");
+      return emf;
+   }
+}
+[/snippit]
+
+
+<h4 class="toc">Configure logging</h4>
+
+<p>Fortunately for us, Hibernate comes with a default logging configuration that shows us pretty much what we need, and if you are using it on a Java EE Application Server like JBoss AS or GlassFish then this logging is configured in the server itself; however, if you want to customize the log output for our standalone Java SE demo, you'll need to take a look at <a href="https://github.com/jboss-logging" target="_blank">jboss-logging</a>.</p>
+
+
+
+<h2 class="toc">Create an @Entity - SimpleObject.java</h2>
+
+<p>It's time to create our first object. Notice that this is a simple POJO with two fields: id and version. The <em>id</em> field is a required field, but before you complain, there is a philosophy of database design that dictates every entity table should have its own <em>id</em> column; some disagree with this, but I've found it a very convenient practice. Try it out before you pass judgment.</p>
+
+<h4>In order to map an object, a few things always need to be done:</h4>
+
+<ul>
+	<li>The class must be annotated with <code>@javax.persistence.Entity</code></li>
+	<li>The class must have a <code>@javax.persistence.Id</code> column</li>
+	<li>The class must have a default (or undefined) constructor method. This means it must have a constructor that has no arguments.</li>
+	<li>The <code>@javax.persistence.Version</code> column is how Hibernate performs <a href="http://en.wikipedia.org/wiki/Optimistic_concurrency_control" target="_blank">optimistic locking</a>. If a record has been modified by another transaction, your transaction's version field will be out of date, and a <code>javax.persistence.OptimisticLockException</code>exception will be thrown.</li>
+	<li>By default, all fields in your class will be persisted to the database if possible. If there is a field that should not be recorded in the database, mark that field with the <code>@javax.persistence.Transient</code> annotation.</li>
+	<li>To add new columns in the database, simply add new fields in your object.</li>
+</ul>
+
+<p>And now we need to create the object itself. Notice that we have not implemented the <code>.equals()</code> and <code>.hashCode()</code> methods; these methods will need to be implemented in order to ensure proper object equality and consistency between the Hibernate/JPA and our application. Without a proper implementation of these two methods, bad things can happen like duplicate rows being added, strange or missing data from result sets.</p>
+
+[info]For more information about implementing `.equals()` and `.hashCode()` please read this <a href="http://stackoverflow.com/questions/1638723/equals-and-hashcode-in-hibernate" target="_blank">Stack Overflow entry</a>.[/info] 
+
+[snippit filename="SimpleObject.java"]
+@Entity
+@Table
+public class SimpleObject implements Serializable
+{
+   private static final long serialVersionUID = -2862671438138322400L;
+
+   @Id
+   @GeneratedValue(strategy = GenerationType.AUTO)
+   @Column(name = "id", updatable = false, nullable = false)
+   private Long id = null;
+
+   @Version
+   @Column(name = "version")
+   private int version = 0;
+
+   public Long getId()
+   {
+      return this.id;
+   }
+
+   public void setId(final Long id)
+   {
+      this.id = id;
+   }
+
+   public int getVersion()
+   {
+      return this.version;
+   }
+
+   public void setVersion(final int version)
+   {
+      this.version = version;
+   }
+}
+[/snippit]
+
+<h2 class="toc">Put it all together</h2>
+
+<p>Our driver class is very simple; it is a JUnit test case that will:</p>
+<ul>
+	<li>Get a handle to JPA EntityManager (This is equivalent to the Hibernate Session)</li>
+	<li>Create and persist two new <em>SimpleObjects</em></li>
+	<li>Print out the generated IDs and assert that they are as expected.</li>
+</ul>
+
+[snippit filename="HibernateDemoTest.java"]package org.ocpsoft.example.hibernate;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+
+import junit.framework.Assert;
+
+import org.junit.*;
+import org.ocpsoft.example.hibernate.model.SimpleObject;
+import org.ocpsoft.example.hibernate.util.EntityManagerUtil;
+
+/**
+ * @author <a href="mailto:lincolnbaxter@gmail.com">Lincoln Baxter, III</a>
+ */
+public class HibernateDemoTest
+{
+   private EntityManager em;
+
+   @Before
+   public void beforeEach()
+   {
+      em = EntityManagerUtil.getEntityManagerFactory().createEntityManager();
+   }
+
+   @After
+   public void afterEach()
+   {
+      em.close();
+   }
+
+   @Test
+   public void testAutoIncrement()
+   {
+      EntityTransaction transaction = em.getTransaction();
+      transaction.begin();
+
+      SimpleObject object0 = new SimpleObject();
+      SimpleObject object1 = new SimpleObject();
+
+      // IDs start as null
+      Assert.assertEquals((Long) null, object0.getId());
+      Assert.assertEquals((Long) null, object1.getId());
+
+      em.persist(object0);
+      em.persist(object1);
+
+      transaction.commit();
+
+      System.out.println("Object 0");
+      System.out.println("Generated ID is: " + object0.getId());
+      System.out.println("Generated Version is: " + object0.getVersion());
+
+      System.out.println("Object 1");
+      System.out.println("Generated ID is: " + object1.getId());
+      System.out.println("Generated Version is: " + object1.getVersion());
+
+      Assert.assertEquals((Long) 1l, object0.getId());
+      Assert.assertEquals((Long) 2l, object1.getId());
+   }
+}
+[/snippit]
+
+<p>And here we are. When you run HibernateDemoTest, you should have a fully functional Hibernate enabled HSQL database with one table. You should see Hibernate create the table, then execute our queries. The application will then print out our results - play around with adding new fields to your object, take a look at the console output. I think you will quickly see how things work.</p>
+
+<p>Your output should look something like this:</p>
+
+<pre style="padding-left: 30px;">Object 0
+Generated ID is: 1
+Generated Version is: 0
+Object 1
+Generated ID is: 2
+Generated Version is: 0</pre>
+
+<h2 class="toc">A few more things to remember</h2>
+<p>Take your time. Don't give up. Ask questions. <em>READ the forums and documentation.</em></p>
+
+<p>Hibernate and JPA are BIG. They are very powerful, very complex tools. It took me a long time to get even a simple object relationship working the way I wanted to. The learning curve is not small, and you will probably be frustrated for a while. I have, however, come to the point where I see so much benefit, that I feel it was completely worth my time to learn.</p>
+
+<p>Configuration is <strong>everything</strong>. Hibernate can do anything you want: You can use it to tie in to existing database schema; you can use it to run plain SQL queries or stored procedures, but you need to make sure that you have a solid understanding of the configuration. If you start running into problems, chances are that you are missing something small.</p>
+
+<h2 class="toc">Additional reading</h2>
+
+<p>If you want more information about Hibernate, Hibernate Annotations, or Hibernate Search, I recommend reading a section in another OCPsoft blog about <a href="http://ocpsoft.org/java/spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb/#section-10">using extended PersistenceContexts</a>. You can also try some books written by my colleagues and peers. (Note, you will need to disable any ad-block programs in order to see these links.)</p>
+
+[info]Want more information? This article is part of a series: <a href="http://ocpsoft.org/cat/java/hibernate/">Guide to Hibernate Annotations</a>.[/info]
+
+<center>
+<table>
+<tr>
+<td>
+<iframe src="http://rcm.amazon.com/e/cm?lt1=_blank&bc1=FFFFFF&IS2=1&npa=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=o042-20&o=1&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=193239415X" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+</td>
+
+<td>
+<iframe src="http://rcm.amazon.com/e/cm?lt1=_blank&bc1=FFFFFF&IS2=1&npa=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=o042-20&o=1&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1933988649" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+</td>
+
+<td>
+<iframe src="http://rcm.amazon.com/e/cm?lt1=_blank&bc1=FFFFFF&IS2=1&npa=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=o042-20&o=1&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0596158025" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+</td>
+</tr>
+</table>
+</center>

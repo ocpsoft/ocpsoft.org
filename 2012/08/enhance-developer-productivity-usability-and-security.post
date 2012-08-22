@@ -1,0 +1,30 @@
+.categories ['Java', 'JBoss', 'OpenSource', 'Rewrite']
+.dateCreated 20120822T09:00:04
+.date_modified 20120821T15:59:23
+.date_modified_gmt 20120821T19:59:23
+.link http://ocpsoft.org/java/enhance-developer-productivity-usability-and-security/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/java/enhance-developer-productivity-usability-and-security/
+.post_status publish
+.postid 4863
+.title Enhance developer productivity, usability, and security
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug enhance-developer-productivity-usability-and-security
+<p>Java EE is already the perfect solution for complex business/enterprise systems and provides all the tools and foundations required to deliver scalable, performant applications for a wide variety of customers and clients. 
+
+<p>But how does the end user experience stack up? How easy is it to navigate through your Website? Is your code full of nasty navigation logic? Are your links clear, transparent, and informative? Do you find yourself adding '?query=parameters' in order to serve dynamic content from your application? Can you ensure that you are not leaking information in your URLs, and that your applications are secure from URL-based attacks? Are your old links making it difficult to migrate or integrate a legacy application to a new one? 
+
+<p>These are all things that URL rewriting can help with, and if you are uncertain about any of these questions, this talk is for you. Watch this session from JAXConf 2012 and see what's possible with the power of URL-rewriting. 
+
+<center><iframe width="640" height="360" style="margin: 25px;" src="http://www.youtube-nocookie.com/embed/nW8TfxNBWfU?rel=0" frameborder="0" allowfullscreen></iframe></center>
+
+For more information on the [[Rewrite]] project, visit the project homepage at [[Rewrite | OCPsoft]], and be sure to check out all of the other cool Java open-source projects while you're here.

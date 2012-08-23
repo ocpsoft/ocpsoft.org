@@ -1,7 +1,7 @@
 .categories ['Hibernate', 'Java', 'JBoss']
 .dateCreated 20120821T09:08:04
-.date_modified 20120821T15:47:16
-.date_modified_gmt 20120821T19:47:16
+.date_modified 20120822T16:29:43
+.date_modified_gmt 20120822T20:29:43
 .link http://ocpsoft.org/java/getting-started-quickly-with-hibernate-annotations/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -10,7 +10,7 @@
 .permaLink http://ocpsoft.org/java/getting-started-quickly-with-hibernate-annotations/
 .post_status publish
 .postid 5
-.title Get started quickly with Hibernate Annotations and JPA 2
+.title Get started quickly with Hibernate Annotations and JPA2
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3

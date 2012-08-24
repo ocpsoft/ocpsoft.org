@@ -1,7 +1,7 @@
 .categories ['Hibernate', 'Java', 'JBoss']
 .dateCreated 20120821T09:08:04
-.date_modified 20120822T16:29:43
-.date_modified_gmt 20120822T20:29:43
+.date_modified 20120823T22:57:52
+.date_modified_gmt 20120824T02:57:52
 .link http://ocpsoft.org/java/getting-started-quickly-with-hibernate-annotations/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -20,8 +20,6 @@
 .wp_post_thumbnail 
 .wp_slug getting-started-quickly-with-hibernate-annotations
 [toc/]
-
-<h2 class="toc">Chapter 1 - Step By Step</h2>
 
 <p>Getting started with Hibernate and JPA (Java Persistence API) can be tricky, but this step-by-step tutorial explains exactly what needs to be done to set up your application to use this technology. This chapter covers very basic mapping and persistence.</p>
 

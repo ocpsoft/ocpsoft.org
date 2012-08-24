@@ -1,7 +1,7 @@
 .categories ['Java', 'JBoss', 'OpenSource', 'Rewrite']
 .dateCreated 20120822T09:00:04
-.date_modified 20120821T15:59:23
-.date_modified_gmt 20120821T19:59:23
+.date_modified 20120823T12:14:23
+.date_modified_gmt 20120823T16:14:23
 .link http://ocpsoft.org/java/enhance-developer-productivity-usability-and-security/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -10,7 +10,7 @@
 .permaLink http://ocpsoft.org/java/enhance-developer-productivity-usability-and-security/
 .post_status publish
 .postid 4863
-.title Enhance developer productivity, usability, and security
+.title [Video] Enhance developer productivity, usability, and security
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
@@ -25,6 +25,6 @@
 
 <p>These are all things that URL rewriting can help with, and if you are uncertain about any of these questions, this talk is for you. Watch this session from JAXConf 2012 and see what's possible with the power of URL-rewriting. 
 
-<center><iframe width="640" height="360" style="margin: 25px;" src="http://www.youtube-nocookie.com/embed/nW8TfxNBWfU?rel=0" frameborder="0" allowfullscreen></iframe></center>
+<center><iframe width="640" height="360" style="margin-top: 25px; margin-bottom: 25px;" src="http://www.youtube-nocookie.com/embed/nW8TfxNBWfU?rel=0" frameborder="0" allowfullscreen></iframe></center>
 
 For more information on the [[Rewrite]] project, visit the project homepage at [[Rewrite | OCPsoft]], and be sure to check out all of the other cool Java open-source projects while you're here.

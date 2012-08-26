@@ -22,19 +22,19 @@
 [toc]
 <h2 style="display:none;">URLRewriteFilter</h2>
 
-<center style="margin-left: -50px;"><img src="http://ocpsoft.org/wp-content/uploads/2012/04/rewrite-center-compressed.png" alt="" title="rewrite-center-compressed" width="500" height="158" class="aligncenter size-full wp-image-4462" />
+<center><img src="http://ocpsoft.org/wp-content/uploads/2012/04/rewrite-center-compressed.png" alt="" title="rewrite-center-compressed" width="500" height="158" class="aligncenter size-full wp-image-4462" />
 
-<h2 style="margin-bottom: 35px; margin-left: 25px; margin-right: 25px;">The open-source <font color="green">/url/{rewriting}</font> solution for Servlet, Java Web Frameworks, and Java EE</h2></center>
+<h2 style="margin-bottom: 35px;">The open-source <font color="green">Routing &uarr;&darr;</font> and <font color="green">/url/{rewriting}</font> solution for Servlet, Java Web Frameworks, and Java EE</h2></center>
 
 <div class="featured">
-<p style="margin-top: 10px; margin-bottom: 0px;"><strong>Rewrite</strong> is an OpenSource Filter-based Servlets extension for Java - enabling creation of bookmark-able, pretty URLs. Rewrite solves the "RESTful URL" problem elegantly, including features such as: page-load actions, managed parameter parsing, seamless integration with <em>CDI</em>, <em>Spring</em>, and configuration-free compatibility with other web frameworks. <a href="https://github.com/ocpsoft/rewrite">Get involved in the project &raquo;</a></p>
+<p style="margin-top: 10px; margin-bottom: 0px;"><strong>Rewrite</strong> is an OpenSource, Filter-based Servlets extension for Java - enabling creation of bookmark-able, pretty URLs. Rewrite solves the "RESTful URL" problem elegantly, including features such as: page-load actions, managed parameter parsing, seamless integration with <em>CDI</em>, <em>Spring</em>, and configuration-free compatibility with other web frameworks. <a href="https://github.com/ocpsoft/rewrite">Get involved in the project &raquo;</a></p>
 </div>
 
 <h2 style="font-size: 1.5em; margin-bottom: 25px;"><span class="toc">Get Started</span>, see how powerful URL-rewriting can be (5 steps) </h2>
 
 [warn]It is recommended but not required to remove other URL-rewriting tools from your application before using Rewrite. If you choose to leave them in place, weird things may happen to you, be warned.[/warn]
 
-<div style="margin-left: 40px;">
+<div>
 
 <h2 class="toc">1. Include Rewrite in your Project</h2>
 

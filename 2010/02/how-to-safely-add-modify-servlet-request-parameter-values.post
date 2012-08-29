@@ -1,7 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20100204T23:35:29
-.date_modified 20120422T04:48:45
-.date_modified_gmt 20120422T08:48:45
+.date_modified 20120828T19:10:19
+.date_modified_gmt 20120828T23:10:19
 .link http://ocpsoft.org/opensource/how-to-safely-add-modify-servlet-request-parameter-values/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -25,12 +25,11 @@ While working on the <a href="http://ocpsoft.com/prettyfaces/"  title="SEO | Dyn
 
 <h3>Naively, I tried:</h3>
 <pre lang="java">
-    request.getParameterMap().put("name", new String[]{"value1", "value2"});
+request.getParameterMap().put("name", new String[]{"value1", "value2"});
 </pre>
 But that doesn't work, because you aren't allowed to modify request parameter values once the request has begun processing:
 <pre lang="text">
-    java.lang.IllegalStateException: Cannot find message associated with key parameterMap.locked
-	at org.apache.catalina.util.ParameterMap.put(ParameterMap.java:213)
+java.lang.IllegalStateException: Cannot find message associated with key parameterMap.locked at org.apache.catalina.util.ParameterMap.put(ParameterMap.java:213)
 </pre>
 <!--more-->
 This means we need to wrap the current request with our own special <code>HttpServletRequestWrapper</code> that will provide the ability to merge in some extra parameters up front. 
@@ -49,7 +48,8 @@ ServletRequest.getReader() has already been called
 You could simply provide a modifiable map implementation, but that would break the contract of the request parameter map.
 
 So using a bit of lazy processing, here's how we avoid reading the parameters until they are actually requested, while still maintaining the immutable nature of the Map.
-<pre lang="java">
+
+[snippit]
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.Map;
@@ -87,7 +87,7 @@ public class PrettyFacesWrappedRequest extends HttpServletRequestWrapper
         {
             return strings[0];
         }
-        return null;
+        return super.getParameter(name);
     }
 
     @Override
@@ -114,15 +114,16 @@ public class PrettyFacesWrappedRequest extends HttpServletRequestWrapper
     {
         return getParameterMap().get(name);
     }
-}</pre>
+}
+[/snippit]
 
 Once you have your handy request wrapper, you can get working! Keep in mind that you'll need to do a servlet forward if you want your entire system to gain access to your new parameters. Otherwise, you can just pass this new wrapped object around as needed.
 
 <pre lang="java">
-    //"request" is the current HttpServletRequest
-    Map<String, String[]> extraParams = new TreeMap<String, String[]>()
-    HttpServletRequest wrappedRequest = new PrettyFacesWrappedRequest(request, extraParams);
-    request.getRequestDispatcher("url").forward(wrappedRequest, response)
+//"request" is the current HttpServletRequest
+Map<String, String[]> extraParams = new TreeMap<String, String[]>()
+HttpServletRequest wrappedRequest = new PrettyFacesWrappedRequest(request, extraParams);
+request.getRequestDispatcher("url").forward(wrappedRequest, response)
 </pre>
 
 Happy hacking! ;) As a final note, I'd like to say that <a href="http://java.sun.com/developer/technicalArticles/JavaEE/JavaEE6Overview.html">JEE 6</a> has really turned out to be a great experience. Very pleasant to program on. Well done, SUN!

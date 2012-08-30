@@ -1,7 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20120222T20:12:23
-.date_modified 20120517T14:45:35
-.date_modified_gmt 20120517T18:45:35
+.date_modified 20120829T15:33:23
+.date_modified_gmt 20120829T19:33:23
 .link http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -74,7 +74,7 @@ Quantifiers can be used to specify the number or length that part of a pattern s
 <h4 class="toc">1.3. Meta-characters</h4>
 Meta-characters are used to group, divide, and perform special operations in patterns.
 <pre lang="perl">
-\   	Quote the next meta-character
+\   	Escape the next meta-character (it becomes a normal/literal character)
 ^   	Match the beginning of the line
 .   	Match any character (except newline)
 $   	Match the end of the line (or before newline at the end)
@@ -94,7 +94,7 @@ $   	Match the end of the line (or before newline at the end)
 
 Every string is a regular expression. For example, the string, <code>“I lost my wallet”</code>, is a regular expression that will match the text, <code>“I lost my wallet”</code>, and will ignore everything else.
 
-What if we want to be able to find more things that we lost? We can replace <code>wallet</code> with an expression that will match any word.
+What if we want to be able to find more things that we lost? We can replace <code>wallet</code> with a character class expression that will match any word.
 
 <pre lang="java">"I lost my \\w+"</pre>
 
@@ -122,7 +122,7 @@ An important feature of regular expressions is the ability to group sections of 
 These two meta-characters are core parts of flexible regular expressions. For instance, in the first example we lost our wallet. What if we knew exactly which types of objects we had lost, and we wanted to find those objects but nothing else?
 
 We can use a group <code>()</code>, with an ‘or’ meta-character in order to specify a list of expressions to allow in our match.
-<pre lang="java">"I lost my:? (wallet|cell phone|car|marbles)"</pre>
+<pre lang="java">"I lost my:? (wallet|car|cell phone|marbles)"</pre>
 
 The new expression will now match the beginning of the string <code>“I lost my”</code>, an optional <code>":"</code>, and then any one of the expressions in the group, separated by alternators, <code>"|"</code>; any one of the following: ‘wallet’, ‘cell phone’, ‘car’, or our ‘marbles’ would be a match.
 
@@ -132,13 +132,43 @@ The new expression will now match the beginning of the string <code>“I lost my
 "I lost my: car"		matches
 "I lost my- car"		doesn’t match	‘-‘ is not allowed in our pattern
 "I lost my: cell"		doesn’t match	all of ‘cell phone’ is needed
-"I lost my: cell phone"		matches
+"I lost my: cell phone"	matches
 "I lost my cell phone"		matches
 "I lost my marbles"		matches
 </pre>
 
-As you can see, the combinations for matches quickly become very large. This is not the complete set, as there are several more phrases that would match our simple pattern.
+As you can see, the combinations for matches quickly become very large. This is not the complete set, as there are several more phrases that would match our simple pattern. 
 
+[error]
+<p><strong>Quiz:</strong> Can you figure out all possible matches for this pattern? (<a href="javascript:" data-toggle="collapse" data-target="#answer1">Click here to see the answer.</a>)
+
+<pre lang="java">"I lost my:? (wallet|car|cell phone|marbles)"</pre>
+
+<div id="answer1" class="collapse">
+<p><strong>Answer:</strong> This is a trick question! Because this regular expression is unlimited (has no beginning `^` and no ending `$` meta-characters to terminate the match,) the pattern we've created will actually match any string containing one of the results below. In short, nearly infinite possible matches; however, if we did want to limit our pattern to just these results, we could use add the required terminators to our pattern - like so:
+
+<pre lang="java">"^I lost my:? (wallet|car|cell phone|marbles)$"</pre>
+
+<pre lang="java">
+"I lost my wallet"
+"I lost my wallets"
+"I lost my: wallet"
+"I lost my: wallets"
+"I lost my car"
+"I lost my car"
+"I lost my: car"
+"I lost my: car"
+"I lost my cell phone"
+"I lost my cell phone"
+"I lost my: cell phone"
+"I lost my: cell phone"
+"I lost my marbles"
+"I lost my marbles"
+"I lost my: marbles"
+"I lost my: marbles"
+</pre>
+</div>
+[/error]
 
 
 <a name="matching"></a>
@@ -170,8 +200,8 @@ public class ValidateDemo {
 
 <strong>This produces the following output:</strong>
 
-<blockquote><code>Found good SSN: 123-45-6789
-Found good SSN: 192-83-7465</code></blockquote>
+<blockquote><pre lang="text">Found good SSN: 123-45-6789</br>
+Found good SSN: 192-83-7465</pre></blockquote>
 
 <h5>Dissecting the pattern:</h5>
 
@@ -218,8 +248,8 @@ public class ExtractDemo {
 
 <strong>This produces the following output:</strong>
 
-<blockquote><code>Found a cat.
-Found a dog.</code></blockquote>
+<blockquote><pre lang="text">Found a cat.
+Found a dog.</pre></blockquote>
 
 <h5>Dissecting the pattern:</h5>
 
@@ -267,10 +297,9 @@ public class ReplaceDemo {
 
 <strong>This produces the following output:</strong>
 
-<blockquote>
-<code>Masking: 23421
+<blockquote><pre lang="text">Masking: 23421
 Masking: 33432
-User clientId=***masked***. Some more text clientId=***masked***. This clientNum=100.</code></blockquote>
+User clientId=***masked***. Some more text clientId=***masked***. This clientNum=100.</pre></blockquote>
 
 <h5>Dissecting the pattern:</h5>
 

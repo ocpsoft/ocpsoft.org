@@ -36,6 +36,10 @@
 
 <div>
 
+<center>
+<p style="margin: 20px;">Come join us on in <code>#ocpsoft</code> - <a href="http://webchat.freenode.net/?channels=%23ocpsoft" title="OCPsoft channel on Freenode IRC" target="_blank">our channel on irc.freenode.net.</a> Additionally, you are welcome to attend the dev meeting, every [[Calendar|Monday at 1pm EST]]. Also, please join the discussion on our <a href="mailto:prettyfaces-dev@googlegroups.com">dev email list</a>.</p>
+</center>
+
 <h2 class="toc">1. Include Rewrite in your Project</h2>
 
 [snippit filename="Add Rewrite to your maven pom.xml" href="http://repo1.maven.org/maven2/org/ocpsoft/rewrite/rewrite-distribution/" label="Or download the ZIP"]

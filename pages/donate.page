@@ -33,12 +33,9 @@ It costs over <strong>one-hundred dollars each month</strong> ($100) to keep our
 
 <center>Help keep our projects alive - make a donation to support us! <b>&raquo;</b> 
 <br/>
-<input type="image"  src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" /></center>
-
-<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+<input type="image"  src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" style="width:100px; margin-top: 30px;" /></center><img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
 </form></div>
 </div>
-
 <center>
 
 <table width="100%" cellspacing="10px">

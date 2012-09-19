@@ -19,3 +19,21 @@
 .wp_page_template default
 .wp_password 
 .wp_slug regular-expressions
+<img src="http://ocpsoft.org/wp-content/uploads/2012/09/IMG_20120918_002559-300x212.jpg" alt="" title="IMG_20120918_002559" width="300" height="212" class="pull-right" style="margin-left: 15px; margin-bottom: 15px;" />
+
+This guide and quick-start index is targeted at anyone who wishes to learn more about regular expressions. Code examples are written in the Java language, for clarity, but concepts and explanations are pure regular expressions. Please leave a comment if you would like to see additional topics that are not listed here:
+
+<h2><a href="http://ocpsoft.org/tutorials/regular-expressions/or-in-regex/" title="“Or” in regular expressions `||`">“Or” in regular expressions `||`</a></h2>
+<p>A quick guide using several examples to create and use logical "or" statements in regular expressions.
+
+<h2><a href="http://ocpsoft.org/tutorials/regular-expressions/and-in-regex/" title="“And” in regular expressions `&&`">“And” in regular expressions `&&`</a></h2>
+<p>A quick guide using several examples to create and use logical "and" statements in regular expressions.
+
+<h2><a href="http://ocpsoft.org/tutorials/regular-expressions/password-regular-expression/" title="Password Regular Expression">Password Regular Expression</a></h3>
+<p>A quick guide on writing password constraints using look-aheads, alternation, non-capturing groups, and more.
+
+<h2><a href="http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/" title="Guide to Regular Expressions in Java (Part 1)">Guide to Regular Expressions in Java (Part 1)</a></h2>
+<p>A detailed guide using step-by-step examples and tutorials to explain not only basic fundamentals of regular expressions, but also how to apply them to more complex scenarios using the Java language. Explains character classes, quantifiers, grouping and alternation, and more.
+
+<h2><a href="http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-2/" title="Guide to Regular Expressions in Java (Part 2)">Guide to Regular Expressions in Java (Part 2)</a></h2>
+<p>A detailed guide using step-by-step examples and tutorials to explain advanced fundamentals of regular expressions using the Java language. Includes Look-aheads, look-behinds, and how to configure the pattern matching system for multi-line strings, dot-all mode, and more.

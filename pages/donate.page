@@ -19,7 +19,7 @@
 .wp_page_template page-notitle.php
 .wp_password 
 .wp_slug donate
-It costs over <strong>one-hundred dollars each month</strong> ($100) to keep our website running, in addition to the unpaid time spent by several contributors to keep the site free of span and full of high-quality content. With your generous support, we can solve more bugs, keep [[Rewrite|improvements coming]], and make life easier for everyone who wants to do URL-rewriting. Your contributions help us keep this site, and our <a href="http://ci.ocpsoft.com" target="_blank">continuous integration server</a> online.
+<p>It costs over <strong>one-hundred dollars each month</strong> ($100) to keep our website running, in addition to the unpaid time spent by several contributors to keep the site free of span and full of high-quality content. With your generous support, we can solve more bugs, keep [[Rewrite|improvements coming]], and make life easier for everyone who wants to do URL-rewriting. Your contributions help us keep this site, and our <a href="http://ci.ocpsoft.com" target="_blank">continuous integration server</a> online.</p>
 
 <br/>
 

@@ -1,0 +1,90 @@
+.categories []
+.dateCreated 20120918T02:05:34
+.excerpt 
+.link http://ocpsoft.org/tutorials/regular-expressions/or-in-regex/
+.mt_allow_comments 1
+.mt_allow_pings 0
+.page_id 4939
+.page_status publish
+.permaLink http://ocpsoft.org/tutorials/regular-expressions/or-in-regex/
+.text_more 
+.title "Or" in regular expressions `||`
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 1
+.wp_page_parent_id 4913
+.wp_page_parent_title Regular Expressions
+.wp_page_template default
+.wp_password 
+.wp_slug or-in-regex
+[toc]
+
+<a href="http://ocpsoft.org/wp-content/uploads/2012/09/IMG_20120918_002559.jpg"><img src="http://ocpsoft.org/wp-content/uploads/2012/09/IMG_20120918_002559-300x212.jpg" alt="" title="IMG_20120918_002559" width="300" height="212" class="pull-right" style="margin-left: 15px; margin-bottom: 15px;" /></a>
+
+<p>
+When attempting to build a logical "or" operation using regular expressions, we have a few approaches to follow. Fortunately the grouping and alternation facilities provided by the regex engine are very capable, but when all else fails we can just perform a second match using a separate regular expression - supported by the tool or native language of your choice.
+
+<p>This functionality is simple enough, however, that it is not usually necessary to use higher programming features to achieve logical "or."
+
+<div class="clearer"></div>
+[info]This tutorial is part of the course: "[[Regular Expressions]]."[/info]
+
+<h2 class="toc">Achieving logical "or" with Grouping and Alternation</h2>
+
+<p>Grouping and alternation are core features of every modern regular expression library. You can provide as many terms as desired, as long as they are separated with the pipe character: <code>|</code>. This character separates terms contained within each <code>(...)</code> group. Take the following example, for instance:
+
+<pre lang="perl">^I like (dogs|penguins), but not (lions|tigers).$</pre>
+
+<p>This expression will match any of the following strings:
+
+<pre lang="text">
+I like dogs, but not lions.
+I like dogs, but not tigers.
+I like penguins, but not lions.
+I like penguins, but not tigers.
+</pre>
+
+<p>However, there is an unintended side-effect of our grouping and alternation, as written above. This pattern will match any combination of the terms we've supplied, as expected, but it will also store those matches into match groups for later inspection.
+
+<p>If you don't want your grouping and alternation to interfere with other numbered groups in your expression, each "or" group must be prefixed with <code>?:</code> - like so:
+
+<pre lang="perl">^I like (?:dogs|penguins), but not (?:lions|tigers).$</pre>
+
+[info]Tip, you can also combine alternation with look-ahead and look-behind statements, notice that we are using both positive and negative look-aheads in order to restrict the value of what is matched by the word character class <code>\\w+</code>:
+
+<pre lang="perl">^I like (?=dogs|penguins)\\w+, but not (?!dogs|penguins)\\w+$</pre>
+
+[/info]
+
+<h2 class="toc">Achieving logical "or" with your language</h2>
+Logical "or" is more difficult to achieve using tools external to the regular expression engine itself, but it is achievable by combining results of multiple regular expressions using the native "or" logical feature of your programming language of choice. This can sometimes be simpler and easier for others to maintain in the future, with only minimal performance impacts over moderate data-sets. In Java, for example:
+
+[snippit filename="Using Java conditionals to test string matches"]
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+public class RegexTest
+{
+   @Test
+   public void testRegex()
+   {
+      assertTrue(stringMatches("Start with a good word and end with a kind deed."));
+      assertTrue(stringMatches("Start with a kind word and end with a good deed."));
+      assertFalse(stringMatches("Start with a deed."));
+   }
+
+   private boolean stringMatches(String string)
+   {
+      return (string.matches("like dogs") || string.matches("like penguins"))
+          && (string.matches("not lions") || string.matches("not tigers"));
+   }
+
+}
+[/snippit]
+
+<p>
+[info]Read more about <a href="http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/" title="Guide to Regular Expressions in Java (Part 1)" target="_blank">regular expressions</a>.[/info]

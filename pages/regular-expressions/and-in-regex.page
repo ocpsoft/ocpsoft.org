@@ -1,0 +1,88 @@
+.categories []
+.dateCreated 20120917T21:00:36
+.excerpt 
+.link http://ocpsoft.org/tutorials/regular-expressions/and-in-regex/
+.mt_allow_comments 1
+.mt_allow_pings 0
+.page_id 4919
+.page_status publish
+.permaLink http://ocpsoft.org/tutorials/regular-expressions/and-in-regex/
+.text_more 
+.title "And" in regular expressions `&&`
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 4913
+.wp_page_parent_title Regular Expressions
+.wp_page_template default
+.wp_password 
+.wp_slug and-in-regex
+[toc]
+
+<a href="http://ocpsoft.org/wp-content/uploads/2012/09/IMG_20120918_002559.jpg"><img src="http://ocpsoft.org/wp-content/uploads/2012/09/IMG_20120918_002559-300x212.jpg" alt="" title="IMG_20120918_002559" width="300" height="212" class="pull-right" style="margin-left: 15px; margin-bottom: 15px;" /></a>
+
+<p>
+When attempting to build a logical "and" operation using regular expressions, we have a few approaches to follow. The first approach may seem obvious, but if you think about it regular expressions <b>are</b> logical "and" by default. Every sequential character in a regular expression is "and'ed" together. If you can express your statements in order, then the work has already been done for you.
+<p>
+However, since you've searched this far, we can assume that you're looking for something a little more advanced. To facilitate this, we have two options: We can use "lookaheads", or we can just perform a second match using a separate regular expression if supported by whatever tool or language you are using.
+
+<div class="clearer"></div>
+[info]This tutorial is part of the course: "[[Regular Expressions]]."[/info]
+
+<h2 class="toc">Achieving logical "and" with Look-aheads</h2>
+
+<p>Look-ahead and look-behind operations are essentially extra contraints that you can place on a regular expression. You can specify additional patterns which need to be satisfied in order for a successful match. The following are examples of look-ahead expressions.
+
+<pre lang="perl">(?=.*word1)(?=.*word2)(?=.*word3)</pre>
+
+<p>Notice that each expression contains <code>.*</code> - this is because look-aheads are place-sensitive, and begin matching from where they appear within the pattern; so if we had, for instance, a pattern like the one below:
+
+<pre lang="perl">^Start (?=.*kind)(?=.*good).* deed$</pre>
+
+<p>This pattern will match <code>"Start with a good word and end with a kind deed"</code> and <code>"Start with a kind word and end with a good deed"</code>. 
+
+<p>In summary: Once the first look-ahead begins to process, the match position in the expression is saved; the <code>.*</code> in the first look-ahead matches as many characters it needs to before it gets to "kind"; the match position is reset, and the next look-ahead searches forward for "good"; and last but not least, our final look-ahead searches for "word", then pattern matching resumes as usual. Matching continues with the expression's basic <code>.*</code>, and continues to match through "deed" to the end of the string.
+
+<p>The reason this works is because, as mentioned, match-position is reset after each look-around is evaluated. This means that the order of our adjacent "and" look-ahead expressions is not important; however, if we moved one of our conditions just past <code>.*</code>, we would see different results:
+
+<pre lang="perl">^Start (?=.*kind).*(?=.*good) deed.$</pre>
+
+<p>Now that <code>(?=.*good)</code> comes after our catch-all, neither of our previous strings will match, because it is not possible for "good" to exist after <code>.*</code> has been evaluated.
+
+[info]Tip, if you want to match whole words and not partial strings of longer words, you need to add word boundaries to your statements:
+
+<pre lang="perl">^Start (?=.*\bkind\b)(?=.*\bgood\b)(?=.*\bword\b).* deed$</pre>
+
+[/info]
+
+<h2 class="toc">Achieving logical "and" with your language</h2>
+If all else fails, you should always feel comfortable simply to perform another match, combining the results using the native "and" logical feature of your programming language of choice. This can often be simpler and easier for others to maintain in the future, with only minimal performance impacts over moderate data-sets. In Java, for example:
+
+[snippit filename="Using Java conditionals to test string matches"]
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+public class RegexTest
+{
+   @Test
+   public void testRegex()
+   {
+      assertTrue(stringMatches("Start with a good word and end with a kind deed."));
+      assertTrue(stringMatches("Start with a kind word and end with a good deed."));
+      assertFalse(stringMatches("Start with a deed."));
+   }
+
+   private boolean stringMatches(String string)
+   {
+      return string.matches("^Start .* deed.$") && string.matches(".*good.*") && string.matches(".*kind.*");
+   }
+
+}
+[/snippit]
+
+<p>
+[info]Read more about <a href="http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/" title="Guide to Regular Expressions in Java (Part 1)" target="_blank">regular expressions</a>.[/info]

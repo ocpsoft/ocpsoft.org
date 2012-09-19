@@ -1,0 +1,31 @@
+.categories ['OpenSource']
+.dateCreated 20120918T14:21:47
+.date_modified 20120918T14:21:47
+.date_modified_gmt 20120918T18:21:47
+.link http://ocpsoft.org/opensource/new-tutorial-regular-expressions/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/opensource/new-tutorial-regular-expressions/
+.post_status publish
+.postid 4996
+.title New tutorial: Regular expressions
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug new-tutorial-regular-expressions
+<img src="http://ocpsoft.org/wp-content/uploads/2012/09/IMG_20120918_002559-300x212.jpg" alt="" title="IMG_20120918_002559" width="300" height="212" class="pull-right" style="margin-left: 15px; margin-bottom: 15px;" /><p>Do you love regular expressions as much as I do?
+
+<p>Well even if you don't, I am pleased to announce a new tutorial: "OCPsoft's guide to [[Regular Expressions]]." As part of an ongoing initiative to promote awareness of regular expressions, and how they are used both as a general technology, but also specifically as applied to the Java programming language, we will be continuing to add new example-based guides to this course.
+
+<p>Please feel free to post questions and comments if there are topics or specific problems that you would like to see addressed. We will do our best to answer your questions and share the knowledge!
+
+<p>Check out [[Regular Expressions|the tutorial]].
+
+<p>Enjoy!<br/>
+~Lincoln

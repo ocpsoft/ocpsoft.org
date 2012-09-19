@@ -1,7 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20120223T20:11:31
-.date_modified 20120426T00:01:25
-.date_modified_gmt 20120426T04:01:25
+.date_modified 20120918T14:07:49
+.date_modified_gmt 20120918T18:07:49
 .link http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-2/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -26,7 +26,7 @@ Often unknown, or heralded as confusing, regular expressions have defined the st
 <h1>Part 2: Look-ahead &amp; Configuration flags</h1>
 Have you ever wanted to find something in a string, but you only wanted to find it when it came before another pattern in that string? Or maybe you wanted to find a piece of text that was not followed by another piece of text? Normally, with standard string searching, you would have to write a somewhat complex function to perform the exact operation you wanted. This can, however, all be done on one line using regular expressions. This chapter will also cover the configuration flags available to modify some of the behaviors of the regular expression patterns language.
 
-<p class="tip alert"><span>This article is part two in the series: "Guide to Regular Expressions in Java." Read <a href="http://ocpsoft.com/opensource/guide-to-regular-expressions-in-java-part-1/">part one</a> for more information on basic matching, grouping, extracting, and substitution.</span></p>
+<p class="tip alert"><span>This article is part two in the series: "[[Regular Expressions]]." Read <a href="http://ocpsoft.com/opensource/guide-to-regular-expressions-in-java-part-1/">part one</a> for more information on basic matching, grouping, extracting, and substitution.</span></p>
 
 
 

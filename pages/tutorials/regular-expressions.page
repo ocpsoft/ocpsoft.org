@@ -21,10 +21,15 @@
 .wp_slug regular-expressions
 <img src="http://ocpsoft.org/wp-content/uploads/2012/09/IMG_20120918_002559-300x212.jpg" alt="" title="IMG_20120918_002559" width="300" height="212" class="pull-right" style="margin-left: 15px; margin-bottom: 15px;" />
 
-This guide and quick-start index is targeted at anyone who wishes to learn more about regular expressions. Code examples are written in the Java language, for clarity, but concepts and explanations are pure regular expressions. Please leave a comment if you would like to see additional topics that are not listed here:
+<p>This guide and quick-start index is targeted at anyone who wishes to learn more about regular expressions. Code examples are written in the Java language, for clarity, but concepts and explanations are pure regular expressions.
+
+<p>If there is a tip or trick that you would like to contribute, or if you have a question that is not answered here, please feel free to <a href="mailto:admin@ocpsoft.org">submit a tip</a>, or <a href="#respond">leave a comment</a> with your question. To receive periodic email updates when new articles and tutorials are posted, please [[Subscribe|subscribe to our newsletter]].
 
 <h2><a href="http://ocpsoft.org/tutorials/regular-expressions/or-in-regex/" title="“Or” in regular expressions `||`">“Or” in regular expressions `||`</a></h2>
 <p>A quick guide using several examples to create and use logical "or" statements in regular expressions.
+
+<h2><a href="http://ocpsoft.org/tutorials/regular-expressions/email-regex/" title="Email Addresses with Regular Expressions">Email Addresses with Regular Expressions</a></h2>
+<p>A quick guide demonstrating how to validate email addresses with regular expressions and other native languages.
 
 <h2><a href="http://ocpsoft.org/tutorials/regular-expressions/and-in-regex/" title="“And” in regular expressions `&&`">“And” in regular expressions `&&`</a></h2>
 <p>A quick guide using several examples to create and use logical "and" statements in regular expressions.

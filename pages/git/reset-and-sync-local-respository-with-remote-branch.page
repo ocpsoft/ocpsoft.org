@@ -1,0 +1,54 @@
+.categories []
+.dateCreated 20120919T15:21:21
+.excerpt 
+.link http://ocpsoft.org/tutorials/git/reset-and-sync-local-respository-with-remote-branch/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 5046
+.page_status publish
+.permaLink http://ocpsoft.org/tutorials/git/reset-and-sync-local-respository-with-remote-branch/
+.text_more 
+.title Reset and sync local respository with remote branch
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 5036
+.wp_page_parent_title Git
+.wp_page_template default
+.wp_password 
+.wp_slug reset-and-sync-local-respository-with-remote-branch
+<img src="http://ocpsoft.org/wp-content/uploads/2012/09/Git-Logo-2Color-300x125.png" alt="" title="Git-Logo-2Color" width="300" height="125" class="pull-right" style="margin-left: 15px; margin-bottom: 15px;" />
+
+<p>If you have ever gotten to the point where your local git repository is out of sync with your remote, but you just can't seem to restore things back to normal, then this command is for you.
+
+<p>This git pro-tip will turn your local repository into a mirror image of the remote of your choice. Simply follow these steps to get back to frustration-free development.
+
+[warn]This command will destroy any local changes in your current branch. This tip is part of the guide series, [[Git]].[/warn]
+
+<h2>The command:</h2>
+<p>Remember to replace <code>origin</code> and <code>master</code> with the remote and branch that you want to synchronize with.
+
+[command]git fetch origin && git reset --hard origin/master && git clean -f -d[/command]
+
+Or step-by-step:
+[command]git fetch origin
+git reset --hard origin/master
+git clean -f -d[/command]
+
+Your local branch is now an exact copy (commits and all) of the remote branch.
+
+<h2>Command output:</h2>
+
+<p>Here is an example of running the command on a local clone of the <a href="http://jboss.org/forge">JBoss Forge</a> git repository.
+
+[code]sharkbook:forge lbaxter$ git fetch origin && git reset --hard origin/master && git clean -f -d
+HEAD is now at 356cd85 FORGE-680
+Removing forge-example-plugin/
+Removing plugin-container-api/
+Removing plugin-container/
+Removing shell/.forge_settings
+sharkbook:forge lbaxter$ [/code]
+
+<h5>Submitted by <a href="http://twitter.com/gegastaldi" title="George Gastaldi on Twitter" target="_blank">George Gastaldi</a></h5>

@@ -1,0 +1,72 @@
+.categories []
+.dateCreated 20120919T11:54:22
+.excerpt 
+.link http://ocpsoft.org/tutorials/regular-expressions/email-regex/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 5007
+.page_status publish
+.permaLink http://ocpsoft.org/tutorials/regular-expressions/email-regex/
+.text_more 
+.title Email Regular Expression
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 4913
+.wp_page_parent_title Regular Expressions
+.wp_page_template default
+.wp_password 
+.wp_slug email-regex
+[toc/]
+<img src="http://ocpsoft.org/wp-content/uploads/2012/09/IMG_20120918_002559-300x212.jpg" alt="" title="IMG_20120918_002559" width="300" height="212" class="pull-right" style="margin-left: 15px; margin-bottom: 15px;" />
+
+<p>You might consider this a cynical view, but you should probably not try to implement a very strict email validation pattern with regular expressions. The fully compliant RFC-822 email regex is nothing to be trifled with; in fact, it is <a href="http://ex-parrot.com/~pdw/Mail-RFC822-Address.html" target="_blank" rel="nofollow">a behemoth</a>.
+
+<p>As such, I recommend using only a simple regular expression for this task. And iIf you need to validate users email addresses, consider sending them a verification to confirm that what they have given you is correct, but if you really want to be strict about things - consider a pre-built validation package.
+
+<div class="clearer"></div>
+[info]This tutorial is part of the course: "[[Regular Expressions]]."[/info]
+
+<h2 class="toc">The pattern:</h2>
+<pre lang="perl">^\S+@\S+\.\S+$           #just make sure that it "pretty much" looks like an email address</pre>
+
+That's it! A very simple regular expression to validate that an email address generally fits the form required - now email your user and make sure they receive it! See below for more specific validation techniques.
+
+
+<h2 class="toc">Validation in Java:</h2>
+<p>In Java, to be more comprehensive and accurate, you could use the following technique provided by the "<a href="http://search.maven.org/#search|ga|1|g%3A%22javax.mail%22" target="_blank">javax.mail</a>" specification:
+
+[snippit filename="Validating an email address with javax.mail"]
+public static boolean isValidEmailAddress(String email) {
+   boolean result = true;
+   try {
+      InternetAddress emailAddr = new InternetAddress(email);
+      emailAddr.validate();
+   } catch (AddressException ex) {
+      result = false;
+   }
+   return result;
+}
+[/snippit] 
+
+<h2 class="toc">Validation in PHP</h2>
+<p>PHP also offers a built-in validation mechanism via the <code>filter_var</code> function.
+[snippit filename="Validating an email address with FILTER_VALIDATE_EMAIL"]
+<?php
+$email = "someone@exa mple.com";
+
+if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+  {
+  echo "E-mail is not valid";
+  }
+else
+  {
+  echo "E-mail is valid";
+  }
+?> 
+[/snippit] 
+
+<h3 class="toc">References</h3>
+<a rel="nofollow" href="http://stackoverflow.com/questions/201323/using-a-regular-expression-to-validate-an-email-address" target="_blank">http://stackoverflow.com/questions/201323/using-a-regular-expression-to-validate-an-email-address</a>

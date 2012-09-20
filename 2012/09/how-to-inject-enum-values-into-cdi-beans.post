@@ -1,0 +1,173 @@
+.categories ['Java', 'JBoss']
+.dateCreated 20120919T13:52:50
+.date_modified 20120919T13:54:13
+.date_modified_gmt 20120919T17:54:13
+.link http://ocpsoft.org/java/how-to-inject-enum-values-into-cdi-beans/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/java/how-to-inject-enum-values-into-cdi-beans/
+.post_status publish
+.postid 5023
+.title How to @Inject Enum values into CDI beans
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug how-to-inject-enum-values-into-cdi-beans
+<p>I was recently asked how to Inject a Java Enum into a bean constructor using CDI. This turns out to be a fairly interesting situation, because enums are not usually available for Injection.
+<!--more-->
+<h3>The first attempt</h3>
+
+<p>As much as we would hope for this to work, it does not. Enums are not beans because they have no default constructor (hence CDI does not know how to construct them,) and there is no standard way to resolve which enumerated value should be injected by default (Unless there is only one value, but this is still not supported due to the lack of default constructor.)
+
+[snippit filename="Injecting an enum with a single value does not work."]
+public class InjectedObject {
+   private MyEnum e;
+
+   @Inject
+   public InjectedObject(MyEnum e) {
+      this.e = e;
+   }
+   
+   public MyEnum getValue() {
+      return e;
+   }
+
+   /**
+    * Our enum
+    */
+   public enum MyEnum {
+      ONE
+   }
+}
+[/snippit]
+
+
+<h3>This will result in a deployment failure</h3>
+
+<pre lang="text">Caused by: org.jboss.weld.exceptions.DeploymentException: WELD-001408 Unsatisfied dependencies for type [MyEnum] with qualifiers [@Default] at injection point [[BackedAnnotatedParameter] Parameter 1 of [BackedAnnotatedConstructor] @Inject public org.example.InjectedObject(MyEnum)]
+	at org.jboss.weld.bootstrap.Validator.validateInjectionPointForDeploymentProblems(Validator.java:365)
+	at org.jboss.weld.bootstrap.Validator.validateInjectionPoint(Validator.java:297)
+	at org.jboss.weld.bootstrap.Validator.validateGeneralBean(Validator.java:157)
+	at org.jboss.weld.bootstrap.Validator.validateRIBean(Validator.java:184)
+	at org.jboss.weld.bootstrap.Validator.validateBean(Validator.java:470)
+	at org.jboss.weld.bootstrap.ConcurrentValidator$1.doWork(ConcurrentValidator.java:74)
+	at org.jboss.weld.bootstrap.ConcurrentValidator$1.doWork(ConcurrentValidator.java:72)
+	at org.jboss.weld.executor.IterativeWorkerTaskFactory$1.call(IterativeWorkerTaskFactory.java:60)
+	at org.jboss.weld.executor.IterativeWorkerTaskFactory$1.call(IterativeWorkerTaskFactory.java:53)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	... 1 more</pre>
+
+
+
+<h1>The solution</h1>
+<p>We must turn to producer methods in order to make this possible. It takes just a little bit of code, but it is possible, and very easy! The reason this works is because <b>any</b> value may be injected if it resolves to a unique set of qualifiers and types. You could even inject a <code>java.lang.String</code> using this technique. 
+
+[snippit filename="Using @Produces to to inject an enum in CDI."]
+/**
+ * @author <a href="mailto:lincolnbaxter@gmail.com">Lincoln Baxter, III</a>
+ */
+public class InjectedObject
+{
+   private MyEnum e;
+
+   @Inject
+   public InjectedObject(MyEnum e)
+   {
+      this.e = e;
+   }
+
+   public MyEnum getValue()
+   {
+      return e;
+   }
+
+   /**
+    * A producer is required in order to {@link Inject} an Enum
+    */
+   @Produces
+   public static MyEnum getEnum()
+   {
+      return MyEnum.THREE;
+   }
+
+   /**
+    * Our enum
+    */
+   public enum MyEnum
+   {
+      ONE, TWO, THREE
+   }
+
+}
+[/snippit]
+
+<p>And there you have it! A perfectly functional method of injecting enum values in CDI. You will, however, need to make sure you know which type of enum you want to inject, and if you need multiple types, then you'll need to create qualifiers for each value. 
+
+<h3>You could also use the built-in @Named qualifier</h3>
+
+<p>The <code>@Named</code> qualifier is a built in qualifying type that allows unique qualifiers to be created using String values.
+
+[snippit filename="Using the @Named qualifier to inject arbitrary values of the same type"]
+/**
+ * @author <a href="mailto:lincolnbaxter@gmail.com">Lincoln Baxter, III</a>
+ */
+public class InjectedObject
+{
+   private MyEnum e1;
+   private MyEnum e2;
+
+   @Inject
+   public InjectedObject(@Named("ONE") MyEnum e1, @Named("TWO") MyEnum e2)
+   {
+      this.e1 = e1;
+      this.e2 = e2;
+   }
+
+   public MyEnum getValue1()
+   {
+      return e1;
+   }
+
+   public MyEnum getValue2()
+   {
+      return e2;
+   }
+
+   /**
+    * A producer is required in order to {@link Inject} an Enum
+    */
+   @Produces
+   @Named("ONE")
+   public static MyEnum getEnumOne()
+   {
+      return MyEnum.ONE;
+   }
+
+   @Produces
+   @Named("TWO")
+   public static MyEnum getEnumTwo()
+   {
+      return MyEnum.TWO;
+   }
+
+   /**
+    * Our enum
+    */
+   public enum MyEnum
+   {
+      ONE, TWO, THREE
+   }
+
+}
+[/snippit]
+
+<p>We would not, however, be able to <code>@Inject @Named("THREE") MyEnum e</code> because we have not declared a producer with such a qualifier!

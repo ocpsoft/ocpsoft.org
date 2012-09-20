@@ -1,0 +1,32 @@
+.categories []
+.dateCreated 20120919T15:09:42
+.excerpt 
+.link http://ocpsoft.org/tutorials/git/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 5036
+.page_status publish
+.permaLink http://ocpsoft.org/tutorials/git/
+.text_more 
+.title Git
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 4907
+.wp_page_parent_title Tutorials
+.wp_page_template default
+.wp_password 
+.wp_slug git
+<img src="http://ocpsoft.org/wp-content/uploads/2012/09/Git-Logo-2Color-300x125.png" alt="" title="Git-Logo-2Color" width="300" height="125" class="pull-right" style="margin-left: 15px; margin-bottom: 15px;" />
+
+<p>This guide series is designed for users of Git who want to know how to be most effective with Git SCM tools. If there is a tip or trick that you would like to contribute, or if you have a question that is not answered here, please feel free to <a href="mailto:admin@ocpsoft.org">submit a tip</a>, or <a href="#respond">leave a comment</a> with your question. To receive periodic email updates when new articles and tutorials are posted, please [[Subscribe|subscribe to our newsletter]].
+
+<div class="clearer"></div>
+
+<h2><a href="http://ocpsoft.org/tutorials/git/reset-and-sync-local-respository-with-remote-branch/" title="Reset and sync local respository with remote branch">Reset and sync local respository with remote branch</a></h2>
+<p>Suffering from a bad merge? Commits out of order? Re-synchronize your local branch with a remote branch.
+
+<h2><a href="http://ocpsoft.org/use-git-reflog-and-git-cherry-pick-to-restore-lost-commits/" title="Restore lost work, with “git reflog” and “git cherry-pick”">Restore lost work, with “git reflog” and “git cherry-pick”</a></h2>
+<p>Lost some work due to an unruly command? Want to get it back? This git pro-tip will get you back on track in no time.

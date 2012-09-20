@@ -1,0 +1,100 @@
+.categories []
+.dateCreated 20120919T16:17:02
+.excerpt 
+.link http://ocpsoft.org/use-git-reflog-and-git-cherry-pick-to-restore-lost-commits/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 5064
+.page_status publish
+.permaLink http://ocpsoft.org/use-git-reflog-and-git-cherry-pick-to-restore-lost-commits/
+.text_more 
+.title Use "git reflog" and "git cherry-pick" to restore lost commits 
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 0
+.wp_page_parent_title 
+.wp_page_template default
+.wp_password 
+.wp_slug use-git-reflog-and-git-cherry-pick-to-restore-lost-commits
+<img src="http://ocpsoft.org/wp-content/uploads/2012/09/Git-Logo-2Color-300x125.png" alt="" title="Git-Logo-2Color" width="300" height="125" class="pull-right" style="margin-left: 15px; margin-bottom: 15px;" />
+
+<p>Have you just rebased your repository, or done a merge that has left you missing some of your latest work? Well, if you've ever committed that work then all is not lost!
+
+<p>This git pro-tip will show you how to restore lost commits using the reflog and cherry-pick. Have no fear, your work is still here! 
+
+[warn]Using the reflog will only work for a certain amount of time after your blunder. Git cleans the reflog periodically, so don't wait too long! This tip is part of the guide series, [[Git]].[/warn]
+
+<h2>The commands:</h2>
+<p>Our first step is to retrieve a list of every commit and action we have performed on our local repository to date. Remember that your local repository will have different commit hashes and signatures than the examples below, so be sure to replace relevant bits from the commands below with those from your own reflog.
+
+<p>The reflog below (taken from the [[Rewrite]] project repository) shows us that several commits were made before being erased by calling <code>git reset HEAD^1 --hard</code> several times. We had intended to destroy only one commit (3de61ba), but the other commit (12944d8) was lost in the process.
+
+[command]
+sharkbook:rewrite lbaxter$ git reflog
+c9f9669 HEAD@{0}: commit: Fixed test cases to run on Unix
+b3ca8a4 HEAD@{1}: pull: Fast-forward
+54ba188 HEAD@{2}: pull origin master: Fast-forward
+e659a21 HEAD@{3}: reset: moving to HEAD~1
+12944d8 HEAD@{4}: reset: moving to HEAD~1
+6f40152 HEAD@{5}: reset: moving to HEAD~1
+3de61ba HEAD@{6}: pull: Fast-forward
+e659a21 HEAD@{7}: reset: moving to HEAD^1
+12944d8 HEAD@{8}: reset: moving to HEAD^1
+6f40152 HEAD@{9}: reset: moving to HEAD^1
+3de61ba HEAD@{10}: commit: Removed Query object   --- This is what we wanted to revert.
+6f40152 HEAD@{11}: pull: Merge made by the 'recursive' strategy.
+12944d8 HEAD@{12}: commit: API touchups   --- This is what we want to keep, but was lost.
+e659a21 HEAD@{13}: commit: Test enhancements
+07419e1 HEAD@{14}: pull: Fast-forward
+[/command]
+
+<p>Now that we know the hash of the commit we want to restore (12944d8), we can simply use <code>git cherry-pick</code> - with our hash - to bring our work back to life!
+
+[command]git cherry-pick 12944d8[/command]
+
+And that's it! Your work will soon be restored. Keep in mind, however, if there are any merge conflicts with the new files, you will still need to handle them like a typical merge!
+
+<h3>Successful command output:</h3>
+[code]
+Finished one cherry-pick.
+[master 12944d8] API touchups
+ 3 files changed, 36 insertions(+), 3 deletions(-)
+[/code]
+
+
+<h3>Cherry-pick with merge conflicts</h3>
+<p>This is what would have happened if there were merge conflicts with our cherry-pick.
+[code]
+error: could not apply 12944d8... API touchups
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+[/code]
+
+Calling <code>git status</code> reveals what we need to fix:
+
+[code]
+# On branch master
+# Changes to be committed:
+#
+#	new file:   api/src/main/java/org/ocpsoft/rewrite/exception/BindingException.java
+#	modified:   config-annotations/pom.xml
+#	new file:   impl-servlet/src/main/java/org/ocpsoft/rewrite/servlet/config/IQuery.java
+#	new file:   impl-servlet/src/main/java/org/ocpsoft/rewrite/servlet/config/Query.java
+#	modified:   impl-servlet/src/main/java/org/ocpsoft/rewrite/servlet/config/QueryString.java
+#	modified:   impl-servlet/src/test/java/org/ocpsoft/rewrite/servlet/config/QueryStringEncodingTest.java
+#
+# Unmerged paths:
+#   (use "git add/rm <file>..." as appropriate to mark resolution)
+#
+#	both modified:      api/src/main/java/org/ocpsoft/rewrite/exception/RewriteException.java
+#	deleted by us:      api/src/main/java/org/ocpsoft/rewrite/exception/UnsupportedEvaluationException.java
+#	both modified:      impl-servlet/src/main/java/org/ocpsoft/rewrite/servlet/impl/HttpRewriteWrappedResponse.java
+#	both modified:      impl-servlet/src/main/java/org/ocpsoft/rewrite/servlet/util/QueryStringBuilder.java
+#	both modified:      integration-faces/src/main/java/org/ocpsoft/rewrite/faces/config/PhaseAction.java
+#	both modified:      integration-spring/src/main/java/org/ocpsoft/rewrite/spring/SpringExpressionLanguageProvider.java[/code]
+
+<h5>Submitted by <a href="http://twitter.com/brianleathem" title="Brian Leathem on Twitter" target="_blank">Brian Leathem</a></h5>

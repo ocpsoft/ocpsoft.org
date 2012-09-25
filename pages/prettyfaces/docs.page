@@ -1,60 +1,14 @@
 .categories ['Uncategorized']
 .dateCreated 20091103T01:22:56
 .excerpt 
-.link http://ocpsoft.org/prettyfaces/docs/
+.link http://ocpsoft.org/docs/prettyfaces/3.3.3/en-US/html/
 .mt_allow_comments 1
 .mt_allow_pings 1
 .page_id 328
 .page_status publish
-.permaLink http://ocpsoft.org/prettyfaces/docs/
+.permaLink http://ocpsoft.org/docs/prettyfaces/3.3.3/en-US/html/
 .text_more 
-
-<div class="featured">
-
-<center><div class="inside"><h2><font color="green">CELEBRATE!</font> PrettyFaces version 3.3.2 is Released!</h2></div>
-
-<h2>Read the reference documentation: <a target="_blank" href="http://ocpsoft.com/docs/prettyfaces/3.3.2/en-US/html/">web view</a>, or <a target="_blank" href="http://ocpsoft.com/docs/prettyfaces/3.3.2/en-US/html_single/">single page</a>.</h2></center>
-
-<div class="inside">
-Maven dependencies:
-<pre lang="xml">
-<!-- For JSF 1.1 -->
-<dependency>
-	<groupId>com.ocpsoft</groupId>
-	<artifactId>prettyfaces-jsf11</artifactId>
-	<version>3.3.2</version>
-</dependency>
-
-<!-- For Servlet/Java EE and JSF 1.2 -->
-<dependency>
-	<groupId>com.ocpsoft</groupId>
-	<artifactId>prettyfaces-jsf12</artifactId>
-	<version>3.3.2</version>
-</dependency>
-
-<!-- For Servlet/Java EE and JSF 2.0 -->
-<dependency>
-	<groupId>com.ocpsoft</groupId>
-	<artifactId>prettyfaces-jsf2</artifactId>
-	<version>3.3.2</version>
-</dependency>
-</pre>
-</div>
-
-<center>
-<h2>Read the reference documentation: <a target="_blank" href="http://ocpsoft.com/docs/prettyfaces/3.3.2/en-US/html/">web view</a>, or <a target="_blank" href="http://ocpsoft.com/docs/prettyfaces/3.3.2/en-US/html_single/">single page</a>.</h2>
-
-<p><div class="inside"> <font color="green">NOTE</font>: You can also read the most recent <a target="_blank" href="http://ocpsoft.com/docs/prettyfaces/snapshot/en-US/html/">snapshot documentation</a>.</div></p>
-
-</center>
-</div>
-<h3>Documentation for older versions:</h3>
-<ul>
-<li><a href="http://ocpsoft.com/wp-content/uploads/2010/02/prettyfaces-2.0.4-reference.pdf">2.0.4</a> (pdf)</li>
-<li><a href="http://ocpsoft.com/prettyfaces/v123/">1.1.x, 1.2.x, 2.0.x</a> (pre-2.0.4)</li>
-</ul>
-
-.title Documentation
+.title PrettyFaces Docs
 .userid 3
 .wp_author Lincoln Baxter III
 .wp_author_display_name Lincoln Baxter III
@@ -65,4 +19,3 @@ Maven dependencies:
 .wp_page_template default
 .wp_password 
 .wp_slug docs
-<p>Setting up PrettyFaces is simple.</p>

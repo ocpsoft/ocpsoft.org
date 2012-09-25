@@ -32,13 +32,15 @@
 
 <h2 style="font-size: 1.5em; margin-bottom: 25px;"><span class="toc">Get Started</span>, see how powerful URL-rewriting can be (5 steps) </h2>
 
-[warn]It is recommended but not required to remove other URL-rewriting tools from your application before using Rewrite. If you choose to leave them in place, weird things may happen to you, be warned.[/warn]
+[warn]It is recommended but not required to remove other URL-rewriting tools from your application before using Rewrite and/or PrettyFaces. If you choose to leave them in place, weird things may happen to you, be warned.[/warn]
 
 <div>
 
 <center>
 <p style="margin: 20px;">Come join us on in <code>#ocpsoft</code> - <a href="http://webchat.freenode.net/?channels=%23ocpsoft" title="OCPsoft channel on Freenode IRC" target="_blank">our channel on irc.freenode.net.</a> Additionally, you are welcome to attend the dev meeting, every [[Calendar|Monday at 1pm EST]]. Also, please join the discussion on our <a href="mailto:prettyfaces-dev@googlegroups.com">dev email list</a>.</p>
 </center>
+
+[section]
 
 <h2 class="toc">1. Include Rewrite in your Project</h2>
 
@@ -119,6 +121,8 @@ Just include the corresponding extension in your pom.xml file in order to add fu
 [/snippit]
 </div>
 
+[section]
+
 
 <h2 class="toc">Run your "rewritten" application!</h2>
 
@@ -136,7 +140,7 @@ RewriteFilter initialized.
 <p style="margin-top: 10px; margin-bottom: 0px;">
 <h2 style="margin-top: 0px;" class="toc">Get involved</h2>
 <strong>Source</strong>: <a href="https://github.com/ocpsoft/rewrite">https://github.com/ocpsoft/rewrite</a><br/>
-<strong>Forums</strong>: <a href="http://ocpsoft.org/support/forum/rewrite">http://ocpsoft.org/support/forum/rewrite</a><br/>
+<strong>Forums</strong>: <a href="http://ocpsoft.org/support/rewrite">http://ocpsoft.org/support/forum/rewrite</a><br/>
 <strong>Get updates</strong>: <a href="http://ocpsoft.org/subscribe/">http://ocpsoft.org/subscribe/</a><br/>
 </p><p>
 Having trouble? Have an idea? <a href="https://github.com/ocpsoft/rewrite/issues" title="Report an issue">Report an issue.</a> </p>

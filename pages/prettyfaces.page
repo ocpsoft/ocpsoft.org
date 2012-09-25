@@ -19,114 +19,154 @@
 .wp_page_template page-notitle.php
 .wp_password 
 .wp_slug prettyfaces
+[toc/]
 <center style="margin-left: -50px;"><img src="http://ocpsoft.org/wp-content/uploads/2008/11/prettyfaces-50.png" alt="" title="prettyfaces-50" width="498" height="122" class="alignnone size-full wp-image-2090" />
 
 <h2 style="margin-bottom: 25px; margin-left: 25px; margin-right: 25px;">The open-source <font color="green">/url/#{rewriting}</font> solution for Servlet, JSF, and Java EE</h2></center>
 
+<div class="featured">
 <p style="margin-top: 10px; margin-bottom: 0px;">PrettyFaces is an OpenSource Filter-based Servlets extension with enhanced support for <em>JavaServer Faces</em> - JSF 1.1, 1.2 and 2.0 - enabling creation of bookmark-able, pretty URLs. PrettyFaces solves the "RESTful URL" problem elegantly, including features such as: page-load actions, seamless integration with faces navigation, dynamic view-id assignment, managed parameter parsing, and configuration-free compatibility with other web frameworks. <a href="#features">Take a look at the features &raquo;</a></p>
+</div>
 
 
 <h2>SEO and Consistency:</h2>
 Any business knows how important Search Engine Optimization can be for sales. PrettyFaces allows SEO-friendly URLs, and improved customer experience. Give your site a uniform, well understood feeling, from the address bar to the buy button.
 
 <p style="margin-bottom: 10px;">
-<div class="featured">
 
-<center><div class="inside"><h2><font color="green">NEWS:</font> PrettyFaces 4.0.0 to be based on <a href="http://ocpsoft.org/rewrite/">OCPsoft Rewrite</a>. Integration will allow full Java-based rewriting in addition to standard configuration.</h2></div></center>
+<h2><span class="toc">Get Started</span>, it's easy! (3 steps)</h2>
 
-<table border="0" width="100%" cellspacing="10px" style="margin:auto; max-width:850px">
-<tbody>
-<tr valign="top">
-<td width="35%">
-<h2 style="font-size: 150%; margin-bottom: 5px;">Downloads: ↓ (APL)</h2>
-<p style="padding-left: 20px;">JSF1.1 &gt; <strong>3.3.3:</strong> <a href="http://ocpsoft.org/repository/com/ocpsoft/prettyfaces-jsf11/3.3.3/prettyfaces-jsf11-3.3.3.jar">jar</a>, <a href="http://ocpsoft.org/repository/com/ocpsoft/prettyfaces-jsf11/3.3.3/prettyfaces-jsf11-3.3.3-sources.jar">src</a>, <a target="_blank" href="http://ocpsoft.org/prettyfaces/v123/">doc</a></p>
-<p style="padding-left: 20px;">JSF1.2 &gt; <strong>3.3.3:</strong> <a href="http://ocpsoft.org/repository/com/ocpsoft/prettyfaces-jsf12/3.3.3/prettyfaces-jsf12-3.3.3.jar">jar</a>, <a href="http://ocpsoft.org/repository/com/ocpsoft/prettyfaces-jsf12/3.3.3/prettyfaces-jsf12-3.3.3-sources.jar">src</a>, <a target="_blank" href="http://ocpsoft.org/docs/prettyfaces/3.3.3/en-US/html/">doc</a></p>
-<p style="padding-left: 20px;">JSF2.0 &gt; <strong>3.3.3:</strong> <a href="http://ocpsoft.org/repository/com/ocpsoft/prettyfaces-jsf2/3.3.3/prettyfaces-jsf2-3.3.3.jar">jar</a>, <a href="http://ocpsoft.org/repository/com/ocpsoft/prettyfaces-jsf2/3.3.3/prettyfaces-jsf2-3.3.3-sources.jar">src</a>, <a target="_blank" href="http://ocpsoft.org/docs/prettyfaces/3.3.3/en-US/html/">doc</a></p>
-<p style="padding-left: 20px;"><a href="http://ocpsoft.org/repository/com/ocpsoft/">All Downloads / Maven Repo</a></p>
-<p style="padding-left: 20px;"><a href="https://github.com/ocpsoft/prettyfaces">Version control repository</a></p>
+[warn]It is recommended but not required to remove other URL-rewriting tools from your application before using PrettyFaces and/or Rewrite. If you choose to leave them in place, weird things may happen to you, be warned.[/warn]
 
-<h4 style="padding-left: 20px; margin-top: 10px; margin-bottom: 5px;">Dependencies:</h4>
-<p style="padding-left: 20px;"><strong>JSF1.1, 1.2 or 2.0</strong></p>
+<center>
+<p style="margin: 20px;">Come join us on in <code>#ocpsoft</code> - <a href="http://webchat.freenode.net/?channels=%23ocpsoft" title="OCPsoft channel on Freenode IRC" target="_blank">our channel on irc.freenode.net.</a> Additionally, you are welcome to attend the dev meeting, every [[Calendar|Monday at 1pm EST]]. Also, please join the discussion on our <a href="mailto:prettyfaces-dev@googlegroups.com">dev email list</a>.</p>
+</center>
 
-<h4 style="margin-top: 10px;">What's coming?</h4>
-<strong>Integration with <a href="http://ocpsoft.org/rewrite/">OCPsoft Rewrite</a></strong></td>
+[section]
 
-<td style="text-align: justify;">
 
-<p>Our code is on <a href="http://github.com/ocpsoft/prettyfaces">GitHub</a>. If you have questions, concerns, suggestions, or would like to <a href="/prettyfaces/contributors">contribute/hack</a> - email the <a href="mailto:prettyfaces-users@googlegroups.com">user-group</a>, or <a href="https://github.com/ocpsoft/prettyfaces/issues" target="_blank">open an issue</a>.
+<h2 class="toc">1. Include PrettyFaces in your Project</h2>
 
-<div style="margin:auto; width:350px;">
-<a name="mailinglist"></a>
-<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<p>You may either use Maven (recommended) to include PrettyFaces in your project, or you can download the JAR file directly. 
 
-<tbody><tr><td>
-<br/>
-
-<h2>Need help?</h2> 
-<strong>Ask a question in the <a href="http://ocpsoft.org/forums/">forums</a>, view the <a href="http://ocpsoft.org/prettyfaces/docs/">documentation</a>, <a href="#FAQ">FAQ</a>, or get the <a href="https://github.com/ocpsoft/prettyfaces" target="_blank">source</a>!
-</td></tr>
-</tbody></table>
-<br/>
-
-</div>
-
-<div class="inside" style="font-size: 1.25em; margin-left: 15px;">
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="NDDEKRHDMBTML">
-Like this project? Become <a href="http://ocpsoft.org/prettyfaces/powered/">powered by PrettyFaces</a> or make a donation to support us!  <b>&raquo;</b> <input type="image" style="float: right;" src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form></div>
-
-</td></tr>
-
-<tr><td colspan="2">
-
-<table width="100%">
-<tr><td width="50%" style="padding-right: 15px;">
-<h4>Maven Artifacts</h4>
-<small>
-<pre lang="xml">
+<span class="toc" style="visibility: hidden;">&nbsp;&nbsp;&nbsp;- via Maven</span>
+[snippit filename="Add PrettyFaces to your maven pom.xml" href="#download" label="Or download the JAR"]
 <!-- for JSF 2.x -->
 <dependency>
    <groupId>com.ocpsoft</groupId>
    <artifactId>prettyfaces-jsf2</artifactId>
    <version>3.3.3</version>
 </dependency>
-</pre>
-</small>
 
-</td>
-<td style="padding-left: 15px;">
-
-<h4><span style="visibility: hidden;">.</span></h4>
-<small>
-<pre lang="xml">
 <!-- for JSF 1.2.x -->
 <dependency>
    <groupId>com.ocpsoft</groupId>
    <artifactId>prettyfaces-jsf12</artifactId>
    <version>3.3.3</version>
 </dependency>
-</pre>
-</small>
+[/snippit]
 
-</td>
-</tr>
-</table>
+<a name="download"></a>
+<span  class="toc" style="visibility: hidden;">&nbsp;&nbsp;&nbsp;- via direct JAR download</span></span>
 
-</td>
-</tr>
+<p>You may also place the appropriate JAR file into the <code>/WEB-INF/lib</code> directory of your Java web-application. Skip this step if you have already installed PrettyFaces via Maven.
 
-</tbody></table>
+<center class="well">
+<p><strong>JSF1.1</strong> &gt; <strong>3.3.3:</strong> <a href="http://repo1.maven.org/maven2/com/ocpsoft/prettyfaces-jsf11/3.3.3/prettyfaces-jsf11-3.3.3.jar">jar</a>, <a href="http://repo1.maven.org/maven2/com/ocpsoft/prettyfaces-jsf11/3.3.3/prettyfaces-jsf11-3.3.3-sources.jar">src</a>, <a target="_blank" href="http://ocpsoft.org/prettyfaces/v123/">doc</a></p>
+<p><strong>JSF1.2</strong> &gt; <strong>3.3.3:</strong> <a href="http://repo1.maven.org/maven2/com/ocpsoft/prettyfaces-jsf12/3.3.3/prettyfaces-jsf12-3.3.3.jar">jar</a>, <a href="http://repo1.maven.org/maven2/com/ocpsoft/prettyfaces-jsf12/3.3.3/prettyfaces-jsf12-3.3.3-sources.jar">src</a>, [[PrettyFaces Docs|doc]]</p>
+<p><strong>JSF2.0</strong> &gt; <strong>3.3.3:</strong> <a href="http://repo1.maven.org/maven2/com/ocpsoft/prettyfaces-jsf2/3.3.3/prettyfaces-jsf2-3.3.3.jar">jar</a>, <a href="http://repo1.maven.org/maven2/com/ocpsoft/prettyfaces-jsf2/3.3.3/prettyfaces-jsf2-3.3.3-sources.jar">src</a>, [[PrettyFaces Docs|doc]]</p>
+</center>
+
+
+<h2 class="toc">2. Configure PrettyFaces in your web.xml</h2>
+
+<p>Skip this step if you are running in a Servlet 3.0+ environment; PrettyFaces will configure itself. 
+
+[snippit filename="/WEB-INF/web.xml"]
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
+
+   <filter>
+      <filter-name>Pretty Filter</filter-name>
+      <filter-class>com.ocpsoft.pretty.PrettyFilter</filter-class>
+      <async-supported>true</async-supported>
+   </filter>
+
+   <filter-mapping> 
+      <filter-name>Pretty Filter</filter-name> 
+      <url-pattern>/*</url-pattern> 
+      <dispatcher>FORWARD</dispatcher> 
+      <dispatcher>REQUEST</dispatcher> 
+      <dispatcher>ERROR</dispatcher>
+      <dispatcher>ASYNC</dispatcher>
+   </filter-mapping>
+
+</web-app>
+[/snippit]
+
+<h2 class="toc">3. Create pretty-config.xml</h2>
+
+<p>This is where you will create URL mappings between external URL patterns and your internal view files, Servlets, and other resources. Be sure to replace the mapping below with a mapping that matches your application.
+
+[snippit filename="/WEB-INF/pretty-config.xml"]
+<pretty-config xmlns="http://ocpsoft.org/prettyfaces/3.3.3" 
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+               xsi:schemaLocation="http://ocpsoft.org/prettyfaces/3.3.3
+               http://ocpsoft.org/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.3.3.xsd">
+
+	<url-mapping id="login">
+		<pattern value="/login" />
+		<view-id value="/legacy/user/login.jsp" />
+	</url-mapping>
+
+</pretty-config>
+[/snippit]
+
+<h3>Add more mappings to your configuration</h3>
+
+<p>This part is all up to you! You'll need to figure out which URLs in your application you want to "prettify" - so check out the [[PrettyFaces Docs|documentation]] for details on how to fully utilize the PrettyFaces URL-mapping system.</a>
+
+[code]
+<url-mapping id="view-user">
+	<pattern value="/user/{username}" />
+	<view-id value="/user/view.xhtml" />
+</url-mapping>
+
+<!-- Maps "/user/{username}" to the URL "/user/view.xhtml?username=value" -->
+[/code]
+
+
+[section]
+
+<h2 class="toc">Run your application!</h2>
+You should now be ready to go! PrettyFaces is installed and your first URL-mapping has been created. If everything has been done correctly, you should see PrettyFaces log a message confirming that setup was successful.
+
+[command]
+INFO  [com.ocpsoft.pretty.PrettyFilter] (thread 1-1) PrettyFilter starting up...
+INFO  [com.ocpsoft.pretty.PrettyFilter] (thread 1-1) PrettyFilter initialized.
+[/command]
+
+
+
+<h2 class="toc">Documentation (Need help?)</h2> 
+
+<p>Ask a question in the <a href="http://ocpsoft.org/support/prettyfaces-users/">forums</a>, view the <a href="http://ocpsoft.org/prettyfaces/docs/">documentation</a>, <a href="#FAQ">FAQ</a>, or get the <a href="https://github.com/ocpsoft/prettyfaces" target="_blank">source</a>!</p>
+
+<br/>
+<a name="getinvolved"></a>
+<div class="featured">
+<p style="margin-top: 10px; margin-bottom: 0px;">
+<h2 style="margin-top: 0px;" class="toc">Get involved</h2>
+<strong>Source</strong>: <a href="https://github.com/ocpsoft/prettyfaces">https://github.com/ocpsoft/prettyfaces</a><br/>
+<strong>Forums</strong>: <a href="http://ocpsoft.org/support/prettyfaces-users">http://ocpsoft.org/support/forum/rewrite</a><br/>
+<strong>Get updates</strong>: <a href="http://ocpsoft.org/subscribe/">http://ocpsoft.org/subscribe/</a><br/>
+</p><p>
+Having trouble? Have an idea? <a href="https://github.com/ocpsoft/prettyfaces/issues" title="Report an issue">Report an issue.</a> </p>
 </div>
 
+[section]
 
-
-<h4>From <a href="http://twitter.com/ocpsoft">@ocpsoft</a> and <a href="http://twitter.com/lincolnthree">@lincolnthree</a></h4>
-<br/>
-
-<h1><a name="features"></a>Features:</h1>
+<a name="features"></a>
+<h1>Features</h1>
 <p>
 <ol>
 	<li><strong>URL Rewriting</strong> -- Replace ugly URLs: "/faces/page.jsf" with pretty, SEO-friendly, human URLS: "/optimized/page/"; The client browser never sees your original URLs, even in the source-HTML</li>
@@ -149,7 +189,8 @@ View a slideshare presentation on <a href="http://ocpsoft.org/prettyfaces/jsfsum
 <a name="in2minutes"></a>
 <center class="featured"><object width="640" height="505"><param name="movie" value="http://www.youtube.com/v/1kicjmLsN3w&hl=en_US&fs=1&color1=0x006699&color2=0x54abd6"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/1kicjmLsN3w&hl=en_US&fs=1&color1=0x006699&color2=0x54abd6" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="505"></embed></object><h3>Why not <a href="http://ocpsoft.org/prettyfaces/docs/">try PrettyFaces</a> now?.</h3></center>
 
-<h1><a name="FAQ"></a>FAQ:</h1>
+<a name="FAQ"></a>
+<h1>FAQ</h1>
 <ol>
 	<li><h3>Q. Can I use PrettyFaces to handle URL-rewriting for other resources on my server as well?</h3>
 	<p>
@@ -255,3 +296,9 @@ log4j.logger.com.ocpsoft=info
 	</li>
 </ol>
 <br/><br/>
+
+
+
+<h2 class="toc">Support us - Donate</h2>
+
+We welcome <a href="/donate/">donations</a> to continue providing a home to the OCPsoft open-source projects. Or, if you like this project, you can become <a href="http://ocpsoft.org/prettyfaces/powered/">powered by PrettyFaces</a>. All donations go directly to offset our web hosting costs.

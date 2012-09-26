@@ -403,7 +403,7 @@ view the <a href="#docs">documentation</a>, get the <a href="https://github.com/
 	<li>Entirely customizable. Provide your own TimeUnit and TimeFormat objects for complete control.</li>
 	<li>Provided integration for the JSF web-application framework</li>
 </ol>
-(<a href="https://github.com/ocpsoft/rewrite">Fork us on GitHub</a> and send pull requests with support for other frameworks!)
+(<a href="https://github.com/ocpsoft/prettytime">Fork us on GitHub</a> and send pull requests with support for other frameworks!)
 <a name="docs"></a>
 
 

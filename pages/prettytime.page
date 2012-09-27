@@ -366,8 +366,8 @@ public class PrettyTimeTest
 
 <h3 style="font-size: 140%; margin-bottom: 5px;" class="toc">Downloads: ↓ (APL)</h3>
 
-<p style="padding-left: 30px;"><strong>1.0.8.Final:</strong> <a href="http://ocpsoft.org/repository/org/ocpsoft/prettytime/prettytime/1.0.8.Final/prettytime-1.0.8.Final.jar">jar</a>, <a href="http://ocpsoft.org/repository/org/ocpsoft/prettytime/prettytime/1.0.8.Final/prettytime-1.0.8.Final-sources.jar">src</a></p>
-<p style="padding-left: 30px;"><a href="http://ocpsoft.org/repository/org/ocpsoft/prettytime/prettytime/">All Downloads / Maven Repo</a></p><p style="padding-left: 30px;"><a href="https://github.com/ocpsoft/prettytime">Version control repository</a></p>
+<p style="padding-left: 30px;"><strong>1.0.8.Final:</strong> <a href="http://repo1.maven.org/maven2/org/ocpsoft/prettytime/prettytime/1.0.8.Final/prettytime-1.0.8.Final.jar">jar</a>, <a href="http://repo1.maven.org/maven2/org/ocpsoft/prettytime/prettytime/1.0.8.Final/prettytime-1.0.8.Final-sources.jar">src</a></p>
+<p style="padding-left: 30px;"><a href="http://repo1.maven.org/maven2/org/ocpsoft/prettytime/prettytime/">All Downloads / Maven Repo</a></p><p style="padding-left: 30px;"><a href="https://github.com/ocpsoft/prettytime">Version control repository</a></p>
 
 <h4 style="padding-left: 30px; margin-top: 10px; margin-bottom: 5px;">Dependencies:</h4>
 

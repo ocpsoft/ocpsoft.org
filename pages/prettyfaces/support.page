@@ -1,12 +1,12 @@
 .categories []
-.dateCreated 20120408T14:51:41
+.dateCreated 20121017T00:56:02
 .excerpt 
-.link http://ocpsoft.org/support/rewrite/
-.mt_allow_comments 1
-.mt_allow_pings 1
-.page_id 4305
+.link /support/prettyfaces-users/
+.mt_allow_comments 0
+.mt_allow_pings 0
+.page_id 5115
 .page_status publish
-.permaLink http://ocpsoft.org/support/rewrite/
+.permaLink /support/prettyfaces-users/
 .text_more 
 .title Support
 .userid 3
@@ -14,8 +14,8 @@
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
 .wp_page_order 0
-.wp_page_parent_id 2646
-.wp_page_parent_title Rewrite
+.wp_page_parent_id 26
+.wp_page_parent_title PrettyFaces
 .wp_page_template default
 .wp_password 
 .wp_slug support

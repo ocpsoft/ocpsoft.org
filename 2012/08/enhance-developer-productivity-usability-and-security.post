@@ -1,7 +1,7 @@
 .categories ['Java', 'JBoss', 'OpenSource', 'Rewrite']
 .dateCreated 20120822T09:00:04
-.date_modified 20120823T12:14:23
-.date_modified_gmt 20120823T16:14:23
+.date_modified 20121017T12:20:36
+.date_modified_gmt 20121017T16:20:36
 .link http://ocpsoft.org/java/enhance-developer-productivity-usability-and-security/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -10,7 +10,7 @@
 .permaLink http://ocpsoft.org/java/enhance-developer-productivity-usability-and-security/
 .post_status publish
 .postid 4863
-.title [Video] Enhance developer productivity, usability, and security
+.title [video] Enhance developer productivity, usability, and security
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3

@@ -72,9 +72,9 @@ public class RegexTest
    @Test
    public void testRegex()
    {
-      assertTrue(stringMatches("Start with a good word and end with a kind deed."));
-      assertTrue(stringMatches("Start with a kind word and end with a good deed."));
-      assertFalse(stringMatches("Start with a deed."));
+      assertTrue(stringMatches("I like dogs, but not lions."));
+      assertTrue(stringMatches("I like penguins, but not lions."));
+      assertFalse(stringMatches("I like lions, but not penguins."));
    }
 
    private boolean stringMatches(String string)

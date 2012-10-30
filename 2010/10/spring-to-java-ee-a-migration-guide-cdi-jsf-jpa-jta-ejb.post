@@ -1,7 +1,7 @@
 .categories ['Hibernate', 'Java', 'JSF2', 'OpenSource', 'Seam', 'Spring', 'Technology']
 .dateCreated 20101001T13:40:21
-.date_modified 20120821T15:38:09
-.date_modified_gmt 20120821T19:38:09
+.date_modified 20121029T13:55:44
+.date_modified_gmt 20121029T17:55:44
 .link http://ocpsoft.org/java/spring-to-java-ee-a-migration-guide-cdi-jsf-jpa-jta-ejb/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -323,7 +323,7 @@ public BeanManager getBeanManager(HttpServletRequest request)
 public BeanManager getBeanManager()
 {
     try {
-        InitialContext initialContext = <strong>new</strong> InitialContext();
+        InitialContext initialContext = new InitialContext();
         return (BeanManager) initialContext.lookup("java:comp/BeanManager");
     catch (NamingException e) {
         log.error("Couldn't get BeanManager through JNDI");
@@ -344,7 +344,7 @@ public static <T> T getContextualInstance(final BeanManager manager, final Class
 {
     T result = null;
     Bean<T> bean = (Bean<T>) manager.resolve(manager.getBeans(type));
-    if (bean != <strong>null</strong>)
+    if (bean != null)
     {
         CreationalContext<T> context = manager.createCreationalContext(bean);
         if (context != null)

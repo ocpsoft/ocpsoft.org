@@ -1,0 +1,40 @@
+.categories ['JBoss']
+.dateCreated 20121102T13:20:55
+.date_modified 20121102T13:20:55
+.date_modified_gmt 20121102T17:20:55
+.link http://ocpsoft.org/jboss/video-gwt-and-errai-ui-quickstart/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/jboss/video-gwt-and-errai-ui-quickstart/
+.post_status publish
+.postid 5122
+.title [video] GWT and Errai UI Quickstart
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug video-gwt-and-errai-ui-quickstart
+I wish I had a magic GWT + Errai quickstart tutorial for you. But in fact, I do! Check out this video, and the tutorial below, to start your adventure with client side HTML5 templating in GWT!<p>
+
+<center><iframe src="http://player.vimeo.com/video/44141164?title=0&amp;byline=0&amp;portrait=0&amp;badge=0" width="500" height="313" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></center>
+<!--more-->
+<h3>Get started</h3>
+Check out this code using <a href="http://git-scm.com" target="_blank">GIT</a>: <a href="https://github.com/lincolnthree/errai-ui-demo" target="_blank">https://github.com/lincolnthree/errai-ui-demo</a><p>
+
+To build and deploy, simply <code>cd errai-ui-demo</code> and run <code>mvn clean install</code>. The resulting artifact will be in the target directory, and you can deploy this directly to <a href="http://www.jboss.org/jbossas/downloads/" target="_blank">JBoss AS 7.1</a>.<p>
+
+<h3>Import into IDE</h3>
+To work on the project in an IDE, I would recommend Eclipse with JBoss Tools (available in the <a href="http://marketplace.eclipse.org/content/jboss-tools-indigo" target="_blank">eclipse marketplace</a>,) or JBoss Developer Studio 5. The first thing you will need to do is import the project, then you will still need to run <code>mvn clean install</code> if you have not done so already - this builds the initial GWT javascript payload for Eclipse to push out with the exploded deployment, then deploy it to JBoss AS 7.1 and start the server. Once it is there, you can return to the command line and type, <code>mvn gwt:run</code>, which will launch GWT dev-mode.<p>
+
+<h3>Run Dev-mode</h3>
+Once dev-mode comes online, you can access the application at <a href="http://localhost:8080/errai-ui-demo/?gwt.codesvr=127.0.0.1:9997" target="_blank">http://localhost:8080/errai-ui-demo/?gwt.codesvr=127.0.0.1:9997</a><p>
+
+<h3>Hack on the code</h3>
+You can make modifications to </code>*.client</code> packages and sub-packages while the server is running, and refresh the page to see your changes.<p>
+
+Additional documentation about Errai and Errai UI is available here: <a href="https://docs.jboss.org/author/display/ERRAI/Errai+UI" target="_blank">https://docs.jboss.org/author/display/ERRAI/Errai+UI</a><p>

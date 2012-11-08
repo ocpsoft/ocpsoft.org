@@ -1,7 +1,7 @@
 .categories ['JBoss']
 .dateCreated 20121102T13:20:55
-.date_modified 20121102T13:20:55
-.date_modified_gmt 20121102T17:20:55
+.date_modified 20121107T01:40:13
+.date_modified_gmt 20121107T06:40:13
 .link http://ocpsoft.org/jboss/video-gwt-and-errai-ui-quickstart/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -28,7 +28,7 @@ Check out this code using <a href="http://git-scm.com" target="_blank">GIT</a>: 
 
 To build and deploy, simply <code>cd errai-ui-demo</code> and run <code>mvn clean install</code>. The resulting artifact will be in the target directory, and you can deploy this directly to <a href="http://www.jboss.org/jbossas/downloads/" target="_blank">JBoss AS 7.1</a>.<p>
 
-<h3>Import into IDE</h3>
+<h3>Import into IDE and delploy</h3>
 To work on the project in an IDE, I would recommend Eclipse with JBoss Tools (available in the <a href="http://marketplace.eclipse.org/content/jboss-tools-indigo" target="_blank">eclipse marketplace</a>,) or JBoss Developer Studio 5. The first thing you will need to do is import the project, then you will still need to run <code>mvn clean install</code> if you have not done so already - this builds the initial GWT javascript payload for Eclipse to push out with the exploded deployment, then deploy it to JBoss AS 7.1 and start the server. Once it is there, you can return to the command line and type, <code>mvn gwt:run</code>, which will launch GWT dev-mode.<p>
 
 <h3>Run Dev-mode</h3>

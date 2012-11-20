@@ -64,6 +64,7 @@ public class BasicJavaApp
 
 <h4>Locales with built-in support:</h4>
 <ul>
+	<li>Arabic - AR: <span class="faded">Muhammad Sabry Ali</span></li>
 	<li>Bulgarian - BG: <span class="faded">Марио Георгиев</span></li>
 	<li>Chinese - ZH_CN: <span class="faded"">陈正华</span></li>
 	<li>Croatian - Miroslav Rešetar</li>

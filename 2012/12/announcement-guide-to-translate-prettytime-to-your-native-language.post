@@ -1,0 +1,28 @@
+.categories ['OpenSource']
+.dateCreated 20121205T18:06:11
+.date_modified 20121205T18:16:45
+.date_modified_gmt 20121205T23:16:45
+.link http://ocpsoft.org/opensource/announcement-guide-to-translate-prettytime-to-your-native-language/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/opensource/announcement-guide-to-translate-prettytime-to-your-native-language/
+.post_status publish
+.postid 5171
+.title [announcement] Guide to translate PrettyTime to your native language
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug announcement-guide-to-translate-prettytime-to-your-native-language
+<a style="float:right; margin-left: 15px;" href="http://ocpsoft.org/prettytime/"><img src="http://ocpsoft.org/wp-content/uploads/2012/04/prettytime-center-compressed.png" alt="" title="Try prettytime."/></a></center>
+
+<p style="text-align: justify;">If you've ever looked for social-style date formatting for Java, to create timestamps like, "2 from now" or "3 months ago," [[PrettyTime]] is probably the tool you've ended up with, and as you might know, it supports over 25 languages and dialects - a great number to be sure. But what happens when you come across one of the over 4500 living languages that are not supported?
+</p><p>
+Well, then it's time to do some translation, and in order to help you manage this task, we've created a guide to help you get through as quickly and easily as possible. When you're done, you might even want to submit your translation back to us so that everyone else can benefit from your hard work. The guide covers this, too.
+
+It takes only a minute or so to <a href="http://ocpsoft.org/prettytime/translate-for-your-language/">read the guide</a> and get started! Let us know how you do.

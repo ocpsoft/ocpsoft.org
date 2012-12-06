@@ -66,6 +66,7 @@ public class BasicJavaApp
 <ul>
 	<li>Arabic - AR: <span class="faded">Muhammad Sabry Ali</span></li>
 	<li>Bulgarian - BG: <span class="faded">Марио Георгиев</span></li>
+	<li>Catalan - ca_ES: <span class="faded"><a href="https://github.com/mathpere" target="_blank">Mathieu</a></span></li>
 	<li>Chinese - ZH_CN: <span class="faded"">陈正华</span></li>
 	<li>Croatian - Miroslav Rešetar</li>
 	<li>Dutch - NL: <span class="faded">Bram Van Dam</span></li>
@@ -75,6 +76,7 @@ public class BasicJavaApp
 	<li>German - DE: <span class="faded">Thomas Weitzel</span></li>
 	<li>Hungarian - Balázs Németh</li>
 	<li>Italian - IT: <span class="faded">Mirco Attocchi</span></li>
+	<li>Korean - KO: <span class="faded"><a href="https://github.com/pigmon93" target="_blank">Seungbeom</a></span></li>
 	<li>Norwegian - Magnus Byrkjeflot - <a href="http://www.mylog.no">www.mylog.no</a></li>
 	<li>Polish - Upender Gilakathula</li>
 	<li>Portugese - PT: <span class="faded">Gustavo Ehrhardt</span></li>
@@ -355,7 +357,7 @@ public class PrettyTimeTest
 
 <h2 style="margin-top: 15px;">Convert elapsed timestamps, like, "in 3 minutes!"</h2>[toc][/toc]
 
-<p>PrettyTime is an OpenSource time formatting library. Completely customizable, PrettyTime creates human readable, relative timestamps like those seen on Digg, Twitter, and Facebook. It's simple, get started "right now!" and in over <a href="#i18n">18 languages</a>!</p>
+<p>PrettyTime is an OpenSource time formatting library. Completely customizable, PrettyTime creates human readable, relative timestamps like those seen on Digg, Twitter, and Facebook. It's simple, get started "right now!" and in over <a href="#i18n">25 languages</a>!</p>
 
 <p>See also: <a target="_blank" href="http://grails.org/plugin/pretty-time">PrettyTime Grails Plug-in</a>, <a href="http://www.ke-cai.net/2010/03/formatting-time-with-prettytime-jsp-tag.html" target="_blank">PrettyTime with JSP</a>.</p>
 

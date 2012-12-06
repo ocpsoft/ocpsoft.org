@@ -1,0 +1,122 @@
+.categories []
+.dateCreated 20121205T15:41:27
+.excerpt 
+.link http://ocpsoft.org/prettytime/translate-for-your-language/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 5134
+.page_status publish
+.permaLink http://ocpsoft.org/prettytime/translate-for-your-language/
+.text_more 
+.title PrettyTime - Translate for your Language
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 60
+.wp_page_parent_title PrettyTime
+.wp_page_template default
+.wp_password 
+.wp_slug translate-for-your-language
+[toc]
+
+[[PrettyTime]] supports many languages already, but if your language -or a language you need- is not supported, it's easy to add support for even the most unique dialects you might need. These translation features can also be used to provide completely custom formats and dialects for technical or other purposes. For further time unit format customization beyond the internationalization features provided below, it is recommended that you implement your own <a href="https://github.com/ocpsoft/prettytime/blob/master/core/src/main/java/org/ocpsoft/prettytime/TimeUnit.java" target="_blank">TimeUnit</a> or <a href="https://github.com/ocpsoft/prettytime/blob/master/core/src/main/java/org/ocpsoft/prettytime/TimeFormat.java" target="_blank">TimeFormat</a> instances using the provided interfaces. 
+<p/><br/>
+If you have finished a translation for a new language or dialect that PrettyTime does not currently support, we would love to add it to our supported translations. Just <a href="https://github.com/ocpsoft/prettytime/">fork our repository</a> on github, and send a pull request with your translation, and a <a href="https://github.com/ocpsoft/prettytime/blob/master/core/src/test/java/org/ocpsoft/prettytime/PrettyTimeTest.java" target="_blank">test-case</a>.
+
+<h2 class="toc">Get started</h2>
+
+If you are already familiar with the Java resource bundle API, then you can skip this section and dig right in; otherwise, the <code>java.util.ResourceBundle</code> API at its most basic level, is a strategy for loading different files or classes based on the current or requested system <code>java.util.Locale</code>. To use it, your file must end with <code>XX_yy</code>, where `XX` is the primary Country code, and `yy` is the secodary dialect or region code.
+
+<h2 class="toc">PrettyTime bundles by example</h2>
+Now, lets look at part of the translation file for the English language. Notice that we are using the ResourceBundle API to load java Classes by Locale, not text property files. This is important because it is possible for ResourceBundles to implement several interfaces, allowing further customization of behavior for features like: custom pluralization and grammar rules, and more.
+<p>
+In this and the next sections, we'll inspect the following resource bundle, and explain each entry in detail.
+
+[snippit filename="org/ocpsoft/prettytime/i18n/Resources_en.java"]
+package org.ocpsoft.prettytime.i18n;
+
+import java.util.ListResourceBundle;
+
+public class Resources extends ListResourceBundle
+{
+    private static final Object[][] OBJECTS = new Object[][] {
+
+    ...
+        { "DayPattern", "%n %u" },
+        { "DayFuturePrefix", "" },
+        { "DayFutureSuffix", " from now" },
+        { "DayPastPrefix", "" },
+        { "DayPastSuffix", " ago" },
+        { "DayName", "day" },
+        { "DayPluralName", "days" },
+    ...
+
+    @Override
+    public Object[][] getContents()
+    {
+        return OBJECTS;
+    }
+}
+[/snippit]
+
+<h3 class=toc>Contents of the resource bundle</h3>
+
+<h4><code>public Object[][] getContents()</code></h4>
+This is the method that must return the contents of the resource bundle, including all patterns, names, prefixes, and suffixes.
+<br/><br/>
+<ul>
+<li style="margin-bottom: 10px;"><span class=toc><code>*FuturePrefix</code></span>
+The grammatically correct word or phrase that one would use before the quantity in a formatted date occurring in the future. For instance, if the fully formatted result is “in 3 days from now”, the future prefix would be "in".</li>
+
+<li style="margin-bottom: 10px;"><span class=toc><code>*FutureSuffix</code></span> - 
+The grammatically correct word or phrase that one would use after the quantity in a formatted date occurring in the future. For instance, if the fully formatted result is “in 3 days from now”, the future prefix would be "from now".</li>
+
+<li style="margin-bottom: 10px;"><span class=toc><code>*PastPrefix</code></span> - 
+The grammatically correct word or phrase that one would use before the quantity in a formatted date occurring in the past. For instance, if the fully formatted result is “before 3 days ago”, the future prefix would be "before".</li>
+
+<li style="margin-bottom: 10px;"><span class=toc><code>*PastSuffix</code></span> - 
+The grammatically correct word or phrase that one would use after the quantity in a formatted date occurring in the past. For instance, if the fully formatted result is “before 3 days ago”, the future prefix would be "ago".</li>
+
+<li style="margin-bottom: 10px;"><span class=toc><code>*Name</code></span> - 
+The grammatically correct word or phrase that describing the singular quantity of a given time unit. For instance, if the fully formatted result is “before 1 day ago”, the singular name would be "day".</li>
+
+<li style="margin-bottom: 10px;"><span class=toc><code>*PluralName</code></span> - 
+The grammatically correct word or phrase that describing the plural quantity of a given time unit. For instance, if the fully formatted result is “in 2 days, the plural name would be "days".</li>
+
+<li style="margin-bottom: 10px;"><span class=toc><code>*Pattern</code></span> - 
+In the example above, the bundle contains an entry for <code>"DayPattern", "%n %u"</code>. This entry is responsible for setting the pattern with which a given time unit should be formatted. You can control ordering and formatting for each time unit by manipulating the pattern.
+<p>
+<br/>
+<code>{prefix} {pattern} {suffix}</code> - where {pattern} is created through the following codes:
+<p>
+<br/>
+%n = number of units (the actual number that will show up)
+%u = name of the unit (either singular or plural, depending on run time conditions)
+<p>
+<br/>
+Most languages (using the standard <code>%n %u</code> pattern) will render something like: <code>{prefix}  {number} {unitName} {suffix}</code>.</br></br>
+
+There are two exceptions to the general rule. The “Just Now” unit, doesn’t use a number; simply “moments from now” or “moments ago”. The “Abstract Time” block is currently unused, so keep it blank. You probably want to keep the default pattern <code>%n %u</code> unless your language needs something different.
+<p><br/>
+You could also do something wacky like:
+
+[snippit]
+public class Resources extends ListResourceBundle
+{
+    private static final Object[][] OBJECTS = new Object[][] {
+    ...
+        { "DayPattern", "%n freakin' %u" }
+    ...
+}
+[/snippit]
+
+This would effectively print <code>5 freakin' days ago</code>. Fun!</li>
+</ul>
+
+<h2 class=toc>Putting it all together</h2>
+You should now be ready to implement your own custom translation for PrettyTime. Don't forget to <a href="https://github.com/ocpsoft/prettytime/blob/master/core/src/test/java/org/ocpsoft/prettytime/PrettyTimeTest.java" target="_blank">write a test-case</a> to prove that everything works!
+
+<h2 class=toc>Required bundle keys</h2>
+PrettyTime resource bundles require that all keys be provided, otherwise, languages and dialects may be incorrectly blended together. For reference, please look at one of the <a href="https://github.com/ocpsoft/prettytime/blob/master/core/src/main/java/org/ocpsoft/prettytime/i18n" target="_blank">existing supported bundles</a>.

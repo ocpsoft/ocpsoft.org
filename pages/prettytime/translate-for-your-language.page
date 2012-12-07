@@ -79,11 +79,23 @@ The grammatically correct word or phrase that one would use before the quantity 
 <li style="margin-bottom: 10px;"><span class=toc><code>*PastSuffix</code></span> - 
 The grammatically correct word or phrase that one would use after the quantity in a formatted date occurring in the past. For instance, if the fully formatted result is “before 3 days ago”, the future prefix would be "ago".</li>
 
-<li style="margin-bottom: 10px;"><span class=toc><code>*Name</code></span> - 
+<li style="margin-bottom: 10px;"><span class=toc><code>*SingularName</code></span> - 
 The grammatically correct word or phrase that describing the singular quantity of a given time unit. For instance, if the fully formatted result is “before 1 day ago”, the singular name would be "day".</li>
 
 <li style="margin-bottom: 10px;"><span class=toc><code>*PluralName</code></span> - 
 The grammatically correct word or phrase that describing the plural quantity of a given time unit. For instance, if the fully formatted result is “in 2 days, the plural name would be "days".</li>
+
+<li style="margin-bottom: 10px;"><span class=toc><code>*FutureSingularName</code></span> - (optional) 
+Overrides <code>SingularName</code> if the date to format is in the future. The grammatically correct word or phrase that describing the singular quantity of a given time unit. For instance, if the fully formatted result is “in 1 day”, the future singular name would be "day".</li>
+
+<li style="margin-bottom: 10px;"><span class=toc><code>*FuturePluralName</code></span> - (optional)
+Overrides <code>PluralName</code> if the date to format is in the future. The grammatically correct word or phrase that describing the plural quantity of a given time unit. For instance, if the fully formatted result is “in 2 days", the future plural name would be "days".</li>
+
+<li style="margin-bottom: 10px;"><span class=toc><code>*PastSingularName</code></span> - (optional) 
+Overrides <code>SingularName</code> if the date to format is in the past. The grammatically correct word or phrase that describing the singular quantity of a given time unit. For instance, if the fully formatted result is “before 1 day ago”, the past singular name would be "day".</li>
+
+<li style="margin-bottom: 10px;"><span class=toc><code>*PastPluralName</code></span> - (optional) 
+Overrides <code>PluralName</code> if the date to format is in the past. The grammatically correct word or phrase that describing the plural quantity of a given time unit. For instance, if the fully formatted result is “in 2 days, the past plural name would be "days".</li>
 
 <li style="margin-bottom: 10px;"><span class=toc><code>*Pattern</code></span> - 
 In the example above, the bundle contains an entry for <code>"DayPattern", "%n %u"</code>. This entry is responsible for setting the pattern with which a given time unit should be formatted. You can control ordering and formatting for each time unit by manipulating the pattern.

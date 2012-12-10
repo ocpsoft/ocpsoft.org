@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 5202
 .wp_slug how-to-inject-enum-values-into-cdi-beans
 <p>I was recently asked how to Inject a Java Enum into a bean constructor using CDI. This turns out to be a fairly interesting situation, because enums are not usually available for Injection.
 <!--more-->

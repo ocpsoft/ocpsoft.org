@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 4473
 .wp_slug prettytime-1-0-4-released
 <a href="http://ocpsoft.com/prettytime">PrettyTime 1.0.4 - Elapsed Timestamp Formatting for Java</a> now supports additional Locales:
 <h4>Supported locales:</h4>

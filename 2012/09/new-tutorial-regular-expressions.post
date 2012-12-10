@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 5197
 .wp_slug new-tutorial-regular-expressions
 <img src="http://ocpsoft.org/wp-content/uploads/2012/09/IMG_20120918_002559-300x212.jpg" alt="" title="IMG_20120918_002559" width="300" height="212" class="pull-right" style="margin-left: 15px; margin-bottom: 15px;" /><p>Do you love regular expressions as much as I do?
 

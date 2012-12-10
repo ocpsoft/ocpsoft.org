@@ -1,7 +1,7 @@
-.categories ['Hibernate', 'Java', 'JBoss']
+.categories ['Hibernate', 'Java', 'JBoss', 'OpenSource']
 .dateCreated 20120821T09:08:04
-.date_modified 20120823T22:57:52
-.date_modified_gmt 20120824T02:57:52
+.date_modified 20121209T16:38:19
+.date_modified_gmt 20121209T21:38:19
 .link http://ocpsoft.org/java/getting-started-quickly-with-hibernate-annotations/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 5192
 .wp_slug getting-started-quickly-with-hibernate-annotations
 [toc/]
 

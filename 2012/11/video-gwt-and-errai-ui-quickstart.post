@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 5206
 .wp_slug video-gwt-and-errai-ui-quickstart
 I wish I had a magic GWT + Errai quickstart tutorial for you. But in fact, I do! Check out this video, and the tutorial below, to start your adventure with client side HTML5 templating in GWT!<p>
 

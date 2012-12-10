@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 5201
 .wp_slug jsf-20-extension-development-accessing-facescontext-in-a-filter
 <h3>The Problem:</h3>
 So you need a way to instantiate the 2.0 FacesContext in a Filter, but when you use the same method that you have in the past, you get NullPointerExceptions all over the place when attempting to access any values through El. The ScopedAttributeElResolver bombs when attempting to set values or access methods in backing beans.) It's not too hard to get this working again.

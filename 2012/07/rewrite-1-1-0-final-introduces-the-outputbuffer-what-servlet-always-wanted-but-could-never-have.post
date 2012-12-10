@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 4474
 .wp_slug rewrite-1-1-0-final-introduces-the-outputbuffer-what-servlet-always-wanted-but-could-never-have
 Output buffering is a feature often desired but rarely properly implemented - Properly resetting the Response stream, preserving headers correctly, writing to disk so you don't overflow the JVM memory space - in Rewrite, we hope to make this attainable for anyone seeking to do things like:
 <br/>

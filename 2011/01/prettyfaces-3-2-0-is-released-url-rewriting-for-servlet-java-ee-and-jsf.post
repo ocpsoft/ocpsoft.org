@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 4472
 .wp_slug prettyfaces-3-2-0-is-released-url-rewriting-for-servlet-java-ee-and-jsf
 <p>PrettyFaces is an OpenSource Filter-based Servlets extension with enhanced support for <em>JavaServer Faces</em> - JSF 1.1, 1.2 and 2.0 - enabling creation of bookmark-able, pretty URLs. PrettyFaces solves the "RESTful URL" problem elegantly, including features such as: page-load actions, seamless integration with faces navigation, dynamic view-id assignment, managed parameter parsing, and configuration-free compatibility with other web frameworks.</p>
 <!--more-->

@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 5203
 .wp_slug acegi-spring-security-jsf-integration-project-continued
 We've gotten a good number of comments from <a href="mailto:lincoln@ocpsoft.com">Lincoln's</a> latest post on <a href="http://ocpsoft.com/java/acegi-spring-security-jsf-login-page/">Spring Security and JSF</a>.  A few comments have asked for further code samples on how to get this example working.
 

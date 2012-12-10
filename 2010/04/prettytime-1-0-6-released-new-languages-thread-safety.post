@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 4473
 .wp_slug prettytime-1-0-6-released-new-languages-thread-safety
 OcpSoft PrettyTime is an open-source time-formatting library for creating human-readable timestamps like, "in 3 minutes," or "moments ago." -- intuitive, easy, extendable. Visit the home page to download and learn more about using <a title="PrettyTime - Elapsed Timestamp Formatting and Conversion for Java (Social, JSF2)" href="http://ocpsoft.com/prettytime/">PrettyTime</a>. New features in this release: Thread Safety, Java 1.5 compatibility, extra languages.
 <!--more-->

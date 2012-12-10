@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 5203
 .wp_slug revisited-acegispring-security-jsf-login-page
 A correction has been made to the post: <a href="http://ocpsoft.com/java/acegi-spring-security-jsf-login-page/" target="_self">http://ocpsoft.com/java/acegi-spring-security-jsf-login-page/</a>, fixing an issue where FacesMessages were not being displayed on failed authentications.
 <!--more-->

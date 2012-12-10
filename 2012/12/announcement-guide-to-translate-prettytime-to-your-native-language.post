@@ -1,7 +1,7 @@
-.categories ['OpenSource']
+.categories ['OpenSource', 'PrettyTime']
 .dateCreated 20121205T18:06:11
-.date_modified 20121206T11:25:29
-.date_modified_gmt 20121206T16:25:29
+.date_modified 20121209T15:24:51
+.date_modified_gmt 20121209T20:24:51
 .link http://ocpsoft.org/opensource/announcement-guide-to-translate-prettytime-to-your-native-language/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 5188
 .wp_slug announcement-guide-to-translate-prettytime-to-your-native-language
 <a style="float:right; margin-left: 15px;" href="http://ocpsoft.org/prettytime/"><img src="http://ocpsoft.org/wp-content/uploads/2012/04/prettytime-center-compressed.png" alt="" title="Try prettytime."/></a></center>
 

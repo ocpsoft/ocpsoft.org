@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 5201
 .wp_slug persist-and-pass-facesmessages-over-page-redirects
 <h2 style="text-align: left;">Very Simple</h2>
 <p style="text-align: left;">In a JSF Reference Implementation, passing global faces messages between pages doesn't work. It's not designed that way "out of the box." Fortunately there is a way to do this, which will even support redirects between pages, forwards through a RequestDispatcher, and also through standard JSF navigation cases.</p>

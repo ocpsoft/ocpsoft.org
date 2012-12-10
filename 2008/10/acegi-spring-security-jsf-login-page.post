@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 5203
 .wp_slug acegi-spring-security-jsf-login-page
 <h2>Tutorials - What a nightmare</h2>
 Everyone seems to be going through hell to get a fully functional JSF login page working with Spring Security (formerly Acegi,) and yes, I did too, but there's an <strong>EASY</strong> way to make this happen. And get this:

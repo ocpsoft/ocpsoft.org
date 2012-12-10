@@ -1,7 +1,7 @@
 .categories ['Java', 'JBoss', 'OpenSource', 'Rewrite']
 .dateCreated 20120822T09:00:04
-.date_modified 20121017T12:20:36
-.date_modified_gmt 20121017T16:20:36
+.date_modified 20121209T17:43:07
+.date_modified_gmt 20121209T22:43:07
 .link http://ocpsoft.org/java/enhance-developer-productivity-usability-and-security/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 5204
 .wp_slug enhance-developer-productivity-usability-and-security
 <p>Java EE is already the perfect solution for complex business/enterprise systems and provides all the tools and foundations required to deliver scalable, performant applications for a wide variety of customers and clients. 
 

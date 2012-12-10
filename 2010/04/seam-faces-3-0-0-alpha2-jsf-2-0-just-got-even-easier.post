@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 5200
 .wp_slug seam-faces-3-0-0-alpha2-jsf-2-0-just-got-even-easier
 Ever wondered why JSF doesn't support bean @Inject-ion in Converters or Validators? Ever wondered how to listen to a single PhaseEvent or ComponentSystemEvent, or filter on events by componentId, or view? Ever wondered why you can't just @Inject FacesContext, or NavigationHandler?
 

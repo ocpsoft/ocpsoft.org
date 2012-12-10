@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 5203
 .wp_slug spring-security-what-happens-after-you-log-in
 So you've got Spring Security up and running. Great! Now you've got a login page, and you just added a form on the global page menu to allow users to Login from any public page. There's just one problem. When they log-in from a public page, they’re redirected to the default-login-url! Your users will have to re-navigate to the page they were already viewing when they logged in, or maybe they'll just use the much dreaded "Back" button. That's not a good interaction, but we have a solution.
 <!--more-->

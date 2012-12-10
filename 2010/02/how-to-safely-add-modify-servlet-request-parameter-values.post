@@ -17,7 +17,7 @@
 .wp_more_text 
 .wp_password 
 .wp_post_format standard
-.wp_post_thumbnail 
+.wp_post_thumbnail 4472
 .wp_slug how-to-safely-add-modify-servlet-request-parameter-values
 <h1 style="display:none;"><a href="http://ocpsoft.com/prettyfaces/"  title="SEO | Dynamic Parameters | Bookmarks | and Navigation for JSF | JSF2">PrettyFaces</a></h1>
 <h2>Sometimes things are worth writing about.</h2>

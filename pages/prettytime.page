@@ -29,7 +29,7 @@
 
 <h2 style="font-size: 1.5em; margin-bottom: 25px;"><span class="toc">Get Started</span>, see how simple social date-formatting can be (2 steps) </h2>
 
-<p class="tip alert"><span>Follow <a href="http://twitter.com/ocpsoft">@ocpsoft</a> and <a href="http://twitter.com/lincolnthree">@lincolnthree</a> on Twitter.</span></p>
+[info]Follow <a href="http://twitter.com/ocpsoft">@ocpsoft</a> and <a href="http://twitter.com/lincolnthree">@lincolnthree</a> on Twitter.[/info]
 
 
 <br/>
@@ -140,8 +140,6 @@ Then you may attach PrettyTimeConverter to your JSF Date and timestamp outputs:
 
 <p>PrettyTime now supports internationalization via resource bundles. Simply place an appropriate Resources_**.properties bundle on the classpath: <b>org.ocpsoft.pretty.time.i18n</b>, then set the desired Locale into your PrettyTime object. <span class="faded">(contributed by Thomas Weitzel)</span></p>
 
-<p class="tip alert"><span>If you create a new Locale resource bundle for PrettyTime, please <a href="https://github.com/ocpsoft/prettytime" title="Fork PrettyTime on GitHub" target="_blank">fork the project</a>, and submit a pull request.</span></p>
-
 <h4>Locales with built-in support:</h4>
 <ul>
 	<li>Arabic - AR: <span class="faded">Muhammad Sabry Ali</span></li>
@@ -155,6 +153,7 @@ Then you may attach PrettyTimeConverter to your JSF Date and timestamp outputs:
 	<li>French - FR: <span class="faded">Eric Palpacuer</span></li>
 	<li>German - DE: <span class="faded">Thomas Weitzel</span></li>
 	<li>Hungarian - Balázs Németh</li>
+	<li>Indonesian - in_ID <a href="https://github.com/xsalefter">xsalefter</a></li>
 	<li>Italian - IT: <span class="faded">Mirco Attocchi</span></li>
 	<li>Korean - KO: <span class="faded"><a href="https://github.com/pigmon93" target="_blank">Seungbeom</a></span></li>
 	<li>Norwegian - Magnus Byrkjeflot - <a href="http://www.mylog.no">www.mylog.no</a></li>
@@ -188,7 +187,7 @@ public class Basic_i18n
 
 <h2 class="toc">Creating a custom ResourceBundle</h2>
 
-<p class="tip alert"><span>You can find full examples of resource bundles packaged inside pretty-time.jar. Also, if you create a new Locale resource bundle for PrettyTime, please <a href="https://github.com/ocpsoft/prettytime" title="Fork PrettyTime on GitHub" target="_blank">fork the project</a>, and submit a pull request.</span></p>
+[info]Please read the <a href="http://ocpsoft.org/prettytime/translate-for-your-language/" title="Translate for your Language">translation guide</a>. Additionally, you can find full examples of resource bundles packaged inside pretty-time.jar. If you create a new Locale resource bundle for PrettyTime, please <a href="https://github.com/ocpsoft/prettytime" title="Fork PrettyTime on GitHub" target="_blank">fork the project</a>, and submit a pull request with the bundle and a test case.[/info]
 
 [snippit filename="org/ocpsoft/pretty/time/i18n/Resources_de.java"]
 package org.ocpsoft.pretty.time.i18n;

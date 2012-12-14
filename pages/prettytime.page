@@ -25,15 +25,11 @@
 
 <h2 style="margin-bottom: 35px; margin-top: 15px;">Convert Java <font color=green>Date()</font> objects in just "<font color=green>a few minutes</font>!"</h2></center>
 
-<div class=featured><p>PrettyTime is an OpenSource time formatting library. Completely customizable, it creates human readable, relative timestamps like those seen on Digg, Twitter, and Facebook. Get started "right now!" and in over <a href="#i18n">25 languages</a>!</p></div>
+<div class=featured>PrettyTime is an OpenSource time formatting library. Completely customizable, it creates human readable, relative timestamps like those seen on Digg, Twitter, and Facebook. Get started "right now!" and in over <a href="#i18n">25 languages</a>!</div>
 
 <h2 style="font-size: 1.5em; margin-bottom: 25px;"><span class="toc">Get Started</span>, see how simple social date-formatting can be (2 steps) </h2>
 
-[info]Follow <a href="http://twitter.com/ocpsoft">@ocpsoft</a> and <a href="http://twitter.com/lincolnthree">@lincolnthree</a> on Twitter.[/info]
-
-
 <br/>
-
 
 <center>
 <p style="margin: 20px;">Come join us on in <code>#ocpsoft</code> - <a href="http://webchat.freenode.net/?channels=%23ocpsoft" title="OCPsoft channel on Freenode IRC" target="_blank">our channel on irc.freenode.net.</a> Additionally, you are welcome to attend the dev meeting, every [[Calendar|Monday at 1pm EST]]. Also, please join the discussion on our <a href="mailto:prettyfaces-dev@googlegroups.com">dev email list</a>.</p>
@@ -160,6 +156,7 @@ Then you may attach PrettyTimeConverter to your JSF Date and timestamp outputs:
 	<li>Polish - Upender Gilakathula</li>
 	<li>Portugese - PT: <span class="faded">Gustavo Ehrhardt</span></li>
 	<li>Romanian - Upender Gilakathula</li>
+	<li>Russian - Tumin Alexander</li>
 	<li>Spanish - ES: <span class="faded">Bruno Resano</span></li>
 	<li>Slovenian- SL: <span class="faded">Uros Majeric</span></li>
 	<li>Turkish - Halil</li>

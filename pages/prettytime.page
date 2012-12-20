@@ -44,7 +44,7 @@
 <dependency>
    <groupId>org.ocpsoft.prettytime</groupId>
    <artifactId>prettytime</artifactId>
-   <version>2.1.0.Final</version>
+   <version>2.1.1.Final</version>
 </dependency>
 
 <!-- To use snapshots, you must also use the Sonatype Snapshots respository -->
@@ -61,7 +61,7 @@
 
 [snippit filename="BasicJavaApp.java"]
 import java.util.Date;
-import org.ocpsoft.pretty.time.PrettyTime;
+import org.ocpsoft.prettytime.PrettyTime;
 
 public class BasicJavaApp
 {
@@ -134,7 +134,7 @@ Then you may attach PrettyTimeConverter to your JSF Date and timestamp outputs:
 
 <h2 class="toc">i18n and multiple-languages support</h2><a name="i18n"></a>
 
-<p>PrettyTime now supports internationalization via resource bundles. Simply place an appropriate Resources_**.properties bundle on the classpath: <b>org.ocpsoft.pretty.time.i18n</b>, then set the desired Locale into your PrettyTime object. <span class="faded">(contributed by Thomas Weitzel)</span></p>
+<p>PrettyTime now supports internationalization via resource bundles. Simply place an appropriate Resources_**.properties bundle on the classpath: <b>org.ocpsoft.prettytime.i18n</b>, then set the desired Locale into your PrettyTime object. <span class="faded">(contributed by Thomas Weitzel)</span></p>
 
 <h4>Locales with built-in support:</h4>
 <ul>
@@ -167,7 +167,7 @@ Then you may attach PrettyTimeConverter to your JSF Date and timestamp outputs:
 import java.util.Date;
 import java.util.Locale;
 
-import org.ocpsoft.pretty.time.PrettyTime;
+import org.ocpsoft.prettytime.PrettyTime;
 
 public class Basic_i18n
 {
@@ -187,7 +187,7 @@ public class Basic_i18n
 [info]Please read the <a href="http://ocpsoft.org/prettytime/translate-for-your-language/" title="Translate for your Language">translation guide</a>. Additionally, you can find full examples of resource bundles packaged inside pretty-time.jar. If you create a new Locale resource bundle for PrettyTime, please <a href="https://github.com/ocpsoft/prettytime" title="Fork PrettyTime on GitHub" target="_blank">fork the project</a>, and submit a pull request with the bundle and a test case.[/info]
 
 [snippit filename="org/ocpsoft/pretty/time/i18n/Resources_de.java"]
-package org.ocpsoft.pretty.time.i18n;
+package org.ocpsoft.prettytime.i18n;
 
 import java.util.ListResourceBundle;
 
@@ -220,42 +220,57 @@ public class Resources_de extends ListResourceBundle
 
 <h2 class="toc">Creating a custom TimeUnit:</h2><a name="customunit"></a>
 
-<p><code>TimeUnits</code> are the units of measure in PrettyTime. They can be as long or as short as desired, and can be formatted into any necessary pattern. All that needs to be done is to implement the <code>TimeUnit</code> interface, and provide a default <code>TimeFormat</code></p>
+<p><code>TimeUnits</code> are the units of measure in PrettyTime. They can be as long or as short as desired, and can be formatted into any necessary pattern. All that needs to be done is to implement the <code>TimeUnit</code> interface, and provide a <code>TimeFormat</code> to accompany it.</p>
 
 [snippit filename="Month.java"]
-package org.ocpsoft.pretty.time.units;
-
-import org.ocpsoft.pretty.time.BasicTimeFormat;
-import org.ocpsoft.pretty.time.TimeFormat;
-import org.ocpsoft.pretty.time.TimeUnit;
+import org.ocpsoft.prettytime.TimeUnit;
 
 public class Month implements TimeUnit
 {
-    private static final TimeFormat defaultFormat = new BasicTimeFormat().setPattern("%n %u").setPastSuffix(" ago")
-            .setFutureSuffix(" from now");
+   public long getMillisPerUnit()
+   {
+      return 2629743830L;
+   }
 
-    private TimeFormat format = defaultFormat;
-    private long maxQuantity = 0;
-    private final long millisPerUnit = 2629743830L;
-    private String name = "month";
-    private String pluralName = "months";
-    
-    /* getters and setters */
+   public long getMaxQuantity()
+   {
+      private long maxQuantity = 0;
+   }
 }
 [/snippit]
 
 <p><code>TimeFormat</code> is also simple -- and is the core of the Formatting platform.</p>
 
 [snippit filename="TimeFormat.java"]
-package org.ocpsoft.pretty.time;
+import org.ocpsoft.prettytime.TimeFormat;
 
-public interface TimeFormat
+public interface MonthTimeFormat
 {
-    /**
-     * Given a populated Duration object. Apply formatting and output the
-     * result.
-     */
-    public abstract String format(final Duration duration);
+   public String format(final Duration duration)
+   {
+      if(duration.getQuantity() > 1)
+         return duration.getQuantity() + "months";
+      if(duration.getQuantity() == 1)
+         return duration.getQuantity() + "month";
+   }
+
+   public String formatUnrounded(Duration duration)
+   {
+      return format(duration);
+   }
+
+   public String decorate(Duration duration, String time)
+   {
+      if(duration.isInPast())
+         return time + " ago";
+      else
+         return time + " from now";
+   }
+
+   public String decorateUnrounded(Duration duration, String time)
+   {
+      return decorate(duration, time);
+   }
 }
 [/snippit]
 
@@ -267,14 +282,14 @@ public interface TimeFormat
 <p>See below for creating custom time units and formats:</p>
 
 [snippit filename="PrettyTimeTest.java" label="View complete file" href="https://github.com/ocpsoft/prettytime/blob/master/src/test/java/org/ocpsoft/pretty/time/PrettyTimeTest.java"]
-package org.ocpsoft.pretty.time;
+package org.ocpsoft.prettytime;
 
 import static org.junit.Assert.*;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
 import org.junit.*;
-import org.ocpsoft.pretty.time.*;
+import org.ocpsoft.prettytime.*;
 
 public class PrettyTimeTest
 {

@@ -1,0 +1,77 @@
+.categories ['OpenSource']
+.dateCreated 20130104T13:32:49
+.date_modified 20130104T22:36:23
+.date_modified_gmt 20130105T03:36:23
+.link http://ocpsoft.org/opensource/javascript-is-the-new-perl/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/opensource/javascript-is-the-new-perl/
+.post_status publish
+.postid 5231
+.title JavaScript is the new Perl
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 5253
+.wp_slug javascript-is-the-new-perl
+<center><div class="box-rounded" style="background: white; padding: 15px;"><img src="http://ocpsoft.org/wp-content/uploads/2013/01/perl_logo-272x300.gif" alt="perl_logo" width="272" height="300" class="aligncenter size-medium wp-image-5236" />
+<img src="http://ocpsoft.org/wp-content/uploads/2013/01/javascript_logo_unofficial-300x300.png" alt="javascript_logo_unofficial" width="300" height="300" class="aligncenter size-medium wp-image-5253" /></div></center>
+<hr/>
+<p>I don't think we will see a "winner" of the browser-language wars any time soon, but there will be a winner. JavaScript hype is still through the roof, and with the discovery of a dynamic language in the browser actually works decently between late browsers, people are thoroughly excited; however, I'd akin this to people discovering Perl during the advent of C and C++. Does it work? Yes. Is it pretty? Not by a long shot.</p>
+
+<p>Don't get me wrong, I love Perl - I think it's an incredibly powerful and fun language that now suffers from the bad reputation it acquired before gaining true object-oriented features - but, everyone hates it because it's "too hard to maintain" and too "strange." So if you want to talk about a strange language, look at JavaScript - it’s like Perl times ten. At least Perl has a consistent type inferencing and enforceable namespacing! (I think you'd have a hard time arguing that enforceable namespacing is a bad thing... global variables in JavaScript have been at the root of nearly every client-side security exploit to date.)</p>
+
+<p>Point being? As someone who has already gone through several language hypes and paradigm shifts in Computer Science (even in my relatively short 14 year experience,) JavaScript is a lot like Perl - extremely powerful, but a potential maintenance nightmare if one is not extremely diligent - and while I do like both languages, JavaScript just waiting for the next technology to come around and make it look like Perl does today: pervasive, but lacking in enterprise adoption.</p>
+<!--more-->
+[info]
+Follow the author on Twitter: <a href="http://twitter.com/lincolnthree"> @lincolnthree </a>
+[/info]
+
+<h3>Let's take a moment to talk about Perl.</h3>
+
+<p>Perl was never as popular as JavaScript has become lately, partly because we never had a reason to popularise Perl in startup culture - where a teenager in his bedroom can make the next twitter craze - and partly because technology was just not as hot or nearly as pervasive back then.</p>
+
+<p>If you look at the current trends, Perl is actually being replaced on a fairly large scale by Python and Ruby (other dynamic languages,) which, depending on <a href="http://blogs.computerworld.com/15460/perl_vs_php_vs_ruby" target="_blank">who you ask</a>, solve some of the maintenance problems and complaints that people have of Perl, and JavaScript is very likely to go through the same life-cycle - to be <a href="http://jaxenter.com/douglas-crockford-java-was-a-colossal-failure-javascript-is-succeeding-because-it-works-45928.html" target="_blank">replaced by Dart, or CoffeeScript</a>. JavaScript is being used much like an Assembly language.</p>
+
+<h3>Now where is JavaScript?</h3>
+
+<p>We are seeing a similar explosion of packages (libraries), like Perl did, which led to the development of CPAN (you could akin this to the jQuery plugin ecosystem, which is neither as formal, reliable, nor as convenient.) There’s a similar explosion of JavaScript implementations on server side and in other languages, leading to issues with compatibility and runtime bugs. If you tried to use ActiveState Perl on windows, or JavaScript via Rhino in Java, then you know what I am talking about. This is improving now, but so has it also improved in Perl, which compared to JavaScript was far more stable.</p>
+
+<p>Still don't believe that JavaScript is the new Perl? Compare jQuery to Perl CGI. Nobody actually does plain "JavaScript" programming for the web anymore, not really anyway. Do they use the core language? Yes. But we no longer use any of the built-in JavaScript->HTML functionality directly. jQuery is the glue that holds together the JavaScript ecosystem, and it admittedly does a pretty good job; however, sooner or later, the lack of language constructs like truly enforceable namespace boundaries, and the general mess created when teams get a little bit bigger is going to set in. This is seen over and over as the new wave of developers comes into corporate life: Larger companies try it out, then decide it's costing measurably, then switch back.</p>
+
+<p>We are even seeing a re-emergence of age-old discussions on, “<a href="http://addyosmani.com/largescalejavascript/" target="_blank">how to effectively architect large-scale applications</a>”, and how to keep from falling into the same pit of snakes that’s been around for years - snakes that are now very long in the tooth. These are thoughts and principles apply to any programming language, really, Perl, Python, Java included - so if you think the revival of this discussion will produce different results for JavaScript, then I think you are forgetting human nature.</p>
+
+<p>We ARE inherently lazy and most of us will ignore nearly any best practice or principle once “that deadline” gets too close. Nobody ever goes back to fix their mistakes once the project ends, or once they get rolled onto a new team. Java has been the only modern language to show moderate survivability when exposed to corporate laziness.</p>
+
+<h3>“So if JavaScript is doomed to become the next Perl like you say it is, then what do we do in the mean-time?”</h3>
+
+<p>We do what we have been doing all along, because these are necessary steps for advancement. We continue to invest both in JavaScript, but also in technologies like <a href="https://docs.jboss.org/author/display/ERRAI/Errai+UI" target="_blank">Errai and GWT</a> - two technologies whos’ growth echoes of an early 2000’s Java.</p>
+
+<p>We should be mindful of the fact that while JavaScript is HOT right now, it does actually have programmatic and strategic shortcomings that must not be forgotten, ignored, or "shooed" under the carpet. If you show me a long-term maintainable solution for JavaScript that enforces the team/feature barrier and holds up against "corporate meltdown," due to incompetence and laziness as application size increases, then I'd be willing to entertain the idea of using it for a bigger project.</p>
+
+<p>Keep trying the latest frameworks and cool UI plugins; keep trying to bridge the server-browser impedance mismatch; find what works and what does not - JavaScript is not going away. We still have Perl apps out there, and whatever replaces JavaScript as a dynamic language (think CoffeeScript) will probably be viewed similarly to Python or Ruby vs. Perl today.</p>
+
+<p>Still, you don't see that many big Python and Ruby shops either (<a href="http://curiousprogrammer.wordpress.com/2011/01/31/why-did-google-choose-python/" target="_blank">Google is an exception</a>,) so unless CoffeeScript offers some of the same safety features of Java, it will probably end up much like Python and Ruby - “A little better.” In all reality, though, there is a big part of the JavaScript -> Perl/Python/Ruby comparison that we've omitted from the story to this point.</p>
+
+<center><img src="http://ocpsoft.org/wp-content/uploads/2013/01/java_logo-300x184.jpeg" alt="java_logo" width="300" height="184" class="aligncenter size-medium wp-image-5252" /></center>
+
+<h3>Java.</h3>
+
+<p>Java has eclipsed most dynamic languages. We see new statically typed dynamic languages on the JVM practically every day to provide some more programmatic sugar and flexibility, but on bigger projects, Java is king. Now apply this to the JavaScript picture and you get a slightly different flavor of the same result. Not only are we seeing experiments replacing JavaScript with a similar dynamic language (Dart, CoffeeScript, or maybe just some necessary enhancements to JavaScript itself,) but in order to support large projects, we are also likely to see a type-safe revolution in the browser as well.</p>
+
+<p>GWT is a good start, but progress has been slow - just like Java was back in 2002. We've waited 10 years to see Java turn into the actually very useful and extremely powerful technology that it is today. Without a doubt, Java has the largest ecosystem of shared libraries in any programming ecosystem. Java has seen ubiquitous corporate adoption. Java is taught at most colleges and universities, and while you might try to make the point that "Python is being favored over Java" in some schools now, this is really not because of its technical capability, but more about <a href="http://thinkingdigitally.com/archive/the-case-for-replacing-java-with-python-in-education/ " target="_blank">teaching a more general set of programming knowledge</a> that may or may not actually be useful in a business environment. Functional programming, variable interpolation, and the lack of a separate compile step make Python an appealing educational tool, certainly when combined with a shell language interpreter. This does not change what we use in the enterprise, in our daily jobs.</p>
+
+<p>For example. When I graduated with my BS in Computer Science, before moving to Red Hat, I worked first at one of the top 5 American mutual fund companies; a big bank. I was tasked with something that nobody else had been able to do before, using Java, and I said, "Okay fine, I can do this easily in Perl." So I did it.</p>
+
+<h3>Success? Or something else?</h3>
+
+<p>The result was a nice pat on the back for figuring it out - it was even deployed to production, but since I had left the team shortly before the release, nobody could figure out how to make changes to my scripts, didn’t think to come ask me when environmental changes caused a failure, and it got abandoned and re-written in Java. Was that a good reason to abandon Perl as a solution? Definitely not, but there's a lot to be said for using a technology that is safe, using a technology that enforces 'some' good practices ("training wheels" of type-safety), and using a technology that is well known among the industry. This will be the reality for JavaScript and its corporate replacement soon.</p>
+
+<p>In the end, JavaScript is good for us. It pushes us to do better, pushes us to think outside the box, and pushes us to think twice about what we have been doing in the past. We can’t ignore it, and we must acknowledge that it is very popular; but, like Perl and Python, it's not the end of the line. We haven't seen our "Java of the browser" yet, except wait, yes we have. It's <a href="https://docs.jboss.org/author/display/ERRAI/Errai+UI" target="_blank">Errai and GWT</a>.</p>
+
+<p>See you in 10 years, JavaScript.</p>

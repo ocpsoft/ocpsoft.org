@@ -1,7 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20130104T13:32:49
-.date_modified 20130106T15:00:37
-.date_modified_gmt 20130106T20:00:37
+.date_modified 20130206T00:04:56
+.date_modified_gmt 20130206T05:04:56
 .link http://ocpsoft.org/opensource/javascript-is-the-new-perl/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -36,7 +36,7 @@ Follow the author on Twitter: <a href="http://twitter.com/lincolnthree"> @lincol
 
 <p>Perl was never as popular as JavaScript has become lately, partly because we never had a reason to popularize Perl in startup culture - where a teenager in his bedroom can make the next twitter craze - and partly because technology was just not as hot or nearly as pervasive back then.</p>
 
-<p>If you look at the current trends, Perl is actually being replaced on a fairly large scale by Python and Ruby (other dynamic languages,) which, depending on <a href="http://blogs.computerworld.com/15460/perl_vs_php_vs_ruby" target="_blank">who you ask</a>, solve some of the maintenance problems and complaints that people have of Perl, and JavaScript is very likely to go through the same life-cycle - to be <a href="http://jaxenter.com/douglas-crockford-java-was-a-colossal-failure-javascript-is-succeeding-because-it-works-45928.html" target="_blank">replaced by Dart</a>, or maybe a non-backwards compatible mode of <a href="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts" target="_blank">ECMAScript</a>. In the mean time, to work around some of these issues, JavaScript is still being used much like an Assembly language. (GWT, CoffeeScript, TypeScript all compile to JavaScript.)</p>
+<p>If you look at the current trends, Perl is actually being replaced on a fairly large scale by Python and Ruby (other dynamic languages,) which, depending on <a href="http://blogs.computerworld.com/15460/perl_vs_php_vs_ruby" target="_blank">who you ask</a>, solve some of the maintenance problems and complaints that people have of Perl, and JavaScript is very likely to go through the same life-cycle - to be <a href="http://jaxenter.com/douglas-crockford-java-was-a-colossal-failure-javascript-is-succeeding-because-it-works-45928.html" target="_blank">superseded by Dart</a>, or maybe a non-backwards compatible mode of <a href="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts" target="_blank">ECMAScript</a>. In the mean time, to work around some of these issues, JavaScript is still being used much like an Assembly language. (GWT, CoffeeScript, TypeScript all compile to JavaScript.)</p>
 
 <h3>Now where is JavaScript?</h3>
 

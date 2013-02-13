@@ -1,7 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20120222T20:12:23
-.date_modified 20120918T14:15:12
-.date_modified_gmt 20120918T18:15:12
+.date_modified 20130212T21:36:06
+.date_modified_gmt 20130213T02:36:06
 .link http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -26,8 +26,13 @@ Often unknown, or heralded as confusing, regular expressions (regex) have define
 <h2 class="toc">Part 1: What are Regular Expressions?</h2>
 Regular expressions are a language of string patterns built in to most modern programming languages, including <a target="_blank" href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html">Java 1.4 onward</a>; they can be used for: searching, extracting, and modifying text. This chapter will cover basic syntax and use.
 
-[info]This article is part one in the series: "[[Regular Expressions]]." Read <a href="http://ocpsoft.com/opensource/guide-to-regular-expressions-in-java-part-2/">part two</a> for more information on lookaheads, lookbehinds, and configuring the matching engine.[/info]
+[info]This article is part one in the series: "[[Regular Expressions]]." Read <a href="http://ocpsoft.com/opensource/guide-to-regular-expressions-in-java-part-2/">part two</a> for more information on lookaheads, lookbehinds, and configuring the matching engine. To get a more visual look into how regular expressions work, try our <a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/" title="Java visual regex tester" target="_blank">visual java regex tester</a>. You can also watch a video to <a href="javascript:" data-toggle="collapse" data-target="#regextestvid">see how the visual regex tester works.</a>
+[/info]
 
+
+<div id="regextestvid" class="collapse">
+<iframe width="420" height="315" src="http://www.youtube-nocookie.com/embed/hjzpf2p0sFI?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
 
 <h2 class="toc">1. Syntax</h2>
 <a name="syntax"></a>Regular expressions, by definition, are string patterns that describe text. These descriptions can then be used in nearly infinite ways. The basic language constructs include character classes, quantifiers, and meta-characters.
@@ -140,7 +145,7 @@ The new expression will now match the beginning of the string <code>“I lost my
 As you can see, the combinations for matches quickly become very large. This is not the complete set, as there are several more phrases that would match our simple pattern. 
 
 [error]
-<p><strong>Quiz:</strong> Can you figure out all possible matches for this pattern? (<a href="javascript:" data-toggle="collapse" data-target="#answer1">Click here to see the answer.</a>)
+<p><strong>Quiz:</strong> Can you figure out all possible matches for this pattern? (<a href="javascript:" data-toggle="collapse" data-target="#answer1">See the answers.</a>)
 
 <pre lang="java">"I lost my:? (wallet|car|cell phone|marbles)"</pre>
 
@@ -315,8 +320,8 @@ clientId=	match the text ‘clientId=’
 <p class="warn alert"><span>Notice how groups begin numbering at 1, and increment by one for each new group. However; groups may contain groups, in which case the outer group begins at one, group two will be the next inner group. When referencing group 0, you will be given the entire chunk of text that matched the regex.</span></p>
 
 <pre lang="java">
-(  ( ) (  ( ) ( )))		//and so on
- 1  2   3  4   5		//0 = everything the pattern matched
+(  ( ) (  ( ) ( ))) ( )	//and so on
+ 1  2   3  4   5     6		//0 = everything the pattern matched
 </pre>
 
 <a name="conclude"></a>

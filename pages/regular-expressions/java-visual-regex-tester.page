@@ -1,0 +1,22 @@
+.categories []
+.dateCreated 20130212T20:40:29
+.excerpt 
+.link http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 5282
+.page_status publish
+.permaLink http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/
+.text_more 
+.title Java visual regex tester
+.userid 1
+.wp_author Team
+.wp_author_display_name Team
+.wp_author_id 1
+.wp_page_order 0
+.wp_page_parent_id 4913
+.wp_page_parent_title Regular Expressions
+.wp_page_template page-full.php
+.wp_password 
+.wp_slug java-visual-regex-tester
+<center><iframe src="http://javaregextester-lincolnbaxter.rhcloud.com" width="100%" height="1000px;" style="border: none; margin-right: 10px; margin-top: -30px;" border="0"></iframe> <h1 style="display: none;">Java visual regular expression tester | regex</h1></center>

@@ -25,6 +25,11 @@
 
 <p>If there is a tip or trick that you would like to contribute, or if you have a question that is not answered here, please feel free to <a href="mailto:admin@ocpsoft.org">submit a tip</a>, or <a href="#respond">leave a comment</a> with your question. To receive periodic email updates when new articles and tutorials are posted, please [[Subscribe|subscribe to our newsletter]].
 
+<h2><a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/" title="Java visual regex tester">Java visual regex tester</a></h2>
+Try our <a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/" title="Java visual regex tester" target="_blank">visual java regex tester</a>.
+
+<iframe width="420" height="315" src="http://www.youtube-nocookie.com/embed/hjzpf2p0sFI?rel=0" frameborder="0" allowfullscreen></iframe>
+
 <h2><a href="http://ocpsoft.org/tutorials/regular-expressions/or-in-regex/" title="“Or” in regular expressions `||`">“Or” in regular expressions `||`</a></h2>
 <p>A quick guide using several examples to create and use logical "or" statements in regular expressions.
 

@@ -19,4 +19,19 @@
 .wp_page_template page-full.php
 .wp_password 
 .wp_slug java-visual-regex-tester
-<center><iframe src="http://regex-lincolnbaxter.rhcloud.com" width="100%" height="1000px;" style="border: none; margin-right: 10px; margin-top: -30px;" border="0"></iframe> <h1 style="display: none;">Java visual regular expression tester | regex</h1></center>
+<center> <div id="reframe"></div> <h1 style="display: none;">Java visual regular expression tester | regex</h1></center>
+
+<script type="text/javascript">
+jQuery(document).ready(function($){
+
+var link = "https://regex-lincolnbaxter.rhcloud.com/";
+var iframe = document.createElement('iframe');
+iframe.frameBorder=0;
+iframe.width="100%";
+iframe.height="1000px";
+iframe.id="embeddedretest";
+iframe.setAttribute("src", link);
+document.getElementById("reframe").appendChild(iframe);
+
+}); 
+</script>

@@ -1,7 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20120223T20:11:31
-.date_modified 20120918T14:07:49
-.date_modified_gmt 20120918T18:07:49
+.date_modified 20130215T16:48:08
+.date_modified_gmt 20130215T21:48:08
 .link http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-2/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -140,7 +140,7 @@ Pattern configuration flags for Java appear very similar to look-ahead operation
 
 <h5>Dot-all mode</h5>
 <pre lang="perl">
-(?s)  			Toggle dot ‘.’ matches any character (default: off, (?-d))
+(?s)  			Toggle dot ‘.’ matches any character (default: off, (?-s))
 			Normally, the dot character will match everything except newline characters.
 </pre>
 

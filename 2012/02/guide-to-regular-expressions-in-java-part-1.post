@@ -1,7 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20120222T20:12:23
-.date_modified 20130212T21:36:06
-.date_modified_gmt 20130213T02:36:06
+.date_modified 20130216T14:19:52
+.date_modified_gmt 20130216T19:19:52
 .link http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -90,6 +90,10 @@ $   	Match the end of the line (or before newline at the end)
 
 
 
+[section]
+<h3 class="toc">Visual Regex Tester</h3>
+To get a more visual look into how regular expressions work, try our <a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/" title="Java visual regex tester" target="_blank">visual java regex tester</a>.
+[section]
 
 <a name="examples"></a>
 <h2 class="toc">2. Examples</h2>

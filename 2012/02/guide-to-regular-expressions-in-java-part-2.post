@@ -1,7 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20120223T20:11:31
-.date_modified 20130215T16:48:08
-.date_modified_gmt 20130215T21:48:08
+.date_modified 20130216T17:18:15
+.date_modified_gmt 20130216T22:18:15
 .link http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-2/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -63,7 +63,7 @@ A more complex example is password validation. Let’s say we want to ensure tha
 
 We will need to use a look-ahead expression in order to enforce a requirement of two numbers. This look-ahead expression will require any number of characters to be followed by a single digit, followed by any number of characters, and another single digit. E.g.: <code>…4…2</code>, or <code>…42</code>, or <code>42…</code>, or <code>4…2</code>.
 
-
+<h3 class="toc">1.1. Example</h3>
 [snippit filename="Sample code"]import java.util.ArrayList;
 import java.util.List;
 
@@ -107,23 +107,28 @@ $				match the end of the line
 <p class="warn alert"><span>Multiple look-ahead operations do not evaluate in a specific order. They must all be satisfied equally, and if they logically contradict each other, the pattern will never match.</span></p>
 
 
+[section]
+<h3 class="toc">Visual Regex Tester</h3>
+To get a more visual look into how regular expressions work, try our <a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/" title="Java visual regex tester" target="_blank">visual java regex tester</a>.
+[section]
+
 <a name="config"></a><h1 class="toc">2. Configuring the Matching Engine</h1>
 
 Pattern configuration flags for Java appear very similar to look-ahead operations. Flags are used to configure case sensitivity, multi-line matching, and more. Flags can be specified in collections, or as individual statements. Again, these expressions are not literal, and do not capture values.
 
-<h5>Configuration flags</h5>
+<h5 class="toc">2.1. Configuration flags</h5>
 <pre lang="perl">
 (?idmsux-idmsux)  	Turns match flags on - off for entire expression
 (?idmsux-idmsux:X)   	X, as a non-capturing group with the given flags on – off
 </pre>
 
 
-<h5>Case insensitivity mode</h5>
+<h5 class="toc">2.2. Case insensitivity mode</h5>
 <pre lang="perl">
 (?i)  			Toggle case insensitivity (default: off, (?-i)) for the text in this group only
 </pre>
 
-<h5>UNIX lines mode</h5>
+<h5 class="toc">2.3. UNIX lines mode</h5>
 <pre lang="perl">
 (?d)  			Enables UNIX line mode (default: off, (?-d)) 
 			In this mode, only the '\n' line terminator is recognized in the behavior of ., ^, and $
@@ -131,21 +136,21 @@ Pattern configuration flags for Java appear very similar to look-ahead operation
 
 
 
-<h5>Multi-line mode</h5>
+<h5 class="toc">2.4. Multi-line mode</h5>
 <pre lang="perl">
 (?m)  			Toggle treat newlines as whitespace (default: off, (?-m))
 			The ^ and $ expressions will no longer match to the beginning and end of a line,
 			respectively, but will match the beginning and end of the entire input sequence/string.
 </pre>
 
-<h5>Dot-all mode</h5>
+<h5 class="toc">2.5. Dot-all mode</h5>
 <pre lang="perl">
 (?s)  			Toggle dot ‘.’ matches any character (default: off, (?-s))
 			Normally, the dot character will match everything except newline characters.
 </pre>
 
 
-<h5>Unicode-case mode</h5>
+<h5 class="toc">2.6. Unicode-case mode</h5>
 <pre lang="perl">
 (?u)  			Toggle Unicode standard case matching (default: off, (?-u)
 			By default, case-insensitive matching assumes that only characters 
@@ -154,7 +159,7 @@ Pattern configuration flags for Java appear very similar to look-ahead operation
 
 
 
-<h5>Comments mode</h5>
+<h5 class="toc">2.7. Comments mode</h5>
 <pre lang="perl">
 (?x)  			Allow comments in pattern (default: off, (?-x))
 			In this mode, whitespace is ignored, and embedded comments starting with '#'
@@ -162,14 +167,23 @@ Pattern configuration flags for Java appear very similar to look-ahead operation
 </pre>
 
 
-
-<h5>Global toggle</h5>
+<h3 class="toc">2.8. Examples</h3>
+<h5 class="toc">2.8.1. Global toggle</h5>
 In order to toggle flags for the entire expression, the statement must be at the head of the expression.
 <pre lang="java">
 "(?idx)^I\s lost\s my\s .+     #this comment and all spaces will be ignored"
 </pre>
 The above expression will ignore case, and will set the dot ‘.’ character to include newlines.
 
+
+<h5 class="toc">2.8.2. Local toggle</h5>
+In order to toggle flags for the a single non-capturing group, the group must adhere to the following syntax
+<pre lang="java">
+"(?idx:Cars)[a-z]+
+</pre>
+The above expression will ignore case within the group, but adhere to case beyond.
+
+<h5 class="toc">2.8.3. Applied in Java</h5>
 [snippit filename="Sample code"]
 public class ConfigurationDemo {
 	public static void main(String[] args) {
@@ -214,7 +228,6 @@ The look-ahead in this example is very similar to the pattern itself, and in thi
 <pre lang="java">
 "(?si).*Blue.*(?=.*Green.*)"
 </pre>
-
 
 <h1>3. Conclusion</h1><a name="conclude"></a>
 

@@ -1,0 +1,24 @@
+.categories ['Java']
+.dateCreated 20130221T11:56:44
+.date_modified 20130221T11:56:44
+.date_modified_gmt 20130221T16:56:44
+.link http://ocpsoft.org/?p=5325
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/?p=5325
+.post_status draft
+.postid 5325
+.title From App to Cloud to Cluster with Errai and OpenShift
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug 
+<p>Sometimes after a week long meeting, architecture, and planning session, I like to kick back and relax with a little weekend project. This time I decided I was going to scratch an itch that I've had for a while - create a <a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/" target="_blank">visual java regex tester</a>. There are a few regex analyzers out there already, sure, but most of the testers for Java seem to be relatively <a rel="nofollow" href="http://www.cis.upenn.edu/~matuszek/General/RegexTester/regex-tester.html" target="_blank">bland</a>, and or "<a rel="nofollow" href="http://www.regexplanet.com/advanced/java/index.html" target="_blank">click heavy</a>", I figured it should be possible to do better.
+
+<p>In order to get the kind of visual responsiveness that I wanted, I knew I was going to need some client side magic in the browser, so for this I turned to <a href="http://erraiproject.org" target="_blank">Errai, from JBoss</a>. Errai is a client-side framework that leverages the power of Java to write native client applications for the browser. Additionally, it has a good deal of support for HTML5 features such as local storage, device orientation - additionally providing REST, and even has its own very convenient RPC protocol, which is what I used to do the real-time "as you type" server-side regex processing.

@@ -1,0 +1,234 @@
+.categories ['Java', 'OpenSource', 'Technology']
+.dateCreated 20130224T21:17:12
+.date_modified 20130224T21:17:12
+.date_modified_gmt 20130225T02:17:12
+.link http://ocpsoft.org/?p=5357
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/?p=5357
+.post_status draft
+.postid 5357
+.title Setting up Google OAuth2 with Java
+.userid 979
+.wp_author_display_name Matyas Danter
+.wp_author_id 979
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug 
+<h3>Assumptions</h3>
+
+	<ul>
+		<li>Familiarity with OOP, Java, Maven, and JEE</li>
+		<li>An IDE, it helps if you are comfortable using one (i.e. Eclipse)</li>
+		<li>Java application server listening on localhost:8080</li>
+	</ul>
+
+	<h3>Prerequisites</h3>
+
+	<ul>
+		<li>Google API Access credentials (Client ID, Client Secret). Set
+			it up here <a href='https://code.google.com/apis/console/'>https://code.google.com/apis/console/</a>
+		</li>
+		<li>Set up allowed Redirect URIs at Google API &rarr; API Access.
+			Input: http://localhost:8080/OAuth2v1/index.jsp</li>
+		<li>The <a href="http://github.com/mdanter/OAuth2v1/" >source code</a> referenced in this article from GITHUB.</li>
+		<li>A positive outlook on life.</li>
+	</ul>
+	<div>Please use the link above to set up API Access Credentials.
+		When you are finished, you will see a similar page to the one below.
+		Use your Client ID/Secret from this page to replace the
+		values of the String constants in GoogleAuthHelper.java.</div>
+<a href="http://ocpsoft.org/wp-content/uploads/2013/02/1google_oauth_access.png"><img src="http://ocpsoft.org/wp-content/uploads/2013/02/1google_oauth_access-300x281.png" alt="1google_oauth_access" width="300" height="281" class="alignnone size-medium wp-image-5361" /></a>
+
+	<h3>Usage</h3>
+
+	<ol>
+		<li>Add Client ID, and Client Secret parameters to <b>GoogleAuthHelper.java</b></li>
+		<li>Compile the project (<b>$ mvn clean install</b>)
+		</li>
+		<li>Deploy war to application server</li>
+		<li>Browse to: <a href="http://localhost:8080/OAuth2v1/">http://localhost:8080/OAuth2v1/</a></li>
+		<li>Click <b>&quot;log in with google&quot;</b> on top of the page
+		</li>
+	</ol>
+
+	<h4>1. Add Client ID and Secret</h4>
+	<div>Replace the constants below with your values in
+		GoogleAuthHelper.java.</div>
+	<pre lang="java">
+	/**
+	 * Please provide a value for the CLIENT_ID constant before proceeding, set this up at https://code.google.com/apis/console/
+	 */
+	private static final String CLIENT_ID = "YOUR ID HERE";
+	/**
+	 * Please provide a value for the CLIENT_SECRET constant before proceeding, set this up at https://code.google.com/apis/console/
+	 */
+	private static final String CLIENT_SECRET = "SUPER SECRET SAUCE";
+
+	</pre>
+	<h4>2, 3, &amp; 4. Compile the Project, Deploy the WAR, Open that
+		Browser</h4>
+	<div>This is a Maven based project, so issue a</div>
+	<pre lang="bash">
+	$ mvn clean install
+	</pre>
+	<div>
+		to build the project and assemble the war file from the root of the
+		project (where the pom.xml file is located). When Maven is finished
+		creating the web archive, deploy it to your favorite server and
+		navigate to <a href="http://localhost:8080/OAuth2v1/">http://localhost:8080/OAuth2v1/</a>
+	</div>
+	<h4>
+		5. Click <b>&quot;log in with google&quot;</b>
+	</h4>
+	Now that your app server is running, the application is
+	deployed, and your web browser is pointed at the application's context
+	root, you will see a page similar to the one below. I double dog dare you to click
+        that log in button. You know you want to.
+	<br />
+<a href="http://ocpsoft.org/wp-content/uploads/2013/02/2click_auth.png"><img src="http://ocpsoft.org/wp-content/uploads/2013/02/2click_auth-300x226.png" alt="2click_auth" width="300" height="226" class="alignnone size-medium wp-image-5362" /></a>
+
+	<br />After successful authentication you will see the page below.
+	There are a few important things to notice:
+	<ol>
+		<li>The URL changed, now it contains two request parameters, <b>state</b>,
+			and <b>code</b>.
+		</li>
+		<li>The page contains JSON output of your google account's profile
+			information.</li>
+	</ol>
+<a href="http://ocpsoft.org/wp-content/uploads/2013/02/3result.png"><img src="http://ocpsoft.org/wp-content/uploads/2013/02/3result-300x261.png" alt="3result" width="300" height="261" class="alignnone size-medium wp-image-5363" /></a>
+
+	<h3>Source Code</h3>
+	<div>
+		The authentication is possible thanks to
+		the GoogleAuthorizationCodeFlow class. This class uses the Builder
+		pattern to provide most of its functionality. GoogleAuthHelper's no-argument
+		constructor initializes the Flow using your client ID, secret,
+		and other constants. The buildLoginUrl() method constructs the Google
+		authentication URL based on the CALLBACK_URI and returns it as a Java String. This CALLBACK_URI must
+		match one of the redirect URIs that you set up at Google's API Access
+		page. Upon successful authentication, OAuth2 will
+		redirect you to CALLBACK_URI, and append the <b>state</b> and <b>code</b>
+		GET request parameters to it. Please note, that the state request
+		parameter is only to help differentiate authentication
+		providers (i.e. facebook oauth, google oauth, in-house). <br /> We
+		need to use the <b>code</b> GET request parameter as the input for the
+		getUserInfoJson(String authCode) method. If all is well, this method will return a
+		JSON encoded google profile as a Java String.
+
+	</div>
+[snippit filename="index.jsp" label="View Complete File" href="https://github.com/mdanter/OAuth2v1/blob/master/src/main/webapp/index.jsp"]
+<%
+	/*
+	 * The GoogleAuthHelper handles all the heavy lifting, and contains all &quot;secrets&quot;
+	 * required for constructing a google login url.
+	 */
+	final GoogleAuthHelper helper = new GoogleAuthHelper();
+	if (request.getParameter(&quot;code&quot;) == null
+		|| request.getParameter(&quot;state&quot;) == null) {
+		/*
+		 * initial visit to the page
+		 */
+		out.println(&quot;<a href='" + helper.buildLoginUrl()
+					+ "'>log in with google</a>");
+
+	} else if (request.getParameter("code") != null
+			&amp;&amp; request.getParameter("state").equals("google")) {
+
+		/*
+		 * Executes after google redirects to the callback url.
+		 * Please note that the state request parameter is for convenience to differentiate
+		 * between authentication methods (ex. facebook oauth, google oauth, twitter, in-house).
+		 * 
+		 * GoogleAuthHelper()#getUserInfoJson(String) method returns a String containing
+		 * the json representation of the authenticated user's information. 
+		 * At this point you should parse and persist the info.
+		 */
+
+		out.println(helper.getUserInfoJson(request.getParameter("code")));
+
+	}
+%>
+	[/snippit]
+
+[snippit filename="GoogleAuthHelper.java" label="View Complete File" href="https://github.com/mdanter/OAuth2v1/blob/master/src/main/java/com/danter/google/auth/GoogleAuthHelper.java"]
+public final class GoogleAuthHelper {
+
+	/**
+	 * Please provide a value for the CLIENT_ID constant before proceeding, set this up at https://code.google.com/apis/console/
+	 */
+	private static final String CLIENT_ID = "YOUR ID HERE";
+	/**
+	 * Please provide a value for the CLIENT_SECRET constant before proceeding, set this up at https://code.google.com/apis/console/
+	 */
+	private static final String CLIENT_SECRET = "SUPER SECRET SAUCE";
+
+	/**
+	 * Callback URI that google will redirect to after successful authentication
+	 */
+	private static final String CALLBACK_URI = "http://localhost:8080/OAuth2v1/index.jsp";
+	
+	// start google authentication constants
+	private static final Iterable<String> SCOPE = Arrays.asList("https://www.googleapis.com/auth/userinfo.profile;https://www.googleapis.com/auth/userinfo.email".split(";"));
+	private static final String USER_INFO_URL = "https://www.googleapis.com/oauth2/v1/userinfo";
+	private static final JsonFactory JSON_FACTORY = new JacksonFactory();
+	private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
+	// end google authentication constants
+	
+	
+	private final GoogleAuthorizationCodeFlow flow;
+	
+	/**
+	 * Constructor initializes the Google Authorization Code Flow with CLIENT ID, SECRET, and SCOPE 
+	 */
+	public GoogleAuthHelper() {
+		flow = new GoogleAuthorizationCodeFlow.Builder(HTTP_TRANSPORT,
+				JSON_FACTORY, CLIENT_ID, CLIENT_SECRET, SCOPE).build();
+	}
+
+	/**
+	 * Builds a login URL based on client ID, secret, callback URI, and scope 
+	 */
+	public String buildLoginUrl() {
+		
+		final GoogleAuthorizationCodeRequestUrl url = flow.newAuthorizationUrl();
+		
+		return url.setRedirectUri(CALLBACK_URI).setState("google").build();
+	}
+	
+	/**
+	 * Expects an Authentication Code, and makes an authenticated request for the user's profile information
+	 * @return JSON formatted user profile information
+	 * @param authCode authentication code provided by google
+	 */
+	public String getUserInfoJson(final String authCode) throws IOException {
+
+		final GoogleTokenResponse response = flow.newTokenRequest(authCode).setRedirectUri(CALLBACK_URI).execute();
+		final Credential credential = flow.createAndStoreCredential(response, null);
+		final HttpRequestFactory requestFactory = HTTP_TRANSPORT.createRequestFactory(credential);
+		// Make an authenticated request
+		final GenericUrl url = new GenericUrl(USER_INFO_URL);
+		final HttpRequest request = requestFactory.buildGetRequest(url);
+		request.getHeaders().setContentType("application/json");
+		final String jsonIdentity = request.execute().parseAsString();
+
+		return jsonIdentity;
+
+	}
+}
+[/snippit]
+
+	<h3>Next Steps</h3>
+	<div>From here on, you may parse this information using Jackson, and
+		persist it.</div>
+	<h3>Resources and Links</h3>
+	<a href="http://github.com/mdanter/OAuth2v1">The code on GITHUB</a>
+	<br />
+	<a href="https://code.google.com/p/google-api-java-client/wiki/OAuth2">Google APIs Client Library for Java</a>
+	<br />
+	<a href="https://developers.google.com/accounts/docs/OAuth2#libraries">Using OAuth 2.0 to Access Google APIs</a>

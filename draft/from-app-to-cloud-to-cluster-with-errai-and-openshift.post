@@ -1,7 +1,7 @@
 .categories ['Java']
-.dateCreated 20130221T11:56:44
-.date_modified 20130221T11:56:44
-.date_modified_gmt 20130221T16:56:44
+.dateCreated 20130224T16:42:29
+.date_modified 20130224T16:42:29
+.date_modified_gmt 20130224T21:42:29
 .link http://ocpsoft.org/?p=5325
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -19,6 +19,44 @@
 .wp_post_format standard
 .wp_post_thumbnail 
 .wp_slug 
-<p>Sometimes after a week long meeting, architecture, and planning session, I like to kick back and relax with a little weekend project. This time I decided I was going to scratch an itch that I've had for a while - create a <a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/" target="_blank">visual java regex tester</a>. There are a few regex analyzers out there already, sure, but most of the testers for Java seem to be relatively <a rel="nofollow" href="http://www.cis.upenn.edu/~matuszek/General/RegexTester/regex-tester.html" target="_blank">bland</a>, and or "<a rel="nofollow" href="http://www.regexplanet.com/advanced/java/index.html" target="_blank">click heavy</a>", I figured it should be possible to do better.
+[toc]
 
-<p>In order to get the kind of visual responsiveness that I wanted, I knew I was going to need some client side magic in the browser, so for this I turned to <a href="http://erraiproject.org" target="_blank">Errai, from JBoss</a>. Errai is a client-side framework that leverages the power of Java to write native client applications for the browser. Additionally, it has a good deal of support for HTML5 features such as local storage, device orientation - additionally providing REST, and even has its own very convenient RPC protocol, which is what I used to do the real-time "as you type" server-side regex processing.
+<p>Sometimes after a week long meeting, architecture, and planning session for my awesome day job at Red Hat, I like to kick back and relax with a little weekend project. This time I decided I was going to scratch an itch that I've had for a while - create a <a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/" target="_blank">visual java regex tester</a>. There are a few <a href="http://rubular.com/" target="_blank" rel="nofollow">solid regex analyzers</a> out there already in a variety of languages, sure, but most of the testers for Java seem to be relatively <a rel="nofollow" href="http://www.cis.upenn.edu/~matuszek/General/RegexTester/regex-tester.html" target="_blank">bland</a>, and or "<a rel="nofollow" href="http://www.regexplanet.com/advanced/java/index.html" target="_blank">click heavy</a>", I figured it should be possible to do better.</p>
+
+<h2 class="toc">The "demo" application</h2>
+<p>There were a few things that I wanted to have in my regex tester. It must: 
+
+<ol>
+	<li>Use real Java Regex Syntax, not just an approximation.</li>
+	<li>Provide near instant feedback (including descriptive syntax errors reports.)</li>
+	<li>Be visually exciting to use.</li>
+</ol>
+
+Additionally, since doing Java regex correctly (without applets) requires server-side processing, the app needed to be efficient enough to handle the barrage of updates coming from a good number of clients during peak hours (9am-5pm, M-F). In other words, it needed to scale automatically. For this, I turned to the OpenShift cloud, since it is a Red Hat product, and <a href="https://openshift.redhat.com" target="_blank">developer accounts are free</a>.</p>
+
+<p>In order to handle these requirements</p>
+
+<p><iframe width="420" height="315" src="http://www.youtube-nocookie.com/embed/hjzpf2p0sFI?rel=0" frameborder="0" allowfullscreen></iframe></p>
+
+<h2 class="toc">The technology</h2>
+<p>In order to get the kind of visual responsiveness that I wanted, I knew I was going to need some client side magic in the browser, so for this I turned to <a href="http://erraiproject.org" target="_blank">Errai, from JBoss</a>. Errai is a client-side framework that leverages the power of Java to write native client applications for the browser. Additionally, it has a good deal of support for HTML5 features such as local storage, device orientation - additionally providing REST, and even has its own very convenient RPC protocol, which is what I used to do the real-time "as you type" server-side regex processing.</p>
+
+<h2 class="toc">Setting up OpenShift</h2>
+
+<a href="http://ocpsoft.org/wp-content/uploads/2013/02/openshift_create_jboss_app.png"><img src="http://ocpsoft.org/wp-content/uploads/2013/02/openshift_create_jboss_app-300x245.png" alt="openshift_create_jboss_app" width="300" height="245" class="pull-left size-medium wp-image-5351" /></a>
+
+You can see how to <a href="https://openshift.redhat.com/" target="_blank">sign up</a> for OpenShift, and <a href="https://openshift.redhat.com/community/get-started/jboss" target="_blank">create a JBoss Java web application</a> on OpenShift- those topics have been covered many times before, and OpenShift's tutorials are fairly extensive - so I will not spend much time describing them here, but needless to say, I did all of the application creation via the OpenShift web console, and it went very smoothly. I only needed to use the command line once I was ready to push the app up to the cloud, and there are <a href="https://openshift.redhat.com/community/blogs/getting-started-with-eclipse-paas-integration" target="_blank">tools for doing that</a> as well; take your pick.
+
+<h2 class="toc">Scaling it up</h2>
+Getting the application hosted on OpenShift was the hardest part of the entire process, and it went a little something like this:
+
+[command]
+lbaxter:regex-tester-openshift $ cp ~/Projects/regex-tester/target/regex-tester.war deployments/ROOT.war[/command]
+
+<a href="http://ocpsoft.org/wp-content/uploads/2013/02/haproxy_openshift.png"><img src="http://ocpsoft.org/wp-content/uploads/2013/02/haproxy_openshift-300x204.png" alt="haproxy_openshift" width="300" height="204" class="pull-right size-medium wp-image-5346" /></a>
+
+
+<h1>Conclusion</h1>
+<p>Once it was all put together, it turned out that it's actually quite a handy tool. Since you can put in as much text as you want, on as many lines as you want, you can actually do things like test your expression against a battery of inputs:</p>
+
+<iframe width="420" height="315" src="http://www.youtube-nocookie.com/embed/qgckySJtN1g?rel=0" frameborder="0" allowfullscreen></iframe>

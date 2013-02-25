@@ -40,6 +40,9 @@ public class ExampleConfigurationProvider extends HttpConfigurationProvider
           // A basic join
           .addRule(Join.path("/").to("/pages/home.xhtml"))
 
+          // Using parameters to return physical resources
+          .addRule(Join.path("/{param}").to("/pages/{param}.html"))
+
           // Using parameterization (the value of 'p' is converted to a request parameter)
           .addRule(Join.path("/project/{p}").to("/pages/project/create.xhtml"))
 

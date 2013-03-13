@@ -1,0 +1,23 @@
+.categories []
+.dateCreated 20130312T14:51:47
+.excerpt 
+.link http://ocpsoft.org/rewrite/dev-discussions/
+.mt_allow_comments 0
+.mt_allow_pings 0
+.page_id 5437
+.page_status publish
+.permaLink http://ocpsoft.org/rewrite/dev-discussions/
+.text_more 
+.title Rewrite - Development Discussions
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 2646
+.wp_page_parent_title Rewrite
+.wp_page_template default
+.wp_password 
+.wp_slug dev-discussions
+<a href="/rewrite">&laquo; Back to Rewrite</a><br/>
+<iframe id="forum_embed" src="https://groups.google.com/forum/embed/?place=forum/rewrite-dev#!forum/rewrite-dev" scrolling="no" frameborder="0" width="100%" height="800"></iframe>

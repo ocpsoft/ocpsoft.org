@@ -1,0 +1,30 @@
+.categories ['OpenSource']
+.dateCreated 20130403T11:27:25
+.date_modified 20130403T14:42:45
+.date_modified_gmt 20130403T18:42:45
+.link http://ocpsoft.org/?p=17680
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/?p=17680
+.post_status draft
+.postid 17680
+.title Anti spam filter for your website with mod_security (antispam | antivirus)
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug how-to-unblock
+Of course, you may sometimes need to un-ban an IP address, in which case, you'll want this handy command:
+
+[command]
+iptables -L -n
+[/command]
+
+[command]
+iptables -L -n | grep IP_ADDRESS | sed 's/.*[^-]--\s\+\([0-9\.]\+\)\s\+.*$/\1/g' | xargs -i{} iptables -D IPTABLES_GROUP -s {} -j DROP
+[/command]

@@ -1,0 +1,200 @@
+.categories ['OpenSource', 'Security', 'Web Services']
+.dateCreated 20130403T11:27:25
+.date_modified 20130408T15:38:23
+.date_modified_gmt 20130408T19:38:23
+.link http://ocpsoft.org/opensource/antispam-filter-with-modsecurity-and-fail2ban/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/opensource/antispam-filter-with-modsecurity-and-fail2ban/
+.post_status publish
+.postid 17680
+.title Set up an anti-spam filter for your website with mod_security and fail2ban
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug antispam-filter-with-modsecurity-and-fail2ban
+[toc/]
+<a href="http://ocpsoft.org/wp-content/uploads/2013/04/Screen-Shot-2013-04-08-at-11.31.03-AM.png"><img src="http://ocpsoft.org/wp-content/uploads/2013/04/Screen-Shot-2013-04-08-at-11.31.03-AM-300x269.png" alt="top apache2 cpu usage" width="300" height="269" class="pull-right size-medium wp-image-17695" /></a>
+<p>
+Frequently spammers target products such as wordpress, web forum software, phpMyAdmin, and other common tools used by hobbyist and professional website administrators.
+<p>Whether you are hosting your own blog, or running a website for your company or more, it can be difficult to deal with the increasing amount of malicious web traffic seen on a daily basis, while still allowing friendly crawlers such as Google, Yahoo, and MSN search engines.
+<p>
+This harmful and wasteful traffic may damage your system or simply waste its resources, slowing down the site for your more welcome users. If this sounds familiar to you, but your page hits don't seem to add up, then you may want to consider taking some of the measures outlined below in order to secure your site from harmful hacks and sluggish spam.
+<p>
+<!--more-->
+<h2 class="toc">Get set up</h2>
+
+<p>
+First things first, of course - installation is where we begin. mod_security and fail2ban are not new technologies, so we will be turning to some existing tutorials for our first getting started steps. We will then continue to tweak these tools to allow traffic from search engines and friendly crawlers.
+
+There is a <a href="http://www.thefanclub.co.za/how-to/how-install-apache2-modsecurity-and-modevasive-ubuntu-1204-lts-server" target="_blank">fantastic tutorial on how to set up mod_security</a> over here at thefanclub.co, which I highly recommend using if you are on a debian/ubuntu system.
+
+<p>If you are on Fedora, RHEL, or CentOS (eww), then the setup is a little bit simpler <a href="http://www.cyberciti.biz/faq/rhel-fedora-centos-httpd-mod_security-configuration/" target="_blank">for mod_security</a> and <a href="http://www.tecmint.com/install-fail2ban-on-rhel-centos-fedora/" target="_blank">for fail2ban</a>; however, you will still want to <a href="https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project" target="_blank">install the OWASP mod_security core rule set</a> (crs).
+
+[info]You should definitely <a href="https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project" target="_blank">install the OWASP mod_security core rule set</a> unless you simply want to <a href="http://www.modsecurity.org/documentation/modsecurity-apache/1.9.3/html-multipage/04-rules.html" target="_blank">write your own rules</a>.[/info]
+
+Once you have installed and configured mod_security, and installed fail2ban, you will need to <a href="http://www.fail2ban.org/wiki/index.php/HOWTO_fail2ban_with_ModSecurity2.5" target="_blank">configure fail2ban to read the mod_security audit file</a>. Once completed, you are ready to start tweaking!
+
+[error]
+<strong>CRITICAL:</strong> Add your current IP address or IP range to the fail2ban whitelist or YOU COULD BE LOCKED OUT OF YOUR SYSTEM. See, "<a href="http://www.fail2ban.org/wiki/index.php/Whitelist" target="_blank">using the fail2ban whitelist</a>."
+[/error]
+
+Now restart Apache HTTPd and let's get started.
+
+[command]
+/etc/init.d/apache2 restart
+[/command]
+
+<h2 class="toc">Tweaking mod_security to allow googlebot, yahoo, and msn</h2>
+
+There are a few things that we do NOT want to do with mod_security, and the first of which is block search engine's crawlers when they try to access our site. Their log entries will look like the example below, which creates a difficult situation. Because the IP address is informationally logged in a format that fail2ban will later pick up and try to block, we will need to find a way to prevent logging, or tell fain2ban NOT to block it.
+
+[command]
+--7f70c037-A--
+[08/Apr/2013:10:43:17 --0400] UWLXhH8AAAEAAHFfJ@QAAAAD 66.249.73.107 46478 67.23.9.184 80
+--7f70c037-B--
+GET /not-there HTTP/1.1
+Host: ocpsoft.org
+Connection: Keep-alive
+Accept: */*
+From: googlebot(at)googlebot.com
+User-Agent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+Accept-Encoding: gzip,deflate
+
+--7f70c037-F--
+HTTP/1.1 404 Not Found
+X-Powered-By: PHP/5.3.10-1ubuntu3.4
+X-Pingback: http://ocpsoft.org/xmlrpc.php
+Expires: Wed, 11 Jan 1984 05:00:00 GMT
+Cache-Control: no-cache, must-revalidate, max-age=0
+Pragma: no-cache
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 5986
+Keep-Alive: timeout=15, max=100
+Connection: Keep-Alive
+Content-Type: text/html; charset=UTF-8
+
+--7f70c037-H--
+Message: Warning. Pattern match "(?:(?:gsa-crawler \\(enterprise; s4-e9lj2b82fjjaa; me\\@mycompany\\.com|adsbot-google \\(\\+http:\\/\\/www\\.google\\.com\\/adsbot\\.html)\\)|\\b(?:google(?:-sitemaps|bot)|mediapartners-google)\\b)" at REQUEST_HEADERS:User-Agent. [file "/etc/modsecurity/activated_rules/modsecurity_crs_55_marketing.conf"] [line "22"] [id "910006"] [rev "2.2.5"] [msg "Google robot activity"] [severity "INFO"]
+Apache-Handler: application/x-httpd-php
+Stopwatch: 1365432196888162 1004514 (- - -)
+Stopwatch2: 1365432196888162 1004514; combined=6736, p1=442, p2=6031, p3=0, p4=0, p5=261, sr=163, sw=2, l=0, gc=0
+Producer: ModSecurity for Apache/2.6.3 (http://www.modsecurity.org/); OWASP_CRS/2.2.5.
+Server: Apache/2.2.22 (Ubuntu)
+
+--7f70c037-Z--
+[/command]
+
+As we can see in the example above, mod_security is logging when crawlers visit our website and experience 404 errors (and other problems.) This means that any time googlebot or another crawler is logged in such a manner, they will be banned, even though the traffic is valid. That's not good, so we can take an arguably risky step to modify the mod_security configuration to allow our crawling friends.
+<p>
+
+Add <code>nolog</code> or at least <code>nolog</code> to the beginning of each rule action. This tells mod_security not to log anything from a request where something looking like a search bot is involved.
+
+[warn]<strong>NOTE:</strong> This may actually be somewhat bad for security, however, since it is possible to fake the criteria on which these rules match. Spammers may actually masquerade as googlebot and friends! But this still enables mod_security to block the request using its attack score mechanism, while preventing log scraping tools such as fail2ban from blocking the IP addresses of the crawler - perfection has not yet been achieved. [/warn]
+
+[snippit filename="/etc/modsecurity/activated_rules/modsecurity_crs_55_marketing.conf"]
+# ---------------------------------------------------------------
+# Core ModSecurity Rule Set ver.2.2.5
+# Copyright (C) 2006-2012 Trustwave All rights reserved.
+#
+# The OWASP ModSecurity Core Rule Set is distributed under 
+# Apache Software License (ASL) version 2
+# Please see the enclosed LICENCE file for full details.
+# ---------------------------------------------------------------
+
+
+# These rules do not have a security importance, but shows other benefits of 
+# monitoring and logging HTTP transactions.
+# --
+
+SecRule REQUEST_HEADERS:User-Agent "msn(?:bot|ptc)" \
+        "nolog,phase:2,rev:'2.2.5',t:none,t:lowercase,block,msg:'MSN robot activity',id:'910008',severity:'6'"
+
+SecRule REQUEST_HEADERS:User-Agent "\byahoo(?:-(?:mmcrawler|blogs)|! slurp)\b" \
+        "nolog,phase:2,rev:'2.2.5',t:none,t:lowercase,block,msg:'Yahoo robot activity',id:'910007',severity:'6'"
+
+SecRule REQUEST_HEADERS:User-Agent "(?:(?:gsa-crawler \(enterprise; s4-e9lj2b82fjjaa; me\@mycompany\.com|adsbot-google \(\+http:\/\/www\.google\.com\/adsbot\.html)\)|\b(?:google(?:-sitemaps|bot)|mediapartners-google)\b)" \
+        "nolog,phase:2,rev:'2.2.5',t:none,t:lowercase,block,msg:'Google robot activity',id:'910006',severity:'6'"
+
+[/snippit]
+
+<h2 class="toc">Look for other problems</h2>
+
+You will also want to review the audit log and make sure that things look normal. If you are seeing a lot of outbound errors, it's possible that you've been hacked. What is more likely, however, is that you have a bug in your web application and it is simply not playing nice with HTTP; you may not be completely standards compliant:
+
+[command]Found a match for 'Message: Warning. Match of "rx (<meta.*?(content|value)=\"text/html;\\s?charset=utf-8|<\\?xml.*?encoding=\"utf-8\")" against "RESPONSE_BODY" required. [file "/etc/modsecurity/activated_rules/modsecurity_crs_55_application_defects.conf"] [line "36"] [id "981222"] [msg "[Watcher Check]  The charset specified was not utf-8 in the HTTP Content-Type header nor the HTML content's meta tag."] [data "Content-Type Response Header: application/xml"] [tag "WASCTC/WASC-15"] [tag "MISCONFIGURATION"] [tag "http://websecuritytool.codeplex.com/wikipage?title=Checks#charset-not-utf8"]
+' but no valid date/time found for 'Message: Warning. Match of "rx (<meta.*?(content|value)=\"text/html;\\s?charset=utf-8|<\\?xml.*?encoding=\"utf-8\")" against "RESPONSE_BODY" required. [file "/etc/modsecurity/activated_rules/modsecurity_crs_55_application_defects.conf"] [line "36"] [id "981222"] [msg "[Watcher Check]  The charset specified was not utf-8 in the HTTP Content-Type header nor the HTML content's meta tag."] [data "Content-Type Response Header: application/xml"] [tag "WASCTC/WASC-15"] [tag "MISCONFIGURATION"] [tag "http://websecuritytool.codeplex.com/wikipage?title=Checks#charset-not-utf8"]
+[/command]
+
+<h2 class="toc">Tweaking fail2ban</h2>
+<p>
+When configuring fail2ban, you can test a failregex and ignoreregex patterns (as specified in our <code>filter.d/modsec.conf</code>) against the mod_security logfile before activating the fail2ban mod_security filter:
+
+[command]
+fail2ban-regex /var/log/apache2/modsec_audit.log "FAIL_REGEX" "IGNORE_REGEX"
+fail2ban-regex /var/log/apache2/modsec_audit.log "\[.*?\]\s[\w-]*\s<HOST>\s" "\[.*?\]\s[\w-]*\s<HOST>\s"
+[/command]
+
+
+<h2 class="toc">Recovering from fail2ban - Unblocking an IP address</h2>
+
+From time to time, you may sometimes need to un-ban an IP address, in which case, you'll want this handy command, which tells IPtables to dump out a list of all current rules and blocked IPs to the console:
+
+[command]
+iptables -L -n
+[/command]
+
+[code]
+user@server ~ $ sudo iptables -L -n
+[sudo] password for lb3: 
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+fail2ban-ModSec  tcp  --  0.0.0.0/0            0.0.0.0/0            multiport dports 80,443
+fail2ban-ssh  tcp  --  0.0.0.0/0            0.0.0.0/0            multiport dports 22
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain fail2ban-ModSec (1 references)
+target     prot opt source               destination         
+DROP       all  --  77.87.228.68         0.0.0.0/0           
+DROP       all  --  213.80.214.171       0.0.0.0/0           
+DROP       all  --  70.37.73.28          0.0.0.0/0           
+DROP       all  --  2.91.50.184          0.0.0.0/0     
+
+Chain fail2ban-ssh (1 references)
+target     prot opt source               destination         
+RETURN     all  --  0.0.0.0/0            0.0.0.0/0           
+user@server ~ $ 
+[/code]
+
+We can see that fail2ban is placing its rules in the iptables group <code>fail2ban-ModSec</code>. This is going to be important later, so write this down.
+
+You may then want to extract the IP address from this list so you can pass it to a command line by line:
+
+[command]
+iptables -L -n | grep DROP | sed 's/.*[^-]--\s\+\([0-9\.]\+\)\s\+.*$/\1/g'
+[/command]
+
+And finally, we can pass it to the <code>xargs</code> command and perform the unbanning.
+
+[command]
+iptables -L -n | grep DROP | sed 's/.*[^-]--\s\+\([0-9\.]\+\)\s\+.*$/\1/g' | xargs -i{} iptables -D fail2ban-ModSec -s {} -j DROP
+[/command]
+
+<h2 class="toc">Conclusion</h2>
+<p>Please feel free to post comments, improvements, or extensions to this article. I hope that you now have a grasp on some of the fundamental principals of securing the website, while still allowing friendly traffic, but there is obviously a world of work to be done here to achieve a tolerant yet secure rule set.
+
+<p>Again, I recommend making sure that your whitelists are set up BEFORE you turn any of these features on. But once you do flip the switch, you should be happy with a faster, cleaner server.
+
+<p>This only scratches the surface of web application security, of which there are many types, from the server all the way to the application, but the more layers you can get that still work together for users nicely, the better. If you are interested in <a href="http://ocpsoft.org/opensource/secure-your-applications-url-based-attacks-are-real-and-dangerous/">Java application level security</a>, I have a few more posts on that topic. 

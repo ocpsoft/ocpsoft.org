@@ -8,7 +8,7 @@
 .page_status publish
 .permaLink http://ocpsoft.org/rewrite/examples/
 .text_more 
-.title Examples
+.title Rewrite Examples
 .userid 3
 .wp_author Lincoln Baxter III
 .wp_author_display_name Lincoln Baxter III
@@ -68,13 +68,13 @@ public class ExampleConfigurationProvider extends HttpConfigurationProvider
       return ConfigurationBuilder.begin()
 
           // Create a dynamic logout URL via EL
-          .defineRule()
+          .addRule()
           .when(Direction.isInbound().and(Path.matches("/logout")))
           .perform(Invoke.binding(El.retrievalMethod("#{session.invalidate}"))
                    .and(Redirect.temporary(context.getContextPath() + "/")))
 
           // Create a dynamic logout URL via direct service call
-          .defineRule()
+          .addRule()
           .when(Direction.isInbound().and(Path.matches("/logout")))
           .perform(new HttpOperation() {
              @Override
@@ -117,7 +117,7 @@ public class AuthenticationStatusInterceptor extends HttpConfigurationProvider
                            .to("/pages/loggedOffHome.xhtml")
                            .when(loggedIn))
 
-              .defineRule()
+              .addRule()
               .when(Direction.isInbound()
                       .and(Path.matches("/(signup|login)")
                       .andNot(loggedIn)))
@@ -142,7 +142,7 @@ public class ExampleConfigurationProvider extends HttpConfigurationProvider
    public Configuration getConfiguration(final ServletContext context)
    {
       return ConfigurationBuilder.begin()
-          .defineRule()
+          .addRule()
           .when(new HttpCondition() {
              public boolean evaluate(HttpServletRewrite event, EvaluationContext context)
              {
@@ -173,15 +173,15 @@ The goal of a CDN is to serve content to end users with high availability and hi
 
           // Relocate jQuery to CDN
           .addRule(CDN.relocate("{p}jquery{s}.js")
-                   .where("p").matches(".*")
-                   .where("s").matches(".*")
                    .to("http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"))
+          .where("p").matches(".*")
+          .where("s").matches(".*")
 
           // Relocate custom CSS (or other outbound link) to a custom URL
           .addRule(CDN.relocate("{p}foo-{version}.css")
-                   .where("p").matches(".*")
-                   .where("version").matches(".*")
                    .to("http://mycdn.com/foo-{version}.css"));
+          .where("p").matches(".*")
+          .where("version").matches(".*")
    }
 }
 [/snippit]
@@ -197,11 +197,12 @@ public class JaasRolesTestProvider extends HttpConfigurationProvider
       Configuration config = ConfigurationBuilder
                .begin()
 
-               .defineRule()
+               .addRule()
                .when(JAASRoles.required("admin", "privacy-monitor")
                         .and(Direction.isInbound())
-                        .and(Path.matches("/admin/{tail}").where("tail").matches(".*")))
-               .perform(Forward.to("/internal/resource.jsp"));
+                        .and(Path.matches("/admin/{tail}")))
+               .perform(Forward.to("/internal/resource.jsp"))
+               .where("tail").matches(".*");
 
       return config;
    }

@@ -1,7 +1,7 @@
 .categories ['JSF']
 .dateCreated 20090910T04:28:01
-.date_modified 20091206T14:35:36
-.date_modified_gmt 20091206T19:35:36
+.date_modified 20130429T16:47:47
+.date_modified_gmt 20130429T20:47:47
 .link http://ocpsoft.org/java/jsf-java/jsf2-how-to-create-a-global-ajax-status-indicator/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -25,7 +25,11 @@ With JSF2, it's easy to accomplish!
 <!--more-->
 This blog is based on Jim Driscoll's blog, "<a href="http://weblogs.java.net/blog/driscoll/archive/2009/09/02/busy-status-indicator-jsf-2" target="_blank">Busy status indicator with JSF 2.</a>" -- for attaching a status to an individual event.
 <h3>In your XHTML page, make sure that you output the JSF2 ajax libraries:</h3>
-<pre lang="xml"></pre>
+
+<pre lang="xml">
+<h:outputScript library="javax.faces" name="jsf.js" />
+</pre>
+
 <h3>Now, in Javascript:</h3>
 Make sure this javascript is only executed once per page, or you might get conflicting updates.
 <pre lang="javascript">/**

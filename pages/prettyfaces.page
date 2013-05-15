@@ -20,12 +20,14 @@
 .wp_password 
 .wp_slug prettyfaces
 [toc/]
-<center style="margin-left: -50px;"><img src="http://ocpsoft.org/wp-content/uploads/2008/11/prettyfaces-50.png" alt="" title="prettyfaces-50" width="498" height="122" class="alignnone size-full wp-image-2090" />
 
+<h1 class="project-header">prettyfaces</h1>
+
+<center>
 <h2 style="margin-bottom: 25px; margin-left: 25px; margin-right: 25px;">The open-source <font color="green">/url/#{rewriting}</font> solution for Servlet, JSF, and Java EE</h2></center>
 
 <div class="featured">
-<p style="margin-top: 10px; margin-bottom: 0px;">PrettyFaces is an OpenSource Filter-based Servlets extension with enhanced support for <em>JavaServer Faces</em> - JSF 1.1, 1.2 and 2.0 - enabling creation of bookmark-able, pretty URLs. PrettyFaces solves the "RESTful URL" problem elegantly, including features such as: page-load actions, seamless integration with faces navigation, dynamic view-id assignment, managed parameter parsing, and configuration-free compatibility with other web frameworks. <a href="#features">Take a look at the features &raquo;</a></p>
+<p style="margin-top: 10px; margin-bottom: 0px;">PrettyFaces is an OpenSource URL-rewriting library with enhanced support for <em>JavaServer Faces</em> - JSF 1.1, 1.2 and 2.0 - enabling creation of bookmark-able, pretty URLs. PrettyFaces solves the "RESTful URL" problem elegantly, including features such as: page-load actions, seamless integration with faces navigation, dynamic view-id assignment, managed parameter parsing, and configuration-free compatibility with other web frameworks. <a href="#features">Take a look at the features &raquo;</a></p>
 </div>
 
 
@@ -36,7 +38,7 @@ Any business knows how important Search Engine Optimization can be for sales. Pr
 
 <h2><span class="toc">Get Started</span>, it's easy! (3 steps)</h2>
 
-[warn]It is recommended but not required to remove other URL-rewriting tools from your application before using PrettyFaces and/or Rewrite. If you choose to leave them in place, weird things may happen to you, be warned.[/warn]
+[warn]It is recommended but not required to remove other URL-rewriting tools from your application before using PrettyFaces and/or [[Rewrite]]. If you choose to leave them in place, weird things may happen to you, be warned.[/warn]
 
 <center>
 <p style="margin: 20px;">Come join us on in <code>#ocpsoft</code> - <a href="http://webchat.freenode.net/?channels=%23ocpsoft" title="OCPsoft channel on Freenode IRC" target="_blank">our channel on irc.freenode.net.</a> Additionally, you are welcome to attend the dev meeting, every [[Calendar|Monday at 1pm EST]]. Also, please join the discussion on our <a href="mailto:prettyfaces-dev@googlegroups.com">dev email list</a>.</p>
@@ -50,12 +52,18 @@ Any business knows how important Search Engine Optimization can be for sales. Pr
 <p>You may either use Maven (recommended) to include PrettyFaces in your project, or you can download the JAR file directly. 
 
 <span class="toc" style="visibility: hidden;">&nbsp;&nbsp;&nbsp;- via Maven</span>
-[snippit filename="Add PrettyFaces to your maven pom.xml" href="#download" label="Or download the JAR"]
+
+[snippit filename="Add PrettyFaces to your maven pom.xml" href="http://repo1.maven.org/maven2/org/ocpsoft/rewrite/rewrite-distribution/" label="Or download the ZIP"]
 <!-- for JSF 2.x -->
 <dependency>
-   <groupId>com.ocpsoft</groupId>
-   <artifactId>prettyfaces-jsf2</artifactId>
-   <version>3.3.3</version>
+    <groupId>org.ocpsoft.rewrite</groupId>
+    <artifactId>rewrite-servlet</artifactId>
+    <version>2.0.0.Final</version>
+</dependency>
+<dependency>
+    <groupId>org.ocpsoft.rewrite</groupId>
+    <artifactId>rewrite-config-prettyfaces</artifactId>
+    <version>2.0.0.Final</version>
 </dependency>
 
 <!-- for JSF 1.2.x -->
@@ -74,7 +82,7 @@ Any business knows how important Search Engine Optimization can be for sales. Pr
 <center class="well">
 <p><strong>JSF1.1</strong> &gt; <strong>3.3.3:</strong> <a href="http://repo1.maven.org/maven2/com/ocpsoft/prettyfaces-jsf11/3.3.3/prettyfaces-jsf11-3.3.3.jar">jar</a>, <a href="http://repo1.maven.org/maven2/com/ocpsoft/prettyfaces-jsf11/3.3.3/prettyfaces-jsf11-3.3.3-sources.jar">src</a>, <a target="_blank" href="http://ocpsoft.org/prettyfaces/v123/">doc</a></p>
 <p><strong>JSF1.2</strong> &gt; <strong>3.3.3:</strong> <a href="http://repo1.maven.org/maven2/com/ocpsoft/prettyfaces-jsf12/3.3.3/prettyfaces-jsf12-3.3.3.jar">jar</a>, <a href="http://repo1.maven.org/maven2/com/ocpsoft/prettyfaces-jsf12/3.3.3/prettyfaces-jsf12-3.3.3-sources.jar">src</a>, [[PrettyFaces Docs|doc]]</p>
-<p><strong>JSF2.0</strong> &gt; <strong>3.3.3:</strong> <a href="http://repo1.maven.org/maven2/com/ocpsoft/prettyfaces-jsf2/3.3.3/prettyfaces-jsf2-3.3.3.jar">jar</a>, <a href="http://repo1.maven.org/maven2/com/ocpsoft/prettyfaces-jsf2/3.3.3/prettyfaces-jsf2-3.3.3-sources.jar">src</a>, [[PrettyFaces Docs|doc]]</p>
+<p><strong>JSF2.0</strong> &gt; <strong>4.0:</strong> [[PrettyFaces Docs|doc]]</p>
 </center>
 
 

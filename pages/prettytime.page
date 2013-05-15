@@ -21,9 +21,9 @@
 .wp_slug prettytime
 [toc][/toc]
 
-<center><img src="http://ocpsoft.org/wp-content/uploads/2012/04/prettytime-center-compressed.png" alt="" title="prettytime-center-compressed" width="378" height="92" class="alignnone size-full wp-image-4461" />
+<h1 class="project-header">prettytime</h1>
 
-<h2 style="margin-bottom: 35px; margin-top: 15px;">Convert Java <font color=green>Date()</font> objects in just "<font color=green>a few minutes</font>!"</h2></center>
+<center><h2 style="margin-bottom: 35px; margin-top: 15px;">Convert Java <font color=green>Date()</font> objects in just "<font color=green>a few minutes</font>!"</h2></center>
 
 <div class=featured>PrettyTime is an OpenSource time formatting library. Completely customizable, it creates human readable, relative timestamps like those seen on Digg, Twitter, and Facebook. Get started "right now!" and in over <a href="#i18n">25 languages</a>!</div>
 

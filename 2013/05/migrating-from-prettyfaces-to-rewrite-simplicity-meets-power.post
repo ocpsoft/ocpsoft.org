@@ -1,0 +1,274 @@
+.categories ['Java']
+.dateCreated 20130504T13:04:32
+.date_modified 20130504T15:17:42
+.date_modified_gmt 20130504T19:17:42
+.link http://ocpsoft.org/java/migrating-from-prettyfaces-to-rewrite-simplicity-meets-power/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/java/migrating-from-prettyfaces-to-rewrite-simplicity-meets-power/
+.post_status publish
+.postid 3966
+.title Migrating from PrettyFaces to Rewrite - Simplicity meets power
+.userid 727
+.wp_author_display_name Daniel Sachse
+.wp_author_id 727
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 4474
+.wp_slug migrating-from-prettyfaces-to-rewrite-simplicity-meets-power
+[toc/]
+
+Hi Java web-developers. I hope you are already familiar with [[PrettyFaces]]. If not, I will give you a very short introduction taken from the project documentation:
+
+
+<h3>PrettyFaces is:</h3>
+<p><em>"The open-source <strong>/url/#{rewriting}</strong> solution for Servlet, JSF, and Java EE, including features such as: page-load actions, seamless integration with faces navigation, dynamic view-id assignment, managed parameter parsing, and configuration-free compatibility with other web frameworks."</em></p>
+
+<p>
+[[Rewrite]], on the other hand, is a URL-rewriting framework built for extendability, for use with any web-framework or pure Servlet itself, and is used for the core of PrettyFaces "4.0" - bringing the best of both worlds... so that sounds very cool thus far, but what do we want to achieve with it? Why would we use either of these frameworks?</p>
+<!--more-->
+<h3>Just compare these two URLs:</h3>
+<p>
+Very ugly one : 
+
+[code]http://www.example.com/blog.html?author=w0mbat&amp;post_id=23&amp;year=2012[/code]
+
+A very pretty one : 
+[code]http://www.example.com/blog/w0mbat/2012/23[/code]
+
+<p>This is something that both PrettyFaces and Rewrite can accomplish for us, but what if, for example, we wanted to intercept all URLs and require a login? This is where PrettyFaces can no longer help us, but rewrite is ready to come to our aid!
+
+
+<h2>Why migrate?</h2>
+
+<p>PrettyFaces itself is really great but the configuration is not runtime dynamic. There is a feature called "DynaView", which can be used to determine the page to display for a given URL-mapping at runtime, but it is fairly limited and is difficult to use when things get hairy. To achieve some level of dynamism, one can implement what is called a "RewriteProcessor," but it's basically all manual coding; there are no dynamic rules that one would need to e.g. display a login page for every requested URL if the user is not logged in. 
+
+<p>This is only one of many cool features that [[Rewrite]] offers in comparison to PrettyFaces.
+
+
+[warn]In this post we are going to migrate a PrettyFaces project which is NOT annotation based. We just use the pretty-config.xml to map everything.[/warn]
+
+
+<h2 class="toc">Part 1 : Stock-taking</h2>
+
+
+<p>I created a small JEE 6 sample webapp with <a title="JBoss Forge" href="http://jboss.org/forge" target="_blank">JBoss Forge</a> which you can fork or <a href="https://github.com/w0mbat/PrettyMigration" title="Github" target="_blank">clone from Github</a> if you want. This application will show us several things:
+
+<p><ul>
+	<li>a small pom.xml with only a few dependencies</li>
+	<li>an XHTML template to be DRY</li>
+	<li>four pages: index, about, profile, login</li>
+	<li>a WEB-INF/pretty-config.xml</li>
+</ul>
+
+<p>We will start with our pretty-config.xml shown below:
+
+[snippit filename="WEB-INF/pretty-config.xml"]
+
+<pretty-config xmlns="http://ocpsoft.com/prettyfaces/3.3.2" 
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+               xsi:schemaLocation="http://ocpsoft.com/prettyfaces/3.3.2 http://ocpsoft.com/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.3.2.xsd">
+	<url-mapping id="home"> 
+		<pattern value="/" /> 
+		<view-id value="/index.xhtml" />
+	</url-mapping>
+	
+	<url-mapping id="about"> 
+		<pattern value="/About" />
+		<view-id value="/about.xhtml" />
+	</url-mapping>
+	
+	<url-mapping id="profile"> 
+		<pattern value="/Profile" />
+		<view-id value="/profile.xhtml" />
+	</url-mapping>
+</pretty-config>
+
+[/snippit]
+
+<p>This file just maps / to index.xhtml, /About to about.xhtml and /Profile to profile.xhtml. The pages just have links to each other, to provide some sort of interaction. Nothing too special ;)
+
+<p>Below you can see some content of the index.xhtml to get an idea of how the navigation with PrettyFaces works:
+
+[snippit filename="/src/main/webapp/index.xhtml"]
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				template="/WEB-INF/templates/default.xhtml">
+				
+	<ui:define name="links">
+		<h:link outcome="pretty:about" value="About"/>
+		<h:outputText value="	" />
+		<h:link outcome="pretty:profile" value="Profile"/>
+	</ui:define>							
+</ui:composition>
+[/snippit]
+
+<p>All the other files(web.xml, faces-config.xml,..) are pretty straight forward and you can check them out via Github.
+
+<h2 class="toc">Part 2 : Migration</h2>
+
+<p>The easiest way to migrate to Rewrite, is simply to use the Rewrite PrettyFaces compatibility module. Remove any PrettyFaces dependencies that you may have in your project, then include the following dependencies.
+
+First we will have to change the pom to exclude PrettyFaces and include Rewrite:
+[snippit filename="/pom.xml"]
+<dependency>
+	<groupId>org.ocpsoft.rewrite</groupId>
+	<artifactId>rewrite-servlet</artifactId>
+	<version>2.0.0.Final</version>
+</dependency>
+<dependency>
+   <groupId>org.ocpsoft.rewrite</groupId>
+   <artifactId>rewrite-config-prettyfaces</artifactId>
+   <version>2.0.0.Final</version>
+</dependency>
+[/snippit]
+
+<p>That's it! You're done. You'd now using PrettyFaces with Rewrite core, but since you probably want to know a little bit more about how to use the power of [[Rewrite]], let's continue and learn how to replace our PrettyFaces configuration with Rewrite completely. We'll also learn a few tricks that Rewrite can help us with.
+
+<h3>Migrating the configuration</h3>
+
+<p>First, delete your <code>pretty-config.xml</code>, but keep it somewhere you can look at while you move the functionality over to Rewrite.
+
+<p>Now, we need to create several ConfigurationProvider classes. These classes have to extend <code>org.ocpsoft.rewrite.servlet.config.HttpConfigurationProvider</code> (for servlet environments.) A ConfigurationProvider has a method which returns a priority and a method which returns the Configuration. Have a look at the <code>AccessRewriteConfiguration</code> below:
+
+[snippit filename="at.w0mb.prettyMigration.rewrite.AccessRewriteConfiguration"]
+package at.w0mb.prettyMigration.rewrite;
+
+import javax.servlet.ServletContext;
+
+import org.ocpsoft.rewrite.bind.El;
+import org.ocpsoft.rewrite.config.*;
+import org.ocpsoft.rewrite.servlet.config.*;
+
+public class AccessRewriteConfiguration extends HttpConfigurationProvider {
+	@Override
+	public Configuration getConfiguration(final ServletContext context) {
+		return ConfigurationBuilder.begin()
+				.addRule(Join.path("/").to("/index.xhtml"))
+				.addRule(Join.path("/about").to("/about.xhtml"))
+				.addRule(Join.path("/profile").to("/profile.xhtml"))
+				.addRule(Join.path("/login").to("/login.xhtml"))
+
+				// Authentication
+				.defineRule()
+				.when(Direction.isInbound().and(Path.matches("/logout")))
+				.perform(Invoke.binding(El.retrievalMethod("identity.logout"))
+						.and(Redirect.temporary(context
+							.getContextPath() + "/")));
+	}
+
+	@Override
+	public int priority() {
+		return 10;
+	}
+}
+[/snippit]
+
+<p>With this Configuration, we mainly implemented what we saw earlier in the <code>pretty-config.xml</code>; but we have also defined a 'virtual' URL that doesn´t map to an <code>*.xhtml</code> file, but rather, invokes a bean method that performs the logout and redirects to <code>/</code>.
+
+<p><strong>Question</strong>:<em> What happens if we try to invoke the application now?!? No idea? Ok.</em>
+<p><strong><em>Answer</em></strong>: <em>We will get error messages because JSF cannot find any mappings for our ourcomes e.g. pretty:about, pretty:profile, ...</em>
+
+<p>So what do we need to do now? We have to do the mapping ourselves in the faces-config.xml:
+
+[snippit filename="WEB-INF/faces-config.xml"]
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+   version="2.0">
+   
+   <navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>pretty:home</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>pretty:about</from-outcome>
+			<to-view-id>/about.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>pretty:profile</from-outcome>
+			<to-view-id>/profile.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>
+[/snippit]
+
+<p>The application would nearly work now as we have written it. But how about the login? We will define another <code>ConfigurationProvider</code> as shown below. 
+
+<p>First, though, we will need to add another dependency to our POM. This will enable us to <code>@Inject</code> our <code>Identity</code> object directly into the configuration. The <a href="https://github.com/ocpsoft/rewrite/tree/master/integration-cdi" target="_blank">rewrite-integration-cdi</a> extension module, enriches our rewrite configuration objects with CDI support, and gives us access to the Unified Expression Language (not shown.)
+
+[snippit]
+<dependency>
+	<groupId>org.ocpsoft.rewrite</groupId>
+	<artifactId>rewrite-integration-cdi</artifactId>
+	<version>2.0.0.Final</version>
+</dependency>
+[/snippit]
+
+[snippit filename="at.w0mb.prettyMigration.rewrite.LoginInterceptor"]
+package at.w0mb.prettyMigration.rewrite;
+
+import javax.inject.Inject;
+import javax.servlet.ServletContext;
+
+import at.w0mb.prettyMigration.Identity;
+
+import org.ocpsoft.rewrite.config.*;
+import org.ocpsoft.rewrite.servlet.config.*;
+
+public class LoginInterceptor extends HttpConfigurationProvider {
+
+	@Inject
+	private Identity identity;
+
+	@Override
+	public Configuration getConfiguration(ServletContext arg0) {
+		ConfigurationBuilder config = ConfigurationBuilder.begin();
+
+		if (!identity.isLoggedIn()) {
+			return config
+					.defineRule()
+					.when(DispatchType.isRequest().and(Direction.isInbound())
+					.and(Resources.excluded()))
+					.perform(Forward.to("/login"))
+					.addRule(Join.path("/login").to("/login.xhtml"));
+		}
+
+		return config;
+	}
+
+	@Override
+	public int priority() {
+		return 0;
+	}
+}
+[/snippit]
+
+<p>As a final step, we have to tell Rewrite which <code>ConfigurationProvider</code> classes to use at runtime:
+[snippit filename="META-INF/services/org.ocpsoft.rewrite.config.ConfigurationProvider"]
+at.w0mb.prettyMigration.rewrite.LoginInterceptor
+at.w0mb.prettyMigration.rewrite.AccessRewriteConfiguration
+[/snippit]
+
+<h2 class="toc">Part 3 : Conclusion</h2>
+<p>We are now able to call our application under http://localhost:8080/prettyMigration and we will see our login page. This page gets displayed no matter which URL we will call. After clicking on 'login' we will be 'logged in ' and redirected to the index page. Once we open http://localhost:8080/prettyMigration/logout, we are 'logged out' and we will again see the login page.
+
+<p>You can grab this project <a href="https://github.com/w0mbat/PrettyMigration" title="Github" target="_blank">from Github</a>. The project was build and tested on <a href="http://www.jboss.org/jbossas" title="JBoss AS 7.1" target="_blank">JBoss 7.1</a>, in my opinion the fastest and most advanced application server on the market.
+
+[info]I hope you liked my first post on this blog and if you have any comments/questions/improvements, please just post a comment here or contact me![/info]

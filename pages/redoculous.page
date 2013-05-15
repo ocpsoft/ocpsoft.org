@@ -1,0 +1,57 @@
+.categories []
+.dateCreated 20130501T14:36:43
+.excerpt 
+.link http://ocpsoft.org/redoculous/
+.mt_allow_comments 0
+.mt_allow_pings 1
+.page_id 23691
+.page_status publish
+.permaLink http://ocpsoft.org/redoculous/
+.text_more 
+.title Redoculous
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 0
+.wp_page_parent_title 
+.wp_page_template page-notitle.php
+.wp_password 
+.wp_slug redoculous
+[toc]
+<h1 class="project-header">redoculous</h1>
+
+<style type="text/css">
+   @import url('http://ocpsoft.org/wp-content/uploads/2013/04/redoculous.css');
+
+   #section-0 {
+      font-size: 30px;
+      line-height: 36px;
+      margin-top: 0px;
+   }
+</style>
+
+<script type="text/javascript">
+   var $ = jQuery;
+   function redocinit() {
+      document.title = $("#redoculous h2").filter(":first").text() + " | OCPsoft";
+      $('html,body').scrollTop(0);
+      $("#toc").css("position", "relative");
+      toc_init(".entry h2, .entry h3");
+   }
+</script>
+
+<script src="https://redoculous-lincolnbaxter.rhcloud.com/js/jquery.min.js"> </script>
+<script src="https://redoculous-lincolnbaxter.rhcloud.com/js/jquery.history.min.js"> </script>
+<script src="https://redoculous-lincolnbaxter.rhcloud.com/js/redoculous.js"></script>
+
+
+<div id="redoculous"
+data-redoculous="https://redoculous-lincolnbaxter.rhcloud.com"
+data-repo="https://github.com/ocpsoft/redoculous.git"
+data-ref="master" 
+data-repo-root="/docs" 
+data-root="/redoculous"
+data-onload="redocinit()">
+</div>

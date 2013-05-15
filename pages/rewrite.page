@@ -22,15 +22,16 @@
 [toc]
 <h2 style="display:none;">URLRewriteFilter</h2>
 
-<center><img src="http://ocpsoft.org/wp-content/uploads/2012/04/rewrite-center-compressed.png" alt="" title="rewrite-center-compressed" width="500" height="158" class="aligncenter size-full wp-image-4462" />
+<h1 class="project-header">rewrite</span></h1>
 
-<h2 style="margin-bottom: 35px;">The open-source <font color="green">Routing &uarr;&darr;</font> and <font color="green">/url/{rewriting}</font> solution for Servlet, Java Web Frameworks, and Java EE</h2></center>
+<center><h2 style="margin-bottom: 35px;">The open-source <font color="green">Routing &uarr;&darr;</font> and <font color="green">/url/{rewriting}</font> solution for Servlet, Java Web Frameworks, and Java EE</h2></center>
 
 <div class="featured">
 <p style="margin-top: 10px; margin-bottom: 0px;"><strong>Rewrite</strong> is an OpenSource, Filter-based Servlets extension for Java - enabling creation of bookmark-able, pretty URLs. Rewrite solves the "RESTful URL" problem elegantly, including features such as: page-load actions, managed parameter parsing, seamless integration with <em>CDI</em>, <em>Spring</em>, and configuration-free compatibility with other web frameworks. <a href="https://github.com/ocpsoft/rewrite">Get involved in the project &raquo;</a></p>
 </div>
 
-<h2 style="font-size: 1.5em; margin-bottom: 25px;"><span class="toc">Get Started</span>, see how powerful URL-rewriting can be (5 steps) </h2>
+<h2 style="font-size: 1.5em; margin-bottom: 25px;"><span class="toc">Get Started</span>, Rewrite how you think about Servlets (5 steps) </h2>
+<center><a href="http://ocpsoft.org/rewrite/docs/">Learn more</a>, jump right into the <a href="http://ocpsoft.org/rewrite/docs/configuration/" title="Rewrite Configuration Manual">configuration manual</a>, or follow the quick-start below.</center>
 
 [warn]It is recommended but not required to remove other URL-rewriting tools from your application before using Rewrite and/or PrettyFaces. If you choose to leave them in place, weird things may happen to you, be warned.[/warn]
 
@@ -48,7 +49,7 @@
 <dependency>
    <groupId>org.ocpsoft.rewrite</groupId>
    <artifactId>rewrite-servlet</artifactId>
-   <version>1.1.0.Final</version>
+   <version>2.0.0.Final</version>
 </dependency>
 
 <!-- To use snapshots, you must also use the Sonatype Snapshots respository -->
@@ -77,7 +78,7 @@ public class ExampleConfigurationProvider extends HttpConfigurationProvider
    public Configuration getConfiguration(final ServletContext context)
    {
      return ConfigurationBuilder.begin()
-       .defineRule()
+       .addRule()
          .when(Direction.isInbound().and(Path.matches("/some/{page}/")))
          .perform(Forward.to("/new-{page}/"));
     }
@@ -128,6 +129,9 @@ Just include the corresponding extension in your pom.xml file in order to add fu
 
 You should now be ready to go! Rewrite is installed, and your first configuration provider is enabled. If everything has been done correctly, you should see Rewrite log a message confirming registration of your configuration providers (in priority order.)
 
+<h2><span class="toc">Read the Documentation</span></h2>
+Our <a href="http://ocpsoft.org/rewrite/docs/">Rewrite Manual</a> is a work in progress, but continues to grow daily. There is a lot you can do with this framework, and we are taking our time to make sure that our examples behave as advertised.
+
 [command]
 RewriteFilter starting up...
 Loaded [1] org.ocpsoft.rewrite.config.ConfigurationProvider [com.example.ExampleRewriteConfiguration<0>]
@@ -140,7 +144,7 @@ RewriteFilter initialized.
 <p style="margin-top: 10px; margin-bottom: 0px;">
 <h2 style="margin-top: 0px;" class="toc">Get involved</h2>
 <strong>Source</strong>: <a href="https://github.com/ocpsoft/rewrite">https://github.com/ocpsoft/rewrite</a><br/>
-<strong>Forums</strong>: <a href="http://ocpsoft.org/support/rewrite">http://ocpsoft.org/support/forum/rewrite</a><br/>
+<strong>Forums</strong>: <a href="http://ocpsoft.org/support/forum/rewrite-users/">http://ocpsoft.org/support/forum/rewrite-users/</a><br/>
 <strong>Get updates</strong>: <a href="http://ocpsoft.org/subscribe/">http://ocpsoft.org/subscribe/</a><br/>
 </p><p>
 Having trouble? Have an idea? <a href="https://github.com/ocpsoft/rewrite/issues" title="Report an issue">Report an issue.</a> </p>

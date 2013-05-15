@@ -1,7 +1,7 @@
 .categories ['Facebook', 'OpenSource']
 .dateCreated 20120226T22:06:47
-.date_modified 20120807T23:49:35
-.date_modified_gmt 20120808T03:49:35
+.date_modified 20130419T18:41:59
+.date_modified_gmt 20130419T22:41:59
 .link http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -245,7 +245,7 @@ We need to install <a href="http://git-scm.com/" target="_blank">Git</a>, and a 
 Now install the OpenShift Express Forge plugin. In Forge, type the <a href="http://ocpsoft.org/wp-content/uploads/2012/03/InstallOpenshiftExpressInForge_StartLike.png" rel="lightbox[8]">following commands</a> from any directory within your project:
 
 [command]
-forge install-plugin openshift-express
+forge install-plugin openshift
 rhc-express setup
 [/command]
 

@@ -1,7 +1,7 @@
 .categories ['OpenSource', 'Security', 'Web Services']
 .dateCreated 20130403T11:27:25
-.date_modified 20130408T15:38:23
-.date_modified_gmt 20130408T19:38:23
+.date_modified 20130410T14:26:26
+.date_modified_gmt 20130410T18:26:26
 .link http://ocpsoft.org/opensource/antispam-filter-with-modsecurity-and-fail2ban/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -95,7 +95,7 @@ Server: Apache/2.2.22 (Ubuntu)
 As we can see in the example above, mod_security is logging when crawlers visit our website and experience 404 errors (and other problems.) This means that any time googlebot or another crawler is logged in such a manner, they will be banned, even though the traffic is valid. That's not good, so we can take an arguably risky step to modify the mod_security configuration to allow our crawling friends.
 <p>
 
-Add <code>nolog</code> or at least <code>nolog</code> to the beginning of each rule action. This tells mod_security not to log anything from a request where something looking like a search bot is involved.
+Replace the rule action <code>block</code> with the action <code>pass</code>. This tells mod_security not to immediately block a request where something looking like a search bot is involved, but rather keep adding up the attack score until it reaches the threshold.
 
 [warn]<strong>NOTE:</strong> This may actually be somewhat bad for security, however, since it is possible to fake the criteria on which these rules match. Spammers may actually masquerade as googlebot and friends! But this still enables mod_security to block the request using its attack score mechanism, while preventing log scraping tools such as fail2ban from blocking the IP addresses of the crawler - perfection has not yet been achieved. [/warn]
 
@@ -115,13 +115,13 @@ Add <code>nolog</code> or at least <code>nolog</code> to the beginning of each r
 # --
 
 SecRule REQUEST_HEADERS:User-Agent "msn(?:bot|ptc)" \
-        "nolog,phase:2,rev:'2.2.5',t:none,t:lowercase,block,msg:'MSN robot activity',id:'910008',severity:'6'"
+        "phase:2,rev:'2.2.5',t:none,t:lowercase,pass,msg:'MSN robot activity',id:'910008',severity:'6'"
 
 SecRule REQUEST_HEADERS:User-Agent "\byahoo(?:-(?:mmcrawler|blogs)|! slurp)\b" \
-        "nolog,phase:2,rev:'2.2.5',t:none,t:lowercase,block,msg:'Yahoo robot activity',id:'910007',severity:'6'"
+        "phase:2,rev:'2.2.5',t:none,t:lowercase,pass,msg:'Yahoo robot activity',id:'910007',severity:'6'"
 
 SecRule REQUEST_HEADERS:User-Agent "(?:(?:gsa-crawler \(enterprise; s4-e9lj2b82fjjaa; me\@mycompany\.com|adsbot-google \(\+http:\/\/www\.google\.com\/adsbot\.html)\)|\b(?:google(?:-sitemaps|bot)|mediapartners-google)\b)" \
-        "nolog,phase:2,rev:'2.2.5',t:none,t:lowercase,block,msg:'Google robot activity',id:'910006',severity:'6'"
+        "phase:2,rev:'2.2.5',t:none,t:lowercase,pass,msg:'Google robot activity',id:'910006',severity:'6'"
 
 [/snippit]
 

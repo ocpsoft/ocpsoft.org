@@ -1,0 +1,30 @@
+.categories ['OpenSource']
+.dateCreated 20130527T11:34:30
+.date_modified 20130527T11:34:30
+.date_modified_gmt 20130527T15:34:30
+.link http://ocpsoft.org/?p=23802
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/?p=23802
+.post_status draft
+.postid 23802
+.title Announcing PrettyTime (NLP) Natural Date Processing
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug 
+<p>If you have ever used Google Calendar, Siri, Android Voice Command or other natural language tools, you might be familiar with convenient calendar features and voice calendar control. <img src="http://ocpsoft.org/wp-content/uploads/2013/05/android_voice_scheduling-300x233.png" alt="android_voice_scheduling" width="300" height="233" class="alignright size-medium wp-image-23803 pull-right" style="margin-left: 15px; margin-bottom: 15px; margin-top: 15px;" /> "Schedule a dinner party for six pm, next Thursday," and The start time for your dinner party conveniently shows up, ready for your finishing touch. But how does this work? Can we use it for our own applications?
+
+<p>If you've given this a bit of thought, you've probably figured out that in order to understand grammar, the nearly infinite possible combinations of words, expressions, numbers, and dialects should require a not insignificant amount of computing power, and a good deal of creativity.
+
+<p>The ability to coerce our highly variable, fluent speech into a format understandable and usable by computer logic is a complex task with great potential reward. Voice control has long been an aspiration in the field of human computer interaction. Our friends at Google and Siri seem to have come a long way, but these features are mostly unavailable for our use. This highly valuable service is also extremely proprietary and guarded. The value can be seen so clearly that companies are <a href="http://www.forbes.com/sites/petercohan/2012/10/08/5-reasons-to-scrap-our-patent-system-1-apples-siri/">fighting tooth and nail to kill off any potential competition</a>. Google guards its speech recognition service behind miles of servers and proprietary code, opaque to the outside world.
+
+<p>This initial step, the literal translation of spoken words into written text is also only a small fraction of the problem. Not only must words be translated into text, but they must then be parsed and normalized into a grammar that computers can understand and represent in rigid, un-fluent data structures: 
+
+<p>Imagine a cardboard packing box that contains a single word or phrase. The box is opaque - you don't know which word it contains, but there is a white label on the box that displays an identification number, a category, and the identification numbers of several other boxes with which this box must be packaged for shipping.

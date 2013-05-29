@@ -1,0 +1,68 @@
+.categories ['OpenSource']
+.dateCreated 20130528T18:49:45
+.date_modified 20130528T18:50:50
+.date_modified_gmt 20130528T22:50:50
+.link http://ocpsoft.org/opensource/announcing-prettytime-nlp-natural-date-processing/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/opensource/announcing-prettytime-nlp-natural-date-processing/
+.post_status publish
+.postid 23802
+.title Announcing PrettyTime (NLP) Natural Date Processing
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug announcing-prettytime-nlp-natural-date-processing
+<p>If you have ever used Google Calendar, Siri, Android Voice Command or other natural language tools, you might be familiar with convenient calendar features and voice calendar control. <img src="http://ocpsoft.org/wp-content/uploads/2013/05/android_voice_scheduling-300x233.png" alt="android_voice_scheduling" width="300" height="233" class="alignright size-medium wp-image-23803 pull-right" style="margin-left: 15px; margin-bottom: 15px; margin-top: 15px;" /> "Schedule a dinner party for six pm, next Thursday," and The start time for your dinner party conveniently shows up, ready for your finishing touch. But how does this work? Can we use it for our own applications?
+
+<p>If you've given this a bit of thought, you've probably figured out that in order to understand grammar, the nearly infinite possible combinations of words, expressions, numbers, and dialects should require a not insignificant amount of computing power, and a good deal of creativity.
+<!--more-->
+<h2> There's business value, all right.</h2>
+
+<p>The ability to coerce our highly variable, fluent speech into a format understandable and usable by computer logic is a complex task with great potential reward. Voice control has long been an aspiration in the field of human computer interaction. Our friends at Google and Siri seem to have come a long way, but these features are mostly unavailable for our use. This highly valuable service is also extremely proprietary and guarded. The value can be seen so clearly that companies are <a href="http://www.forbes.com/sites/petercohan/2012/10/08/5-reasons-to-scrap-our-patent-system-1-apples-siri/">fighting tooth and nail to kill off any potential competition</a>. Google guards its speech recognition service behind miles of servers and proprietary code, opaque to the outside world.
+
+<p>This initial step, the literal translation of spoken words into written text is also only a small fraction of the problem. Not only must words be translated into text, but they must then be parsed and normalized into a grammar that computers can understand and represent in rigid, un-fluent data structures: 
+
+<p>Imagine a cardboard packing box that contains a single word or phrase. The box is opaque - you don't know which word it contains, but there is a white label on the box that displays an identification number, a category, and the identification numbers of several other smaller boxes with which this box must be packaged for shipping. Each smaller box contains other unknown words and phrases, and must be put in the correct order.
+
+<p>Now consider that you are given a set of these boxes, and told, "Without opening any boxes, follow the instructions contained within," but you don't understand what's actually in the boxes, you can't read them. All you can do is put them in the right order, and ask someone else what they think each box's contents are (without looking.)
+
+<p>This is effectively what Google voice control and Apple's Siri (and IBM's <a href="www.ibm.com/innovation/us/watson" target="_blank">Watson</a>) are doing - building up a set of boxes, each one containing a word, then consulting a reference (some kind of neural network or other AI system) to determine what to do with each box. Ultimately, companies like these are using your words, phrases, and conversations to build lists of marketing data, analyze trends, and figure out how to stay ahead of the curve in their respective business sectors. In the end, a person needs to assign meaning to each of these boxes, but over time, computers should gain a better understanding of what certain boxes mean, and build relationships between them.
+
+<p>So as you can see, there's a lot more involved than simple transcription; there's a whole world of logic required in order to put meaning behind these words.
+
+<h2>Business value, or business strangle-hold?</h2>
+
+<p>Another perspective on this technology actually presents an interesting situation, since the most popular and simple to use solutions are those provided by commercial entities. The few open-source solutions that might put this revolutionary technology into the hands of every-day, science-loving people are more difficult to use, and don't seem to get the community attention that might help this software really take off. Android and iPhone developers are far more likely to use the built in Android Voice Recognition and Siri technology than they are to use an open-source implementation. 
+
+<p>The problem comes when you consider one big thing: Privacy. We are quickly becoming a society where individuals are more than willing to give up their personal information to get a deal, or convenient services. I know first hand; I give up my information for these things every day when I use Gmail and Google Voice; I'm willing to do it, but there are some entities that might not be so willing.
+
+<p>Corporations and businesses may not want their trade secrets and confidential material being parsed, understood, reverse-engineered, and used for marketing analysis - particularly when Google and Apple are known for providing services that compete directly against other online businesses. 
+
+<p>Even the untouchable banking industry is being <a href="http://www.moneynews.com/FinanceNews/Google-bank-Glass-Wallet/2013/05/24/id/506256" target="_blank">threatened by Google Wallet</a> and Google Glass. 
+
+<h2>Can open-source keep up?</h2>
+
+<p>Several open-source solutions already exist in the Java community, such as the <a href="http://nlp.stanford.edu/software/corenlp.shtml" target="_blank">Stanford CoreNLP</a> library and the less recently updated <a href="http://nlp.cs.berkeley.edu/" target="_blank">Berkely NLP</a> (a Scala library), but until there is an open voice and language service, there is still the problem of bundling over 250MB of code-libraries into a mobile (or even a server) application, even if you do choose the open-source route. That's a <i>really</i> big deployment that will slow down even the fastest of application architectures, but there's opportunity for competition if you can to navigate the various patents that litter this arena like a minefield.
+
+<p>The most likely, outcome, however, is that if you try to compete, you will be sued out of existence, just like the completely legal, non patent-infringing <a href="http://www.nytimes.com/2012/10/08/technology/patent-wars-among-tech-giants-can-stifle-competition.html?pagewanted=all&_r=0" target="_blank">Vlingo: sued by Nuance over invalid patent claims</a>. Patents stifle competition, indeed, but that doesn't mean you shouldn't try - there is plenty of room for innovation, and the patent system <a href="http://ocpsoft.org/opensource/intellectual-property-is-dying-and-theres-nothing-you-can-do-about-it/" target="_blank">needs to change</a>.
+
+<p>No matter what happens with patents and competition, the single-most important piece of the puzzle for open-source competition in this market is simplicity. "Simpler is better" is our <a href="http://ocpsoft.org/" target="_blank">brand mantra</a>, and with that in mind, we're planting a foot in this market, too:
+
+<img src="http://ocpsoft.org/wp-content/uploads/2013/05/Screen-Shot-2013-05-28-at-5.41.11-PM-300x63.png" alt="Screen Shot 2013-05-28 at 5.41.11 PM" width="300" height="63" class="alignright size-medium wp-image-23848 pull-right" style="margin: 15px; margin-right: 0px;" />
+
+<h2>Our implementation of natural date and time parsing</h2>
+
+<p>Using <a href="http://natty.joestelmach.com" target="_blank">Natty</a>, a light-weight date and time NLP parser, supporting English, we've integrated natural date and time parsing into our <a href="http://ocpsoft.org/prettytime/nlp/">PrettyTime: Java Date Formatting</a> library, which is already performing generation of natural language (social) timestamps to be read by humans. PrettyTime converts <code>java.lang.Date</code> objects into human readable forms such as, "10 minutes from now", or "3 days ago", and has been internationalized into 31 different languages.
+
+<p>Hopefully we'll find an open-source solution for NLP that supports internationalization (at least for dates and times), or maybe we can drum up enough interest to make this a reality, but for now, you can't finish if you don't start, and we're <a href="http://ocpsoft.org/prettytime/nlp/" target="_blank">starting with English</a>.
+
+<h2>Fight the corporations, get involved in open-source.</h2>
+
+<p>If you are interested in standing up for open-source, then I suggest taking a look at any of the current NLP implementations, Stanford, Berkely, Natty Date and Time, and more. This technology is already changing how we interact with computers, and even if we get past verbal communication, into more neural approaches, we're going to need to translate between human concepts and computer terms - that's what this technology is all about.

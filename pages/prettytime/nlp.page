@@ -1,0 +1,111 @@
+.categories []
+.dateCreated 20130528T18:48:00
+.excerpt 
+.link http://ocpsoft.org/prettytime/nlp/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.page_id 23851
+.page_status publish
+.permaLink http://ocpsoft.org/prettytime/nlp/
+.text_more 
+.title NLP
+.userid 3
+.wp_author Lincoln Baxter III
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_page_order 0
+.wp_page_parent_id 60
+.wp_page_parent_title PrettyTime
+.wp_page_template page-notitle.php
+.wp_password 
+.wp_slug nlp
+[toc]
+<h2 style="display:none;">Java Date and Time Natural Language Parsing NLP</h2>
+
+<h1 class="project-header" style="font-size: 3.2em;">PrettyTime :: NLP</h1>
+
+<center><h2 style="margin-bottom: 35px;">The simplest, smallest natural language <font color="green">java.util.Date</font> and <font color="green">human time</font> parsing library for Java: Computers understanding humans. </h2></center>
+
+<div class="featured">
+<p style="margin-top: 10px; margin-bottom: 0px;"><strong>PrettyTime</strong> is an OpenSource, Java Library - enabling simple parsing and computer understanding of natural language, and social date references like, "let's go to dinner at 6," or "I'll be on vacation for three days". <a href="https://github.com/ocpsoft/prettytime">Get involved in the project &raquo;</a></p>
+</div>
+
+
+[section]
+
+<h2 class="toc">1. Include PrettyTime in your Project</h2>
+
+[snippit filename="Add PrettyTime :: NLP to your maven pom.xml" href="http://repo1.maven.org/maven2/org/ocpsoft/prettytime/" label="Or download the JARs"]
+<dependency>
+   <groupId>org.ocpsoft.prettytime</groupId>
+   <artifactId>prettytime</artifactId>
+   <version>${version.prettytime}</version>
+</dependency>
+<dependency>
+   <groupId>org.ocpsoft.prettytime</groupId>
+   <artifactId>prettytime-nlp</artifactId>
+   <version>${version.prettytime}</version>
+</dependency>
+
+<!-- To use snapshots, you must also use the Sonatype Snapshots respository -->
+<repository>
+   <id>sonatype-snapshots</id>
+   <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+</repository>
+[/snippit]
+
+
+<h2 class="toc">2. Use PrettyTimeParser</h2>
+
+PrettyTime NLP is simple, and requires interfacing with only a single class, <code>PrettyTimeParser</code>
+
+[snippit filename="Parse your first natural date"]
+package com.example;
+
+import org.ocpsoft.prettytime.nlp.PrettyTimeParser;
+
+public class Example
+{
+   public static void main(String[] args)
+   {
+      List<Date> dates = new PrettyTimeParser().parse("I'm going to the beach in three days!");
+      System.out.println(dates);
+      // Prints: "[Sun Dec 12 13:45:12 CET 2013]"
+   }
+}
+[/snippit]
+
+<h2 class="toc">3. Get more detailed.</h2>
+<p>You can also get more detailed results from the text, including whether or not dates are recurring, and when they recur until:
+
+[snippit filename="Parse recurring dates"]
+
+   @Test
+   public void testParseSyntaxRecurring()
+   {
+      List<DateGroup> parse = new PrettyTimeParser().parseSyntax("I eat fish every three days");
+      Assert.assertFalse(parse.isEmpty());
+      String formatted = new PrettyTime().format(parse.get(0).getDates().get(0));
+      Assert.assertEquals("3 days from now", formatted);
+      Assert.assertEquals(1, parse.get(0).getLine());
+      Assert.assertEquals(14, parse.get(0).getPosition());
+      Assert.assertEquals(1, parse.get(0).getDates().size());
+      Assert.assertNull(parse.get(0).getRecursUntil());
+      Assert.assertTrue(parse.get(0).isRecurring());
+      Assert.assertEquals(1000 * 60 * 60 * 24 * 3, parse.get(0).getRecurInterval());
+   }
+[/snippit]
+
+[section]
+
+<br/>
+<a name="getinvolved"></a>
+<div class="featured">
+<p style="margin-top: 10px; margin-bottom: 0px;">
+<h2 style="margin-top: 0px;" class="toc">Get involved</h2>
+<strong>Source</strong>: <a href="https://github.com/ocpsoft/prettytime">https://github.com/ocpsoft/prettytime</a><br/>
+<strong>Forums</strong>: <a href="http://ocpsoft.org/support/forum/prettytime-users/">http://ocpsoft.org/support/forum/prettytime-users/</a><br/>
+<strong>Get updates</strong>: <a href="http://ocpsoft.org/subscribe/">http://ocpsoft.org/subscribe/</a><br/>
+</p><p>
+Having trouble? Have an idea? <a href="https://github.com/ocpsoft/prettytime/issues" title="Report an issue">Report an issue.</a> </p>
+</div>

@@ -1,7 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20130528T18:49:45
-.date_modified 20130528T18:50:50
-.date_modified_gmt 20130528T22:50:50
+.date_modified 20130529T17:23:30
+.date_modified_gmt 20130529T21:23:30
 .link http://ocpsoft.org/opensource/announcing-prettytime-nlp-natural-date-processing/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -45,7 +45,7 @@
 
 <p>Corporations and businesses may not want their trade secrets and confidential material being parsed, understood, reverse-engineered, and used for marketing analysis - particularly when Google and Apple are known for providing services that compete directly against other online businesses. 
 
-<p>Even the untouchable banking industry is being <a href="http://www.moneynews.com/FinanceNews/Google-bank-Glass-Wallet/2013/05/24/id/506256" target="_blank">threatened by Google Wallet</a> and Google Glass. 
+<p>Even the untouchable banking industry is being threatened by Google Wallet and Google Glass. 
 
 <h2>Can open-source keep up?</h2>
 

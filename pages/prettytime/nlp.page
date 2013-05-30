@@ -24,7 +24,7 @@
 
 <h1 class="project-header" style="font-size: 3.2em;">PrettyTime :: NLP</h1>
 
-<center><h2 style="margin-bottom: 35px;">The simplest, smallest natural language <font color="green">java.util.Date</font> and <font color="green">human time</font> parsing library for Java: Computers understanding humans. </h2></center>
+<center><h2 style="margin-bottom: 35px;">The simplest, smallest natural language <font color="green">java.util.Date</font> and <font color="green">human time</font> parsing library for Java: Computers understanding people. </h2></center>
 
 <div class="featured">
 <p style="margin-top: 10px; margin-bottom: 0px;"><strong>PrettyTime</strong> is an OpenSource, Java Library - enabling simple parsing and computer understanding of natural language, and social date references like, "let's go to dinner at 6," or "I'll be on vacation for three days". <a href="https://github.com/ocpsoft/prettytime">Get involved in the project &raquo;</a></p>
@@ -36,11 +36,6 @@
 <h2 class="toc">1. Include PrettyTime in your Project</h2>
 
 [snippit filename="Add PrettyTime :: NLP to your maven pom.xml" href="http://repo1.maven.org/maven2/org/ocpsoft/prettytime/" label="Or download the JARs"]
-<dependency>
-   <groupId>org.ocpsoft.prettytime</groupId>
-   <artifactId>prettytime</artifactId>
-   <version>${version.prettytime}</version>
-</dependency>
 <dependency>
    <groupId>org.ocpsoft.prettytime</groupId>
    <artifactId>prettytime-nlp</artifactId>

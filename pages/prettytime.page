@@ -27,7 +27,7 @@
 
 <div class=featured>PrettyTime is an OpenSource time formatting library. Completely customizable, it creates human readable, relative timestamps like those seen on Digg, Twitter, and Facebook. Get started "right now!" and in over <a href="#i18n">25 languages</a>!</div>
 
-<h2 style="font-size: 1.5em; margin-bottom: 25px;"><span class="toc">Get Started</span>, see how simple social date-formatting can be (2 steps) </h2>
+<h2 style="font-size: 1.5em; margin-bottom: 25px;"><span class="toc">Get Started</span>, see how simple social date-formatting can be (2 steps)</h2>
 
 <br/>
 
@@ -44,7 +44,7 @@
 <dependency>
    <groupId>org.ocpsoft.prettytime</groupId>
    <artifactId>prettytime</artifactId>
-   <version>3.0.0.Final</version>
+   <version>3.0.1.Final</version>
 </dependency>
 
 <!-- To use snapshots, you must also use the Sonatype Snapshots respository -->
@@ -131,6 +131,10 @@ Then you may attach PrettyTimeConverter to your JSF Date and timestamp outputs:
 (Get involved! <a href="https://github.com/ocpsoft/prettytime">Fork us on GitHub</a> and integrate with other frameworks! Feel free to send pull requests with enhancements and bug-fixes.)
 
 [section]
+
+<h2 class="toc">NEW! <a href="http://ocpsoft.org/prettytime/nlp/" title="NLP Java Date Parsing" target="_blank">PrettyTime :: NLP - Date and Time Parser</a></h2>
+
+Introducing the simplest and smallest standalone natural language date and time parser. Comprehend phrases like, "let's go to dinner at 7", and "every four days, I go to the store." <a href="http://ocpsoft.org/prettytime/nlp/" title="NLP Java Date Parsing" target="_blank">&raquo; Learn more. </a>
 
 <h2 class="toc">i18n and multiple-languages support</h2><a name="i18n"></a>
 

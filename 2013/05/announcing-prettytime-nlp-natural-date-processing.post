@@ -1,7 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20130528T18:49:45
-.date_modified 20130529T17:23:30
-.date_modified_gmt 20130529T21:23:30
+.date_modified 20130530T16:28:41
+.date_modified_gmt 20130530T20:28:41
 .link http://ocpsoft.org/opensource/announcing-prettytime-nlp-natural-date-processing/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -10,7 +10,7 @@
 .permaLink http://ocpsoft.org/opensource/announcing-prettytime-nlp-natural-date-processing/
 .post_status publish
 .postid 23802
-.title Announcing PrettyTime (NLP) Natural Date Processing
+.title Announcing PrettyTime :: NLP Natural Date Processing
 .userid 3
 .wp_author_display_name Lincoln Baxter III
 .wp_author_id 3
@@ -61,7 +61,7 @@
 
 <p>Using <a href="http://natty.joestelmach.com" target="_blank">Natty</a>, a light-weight date and time NLP parser, supporting English, we've integrated natural date and time parsing into our <a href="http://ocpsoft.org/prettytime/nlp/">PrettyTime: Java Date Formatting</a> library, which is already performing generation of natural language (social) timestamps to be read by humans. PrettyTime converts <code>java.lang.Date</code> objects into human readable forms such as, "10 minutes from now", or "3 days ago", and has been internationalized into 31 different languages.
 
-<p>Hopefully we'll find an open-source solution for NLP that supports internationalization (at least for dates and times), or maybe we can drum up enough interest to make this a reality, but for now, you can't finish if you don't start, and we're <a href="http://ocpsoft.org/prettytime/nlp/" target="_blank">starting with English</a>.
+<p>For now, you'll be able to parse phrases such as, "Let's get dinner next thursday" and "Easter party 2014" in English only, but hopefully we'll find an open-source solution for NLP that supports internationalization (at least for dates and times). We will try to drum up enough interest to make this a reality, but since you can't finish if you don't start, we're <a href="http://ocpsoft.org/prettytime/nlp/" target="_blank">starting with English</a>. 
 
 <h2>Fight the corporations, get involved in open-source.</h2>
 

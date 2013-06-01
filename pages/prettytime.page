@@ -25,7 +25,7 @@
 
 <center><h2 style="margin-bottom: 35px; margin-top: 15px;">Convert Java <font color=green>Date()</font> objects in just "<font color=green>a few minutes</font>!"</h2></center>
 
-<div class=featured>PrettyTime is an OpenSource time formatting library. Completely customizable, it creates human readable, relative timestamps like those seen on Digg, Twitter, and Facebook. Get started "right now!" and in over <a href="#i18n">25 languages</a>!</div>
+<div class=featured>PrettyTime is an OpenSource time formatting library. Completely customizable, it creates human readable, relative timestamps like those seen on Digg, Twitter, and Facebook. Get started "right now!" and in over <a href="#i18n">30 languages</a>!</div>
 
 <h2 style="font-size: 1.5em; margin-bottom: 25px;"><span class="toc">Get Started</span>, see how simple social date-formatting can be (2 steps)</h2>
 
@@ -44,7 +44,7 @@
 <dependency>
    <groupId>org.ocpsoft.prettytime</groupId>
    <artifactId>prettytime</artifactId>
-   <version>3.0.1.Final</version>
+   <version>3.0.2.Final</version>
 </dependency>
 
 <!-- To use snapshots, you must also use the Sonatype Snapshots respository -->

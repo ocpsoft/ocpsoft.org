@@ -88,7 +88,9 @@ public class ExampleConfigurationProvider extends HttpConfigurationProvider
 
 <h2 class="toc">3. Register your configuration provider</h2>
 
-Register your configuration provider by creating a file named: <code>/META-INF/services/org.ocpsoft.rewrite.config.ConfigurationProvider</code>. This file must contain the fully qualified name of your ConfigurationProvider implementation:
+Register your configuration provider by creating a file in the Java resources directory named: <code>/META-INF/services/org.ocpsoft.rewrite.config.ConfigurationProvider</code>. This file must contain the fully qualified name of your ConfigurationProvider implementation.
+
+[warn]The registration file must be created in <code>src/main/resources/META-INF/services</code>, along-side your Java resources. It must <strong>NOT</strong> be placed in the <code>src/main/webapp/META-INF</code> directory.[/warn]
 
 [snippit filename="/META-INF/services/org.ocpsoft.rewrite.config.ConfigurationProvider"]
 com.example.ExampleConfigurationProvider

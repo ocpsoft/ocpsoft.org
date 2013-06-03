@@ -22,7 +22,7 @@
 [toc]
 <h2 style="display:none;">Java Date and Time Natural Language Parsing NLP</h2>
 
-<h1 class="project-header" style="font-size: 3.2em;">PrettyTime :: NLP</h1>
+<h1 class="project-header notoc" style="font-size: 3.2em;">PrettyTime :: NLP</h1>
 
 <center><h2 style="margin-bottom: 35px;">The simplest, smallest natural language <font color="green">java.util.Date</font> and <font color="green">human time</font> parsing library for Java: Computers understanding people. </h2></center>
 

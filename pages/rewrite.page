@@ -22,7 +22,7 @@
 [toc]
 <h2 style="display:none;">URLRewriteFilter</h2>
 
-<h1 class="project-header">rewrite</span></h1>
+<h1 class="project-header notoc">rewrite</span></h1>
 
 <center><h2 style="margin-bottom: 35px;">The open-source <font color="green">Routing &uarr;&darr;</font> and <font color="green">/url/{rewriting}</font> solution for Servlet, Java Web Frameworks, and Java EE</h2></center>
 

@@ -21,7 +21,7 @@
 .wp_slug prettyfaces
 [toc/]
 
-<h1 class="project-header">prettyfaces</h1>
+<h1 class="project-header notoc">prettyfaces</h1>
 
 <center>
 <h2 style="margin-bottom: 25px; margin-left: 25px; margin-right: 25px;">The open-source <font color="green">/url/#{rewriting}</font> solution for Servlet, JSF, and Java EE</h2></center>

@@ -21,7 +21,7 @@
 .wp_slug prettytime
 [toc][/toc]
 
-<h1 class="project-header">prettytime</h1>
+<h1 class="project-header notoc">prettytime</h1>
 
 <center><h2 style="margin-bottom: 35px; margin-top: 15px;">Convert Java <font color=green>Date()</font> objects in just "<font color=green>a few minutes</font>!"</h2></center>
 

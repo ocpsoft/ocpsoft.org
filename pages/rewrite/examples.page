@@ -57,6 +57,51 @@ public class ExampleConfigurationProvider extends HttpConfigurationProvider
 }
 [/snippit]
 
+<h1>Activate a Configuration Based on Dev/Test/Production Environment Detection</h1>
+
+A frequent concern, is the ability to run configuration in a specific deployment environment. In this case, it is sometimes necessary to distinguish between test and production servers. Our recommendation for this is to use one of a few techniques. (This can be done in whichever manner fits your needs, but here are a few examples.)
+
+[snippit]
+public class EnvironmentDetectionConfigurationProvider extends HttpConfigurationProvider
+{
+   @Override
+   public Configuration getConfiguration(ServletContext context)
+   {
+      return ConfigurationBuilder
+               .begin()
+
+               // Using File Markers
+               .addRule().when(Filesystem.fileExists(new File("/root/env/server/production.marker")))
+               .perform(Subset.evaluate(ConfigurationBuilder.begin()
+                        // Your specific rules here
+               )
+
+               // Using URL domain detection
+               .addRule().when(Domain.matches("{server}.domain.com"))
+               .perform(Subset.evaluate(ConfigurationBuilder.begin()
+                        .addRule(Join.path("/production-monitor").to("/views/monitor.jsp?servername={server}"))
+                        // Your specific rules here (example using rule parameters)
+                        .where("server").matches("prod1|prod2|prod3"))
+               )
+
+               // Using a custom condition (example shows using a "-P" jvm system property)
+               .addRule()
+               .when(new HttpCondition() {
+                  @Override
+                  public boolean evaluateHttp(HttpServletRewrite event, EvaluationContext context)
+                  {
+                     return Boolean.getBoolean("production.mode.enabled"); // Using a system property.
+                  }
+               })
+               .perform(Subset.evaluate(ConfigurationBuilder.begin()
+                        .addRule().when(JAASRoles.required("admin"))
+                        .perform(Lifecycle.proceed()).otherwise(Forward.to("/login")))
+                        // Your specific rules here
+               );
+   }
+}
+[/snippit]
+
 <h1>Create a dynamic logout URL without the need for a Servlet or page</h1>
 Why write a full logout page, just to do what can be done with a single method call?
 [snippit]

@@ -116,10 +116,10 @@ Any business knows how important Search Engine Optimization can be for sales. Pr
 <p>This is where you will create URL mappings between external URL patterns and your internal view files, Servlets, and other resources. Be sure to replace the mapping below with a mapping that matches your application.
 
 [snippit filename="/WEB-INF/pretty-config.xml"]
-<pretty-config xmlns="http://ocpsoft.org/prettyfaces/3.3.3" 
-               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-               xsi:schemaLocation="http://ocpsoft.org/prettyfaces/3.3.3
-               http://ocpsoft.org/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.3.3.xsd">
+<pretty-config xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
+                      http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
 
 	<url-mapping id="login">
 		<pattern value="/login" />

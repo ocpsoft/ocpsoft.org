@@ -49,10 +49,9 @@ Any business knows how important Search Engine Optimization can be for sales. Pr
 
 <h2 class="toc">1. Include PrettyFaces in your Project</h2>
 
-<p>You may either use Maven (recommended) to include PrettyFaces in your project, or you can download the JAR file directly. 
+<p>You may either use Maven (recommended) to include PrettyFaces in your project, or you can download the distribution ZIP file directly. 
 
-<span class="toc" style="visibility: hidden;">&nbsp;&nbsp;&nbsp;- via Maven</span>
-
+<a name="download"></a>
 [snippit filename="Add PrettyFaces to your maven pom.xml" href="http://repo1.maven.org/maven2/org/ocpsoft/rewrite/rewrite-distribution/" label="Or download the ZIP"]
 <!-- for JSF 2.x -->
 <dependency>
@@ -74,44 +73,7 @@ Any business knows how important Search Engine Optimization can be for sales. Pr
 </dependency>
 [/snippit]
 
-<a name="download"></a>
-<span  class="toc" style="visibility: hidden;">&nbsp;&nbsp;&nbsp;- via direct JAR download</span></span>
-
-<p>You may also place the appropriate JAR file into the <code>/WEB-INF/lib</code> directory of your Java web-application. Skip this step if you have already installed PrettyFaces via Maven.
-
-<center class="well">
-<p><strong>JSF1.1</strong> &gt; <strong>3.3.3:</strong> <a href="http://repo1.maven.org/maven2/com/ocpsoft/prettyfaces-jsf11/3.3.3/prettyfaces-jsf11-3.3.3.jar">jar</a>, <a href="http://repo1.maven.org/maven2/com/ocpsoft/prettyfaces-jsf11/3.3.3/prettyfaces-jsf11-3.3.3-sources.jar">src</a>, <a target="_blank" href="http://ocpsoft.org/prettyfaces/v123/">doc</a></p>
-<p><strong>JSF1.2</strong> &gt; <strong>3.3.3:</strong> <a href="http://repo1.maven.org/maven2/com/ocpsoft/prettyfaces-jsf12/3.3.3/prettyfaces-jsf12-3.3.3.jar">jar</a>, <a href="http://repo1.maven.org/maven2/com/ocpsoft/prettyfaces-jsf12/3.3.3/prettyfaces-jsf12-3.3.3-sources.jar">src</a>, [[PrettyFaces Docs|doc]]</p>
-<p><strong>JSF2.0</strong> &gt; <strong>4.0:</strong> [[PrettyFaces Docs|doc]]</p>
-</center>
-
-
-<h2 class="toc">2. Configure PrettyFaces in your web.xml</h2>
-
-<p>Skip this step if you are running in a Servlet 3.0+ environment; PrettyFaces will configure itself. 
-
-[snippit filename="/WEB-INF/web.xml"]
-<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
-
-   <filter>
-      <filter-name>Pretty Filter</filter-name>
-      <filter-class>com.ocpsoft.pretty.PrettyFilter</filter-class>
-      <async-supported>true</async-supported>
-   </filter>
-
-   <filter-mapping> 
-      <filter-name>Pretty Filter</filter-name> 
-      <url-pattern>/*</url-pattern> 
-      <dispatcher>FORWARD</dispatcher> 
-      <dispatcher>REQUEST</dispatcher> 
-      <dispatcher>ERROR</dispatcher>
-      <dispatcher>ASYNC</dispatcher>
-   </filter-mapping>
-
-</web-app>
-[/snippit]
-
-<h2 class="toc">3. Create pretty-config.xml</h2>
+<h2 class="toc">2. Create pretty-config.xml</h2>
 
 <p>This is where you will create URL mappings between external URL patterns and your internal view files, Servlets, and other resources. Be sure to replace the mapping below with a mapping that matches your application.
 
@@ -129,10 +91,12 @@ Any business knows how important Search Engine Optimization can be for sales. Pr
 </pretty-config>
 [/snippit]
 
-<h3>Add more mappings to your configuration</h3>
+<h3>Add mappings to your configuration</h3>
 
-<p>This part is all up to you! You'll need to figure out which URLs in your application you want to "prettify" - so check out the [[PrettyFaces Docs|documentation]] for details on how to fully utilize the PrettyFaces URL-mapping system.</a>
+<p>This part is all up to you! You'll need to figure out which URLs in your application you want to "prettify" - so check out the [[PrettyFaces Docs|documentation]] for details on how to fully utilize the PrettyFaces URL-mapping system.
 
+<p>Additionally, be sure to check out the <a href="http://ocpsoft.org/rewrite/examples/" title="URL Rewriting Examples" target="_blank">Rewrite examples</a> or <a href="http://ocpsoft.org/rewrite/docs/" target="_blank">reference manual</a> to learn more about [[Rewrite]], and the powerful options it offers beyond the PrettyFaces configuration module.
+ 
 [code]
 <url-mapping id="view-user">
 	<pattern value="/user/{username}" />
@@ -142,17 +106,17 @@ Any business knows how important Search Engine Optimization can be for sales. Pr
 <!-- Maps "/user/{username}" to the URL "/user/view.xhtml?username=value" -->
 [/code]
 
-
-[section]
-
-<h2 class="toc">Run your application!</h2>
+<h2 class="toc">3. Run your application!</h2>
 You should now be ready to go! PrettyFaces is installed and your first URL-mapping has been created. If everything has been done correctly, you should see PrettyFaces log a message confirming that setup was successful.
 
 [command]
-INFO  [com.ocpsoft.pretty.PrettyFilter] (thread 1-1) PrettyFilter starting up...
-INFO  [com.ocpsoft.pretty.PrettyFilter] (thread 1-1) PrettyFilter initialized.
-[/command]
+INFO  [org.ocpsoft.rewrite.servlet.RewriteFilter] RewriteFilter starting up...
+...
+INFO  [org.ocpsoft.rewrite.servlet.RewriteFilter] Loaded [] org.ocpsoft.rewrite.config.ConfigurationProvider [org.ocpsoft.rewrite.prettyfaces.PrettyFacesRewriteConfigurationProvider<1>]
+INFO  [org.ocpsoft.rewrite.servlet.RewriteFilter] RewriteFilter initialized.[/command]
 
+
+[section]
 
 
 <h2 class="toc">Documentation (Need help?)</h2> 
@@ -206,10 +170,10 @@ View a slideshare presentation on <a href="http://ocpsoft.org/prettyfaces/jsfsum
 	<p>
 	For example:
 [snippit filename="pretty-config.xml"]
-<pretty-config xmlns="http://ocpsoft.org/prettyfaces/3.3.3" 
-               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-               xsi:schemaLocation="http://ocpsoft.org/prettyfaces/3.3.3
-               http://ocpsoft.org/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.3.3.xsd">
+<pretty-config xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
+                      http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
 	<url-mapping id="login">
 		<pattern value="/login" />
 		<view-id value="/legacy/user/login.jsp" /> <!-- Non JSF View Id -->

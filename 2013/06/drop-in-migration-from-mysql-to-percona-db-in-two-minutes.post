@@ -1,0 +1,88 @@
+.categories ['Linux']
+.dateCreated 20130614T23:21:01
+.date_modified 20130614T23:21:17
+.date_modified_gmt 20130615T03:21:17
+.link http://ocpsoft.org/linux/drop-in-migration-from-mysql-to-percona-db-in-two-minutes/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/linux/drop-in-migration-from-mysql-to-percona-db-in-two-minutes/
+.post_status publish
+.postid 24189
+.title Drop-in migration from MySQL to Percona DB in two minutes
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug drop-in-migration-from-mysql-to-percona-db-in-two-minutes
+<p>Percona DB is a drop-in replacement for the MySQL database, and as you'd hope for a business model based on providing out-of-box performance enhancements, the install is a complete breeze.
+<!--more-->
+<h2>Install Percona on Debian/Ubuntu</h2>
+
+<p>First step, get the software:
+
+[command]
+gpg --keyserver  hkp://keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
+gpg -a --export CD2EFD2A | sudo apt-key add -
+[/command]
+
+<p>Next, add the following entries to <code>/etc/apt/sources.list</code>, replacing "VERSION" with the name of your distribution:
+
+[code]
+deb http://repo.percona.com/apt VERSION main
+deb-src http://repo.percona.com/apt VERSION main
+[/code]
+
+<p>Once this is done, you are ready to install, but since it's probably a good idea to back up the database first, you should probably run a few more commands, for safety's sake:
+
+[command]
+cp -Rf /var/lib/mysql /var/lib/mysql-old
+cp /etc/my.cnf /etc/my.cnf-old
+[/command]
+
+<p>Now, we're ready to run install the Percona packages, which will take care of automatically stopping, removing, and replacing any existing MySQL packages:
+
+[command]
+apt-get update
+apt-get install percona-server-server-5.5 percona-server-client-5.5
+[/command]
+
+<p>Once this completes, you'll want to verify that everything works as expected, and that your existing sites are running normally. If all goes well, you should notice a marked performance improvement in your database layer.
+
+<h2>Install Percona on Red Hat, Fedora, and CentOS</h2>
+
+<p>First step, set up the software sources and verify that the repository configuration was successful:
+
+[command]
+rpm -Uhv http://www.percona.com/downloads/percona-release/percona-release-0.0-1.x86_64.rpm
+yum list | grep percona
+
+
+// You should see the output similar to the following:
+percona-release.x86_64                     0.0-1                       installed
+...
+Percona-Server-client-51.x86_64            5.1.47-rel11.1.51.rhel5     percona
+Percona-Server-devel-51.x86_64             5.1.47-rel11.1.51.rhel5     percona
+Percona-Server-server-51.x86_64            5.1.47-rel11.1.51.rhel5     percona
+Percona-Server-shared-51.x86_64            5.1.47-rel11.1.51.rhel5     percona
+Percona-Server-test-51.x86_64              5.1.47-rel11.1.51.rhel5     percona
+...
+xtrabackup.x86_64                          1.2-22.rhel5                percona
+[/command]
+
+<p>Once this is complete, you can now proceed to run the install, which will take care of automatically stopping, removing, and replacing any existing MySQL packages:
+
+[command]
+yum install Percona-Server-client-55 Percona-Server-server-55
+[/command]
+
+<p>Once this completes, you'll want to verify that everything works as expected, and that your existing sites are running normally. If all goes well, you should notice a marked performance improvement in your database layer.
+
+<h2>Additional Resources</h2>
+
+For additional resources, check out the Percona documentation:
+<a href="http://www.percona.com/doc/percona-server/5.5/installation.html?id=percona-server:installation:from-repositories" target="_blank"></a>

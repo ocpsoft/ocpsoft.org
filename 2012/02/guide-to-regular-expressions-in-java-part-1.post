@@ -1,7 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20120222T20:12:23
-.date_modified 20130216T14:19:52
-.date_modified_gmt 20130216T19:19:52
+.date_modified 20130617T12:57:08
+.date_modified_gmt 20130617T16:57:08
 .link http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -117,6 +117,7 @@ If we want the expression to be able to handle this situation, then we need to m
 
 Now the expression will allow an optional <code>":"</code> directly after the word ‘my’.
 
+[info]<a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/#!;t=I%20lost%20my%20wallet%0AI%20lost%20my%20sablefish%0AI%20lost%20my%20parrot%0AI%20lost%20my%3A%20trooper&r=I%20lost%20my%3A%3F%20%5Cw%2B&x=" title="Visual Java Regex Tester" target="_blank">Try this example online</a> with our Visual Java Regex Tester.[/info]
 
 
 
@@ -145,6 +146,8 @@ The new expression will now match the beginning of the string <code>“I lost my
 "I lost my cell phone"		matches
 "I lost my marbles"		matches
 </pre>
+
+[info]<a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/#!;t=I%20lost%20my%20wallet%0AI%20lost%20my%20sablefish%0AI%20lost%20my%20parrot%0AI%20lost%20my%3A%20trooper%0AI%20lost%20my%3A%20car%0AI%20lost%20my%20cell%20phone&r=I%20lost%20my%3A%3F%20(wallet%7Ccar%7Ccell%20phone%7Cmarbles)&x=" title="Visual Java Regex Tester" target="_blank">Try this example online</a> with our Visual Java Regex Tester[/info]
 
 As you can see, the combinations for matches quickly become very large. This is not the complete set, as there are several more phrases that would match our simple pattern. 
 
@@ -212,6 +215,8 @@ public class ValidateDemo {
 <blockquote><pre lang="text">Found good SSN: 123-45-6789</br>
 Found good SSN: 192-83-7465</pre></blockquote>
 
+[info]<a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/#!;t=123-45-6789%0A9876-5-4321%0A987-65-4321%20(attack)%0A987-65-4321%20%0A192-83-7465&r=(%3Fm)%5E(%5Cd%7B3%7D-%3F%5Cd%7B2%7D-%3F%5Cd%7B4%7D)%24&x=Found%20good%20SSN%3A%20%241" title="Visual Java Regex Tester" target="_blank">Try this example online</a> with our Visual Java Regex Tester [/info]
+
 <h5>Dissecting the pattern:</h5>
 
 <pre lang="java">
@@ -226,7 +231,7 @@ Found good SSN: 192-83-7465</pre></blockquote>
 $		match the end of the line
 </pre>
 
-
+<
 
 
 
@@ -259,6 +264,8 @@ public class ExtractDemo {
 
 <blockquote><pre lang="text">Found a cat.
 Found a dog.</pre></blockquote>
+
+[info]<a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/#!;t=I%20have%20a%20cat%2C%20but%20I%20like%20my%20dog%20better.&r=(mouse%7Ccat%7Cdog%7Cwolf%7Cbear%7Chuman)&x=" title="Visual Java Regex Tester" target="_blank">Try this example online</a> with our Visual Java Regex Tester[/info]
 
 <h5>Dissecting the pattern:</h5>
 
@@ -309,6 +316,8 @@ public class ReplaceDemo {
 <blockquote><pre lang="text">Masking: 23421
 Masking: 33432
 User clientId=***masked***. Some more text clientId=***masked***. This clientNum=100.</pre></blockquote>
+
+[info]<a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/#!;t=User%20clientId%3D23421.%20Some%20more%20text%20clientId%3D33432.%20This%20clientNum%3D100&r=(clientId%3D)(%5Cd%2B)&x=***masked***" title="Visual Java Regex Tester" target="_blank">Try this example online</a> with our Visual Java Regex Tester[/info]
 
 <h5>Dissecting the pattern:</h5>
 

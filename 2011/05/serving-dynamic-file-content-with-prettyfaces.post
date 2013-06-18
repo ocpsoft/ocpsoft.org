@@ -1,7 +1,7 @@
 .categories ['PrettyFaces']
 .dateCreated 20110515T12:15:27
-.date_modified 20110517T15:08:10
-.date_modified_gmt 20110517T19:08:10
+.date_modified 20130617T15:55:33
+.date_modified_gmt 20130617T19:55:33
 .link http://ocpsoft.org/prettyfaces/serving-dynamic-file-content-with-prettyfaces/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -118,3 +118,35 @@ As you can see serving other resources than HTML files is very easy using Pretty
 </ul>
 
 The possibilities are limitless, and if you are able to share, we would love for you to post below and let us know how you've used this feature, or used PrettyFaces in general!
+
+[info] UPDATE - Example of this same barcode server using a single <a href="http://ocpsoft.org/rewrite/" target="_blank">Rewrite</a> configuration rule (does not require backing bean or blank JSF view):[/info]
+
+[snippit filename="Rewrite configuration barcode Rule"]public class ExampleConfigurationProvider extends HttpConfigurationProvider
+{
+
+   @Override
+   public Configuration getConfiguration(final ServletContext context)
+   {
+      return ConfigurationBuilder.begin()
+         .addRule()
+         .when(Direction.isInbound()
+                      .and(Path.matches("/barcode/{id}.png")))
+         .perform(new HttpOperation() {
+             public void performHttp(HttpServletRewrite event, EvaluationContext context) {
+                 String id = (String) Evaluation.property("id").retrieve(event, context);
+
+                 HttpServletResponse response = event.getResponse();
+                 // set correct content type
+                 response.setContentType("image/png");
+ 
+                 // setup CanvasProvider to render bitmap to response stream
+                 BitmapCanvasProvider canvas = new BitmapCanvasProvider(response.getOutputStream(), "image/png", 150, BufferedImage.TYPE_BYTE_BINARY, false, 0);
+ 
+                 // render barcode
+                 Interleaved2Of5Bean barcode = new Interleaved2Of5Bean();
+                 barcode.generateBarcode(canvas, id);
+                 canvas.finish();
+             }
+         });
+   }
+}[/snippit]

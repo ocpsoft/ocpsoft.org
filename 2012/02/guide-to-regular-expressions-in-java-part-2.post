@@ -1,7 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20120223T20:11:31
-.date_modified 20130216T17:18:15
-.date_modified_gmt 20130216T22:18:15
+.date_modified 20130617T13:17:05
+.date_modified_gmt 20130617T17:17:05
 .link http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-2/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -92,6 +92,8 @@ p4ssword: does not match
 p4ssw0rd: matches
 p45sword: matches</code></blockquote>
 
+[info]<a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/#!;t=password%0Ap4ssword%0Ap4ssw0rd%0Ap45sword&r=(%3Fm)%5E(%3F%3D.*%5B0-9%5D.*%5B0-9%5D)%5B0-9a-zA-Z%5D%7B8%2C12%7D%24&x=%240%20VALID" title="Visual Java Regex Tester" target="_blank">Try this example online</a> with our Visual Java Regex Tester[/info]
+
 <h4>Dissecting the pattern:</h4>
 <blockquote><code>"^(?=.*[0-9].*[0-9])[0-9a-zA-Z]{8,12}$"</code></blockquote>
 <pre lang="perl">
@@ -175,6 +177,8 @@ In order to toggle flags for the entire expression, the statement must be at the
 </pre>
 The above expression will ignore case, and will set the dot ‘.’ character to include newlines.
 
+[info]<a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/#!;t=I%20lost%20my%20wallet&r=(%3Fidx)%5EI%5Cs%20lost%5Cs%20my%5Cs%20.%2B%20%20%20%20%20%23this%20comment%20and%20all%20spaces%20will%20be%20ignored&x=" title="Visual Java Regex Tester" target="_blank">Try this example online</a> with our Visual Java Regex Tester[/info]
+
 
 <h5 class="toc">2.8.2. Local toggle</h5>
 In order to toggle flags for the a single non-capturing group, the group must adhere to the following syntax
@@ -182,6 +186,8 @@ In order to toggle flags for the a single non-capturing group, the group must ad
 "(?idx:Cars)[a-z]+
 </pre>
 The above expression will ignore case within the group, but adhere to case beyond.
+
+[info]<a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/#!;t=cars%20and%20Cars&r=(%3Fidx%3ACars)&x=" title="Visual Java Regex Tester" target="_blank">Try this example online</a> with our Visual Java Regex Tester[/info]
 
 <h5 class="toc">2.8.3. Applied in Java</h5>
 [snippit filename="Sample code"]

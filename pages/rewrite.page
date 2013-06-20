@@ -131,14 +131,16 @@ Just include the corresponding extension in your pom.xml file in order to add fu
 
 You should now be ready to go! Rewrite is installed, and your first configuration provider is enabled. If everything has been done correctly, you should see Rewrite log a message confirming registration of your configuration providers (in priority order.)
 
-<h2><span class="toc">Read the Documentation</span></h2>
-Our <a href="http://ocpsoft.org/rewrite/docs/">Rewrite Manual</a> is a work in progress, but continues to grow daily. There is a lot you can do with this framework, and we are taking our time to make sure that our examples behave as advertised.
-
 [command]
 RewriteFilter starting up...
 Loaded [1] org.ocpsoft.rewrite.config.ConfigurationProvider [com.example.ExampleRewriteConfiguration<0>]
 RewriteFilter initialized.
 [/command]
+
+<h2><span class="toc">Read the Documentation</span></h2>
+<p>Our <a href="http://ocpsoft.org/rewrite/docs/">Rewrite Manual</a> is a work in progress, but continues to grow daily. There is a lot you can do with this framework, and we are taking our time to make sure that our examples behave as advertised.
+
+<p>You may also wish to read the <a href="http://ocpsoft.org/rewrite/docs/configuration/install" target="_blank">installation guide</a> or <a href="http://ocpsoft.org/rewrite/docs/configuration/" target="_blank">configuration manual</a>, including instructions for using <a href="http://ocpsoft.org/rewrite/docs/configuration/annotations/" target="_blank">Rewrite annotations</a>, or <a href="http://ocpsoft.org/rewrite/docs/migration/prettyfaces3" target="_blank">migrating from PrettyFaces 3.x</a>.
 
 <br/>
 <a name="getinvolved"></a>

@@ -21,10 +21,11 @@
 .wp_slug examples
 [toc/]
 
-Frequently the best way to learn how to use a technology is to see examples of how it has been used in similar situations. Here are some examples of how to use [[Rewrite]]'s core Servlet functionality in common scenarios. For the purpose of brevity, extraneous code has been omitted.
+<p>Frequently the best way to learn how to use a technology is to see examples of how it has been used in similar situations. Here are some examples of how to use [[Rewrite]]'s core Servlet functionality in common scenarios. For the purpose of brevity, extraneous code has been omitted.
 
-<h2 class="toc">Extending the configuration</h2>
-When using the Rewrite Servlet module, most important configuration classes can be found in the <a href="https://github.com/ocpsoft/rewrite/tree/master/impl-servlet/src/main/java/org/ocpsoft/rewrite/servlet/config">org.ocpsoft.rewrite.servlet.config</a> package. We continue to add new Conditions, Operations, and Rules, but you may always simply implement your own if something you are looking for does not exist. If you do, please help out the rest of the community and consider <a href="https://github.com/ocpsoft/rewrite">contributing your objects</a> back to the project.
+[info]Before you get started with Rewrite, you may wish to read the <a href="http://ocpsoft.org/rewrite/docs/configuration/install" target="_blank">installation guide</a> or <a href="http://ocpsoft.org/rewrite/docs/configuration/" target="_blank">configuration manual</a>, including instructions for using <a href="http://ocpsoft.org/rewrite/docs/configuration/annotations/" target="_blank">Rewrite annotations</a>, or <a href="http://ocpsoft.org/rewrite/docs/migration/prettyfaces3" target="_blank">migrating from PrettyFaces 3.x</a>.[/info]
+
+<p>The following examples will show a few ways to get started using Rewrite; however, in reality, rewrite is a flexible tool, and be used for any purpose, not limited to those listed below.
 
 <h1>Join an inbound URL to a server-side resource:</h1>
 Typically the most basic task - masking the URL of an internal resource with another URL of your choice.
@@ -253,3 +254,7 @@ public class JaasRolesTestProvider extends HttpConfigurationProvider
    }
 }
 [/snippit]
+
+
+<h2 class="toc">Extending the configuration</h2>
+When using the Rewrite Servlet module, most important configuration classes can be found in the <a href="https://github.com/ocpsoft/rewrite/tree/master/impl-servlet/src/main/java/org/ocpsoft/rewrite/servlet/config">org.ocpsoft.rewrite.servlet.config</a> package. We continue to add new Conditions, Operations, and Rules, but you may always simply implement your own, or combine existing configuration objects to achieve a new result if something you are looking for does not exist. If you do, please help out the rest of the community and consider <a href="https://github.com/ocpsoft/rewrite">contributing your objects</a> back to the project.

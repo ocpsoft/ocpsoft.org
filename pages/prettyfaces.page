@@ -59,12 +59,12 @@ Any business knows how important Search Engine Optimization can be for sales. Pr
 <dependency>
     <groupId>org.ocpsoft.rewrite</groupId>
     <artifactId>rewrite-servlet</artifactId>
-    <version>2.0.1.Final</version>
+    <version>2.0.3.Final</version>
 </dependency>
 <dependency>
     <groupId>org.ocpsoft.rewrite</groupId>
     <artifactId>rewrite-config-prettyfaces</artifactId>
-    <version>2.0.1.Final</version>
+    <version>2.0.3.Final</version>
 </dependency>
 
 <!-- for JSF 1.2.x -->

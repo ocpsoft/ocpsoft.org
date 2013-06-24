@@ -1,7 +1,7 @@
 .categories ['Java', 'JBoss', 'OpenSource', 'Technology']
 .dateCreated 20130225T21:03:44
-.date_modified 20130225T21:20:45
-.date_modified_gmt 20130226T02:20:45
+.date_modified 20130623T08:33:00
+.date_modified_gmt 20130623T12:33:00
 .link http://ocpsoft.org/java/setting-up-google-oauth2-with-java/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -22,7 +22,7 @@
 [toc]
 <img src="http://ocpsoft.org/wp-content/uploads/2013/02/oauth_logo.png" alt="oauth_logo" width="300" height="298" class="pull-right size-full wp-image-5431" style="margin-left: 15px; margin-bottom: 15px;" />
 
-<p>For all of you who are trying to figure out how to integrate with Google's single sign-on functionality (like I've done for my own startup at <a href="http://tripgather.com" target="_blank">tripgather.com</a>), this article might be for you. I've taken the liberty of condensing all of the actual logic required to perform OAuth Google login, and provided it as a class and a JSP (seen below). In order to follow along better, I suggest cloning the <a href="http://github.com/mdanter/OAuth2v1" target="_blank">example GitHub repository</a>, and deploying to the application to your <a href="http://jboss.org/jbossas">server of choice</a>.</p>
+<p>For all of you who are trying to figure out how to integrate with Google's single sign-on functionality, this article might be for you. I've taken the liberty of condensing all of the actual logic required to perform OAuth Google login, and provided it as a class and a JSP (seen below). In order to follow along better, I suggest cloning the <a href="http://github.com/mdanter/OAuth2v1" target="_blank">example GitHub repository</a>, and deploying to the application to your <a href="http://jboss.org/jbossas">server of choice</a>.</p>
 <!--more-->
 <h2 class="toc">Assumptions</h2>
 
@@ -109,7 +109,7 @@ $ mvn clean install
 
 <h2 class="toc">Source Code</h2>
 
-<p>The authentication is possible thanks to the <code>GoogleAuthorizationCodeFlow</code> class. This class uses the Builder pattern to provide most of its functionality. GoogleAuthHelper's no-argument constructor initializes the Flow using your client ID, secret, and other constants. The <code>buildLoginUrl()</code> method constructs the Google authentication URL based on the <code>CALLBACK_URI</code> and returns it as a Java String. This <code>CALLBACK_URI</code> must match one of the redirect URIs that you set up at Google's API Access page. Upon successful authentication, OAuth2 will redirect you to <code>CALLBACK_URI</code>, and append the <b>state</b> and <b>code</b> GET request parameters to it. Please note, that the state request parameter is only to help differentiate authentication providers (i.e. Facebook OAuth, Google OAuth, or your own custom OAuth provider). </p>
+<p>The authentication is possible thanks to the <code>GoogleAuthorizationCodeFlow</code> class. This class uses the Builder pattern to provide most of its functionality. GoogleAuthHelper's no-argument constructor initializes the Flow using your client ID, secret, and other constants. The <code>buildLoginUrl()</code> method constructs the Google authentication URL based on the <code>CALLBACK_URI</code> and returns it as a Java String. This <code>CALLBACK_URI</code> must match one of the redirect URIs that you set up at Google's API Access page. Upon successful authentication, OAuth2 will redirect you to <code>CALLBACK_URI</code>, and append the <b>state</b> and <b>code</b> GET request parameters to it. Please note, that the <b>state</b> request parameter has two purposes, one is to help differentiate authentication providers (i.e. Facebook OAuth, Google OAuth, or your own custom OAuth provider), the other and more important purpose is to pass an anti-forgery state token. </p>
 
 <p>We need to use the <b>code</b> GET request parameter as the input for the 	<code>getUserInfoJson(String authCode)</code> method. If all is well, this method will return a JSON encoded Google profile as a Java String.</p>
 
@@ -129,7 +129,15 @@ if (request.getParameter("code") == null
 	 */
 	out.println("<a href='" + helper.buildLoginUrl() + "'>log in with google</a>");
 
-} else if (request.getParameter("code") != null && request.getParameter("state").equals("google")) {
+	/*
+	 * set the secure state token in session to be able to track what we sent to google
+	 */
+	session.setAttribute("state", helper.getStateToken());
+
+
+} else if (request.getParameter("code") != null && request.getParameter("state") != null && request.getParameter("state").equals(session.getAttribute("state"))) {
+
+	session.removeAttribute("state");
 
 	/*
 	 * Executes after google redirects to the callback url.
@@ -169,7 +177,8 @@ public final class GoogleAuthHelper {
 	private static final JsonFactory JSON_FACTORY = new JacksonFactory();
 	private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
 	// end google authentication constants
-	
+
+	private String stateToken;
 	
 	private final GoogleAuthorizationCodeFlow flow;
 	
@@ -179,6 +188,7 @@ public final class GoogleAuthHelper {
 	public GoogleAuthHelper() {
 		flow = new GoogleAuthorizationCodeFlow.Builder(HTTP_TRANSPORT,
 				JSON_FACTORY, CLIENT_ID, CLIENT_SECRET, SCOPE).build();
+		generateStateToken();
 	}
 
 	/**
@@ -188,9 +198,27 @@ public final class GoogleAuthHelper {
 		
 		final GoogleAuthorizationCodeRequestUrl url = flow.newAuthorizationUrl();
 		
-		return url.setRedirectUri(CALLBACK_URI).setState("google").build();
+		return url.setRedirectUri(CALLBACK_URI).setState(stateToken).build();
 	}
 	
+	/**
+	 * Generates a secure state token 
+	 */
+	private void generateStateToken(){
+
+		SecureRandom sr1 = new SecureRandom();
+
+		stateToken = "google;"+sr1.nextInt();
+
+	}
+
+	/**
+	 * Accessor for state token
+	 */
+	public String getStateToken(){
+		return stateToken;
+	}
+
 	/**
 	 * Expects an Authentication Code, and makes an authenticated request for the user's profile information
 	 * @return JSON formatted user profile information
@@ -224,4 +252,3 @@ public final class GoogleAuthHelper {
 	<li><a href="https://code.google.com/p/google-api-java-client/wiki/OAuth2">Google APIs Client Library for Java</a></li>
 	<li><a href="https://developers.google.com/accounts/docs/OAuth2#libraries">Using OAuth 2.0 to Access Google APIs</a></li>
 </ul>
-

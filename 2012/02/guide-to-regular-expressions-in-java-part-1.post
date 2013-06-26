@@ -1,7 +1,7 @@
 .categories ['OpenSource']
 .dateCreated 20120222T20:12:23
-.date_modified 20130617T12:57:08
-.date_modified_gmt 20130617T16:57:08
+.date_modified 20130625T14:58:54
+.date_modified_gmt 20130625T18:58:54
 .link http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -26,13 +26,8 @@ Often unknown, or heralded as confusing, regular expressions (regex) have define
 <h2 class="toc">Part 1: What are Regular Expressions?</h2>
 Regular expressions are a language of string patterns built in to most modern programming languages, including <a target="_blank" href="http://java.sun.com/javase/6/docs/api/java/util/regex/Pattern.html">Java 1.4 onward</a>; they can be used for: searching, extracting, and modifying text. This chapter will cover basic syntax and use.
 
-[info]This article is part one in the series: "[[Regular Expressions]]." Read <a href="http://ocpsoft.com/opensource/guide-to-regular-expressions-in-java-part-2/">part two</a> for more information on lookaheads, lookbehinds, and configuring the matching engine. To get a more visual look into how regular expressions work, try our <a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/" title="Java visual regex tester" target="_blank">visual java regex tester</a>. You can also watch a video to <a href="javascript:" data-toggle="collapse" data-target="#regextestvid">see how the visual regex tester works.</a>
+[info]This article is part one in the series: "[[Regular Expressions]]." Read <a href="http://ocpsoft.com/opensource/guide-to-regular-expressions-in-java-part-2/">part two</a> for more information on lookaheads, lookbehinds, and configuring the matching engine. To get a more visual look into how regular expressions work, try our <a href="http://ocpsoft.org/tutorials/regular-expressions/java-visual-regex-tester/" title="Java visual regex tester" target="_blank">visual java regex tester</a>. You can also watch a video to <a href="http://www.youtube.com/watch?v=Fq2ppqBU3wo" target="_blank">see how the visual regex tester works.</a>
 [/info]
-
-
-<div id="regextestvid" class="collapse">
-<iframe width="420" height="315" src="http://www.youtube-nocookie.com/embed/hjzpf2p0sFI?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
 
 <h2 class="toc">1. Syntax</h2>
 <a name="syntax"></a>Regular expressions, by definition, are string patterns that describe text. These descriptions can then be used in nearly infinite ways. The basic language constructs include character classes, quantifiers, and meta-characters.

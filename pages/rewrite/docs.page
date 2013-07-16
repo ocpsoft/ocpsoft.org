@@ -16,7 +16,7 @@
 .wp_page_order 0
 .wp_page_parent_id 2646
 .wp_page_parent_title Rewrite
-.wp_page_template page-redoculous.php
+.wp_page_template page-full.php
 .wp_password 
 .wp_slug docs
 [toc]
@@ -36,8 +36,8 @@
    function reloadToC() {
       document.title = $("#redoculous h2").filter(":first").text() + " | OCPsoft";
       $('html,body').scrollTop(0);
-      $("#toc").css("position", "relative");
-      toc_init(".entry h2, .entry h3");
+      #$(".sidebar > #toc").css("position", "relative");
+      #toc_init(".sidebar #toc", ".entry h2, .entry h3");
    }
 </script>
 

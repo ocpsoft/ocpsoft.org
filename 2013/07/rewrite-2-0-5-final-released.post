@@ -1,0 +1,41 @@
+.categories ['OpenSource']
+.dateCreated 20130726T09:07:00
+.date_modified 20130726T09:08:31
+.date_modified_gmt 20130726T13:08:31
+.link http://ocpsoft.org/opensource/rewrite-2-0-5-final-released/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/opensource/rewrite-2-0-5-final-released/
+.post_status publish
+.postid 24394
+.title Rewrite 2.0.5.Final Released
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug rewrite-2-0-5-final-released
+<p>We are pleased to announce the release of <a href="http://ocpsoft.org/rewrite/">Rewrite 2.0.5.Final</a>, which includes several bug fixes and enhancements.
+
+<p>Rewrite is an OpenSource, Filter-based Servlets extension for Java – enabling creation of bookmark-able, pretty URLs. Rewrite solves the “RESTful URL” problem elegantly, including features such as: page-load actions, managed parameter parsing, seamless integration with CDI, Spring, and configuration-free compatibility with other web frameworks.
+
+<h3>Bug fixes in 2.0.5.Final</h3>
+<p><a href="https://github.com/ocpsoft/rewrite/issues/109">Issue #109</a> - Context root is appended twice when using Navigate.to() class <br/>
+<a href="https://github.com/ocpsoft/rewrite/issues/110">Issue #110</a> - View IDs with hard-coded query parameters were working in PrettyFaces 3, but no longer in PrettyFaces with Rewrite.
+
+<p>Other critical issues fixed in prior releases have continued to be tested for security holes. If you use container-based security, and have not yet upgraded from Rewrite 2.0.3.Final, you should <b>Immediately</b> upgrade to 2.0.4 or 2.0.5.Final because of the following issue:
+
+<h3>Critical issue in 2.0.0.Final -> 2.0.3.Final</h3>
+<p><a href="https://github.com/ocpsoft/rewrite/issues/111">Issue 111</a> - Container based security is circumvented when Rewrite is installed
+
+<h3>Documentation improvements</h3>
+<p>Additionally, we (mostly Christian) have put a good deal of work into the documentation and migration guide from Rewrite 1.x and PrettyFaces to Rewrite 2.x: You can find that guide here: http://ocpsoft.org/rewrite/docs/migration/prettyfaces3 - which is part of a larger effort to <a href="https://docs.google.com/document/d/17B03_n1OpsdEcqnmha0ch13xjz1pikiEagLgkMjIgFE/edit" target="_blank">improve our documentation</a> entirely. And of course, if you have any questions or concerns, please let us know on the <a href="http://ocpsoft.org/support/" target="_blank">forums</a>, or submit an issue to our <a href="https://github.com/ocpsoft/rewrite" target="_blank">issue tracker</a>.
+
+<p>Go <a href="http://ocpsoft.org/rewrite/">get Rewrite</a> now!</p>
+
+<p>We hope you enjoy this latest release of Rewrite!<br/>
+~Lincoln and the Rewrite Team

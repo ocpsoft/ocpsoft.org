@@ -51,7 +51,7 @@ Any business knows how important Search Engine Optimization can be for sales. Pr
 
 <p>You may either use Maven (recommended) to include PrettyFaces in your project, or you can download the distribution ZIP file directly. 
 
-[info]If you are upgrading from PrettyFaces 3.x, you may wish to review the <a href="http://ocpsoft.org/rewrite/docs/migration/prettyfaces3" target="_blank">migration guide</a>.[/info]
+[info]If you are upgrading from PrettyFaces 3.x, note that all functionality is backwards compatible, but you may wish to review the <a href="http://ocpsoft.org/rewrite/docs/migration/prettyfaces3" target="_blank">migration guide</a> to learn about new features made available in the latest releases.[/info]
 
 <a name="download"></a>
 [snippit filename="Add PrettyFaces to your maven pom.xml" href="http://repo1.maven.org/maven2/org/ocpsoft/rewrite/rewrite-distribution/" label="Or download the ZIP"]

@@ -42,19 +42,23 @@
 <tr valign="top">
 
 <td><h1>Community Donors - $1-24</h1>
+<p>
 <ul>
-	<li><a target="_blank">Holger Prang</a></li>
+	<li><a href="http://www.e-koncept.co.nz/" target="_blank">http://www.e-koncept.co.nz/</a></li>
+	<li>Holger Prang</li>
 	<li><a href="#give" target="_blank">You?</a></li>
 </ul></td>
 
 <td><h1>Premium Donors - $25-49</h1>
+<p>
 <ul>	<li><a target="_blank" href="http://www.w0mb.at/">Daniel Sachse</a></li>
 	<li><a target="_blank"  href="https://plus.google.com/102516208312961178993" target="_blank">Cody Lerum</a></li>
 	<li><a target="_blank"  href="http://twitter.com/cavemancraig" target="_blank">Craig Schwarzwald</a></li>
-<ul>	<li><a target="_blank" href="http://www.linkedin.com/in/natashanewman">Natasha Newman</a></li>
+	<li><a target="_blank" href="http://www.linkedin.com/in/natashanewman">Natasha Newman</a></li>
 </ul></td>
 
 <td><h1>Champion Donors - $50+</h1>
+<p>
 <ul>
 	<li><a target="_blank" href="http://www.dna-tr.com">DNA | encoding the future</a></li>
 	<li><a href="#give" target="_blank">You?</a></li>
@@ -72,7 +76,19 @@
 
 
 </center>
-
+<p>
 Thank you for your generous support. There are many ways to give back to our Projects - with <a href="https://github.com/ocpsoft/prettyfaces" title="PrettyFaces Source Code on GitHub" target="_blank">code</a>, blogs, tweets, financial support - and we are very grateful! This is a list of donors who have contributed their hard earned money to keep our project running. We also keep a list of <a href="http://ocpsoft.org/prettyfaces/contributors/" target="_blank">contributors</a> who have sent patches or been leaders in the OCPsoft community.
+
+<h3>Community Allies</h3>
+<p>
+We are also proud to recommend our community allies: companies or individuals who have contributed to our success via blogs, software donations, or in other ways.
+<p>
+
+<ul>
+	<li><a href="http://www.mastertheboss.com/servlet-30/rewrite-a-java-ee-url-rewring-solution" title="MasterTheBoss.com" target="_blank">MasterTheBoss.com</a></li>
+	<li><a href="http://www.togglz.org/" title="Togglz - Java Feature Toggles for Hot Switching" target="_blank">Togglz - Java Feature Toggles for Hot Switching</a></li>
+</ul>
+
+
 
 </center>

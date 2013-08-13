@@ -1,0 +1,24 @@
+.categories ['Announcement']
+.dateCreated 20130812T12:40:06
+.date_modified 20130812T12:44:36
+.date_modified_gmt 20130812T16:44:36
+.link http://ocpsoft.org/announcement/rewrite-servlet-toolkit-and-java-url-rewriting-library-featured-on-mastertheboss-com/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/announcement/rewrite-servlet-toolkit-and-java-url-rewriting-library-featured-on-mastertheboss-com/
+.post_status publish
+.postid 24555
+.title Rewrite - Servlet Toolkit and Java URL-rewriting library featured on MasterTheBoss.com
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug rewrite-servlet-toolkit-and-java-url-rewriting-library-featured-on-mastertheboss-com
+<p>Just in case you would like to see a little tutorial of using [[Rewrite]], our friends over at <a href="http://www.mastertheboss.com">mastertheboss.com</a> have written up a quick tutorial explaining how to use Rewrite and get started using CDN relocation to save server bandwidth. Be sure to <a href="http://www.mastertheboss.com/servlet-30/rewrite-a-java-ee-url-rewring-solution">check out the tutorial</a> to see some very interesting use-cases that can be solved simply with Rewrite.
+
+<p>Rewrite is a URL-rewriting and Servlet application framework intended to simplify tasks such as inbound request redirection, url-mapping, and outbound response modification. It provides a simple configuration API and annotation framework that makes customizing your Servlet applications simple.

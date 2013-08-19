@@ -132,7 +132,7 @@ Then you may attach PrettyTimeConverter to your JSF Date and timestamp outputs:
 
 [section]
 
-<h2 class="toc">NEW! <a href="http://ocpsoft.org/prettytime/nlp/" title="NLP Java Date Parsing" target="_blank">PrettyTime :: NLP - Date and Time Parser</a></h2>
+<h2 class="toc"><a href="http://ocpsoft.org/prettytime/nlp/" title="NLP Java Date Parsing" target="_blank">PrettyTime :: NLP - Date and Time Parser</a></h2>
 
 Introducing the simplest and smallest standalone natural language date and time parser. Comprehend phrases like, "let's go to dinner at 7", and "every four days, I go to the store." <a href="http://ocpsoft.org/prettytime/nlp/" title="NLP Java Date Parsing" target="_blank">&raquo; Learn more. </a>
 

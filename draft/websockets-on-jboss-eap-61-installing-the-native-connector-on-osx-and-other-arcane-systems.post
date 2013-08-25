@@ -1,0 +1,71 @@
+.categories ['JBoss']
+.dateCreated 20130824T14:23:22
+.date_modified 20130824T14:23:22
+.date_modified_gmt 20130824T18:23:22
+.link http://ocpsoft.org/?p=24703
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/?p=24703
+.post_status draft
+.postid 24703
+.title Websockets on JBoss EAP 6.1: Installing the Native Connector on OSX (And other arcane systems.)
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug 
+First things first - Make sure you have GCC47+ installed: 
+
+[command]
+brew tap homebrew/versions
+brew install gcc47
+[/command]
+
+Download the source archive: http://www.jboss.org/jbossweb/downloads/jboss-native-2-0-10.html
+
+[command]
+wget http://downloads.jboss.org/jbossnative/2.0.10.GA/jboss-native-2.0.10-src-ssl.tar.gz
+gunzip jboss-native-2.0.10-src-ssl.tar.gz
+tar -xvf jboss-native-2.0.10-src-ssl.tar
+cd -xvf jboss-native-2.0.10-src-ssl/
+[/command]
+
+Now it's time to build:
+
+
+[command]
+./build.sh
+[/command]
+
+Once this is done, copy the native connector libraries into a folder called $JBOSS_HOME/bin/native (you will need to create this directory.)
+
+[command]
+mkdir $JBOSS_HOME/bin/native
+cp -R      BLAH      $JBOSS_HOME/bin/native
+[/command]
+
+Next, you'll need to add the native libraries to the EAP java.library.path by editing $JBOSS_HOME/bin/standalone.conf,
+
+Add a line like this at the end, adding the new $JBOSS_HOME/bin/native folder to the java library path:
+[code]
+JAVA_OPTS="$JAVA_OPTS -Djboss.modules.system.pkgs=$JBOSS_MODULES_SYSTEM_PKGS -Djava.awt.headless=true -Djava.library.path=/Users/lb3/lib/jboss-eap-6.1/bin/native"
+[/code]
+
+[warn]
+<b>NOTE:</b> YOU MUST USE THE FULL PATH TO THE NATIVE LIBRARIES.
+[/warn]
+
+Last step: now it is time to tell JBoss EAP to use the native connectors, so you'll need to edit $JBOSS_HOME/standalone/configuration/standalone.xml
+
+Find the line that looks like this, and change <code>native="false"</code> to <code>native="false"</code>:
+
+[code]
+<subsystem xmlns="urn:jboss:domain:web:1.4" default-virtual-server="default-host" native="false">
+<!-- becomes -->
+<subsystem xmlns="urn:jboss:domain:web:1.4" default-virtual-server="default-host" native="true">
+[/code]

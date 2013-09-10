@@ -1,0 +1,30 @@
+.categories ['Java']
+.dateCreated 20130909T15:10:51
+.date_modified 20130909T15:11:09
+.date_modified_gmt 20130909T19:11:09
+.link http://ocpsoft.org/java/java-ee-7-samples-and-quickstarts/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/java/java-ee-7-samples-and-quickstarts/
+.post_status publish
+.postid 24850
+.title 160+ Java EE 7 Samples and Quickstarts
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug java-ee-7-samples-and-quickstarts
+<p>If you are looking for examples on how to use some of the new or improved features of Java EE 7, I highly recommend checking out this <a href="https://github.com/arun-gupta/javaee7-samples" title="Java EE 7 Samples">git repository</a> from Arun Gupta.
+
+<a href="https://github.com/arun-gupta/javaee7-samples">https://github.com/arun-gupta/javaee7-samples</a>
+
+<p>He has created over 160 samples that should work on every EE application server. If you find a bug, it's likely a bug in the particular container you are using, but Arun is also welcoming feedback on these examples. So if there's something you'd like to see that isn't there, let him know. Additionally, if there's something there that isn't done right, speak up and he'll fix it!
+
+<p>This is a great resource for the Java Enterprise Ecosystem :)
+
+<p>~Lincoln

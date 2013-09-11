@@ -50,7 +50,6 @@ data-redoculous="https://redoculous-lincolnbaxter.rhcloud.com"
 data-repo="https://github.com/ocpsoft/rewrite.git"
 data-ref="master" 
 data-repo-root="/documentation/src/main/asciidoc" 
-data-root="/rewrite/docs"
-data-onload="reloadToC();">
+data-root="/rewrite/docs">
 Loading documentation...
 </div>

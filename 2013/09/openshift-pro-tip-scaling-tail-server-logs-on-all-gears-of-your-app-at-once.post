@@ -1,0 +1,52 @@
+.categories ['JBoss', 'OpenShift']
+.dateCreated 20130911T17:58:37
+.date_modified 20130911T18:28:38
+.date_modified_gmt 20130911T22:28:38
+.link http://ocpsoft.org/jboss/openshift-pro-tip-scaling-tail-server-logs-on-all-gears-of-your-app-at-once/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/jboss/openshift-pro-tip-scaling-tail-server-logs-on-all-gears-of-your-app-at-once/
+.post_status publish
+.postid 24862
+.title OpenShift Pro-tip - scaling: tail server logs on all gears of your app at once
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug openshift-pro-tip-scaling-tail-server-logs-on-all-gears-of-your-app-at-once
+[info]UPDATE: I've <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1007095">filed an issue</a> for this feature request. Until it is completed, you will need to use the command below.[/info]
+
+<p>So i've recently started working on making <a href="http://redoculous.io">http://redoculous.io</a> function better in a cluster, to support scaling out for large-scale use, and I've been working with <a href="http://openshift.com/">http://openshift.com/</a> as my PaaS hosting provider. I started to run into some problems where I wasn't sure if the cluster was responding how I wanted to.
+
+<p>Being a good developer, my application has logging, so I know that if I can just watch the logs as they occur (or sift through them after the fact), I can probably figure out what is wrong, and fix it.
+
+<p>Unfortunately, running <code>rhc tail <app></code> will tail the gear running HA-proxy, but not the gears running the actual application, or any of the duplicate gears if HA-proxy is sharing a gear with an app! You'll just get HA-proxy logs or maybe one of your application gears if you are lucky. What to do? I ran crying for help to the #openshift channel on IRC, where the openshift gurus quickly set me straight. This is all you need to do (for the 'jbosseap' cartridge, at least):
+
+[command]
+rhc ssh <app> --gears 'tail -f jbosseap/logs/*';
+[/command]
+
+<p>The <code>rhc ssh</code> command will execute a command on each of your gears simultaneously, and stream the output to your termainal, which is just an absolute perfect match for <code>tail -f</code>. Note, though, that you'll need to pass in your application name, and the path to your logs on each gear (which should be fairly easy to find out if you ssh in and take a look around. The <a href="https://www.openshift.com/page/openshift-environment-variables#Directories">log location</a> is even <a href="https://www.openshift.com/page/openshift-environment-variables#Directories">documented</a> for your cartridge on the openshift site: ) 
+
+I retrieved it using the same <code>rhc ssh</code> command:
+
+[command]
+sharktop:gems lb3$ rhc ssh redoculous --gears 'echo $OPENSHIFT_JBOSSEAP_LOG_DIR';
+[gear1name jbosseap-6+haproxy-1.4] /var/lib/openshift/gear1name/jbosseap/logs/
+[gear2name jbosseap-6+haproxy-1.4] /var/lib/openshift/gear2name/jbosseap/logs/
+[gear3name jbosseap-6+haproxy-1.4] /var/lib/openshift/gear3name/jbosseap/logs/
+[/command]
+
+<p>So in this case, the log-dir relative to the home directory is just, <code>jbosseap/logs</code>. Good to go!
+<hr>
+<p>Now, I do think that this would be much better suited as <code>rhc tail-all <app></code> (DOES NOT CURRENTLY WORK), but I'll just have to file an issue request, or maybe take a stab at the code here if nobody beats me to it:
+
+<p><a href="https://github.com/openshift/rhc/blob/master/lib/rhc/commands/tail.rb#L18">https://github.com/openshift/rhc/blob/master/lib/rhc/commands/tail.rb#L18</a> <br/>
+<a href="https://github.com/openshift/rhc/blob/master/lib/rhc/commands/ssh.rb#L37">https://github.com/openshift/rhc/blob/master/lib/rhc/commands/ssh.rb#L37</a>
+
+<p>I hope this helps. Good luck, openshifters!

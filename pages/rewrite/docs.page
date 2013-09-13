@@ -49,6 +49,7 @@
 data-redoculous="https://redoculous-lincolnbaxter.rhcloud.com"
 data-repo="https://github.com/ocpsoft/rewrite.git"
 data-ref="master" 
+data-history="false"
 data-repo-root="/documentation/src/main/asciidoc" 
 data-root="/rewrite/docs">
 Loading documentation...

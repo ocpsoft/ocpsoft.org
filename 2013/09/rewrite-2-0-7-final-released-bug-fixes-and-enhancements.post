@@ -1,0 +1,43 @@
+.categories ['Java', 'Releases']
+.dateCreated 20130915T22:44:00
+.date_modified 20130915T22:45:08
+.date_modified_gmt 20130916T02:45:08
+.link http://ocpsoft.org/java/rewrite-2-0-7-final-released-bug-fixes-and-enhancements/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/java/rewrite-2-0-7-final-released-bug-fixes-and-enhancements/
+.post_status publish
+.postid 24901
+.title Rewrite 2.0.7.Final Released - Bug fixes and enhancements
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug rewrite-2-0-7-final-released-bug-fixes-and-enhancements
+<p>We are glad to announce the latest version of [[Rewrite]], servlet toolkit and URL-rewriting extensions. This release includes serveral bug fixes and enhancements:
+
+<h2>Issues resolved</h2>
+
+<ul>
+	<li><a href="https://github.com/ocpsoft/rewrite/issues/128">https://github.com/ocpsoft/rewrite/issues/128</a> - NullPointerException in ResponseContentInterceptor when no output written to ServletResponse</li>
+	<li><a href="https://github.com/ocpsoft/rewrite/pull/124">https://github.com/ocpsoft/rewrite/pull/124</a> - Extended AddressBuilder to support custom Schemes.</li>
+	<li><a href="https://github.com/ocpsoft/rewrite/issues/122">https://github.com/ocpsoft/rewrite/issues/122</a> - Bookstore app only works on AS7</li>
+	<li><a href="https://github.com/ocpsoft/rewrite/pull/120">https://github.com/ocpsoft/rewrite/pull/120</a> - Added check if binding supports retrieval in the method 'performRetrieval'</li>
+</ul>
+
+<h2>Upgrade to 2.0.7.Final</h2>
+
+<p>Read the <a href="http://ocpsoft.org/rewrite/docs/configuration/install" title="Rewrite Installation Guide">installation guide</a>, or <a href="http://ocpsoft.org/rewrite/docs/configuration/" title="Rewrite Configuration Manual">configuration manual</a>.
+
+[code]
+<dependency>
+   <groupId>org.ocpsoft.rewrite</groupId>
+   <artifactId>rewrite-servlet</artifactId>
+   <version>2.0.7.Final</version>
+</dependency>
+[/code]

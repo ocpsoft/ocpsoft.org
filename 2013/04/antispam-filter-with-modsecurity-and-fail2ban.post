@@ -1,7 +1,7 @@
 .categories ['OpenSource', 'Security', 'Web Services']
 .dateCreated 20130403T11:27:25
-.date_modified 20130410T14:26:26
-.date_modified_gmt 20130410T18:26:26
+.date_modified 20130916T09:57:05
+.date_modified_gmt 20130916T13:57:05
 .link http://ocpsoft.org/opensource/antispam-filter-with-modsecurity-and-fail2ban/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -191,6 +191,31 @@ And finally, we can pass it to the <code>xargs</code> command and perform the un
 [command]
 iptables -L -n | grep DROP | sed 's/.*[^-]--\s\+\([0-9\.]\+\)\s\+.*$/\1/g' | xargs -i{} iptables -D fail2ban-ModSec -s {} -j DROP
 [/command]
+
+<h3 class="toc">Reset all IPtables rules</h3>
+<p>You can always reset IPtables rules and let fail2ban start re-populating by running the following set of commands, or turning them into a script. (Source <a href="http://www.cyberciti.biz/tips/linux-iptables-how-to-flush-all-rules.html">cybercity</a>)
+
+A) Create /root/fw.stop /etc/init.d/fw.stop script using text editor such as vi:
+
+[code]
+#!/bin/sh
+echo "Restarting firewall and clearing rules"
+iptables -F
+iptables -X
+iptables -t nat -F
+iptables -t nat -X
+iptables -t mangle -F
+iptables -t mangle -X
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+[/code]
+
+<p>Make it executable:
+[command]chmod +x /root/iptables-reset[/command]
+
+<p>Now you can run:
+[command]/root/iptables-reset[/command]
 
 <h2 class="toc">Conclusion</h2>
 <p>Please feel free to post comments, improvements, or extensions to this article. I hope that you now have a grasp on some of the fundamental principals of securing the website, while still allowing friendly traffic, but there is obviously a world of work to be done here to achieve a tolerant yet secure rule set.

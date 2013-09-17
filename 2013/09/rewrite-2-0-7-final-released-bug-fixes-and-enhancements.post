@@ -1,7 +1,7 @@
 .categories ['Java', 'Releases']
 .dateCreated 20130915T22:44:00
-.date_modified 20130915T22:45:08
-.date_modified_gmt 20130916T02:45:08
+.date_modified 20130916T13:59:22
+.date_modified_gmt 20130916T17:59:22
 .link http://ocpsoft.org/java/rewrite-2-0-7-final-released-bug-fixes-and-enhancements/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -21,9 +21,41 @@
 .wp_slug rewrite-2-0-7-final-released-bug-fixes-and-enhancements
 <p>We are glad to announce the latest version of [[Rewrite]], servlet toolkit and URL-rewriting extensions. This release includes serveral bug fixes and enhancements:
 
+<h2>Simplified Configuration</h2>
+<p>We heard you! It is now much easier to register <code>ConfigurationProvider</code> objects. You can forget about creating a service file, and simply use the convenient <code>@RewriteConfiguration</code> annotation:
+
+[code]
+import org.ocpsoft.logging.Logger.Level;
+import org.ocpsoft.rewrite.annotation.RewriteConfiguration;
+import org.ocpsoft.rewrite.config.Configuration;
+import org.ocpsoft.rewrite.config.ConfigurationBuilder;
+import org.ocpsoft.rewrite.config.Log;
+import org.ocpsoft.rewrite.servlet.config.HttpConfigurationProvider;
+
+@RewriteConfiguration
+public class ApplicationConfigurationProvider extends HttpConfigurationProvider
+{
+   @Override
+   public Configuration getConfiguration(ServletContext context)
+   {
+      return ConfigurationBuilder.begin()
+         .addRule()
+         .perform(Log.message(Log.message(Level.INFO, "Rewrite is active.")))
+      ;
+   }
+
+   @Override
+   public int priority()
+   {
+      return 0;
+   }
+}
+[/code]
+
+
 <h2>Issues resolved</h2>
 
-<ul>
+<ul>	<li><a href="https://github.com/ocpsoft/rewrite/issues/123">https://github.com/ocpsoft/rewrite/issues/123</a> - Rewrite should have a @RewriteConfiguration annotation for simpler configuration provider registration</li>
 	<li><a href="https://github.com/ocpsoft/rewrite/issues/128">https://github.com/ocpsoft/rewrite/issues/128</a> - NullPointerException in ResponseContentInterceptor when no output written to ServletResponse</li>
 	<li><a href="https://github.com/ocpsoft/rewrite/pull/124">https://github.com/ocpsoft/rewrite/pull/124</a> - Extended AddressBuilder to support custom Schemes.</li>
 	<li><a href="https://github.com/ocpsoft/rewrite/issues/122">https://github.com/ocpsoft/rewrite/issues/122</a> - Bookstore app only works on AS7</li>

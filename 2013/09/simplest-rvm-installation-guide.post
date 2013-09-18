@@ -1,0 +1,38 @@
+.categories ['OpenSource']
+.dateCreated 20130917T10:29:23
+.date_modified 20130917T14:51:37
+.date_modified_gmt 20130917T18:51:37
+.link http://ocpsoft.org/opensource/simplest-rvm-installation-guide/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/opensource/simplest-rvm-installation-guide/
+.post_status publish
+.postid 24931
+.title Simplest RVM Installation Guide
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 24936
+.wp_slug simplest-rvm-installation-guide
+Run this command to install the <code>rvm</code> command, a very simple and intuitive "Ruby Version Manager":
+
+[command]
+mkdir -p ~/.rvm/src && cd ~/.rvm/src && rm -rf ./rvm && \
+git clone --depth 1 git://github.com/wayneeseguin/rvm.git && \
+cd rvm && ./install && \
+echo "if [[ -s $HOME/.rvm/scripts/rvm ]]; then source $HOME/.rvm/scripts/rvm; fi" >> ~/.bashrc
+[/command]
+
+<b>Edit:</b> Oops, I guess it can get even simpler: (Yes, the '\' is intentional.)
+[command]\curl -L https://get.rvm.io | bash[/command]
+
+Now use it:
+
+[command]rvm install 1.9.3[/command]
+
+Source: <a href="http://portertech.ca/2010/03/26/homebrew--rvm--awesome/" target="_blank">An awesome Canadian website.</a>

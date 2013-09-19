@@ -67,8 +67,12 @@
 
 Add one class, a configuration provider, which implements the primary <code>org.ocpsoft.rewrite.config.ConfigurationProvider</code> interface. In a Servlet environment, you may also extend from the abstract <code>HttpConfigurationProvider</code> class for convenience:
 
+[info]<b>NOTE:</b> The <code>@RewriteConfiguration</code> annotation must be added to your provider class to activate your configuration; otherwise, Rewrite will ignore it![/info]
+
 [snippit filename="Implement a ConfigurationProvider"]
 package com.example;
+
+@RewriteConfiguration
 public class ExampleConfigurationProvider extends HttpConfigurationProvider
 {
    @Override
@@ -88,25 +92,13 @@ public class ExampleConfigurationProvider extends HttpConfigurationProvider
 }
 [/snippit]
 
-
-<h2 class="toc">3. Register your configuration provider</h2>
-
-Register your configuration provider by creating a file in the Java resources directory named: <code>/META-INF/services/org.ocpsoft.rewrite.config.ConfigurationProvider</code>. This file must contain the fully qualified name of your ConfigurationProvider implementation.
-
-[warn]The registration file must be created in <code>src/main/resources/META-INF/services</code>, along-side your Java resources. It must <strong>NOT</strong> be placed in the <code>src/main/webapp/META-INF</code> directory. <b>Note:</b> If you do not use Maven, you should place this file in your Java Resources directory, such as <code>src/META-INF/services</code>, but this location may differ depending on how your project is configured.[/warn]
-
-[snippit filename="/META-INF/services/org.ocpsoft.rewrite.config.ConfigurationProvider"]
-com.example.ExampleConfigurationProvider
-[/snippit]
-
-
-<h2 class="toc">4. Add rules to your configuration</h2>
+<h2 class="toc">3. Add rules to your configuration</h2>
 Condition objects such as <code>Direction.isInbound()</code> and <code>Path.matches(...)</code> can be found in the common <code>org.ocpsoft.rewrite.config.*</code> and <code>org.ocpsoft.rewrite.servlet.config.*</code> packages. If you can describe what you want to do, you can use fluent rewrite conditions and operations.
 
 [info]Take a look at some <a href="http://ocpsoft.org/rewrite/examples/">example configuration</a>.[/info]
 
 
-<h2 class="toc">5. Use Rewrite extensions for extra power</h2>
+<h2 class="toc">4. Use Rewrite extensions for extra power</h2>
 
 <ul>
  	<li><a href="https://github.com/ocpsoft/rewrite/tree/master/config-jodatime">JodaTime Integration</a></li>
@@ -143,7 +135,7 @@ RewriteFilter initialized.
 <h2><span class="toc">Read the Documentation</span></h2>
 <p>Our <a href="http://ocpsoft.org/rewrite/docs/">Rewrite Manual</a> is a work in progress, but continues to grow daily. There is a lot you can do with this framework, and we are taking our time to make sure that our examples behave as advertised.
 
-<p>You may also wish to read the <a href="http://ocpsoft.org/rewrite/docs/configuration/install" target="_blank">installation guide</a> or <a href="http://ocpsoft.org/rewrite/docs/configuration/" target="_blank">configuration manual</a>, including instructions for using <a href="http://ocpsoft.org/rewrite/docs/configuration/annotations/" target="_blank">Rewrite annotations</a>, or <a href="http://ocpsoft.org/rewrite/docs/migration/prettyfaces3" target="_blank">migrating from PrettyFaces 3.x</a>.
+<p>You may also wish to read the <a href="http://ocpsoft.org/rewrite/docs/configuration/install/" target="_blank">installation guide</a> or <a href="http://ocpsoft.org/rewrite/docs/configuration/" target="_blank">configuration manual</a>, including instructions for using <a href="http://ocpsoft.org/rewrite/docs/configuration/annotations/" target="_blank">Rewrite annotations</a>, or <a href="http://ocpsoft.org/rewrite/docs/migration/prettyfaces3" target="_blank">migrating from PrettyFaces 3.x</a>.
 
 <br/>
 <a name="getinvolved"></a>

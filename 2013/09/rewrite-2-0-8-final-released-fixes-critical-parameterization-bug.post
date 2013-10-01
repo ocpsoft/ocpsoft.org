@@ -1,0 +1,49 @@
+.categories ['JBoss', 'Releases', 'Rewrite']
+.dateCreated 20130930T02:43:30
+.date_modified 20130930T03:19:58
+.date_modified_gmt 20130930T07:19:58
+.link http://ocpsoft.org/releases/rewrite-2-0-8-final-released-fixes-critical-parameterization-bug/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/releases/rewrite-2-0-8-final-released-fixes-critical-parameterization-bug/
+.post_status publish
+.postid 25062
+.title Rewrite 2.0.8.Final Released - Fixes critical parameterization bug
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug rewrite-2-0-8-final-released-fixes-critical-parameterization-bug
+<h2>Bug Fixes</h2>
+
+<p>If you experienced problems with rule parameterization in Rewrite 2.0.7.Final, then sorry about that, and this release of [[Rewrite]] is for you: <a href="https://github.com/ocpsoft/rewrite/issues/133" target="_blank">https://github.com/ocpsoft/rewrite/issues/133</a>
+
+<p>Erroneous failures such as the following exception should be fixed by this release: 
+
+[code]
+org.ocpsoft.rewrite.exception.ParameterizationException: The value of required parameter [s] was null.
+	at org.ocpsoft.rewrite.param.RegexParameterizedPatternBuilder.extractBoundValues(RegexParameterizedPatternBuilder.java:262)
+	at org.ocpsoft.rewrite.param.RegexParameterizedPatternBuilder.build(RegexParameterizedPatternBuilder.java:136)
+	at org.ocpsoft.rewrite.servlet.config.Forward.performHttp(Forward.java:85)
+	at org.ocpsoft.rewrite.servlet.config.HttpOperation.perform(HttpOperation.java:42)
+	at org.ocpsoft.rewrite.servlet.config.rule.Join.perform(Join.java:264)
+[/code]
+
+<h2>New Features</h2>
+<ul><li>
+<p>Rewrite will now display version information at application boot time: <a href="https://github.com/ocpsoft/rewrite/issues/129" target="_blank">https://github.com/ocpsoft/rewrite/issues/129</a>
+
+[code]
+02:37:34,570 INFO  [org.ocpsoft.rewrite.servlet.RewriteFilter] (ServerService Thread Pool -- 68) Rewrite 2.0.8.Final initialized.
+[/code]
+</li>
+
+<li>
+<p>Compilation mode may now be set on JRuby based Transform modules: <a href="https://github.com/ocpsoft/rewrite/issues/131" target="_blank">https://github.com/ocpsoft/rewrite/issues/131</a>
+</li>
+</ul>

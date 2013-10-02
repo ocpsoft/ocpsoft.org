@@ -1,0 +1,53 @@
+.categories ['OpenSource']
+.dateCreated 20131001T14:57:33
+.date_modified 20131001T14:57:33
+.date_modified_gmt 20131001T18:57:33
+.link http://ocpsoft.org/?p=25088
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/?p=25088
+.post_status draft
+.postid 25088
+.title Creating a dynamic logout URL using Rewrite Servlet Toolkit
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug 
+
+
+[code]
+@RewriteConfiguration
+public class LogoutConfiguration extends HttpConfigurationProvider
+{
+
+   @Inject
+   private LoginController controller;
+
+   @Override
+   public Configuration getConfiguration(ServletContext context)
+   {
+      return ConfigurationBuilder.begin()
+               .addRule()
+               .when(Direction.isInbound().and(Path.matches("/logout")))
+               .perform(new HttpOperation() {
+                  @Override
+                  public void performHttp(HttpServletRewrite event, EvaluationContext context)
+                  {
+                     controller.logout();
+                  }
+               }.and(Redirect.temporary(context.getContextPath() + "/")));
+   }
+
+   @Override
+   public int priority()
+   {
+      return 100;
+   }
+}
+[/code]

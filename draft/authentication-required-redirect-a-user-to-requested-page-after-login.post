@@ -1,0 +1,43 @@
+.categories ['OpenSource']
+.dateCreated 20131001T16:15:48
+.date_modified 20131001T16:15:48
+.date_modified_gmt 20131001T20:15:48
+.link http://ocpsoft.org/?p=25089
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/?p=25089
+.post_status draft
+.postid 25089
+.title Authentication required: Redirect a user to requested page after login
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug 
+[code]
+               /*
+                * User account page restriction and redirect to login page
+                */
+               .addRule()
+               .when(Path.matches("/account/{*}")
+                        .andNot(
+
+AuthenticationStatus.isLoggedIn(identity)
+
+
+))
+               .perform(Redirect.temporary(context.getContextPath() + "/login?returnTo={url}"))
+               .where("url").bindsTo(new ValueBinding() {
+                  @Override
+                  public Object retrieve(Rewrite event, EvaluationContext context)
+                  {
+                     HttpServletRewrite servletRewrite = (HttpServletRewrite) event;
+                     return servletRewrite.getContextPath() + servletRewrite.getAddress().getPathAndQuery();
+                  }
+               });
+[/code]

@@ -1,0 +1,60 @@
+.categories ['OpenSource']
+.dateCreated 20131002T13:36:56
+.date_modified 20131002T13:36:56
+.date_modified_gmt 20131002T17:36:56
+.link http://ocpsoft.org/?p=25089
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/?p=25089
+.post_status draft
+.postid 25089
+.title Create a dynamic Logout URL without a Servlet or JSP, using Rewrite Servlet Toolkit 
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug 
+<p>The code below implements a simple command mapping that binds logout functionality to a URL. To use this example, you must include the following [[Rewrite]] dependency in your project:
+
+[code]
+<dependency>
+   <groupId>org.ocpsoft.rewrite</groupId>
+   <artifactId>rewrite-servlet</artifactId>
+   <version>${rewrite.version}</version>
+</dependency>
+[/code]
+
+<p>Once your project is set up to include Rewrite, just paste the following code into your application source folder.
+
+[code]
+@RewriteConfiguration
+public class LogoutConfiguration extends HttpConfigurationProvider
+{
+
+   @Override
+   public Configuration getConfiguration(ServletContext context)
+   {
+      return ConfigurationBuilder.begin()
+               .addRule()
+               .when(Direction.isInbound().and(Path.matches("/logout")))
+               .perform(new HttpOperation() {
+                  @Override
+                  public void performHttp(HttpServletRewrite event, EvaluationContext context)
+                  {
+                     event.getRequest().getSession().invalidate();
+                  }
+               }.and(Redirect.temporary(context.getContextPath() + "/")));
+   }
+
+   @Override
+   public int priority()
+   {
+      return Integer.MIN_VALUE;
+   }
+}
+[/code]

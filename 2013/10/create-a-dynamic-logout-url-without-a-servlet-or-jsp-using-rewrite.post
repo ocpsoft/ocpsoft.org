@@ -1,7 +1,7 @@
 .categories ['Rewrite']
 .dateCreated 20131003T08:00:34
-.date_modified 20131002T13:51:42
-.date_modified_gmt 20131002T17:51:42
+.date_modified 20131003T12:49:37
+.date_modified_gmt 20131003T16:49:37
 .link http://ocpsoft.org/rewrite-2/create-a-dynamic-logout-url-without-a-servlet-or-jsp-using-rewrite/
 .mt_allow_comments 1
 .mt_allow_pings 1

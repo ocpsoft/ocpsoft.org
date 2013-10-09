@@ -138,13 +138,16 @@ RewriteFilter initialized.
 <p>You may also wish to read the <a href="http://ocpsoft.org/rewrite/docs/configuration/install/" target="_blank">installation guide</a> or <a href="http://ocpsoft.org/rewrite/docs/configuration/" target="_blank">configuration manual</a>, including instructions for using <a href="http://ocpsoft.org/rewrite/docs/configuration/annotations/" target="_blank">Rewrite annotations</a>, or <a href="http://ocpsoft.org/rewrite/docs/migration/prettyfaces3" target="_blank">migrating from PrettyFaces 3.x</a>.
 
 <br/>
+<br/>
+<br/>
 <a name="getinvolved"></a>
 <div class="featured">
 <p style="margin-top: 10px; margin-bottom: 0px;">
-<h2 style="margin-top: 0px;" class="toc">Get involved</h2>
+<h2 style="margin-top: 0px;" class="notoc"><span class="toc">Get involved. Get the code.</span> <a href="https://travis-ci.org/ocpsoft/rewrite" target="_blank" rel="nofollow"><img src="https://travis-ci.org/ocpsoft/rewrite.png" data-bindattr-32="32" title="Build Status"></a></h2>
 <strong>Source</strong>: <a href="https://github.com/ocpsoft/rewrite">https://github.com/ocpsoft/rewrite</a><br/>
 <strong>Forums</strong>: <a href="http://ocpsoft.org/support/forum/rewrite-users/">http://ocpsoft.org/support/forum/rewrite-users/</a><br/>
 <strong>Get updates</strong>: <a href="http://ocpsoft.org/subscribe/">http://ocpsoft.org/subscribe/</a><br/>
+<strong>Continuous Integration</strong>: <a href="https://travis-ci.org/ocpsoft/rewrite" target="_blank" rel="nofollow">https://travis-ci.org/ocpsoft/rewrite</a>
 </p><p>
 Having trouble? Have an idea? <a href="https://github.com/ocpsoft/rewrite/issues" title="Report an issue">Report an issue.</a> </p>
 </div>

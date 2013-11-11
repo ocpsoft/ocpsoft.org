@@ -1,7 +1,7 @@
 .categories ['Facebook', 'OpenSource']
 .dateCreated 20120224T20:38:15
-.date_modified 20120807T23:49:40
-.date_modified_gmt 20120808T03:49:40
+.date_modified 20131110T12:05:42
+.date_modified_gmt 20131110T17:05:42
 .link http://ocpsoft.org/opensource/creating-a-facebook-app-setup-and-tool-installation/
 .mt_allow_comments 1
 .mt_allow_pings 1
@@ -25,7 +25,7 @@
 
 We’ve all heard of “mobile apps” that are sweeping the internet - stories of developers creating hit apps in their parents basements, or while having coffees at Starbucks. They strike it rich, quit their jobs, and retire wealthy before the age of 25; but first, lets set some reasonable expectations. Those stories do happen, and they make the news because they’re fun to hear about, but you might want to consider playing the lottery for some better odds if you really think you're next. I strongly believe that mobile apps (and/or HTML5 webpage apps) are the future of software development. Beyond that, social media is going to keep playing a greater and greater role in these applications.
 
-This article will take you through setting up a new Facebook app, from beginning to end. It is assumed that you are a developer, and as such are working on some UNIX based platform (all examples in this article will be from Ubuntu 11.10). Those working on Windows (like I may have been just last year) will have to find equivalent commands for certain parts, or decide to join the rest of the "real developer" community. It is worth noting here that <strong>I am not a JBoss employee</strong>, nor am I affiliated with them in any way. However I am friends with several of their lead developers, which probably helped my initial gravitation in that direction. You will see me reference JBoss projects many times throughout this tutorial, and while you are always free to use your own alternatives, you may need to deviate from my instructions to do so.
+This article will take you through setting up a new Facebook app, from beginning to end. It is assumed that you are a developer, and as such are working on some UNIX based platform (all examples in this article will be from Ubuntu 11.10). Those working on Windows (like I may have been just last year) will have to find equivalent commands for certain parts. It is worth noting here that <strong>I am not a JBoss employee</strong>, nor am I affiliated with them in any way. However I am friends with several of their lead developers, which probably helped my initial gravitation in that direction. You will see me reference JBoss projects many times throughout this tutorial, and while you are always free to use your own alternatives, you may need to deviate from my instructions to do so.
 <!--more-->
 [info]In <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-new-web-application-hosting-and-basic-facebook-functionality/" title="Creating a Facebook Application - Hosting | Basic Functionality">part two</a> of this series, we cover creating our project code, hosting it, and setting up basic facebook functionality; <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-3-creating-a-webservice-and-the-game/" title="Creating a Facebook Application - Hosting | Basic Functionality">part three</a> covers turning our application into a game.  Lastly, in <a href="http://ocpsoft.org/opensource/creating-a-facebook-app-with-java-part-4-integration-testing-with-arquillian/" title="Creating a Facebook Application - Hosting | Basic Functionality">part four</a> we set up automated integration test cases and a MySQL database.[/info] 
 

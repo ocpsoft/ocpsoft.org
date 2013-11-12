@@ -44,7 +44,7 @@
 <dependency>
    <groupId>org.ocpsoft.prettytime</groupId>
    <artifactId>prettytime</artifactId>
-   <version>3.1.0.Final</version>
+   <version>3.2.0.Final</version>
 </dependency>
 
 <!-- To use snapshots, you must also use the Sonatype Snapshots respository -->

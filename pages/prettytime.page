@@ -44,7 +44,7 @@
 <dependency>
    <groupId>org.ocpsoft.prettytime</groupId>
    <artifactId>prettytime</artifactId>
-   <version>3.2.0.Final</version>
+   <version>3.2.1.Final</version>
 </dependency>
 
 <!-- To use snapshots, you must also use the Sonatype Snapshots respository -->
@@ -147,6 +147,7 @@ Introducing the simplest and smallest standalone natural language date and time 
 	<li>Catalan - ca_ES: <span class="faded"><a href="https://github.com/mathpere" target="_blank">Mathieu</a></span></li>
 	<li>Chinese - ZH_CN: <span class="faded"">陈正华</span></li>	<li>Chinese (Taiwan) – ZH_TW: <a href="https://github.com/edwardinubuntu">edwardinubuntu</a></li>
 	<li>Croatian - Miroslav Rešetar</li>
+	<li>Czech - <a href="https://github.com/ocpsoft/prettytime/pull/62">Martin Kouba</a></li>
 	<li>Dutch - NL: <span class="faded">Bram Van Dam</span></li>
 	<li>English - DEFAULT</li>
 	<li>Estonian - Matti Jagula and Antti Markus</li>

@@ -1,0 +1,34 @@
+.categories ['OpenSource']
+.dateCreated 20131112T17:01:00
+.date_modified 20131112T17:01:00
+.date_modified_gmt 20131112T22:01:00
+.link http://ocpsoft.org/opensource/prettytime-3-2-1-final-released-now-with-czech-language-support/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/opensource/prettytime-3-2-1-final-released-now-with-czech-language-support/
+.post_status publish
+.postid 25365
+.title PrettyTime 3.2.1.Final Released - Now with Czech language support
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug prettytime-3-2-1-final-released-now-with-czech-language-support
+We are proud to announce the 3.2.1.Final version of PrettyTime. This release includes several bug-fixes, an improved NLP (time parsing) module, and a new method for more convenient configuration of time units:
+
+[code]
+public void exampleUnitConfiguration() {
+    JustNow unit = t.getUnit(JustNow.class);
+    unit.setMaxQuantity(1);
+    // This means that "just now" will only be used to represent one millisecond difference between the target time and reference time. (the default is 5 minutes.)
+}
+[/code]
+
+<p>Improvements in the NLP module (based on <a href="http://natty.joestelmach.com">Natty</a>.) include more resilient parsing of date offsets such as "the day before yesterday," which previously resulted in a date that actually represented "yesterday."
+
+<p>Get <a href="http://ocpsoft.org/prettytime/">PrettyTime 3.2.1.Final</a> and <a href="http://ocpsoft.org/prettytime/nlp/">PrettyTime NLP 3.2.1.Final</a>.</h2>

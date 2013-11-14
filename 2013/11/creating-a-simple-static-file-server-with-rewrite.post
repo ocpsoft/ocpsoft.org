@@ -1,0 +1,88 @@
+.categories ['Servlet']
+.dateCreated 20131113T10:51:35
+.date_modified 20131113T15:05:29
+.date_modified_gmt 20131113T20:05:29
+.link http://ocpsoft.org/java/servlet-java/creating-a-simple-static-file-server-with-rewrite/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/java/servlet-java/creating-a-simple-static-file-server-with-rewrite/
+.post_status publish
+.postid 25372
+.title Creating a simple static file server with Rewrite
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 25373
+.wp_slug creating-a-simple-static-file-server-with-rewrite
+<p>Today, I'd like to take a quick moment to demonstrate how to make a simple file server using [[Rewrite]], and any Servlet Container, such as Tomcat, Wildfly, or Jetty. This can enable much easier file updates for static content, such as preventing the need to re-deploy an entire application just to update an image, or document. 
+
+<p>[[Rewrite]] is an open-source Routing ↑↓ and <font color="green">/url/{rewriting}</font> solution for Servlet, Java Web Frameworks, and Java EE.
+
+<p>To start, you'll need to include the Rewrite dependencies in your project. If you're using maven, this is as simple as making sure your POM has the following entries (You'll also need the Servlet API):
+<!--more-->
+[snippit filename="Include Rewrite in your 'pom.xml'"]
+<dependency>
+   <groupId>org.ocpsoft.rewrite</groupId>
+   <artifactId>rewrite-servlet</artifactId>
+   <version>2.0.8.Final</version>
+</dependency>
+<dependency>
+   <groupId>javax.servlet</groupId>
+   <artifactId>javax.servlet-api</artifactId>
+   <version>3.1.0</version>
+   <scope>provided</scope>
+</dependency>
+[/snippit] 
+
+<p>Next, we'll create a simple ConfigurationProvider to tell Rewrite what to do; in this case, we'll be streaming files directly from the local filesystem. This class can go anywhere in your project:
+
+[snippit filename="The Rewrite ConfigurationProvider"]
+
+@RewriteConfiguration
+public class StaticContentConfiguration extends HttpConfigurationProvider {
+   @Override
+   public Configuration getConfiguration(ServletContext context) {
+      /*
+       * You should select a path that exposes only the directory(s) from which content should be served, otherwise the
+       * entire hard drive could be accessible.
+       */
+      File resource = new File("/home/contentserv/{file}");
+
+      return ConfigurationBuilder.begin()
+               .addRule()
+               .when(Path.matches("/{file}")
+                        .and(Filesystem.fileExists(resource))
+                        .and(Direction.isInbound())
+               )
+               .perform(Stream.from(resource)
+                        .and(Response.setStatus(200))
+                        .and(Response.complete())
+               )
+               .where("file").matches(".*");
+   }
+
+   @Override
+   public int priority() {
+      return 0;
+   }
+}
+[/snippit]
+
+You could even add logging using the provided `Log` operation from rewrite-servlet, so that requests can be tracked in your server logs:
+
+[code]
+.perform(Stream.from(resource)
+   .and(Response.setStatus(200))
+   .and(Response.complete())
+   .and(Log.message(Level.INFO, "Served file: {file}."))
+)
+[/code]
+
+<p>It's as simple as that! Rewrite will match inbound requests with corresponding files in the specified resource location. Thanks to the simple parameterization API that Rewrite provides, this requires very little glue code - we are free to sit back and have a nice beverage.
+
+<p>Now you've not got an extremely simple file-server running as a web-application. This is only one very basic example of what Rewrite can do, so let us know what you think as you explore more <a href="http://ocpsoft.org/rewrite/examples/">Rewrite</a> features or dive into the <a href="http://ocpsoft.org/rewrite/docs/">documentation</a>!

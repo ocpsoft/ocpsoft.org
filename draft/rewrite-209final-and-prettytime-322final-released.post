@@ -1,0 +1,50 @@
+.categories ['Releases']
+.dateCreated 20131203T16:03:37
+.date_modified 20131203T16:03:37
+.date_modified_gmt 20131203T21:03:37
+.link http://ocpsoft.org/?p=25469
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/?p=25469
+.post_status draft
+.postid 25469
+.title Rewrite 2.0.9.Final and PrettyTime 3.2.2.Final Released
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug 
+We are proud to announce the availability of Rewrite 2.0.9.Final, which fixes several minor issues, and adds <code>Condition</code> support for <code>Response.isCommitted()</code>, making it far simpler to perform certain operations if the response has already been committed by a prior rule or 3rd party servlet filter.
+
+</h2>Rewrite</h2>
+
+<pre lang="java">
+.addRule()
+.when(Response.isCommitted().and(Direction.isInbound()))
+.perform(Lifecycle.abort())
+</pre>
+
+Issues resolved in Rewrite 2.0.9.Final:
+
+<a href="https://github.com/ocpsoft/rewrite/pull/151">IllegalStateException thrown after redirect from 3rd party filter that calls chain.doFilter().</a>
+<a href="https://github.com/ocpsoft/rewrite/issues/147">Rewritten URLs don't contain jsessionid any more if cookies are disabled</a>
+<a href="https://github.com/ocpsoft/rewrite/pull/146">Removed 3rd party repositories from POM</a>
+<a href="https://github.com/ocpsoft/rewrite/pull/143">Missing wildcard type arguments cause failure when locating cdi beans</a>
+<a href="https://github.com/ocpsoft/rewrite/pull/142">Allow navigation before RESTORE_VIEW</a>
+
+</h2>PrettyTime</h2>
+
+We are proud to announce the availability of PrettyTime 3.2.2.Final, which fixes several minor issues with translation and Natural Language Parsing:
+
+<a href="https://github.com/ocpsoft/prettytime/pull/66">Fixes and tests for Italian language translation</a>
+<a href="https://github.com/ocpsoft/prettytime/pull/65">"Yesterday" not parsed correctly</a>
+
+<h2>Get the updates</h2>
+
+<a href="http://ocpsoft.org/rewrite/">Get Rewrite</a>
+<a href="http://ocpsoft.org/prettytime/">Get PrettyTime</a>

@@ -1,0 +1,92 @@
+.categories ['Releases']
+.dateCreated 20131210T13:46:06
+.date_modified 20131210T14:06:32
+.date_modified_gmt 20131210T19:06:32
+.link http://ocpsoft.org/releases/rewrite-2-0-9-final-and-prettytime-3-2-3-final-released/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/releases/rewrite-2-0-9-final-and-prettytime-3-2-3-final-released/
+.post_status publish
+.postid 25469
+.title Rewrite 2.0.9.Final and PrettyTime 3.2.3.Final Released (Introducing Proxy Support)
+.userid 3
+.wp_author_display_name Lincoln Baxter III
+.wp_author_id 3
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug rewrite-2-0-9-final-and-prettytime-3-2-3-final-released
+<h2>Rewrite 2.0.9.Final</h2>
+We are proud to announce the availability of Rewrite 2.0.9.Final, which introduces "rewrite-config-proxy", fixes several minor issues, and adds support for <code>Response.isCommitted()</code>, making it far simpler to perform certain operations if the response has already been committed by a prior rule or 3rd party servlet filter.
+
+<h3>rewrite-config-proxy</h3> 
+Provides an easy-to-use <code>Operation</code> that allows any inbound request to be proxied to another URL - even on a different server. Headers, cookies, etc, are preserved:
+
+<p>To use this configuration extension, you will need to add it to your POM file:
+
+<pre lang="xml">
+<dependency>
+   <groupId>org.ocpsoft.rewrite</groupId>
+   <artifactId>rewrite-config-proxy</artifactId>
+   <version>2.0.9.Final</version>
+</dependency>
+</pre>
+
+Now add a rule to your <code>ConfigurationProvider</code>:
+
+<pre lang="java">
+.addRule()
+.when(Direction.isInbound())
+.perform(Proxy.to("http://example.com"))
+</pre>
+
+<p>And of course, it supports parameterization:
+
+<pre lang="java">
+.addRule()
+.when(Direction.isInbound().and(Path.matches("/{p}")))
+.perform(Proxy.to("http://example.com/{p}?foo=bar"))
+</pre>
+
+<h3>response.isCommitted()</h3> 
+Provides a simple condition for determining whether the response has been committed or not for the current request. This is useful for aborting rewrite processing after a certain point in your configuration:
+
+<pre lang="java">
+.addRule()
+.when(Response.isCommitted().and(Direction.isInbound()))
+.perform(Lifecycle.abort())
+</pre>
+
+<h4>More issues resolved in Rewrite 2.0.9.Final:</h4>
+
+<ul>
+	<li><a href="https://github.com/ocpsoft/rewrite/pull/153">Need a method of proxying HTTP requests via Rewrite configuration.</a></li>
+
+	<li><a href="https://github.com/ocpsoft/rewrite/pull/151">IllegalStateException thrown after redirect from 3rd party filter that calls chain.doFilter().</a></li>
+
+	<li><a href="https://github.com/ocpsoft/rewrite/issues/147">Rewritten URLs don't contain jsessionid any more if cookies are disabled</a></li>
+
+	<li><a href="https://github.com/ocpsoft/rewrite/pull/146">Removed 3rd party repositories from POM</a></li>
+
+	<li><a href="https://github.com/ocpsoft/rewrite/pull/143">Missing wildcard type arguments cause failure when locating cdi beans</a></li>
+
+	<li><a href="https://github.com/ocpsoft/rewrite/pull/142">Allow navigation before RESTORE_VIEW</a></li>
+
+</ul>
+
+<h2>PrettyTime 3.2.3.Final</h2>
+
+We are proud to announce the availability of PrettyTime 3.2.3.Final, which fixes several minor issues with translation and Natural Language Parsing:
+
+<ul>
+<li><a href="https://github.com/ocpsoft/prettytime/pull/66">Fixes and tests for Italian language translation</a></li>
+<li><a href="https://github.com/ocpsoft/prettytime/pull/65">"Yesterday" not parsed correctly</a></li>
+</ul>
+
+<h2>Get the updates</h2>
+
+<p><a href="http://ocpsoft.org/rewrite/">Get Rewrite</a>
+<p><a href="http://ocpsoft.org/prettytime/">Get PrettyTime</a>

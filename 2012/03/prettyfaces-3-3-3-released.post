@@ -1,13 +1,13 @@
-.categories ['OpenSource']
+.categories ['Releases']
 .dateCreated 20120306T19:00:40
-.date_modified 20120306T15:03:12
-.date_modified_gmt 20120306T20:03:12
-.link http://ocpsoft.org/opensource/prettyfaces-3-3-3-released/
+.date_modified 20131212T14:16:56
+.date_modified_gmt 20131212T19:16:56
+.link http://ocpsoft.org/releases/prettyfaces-3-3-3-released/
 .mt_allow_comments 1
 .mt_allow_pings 1
 .mt_excerpt 
 .mt_keywords 
-.permaLink http://ocpsoft.org/opensource/prettyfaces-3-3-3-released/
+.permaLink http://ocpsoft.org/releases/prettyfaces-3-3-3-released/
 .post_status publish
 .postid 3984
 .title PrettyFaces 3.3.3 Released

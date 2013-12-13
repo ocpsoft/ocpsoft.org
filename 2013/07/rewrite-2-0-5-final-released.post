@@ -1,13 +1,13 @@
-.categories ['OpenSource']
+.categories ['Releases']
 .dateCreated 20130726T09:07:00
-.date_modified 20130726T09:08:31
-.date_modified_gmt 20130726T13:08:31
-.link http://ocpsoft.org/opensource/rewrite-2-0-5-final-released/
+.date_modified 20131212T14:17:11
+.date_modified_gmt 20131212T19:17:11
+.link http://ocpsoft.org/releases/rewrite-2-0-5-final-released/
 .mt_allow_comments 1
 .mt_allow_pings 1
 .mt_excerpt 
 .mt_keywords 
-.permaLink http://ocpsoft.org/opensource/rewrite-2-0-5-final-released/
+.permaLink http://ocpsoft.org/releases/rewrite-2-0-5-final-released/
 .post_status publish
 .postid 24394
 .title Rewrite 2.0.5.Final Released

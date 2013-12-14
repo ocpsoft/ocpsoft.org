@@ -1,13 +1,13 @@
-.categories ['OpenSource', 'PrettyFaces']
+.categories ['Releases']
 .dateCreated 20100219T17:31:15
-.date_modified 20100219T17:42:21
-.date_modified_gmt 20100219T22:42:21
-.link http://ocpsoft.org/opensource/announcing-prettyfaces-2-0-4-url-rewriting-for-javaserver-faces-jsf2/
+.date_modified 20131213T02:27:19
+.date_modified_gmt 20131213T07:27:19
+.link http://ocpsoft.org/releases/announcing-prettyfaces-2-0-4-url-rewriting-for-javaserver-faces-jsf2/
 .mt_allow_comments 1
 .mt_allow_pings 1
 .mt_excerpt 
 .mt_keywords 
-.permaLink http://ocpsoft.org/opensource/announcing-prettyfaces-2-0-4-url-rewriting-for-javaserver-faces-jsf2/
+.permaLink http://ocpsoft.org/releases/announcing-prettyfaces-2-0-4-url-rewriting-for-javaserver-faces-jsf2/
 .post_status publish
 .postid 1041
 .title Announcing - PrettyFaces 2.0.4: URL Rewriting for JSF 2.0

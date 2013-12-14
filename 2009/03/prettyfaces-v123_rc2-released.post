@@ -1,13 +1,13 @@
-.categories ['PrettyFaces']
+.categories ['Releases']
 .dateCreated 20090331T18:21:25
-.date_modified 20090331T18:21:25
-.date_modified_gmt 20090401T01:21:25
-.link http://ocpsoft.org/prettyfaces/prettyfaces-v123_rc2-released/
+.date_modified 20131213T02:27:36
+.date_modified_gmt 20131213T07:27:36
+.link http://ocpsoft.org/releases/prettyfaces-v123_rc2-released/
 .mt_allow_comments 1
 .mt_allow_pings 1
 .mt_excerpt 
 .mt_keywords Java, JSF, OpenSource, PrettyFaces, Releases
-.permaLink http://ocpsoft.org/prettyfaces/prettyfaces-v123_rc2-released/
+.permaLink http://ocpsoft.org/releases/prettyfaces-v123_rc2-released/
 .post_status publish
 .postid 49
 .title PrettyFaces v1.2.3_RC2 Released

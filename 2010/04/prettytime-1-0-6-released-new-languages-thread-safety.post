@@ -1,13 +1,13 @@
-.categories ['Java']
+.categories ['Releases']
 .dateCreated 20100420T12:03:45
-.date_modified 20100422T12:33:44
-.date_modified_gmt 20100422T16:33:44
-.link http://ocpsoft.org/java/prettytime-1-0-6-released-new-languages-thread-safety/
+.date_modified 20131213T02:27:07
+.date_modified_gmt 20131213T07:27:07
+.link http://ocpsoft.org/releases/prettytime-1-0-6-released-new-languages-thread-safety/
 .mt_allow_comments 1
 .mt_allow_pings 1
 .mt_excerpt 
 .mt_keywords 
-.permaLink http://ocpsoft.org/java/prettytime-1-0-6-released-new-languages-thread-safety/
+.permaLink http://ocpsoft.org/releases/prettytime-1-0-6-released-new-languages-thread-safety/
 .post_status publish
 .postid 1188
 .title PrettyTime 1.0.6 Released - New Languages, Thread-Safety

@@ -1,13 +1,13 @@
-.categories ['PrettyFaces']
+.categories ['Releases']
 .dateCreated 20091103T11:09:35
-.date_modified 20091206T14:32:13
-.date_modified_gmt 20091206T19:32:13
-.link http://ocpsoft.org/prettyfaces/new-releases-and-changes-coming-in-prettyfaces/
+.date_modified 20131213T02:27:29
+.date_modified_gmt 20131213T07:27:29
+.link http://ocpsoft.org/releases/new-releases-and-changes-coming-in-prettyfaces/
 .mt_allow_comments 1
 .mt_allow_pings 1
 .mt_excerpt 
 .mt_keywords 
-.permaLink http://ocpsoft.org/prettyfaces/new-releases-and-changes-coming-in-prettyfaces/
+.permaLink http://ocpsoft.org/releases/new-releases-and-changes-coming-in-prettyfaces/
 .post_status publish
 .postid 351
 .title New releases, and changes coming in PrettyFaces

@@ -21,11 +21,11 @@
 .wp_slug redoculous
 <h1 class="project-header">redoculous</h1>
 
-<center><iframe width="800" height="480" src="//www.youtube.com/embed/C4X0uwO_U1I?rel=0" frameborder="0" allowfullscreen></iframe></center>
+<center><iframe width="800" height="480" src="//www.youtube.com/embed/_If5LILblJ4?rel=0" frameborder="0" allowfullscreen></iframe></center>
 
 <p>
 
-<center><a href="https://oss.sonatype.org/content/repositories/public/org/ocpsoft/redoculous-server/1.0.0.Alpha1/redoculous-server-1.0.0.Alpha1.war" title="Download Redoculous">&raquo; Download Redoculous &laquo;</a><br/>For servlet 3.0+ containers.</center>
+<center><a href="https://oss.sonatype.org/content/repositories/public/org/ocpsoft/redoculous/redoculous-embedded/1.0.0.Alpha4/redoculous-embedded-1.0.0.Alpha4.jar" title="Download Redoculous Editor">&raquo; Download Redoculous Editor &laquo;</a><br/>For all operating systems and modern browsers.</center>
 
 <p>
 <hr/>

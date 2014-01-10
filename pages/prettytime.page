@@ -44,7 +44,7 @@
 <dependency>
    <groupId>org.ocpsoft.prettytime</groupId>
    <artifactId>prettytime</artifactId>
-   <version>3.2.3.Final</version>
+   <version>3.2.4.Final</version>
 </dependency>
 
 <!-- To use snapshots, you must also use the Sonatype Snapshots respository -->
@@ -69,9 +69,9 @@ public class BasicJavaApp
 	{
 		PrettyTime p = new PrettyTime();
 		System.out.println(p.format(new Date()));
-		//prints: “right now”
+		//prints: “moments from now”
 
-		System.out.println(p.format(new Date(1000*60*10)));
+		System.out.println(p.format(new Date(System.currentTimeMillis() + 1000*60*10)));
 		//prints: “10 minutes from now”
 	}
 }

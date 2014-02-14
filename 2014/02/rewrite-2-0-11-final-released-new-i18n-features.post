@@ -1,0 +1,31 @@
+.categories ['Releases']
+.dateCreated 20140213T21:20:09
+.date_modified 20140213T21:20:09
+.date_modified_gmt 20140214T02:20:09
+.link http://ocpsoft.org/releases/rewrite-2-0-11-final-released-new-i18n-features/
+.mt_allow_comments 1
+.mt_allow_pings 1
+.mt_excerpt 
+.mt_keywords 
+.permaLink http://ocpsoft.org/releases/rewrite-2-0-11-final-released-new-i18n-features/
+.post_status publish
+.postid 25845
+.title Rewrite 2.0.11.Final Released - New i18n Features
+.userid 1
+.wp_author_display_name Team
+.wp_author_id 1
+.wp_more_text 
+.wp_password 
+.wp_post_format standard
+.wp_post_thumbnail 
+.wp_slug rewrite-2-0-11-final-released-new-i18n-features
+We are proud to announce the release of <a href="http://ocpsoft.org/rewrite/">Rewrite Servlet Toolkit</a> 2.0.11.Final.
+
+<h3>Highlights</h3>
+This version includes new support for <a href="http://ocpsoft.org/rewrite/docs/configuration/i18n">internationalization and localization</a>. Additionally, support for annotation scanning on the WebLogic application server <a href="https://github.com/ocpsoft/rewrite/pull/163">has been improved</a>.
+
+<h3>Security Notice</h3>
+If you are currently using Rewrite 2.0.9.Final and have not yet updated, you should update to Rewrite 2.0.10.Final or 2.0.11.Final as quickly as possible, since we have fixed a minor concurrency issue when using the <code>PhaseOperation</code> configuration element that can potentially cause cross-request information bleeding.
+
+<h3>Get Rewrite</h3>
+<a href="http://ocpsoft.org/rewrite/">http://ocpsoft.org/rewrite/</a>
